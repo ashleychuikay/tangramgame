@@ -496,8 +496,8 @@ var experiment = {
 
 
 
-	    // $(document.getElementById(picID)).css('margin', "-8px");
-			$(document.getElementById(picID)).animate({'margin-top': '-70px'}, 'fast');
+	   	   $(document.getElementById(picID)).css('margin', "-8px");
+		// $(document.getElementById(picID)).animate({'margin-top': '-70px'}, 'fast');
 
 			//remove the pictures from the image array that have been used, and the word from the wordList that has been used
 			practiceImages.splice(0, 3);
@@ -521,7 +521,7 @@ var experiment = {
 	},
 	
 
-	//the end of the experiment, where the background becomes completely black
+	//the end of the experiment
     end: function () {
     	setTimeout(function () {
     		$("#stage").fadeOut();
