@@ -79,7 +79,7 @@ var sharedSetup = function(game) {
 
   // Tell server when parent clicks the start button
   $('#beforeStudy').on('click', function(event){
-    var msg = ['startButton', experiment.subid].join('.');
+    var msg = ['startButton', experiment.subid, experiment.parentchild].join('.');
     game.socket.send(msg)
   });
 

@@ -66,7 +66,7 @@ var onMessage = function(client,message) {
 
   case 'startButton':
    _.map(others, function(p) {
-    var msg= message_parts[1]
+    var msg= message_parts[1, 2]
     p.player.instance.emit('startButton', {msg: msg})
   });
   break; 

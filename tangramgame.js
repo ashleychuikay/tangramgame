@@ -14,17 +14,17 @@ xhr.onreadystatechange = function () {
 
     trials = $.csv.toArrays(xhr.responseText);
 
-    allTrials = new Array
+    allTrials = new Array;
 
 		for(i=0; i<trials.length; i++){
 			newArr = trials[i].slice();	
 
-			for(j=1; j<=3; j++){
+			for(j=0; j<=2; j++){
 				subArr = newArr.slice();
 				subArr.push(subArr[j]);
-				items = subArr.slice(1,4);
+				items = subArr.slice(0,3);
 				shuffle(items);
-				subArr.splice(1,3,items[0],items[1],items[2]);
+				subArr.splice(0,2,items[0],items[1]);
 				allTrials.push(subArr);
 			}
 		};
@@ -144,9 +144,7 @@ var hardTrial = ["asparagus", "artichoke", "onion"];
 var trialImages = [];
 
 //for trials
-// var animals = ["bird", "cat", "cow", "dog", "donkey", "duck", "elephant", "fish", "horse", "leopard", "lobster", "peacock", "pig", "raccoon", "rhinoceros", "rooster", "squirrel", "swan"]
-// var wordList = [];
-// var allImages = [];
+
 // var trialSounds = [];
 
 var tangrams = ["A1", "B1", "C1", "D1", "E1", "F1", "G1", "H1", "I1", "J1", "K1", "L1"];
@@ -198,9 +196,15 @@ function startExperiment() {
 
 	//CONTROL FLOW
 
-	//shuffle trials to randomize order, check to make sure the same set of animals does not appear back to back
+	//shuffle trials to randomize order, check to make sure the same set of tangrams does not appear back to back
 	
 	shuffle(allTrials)
+
+	// trialsA = new Array;
+ //    trialsB = new Array;
+
+ //    trialsA.push(trials.slice(1,33));
+ //    trialsB.push(trials.slice(34,66));
 
 	function checkTrials() {
 		shuffle(allTrials)
@@ -227,33 +231,71 @@ function startExperiment() {
 	//construct wordList for correct answers
 
 	for(i=0; i<allTrials.length; i++){
-		var word = allTrials[i][4];
+		var word = allTrials[i][2];
 		wordList.push(word)
 	};
 
+
 	//order image names according to trial order
+	
+	//separate lists for matcher and director
+	// for(i=0; i<trialsA.length; i++) {
+	// 	subImages = trialsA[i].slice();
+	// 	shuffle(subImages);
+	// 	for(j=0; j=1; j++) {
+	// 		newImages = subImages.slice();
+	// 		directorImagesA.push(newImages[j]);
+	// 	}
+	// };
+
+	// for(i=0; i<trialsA.length; i++) {
+	// 	subImages = trialsA[i].slice();
+	// 	shuffle(subImages);
+	// 	for(j=0; j=1; j++) {
+	// 		newImages = subImages.slice();
+	// 		matcherImagesA.push(newImages[j]);
+	// 	}
+	// };
+
+	// for(i=0; i<trialsB.length; i++) {
+	// 	subImages = trialsB[i].slice();
+	// 	shuffle(subImages);
+	// 	for(j=0; j=1; j++) {
+	// 		newImages = subImages.slice();
+	// 		directorImagesB.push(newImages[j]);
+	// 	}
+	// };
+
+	// for(i=0; i<trialsB.length; i++) {
+	// 	subImages = trialsB[i].slice();
+	// 	shuffle(subImages);
+	// 	for(j=0; j=1; j++) {
+	// 		newImages = subImages.slice();
+	// 		matcherImagesB.push(newImages[j]);
+	// 	}
+	// };
 
 
 	for(i=0; i<allTrials.length; i++) {
 		subImages = allTrials[i].slice();
-		 for(j=1; j<=3; j++) {
+		 for(j=1; j<=2; j++) {
 		 	newImages = subImages.slice();
 		 	allImages.push(newImages[j]);
 		 }
 	};
 
 	//load all animal sounds and arrange in trial order
-  	for (i=0; i < animals.length; i++) {
-	    animalSound = new WebAudioAPISound("animalsounds/"+animals[i]);
-	    trialSounds.push(animalSound)
-	}
+ //  	for (i=0; i < animals.length; i++) {
+	//     animalSound = new WebAudioAPISound("animalsounds/"+animals[i]);
+	//     trialSounds.push(animalSound)
+	// }
 
 	
 
 	// to start at beginning
 	setTimeout(function() {
 		console.log(globalGame.my_role);
-		globalGame.my_role=="parent" ? showSlide("instructions") : showSlide("childinstructions");
+		globalGame.my_role=="director" ? showSlide("instructions") : showSlide("childinstructions");
 	},900)
 
 	//to jump around for de-bugging
@@ -264,12 +306,13 @@ function startExperiment() {
 
 
 
-
 // MAIN EXPERIMENT
 var experiment = {
 
 	subid: "",
 		//inputed at beginning of experiment
+	parentchild: "",
+		//whether parent or child starts as director inputed at begininng of experiment
 	trialnum: 0,
 		//trial number
 	order: 1,
@@ -279,8 +322,6 @@ var experiment = {
 	pic1: "",
 		//the name of the picture on the left
 	pic2: "",
-		//the name of the picture in the middle
-	pic3: "",
 		//the name of the picture on the right
 	side: "",
 		//whether the child picked the left (L) or the right (R) picture
@@ -323,61 +364,61 @@ var experiment = {
 	},
 
 	//sets up and allows participants to play "the dot game"
-	training: function(dotgame) {
+	// training: function(dotgame) {
 
-		console.log('TRAINING STARTS')
-		var allDots = ["dot_1", "dot_2", "dot_3", "dot_4", "dot_5", 
-						"dot_smiley1", "dot_smiley2", "dot_smiley3", 
-						"dot_smiley4", "dot_smiley5"];
-		var xcounter = 0;
-		var dotCount = 5;
+	// 	console.log('TRAINING STARTS')
+	// 	var allDots = ["dot_1", "dot_2", "dot_3", "dot_4", "dot_5", 
+	// 					"dot_smiley1", "dot_smiley2", "dot_smiley3", 
+	// 					"dot_smiley4", "dot_smiley5"];
+	// 	var xcounter = 0;
+	// 	var dotCount = 5;
 
-		var dotx = [];
-		var doty = [];
+	// 	var dotx = [];
+	// 	var doty = [];
 
-		if (dotgame === 0) {
-			for (i = 0; i < dotCount; i++) {
-				createDot(dotx, doty, i, "");
-			}
-		} else {
-			for (i = 0; i < dotCount; i++) {
-				createDot(dotx, doty, i, "smiley");
-			}
-		}
-		showSlide("training");
-		$('.dot').bind(' touchstart', function(event) {
-	    	var dotID = $(event.currentTarget).attr('id');
+	// 	if (dotgame === 0) {
+	// 		for (i = 0; i < dotCount; i++) {
+	// 			createDot(dotx, doty, i, "");
+	// 		}
+	// 	} else {
+	// 		for (i = 0; i < dotCount; i++) {
+	// 			createDot(dotx, doty, i, "smiley");
+	// 		}
+	// 	}
+	// 	showSlide("training");
+	// 	$('.dot').bind(' touchstart', function(event) {
+	//     	var dotID = $(event.currentTarget).attr('id');
 
-	    	//only count towards completion clicks on dots that have not yet been clicked
-	    	if (allDots.indexOf(dotID) === -1) {
-	    		return;
-	    	}
-	    	allDots.splice(allDots.indexOf(dotID), 1);
-	    	document.getElementById(dotID).src = "dots/x.jpg";
-	    	xcounter++
-	    	if (xcounter === dotCount) {
+	//     	//only count towards completion clicks on dots that have not yet been clicked
+	//     	if (allDots.indexOf(dotID) === -1) {
+	//     		return;
+	//     	}
+	//     	allDots.splice(allDots.indexOf(dotID), 1);
+	//     	document.getElementById(dotID).src = "dots/x.jpg";
+	//     	xcounter++
+	//     	if (xcounter === dotCount) {
    		
-		    	if (dotgame != 0) {
-	    			globalGame.trainingOver = true;
-	    		}
-	    		setTimeout(function () {
-	    			$("#training").hide();
-	    			if (dotgame === 0) {		
-	    				//hide old x marks before game begins again
-	    				var dotID;
-	    				for (i = 1; i <= dotCount; i++) {
-	    					dotID = "dot_" + i;
-	    					training.removeChild(document.getElementById(dotID));
-	    				}
-						experiment.training();
-						dotgame++; 
-					} else {
-							showSlide("child");
-					}
-				}, normalpause);
-			}
-	    });	   
-	},
+	// 	    	if (dotgame != 0) {
+	//     			globalGame.trainingOver = true;
+	//     		}
+	//     		setTimeout(function () {
+	//     			$("#training").hide();
+	//     			if (dotgame === 0) {		
+	//     				//hide old x marks before game begins again
+	//     				var dotID;
+	//     				for (i = 1; i <= dotCount; i++) {
+	//     					dotID = "dot_" + i;
+	//     					training.removeChild(document.getElementById(dotID));
+	//     				}
+	// 					experiment.training();
+	// 					dotgame++; 
+	// 				} else {
+	// 						showSlide("child");
+	// 				}
+	// 			}, normalpause);
+	// 		}
+	//     });	   
+	// },
 
 	checkInput: function() {
 		// subject ID
@@ -386,6 +427,7 @@ var experiment = {
 			return;
 		}
   		experiment.subid = document.getElementById("subjectID").value;
+  		experiment.parentchild = document.getElementById("parentchild");
 
 		showSlide("parent");
 	},
@@ -405,13 +447,9 @@ var experiment = {
 	   	//HTML for the first object on the left
 		leftname = "practiceimages/" + practiceImages[0] + ".png";
 		objects_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic1"/></td>';
-
-		//HTML for the first object in the middle
-		middlename = "practiceimages/" + practiceImages[1] + ".png";
-		objects_html += '<td align = "center"><img class = "pic" src="' + middlename + '"alt="' + middlename + '" id = "middlePic1"/></td>';
 	
 		//HTML for the first object on the right
-		rightname = "practiceimages/" + practiceImages[2] + ".png";
+		rightname = "practiceimages/" + practiceImages[1] + ".png";
 	   	objects_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic1"/></td>';
 		
 	  	objects_html += '</tr></table>';
@@ -554,15 +592,15 @@ var experiment = {
 		// Create the object table (tr=table row; td= table data)
 	    
 	   	//HTML for the first object on the left
-		leftname = "animalimages/" + allImages[0] + ".png";
+		leftname = "animalimages/" + matcherImages[0] + ".png";
 		objects_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic"/></td>';
 
 		//HTML for the first object in the middle
-		middlename = "animalimages/" + allImages[1] + ".png";
-		objects_html += '<td align = "center"><img class = "pic" src="' + middlename + '"alt="' + middlename + '" id = "middlePic"/></td>';
+		// middlename = "animalimages/" + allImages[1] + ".png";
+		// objects_html += '<td align = "center"><img class = "pic" src="' + middlename + '"alt="' + middlename + '" id = "middlePic"/></td>';
 	
 		//HTML for the first object on the right
-		rightname = "animalimages/" + allImages[2] + ".png";
+		rightname = "animalimages/" + matcherImages[1] + ".png";
 	   	objects_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic"/></td>';
 		
 	  	objects_html += '</tr></table>';
@@ -623,7 +661,6 @@ var experiment = {
 		    setTimeout(function() {winningSound.play();}, 100)
 
 		    console.log(experiment.chosenpic)
-		    console.log(animals.findIndex(chosenAnimal))
 			
 			//If the child picked the picture that matched with the word, then they were correct. If they did not, they were not correct.
 			if (experiment.chosenpic === experiment.word) {
@@ -641,9 +678,9 @@ var experiment = {
 
 
 
-	    //$(document.getElementById(picID)).css('margin', "-8px");
+	    $(document.getElementById(picID)).css('margin', "-8px");
 	    console.log(picID)
-			$(document.getElementById(picID)).animate({'margin-top': '-60px'}, 'fast');
+			// $(document.getElementById(picID)).animate({'margin-top': '-60px'}, 'fast');
 
 			//remove the pictures from the image array that have been used, and the word from the wordList that has been used
 			allImages.splice(0, 3);
