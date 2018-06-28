@@ -4,7 +4,7 @@
 //Read in .csv from server
 var xhr = new XMLHttpRequest(),
     method = "GET",
-    // url = "https://raw.githubusercontent.com/ashleychuikay/animalgame/master/gamecode/trials.csv";
+    url = "https://raw.githubusercontent.com/ashleychuikay/tangramgame/master/tangramgametrials.csv";
     //NEW TRIAL CSV FOR TANGRAMS
 
 xhr.open(method, url, true);
@@ -19,17 +19,15 @@ xhr.onreadystatechange = function () {
 		for(i=0; i<trials.length; i++){
 			newArr = trials[i].slice();	
 
-			for(j=0; j<=2; j++){
-				subArr = newArr.slice();
+			for(j=1; j<=3; j++){
+				subArr = newArr[0].slice();
 				subArr.push(subArr[j]);
-				items = subArr.slice(0,3);
-				shuffle(items);
-				subArr.splice(0,2,items[0],items[1]);
 				allTrials.push(subArr);
 			}
 		};
 
-		startExperiment(allTrials)
+		// startExperiment(allTrials)
+		console.log(allTrials)
   }
 };
 xhr.send();

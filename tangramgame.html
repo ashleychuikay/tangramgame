@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>What does this mean?</title>
+    <title>Tangrams</title>
     <link rel="stylesheet" href="tangram_stylecentered.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.3/jquery.csv.js"></script>
@@ -57,14 +57,14 @@
         <p>Welcome to the tangram study!</p>
     </div></center>
 
-  <div class="slide" id="parent">
-      <!-- <p>Waiting</p>
-      <center><div id="spinner"> </div></center> -->
-  </div>
- 
-  <div class="slide" id="training">
+  <div class="slide" id="parentpractice"> 
+    <p class="practiceWord"></p>
   </div>
 
+  <div class="slide" id="practicestage">
+      <div id="practiceobjects"> </div>
+  </div>
+  
   <div class="slide" id="child">
       <p>Good Job!</p>
   </div>    
@@ -96,8 +96,8 @@
     </div>
 
     
-    <script src="webAudio.js"></script>
-    <script src="animalgame.js"></script>
+    <!-- <script src="webAudio.js"></script> -->
+    <script src="tangramgame.js"></script>
 
     
   </body>
