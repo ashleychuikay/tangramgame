@@ -37,8 +37,6 @@ var game_core = function(options){
   // How many players in the game?
   this.players_threshold = 2;
   this.playerRoleNames = {
-    // role1 : 'parent',
-    // role2 : 'child'
     role1 : 'speaker1',
     role2 : 'speaker2'
   };
