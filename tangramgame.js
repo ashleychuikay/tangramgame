@@ -19,14 +19,15 @@ xhr.onreadystatechange = function () {
 		for(i=0; i<trials.length; i++){
 			newArr = trials[i].slice();	
 
-			for(j=1; j<=3; j++){
-				subArr = newArr[0].slice();
+			for(j=1; j<=4; j++){
+				subArr = newArr.slice();
 				subArr.push(subArr[j]);
+				subArr.splice(1,4);
 				allTrials.push(subArr);
 			}
 		};
 
-		// startExperiment(allTrials)
+		startExperiment(allTrials)
 		console.log(allTrials)
   }
 };
@@ -150,39 +151,39 @@ var wordList = [];
 var allImages = [];
 
 // shuffle practice trials
-practiceTrials = [];
-practiceWords = [];
-practiceImages = [];
+// practiceTrials = [];
+// practiceWords = [];
+// practiceImages = [];
 	
-for(i=0; i<=1; i++){
-	newTrial = easyTrial.slice();
-	shuffle(newTrial);
-	newTrial.push("apple");
-	practiceTrials.push(newTrial);
-	newTrial = hardTrial.slice();
-	shuffle(newTrial);
-	newTrial.push("artichoke");
-	practiceTrials.push(newTrial);
-};
+// for(i=0; i<=1; i++){
+// 	newTrial = easyTrial.slice();
+// 	shuffle(newTrial);
+// 	newTrial.push("apple");
+// 	practiceTrials.push(newTrial);
+// 	newTrial = hardTrial.slice();
+// 	shuffle(newTrial);
+// 	newTrial.push("artichoke");
+// 	practiceTrials.push(newTrial);
+// };
 
-//construct word list for practice trials
-for(i=0; i<practiceTrials.length; i++){
-	var word = practiceTrials[i][3]
-	practiceWords.push(word)
-};
+// //construct word list for practice trials
+// for(i=0; i<practiceTrials.length; i++){
+// 	var word = practiceTrials[i][3]
+// 	practiceWords.push(word)
+// };
 
-//order practice trial images
-for(i=0; i<practiceTrials.length; i++) {
-	subImages = practiceTrials[i].slice();
-	 for(j=0; j<=2; j++) {
-	 	newImages = subImages.slice();
-	 	practiceImages.push(newImages[j]);
-	 }
-};
+// //order practice trial images
+// for(i=0; i<practiceTrials.length; i++) {
+// 	subImages = practiceTrials[i].slice();
+// 	 for(j=0; j<=2; j++) {
+// 	 	newImages = subImages.slice();
+// 	 	practiceImages.push(newImages[j]);
+// 	 }
+// };
 
-console.log(practiceTrials)
-console.log(practiceImages)
-console.log(practiceWords)
+// console.log(practiceTrials)
+// console.log(practiceImages)
+// console.log(practiceWords)
 
 
 
@@ -198,17 +199,9 @@ function startExperiment() {
 	
 	shuffle(allTrials)
 
-	// trialsA = new Array;
- //    trialsB = new Array;
-
- //    trialsA.push(trials.slice(1,33));
- //    trialsB.push(trials.slice(34,66));
-
 	function checkTrials() {
 		shuffle(allTrials)
 		for(i=0; i<allTrials.length-1; i++) {
-			// var check1 = allTrials[i];
-			// var check2 = allTrials[i+1];
 			if(allTrials[i+1].includes(allTrials[i][0])) {
 				var temp = allTrials[i+1];
 				allTrials[i+1] = allTrials[i+2];
@@ -227,56 +220,16 @@ function startExperiment() {
 	checkTrials(allTrials);
 
 	//construct wordList for correct answers
-
 	for(i=0; i<allTrials.length; i++){
-		var word = allTrials[i][2];
+		var word = allTrials[i][0];
 		wordList.push(word)
 	};
 
 
-	//order image names according to trial order
-	
-	//separate lists for matcher and director
-	// for(i=0; i<trialsA.length; i++) {
-	// 	subImages = trialsA[i].slice();
-	// 	shuffle(subImages);
-	// 	for(j=0; j=1; j++) {
-	// 		newImages = subImages.slice();
-	// 		directorImagesA.push(newImages[j]);
-	// 	}
-	// };
-
-	// for(i=0; i<trialsA.length; i++) {
-	// 	subImages = trialsA[i].slice();
-	// 	shuffle(subImages);
-	// 	for(j=0; j=1; j++) {
-	// 		newImages = subImages.slice();
-	// 		matcherImagesA.push(newImages[j]);
-	// 	}
-	// };
-
-	// for(i=0; i<trialsB.length; i++) {
-	// 	subImages = trialsB[i].slice();
-	// 	shuffle(subImages);
-	// 	for(j=0; j=1; j++) {
-	// 		newImages = subImages.slice();
-	// 		directorImagesB.push(newImages[j]);
-	// 	}
-	// };
-
-	// for(i=0; i<trialsB.length; i++) {
-	// 	subImages = trialsB[i].slice();
-	// 	shuffle(subImages);
-	// 	for(j=0; j=1; j++) {
-	// 		newImages = subImages.slice();
-	// 		matcherImagesB.push(newImages[j]);
-	// 	}
-	// };
-
-
+	//load images according to trial order
 	for(i=0; i<allTrials.length; i++) {
 		subImages = allTrials[i].slice();
-		 for(j=1; j<=2; j++) {
+		 for(j=0; j<=1; j++) {
 		 	newImages = subImages.slice();
 		 	allImages.push(newImages[j]);
 		 }
@@ -293,7 +246,7 @@ function startExperiment() {
 	// to start at beginning
 	setTimeout(function() {
 		console.log(globalGame.my_role);
-		globalGame.my_role=="director" ? showSlide("instructions") : showSlide("childinstructions");
+		globalGame.my_role=="speaker1" ? showSlide("instructions") : showSlide("childinstructions");
 	},900)
 
 	//to jump around for de-bugging

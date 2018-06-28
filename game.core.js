@@ -39,8 +39,8 @@ var game_core = function(options){
   this.playerRoleNames = {
     // role1 : 'parent',
     // role2 : 'child'
-    role1 : 'director',
-    role2 : 'matcher'
+    role1 : 'speaker1',
+    role2 : 'speaker2'
   };
   
   // Dimensions of world in pixels and numberof cells to be divided into;
