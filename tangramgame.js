@@ -1,6 +1,4 @@
 
-// var webAudio= require("webAudio.js")
-
 //Read in .csv from server
 var xhr = new XMLHttpRequest(),
     method = "GET",
@@ -229,8 +227,9 @@ function startExperiment() {
 	//load images according to trial order
 	for(i=0; i<allTrials.length; i++) {
 		subImages = allTrials[i].slice();
+		items = subImages.splice(0,2)
+		newImages = shuffle(items)
 		 for(j=0; j<=1; j++) {
-		 	newImages = subImages.slice();
 		 	allImages.push(newImages[j]);
 		 }
 	};
@@ -296,7 +295,7 @@ var experiment = {
 		}, normalpause);
 	},
 
-	parentStudy: function(){
+	directorStudy: function(){
 		$('#prestudy').hide();
 		setTimeout(function() {
 			var parentList = globalGame.correctList.split(',');
@@ -535,23 +534,18 @@ var experiment = {
     // MAIN DISPLAY FUNCTION
   	next: function(counter) {
 
-  		// $('#objects').css("opacity", .5)
-
 	  	experiment.subid = globalGame.subid;
 		var objects_html = "";
 
 		// Create the object table (tr=table row; td= table data)
 	    
 	   	//HTML for the first object on the left
-		leftname = "animalimages/" + matcherImages[0] + ".png";
+		leftname = "tangramimages/" + allImages[0] + ".png";
 		objects_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic"/></td>';
 
-		//HTML for the first object in the middle
-		// middlename = "animalimages/" + allImages[1] + ".png";
-		// objects_html += '<td align = "center"><img class = "pic" src="' + middlename + '"alt="' + middlename + '" id = "middlePic"/></td>';
 	
 		//HTML for the first object on the right
-		rightname = "animalimages/" + matcherImages[1] + ".png";
+		rightname = "tangramimages/" + allImages[1] + ".png";
 	   	objects_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic"/></td>';
 		
 	  	objects_html += '</tr></table>';
