@@ -146,7 +146,8 @@ var trialImages = [];
 
 var tangrams = ["A1", "B1", "C1", "D1", "E1", "F1", "G1", "H1", "I1", "J1", "K1", "L1"];
 var wordList = [];
-var allImages = [];
+var directorImages = [];
+var matcherImages = [];
 
 // shuffle practice trials
 // practiceTrials = [];
@@ -185,7 +186,7 @@ var allImages = [];
 
 
 
-function chosenAnimal(element){
+function chosenTangram(element){
 	return element == experiment.chosenpic
 }
 
@@ -227,11 +228,15 @@ function startExperiment() {
 	//load images according to trial order
 	for(i=0; i<allTrials.length; i++) {
 		subImages = allTrials[i].slice();
-		items = subImages.splice(0,2)
-		newImages = shuffle(items)
-		 for(j=0; j<=1; j++) {
-		 	allImages.push(newImages[j]);
-		 }
+		items = subImages.splice(0,2);
+		shuffle(items);
+		for(j=0; j<=1; j++) {
+		 	directorImages.push(items[j]);
+		}
+		shuffle(items);
+		for(k=0; j<=1; j++) {
+			matcherImages.push(items[k]);
+		}
 	};
 
 	//load all animal sounds and arrange in trial order
@@ -312,63 +317,6 @@ var experiment = {
 			$("#parentpractice").fadeIn(500);
 		}, 1500)
 	},
-
-	//sets up and allows participants to play "the dot game"
-	// training: function(dotgame) {
-
-	// 	console.log('TRAINING STARTS')
-	// 	var allDots = ["dot_1", "dot_2", "dot_3", "dot_4", "dot_5", 
-	// 					"dot_smiley1", "dot_smiley2", "dot_smiley3", 
-	// 					"dot_smiley4", "dot_smiley5"];
-	// 	var xcounter = 0;
-	// 	var dotCount = 5;
-
-	// 	var dotx = [];
-	// 	var doty = [];
-
-	// 	if (dotgame === 0) {
-	// 		for (i = 0; i < dotCount; i++) {
-	// 			createDot(dotx, doty, i, "");
-	// 		}
-	// 	} else {
-	// 		for (i = 0; i < dotCount; i++) {
-	// 			createDot(dotx, doty, i, "smiley");
-	// 		}
-	// 	}
-	// 	showSlide("training");
-	// 	$('.dot').bind(' touchstart', function(event) {
-	//     	var dotID = $(event.currentTarget).attr('id');
-
-	//     	//only count towards completion clicks on dots that have not yet been clicked
-	//     	if (allDots.indexOf(dotID) === -1) {
-	//     		return;
-	//     	}
-	//     	allDots.splice(allDots.indexOf(dotID), 1);
-	//     	document.getElementById(dotID).src = "dots/x.jpg";
-	//     	xcounter++
-	//     	if (xcounter === dotCount) {
-   		
-	// 	    	if (dotgame != 0) {
-	//     			globalGame.trainingOver = true;
-	//     		}
-	//     		setTimeout(function () {
-	//     			$("#training").hide();
-	//     			if (dotgame === 0) {		
-	//     				//hide old x marks before game begins again
-	//     				var dotID;
-	//     				for (i = 1; i <= dotCount; i++) {
-	//     					dotID = "dot_" + i;
-	//     					training.removeChild(document.getElementById(dotID));
-	//     				}
-	// 					experiment.training();
-	// 					dotgame++; 
-	// 				} else {
-	// 						showSlide("child");
-	// 				}
-	// 			}, normalpause);
-	// 		}
-	//     });	   
-	// },
 
 	checkInput: function() {
 		// subject ID
@@ -537,20 +485,37 @@ var experiment = {
 	  	experiment.subid = globalGame.subid;
 		var objects_html = "";
 
-		// Create the object table (tr=table row; td= table data)
+		// Create the object table for director (tr=table row; td= table data)
 	    
 	   	//HTML for the first object on the left
-		leftname = "tangramimages/" + allImages[0] + ".png";
+		leftname = "tangramimages/" + directorImages[0] + ".png";
 		objects_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic"/></td>';
 
 	
 		//HTML for the first object on the right
-		rightname = "tangramimages/" + allImages[1] + ".png";
+		rightname = "tangramimages/" + directorImages[1] + ".png";
 	   	objects_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic"/></td>';
 		
 	  	objects_html += '</tr></table>';
 	    $("#objects").html(objects_html); 
-		$("#stage").fadeIn();
+		$("#directorstage").fadeIn();
+
+		// Create the object table for matcher (tr=table row; td= table data)
+
+		var objects_html = "";
+	    
+	   	//HTML for the first object on the left
+		leftname = "tangramimages/" + matcherImages[0] + ".png";
+		objects_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic"/></td>';
+
+	
+		//HTML for the first object on the right
+		rightname = "tangramimages/" + matcherImages[1] + ".png";
+	   	objects_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic"/></td>';
+		
+	  	objects_html += '</tr></table>';
+	    $("#objects").html(objects_html); 
+		$("#matcherstage").fadeIn();
 	    
 
 	    var startTime = (new Date()).getTime();
