@@ -239,14 +239,13 @@ function startExperiment() {
 		}
 	};
 
-	//load all animal sounds and arrange in trial order
- //  	for (i=0; i < animals.length; i++) {
-	//     animalSound = new WebAudioAPISound("animalsounds/"+animals[i]);
-	//     trialSounds.push(animalSound)
-	// }
+	//load sounds for feedback after each trial
+	yesSound = new WebAudioAPISound("tangramsounds/yes");
+	noSound = new WebAudioAPISound("tangramsounds/no");
+	trialSounds.push(yesSound);
+	trialSounds.push(noSound);
 
 	
-
 	// to start at beginning
 	setTimeout(function() {
 		console.log(globalGame.my_role);
@@ -497,8 +496,14 @@ var experiment = {
 	   	objects_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic"/></td>';
 		
 	  	objects_html += '</tr></table>';
-	    $("#objects").html(objects_html); 
+		
+		var target = "tangramimages/" + wordList[0] + ".png";
+		$(target).css("margin", "-8px");
+
+	    $("#objects").html(directorobjects_html); 
 		$("#directorstage").fadeIn();
+
+
 
 		// Create the object table for matcher (tr=table row; td= table data)
 
@@ -514,7 +519,7 @@ var experiment = {
 	   	objects_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic"/></td>';
 		
 	  	objects_html += '</tr></table>';
-	    $("#objects").html(objects_html); 
+	    $("#objects").html(matcherobjects_html); 
 		$("#matcherstage").fadeIn();
 	    
 
@@ -535,7 +540,7 @@ var experiment = {
 	    	globalGame.clickDisabled = false;
 	    	
 	    	//disable subsequent clicks once the participant has made their choice
-			clickDisabled = true; 
+			// clickDisabled = true; 
 
 	    	//time the participant clicked - the time the trial began
 	    	experiment.reactiontime = (new Date()).getTime() - startTime;
@@ -552,40 +557,34 @@ var experiment = {
 	    	switch(picID) {
 	    		case "leftPic":
 	    			experiment.side = "L";
-	    			experiment.chosenpic = allImages[0];
-	    			winningSound= trialSounds[animals.findIndex(chosenAnimal)]
+	    			experiment.chosenpic = matcherImages[0];
 	    			break;
-	    		case "middlePic":
-	    			experiment.side = "M";
-	    			experiment.chosenpic = allImages[1];
-	    			winningSound= trialSounds[animals.findIndex(chosenAnimal)]
 
-	    			break;
 	    		default: // "rightPic"
 	    			experiment.side = "R"
-	    			experiment.chosenpic = allImages[2];
-	    			winningSound= trialSounds[animals.findIndex(chosenAnimal)]
+	    			experiment.chosenpic = matcherImages[1];
 	    	}
-
-	    	//Play animal sound according to chosen picture
-		    setTimeout(function() {winningSound.play();}, 100)
-
-		    console.log(experiment.chosenpic)
 			
 			//If the child picked the picture that matched with the word, then they were correct. If they did not, they were not correct.
 			if (experiment.chosenpic === experiment.word) {
 				experiment.response = "Y";
+				winningSound = trialSounds[0]
 			} else {
 				experiment.response = "N"
+				winningSound = trialSounds[1]
 			}
+
+			//Play animal sound according to chosen picture
+		    setTimeout(function() {winningSound.play();}, 100)
+
+		    console.log(experiment.chosenpic)
 
 			//what kind of trial was this?
 			experiment.trialtype = allTrials[experiment.trialnum][0];
 
 
-			//Add one to the counter and process the data to be saved; the child completed another "round" of the 
+			//Add one to the counter and process the data to be saved
 			experiment.processOneRow();
-
 
 
 	    $(document.getElementById(picID)).css('margin', "-8px");
@@ -593,7 +592,8 @@ var experiment = {
 			// $(document.getElementById(picID)).animate({'margin-top': '-60px'}, 'fast');
 
 			//remove the pictures from the image array that have been used, and the word from the wordList that has been used
-			allImages.splice(0, 3);
+			matcherImages.splice(0, 2);
+			directorImages.splice(0, 2);
 			wordList.splice(0, 1);
 
 
