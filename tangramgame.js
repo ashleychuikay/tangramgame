@@ -306,6 +306,24 @@ var experiment = {
 			$(".correctWord").html(parentList[globalGame.trialnum]);
 			$("#parentstudy").fadeIn(500);
 		}, 2500)
+		// Create the object table for director (tr=table row; td= table data)
+	    
+	   	//HTML for the first object on the left
+		leftname = "tangramimages/" + directorImages[0] + ".png";
+		directorobjects_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic"/></td>';
+
+	
+		//HTML for the first object on the right
+		rightname = "tangramimages/" + directorImages[1] + ".png";
+	   	directorobjects_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic"/></td>';
+		
+	  	directorobjects_html += '</tr></table>';
+		
+		var target = "tangramimages/" + wordList[0] + ".png";
+		$(target).css("margin", "-8px");
+
+	    $("#objects").html(directorobjects_html); 
+		$("#directorstage").fadeIn();
 	},
 
 	parentPractice: function(){
@@ -482,43 +500,23 @@ var experiment = {
   	next: function(counter) {
 
 	  	experiment.subid = globalGame.subid;
-		var objects_html = "";
-
-		// Create the object table for director (tr=table row; td= table data)
-	    
-	   	//HTML for the first object on the left
-		leftname = "tangramimages/" + directorImages[0] + ".png";
-		objects_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic"/></td>';
-
-	
-		//HTML for the first object on the right
-		rightname = "tangramimages/" + directorImages[1] + ".png";
-	   	objects_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic"/></td>';
-		
-	  	objects_html += '</tr></table>';
-		
-		var target = "tangramimages/" + wordList[0] + ".png";
-		$(target).css("margin", "-8px");
-
-	    $("#objects").html(directorobjects_html); 
-		$("#directorstage").fadeIn();
-
+		var directorobjects_html = "";
 
 
 		// Create the object table for matcher (tr=table row; td= table data)
 
-		var objects_html = "";
+		var matcherobjects_html = "";
 	    
 	   	//HTML for the first object on the left
 		leftname = "tangramimages/" + matcherImages[0] + ".png";
-		objects_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic"/></td>';
+		matcherobjects_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic"/></td>';
 
 	
 		//HTML for the first object on the right
 		rightname = "tangramimages/" + matcherImages[1] + ".png";
-	   	objects_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic"/></td>';
+	   	matcherobjects_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic"/></td>';
 		
-	  	objects_html += '</tr></table>';
+	  	matcherobjects_html += '</tr></table>';
 	    $("#objects").html(matcherobjects_html); 
 		$("#matcherstage").fadeIn();
 	    
