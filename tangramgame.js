@@ -12,21 +12,65 @@ xhr.onreadystatechange = function () {
 
     trials = $.csv.toArrays(xhr.responseText);
 
-    allTrials = new Array;
+    switchSpeaker = function(speaker) {
+    	return speaker == "Child" ? "Parent" : "Child"
+    }
 
-		for(i=0; i<trials.length; i++){
-			newArr = trials[i].slice();	
 
-			for(j=1; j<=4; j++){
-				subArr = newArr.slice();
-				subArr.push(subArr[j]);
-				subArr.splice(1,4);
-				allTrials.push(subArr);
-			}
-		};
+    shuffledTrials = shuffle(trials);
+    parentItems = shuffledTrials.slice(0,Math.floor(shuffledTrials.length/2)-1);
+    childItems = shuffledTrials.slice(Math.floor(shuffledTrials.length/2),shuffledTrials.length);
 
-		startExperiment(allTrials)
-		console.log(allTrials)
+
+    parentPairs = new Array;
+    childPairs = new Array;
+
+
+    for(i=0; i<parentItems.length; i++) {
+    	parentPairs.push({target: parentItems[i][0], foils: shuffle(parentItems[i].splice(1, 3)), speaker: "Child"})
+    	childPairs.push({target: childItems[i][0], foils: shuffle(childItems[i].splice(1, 3)), speaker: "Parent"})
+    }
+
+   function makeBlock() {
+
+	   blockTrials = new Array; 
+
+	   shuffle(parentPairs)
+	   shuffle(childPairs)
+	   
+	   for(i=0; i<parentItems.length; i++) {
+	   	parentPairs[i].speaker = switchSpeaker(parentPairs[i].speaker)
+	   	childPairs[i].speaker = switchSpeaker(childPairs[i].speaker)
+
+	   	blockTrials.push(new Array(parentPairs[i].target, parentPairs[i].foils.pop(), parentPairs[i].speaker))
+	   	blockTrials.push(new Array(childPairs[i].target, childPairs[i].foils.pop(), childPairs[i].speaker))
+	   }
+
+	return blockTrials
+   }
+
+   blockTrials = makeBlock()
+
+   console.log(blockTrials)
+   startExperiment(allTrials)
+
+
+  //   allTrials = new Array;
+
+		// for(i=0; i<trials.length; i++){
+		// 	newArr = trials[i].slice();	
+
+		// 	for(j=1; j<=4; j++){
+		// 		subArr = newArr.slice();
+		// 		subArr.push(subArr[j]);
+		// 		subArr.splice(1,4);
+		// 		allTrials.push(subArr);
+		// 	}
+		// };
+
+		//startExperiment(allTrials)
+		//console.log(allTrials)
+
   }
 };
 xhr.send();
