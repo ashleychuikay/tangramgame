@@ -1,3 +1,24 @@
+//Tangram Game
+
+//Write function to create blocks for trials
+makeBlock = function() {
+
+   blockTrials = new Array; 
+
+   shuffle(parentPairs);
+   shuffle(childPairs);
+	   
+   for(i=0; i<parentItems.length; i++) {
+   	parentPairs[i].speaker = switchSpeaker(parentPairs[i].speaker);
+   	childPairs[i].speaker = switchSpeaker(childPairs[i].speaker);
+
+   	blockTrials.push(new Array(parentPairs[i].target, parentPairs[i].foils.pop(), parentPairs[i].speaker));
+   	blockTrials.push(new Array(childPairs[i].target, childPairs[i].foils.pop(), childPairs[i].speaker));
+   };
+
+return blockTrials;
+};
+
 
 //Read in .csv from server
 var xhr = new XMLHttpRequest(),
@@ -11,15 +32,21 @@ xhr.onreadystatechange = function () {
   if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
 
     trials = $.csv.toArrays(xhr.responseText);
+    
+    allTrials = new Array;
 
     switchSpeaker = function(speaker) {
     	return speaker == "Child" ? "Parent" : "Child"
-    }
+    };
 
+    
+    shuffledTrials = shuffle(trials.slice());
+    parentItems = shuffledTrials.slice(0,Math.floor(shuffledTrials.length/2));
+    childItems = shuffledTrials.slice(Math.floor(shuffledTrials.length/2),shuffledTrials.length+1);
 
-    shuffledTrials = shuffle(trials);
-    parentItems = shuffledTrials.slice(0,Math.floor(shuffledTrials.length/2)-1);
-    childItems = shuffledTrials.slice(Math.floor(shuffledTrials.length/2),shuffledTrials.length);
+    console.log(parentItems);
+    console.log(childItems);
+    // console.log(shuffledTrials)
 
 
     parentPairs = new Array;
@@ -27,31 +54,18 @@ xhr.onreadystatechange = function () {
 
 
     for(i=0; i<parentItems.length; i++) {
-    	parentPairs.push({target: parentItems[i][0], foils: shuffle(parentItems[i].splice(1, 3)), speaker: "Child"})
-    	childPairs.push({target: childItems[i][0], foils: shuffle(childItems[i].splice(1, 3)), speaker: "Parent"})
+    	parentPairs.push({target: parentItems[i][0], foils: shuffle(parentItems[i].splice(1, 4)), speaker: "Child"})
+    	childPairs.push({target: childItems[i][0], foils: shuffle(childItems[i].splice(1, 4)), speaker: "Parent"})
     }
 
-   function makeBlock() {
+    for(j=0; j<=3; j++) {
+    	block = makeBlock();
+    	allTrials.push(block);
+    }
 
-	   blockTrials = new Array; 
+   // blockTrials = makeBlock()
 
-	   shuffle(parentPairs)
-	   shuffle(childPairs)
-	   
-	   for(i=0; i<parentItems.length; i++) {
-	   	parentPairs[i].speaker = switchSpeaker(parentPairs[i].speaker)
-	   	childPairs[i].speaker = switchSpeaker(childPairs[i].speaker)
-
-	   	blockTrials.push(new Array(parentPairs[i].target, parentPairs[i].foils.pop(), parentPairs[i].speaker))
-	   	blockTrials.push(new Array(childPairs[i].target, childPairs[i].foils.pop(), childPairs[i].speaker))
-	   }
-
-	return blockTrials
-   }
-
-   blockTrials = makeBlock()
-
-   console.log(blockTrials)
+   console.log(allTrials)
    startExperiment(allTrials)
 
 
@@ -172,12 +186,12 @@ createDot = function(dotx, doty, i, tag) {
 
 
 //for dot game
-var images = new Array();
-var dots = ["dot_1", "dot_2", "dot_3", "dot_4", "dot_5", "x", "dot_smiley"];
-for (i = 0; i<dots.length; i++) {
-	images[i] = new Image();
-	images[i].src = "dots/" + dots[i] + ".jpg";
-}
+// var images = new Array();
+// var dots = ["dot_1", "dot_2", "dot_3", "dot_4", "dot_5", "x", "dot_smiley"];
+// for (i = 0; i<dots.length; i++) {
+// 	images[i] = new Image();
+// 	images[i].src = "dots/" + dots[i] + ".jpg";
+// }
 
 //for practice
 var easyTrial = ["apple", "banana", "orange"];
@@ -189,6 +203,12 @@ var trialImages = [];
 // var trialSounds = [];
 
 var tangrams = ["A1", "B1", "C1", "D1", "E1", "F1", "G1", "H1", "I1", "J1", "K1", "L1"];
+var tangramimages = new Array();
+for(i=0; i<tangrams.length; i++) {
+	tangramimages[i] = new Image();
+	tangramimages[i].src = "images/" + tangrams[i] + ".jpg";
+};
+
 var wordList = [];
 var directorImages = [];
 var matcherImages = [];
