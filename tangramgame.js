@@ -19,6 +19,10 @@ makeBlock = function() {
 return blockTrials;
 };
 
+switchSpeaker = function(speaker) {
+	return speaker == "Child" ? "Parent" : "Child";
+};
+
 
 //Read in .csv from server
 var xhr = new XMLHttpRequest(),
@@ -35,10 +39,6 @@ xhr.onreadystatechange = function () {
     
     allTrials = new Array;
 
-    switchSpeaker = function(speaker) {
-    	return speaker == "Child" ? "Parent" : "Child"
-    };
-
     
     shuffledTrials = shuffle(trials.slice());
     parentItems = shuffledTrials.slice(0,Math.floor(shuffledTrials.length/2));
@@ -54,38 +54,22 @@ xhr.onreadystatechange = function () {
 
 
     for(i=0; i<parentItems.length; i++) {
-    	parentPairs.push({target: parentItems[i][0], foils: shuffle(parentItems[i].splice(1, 4)), speaker: "Child"})
-    	childPairs.push({target: childItems[i][0], foils: shuffle(childItems[i].splice(1, 4)), speaker: "Parent"})
-    }
+    	parentPairs.push({target: parentItems[i][0], foils: shuffle(parentItems[i].splice(1, 4)), speaker: "Child"});
+    	childPairs.push({target: childItems[i][0], foils: shuffle(childItems[i].splice(1, 4)), speaker: "Parent"});
+    };
+
+    console.log(parentPairs)
+    console.log(childPairs)
 
     for(j=0; j<=3; j++) {
     	block = makeBlock();
     	allTrials.push(block);
-    }
-
-   // blockTrials = makeBlock()
+    };
 
    console.log(allTrials)
    startExperiment(allTrials)
 
-
-  //   allTrials = new Array;
-
-		// for(i=0; i<trials.length; i++){
-		// 	newArr = trials[i].slice();	
-
-		// 	for(j=1; j<=4; j++){
-		// 		subArr = newArr.slice();
-		// 		subArr.push(subArr[j]);
-		// 		subArr.splice(1,4);
-		// 		allTrials.push(subArr);
-		// 	}
-		// };
-
-		//startExperiment(allTrials)
-		//console.log(allTrials)
-
-  }
+  };
 };
 xhr.send();
 
@@ -93,7 +77,7 @@ xhr.send();
 // disables all scrolling functionality to fix a slide in place on the ipad
 document.ontouchmove = function(event){
     event.preventDefault();
-}
+};
 
 
 // ---------------- PARAMETERS ------------------
@@ -259,28 +243,26 @@ function startExperiment() {
 	//CONTROL FLOW
 
 	//shuffle trials to randomize order, check to make sure the same set of tangrams does not appear back to back
-	
-	shuffle(allTrials)
 
-	function checkTrials() {
-		shuffle(allTrials)
-		for(i=0; i<allTrials.length-1; i++) {
-			if(allTrials[i+1].includes(allTrials[i][0])) {
-				var temp = allTrials[i+1];
-				allTrials[i+1] = allTrials[i+2];
-				allTrials[i+2] = temp;
+	// function checkTrials() {
+	// 	shuffle(allTrials)
+	// 	for(i=0; i<allTrials.length-1; i++) {
+	// 		if(allTrials[i+1].includes(allTrials[i][0])) {
+	// 			var temp = allTrials[i+1];
+	// 			allTrials[i+1] = allTrials[i+2];
+	// 			allTrials[i+2] = temp;
 
-				if(allTrials[i+2].includes(allTrials[i+1][0])) {
-				checkTrials(allTrials);
-				}
-			}
-			if(allTrials[allTrials.length-2].includes(allTrials[allTrials.length-1][0])) {
-				checkTrials(allTrials);
-			}
-		}
-	};
+	// 			if(allTrials[i+2].includes(allTrials[i+1][0])) {
+	// 			checkTrials(allTrials);
+	// 			}
+	// 		}
+	// 		if(allTrials[allTrials.length-2].includes(allTrials[allTrials.length-1][0])) {
+	// 			checkTrials(allTrials);
+	// 		}
+	// 	}
+	// };
 
-	checkTrials(allTrials);
+	// checkTrials(allTrials);
 
 	//construct wordList for correct answers
 	for(i=0; i<allTrials.length; i++){
@@ -625,7 +607,7 @@ var experiment = {
 	    		default: // "rightPic"
 	    			experiment.side = "R"
 	    			experiment.chosenpic = matcherImages[1];
-	    	}
+	    	};
 			
 			//If the child picked the picture that matched with the word, then they were correct. If they did not, they were not correct.
 			if (experiment.chosenpic === experiment.word) {
@@ -634,12 +616,12 @@ var experiment = {
 			} else {
 				experiment.response = "N"
 				winningSound = trialSounds[1]
-			}
+			};
 
 			//Play animal sound according to chosen picture
-		    setTimeout(function() {winningSound.play();}, 100)
+		    setTimeout(function() {winningSound.play();}, 100);
 
-		    console.log(experiment.chosenpic)
+		    console.log(experiment.chosenpic);
 
 			//what kind of trial was this?
 			experiment.trialtype = allTrials[experiment.trialnum][0];
@@ -650,7 +632,7 @@ var experiment = {
 
 
 	    $(document.getElementById(picID)).css('margin', "-8px");
-	    console.log(picID)
+	    console.log(picID);
 			// $(document.getElementById(picID)).animate({'margin-top': '-60px'}, 'fast');
 
 			//remove the pictures from the image array that have been used, and the word from the wordList that has been used
