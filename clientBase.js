@@ -171,22 +171,38 @@ var sharedSetup = function(game) {
   });
 
 
-  // Tell server when child selects a picture
-  $('#objects').on('click touchstart', function(event){
-    if (globalGame.clickDisabled) return;
-    game.socket.send('selected');
-    globalGame.clickDisabled = true;
+  // Tell server when matcher selects a picture
+  $('#doneTrial').on('click', function(){
+    game.socket.send('nextTrial');
+    $('#matcherstage').hide();
   });
 
-  game.socket.on('selected', function() {
-        $('#parentstudy').hide();
+  game.socket.on('nextTrial', function(){
+    $('#directorstage').hide();
     globalGame.trialnum++;
     if (globalGame.trialnum == numTrials) {
       experiment.end();
     } else {
-      experiment.parentStudy();
+      experiment.matcher(globalGame.trialnum);
     }
   });
+
+
+  // $('#objects').on('click touchstart', function(event){
+  //   if (globalGame.clickDisabled) return;
+  //   game.socket.send('selected');
+  //   globalGame.clickDisabled = true;
+  // });
+
+  // game.socket.on('selected', function() {
+  //       $('#parentstudy').hide();
+  //   globalGame.trialnum++;
+  //   if (globalGame.trialnum == numTrials) {
+  //     experiment.end();
+  //   } else {
+  //     experiment.parentStudy();
+  //   }
+  // });
 
   // Tell server when experiment is finished
   $('#finish').on('showSlide', function(event) {

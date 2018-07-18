@@ -353,6 +353,8 @@ var experiment = {
 			$("#parentstudy").fadeIn(500);
 		}, 2500)
 		// Create the object table for director (tr=table row; td= table data)
+
+		var directorobjects_html = "";
 	    
 	   	//HTML for the first object on the left
 		leftname = "tangramimages/" + directorImages[0] + ".png";
@@ -519,7 +521,13 @@ var experiment = {
 		});
 	},
 	
-
+	//break between blocks
+	break: function() {
+		setTimeout(function() {
+			$()
+		})
+	}
+	
 	//the end of the experiment
     end: function () {
     	setTimeout(function () {
@@ -543,12 +551,10 @@ var experiment = {
 
 
     // MAIN DISPLAY FUNCTION
-  	next: function(counter) {
+  	matcher: function(counter) {
 
 	  	experiment.subid = globalGame.subid;
-		var directorobjects_html = "";
-
-
+		
 		// Create the object table for matcher (tr=table row; td= table data)
 
 		var matcherobjects_html = "";
@@ -590,7 +596,7 @@ var experiment = {
 	    	experiment.reactiontime = (new Date()).getTime() - startTime;
 
 	    	experiment.trialnum = counter;
-	    	experiment.word = wordList[0]
+	    	experiment.word = wordList[0];
 	    	experiment.pic1 = allImages[0];
 	    	experiment.pic2 = allImages[1];
 	    	experiment.pic3 = allImages[2];
@@ -605,17 +611,63 @@ var experiment = {
 	    			break;
 
 	    		default: // "rightPic"
-	    			experiment.side = "R"
+	    			experiment.side = "R";
 	    			experiment.chosenpic = matcherImages[1];
 	    	};
 			
 			//If the child picked the picture that matched with the word, then they were correct. If they did not, they were not correct.
+			// if (experiment.chosenpic === experiment.word) {
+			// 	experiment.response = "Y";
+			// 	winningSound = trialSounds[0];
+			// } else {
+			// 	experiment.response = "N";
+			// 	winningSound = trialSounds[1];
+			// };
+
+			// //Play animal sound according to chosen picture
+		 //    setTimeout(function() {winningSound.play();}, 100);
+
+		 //    console.log(experiment.chosenpic);
+
+			// //what kind of trial was this?
+			// experiment.trialtype = allTrials[experiment.trialnum][0];
+
+
+			// //Add one to the counter and process the data to be saved
+			// experiment.processOneRow();
+
+
+	    $(document.getElementById(picID)).css('margin', "-8px");
+	    console.log(picID);
+			// $(document.getElementById(picID)).animate({'margin-top': '-60px'}, 'fast');
+
+			//hide animals and show only background for 2 seconds
+			// setTimeout(function() {
+			// 	$(".pic").delay().fadeOut(2000);
+			// 	counter++;
+			// 	if (counter == 10|| counter == 20|| counter == 30) {
+			// 		setTimeout(function() {
+			// 			experiment.break()
+			// 		}, 1000)
+			// 	} else if (counter === numTrials) {
+			// 		setTimeout(function() {experiment.end()}, 1000)
+			// 		return;
+			// 	} else {
+			// 		setTimeout(function() {
+			// 			experiment.directorStudy();
+			// 		}, 3000);
+			// 	}
+			// });
+		});
+		
+		$('#doneTrial').on('click', function(event) {
+			//If the child picked the picture that matched with the word, then they were correct. If they did not, they were not correct.
 			if (experiment.chosenpic === experiment.word) {
 				experiment.response = "Y";
-				winningSound = trialSounds[0]
+				winningSound = trialSounds[0];
 			} else {
-				experiment.response = "N"
-				winningSound = trialSounds[1]
+				experiment.response = "N";
+				winningSound = trialSounds[1];
 			};
 
 			//Play animal sound according to chosen picture
@@ -626,35 +678,31 @@ var experiment = {
 			//what kind of trial was this?
 			experiment.trialtype = allTrials[experiment.trialnum][0];
 
-
 			//Add one to the counter and process the data to be saved
 			experiment.processOneRow();
-
-
-	    $(document.getElementById(picID)).css('margin', "-8px");
-	    console.log(picID);
-			// $(document.getElementById(picID)).animate({'margin-top': '-60px'}, 'fast');
 
 			//remove the pictures from the image array that have been used, and the word from the wordList that has been used
 			matcherImages.splice(0, 2);
 			directorImages.splice(0, 2);
 			wordList.splice(0, 1);
 
-
-			//hide animals and show only background for 2 seconds
 			setTimeout(function() {
 				$(".pic").delay().fadeOut(2000);
-				counter++; 
-				if (counter === numTrials) {
+				counter++;
+				if (counter == 10|| counter == 20|| counter == 30) {
+					setTimeout(function() {
+						experiment.break()
+					}, 1000)
+				} else if (counter === numTrials) {
 					setTimeout(function() {experiment.end()}, 1000)
 					return;
 				} else {
 					setTimeout(function() {
-						experiment.next(counter)
+						experiment.directorStudy();
 					}, 3000);
 				}
 			});
-		});
+		})
 	},
 }
 

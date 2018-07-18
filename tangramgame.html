@@ -39,11 +39,11 @@
           <input type="text" id="subjectID" name="subjectID" size="30"> 
         </p>
 
-        <p class="block-text">
+<!--         <p class="block-text">
           parent or child: <br>
           <input type="radio" id="parentchild" name="parentchild" size="30"> parent <br/>
           <input type="radio" id="parentchild" name="parentchild" size="30"> child <br/>
-        </p>
+        </p> -->
 
         <button type="button" id="beforeStudy" onClick="this.blur(); experiment.checkInput()">Start</button>
 
@@ -74,19 +74,20 @@
         <center><button type="button" id="beginStudy" onClick="this.blur()">Begin</button></center>
   </div>
 
-  <div class="slide" id="parentstudy"> 
+  <!-- <div class="slide" id="parentstudy"> 
     <p>Please ask your child to tap on the</p>
     <p class="correctWord"></p>
-  </div>
+  </div> -->
 
   <div class="slide" id="directorstage">
 
     <div id="objects"> </div>
   </div>
 
-    <div class="slide" id="matcherstage">
+  <div class="slide" id="matcherstage">
 
     <div id="objects"> </div>
+    <center><button type="button" id="doneTrial" onClick="this.blur()">Next</button></center>
   </div>
 
 

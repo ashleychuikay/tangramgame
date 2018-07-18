@@ -115,15 +115,22 @@ var onMessage = function(client,message) {
   });
    break;
 
+  // case 'selected':
+  //  _.map(others, function(p) {
+  //   p.player.instance.emit('selected')
+  //  });
+  //  break;
 
   // go to next trial
-  case 'selected':
-   _.map(others, function(p) {
-    p.player.instance.emit('selected')
-   });
-   break;
+
+  case 'nextTrial':
+  _.map(others, function(p) {
+    p.player.instance.emit('nextTrial')
+  });
+  break;
 
   // finish game
+  
   case 'end':
    _.map(others, function(p) {
     p.player.instance.emit('end')
