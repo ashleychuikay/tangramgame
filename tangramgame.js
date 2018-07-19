@@ -312,7 +312,7 @@ var experiment = {
 	subid: "",
 		//inputed at beginning of experiment
 	parentchild: "",
-		//whether parent or child starts as director inputed at begininng of experiment
+		//whether parent or child is the director on a given trial
 	trialnum: 0,
 		//trial number
 	order: 1,
@@ -523,10 +523,8 @@ var experiment = {
 	
 	//break between blocks
 	break: function() {
-		setTimeout(function() {
-			$()
-		})
-	}
+		showSlide('break');
+	},
 	
 	//the end of the experiment
     end: function () {
@@ -541,8 +539,8 @@ var experiment = {
 	processOneRow: function () {
 		var dataforRound = experiment.subid; 
 		dataforRound += "," + experiment.trialnum + "," + experiment.word;
-		dataforRound += "," + experiment.pic1 + "," + experiment.pic2 + "," + experiment.pic3;
-		dataforRound += "," + experiment.side + "," + experiment.chosenpic + "," + experiment.response + "," + experiment.trialtype;
+		dataforRound += "," + experiment.pic1 + "," + experiment.pic2;
+		dataforRound += "," + experiment.side + "," + experiment.chosenpic + "," + experiment.response + "," + experiment.parentchild;
 		dataforRound += "," + experiment.date + "," + experiment.timestamp + "," + experiment.reactiontime + "\n";
 		console.log(dataforRound)
 		$.post("https://callab.uchicago.edu/experiments/animalgame/gamecode/animalgamesave.php", {postresult_string : dataforRound});	
@@ -554,6 +552,7 @@ var experiment = {
   	matcher: function(counter) {
 
 	  	experiment.subid = globalGame.subid;
+	  	experiment.parentchild = allTrials[counter][2];
 		
 		// Create the object table for matcher (tr=table row; td= table data)
 
@@ -592,8 +591,6 @@ var experiment = {
 	    	//disable subsequent clicks once the participant has made their choice
 			// clickDisabled = true; 
 
-	    	//time the participant clicked - the time the trial began
-	    	experiment.reactiontime = (new Date()).getTime() - startTime;
 
 	    	experiment.trialnum = counter;
 	    	experiment.word = wordList[0];
@@ -661,6 +658,10 @@ var experiment = {
 		});
 		
 		$('#doneTrial').on('click', function(event) {
+
+			//time the participant clicked next - the time the trial began
+	    	experiment.reactiontime = (new Date()).getTime() - startTime;
+
 			//If the child picked the picture that matched with the word, then they were correct. If they did not, they were not correct.
 			if (experiment.chosenpic === experiment.word) {
 				experiment.response = "Y";
@@ -670,13 +671,13 @@ var experiment = {
 				winningSound = trialSounds[1];
 			};
 
-			//Play animal sound according to chosen picture
+			//Play sound according to chosen picture
 		    setTimeout(function() {winningSound.play();}, 100);
 
 		    console.log(experiment.chosenpic);
 
 			//what kind of trial was this?
-			experiment.trialtype = allTrials[experiment.trialnum][0];
+			//experiment.trialtype = allTrials[experiment.trialnum][0];
 
 			//Add one to the counter and process the data to be saved
 			experiment.processOneRow();

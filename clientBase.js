@@ -171,7 +171,7 @@ var sharedSetup = function(game) {
   });
 
 
-  // Tell server when matcher selects a picture
+  // Tell server when matcher clicks the "next" button
   $('#doneTrial').on('click', function(){
     game.socket.send('nextTrial');
     $('#matcherstage').hide();
@@ -180,7 +180,11 @@ var sharedSetup = function(game) {
   game.socket.on('nextTrial', function(){
     $('#directorstage').hide();
     globalGame.trialnum++;
-    if (globalGame.trialnum == numTrials) {
+    if (globalGame.trialnum == 10|| globalGame.trialnum == 20|| globalGame.trialnum == 30) {
+          setTimeout(function() {
+            experiment.break()
+          }, 1000)
+    } else if (globalGame.trialnum == numTrials) {
       experiment.end();
     } else {
       experiment.matcher(globalGame.trialnum);
