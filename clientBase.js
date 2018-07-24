@@ -182,12 +182,14 @@ var sharedSetup = function(game) {
     globalGame.trialnum++;
     if (globalGame.trialnum == 10|| globalGame.trialnum == 20|| globalGame.trialnum == 30) {
           setTimeout(function() {
-            experiment.break()
+            experiment.directorBreak()
           }, 1000)
     } else if (globalGame.trialnum == numTrials) {
       experiment.end();
     } else {
-      experiment.matcher(globalGame.trialnum);
+      setTimeout(function() {
+        experiment.matcherStudy(globalGame.trialnum);
+      }, 3000)
     }
   });
 

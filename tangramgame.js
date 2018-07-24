@@ -123,60 +123,6 @@ getCurrentTime = function() {
 	return (hours + ":" + minutes);
 }
 
-createDot = function(dotx, doty, i, tag) {
-	var dots;
-	if (tag === "smiley") {
-		dots = ["smiley1", "smiley2", "smiley3", "smiley4", "smiley5"];
-	} else {
-		dots = [1, 2, 3, 4, 5];
-	}
-
-	var dot = document.createElement("img");
-	dot.setAttribute("class", "dot");
-	dot.id = "dot_" + dots[i];
-	if (tag === "smiley") {
-		dot.src = "dots/dot_" + "smiley" + ".jpg";
-	} else {
-		dot.src = "dots/dot_" + dots[i] + ".jpg";
-	}
-
-    var x = Math.floor(Math.random()*650);
-    var y = Math.floor(Math.random()*540);
-
-    var invalid = "true";
-
-    //make sure dots do not overlap
-    while (true) {
-    	invalid = "true";
-	   	for (j = 0; j < dotx.length ; j++) {
-    		if (Math.abs(dotx[j] - x) + Math.abs(doty[j] - y) < 250) {
-    			var invalid = "false";
-    			break; 
-    		}
-		}
-		if (invalid === "true") {
- 			dotx.push(x);
-  		  	doty.push(y);
-  		  	break;	
-  	 	}
-  	 	x = Math.floor(Math.random()*400);
-   		y = Math.floor(Math.random()*400);
-	}
-
-    dot.setAttribute("style","position:absolute;left:"+x+"px;top:"+y+"px;");
-   	training.appendChild(dot);
-   	// $("#allDots").appendChild(dot);
-}
-
-
-//for dot game
-// var images = new Array();
-// var dots = ["dot_1", "dot_2", "dot_3", "dot_4", "dot_5", "x", "dot_smiley"];
-// for (i = 0; i<dots.length; i++) {
-// 	images[i] = new Image();
-// 	images[i].src = "dots/" + dots[i] + ".jpg";
-// }
-
 //for practice
 var easyTrial = ["apple", "banana", "orange"];
 var hardTrial = ["asparagus", "artichoke", "onion"];
@@ -239,30 +185,6 @@ function chosenTangram(element){
 }
 
 function startExperiment() {
-
-	//CONTROL FLOW
-
-	//shuffle trials to randomize order, check to make sure the same set of tangrams does not appear back to back
-
-	// function checkTrials() {
-	// 	shuffle(allTrials)
-	// 	for(i=0; i<allTrials.length-1; i++) {
-	// 		if(allTrials[i+1].includes(allTrials[i][0])) {
-	// 			var temp = allTrials[i+1];
-	// 			allTrials[i+1] = allTrials[i+2];
-	// 			allTrials[i+2] = temp;
-
-	// 			if(allTrials[i+2].includes(allTrials[i+1][0])) {
-	// 			checkTrials(allTrials);
-	// 			}
-	// 		}
-	// 		if(allTrials[allTrials.length-2].includes(allTrials[allTrials.length-1][0])) {
-	// 			checkTrials(allTrials);
-	// 		}
-	// 	}
-	// };
-
-	// checkTrials(allTrials);
 
 	//construct wordList for correct answers
 	for(i=0; i<allTrials.length; i++){
@@ -401,7 +323,7 @@ var experiment = {
 		var numTrials = 4
 
 		experiment.subid = globalGame.subid;
-		$("#child").hide();
+		$("#childinstructions").hide();
 
 		var objects_html = "";
 
@@ -434,7 +356,7 @@ var experiment = {
 	    	globalGame.clickDisabled = false;
 	    	
 	    	//disable subsequent clicks once the participant has made their choice
-			clickDisabled = true; 
+			// clickDisabled = true; 
 
 			
 	    	//time the participant clicked - the time the trial began
@@ -453,7 +375,6 @@ var experiment = {
 	    	experiment.word = practiceWords[0]
 	    	experiment.pic1 = practiceImages[0];
 	    	experiment.pic2 = practiceImages[1];
-	    	experiment.pic3 = practiceImages[2];
 
 	    	//Was the picture clicked on the right or the left?
 	    	var picID = $(event.currentTarget).attr('id');
@@ -462,21 +383,15 @@ var experiment = {
 	    		case "leftPic1":
 	    			experiment.side = "L";
 	    			experiment.chosenpic = practiceImages[0];
-	    			// 'winningSound= trialSounds[animals.findIndex(chosenAnimal)]
 	    			break;
-	    		case "middlePic1":
-	    			experiment.side = "M";
-	    			experiment.chosenpic = practiceImages[1];
-	    			// winningSound= trialSounds[animals.findIndex(chosenAnimal)]
-	    			break;
+
 	    		default: // "rightPic"
 	    			experiment.side = "R"
-	    			experiment.chosenpic = practiceImages[2];
-	    			// winningSound= trialSounds[animals.findIndex(chosenAnimal)]
+	    			experiment.chosenpic = practiceImages[1];		
 	    	}
 
-	    	//Play animal sound according to chosen picture
-		    // setTimeout(function() {winningSound.play();}, 100)
+	    	//Play sound according to chosen picture
+		    setTimeout(function() {winningSound.play();}, 100)
 
 		    console.log(experiment.chosenpic)
 		    
@@ -484,24 +399,26 @@ var experiment = {
 			//If the child picked the picture that matched with the word, then they were correct. If they did not, they were not correct.
 			if (experiment.chosenpic === experiment.word) {
 				experiment.response = "Y";
+				winningSound = trialSounds[0];
 			} else {
-				experiment.response = "N"
+				experiment.response = "N";
+				winningSound = trialSounds[1];
 			}
 
+			//Play sound according to chosen picture
+		    setTimeout(function() {winningSound.play();}, 100);
+
 			//what kind of trial was this?
-			experiment.trialtype = "practice";
+			// experiment.trialtype = "practice";
 
-
-			//Add one to the counter and process the data to be saved; the child completed another "round" of the 
+			//Process the data to be saved 
 			experiment.processOneRow();
 
 
-
 	   	   $(document.getElementById(picID)).css('margin', "-8px");
-		// $(document.getElementById(picID)).animate({'margin-top': '-70px'}, 'fast');
 
 			//remove the pictures from the image array that have been used, and the word from the wordList that has been used
-			practiceImages.splice(0, 3);
+			practiceImages.splice(0, 2);
 			practiceWords.splice(0, 1);
 
 
@@ -522,15 +439,25 @@ var experiment = {
 	},
 	
 	//break between blocks
-	break: function() {
+	matcherBreak: function() {
 		showSlide('break');
+		setTimeout(function() {
+			experiment.matcher()
+		}, 5000)
+	},
+
+	directorBreak: function() {
+		showSlide('break');
+		setTimeout(function() {
+			experiment.directorStudy()
+		}, 5000)
 	},
 	
 	//the end of the experiment
     end: function () {
     	setTimeout(function () {
-    		$("#stage").fadeOut();
-    		$('#parentstudy').fadeOut();
+    		$("#matcherstage").fadeOut();
+    		$("#directorstudy").fadeOut();
     	}, normalpause);
     	showSlide("finish");
     },
@@ -549,11 +476,10 @@ var experiment = {
 
 
     // MAIN DISPLAY FUNCTION
-  	matcher: function(counter) {
+  	matcherStudy: function(counter) {
 
 	  	experiment.subid = globalGame.subid;
-	  	experiment.parentchild = allTrials[counter][2];
-		
+	  			
 		// Create the object table for matcher (tr=table row; td= table data)
 
 		var matcherobjects_html = "";
@@ -597,6 +523,7 @@ var experiment = {
 	    	experiment.pic1 = allImages[0];
 	    	experiment.pic2 = allImages[1];
 	    	experiment.pic3 = allImages[2];
+	    	experiment.parentchild = allTrials[experiment.trialnum][2];
 
 	    	//Was the picture clicked on the right or the left?
 	    	var picID = $(event.currentTarget).attr('id');
@@ -612,49 +539,12 @@ var experiment = {
 	    			experiment.chosenpic = matcherImages[1];
 	    	};
 			
-			//If the child picked the picture that matched with the word, then they were correct. If they did not, they were not correct.
-			// if (experiment.chosenpic === experiment.word) {
-			// 	experiment.response = "Y";
-			// 	winningSound = trialSounds[0];
-			// } else {
-			// 	experiment.response = "N";
-			// 	winningSound = trialSounds[1];
-			// };
-
-			// //Play animal sound according to chosen picture
-		 //    setTimeout(function() {winningSound.play();}, 100);
-
-		 //    console.log(experiment.chosenpic);
-
 			// //what kind of trial was this?
 			// experiment.trialtype = allTrials[experiment.trialnum][0];
 
 
-			// //Add one to the counter and process the data to be saved
-			// experiment.processOneRow();
-
-
 	    $(document.getElementById(picID)).css('margin', "-8px");
 	    console.log(picID);
-			// $(document.getElementById(picID)).animate({'margin-top': '-60px'}, 'fast');
-
-			//hide animals and show only background for 2 seconds
-			// setTimeout(function() {
-			// 	$(".pic").delay().fadeOut(2000);
-			// 	counter++;
-			// 	if (counter == 10|| counter == 20|| counter == 30) {
-			// 		setTimeout(function() {
-			// 			experiment.break()
-			// 		}, 1000)
-			// 	} else if (counter === numTrials) {
-			// 		setTimeout(function() {experiment.end()}, 1000)
-			// 		return;
-			// 	} else {
-			// 		setTimeout(function() {
-			// 			experiment.directorStudy();
-			// 		}, 3000);
-			// 	}
-			// });
 		});
 		
 		$('#doneTrial').on('click', function(event) {
@@ -679,7 +569,7 @@ var experiment = {
 			//what kind of trial was this?
 			//experiment.trialtype = allTrials[experiment.trialnum][0];
 
-			//Add one to the counter and process the data to be saved
+			//Process the data to be saved
 			experiment.processOneRow();
 
 			//remove the pictures from the image array that have been used, and the word from the wordList that has been used
@@ -692,7 +582,7 @@ var experiment = {
 				counter++;
 				if (counter == 10|| counter == 20|| counter == 30) {
 					setTimeout(function() {
-						experiment.break()
+						experiment.matcherBreak()
 					}, 1000)
 				} else if (counter === numTrials) {
 					setTimeout(function() {experiment.end()}, 1000)
@@ -700,7 +590,7 @@ var experiment = {
 				} else {
 					setTimeout(function() {
 						experiment.directorStudy();
-					}, 3000);
+					}, 1000);
 				}
 			});
 		})
