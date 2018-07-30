@@ -142,7 +142,7 @@ for(i=0; i<tangrams.length; i++) {
 var wordList = [];
 var directorImages = [];
 var matcherImages = [];
-
+var trialSounds = [];
 // shuffle practice trials
 // practiceTrials = [];
 // practiceWords = [];
@@ -220,8 +220,8 @@ function startExperiment() {
 		globalGame.my_role=="speaker1" ? showSlide("instructions") : showSlide("childinstructions");
 	},900)
 
-	//to jump around for de-bugging
-	// experiment.preStudy();
+	// to jump around for de-bugging
+	// globalGame.my_role=="speaker1" ? showSlide("directorstage") : showSlide("matcherstage");
 
 }
 
@@ -233,7 +233,7 @@ var experiment = {
 
 	subid: "",
 		//inputed at beginning of experiment
-	parentchild: "",
+	// parentchild: "",
 		//whether parent or child is the director on a given trial
 	trialnum: 0,
 		//trial number
@@ -263,7 +263,7 @@ var experiment = {
 		document.body.style.background = "white";
 		$("#prestudy").hide();
 		setTimeout(function () {
-			experiment.next(0);
+			experiment.matcherStudy(0);
 		}, normalpause);
 	},
 
@@ -296,13 +296,29 @@ var experiment = {
 		$("#directorstage").fadeIn();
 	},
 
-	parentPractice: function(){
+	directorPractice: function(){
 		$('#prepractice').hide();
-		setTimeout(function() {
-			var parentList = globalGame.practiceList.split(',');
-			$(".practiceWord").html(parentList[globalGame.trialnum]);
-			$("#parentpractice").fadeIn(500);
-		}, 1500)
+
+		// Create the object table for director (tr=table row; td= table data)
+
+		var practiceobjects_html = "";
+	    
+	   	//HTML for the first object on the left
+		leftname = "tangramimages/" + directorImages[0] + ".png";
+		directorobjects_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic"/></td>';
+
+	
+		//HTML for the first object on the right
+		rightname = "tangramimages/" + directorImages[1] + ".png";
+	   	directorobjects_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic"/></td>';
+		
+	  	directorobjects_html += '</tr></table>';
+		
+		var target = "tangramimages/" + wordList[0] + ".png";
+		$(target).css("margin", "-8px");
+
+	    $("#objects").html(practiceobjects_html); 
+		$("#directorpractice").fadeIn();
 	},
 
 	checkInput: function() {
@@ -318,14 +334,14 @@ var experiment = {
 	},
 
 	//practice trials using food items
-	practice: function(counter) {
+	matcherPractice: function(counter) {
 
 		var numTrials = 4
 
 		experiment.subid = globalGame.subid;
 		$("#childinstructions").hide();
 
-		var objects_html = "";
+		var practiceobjects_html = "";
 
 		// Create the object table (tr=table row; td= table data)
 	    
@@ -339,9 +355,9 @@ var experiment = {
 		
 	  	objects_html += '</tr></table>';
 	    $("#practiceobjects").html(objects_html); 
-		$("#practicestage").fadeIn();
+		$("#matcherpractice").fadeIn();
 
-		 var startTime = (new Date()).getTime();
+		var startTime = (new Date()).getTime();
 
 		globalGame.clickDisabled = true;
 		clickDisabled = true;
@@ -436,6 +452,10 @@ var experiment = {
 				}, 3000);
 			}, 1);
 		});
+
+		$("#donepractice").on('touchstart', function(event) {
+
+		})
 	},
 	
 	//break between blocks
