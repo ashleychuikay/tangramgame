@@ -235,7 +235,7 @@ function startExperiment() {
 	// to jump around for de-bugging
 	// globalGame.my_role=="speaker1" ? showSlide("directorstage") : showSlide("matcherstage");
 
-}
+};
 
 
 
