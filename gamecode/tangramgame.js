@@ -27,7 +27,7 @@ switchSpeaker = function(speaker) {
 //Read in .csv from server
 var xhr = new XMLHttpRequest(),
     method = "GET",
-    url = "https://raw.githubusercontent.com/ashleychuikay/tangramgame/master/tangramgametrials.csv";
+    url = "https://raw.githubusercontent.com/ashleychuikay/tangramgame/master/gamecode/tangramgametrials.csv";
     //NEW TRIAL CSV FOR TANGRAMS
 
 xhr.open(method, url, true);
@@ -133,11 +133,11 @@ var trialImages = [];
 // var trialSounds = [];
 
 var tangrams = ["A1", "B1", "C1", "D1", "E1", "F1", "G1", "H1", "I1", "J1", "K1", "L1"];
-var tangramimages = new Array();
-for(i=0; i<tangrams.length; i++) {
-	tangramimages[i] = new Image();
-	tangramimages[i].src = "images/" + tangrams[i] + ".jpg";
-};
+// var tangramimages = new Array();
+// for(i=0; i<tangrams.length; i++) {
+// 	tangramimages[i] = new Image();
+// 	tangramimages[i].src = "images/" + tangrams[i] + ".jpg";
+// };
 
 var wordList = [];
 var directorImages = [];
@@ -188,23 +188,35 @@ function startExperiment() {
 
 	//construct wordList for correct answers
 	for(i=0; i<allTrials.length; i++){
-		var word = allTrials[i][0];
-		wordList.push(word)
+		subTrial = allTrials[i].slice();
+
+		for(j=0; j<subTrial.length; j++){
+			var word = subTrial[j][0];
+			wordList.push(word)
+		}
 	};
+
+	console.log(wordList)
 
 
 	//load images according to trial order
 	for(i=0; i<allTrials.length; i++) {
 		subImages = allTrials[i].slice();
-		items = subImages.splice(0,2);
-		shuffle(items);
-		for(j=0; j<=1; j++) {
-		 	directorImages.push(items[j]);
-		}
-		shuffle(items);
-		for(k=0; j<=1; j++) {
-			matcherImages.push(items[k]);
-		}
+				
+		for(j=0; j<subImages.length;j++) {
+			newImages = subImages[j].slice();
+			items = newImages.splice(0,2);
+		
+			shuffle(items);
+			for(k=0; k<=1; k++) {
+			 	directorImages.push(items[k]);
+			}
+			
+			shuffle(items);
+			for(l=0; l<=1; l++) {
+				matcherImages.push(items[l]);
+			}
+		}	
 	};
 
 	//load sounds for feedback after each trial
@@ -267,34 +279,6 @@ var experiment = {
 		}, normalpause);
 	},
 
-	directorStudy: function(){
-		$('#prestudy').hide();
-		setTimeout(function() {
-			var parentList = globalGame.correctList.split(',');
-			$(".correctWord").html(parentList[globalGame.trialnum]);
-			$("#parentstudy").fadeIn(500);
-		}, 2500)
-		// Create the object table for director (tr=table row; td= table data)
-
-		var directorobjects_html = "";
-	    
-	   	//HTML for the first object on the left
-		leftname = "tangramimages/" + directorImages[0] + ".png";
-		directorobjects_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic"/></td>';
-
-	
-		//HTML for the first object on the right
-		rightname = "tangramimages/" + directorImages[1] + ".png";
-	   	directorobjects_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic"/></td>';
-		
-	  	directorobjects_html += '</tr></table>';
-		
-		var target = "tangramimages/" + wordList[0] + ".png";
-		$(target).css("margin", "-8px");
-
-	    $("#objects").html(directorobjects_html); 
-		$("#directorstage").fadeIn();
-	},
 
 	directorPractice: function(){
 		$('#prepractice').hide();
@@ -304,17 +288,17 @@ var experiment = {
 		var practiceobjects_html = "";
 	    
 	   	//HTML for the first object on the left
-		leftname = "tangramimages/" + directorImages[0] + ".png";
+		leftname = "practiceimages/" + practiceImages[0] + ".jpg";
 		directorobjects_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic"/></td>';
 
 	
 		//HTML for the first object on the right
-		rightname = "tangramimages/" + directorImages[1] + ".png";
+		rightname = "practiceimages/" + practiceImages[1] + ".jpg";
 	   	directorobjects_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic"/></td>';
 		
 	  	directorobjects_html += '</tr></table>';
 		
-		var target = "tangramimages/" + wordList[0] + ".png";
+		var target = "practiceimages/" + wordList[0] + ".jpg";
 		$(target).css("margin", "-8px");
 
 	    $("#objects").html(practiceobjects_html); 
@@ -328,9 +312,8 @@ var experiment = {
 			return;
 		}
   		experiment.subid = document.getElementById("subjectID").value;
-  		experiment.parentchild = document.getElementById("parentchild");
 
-		showSlide("parent");
+		// showSlide("parent");
 	},
 
 	//practice trials using food items
@@ -346,11 +329,11 @@ var experiment = {
 		// Create the object table (tr=table row; td= table data)
 	    
 	   	//HTML for the first object on the left
-		leftname = "practiceimages/" + practiceImages[0] + ".png";
+		leftname = "practiceimages/" + practiceImages[0] + ".jpg";
 		objects_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic1"/></td>';
 	
 		//HTML for the first object on the right
-		rightname = "practiceimages/" + practiceImages[1] + ".png";
+		rightname = "practiceimages/" + practiceImages[1] + ".jpg";
 	   	objects_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic1"/></td>';
 		
 	  	objects_html += '</tr></table>';
@@ -487,15 +470,45 @@ var experiment = {
 		var dataforRound = experiment.subid; 
 		dataforRound += "," + experiment.trialnum + "," + experiment.word;
 		dataforRound += "," + experiment.pic1 + "," + experiment.pic2;
-		dataforRound += "," + experiment.side + "," + experiment.chosenpic + "," + experiment.response + "," + experiment.parentchild;
+		dataforRound += "," + experiment.side + "," + experiment.chosenpic + "," + experiment.response;
 		dataforRound += "," + experiment.date + "," + experiment.timestamp + "," + experiment.reactiontime + "\n";
 		console.log(dataforRound)
-		$.post("https://callab.uchicago.edu/experiments/animalgame/gamecode/animalgamesave.php", {postresult_string : dataforRound});	
+		$.post("https://callab.uchicago.edu/experiments/animalgame/gamecode/tangramgamesave.php", {postresult_string : dataforRound});	
 
 	},
 
 
     // MAIN DISPLAY FUNCTION
+    directorStudy: function(){
+
+		$('#prestudy').hide();
+		// setTimeout(function() {
+		// 	var parentList = globalGame.correctList.split(',');
+		// 	$(".correctWord").html(parentList[globalGame.trialnum]);
+		// 	$("#parentstudy").fadeIn(500);
+		// }, 2500)
+		// Create the object table for director (tr=table row; td= table data)
+
+		var directorobjects_html = "";
+	    
+	   	//HTML for the first object on the left
+		leftname = "images/" + directorImages[0] + ".jpg";
+		directorobjects_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic"/></td>';
+
+	
+		//HTML for the first object on the right
+		rightname = "images/" + directorImages[1] + ".jpg";
+	   	directorobjects_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic"/></td>';
+		
+	  	directorobjects_html += '</tr></table>';
+		
+		// var target = "images/" + wordList[0] + ".jpg";
+		// $(target).css("margin", "-8px");
+
+	    $("#objects").html(directorobjects_html); 
+		$("#directorstage").fadeIn();
+	},
+
   	matcherStudy: function(counter) {
 
 	  	experiment.subid = globalGame.subid;
@@ -505,16 +518,16 @@ var experiment = {
 		var matcherobjects_html = "";
 	    
 	   	//HTML for the first object on the left
-		leftname = "tangramimages/" + matcherImages[0] + ".png";
+		leftname = "images/" + matcherImages[0] + ".jpg";
 		matcherobjects_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic"/></td>';
 
 	
 		//HTML for the first object on the right
-		rightname = "tangramimages/" + matcherImages[1] + ".png";
+		rightname = "images/" + matcherImages[1] + ".jpg";
 	   	matcherobjects_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic"/></td>';
 		
 	  	matcherobjects_html += '</tr></table>';
-	    $("#objects").html(matcherobjects_html); 
+	    $("#objects2").html(matcherobjects_html); 
 		$("#matcherstage").fadeIn();
 	    
 
