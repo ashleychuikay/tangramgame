@@ -68,7 +68,9 @@ var onMessage = function(client,message) {
    _.map(others, function(p) {
     var subid= message_parts[1];
     var list= message_parts[2];
-    p.player.instance.emit('startButton', {msg: subid, list})
+    var director= message_parts[3];
+    var matcher= message_parts[4];
+    p.player.instance.emit('startButton', {msg: subid, list, director, matcher})
   });
   break; 
 

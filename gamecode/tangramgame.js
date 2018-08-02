@@ -140,9 +140,12 @@ var tangrams = ["A1", "B1", "C1", "D1", "E1", "F1", "G1", "H1", "I1", "J1", "K1"
 // };
 
 var wordList = [];
+var directorList = [];
+var matcherList = [];
 var directorImages = [];
 var matcherImages = [];
 var trialSounds = [];
+
 // shuffle practice trials
 // practiceTrials = [];
 // practiceWords = [];
@@ -209,12 +212,12 @@ function startExperiment() {
 		
 			shuffle(items);
 			for(k=0; k<=1; k++) {
-			 	directorImages.push(items[k]);
+			 	directorList.push(items[k]);
 			}
 			
 			shuffle(items);
 			for(l=0; l<=1; l++) {
-				matcherImages.push(items[l]);
+				matcherList.push(items[l]);
 			}
 		}	
 	};
@@ -271,11 +274,22 @@ var experiment = {
 		//time between start of trial and response 
 
 
-	preStudy: function() {
+	mpreStudy: function() {
+		directorImages = globalGame.director.split(',');
+		matcherImages = globalGame.matcher.split(',');
 		document.body.style.background = "white";
 		$("#prestudy").hide();
 		setTimeout(function () {
 			experiment.matcherStudy(0);
+		}, normalpause);
+	},
+
+	dpreStudy: function() {
+		setTimeout(function () {
+			directorImages = globalGame.director;
+			console.log(directorImages)
+			matcherImages = globalGame.matcher;
+			experiment.directorStudy();
 		}, normalpause);
 	},
 
@@ -306,12 +320,17 @@ var experiment = {
 	},
 
 	checkInput: function() {
+
 		// subject ID
-  		if (document.getElementById("subjectID").value.length < 1) {
+  		if(document.getElementById("subjectID").value.length < 1) {
 			$("#checkMessage").html('<font color="red">You must input a subject ID</font>');
 			return;
-		}
-  		experiment.subid = document.getElementById("subjectID").value;
+		};
+
+		experiment.subid = document.getElementById("subjectID").value;
+
+	  	$('#instructions').hide();
+	    experiment.dpreStudy();
 
 		// showSlide("parent");
 	},
@@ -473,7 +492,7 @@ var experiment = {
 		dataforRound += "," + experiment.side + "," + experiment.chosenpic + "," + experiment.response;
 		dataforRound += "," + experiment.date + "," + experiment.timestamp + "," + experiment.reactiontime + "\n";
 		console.log(dataforRound)
-		$.post("https://callab.uchicago.edu/experiments/animalgame/gamecode/tangramgamesave.php", {postresult_string : dataforRound});	
+		$.post("https://callab.uchicago.edu/experiments/tangramgame/gamecode/tangramgamesave.php", {postresult_string : dataforRound});	
 
 	},
 

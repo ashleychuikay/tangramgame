@@ -79,21 +79,26 @@ var sharedSetup = function(game) {
 
   // Tell server when parent clicks the start button
   $('#beforeStudy').on('click', function(event){
-    var msg = ['startButton', experiment.subid, wordList].join('.');
+    experiment.checkInput();
+    var msg = ['startButton', experiment.subid, wordList, directorList, matcherList].join('.');
+    globalGame.director = directorList;
+    globalGame.matcher = matcherList;
+    console.log(globalGame.director)
+    console.log(globalGame.matcher)
     game.socket.send(msg);
-    $('#instructions').hide();
-    experiment.directorStudy();
   });
 
   game.socket.on('startButton', function(data){
     globalGame.subid = data.subid;
     globalGame.correctList = data.list;
-    
-    console.log(globalGame.subid)
-    console.log(globalGame.correctList)
+    globalGame.director = data.director;
+    globalGame.matcher = data.matcher;
+
+    console.log(data.list)
+    console.log(globalGame.director)
 
     $('#childinstructions').hide();
-    experiment.preStudy();
+    experiment.mpreStudy();
   });
 
   // Tell server when child is done with dots game
