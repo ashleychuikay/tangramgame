@@ -201,11 +201,10 @@ var sharedSetup = function(game) {
     globalGame.trialnum = experiment.trialnum;
 
     console.log(experiment.trialnum);
-    
+
     globalGame.trialnum++;
 
     console.log(globalGame.trialnum);
-    console.log(numTrials);
 
     if (globalGame.trialnum == 10|| globalGame.trialnum == 20|| globalGame.trialnum == 30) {
           setTimeout(function() {
@@ -216,7 +215,7 @@ var sharedSetup = function(game) {
     } else {
       setTimeout(function() {
         experiment.matcherStudy(globalGame.trialnum);
-      }, 3000)
+      }, 2000)
     }
   });
 

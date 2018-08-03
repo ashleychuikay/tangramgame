@@ -519,10 +519,10 @@ var experiment = {
 		
 	  	directorobjects_html += '</tr></table>';
 		
-		// var target = "images/" + wordList[0] + ".jpg";
-		// $(target).css("margin", "-8px");
+		var target = "images/" + wordList[0] + ".jpg";
+		$(target).css("margin", "-8px");
 
-	    $("#objects").html(directorobjects_html); 
+	    $("#objects").html(directorobjects_html);
 		$("#directorstage").fadeIn();
 	},
 
@@ -547,8 +547,8 @@ var experiment = {
 		
 	  	matcherobjects_html += '</tr></table>';
 	    $("#objects2").html(matcherobjects_html);
-	    // $(".pic").css('margin', "0px");
-	    // $(".pic").css('border', "none"); 
+	    $(".pic").css('margin', "0px");
+		$(".pic").css('border', "none");	
 		$("#matcherstage").fadeIn();
 	    
 
@@ -564,7 +564,7 @@ var experiment = {
 
 		$('.pic').on('click touchstart', function(event) {
 
-			counter = globalGame.trialnum;
+			// counter = globalGame.trialnum;
 
 	    	if (clickDisabled) return;
 

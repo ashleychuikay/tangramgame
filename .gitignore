@@ -1,5 +1,2 @@
 .DS_Store
 logo.rgb.maroon.jpg
-app.js
-node_modules/*
-sharedUtils/*
