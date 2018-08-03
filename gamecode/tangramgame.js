@@ -287,6 +287,7 @@ var experiment = {
 			directorImages = globalGame.director;
 			console.log(directorImages)
 			matcherImages = globalGame.matcher;
+			wordList = globalGame.correctList;
 			experiment.directorStudy();
 		}, normalpause);
 	},
@@ -498,7 +499,7 @@ var experiment = {
     // MAIN DISPLAY FUNCTION
     directorStudy: function(){
 
-		$('#prestudy').hide();
+  		// $('#prestudy').hide();
 		// setTimeout(function() {
 		// 	var parentList = globalGame.correctList.split(',');
 		// 	$(".correctWord").html(parentList[globalGame.trialnum]);
@@ -519,8 +520,19 @@ var experiment = {
 		
 	  	directorobjects_html += '</tr></table>';
 		
-		var target = "images/" + wordList[0] + ".jpg";
-		$(target).css("margin", "-8px");
+		var target = wordList[0]
+
+		switch(target) {
+	    		case directorImages[0]:
+	    			$('#leftPic').css('border', 'solid 8px blue');
+	    			$('#rightPic').css('border', 'none');
+	    			break;
+
+	    		default: // "rightPic"
+	    			$('#rightPic').css('border', 'solid 8px blue');
+	    			$('#leftPic').css('border', 'none');
+	    	};
+		// $(target).css("margin", "-8px");
 
 	    $("#objects").html(directorobjects_html);
 		$("#directorstage").fadeIn();
@@ -531,6 +543,7 @@ var experiment = {
 	  	experiment.subid = globalGame.subid;
 	  	directorImages = globalGame.director.split(',');
 		matcherImages = globalGame.matcher.split(',');
+		// wordList = globalGame.correctList.split(',');
 	  			
 		// Create the object table for matcher (tr=table row; td= table data)
 

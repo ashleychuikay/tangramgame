@@ -83,6 +83,7 @@ var sharedSetup = function(game) {
     var msg = ['startButton', experiment.subid, wordList, directorList, matcherList].join('.');
     globalGame.director = directorList;
     globalGame.matcher = matcherList;
+    globalGame.correctList = wordList;
     game.socket.send(msg);
   });
 
@@ -184,7 +185,7 @@ var sharedSetup = function(game) {
   $('#doneTrial').on('click', function(){
     
     setTimeout(function() {
-      var msg = ['nextTrial', wordList, directorImages, matcherImages].join('.');
+      var msg = ['nextTrial', directorImages, matcherImages, wordList].join('.');
       game.socket.send(msg);
     }, 100)
 
@@ -194,9 +195,10 @@ var sharedSetup = function(game) {
   game.socket.on('nextTrial', function(data){
     $('#directorstage').hide();
 
-    globalGame.correctList = data.list;
+    globalGame.correctList = data.list;        
     globalGame.director = data.director;
     globalGame.matcher = data.matcher;
+
 
     globalGame.trialnum = experiment.trialnum;
 
@@ -215,7 +217,7 @@ var sharedSetup = function(game) {
     } else {
       setTimeout(function() {
         experiment.matcherStudy(globalGame.trialnum);
-      }, 2000)
+      }, 3000)
     }
   });
 
