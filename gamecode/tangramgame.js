@@ -546,7 +546,9 @@ var experiment = {
 	   	matcherobjects_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic"/></td>';
 		
 	  	matcherobjects_html += '</tr></table>';
-	    $("#objects2").html(matcherobjects_html); 
+	    $("#objects2").html(matcherobjects_html);
+	    // $(".pic").css('margin', "0px");
+	    // $(".pic").css('border', "none"); 
 		$("#matcherstage").fadeIn();
 	    
 
@@ -563,8 +565,6 @@ var experiment = {
 		$('.pic').on('click touchstart', function(event) {
 
 			counter = globalGame.trialnum;
-
-			// counter = globalGame.trialnum;
 
 	    	if (clickDisabled) return;
 
@@ -587,19 +587,23 @@ var experiment = {
 	    		case "leftPic":
 	    			experiment.side = "L";
 	    			experiment.chosenpic = matcherImages[0];
+	    			$('#leftPic').css('border', 'solid 8px blue');
+	    			$('#rightPic').css('border', 'none');
 	    			break;
 
 	    		default: // "rightPic"
 	    			experiment.side = "R";
 	    			experiment.chosenpic = matcherImages[1];
+	    			$('#rightPic').css('border', 'solid 8px blue');
+	    			$('#leftPic').css('border', 'none');
 	    	};
 			
 			// //what kind of trial was this?
 			// experiment.trialtype = allTrials[experiment.trialnum][0];
 
 		
-		$(document.getElementById(picID)).css('margin', "-8px");
-	    $(document.getElementById(picID)).css('border', "solid 8px blue");
+		// $(document.getElementById(picID)).css('margin', "-8px");
+	 //    $(document.getElementById(picID)).css('border', "solid 8px blue");
 		
 	    console.log(picID);
 		});
@@ -643,6 +647,8 @@ var experiment = {
 
 			setTimeout(function() {
 				$(".pic").delay().fadeOut(2000);
+				$(".pic").css('margin', "0px");
+	    		$(".pic").css('border', "none");
 				counter++;
 				if (counter == 10|| counter == 20|| counter == 30) {
 					setTimeout(function() {
