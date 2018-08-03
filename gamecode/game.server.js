@@ -128,7 +128,10 @@ var onMessage = function(client,message) {
 
   case 'nextTrial':
   _.map(others, function(p) {
-    p.player.instance.emit('nextTrial')
+    var list= message_parts[1];
+    var director= message_parts[2];
+    var matcher= message_parts[3];
+    p.player.instance.emit('nextTrial', {msg: list, director, matcher})
   });
   break;
 

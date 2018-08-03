@@ -118,6 +118,7 @@ This stuff will vary by experiment.
 
 /*adjust so pictures are centered on the screen*/
 .pic {
+	margin: 0 auto;
 	display: inline-block;
 	width: 295px;
 	height: 295px;

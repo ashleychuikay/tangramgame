@@ -275,12 +275,10 @@ var experiment = {
 
 
 	mpreStudy: function() {
-		directorImages = globalGame.director.split(',');
-		matcherImages = globalGame.matcher.split(',');
 		document.body.style.background = "white";
 		$("#prestudy").hide();
 		setTimeout(function () {
-			experiment.matcherStudy(0);
+			experiment.matcherStudy(globalGame.trialnum);
 		}, normalpause);
 	},
 
@@ -531,6 +529,8 @@ var experiment = {
   	matcherStudy: function(counter) {
 
 	  	experiment.subid = globalGame.subid;
+	  	directorImages = globalGame.director.split(',');
+		matcherImages = globalGame.matcher.split(',');
 	  			
 		// Create the object table for matcher (tr=table row; td= table data)
 
@@ -560,7 +560,11 @@ var experiment = {
 		},  1500);
 		
 
-		$('.pic').on('touchstart', function(event) {
+		$('.pic').on('click touchstart', function(event) {
+
+			counter = globalGame.trialnum;
+
+			// counter = globalGame.trialnum;
 
 	    	if (clickDisabled) return;
 
@@ -572,9 +576,8 @@ var experiment = {
 
 	    	experiment.trialnum = counter;
 	    	experiment.word = wordList[0];
-	    	experiment.pic1 = allImages[0];
-	    	experiment.pic2 = allImages[1];
-	    	experiment.pic3 = allImages[2];
+	    	experiment.pic1 = matcherImages[0];
+	    	experiment.pic2 = matcherImages[1];
 	    	experiment.parentchild = allTrials[experiment.trialnum][2];
 
 	    	//Was the picture clicked on the right or the left?
@@ -594,12 +597,24 @@ var experiment = {
 			// //what kind of trial was this?
 			// experiment.trialtype = allTrials[experiment.trialnum][0];
 
-
-	    $(document.getElementById(picID)).css('margin', "-8px");
+		
+		$(document.getElementById(picID)).css('margin', "-8px");
+	    $(document.getElementById(picID)).css('border', "solid 8px blue");
+		
 	    console.log(picID);
 		});
 		
 		$('#doneTrial').on('click', function(event) {
+
+			console.log(experiment.chosenpic)
+
+			// if (clickDisabled) return;
+			// if (experiment.chosenpic = 'null') return;
+
+			//remove the pictures from the image array that have been used, and the word from the wordList that has been used
+			matcherImages.splice(0, 2);
+			directorImages.splice(0, 2);
+			wordList.splice(0, 1);
 
 			//time the participant clicked next - the time the trial began
 	    	experiment.reactiontime = (new Date()).getTime() - startTime;
@@ -624,10 +639,7 @@ var experiment = {
 			//Process the data to be saved
 			experiment.processOneRow();
 
-			//remove the pictures from the image array that have been used, and the word from the wordList that has been used
-			matcherImages.splice(0, 2);
-			directorImages.splice(0, 2);
-			wordList.splice(0, 1);
+
 
 			setTimeout(function() {
 				$(".pic").delay().fadeOut(2000);

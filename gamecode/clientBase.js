@@ -83,8 +83,6 @@ var sharedSetup = function(game) {
     var msg = ['startButton', experiment.subid, wordList, directorList, matcherList].join('.');
     globalGame.director = directorList;
     globalGame.matcher = matcherList;
-    console.log(globalGame.director)
-    console.log(globalGame.matcher)
     game.socket.send(msg);
   });
 
@@ -93,9 +91,7 @@ var sharedSetup = function(game) {
     globalGame.correctList = data.list;
     globalGame.director = data.director;
     globalGame.matcher = data.matcher;
-
-    console.log(data.list)
-    console.log(globalGame.director)
+    globalGame.trialnum = 0
 
     $('#childinstructions').hide();
     experiment.mpreStudy();
@@ -186,13 +182,31 @@ var sharedSetup = function(game) {
 
   // Tell server when matcher clicks the "next" button
   $('#doneTrial').on('click', function(){
-    game.socket.send('nextTrial');
+    
+    setTimeout(function() {
+      var msg = ['nextTrial', wordList, directorImages, matcherImages].join('.');
+      game.socket.send(msg);
+    }, 100)
+
     $('#matcherstage').hide();
   });
 
-  game.socket.on('nextTrial', function(){
+  game.socket.on('nextTrial', function(data){
     $('#directorstage').hide();
+
+    globalGame.correctList = data.list;
+    globalGame.director = data.director;
+    globalGame.matcher = data.matcher;
+
+    globalGame.trialnum = experiment.trialnum;
+
+    console.log(experiment.trialnum);
+    
     globalGame.trialnum++;
+
+    console.log(globalGame.trialnum);
+    console.log(numTrials);
+
     if (globalGame.trialnum == 10|| globalGame.trialnum == 20|| globalGame.trialnum == 30) {
           setTimeout(function() {
             experiment.directorBreak()
