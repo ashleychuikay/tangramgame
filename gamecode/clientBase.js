@@ -80,7 +80,7 @@ var sharedSetup = function(game) {
   // Tell server when parent clicks the start button
   $('#beforeStudy').on('click', function(event){
     experiment.checkInput();
-    var msg = ['startButton', experiment.subid, wordList, directorList, matcherList].join('.');
+    var msg = ['startButton', 'hello', experiment.subid, wordList, directorList, matcherList].join('.');
     globalGame.director = directorList;
     globalGame.matcher = matcherList;
     globalGame.correctList = wordList;
@@ -88,7 +88,9 @@ var sharedSetup = function(game) {
   });
 
   game.socket.on('startButton', function(data){
+    // globalGame.test = data.test;
     globalGame.subid = data.subid;
+    // console.log(globalGame.subid);
     globalGame.correctList = data.list;
     globalGame.director = data.director;
     globalGame.matcher = data.matcher;
@@ -99,20 +101,20 @@ var sharedSetup = function(game) {
   });
 
   // Tell server when child is done with dots game
-  $('#training').on('click touchstart', function(event){
-      if (globalGame.trainingOver){
-        var msg = ['donetraining', practiceWords].join('.');
-        game.socket.send(msg);
-      }
-  });
+  // $('#training').on('click touchstart', function(event){
+  //     if (globalGame.trainingOver){
+  //       var msg = ['donetraining', practiceWords].join('.');
+  //       game.socket.send(msg);
+  //     }
+  // });
 
-  game.socket.on('donetraining', function(data){
-     globalGame.practiceList = data.msg;
-     globalGame.trialnum = experiment.trialnum;
-      setTimeout(function(){
-        showSlide('prepractice');
-      }, 2000);
-  });
+  // game.socket.on('donetraining', function(data){
+  //    globalGame.practiceList = data.msg;
+  //    globalGame.trialnum = experiment.trialnum;
+  //     setTimeout(function(){
+  //       showSlide('prepractice');
+  //     }, 2000);
+  // });
 
   // Tell server when parent clicks the begin practice button
   $('#beginPractice').on('click', function(event){
@@ -182,10 +184,11 @@ var sharedSetup = function(game) {
 
 
   // Tell server when matcher clicks the "next" button
-  $('#doneTrial').on('click', function(){
+  $('#doneTrial').on('click', function(event){
     
     setTimeout(function() {
-      var msg = ['nextTrial', directorImages, matcherImages, wordList].join('.');
+      var msg = ['nextTrial', 'hello', wordList, directorImages, matcherImages].join('.');
+      // console.log(wordList);
       game.socket.send(msg);
     }, 100)
 
@@ -195,10 +198,12 @@ var sharedSetup = function(game) {
   game.socket.on('nextTrial', function(data){
     $('#directorstage').hide();
 
-    globalGame.correctList = data.list;        
+    // globalGame.test = data.test;
+    globalGame.correctList = data.list; 
+    console.log(globalGame.correctList);
+
     globalGame.director = data.director;
     globalGame.matcher = data.matcher;
-
 
     globalGame.trialnum = experiment.trialnum;
 

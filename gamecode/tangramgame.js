@@ -274,6 +274,22 @@ var experiment = {
 		//time between start of trial and response 
 
 
+	checkInput: function() {
+
+		// subject ID
+  		if(document.getElementById("subjectID").value.length < 1) {
+			$("#checkMessage").html('<font color="red">You must input a subject ID</font>');
+			return;
+		};
+
+		experiment.subid = document.getElementById("subjectID").value;
+
+	  	$('#instructions').hide();
+	    experiment.dpreStudy();
+
+		// showSlide("parent");
+	},
+
 	mpreStudy: function() {
 		document.body.style.background = "white";
 		$("#prestudy").hide();
@@ -285,7 +301,6 @@ var experiment = {
 	dpreStudy: function() {
 		setTimeout(function () {
 			directorImages = globalGame.director;
-			console.log(directorImages)
 			matcherImages = globalGame.matcher;
 			wordList = globalGame.correctList;
 			experiment.directorStudy();
@@ -316,22 +331,6 @@ var experiment = {
 
 	    $("#objects").html(practiceobjects_html); 
 		$("#directorpractice").fadeIn();
-	},
-
-	checkInput: function() {
-
-		// subject ID
-  		if(document.getElementById("subjectID").value.length < 1) {
-			$("#checkMessage").html('<font color="red">You must input a subject ID</font>');
-			return;
-		};
-
-		experiment.subid = document.getElementById("subjectID").value;
-
-	  	$('#instructions').hide();
-	    experiment.dpreStudy();
-
-		// showSlide("parent");
 	},
 
 	//practice trials using food items
@@ -543,7 +542,9 @@ var experiment = {
 	  	experiment.subid = globalGame.subid;
 	  	directorImages = globalGame.director.split(',');
 		matcherImages = globalGame.matcher.split(',');
-		// wordList = globalGame.correctList.split(',');
+		wordList = globalGame.correctList.split(',');
+
+		console.log(wordList)
 	  			
 		// Create the object table for matcher (tr=table row; td= table data)
 
