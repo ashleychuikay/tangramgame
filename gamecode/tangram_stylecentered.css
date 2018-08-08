@@ -156,6 +156,14 @@ This stuff will vary by experiment.
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
+/*selected picture*/
+.selected {
+	border-style: solid; 
+	border-width: 8px;
+	border-color: blue;
+}
+
+
 /*left pic, middle pic, right pic are large but fit comfortably in the ipad window*/
 #leftPic {
 	width: 295px;

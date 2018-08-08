@@ -507,31 +507,35 @@ var experiment = {
 		// Create the object table for director (tr=table row; td= table data)
 
 		var directorobjects_html = "";
-	    
+
 	   	//HTML for the first object on the left
 		leftname = "images/" + directorImages[0] + ".jpg";
-		directorobjects_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic"/></td>';
+		directorobjects_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic1"/></td>';
 
 	
 		//HTML for the first object on the right
 		rightname = "images/" + directorImages[1] + ".jpg";
-	   	directorobjects_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic"/></td>';
+	   	directorobjects_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic1"/></td>';
 		
 	  	directorobjects_html += '</tr></table>';
 		
-		var target = wordList[0]
+		// var target = "images/" + wordList[0] + ".jpg";	
+		//var target = A1
+		//if director[0] is A1
+		//set rightname to be images/A1_red.jpg	
 
-		switch(target) {
-	    		case directorImages[0]:
-	    			$('#leftPic').css('border', 'solid 8px blue');
-	    			$('#rightPic').css('border', 'none');
-	    			break;
+		// switch(target) {
+	 //    		case leftname:
+	 //    			$('#leftPic').css('border', 'solid 8px blue');
+	 //    			$('#rightPic').css('border', 'none');
+	 //    			break;
 
-	    		default: // "rightPic"
-	    			$('#rightPic').css('border', 'solid 8px blue');
-	    			$('#leftPic').css('border', 'none');
-	    	};
-		// $(target).css("margin", "-8px");
+	 //    		default: // "rightPic"
+	 //    			$('#rightPic').css('border', 'solid 8px blue');
+	 //    			$('#leftPic').css('border', 'none');
+	 //    	};
+
+		// $("images/"+directorImages[0]+".jpg").css("border", "solid 8px blue");
 
 	    $("#objects").html(directorobjects_html);
 		$("#directorstage").fadeIn();
@@ -539,13 +543,13 @@ var experiment = {
 
   	matcherStudy: function(counter) {
 
+	  	// Update information
+
 	  	experiment.subid = globalGame.subid;
 	  	directorImages = globalGame.director.split(',');
 		matcherImages = globalGame.matcher.split(',');
 		wordList = globalGame.correctList.split(',');
 
-		console.log(wordList)
-	  			
 		// Create the object table for matcher (tr=table row; td= table data)
 
 		var matcherobjects_html = "";
@@ -561,8 +565,8 @@ var experiment = {
 		
 	  	matcherobjects_html += '</tr></table>';
 	    $("#objects2").html(matcherobjects_html);
-	    $(".pic").css('margin', "0px");
-		$(".pic").css('border', "none");	
+	 //    $(".pic").css('margin', "0px");
+		// $(".pic").css('border', "none");	
 		$("#matcherstage").fadeIn();
 	    
 
@@ -599,17 +603,20 @@ var experiment = {
 
 	    	switch(picID) {
 	    		case "leftPic":
+	    			console.log("left")
 	    			experiment.side = "L";
 	    			experiment.chosenpic = matcherImages[0];
-	    			$('#leftPic').css('border', 'solid 8px blue');
-	    			$('#rightPic').css('border', 'none');
+	    			$("#leftPic").addClass("selected");
+	    			console.log($('#leftPic').css('border'));
+	    			// $('#rightPic').css('border', 'none');
 	    			break;
 
 	    		default: // "rightPic"
+	    			console.log("right")
 	    			experiment.side = "R";
 	    			experiment.chosenpic = matcherImages[1];
 	    			$('#rightPic').css('border', 'solid 8px blue');
-	    			$('#leftPic').css('border', 'none');
+	    			// $('#leftPic').css('border', 'none');
 	    	};
 			
 			// //what kind of trial was this?
@@ -623,6 +630,8 @@ var experiment = {
 		});
 		
 		$('#doneTrial').on('click', function(event) {
+
+			$("#leftPic").removeClass("selected")
 
 			console.log(experiment.chosenpic)
 
@@ -661,8 +670,8 @@ var experiment = {
 
 			setTimeout(function() {
 				$(".pic").delay().fadeOut(2000);
-				$(".pic").css('margin', "0px");
-	    		$(".pic").css('border', "none");
+				// $("#leftPic").css('border', "none");
+	   //  		$("#rightPic").css('border', "none");
 				counter++;
 				if (counter == 10|| counter == 20|| counter == 30) {
 					setTimeout(function() {
