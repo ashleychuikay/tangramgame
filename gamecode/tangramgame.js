@@ -584,7 +584,9 @@ var experiment = {
 	    	experiment.word = wordList[0];
 	    	experiment.pic1 = matcherImages[0];
 	    	experiment.pic2 = matcherImages[1];
-	    	experiment.parentchild = allTrials[experiment.trialnum][2];
+
+	    	// Edit!! allTrials is the arrays of blocks
+	    	// experiment.parentchild = allTrials[experiment.trialnum][2];
 
 	    	//Add a border to selected picture
 	    	var picID = $(event.currentTarget).attr('id');
