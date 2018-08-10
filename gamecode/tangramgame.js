@@ -453,16 +453,16 @@ var experiment = {
 			}, 1);
 		});
 
-		$("#donepractice").on('touchstart', function(event) {
+		// $("#donepractice").on('touchstart', function(event) {
 
-		})
+		// })
 	},
 	
 	//break between blocks
 	matcherBreak: function() {
 		showSlide('break');
 		setTimeout(function() {
-			experiment.matcher()
+			experiment.matcher(globalGame.trialnum)
 		}, 5000)
 	},
 
@@ -498,12 +498,6 @@ var experiment = {
     // MAIN DISPLAY FUNCTION
     directorStudy: function(){
 
-  		// $('#prestudy').hide();
-		// setTimeout(function() {
-		// 	var parentList = globalGame.correctList.split(',');
-		// 	$(".correctWord").html(parentList[globalGame.trialnum]);
-		// 	$("#parentstudy").fadeIn(500);
-		// }, 2500)
 		// Create the object table for director (tr=table row; td= table data)
 
 		var directorobjects_html = "";
@@ -519,25 +513,21 @@ var experiment = {
 		
 	  	directorobjects_html += '</tr></table>';
 		
-		// var target = "images/" + wordList[0] + ".jpg";	
-		//var target = A1
-		//if director[0] is A1
-		//set rightname to be images/A1_red.jpg	
+		$("#objects").html(directorobjects_html);	
 
-		// switch(target) {
-	 //    		case leftname:
-	 //    			$('#leftPic').css('border', 'solid 8px blue');
-	 //    			$('#rightPic').css('border', 'none');
-	 //    			break;
+		//make the target image colorful
+		var target = wordList[0];
 
-	 //    		default: // "rightPic"
-	 //    			$('#rightPic').css('border', 'solid 8px blue');
-	 //    			$('#leftPic').css('border', 'none');
-	 //    	};
+		switch(target) {
+			case directorImages[0]:
+				$("#leftPic1").attr("src", "images/"+ directorImages[0] +"_color.jpg");
+				break;
 
-		// $("images/"+directorImages[0]+".jpg").css("border", "solid 8px blue");
+			default: //directorImages[1]
+				$("#rightPic1").attr("src", "images/"+ directorImages[1] +"_color.jpg");			
+		};
 
-	    $("#objects").html(directorobjects_html);
+
 		$("#directorstage").fadeIn();
 	},
 
@@ -565,8 +555,6 @@ var experiment = {
 		
 	  	matcherobjects_html += '</tr></table>';
 	    $("#objects2").html(matcherobjects_html);
-	 //    $(".pic").css('margin', "0px");
-		// $(".pic").css('border', "none");	
 		$("#matcherstage").fadeIn();
 	    
 
@@ -598,7 +586,7 @@ var experiment = {
 	    	experiment.pic2 = matcherImages[1];
 	    	experiment.parentchild = allTrials[experiment.trialnum][2];
 
-	    	//Was the picture clicked on the right or the left?
+	    	//Add a border to selected picture
 	    	var picID = $(event.currentTarget).attr('id');
 
 	    	switch(picID) {
@@ -607,24 +595,19 @@ var experiment = {
 	    			experiment.side = "L";
 	    			experiment.chosenpic = matcherImages[0];
 	    			$("#leftPic").addClass("selected");
-	    			console.log($('#leftPic').css('border'));
-	    			// $('#rightPic').css('border', 'none');
+	    			$("#rightPic").removeClass("selected");
 	    			break;
 
 	    		default: // "rightPic"
 	    			console.log("right")
 	    			experiment.side = "R";
 	    			experiment.chosenpic = matcherImages[1];
-	    			$('#rightPic').css('border', 'solid 8px blue');
-	    			// $('#leftPic').css('border', 'none');
+	    			$("#rightPic").addClass("selected");
+	    			$("#leftPic").removeClass("selected");
 	    	};
 			
 			// //what kind of trial was this?
 			// experiment.trialtype = allTrials[experiment.trialnum][0];
-
-		
-		// $(document.getElementById(picID)).css('margin', "-8px");
-	 //    $(document.getElementById(picID)).css('border', "solid 8px blue");
 		
 	    console.log(picID);
 		});
