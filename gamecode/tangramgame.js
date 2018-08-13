@@ -659,14 +659,14 @@ var experiment = {
 			//experiment.trialtype = allTrials[experiment.trialnum][0];
 
 			//Process the data to be saved
-			// experiment.processOneRow();
+			experiment.processOneRow();
 
 			document.getElementById("blank").click();
 
 
 
 			setTimeout(function() {
-				// $(".pic").delay().fadeOut(2000);
+				$(".pic").delay().fadeOut(2000);
 				// $("#leftPic").css('border', "none");
 	   //  		$("#rightPic").css('border', "none");
 				counter++
