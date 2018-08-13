@@ -299,6 +299,7 @@ var experiment = {
 	},
 
 	dpreStudy: function() {
+		console.log("prestudy")
 		setTimeout(function () {
 			directorImages = globalGame.director;
 			matcherImages = globalGame.matcher;
@@ -462,14 +463,16 @@ var experiment = {
 	matcherBreak: function() {
 		showSlide('break');
 		setTimeout(function() {
-			experiment.matcher(globalGame.trialnum)
+			$("#break").hide();
+			experiment.matcherStudy(experiment.trialnum);
 		}, 5000)
 	},
 
-	directorBreak: function() {
+	directorBreak: function(counter) {
 		showSlide('break');
 		setTimeout(function() {
-			experiment.directorStudy()
+			$("#break").hide();
+			experiment.directorStudy(counter);
 		}, 5000)
 	},
 	
@@ -496,7 +499,12 @@ var experiment = {
 
 
     // MAIN DISPLAY FUNCTION
-    directorStudy: function(){
+    directorStudy: function(counter){
+
+    	experiment.trialnum = counter;
+    	console.log(globalGame.trialnum);
+    	console.log(experiment.trialnum);
+    	console.log("director");
 
 		// Create the object table for director (tr=table row; td= table data)
 
@@ -616,6 +624,8 @@ var experiment = {
 		
 		$('#doneTrial').on('click', function(event) {
 
+			// counter++
+
 			$("#leftPic").removeClass("selected")
 
 			console.log(experiment.chosenpic)
@@ -649,17 +659,24 @@ var experiment = {
 			//experiment.trialtype = allTrials[experiment.trialnum][0];
 
 			//Process the data to be saved
-			experiment.processOneRow();
+			// experiment.processOneRow();
+
+			document.getElementById("blank").click();
 
 
 
 			setTimeout(function() {
-				$(".pic").delay().fadeOut(2000);
+				// $(".pic").delay().fadeOut(2000);
 				// $("#leftPic").css('border', "none");
 	   //  		$("#rightPic").css('border', "none");
-				counter++;
-				if (counter == 10|| counter == 20|| counter == 30) {
+				counter++
+				experiment.trialnum = counter;
+				console.log(counter)
+				console.log("matcher")
+				// globalGame.trialnum++
+				if (counter == 1|| counter == 20|| counter == 30) {
 					setTimeout(function() {
+						globalGame.trialnum++
 						experiment.matcherBreak()
 					}, 1000)
 				} else if (counter === numTrials) {
@@ -667,7 +684,7 @@ var experiment = {
 					return;
 				} else {
 					setTimeout(function() {
-						experiment.directorStudy();
+						experiment.directorStudy(counter);
 					}, 1000);
 				}
 			});

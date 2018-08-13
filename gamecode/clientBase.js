@@ -84,6 +84,7 @@ var sharedSetup = function(game) {
     globalGame.director = directorList;
     globalGame.matcher = matcherList;
     globalGame.correctList = wordList;
+    // globalGame.trialnum = 0;
     game.socket.send(msg);
   });
 
@@ -94,7 +95,7 @@ var sharedSetup = function(game) {
     globalGame.correctList = data.list;
     globalGame.director = data.director;
     globalGame.matcher = data.matcher;
-    globalGame.trialnum = 0
+    globalGame.trialnum = 0;
 
     $('#childinstructions').hide();
     experiment.mpreStudy();
@@ -173,24 +174,22 @@ var sharedSetup = function(game) {
 
 
   // Tell server when parent clicks the begin button
-  $('#beginStudy').on('click ', function(event){
-        game.socket.send('beginButton');
-        experiment.parentStudy();
-  });
+  // $('#beginStudy').on('click ', function(event){
+  //       game.socket.send('beginButton');
+  //       experiment.parentStudy();
+  // });
 
-  game.socket.on('beginButton', function(){
-    experiment.preStudy();
-  });
+  // game.socket.on('beginButton', function(){
+  //   experiment.preStudy();
+  // });
 
 
   // Tell server when matcher clicks the "next" button
-  $('#doneTrial').on('click', function(event){
-    
-    setTimeout(function() {
-      var msg = ['nextTrial', 'hello', wordList, directorImages, matcherImages].join('.');
+  $('#blank').on('click', function(event){
+
+      var msg = ['nextTrial', 'hello', wordList, directorImages, matcherImages, globalGame.trialnum].join('.');
       // console.log(wordList);
       game.socket.send(msg);
-    }, 100)
 
     $('#matcherstage').hide();
   });
@@ -205,17 +204,18 @@ var sharedSetup = function(game) {
     globalGame.director = data.director;
     globalGame.matcher = data.matcher;
 
-    globalGame.trialnum = experiment.trialnum;
+    globalGame.trialnum = data.trialnum;
 
-    console.log(experiment.trialnum);
+    // console.log(globalGame.trialnum);
 
     globalGame.trialnum++;
 
     console.log(globalGame.trialnum);
+    console.log("server");
 
-    if (globalGame.trialnum == 10|| globalGame.trialnum == 20|| globalGame.trialnum == 30) {
+    if (globalGame.trialnum == 1|| globalGame.trialnum == 20|| globalGame.trialnum == 30) {
           setTimeout(function() {
-            experiment.directorBreak()
+            experiment.directorBreak(globalGame.trialnum)
           }, 1000)
     } else if (globalGame.trialnum == numTrials) {
       experiment.end();

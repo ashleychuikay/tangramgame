@@ -134,7 +134,8 @@ var onMessage = function(client,message) {
       var list= message_parts[2]
       var director= message_parts[3]
       var matcher= message_parts[4]
-      p.player.instance.emit('nextTrial', {msg: test, list, director, matcher})
+      var trialnum= message_parts[5]
+      p.player.instance.emit('nextTrial', {msg: test, list, director, matcher, trialnum})
     }, 500);
   });
   break;

@@ -39,7 +39,7 @@
           <input type="text" id="subjectID" name="subjectID" size="30"> 
         </p>
 
-        <button type="button" id="beforeStudy" onClick="this.blur(); experiment.checkInput()">Start</button>
+        <button type="button" id="beforeStudy" onClick="this.blur()">Start</button>
 
         <div id="checkMessage"> </div> <!--dynamically built in javascript-->
     </div>
@@ -81,6 +81,11 @@
   <div class="slide" id="matcherstage">
     <div id="objects2"> </div>
     <center><button type="button" id="doneTrial" onClick="this.blur()">Next</button></center>
+  </div>
+
+  <div class="slide" id="blankslide">
+    <center><button type="button" id="blank"></button></center>
+    <p> Blank </p>
   </div>
 
   <div class="slide" id="break">
