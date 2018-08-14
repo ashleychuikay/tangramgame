@@ -528,11 +528,13 @@ var experiment = {
 
 		switch(target) {
 			case directorImages[0]:
-				$("#leftPic1").attr("src", "images/"+ directorImages[0] +"_color.jpg");
+				$("#leftPic1").addClass('target');
+				// $("#leftPic1").attr("src", "images/"+ directorImages[0] +"_color.jpg");
 				break;
 
 			default: //directorImages[1]
-				$("#rightPic1").attr("src", "images/"+ directorImages[1] +"_color.jpg");			
+				$("#rightPic1").addClass('target');
+				// $("#rightPic1").attr("src", "images/"+ directorImages[1] +"_color.jpg");			
 		};
 
 
@@ -604,16 +606,20 @@ var experiment = {
 	    			console.log("left")
 	    			experiment.side = "L";
 	    			experiment.chosenpic = matcherImages[0];
-	    			$("#leftPic").addClass("selected");
-	    			$("#rightPic").removeClass("selected");
+	    			$("#leftPic").attr("src", "images/"+ matcherImages[0] +"_color.jpg")
+	    			$("#rightPic").attr("src", "images/"+ matcherImages[1] +".jpg")
+	    			// $("#leftPic").addClass("selected");
+	    			// $("#rightPic").removeClass("selected");
 	    			break;
 
 	    		default: // "rightPic"
 	    			console.log("right")
 	    			experiment.side = "R";
 	    			experiment.chosenpic = matcherImages[1];
-	    			$("#rightPic").addClass("selected");
-	    			$("#leftPic").removeClass("selected");
+	    			$("#rightPic").attr("src", "images/"+ matcherImages[1] +"_color.jpg")
+	    			$("#leftPic").attr("src", "images/"+ matcherImages[0] +".jpg")
+	    			// $("#rightPic").addClass("selected");
+	    			// $("#leftPic").removeClass("selected");
 	    	};
 			
 			// //what kind of trial was this?
@@ -674,7 +680,7 @@ var experiment = {
 				console.log(counter)
 				console.log("matcher")
 				// globalGame.trialnum++
-				if (counter == 1|| counter == 20|| counter == 30) {
+				if (counter == 10|| counter == 20|| counter == 30) {
 					setTimeout(function() {
 						globalGame.trialnum++
 						experiment.matcherBreak()

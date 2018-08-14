@@ -213,7 +213,7 @@ var sharedSetup = function(game) {
     console.log(globalGame.trialnum);
     console.log("server");
 
-    if (globalGame.trialnum == 1|| globalGame.trialnum == 20|| globalGame.trialnum == 30) {
+    if (globalGame.trialnum == 10|| globalGame.trialnum == 20|| globalGame.trialnum == 30) {
           setTimeout(function() {
             experiment.directorBreak(globalGame.trialnum)
           }, 1000)
