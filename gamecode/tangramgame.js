@@ -523,18 +523,16 @@ var experiment = {
 		
 		$("#objects").html(directorobjects_html);	
 
-		//make the target image colorful
+		//Add border to target image
 		var target = wordList[0];
 
 		switch(target) {
 			case directorImages[0]:
 				$("#leftPic1").addClass('target');
-				// $("#leftPic1").attr("src", "images/"+ directorImages[0] +"_color.jpg");
 				break;
 
 			default: //directorImages[1]
-				$("#rightPic1").addClass('target');
-				// $("#rightPic1").attr("src", "images/"+ directorImages[1] +"_color.jpg");			
+				$("#rightPic1").addClass('target');		
 		};
 
 
@@ -598,7 +596,7 @@ var experiment = {
 	    	// Edit!! allTrials is the arrays of blocks
 	    	// experiment.parentchild = allTrials[experiment.trialnum][2];
 
-	    	//Add a border to selected picture
+	    	//Add color to selected picture
 	    	var picID = $(event.currentTarget).attr('id');
 
 	    	switch(picID) {
@@ -608,8 +606,6 @@ var experiment = {
 	    			experiment.chosenpic = matcherImages[0];
 	    			$("#leftPic").attr("src", "images/"+ matcherImages[0] +"_color.jpg")
 	    			$("#rightPic").attr("src", "images/"+ matcherImages[1] +".jpg")
-	    			// $("#leftPic").addClass("selected");
-	    			// $("#rightPic").removeClass("selected");
 	    			break;
 
 	    		default: // "rightPic"
@@ -618,8 +614,6 @@ var experiment = {
 	    			experiment.chosenpic = matcherImages[1];
 	    			$("#rightPic").attr("src", "images/"+ matcherImages[1] +"_color.jpg")
 	    			$("#leftPic").attr("src", "images/"+ matcherImages[0] +".jpg")
-	    			// $("#rightPic").addClass("selected");
-	    			// $("#leftPic").removeClass("selected");
 	    	};
 			
 			// //what kind of trial was this?
@@ -627,16 +621,16 @@ var experiment = {
 		
 	    console.log(picID);
 		});
+
+		// prevent click event from being fired multiple times
+		$('#doneTrial').off('click', event);
 		
 		$('#doneTrial').on('click', function(event) {
 
-			// counter++
-
-			$("#leftPic").removeClass("selected")
-
 			console.log(experiment.chosenpic)
 
-			// if (clickDisabled) return;
+			if (clickDisabled) return;
+			globalGame.clickDisabled =true;
 			// if (experiment.chosenpic = 'null') return;
 
 			//remove the pictures from the image array that have been used, and the word from the wordList that has been used
@@ -657,7 +651,7 @@ var experiment = {
 			};
 
 			//Play sound according to chosen picture
-		    setTimeout(function() {winningSound.play();}, 100);
+		    // setTimeout(function() {winningSound.play();}, 100);
 
 		    console.log(experiment.chosenpic);
 
@@ -668,6 +662,8 @@ var experiment = {
 			experiment.processOneRow();
 
 			document.getElementById("blank").click();
+
+			console.log(matcherImages);
 
 
 
@@ -694,6 +690,7 @@ var experiment = {
 					}, 1000);
 				}
 			});
+
 		})
 	},
 }
