@@ -541,6 +541,8 @@ var experiment = {
 
   	matcherStudy: function(counter) {
 
+  		$("#doneTrial").hide();
+
 	  	// Update information
 
 	  	experiment.subid = globalGame.subid;
@@ -615,6 +617,8 @@ var experiment = {
 	    			$("#rightPic").attr("src", "images/"+ matcherImages[1] +"_color.jpg")
 	    			$("#leftPic").attr("src", "images/"+ matcherImages[0] +".jpg")
 	    	};
+
+	    	$("#doneTrial").fadeIn();
 			
 			// //what kind of trial was this?
 			// experiment.trialtype = allTrials[experiment.trialnum][0];

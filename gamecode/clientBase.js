@@ -197,9 +197,8 @@ var sharedSetup = function(game) {
   game.socket.on('nextTrial', function(data){
     $('#directorstage').hide();
 
-    // globalGame.test = data.test;
     globalGame.correctList = data.list; 
-    console.log(globalGame.correctList);
+    // console.log(globalGame.correctList);
 
     globalGame.director = data.director;
     globalGame.matcher = data.matcher;
@@ -210,8 +209,8 @@ var sharedSetup = function(game) {
 
     globalGame.trialnum++;
 
-    console.log(globalGame.trialnum);
-    console.log("server");
+    // console.log(globalGame.trialnum);
+    // console.log("server");
 
     if (globalGame.trialnum == 10|| globalGame.trialnum == 20|| globalGame.trialnum == 30) {
           setTimeout(function() {
@@ -222,7 +221,7 @@ var sharedSetup = function(game) {
     } else {
       setTimeout(function() {
         experiment.matcherStudy(globalGame.trialnum);
-      }, 3000)
+      }, 2000)
     }
   });
 
