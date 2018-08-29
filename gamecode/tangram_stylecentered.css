@@ -101,6 +101,9 @@ This stuff will vary by experiment.
   text-align: center;
 }
 
+#break {
+	text-align: center;
+}
 
 .block-text {
   width: 500px;
@@ -156,8 +159,8 @@ This stuff will vary by experiment.
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
-/*selected picture*/
-.selected {
+/*target picture on director study*/
+.target {
 	border-style: solid; 
 	border-width: 8px;
 	border-color: blue;
