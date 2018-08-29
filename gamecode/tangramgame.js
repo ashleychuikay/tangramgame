@@ -82,7 +82,7 @@ document.ontouchmove = function(event){
 
 // ---------------- PARAMETERS ------------------
 
-var numTrials = 36;
+var numTrials = 40;
 
 //amount of white space between trials
 var normalpause = 1500;
