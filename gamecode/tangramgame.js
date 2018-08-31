@@ -223,10 +223,10 @@ function startExperiment() {
 	};
 
 	//load sounds for feedback after each trial
-	yesSound = new WebAudioAPISound("tangramsounds/yes");
-	noSound = new WebAudioAPISound("tangramsounds/no");
-	trialSounds.push(yesSound);
-	trialSounds.push(noSound);
+	// yesSound = new WebAudioAPISound("tangramsounds/yes");
+	// noSound = new WebAudioAPISound("tangramsounds/no");
+	// trialSounds.push(yesSound);
+	// trialSounds.push(noSound);
 
 	
 	// to start at beginning
@@ -309,155 +309,157 @@ var experiment = {
 	},
 
 
-	directorPractice: function(){
-		$('#prepractice').hide();
+	// USE FOLLOWING CODE IF NEED PRACTICE ROUND
 
-		// Create the object table for director (tr=table row; td= table data)
+	// directorPractice: function(){
+	// 	$('#prepractice').hide();
 
-		var practiceobjects_html = "";
+	// 	// Create the object table for director (tr=table row; td= table data)
+
+	// 	var practiceobjects_html = "";
 	    
-	   	//HTML for the first object on the left
-		leftname = "practiceimages/" + practiceImages[0] + ".jpg";
-		directorobjects_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic"/></td>';
+	//    	//HTML for the first object on the left
+	// 	leftname = "practiceimages/" + practiceImages[0] + ".jpg";
+	// 	directorobjects_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic"/></td>';
 
 	
-		//HTML for the first object on the right
-		rightname = "practiceimages/" + practiceImages[1] + ".jpg";
-	   	directorobjects_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic"/></td>';
+	// 	//HTML for the first object on the right
+	// 	rightname = "practiceimages/" + practiceImages[1] + ".jpg";
+	//    	directorobjects_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic"/></td>';
 		
-	  	directorobjects_html += '</tr></table>';
+	//   	directorobjects_html += '</tr></table>';
 		
-		var target = "practiceimages/" + wordList[0] + ".jpg";
-		$(target).css("margin", "-8px");
+	// 	var target = "practiceimages/" + wordList[0] + ".jpg";
+	// 	$(target).css("margin", "-8px");
 
-	    $("#objects").html(practiceobjects_html); 
-		$("#directorpractice").fadeIn();
-	},
+	//     $("#objects").html(practiceobjects_html); 
+	// 	$("#directorpractice").fadeIn();
+	// },
 
-	//practice trials using food items
-	matcherPractice: function(counter) {
+	// //practice trials using food items
+	// matcherPractice: function(counter) {
 
-		var numTrials = 4
+	// 	var numTrials = 4
 
-		experiment.subid = globalGame.subid;
-		$("#childinstructions").hide();
+	// 	experiment.subid = globalGame.subid;
+	// 	$("#childinstructions").hide();
 
-		var practiceobjects_html = "";
+	// 	var practiceobjects_html = "";
 
-		// Create the object table (tr=table row; td= table data)
+	// 	// Create the object table (tr=table row; td= table data)
 	    
-	   	//HTML for the first object on the left
-		leftname = "practiceimages/" + practiceImages[0] + ".jpg";
-		objects_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic1"/></td>';
+	//    	//HTML for the first object on the left
+	// 	leftname = "practiceimages/" + practiceImages[0] + ".jpg";
+	// 	objects_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic1"/></td>';
 	
-		//HTML for the first object on the right
-		rightname = "practiceimages/" + practiceImages[1] + ".jpg";
-	   	objects_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic1"/></td>';
+	// 	//HTML for the first object on the right
+	// 	rightname = "practiceimages/" + practiceImages[1] + ".jpg";
+	//    	objects_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic1"/></td>';
 		
-	  	objects_html += '</tr></table>';
-	    $("#practiceobjects").html(objects_html); 
-		$("#matcherpractice").fadeIn();
+	//   	objects_html += '</tr></table>';
+	//     $("#practiceobjects").html(objects_html); 
+	// 	$("#matcherpractice").fadeIn();
 
-		var startTime = (new Date()).getTime();
+	// 	var startTime = (new Date()).getTime();
 
-		globalGame.clickDisabled = true;
-		clickDisabled = true;
-		setTimeout(function() {
-			clickDisabled = false;
-		},  1500);
+	// 	globalGame.clickDisabled = true;
+	// 	clickDisabled = true;
+	// 	setTimeout(function() {
+	// 		clickDisabled = false;
+	// 	},  1500);
 		
 
-		$('.pic').on('touchstart', function(event) {
-	    	if (clickDisabled) return;
+	// 	$('.pic').on('touchstart', function(event) {
+	//     	if (clickDisabled) return;
 
-	    	globalGame.clickDisabled = false;
+	//     	globalGame.clickDisabled = false;
 	    	
-	    	//disable subsequent clicks once the participant has made their choice
-			// clickDisabled = true; 
+	//     	//disable subsequent clicks once the participant has made their choice
+	// 		// clickDisabled = true; 
 
 			
-	    	//time the participant clicked - the time the trial began
-	    	experiment.reactiontime = (new Date()).getTime() - startTime;
+	//     	//time the participant clicked - the time the trial began
+	//     	experiment.reactiontime = (new Date()).getTime() - startTime;
 
-			experiment.trialnum = counter;
-			counter++;
-			console.log(counter); 
-				if(counter === numTrials){
-					globalGame.practiceOver = true
-					console.log(globalGame.practiceOver)
-				}
+	// 		experiment.trialnum = counter;
+	// 		counter++;
+	// 		console.log(counter); 
+	// 			if(counter === numTrials){
+	// 				globalGame.practiceOver = true
+	// 				console.log(globalGame.practiceOver)
+	// 			}
 
 
 
-	    	experiment.word = practiceWords[0]
-	    	experiment.pic1 = practiceImages[0];
-	    	experiment.pic2 = practiceImages[1];
+	//     	experiment.word = practiceWords[0]
+	//     	experiment.pic1 = practiceImages[0];
+	//     	experiment.pic2 = practiceImages[1];
 
-	    	//Was the picture clicked on the right or the left?
-	    	var picID = $(event.currentTarget).attr('id');
+	//     	//Was the picture clicked on the right or the left?
+	//     	var picID = $(event.currentTarget).attr('id');
 
-	    	switch(picID) {
-	    		case "leftPic1":
-	    			experiment.side = "L";
-	    			experiment.chosenpic = practiceImages[0];
-	    			break;
+	//     	switch(picID) {
+	//     		case "leftPic1":
+	//     			experiment.side = "L";
+	//     			experiment.chosenpic = practiceImages[0];
+	//     			break;
 
-	    		default: // "rightPic"
-	    			experiment.side = "R"
-	    			experiment.chosenpic = practiceImages[1];		
-	    	}
+	//     		default: // "rightPic"
+	//     			experiment.side = "R"
+	//     			experiment.chosenpic = practiceImages[1];		
+	//     	}
 
-	    	//Play sound according to chosen picture
-		    setTimeout(function() {winningSound.play();}, 100)
+	//     	//Play sound according to chosen picture
+	// 	    setTimeout(function() {winningSound.play();}, 100)
 
-		    console.log(experiment.chosenpic)
+	// 	    console.log(experiment.chosenpic)
 		    
 			
-			//If the child picked the picture that matched with the word, then they were correct. If they did not, they were not correct.
-			if (experiment.chosenpic === experiment.word) {
-				experiment.response = "Y";
-				winningSound = trialSounds[0];
-			} else {
-				experiment.response = "N";
-				winningSound = trialSounds[1];
-			}
+	// 		//If the child picked the picture that matched with the word, then they were correct. If they did not, they were not correct.
+	// 		if (experiment.chosenpic === experiment.word) {
+	// 			experiment.response = "Y";
+	// 			winningSound = trialSounds[0];
+	// 		} else {
+	// 			experiment.response = "N";
+	// 			winningSound = trialSounds[1];
+	// 		}
 
-			//Play sound according to chosen picture
-		    setTimeout(function() {winningSound.play();}, 100);
+	// 		//Play sound according to chosen picture
+	// 	    setTimeout(function() {winningSound.play();}, 100);
 
-			//what kind of trial was this?
-			// experiment.trialtype = "practice";
+	// 		//what kind of trial was this?
+	// 		// experiment.trialtype = "practice";
 
-			//Process the data to be saved 
-			experiment.processOneRow();
-
-
-	   	   $(document.getElementById(picID)).css('margin', "-8px");
-
-			//remove the pictures from the image array that have been used, and the word from the wordList that has been used
-			practiceImages.splice(0, 2);
-			practiceWords.splice(0, 1);
+	// 		//Process the data to be saved 
+	// 		experiment.processOneRow();
 
 
-			//hide objects and show only background for 2 seconds
-			setTimeout(function() {
-				$(".pic").delay().fadeOut(2000);
+	//    	   $(document.getElementById(picID)).css('margin', "-8px");
 
-				setTimeout(function() {
-					if(counter === numTrials){
-						showSlide('child')
-				 } else {
-				 	globalGame.practiceOver = false
-					experiment.practice(counter)
-					};
-				}, 3000);
-			}, 1);
-		});
+	// 		//remove the pictures from the image array that have been used, and the word from the wordList that has been used
+	// 		practiceImages.splice(0, 2);
+	// 		practiceWords.splice(0, 1);
 
-		// $("#donepractice").on('touchstart', function(event) {
 
-		// })
-	},
+	// 		//hide objects and show only background for 2 seconds
+	// 		setTimeout(function() {
+	// 			$(".pic").delay().fadeOut(2000);
+
+	// 			setTimeout(function() {
+	// 				if(counter === numTrials){
+	// 					showSlide('child')
+	// 			 } else {
+	// 			 	globalGame.practiceOver = false
+	// 				experiment.practice(counter)
+	// 				};
+	// 			}, 3000);
+	// 		}, 1);
+	// 	});
+
+	// 	// $("#donepractice").on('touchstart', function(event) {
+
+	// 	// })
+	// },
 	
 	//break between blocks
 	matcherBreak: function() {
@@ -587,7 +589,7 @@ var experiment = {
 	    	globalGame.clickDisabled = false;
 	    	
 	    	//disable subsequent clicks once the participant has made their choice
-			// clickDisabled = true; 
+			clickDisabled = true; 
 
 
 	    	experiment.trialnum = counter;
@@ -617,27 +619,11 @@ var experiment = {
 	    			$("#rightPic").attr("src", "images/"+ matcherImages[1] +"_color.jpg")
 	    			$("#leftPic").attr("src", "images/"+ matcherImages[0] +".jpg")
 	    	};
-
-	    	$("#doneTrial").fadeIn();
-			
-			// //what kind of trial was this?
-			// experiment.trialtype = allTrials[experiment.trialnum][0];
 		
-	    console.log(picID);
-		});
-
-		// prevent click event from being fired multiple times
-		$('#doneTrial').off('click', event);
 		
-		$('#doneTrial').on('click', function(event) {
+	    	console.log(picID);
 
-			console.log(experiment.chosenpic)
-
-			if (clickDisabled) return;
-			globalGame.clickDisabled =true;
-			// if (experiment.chosenpic = 'null') return;
-
-			//remove the pictures from the image array that have been used, and the word from the wordList that has been used
+	    	//remove the pictures from the image array that have been used, and the word from the wordList that has been used
 			matcherImages.splice(0, 2);
 			directorImages.splice(0, 2);
 			wordList.splice(0, 1);
@@ -646,13 +632,13 @@ var experiment = {
 	    	experiment.reactiontime = (new Date()).getTime() - startTime;
 
 			//If the child picked the picture that matched with the word, then they were correct. If they did not, they were not correct.
-			if (experiment.chosenpic === experiment.word) {
-				experiment.response = "Y";
-				winningSound = trialSounds[0];
-			} else {
-				experiment.response = "N";
-				winningSound = trialSounds[1];
-			};
+			// if (experiment.chosenpic === experiment.word) {
+			// 	experiment.response = "Y";
+			// 	winningSound = trialSounds[0];
+			// } else {
+			// 	experiment.response = "N";
+			// 	winningSound = trialSounds[1];
+			// };
 
 			//Play sound according to chosen picture
 		    // setTimeout(function() {winningSound.play();}, 100);
@@ -665,16 +651,11 @@ var experiment = {
 			//Process the data to be saved
 			experiment.processOneRow();
 
-			document.getElementById("blank").click();
-
 			console.log(matcherImages);
-
-
 
 			setTimeout(function() {
 				$(".pic").delay().fadeOut(2000);
-				// $("#leftPic").css('border', "none");
-	   //  		$("#rightPic").css('border', "none");
+				document.getElementById("blank").click();
 				counter++
 				experiment.trialnum = counter;
 				console.log(counter)
@@ -693,7 +674,8 @@ var experiment = {
 						experiment.directorStudy(counter);
 					}, 1000);
 				}
-			});
+
+			},1500);
 
 		})
 	},
