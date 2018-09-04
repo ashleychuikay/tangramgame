@@ -309,7 +309,11 @@ var experiment = {
 	},
 
 
+<<<<<<< HEAD
 	// USE THIS CODE IF PRACTICE ROUND IS NEEDED
+=======
+	// USE FOLLOWING CODE IF NEED PRACTICE ROUND
+>>>>>>> 9e848f5bd13c9d7ed73d17fc26ff19be1d0aa220
 
 	// directorPractice: function(){
 	// 	$('#prepractice').hide();
@@ -336,7 +340,11 @@ var experiment = {
 	// 	$("#directorpractice").fadeIn();
 	// },
 
+<<<<<<< HEAD
 	// MATCHER PRACTICE
+=======
+	// //practice trials using food items
+>>>>>>> 9e848f5bd13c9d7ed73d17fc26ff19be1d0aa220
 	// matcherPractice: function(counter) {
 
 	// 	var numTrials = 4
@@ -380,6 +388,17 @@ var experiment = {
 			
 	//     	//time the participant clicked - the time the trial began
 	//     	experiment.reactiontime = (new Date()).getTime() - startTime;
+<<<<<<< HEAD
+=======
+
+	// 		experiment.trialnum = counter;
+	// 		counter++;
+	// 		console.log(counter); 
+	// 			if(counter === numTrials){
+	// 				globalGame.practiceOver = true
+	// 				console.log(globalGame.practiceOver)
+	// 			}
+>>>>>>> 9e848f5bd13c9d7ed73d17fc26ff19be1d0aa220
 
 	// 		experiment.trialnum = counter;
 	// 		counter++;
@@ -588,7 +607,7 @@ var experiment = {
 	    	globalGame.clickDisabled = false;
 	    	
 	    	//disable subsequent clicks once the participant has made their choice
-			// clickDisabled = true; 
+			clickDisabled = true; 
 
 
 	    	experiment.trialnum = counter;
@@ -618,7 +637,11 @@ var experiment = {
 	    			$("#rightPic").attr("src", "images/"+ matcherImages[1] +"_color.jpg")
 	    			$("#leftPic").attr("src", "images/"+ matcherImages[0] +".jpg")
 	    	};
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> 9e848f5bd13c9d7ed73d17fc26ff19be1d0aa220
 		
 	    	console.log(picID);
 
@@ -638,6 +661,12 @@ var experiment = {
 			// 	experiment.response = "N";
 			// 	winningSound = trialSounds[1];
 			// };
+<<<<<<< HEAD
+=======
+
+			//Play sound according to chosen picture
+		    // setTimeout(function() {winningSound.play();}, 100);
+>>>>>>> 9e848f5bd13c9d7ed73d17fc26ff19be1d0aa220
 
 		    console.log(experiment.chosenpic);
 
@@ -647,14 +676,14 @@ var experiment = {
 			//Process the data to be saved
 			experiment.processOneRow();
 
-			document.getElementById("blank").click();
-
 			console.log(matcherImages);
-
-
 
 			setTimeout(function() {
 				$(".pic").delay().fadeOut(2000);
+<<<<<<< HEAD
+=======
+				document.getElementById("blank").click();
+>>>>>>> 9e848f5bd13c9d7ed73d17fc26ff19be1d0aa220
 				counter++
 				experiment.trialnum = counter;
 				console.log(counter)
@@ -673,6 +702,7 @@ var experiment = {
 						experiment.directorStudy(counter);
 					}, 1000);
 				}
+<<<<<<< HEAD
 		});
 
 		// prevent click event from being fired multiple times
@@ -688,6 +718,10 @@ var experiment = {
 
 			
 		// 	});
+=======
+
+			},1500);
+>>>>>>> 9e848f5bd13c9d7ed73d17fc26ff19be1d0aa220
 
 		})
 	},
