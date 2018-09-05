@@ -649,7 +649,7 @@ var experiment = {
 			console.log(matcherImages);
 
 			setTimeout(function() {
-				$(".pic").delay().fadeOut(2000);
+				$(".pic").delay().fadeOut(1500);
 				document.getElementById("blank").click();
 				counter++
 				experiment.trialnum = counter;
@@ -669,7 +669,7 @@ var experiment = {
 						experiment.directorStudy(counter);
 					}, 1500);
 				}
-			});
+			}, 1000);
 
 		});
 	},
