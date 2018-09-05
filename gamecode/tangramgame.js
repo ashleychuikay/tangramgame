@@ -223,10 +223,8 @@ function startExperiment() {
 	};
 
 	//load sounds for feedback after each trial
-	// yesSound = new WebAudioAPISound("tangramsounds/yes");
-	// noSound = new WebAudioAPISound("tangramsounds/no");
-	// trialSounds.push(yesSound);
-	// trialSounds.push(noSound);
+	nextSound = new WebAudioAPISound("next");
+	trialSounds.push(nextSound);
 
 	
 	// to start at beginning
@@ -237,7 +235,6 @@ function startExperiment() {
 
 	// to jump around for de-bugging
 	// globalGame.my_role=="speaker1" ? showSlide("directorstage") : showSlide("matcherstage");
-
 };
 
 
@@ -499,7 +496,6 @@ var experiment = {
 		dataforRound += "," + experiment.date + "," + experiment.timestamp + "," + experiment.reactiontime + "\n";
 		console.log(dataforRound)
 		$.post("https://callab.uchicago.edu/experiments/tangramgame/gamecode/tangramgamesave.php", {postresult_string : dataforRound});	
-
 	},
 
 
@@ -507,9 +503,7 @@ var experiment = {
     directorStudy: function(counter){
 
     	experiment.trialnum = counter;
-    	console.log(globalGame.trialnum);
-    	console.log(experiment.trialnum);
-    	console.log("director");
+    	experiment.subid = globalGame.subid;
 
 		// Create the object table for director (tr=table row; td= table data)
 
@@ -600,6 +594,10 @@ var experiment = {
 	    	experiment.pic1 = matcherImages[0];
 	    	experiment.pic2 = matcherImages[1];
 
+
+			//time the participant clicked picture - the time the trial began
+	    	experiment.reactiontime = (new Date()).getTime() - startTime;
+
 	    	// Edit!! allTrials is the arrays of blocks
 	    	// experiment.parentchild = allTrials[experiment.trialnum][2];
 
@@ -630,21 +628,15 @@ var experiment = {
 			directorImages.splice(0, 2);
 			wordList.splice(0, 1);
 
-			//time the participant clicked next - the time the trial began
-	    	experiment.reactiontime = (new Date()).getTime() - startTime;
-
 			//If the child picked the picture that matched with the word, then they were correct. If they did not, they were not correct.
-			// if (experiment.chosenpic === experiment.word) {
-			// 	experiment.response = "Y";
-			// 	winningSound = trialSounds[0];
-			// } else {
-			// 	experiment.response = "N";
-			// 	winningSound = trialSounds[1];
-			// };
+			if (experiment.chosenpic === experiment.word) {
+				experiment.response = "Y";
+			} else {
+				experiment.response = "N";
+			};
 
-			//Play sound according to chosen picture
-		    // setTimeout(function() {winningSound.play();}, 100);
-
+			//Play sound at end of trial
+		    setTimeout(function() {nextSound.play();}, 100);
 
 		    console.log(experiment.chosenpic);
 
