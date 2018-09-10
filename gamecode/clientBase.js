@@ -84,6 +84,7 @@ var sharedSetup = function(game) {
     globalGame.director = directorList;
     globalGame.matcher = matcherList;
     globalGame.correctList = wordList;
+    globalGame.subid = experiment.subid;
     // globalGame.trialnum = 0;
     game.socket.send(msg);
   });

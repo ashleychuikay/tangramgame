@@ -504,6 +504,7 @@ var experiment = {
 
     	experiment.trialnum = counter;
     	experiment.subid = globalGame.subid;
+    	console.log(experiment.subid);
 
 		// Create the object table for director (tr=table row; td= table data)
 
@@ -545,6 +546,7 @@ var experiment = {
 	  	// Update information
 
 	  	experiment.subid = globalGame.subid;
+	  	console.log(experiment.subid);
 	  	directorImages = globalGame.director.split(',');
 		matcherImages = globalGame.matcher.split(',');
 		wordList = globalGame.correctList.split(',');
