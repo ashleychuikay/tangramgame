@@ -282,11 +282,172 @@ var experiment = {
 		experiment.subid = document.getElementById("subjectID").value;
 
 	  	$('#instructions').hide();
-	    experiment.dpreStudy();
+	    experiment.directorPractice();
 
 		// showSlide("parent");
 	},
 
+
+	// Practice trials
+
+	directorPractice: function(counter){
+
+		// Create the object table for director (tr=table row; td= table data)
+
+		var practiceobjects_html = "";
+	    
+	   	//HTML for the first object on the left
+		leftname = "practiceimages/" + practiceImages[0] + ".jpg";
+		directorobjects_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic"/></td>';
+
+	
+		//HTML for the first object on the right
+		rightname = "practiceimages/" + practiceImages[1] + ".jpg";
+	   	directorobjects_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic"/></td>';
+		
+	  	directorobjects_html += '</tr></table>';
+		
+		var target = wordList[0];
+
+		switch(target) {
+			case directorImages[0]:
+				$("#leftPic").addClass('target');
+				break;
+
+			default: //directorImages[1]
+				$("#rightPic").addClass('target');		
+		};
+
+	    $("#objects").html(practiceobjects_html); 
+		$("#directorpractice").fadeIn();
+	},
+
+
+	// MATCHER PRACTICE
+
+	// practice trials using familiar images
+
+	matcherPractice: function(counter) {
+
+		var numTrials = 4
+
+		experiment.subid = globalGame.subid;
+		$("#childinstructions").hide();
+
+		var practiceobjects_html = "";
+
+		// Create the object table (tr=table row; td= table data)
+	    
+	   	//HTML for the first object on the left
+		leftname = "practiceimages/" + practiceImages[0] + ".jpg";
+		objects_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic1"/></td>';
+	
+		//HTML for the first object on the right
+		rightname = "practiceimages/" + practiceImages[1] + ".jpg";
+	   	objects_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic1"/></td>';
+		
+	  	objects_html += '</tr></table>';
+	    $("#practiceobjects").html(objects_html); 
+		$("#matcherpractice").fadeIn();
+
+		var startTime = (new Date()).getTime();
+
+		globalGame.clickDisabled = true;
+		clickDisabled = true;
+		setTimeout(function() {
+			clickDisabled = false;
+		},  1500);
+		
+
+		$('.pic').on('touchstart', function(event) {
+	    	if (clickDisabled) return;
+
+	    	globalGame.clickDisabled = false;
+	    	
+	    	//disable subsequent clicks once the participant has made their choice
+			clickDisabled = true; 
+
+			
+	    	//time the participant clicked - the time the trial began
+	    	experiment.reactiontime = (new Date()).getTime() - startTime;
+
+			experiment.trialnum = counter;
+
+	    	experiment.word = practiceWords[0]
+	    	experiment.pic1 = practiceImages[0];
+	    	experiment.pic2 = practiceImages[1];
+
+
+	    	//Add color to selected picture
+	    	var picID = $(event.currentTarget).attr('id');
+
+	    	switch(picID) {
+	    		case "leftPic":
+	    			console.log("left")
+	    			experiment.side = "L";
+	    			experiment.chosenpic = matcherImages[0];
+	    			$("#leftPic1").attr("src", "images/"+ practiceImages[0] +"_color.jpg")
+	    			$("#rightPic1").attr("src", "images/"+ practiceImages[1] +".jpg")
+	    			break;
+
+	    		default: // "rightPic"
+	    			console.log("right")
+	    			experiment.side = "R";
+	    			experiment.chosenpic = matcherImages[1];
+	    			$("#rightPic1").attr("src", "images/"+ practiceImages[1] +"_color.jpg")
+	    			$("#leftPic1").attr("src", "images/"+ practiceImages[0] +".jpg")
+	    	};
+		
+	    	console.log(picID);
+
+		    console.log(experiment.chosenpic)
+		    
+			
+			//If the child picked the picture that matched with the word, then they were correct. If they did not, they were not correct.
+			if (experiment.chosenpic === experiment.word) {
+				experiment.response = "Y";
+			} else {
+				experiment.response = "N";
+			}
+
+			//Play sound at end of trial
+		    setTimeout(function() {nextSound.play();}, 100);
+
+			//what kind of trial was this?
+			// experiment.trialtype = "practice";
+
+			//Process the data to be saved 
+			experiment.processOneRow();
+
+			//remove the pictures from the image array that have been used, and the word from the wordList that has been used
+			practiceImages.splice(0, 2);
+			practiceWords.splice(0, 1);
+
+			//hide objects and show only background for 2 seconds
+			setTimeout(function() {
+				$(".pic").delay().fadeOut(2000);
+
+				setTimeout(function() {
+					counter++;
+					console.log(counter); 
+					if(counter === numTrials){
+						globalGame.practiceOver = true;
+						console.log(globalGame.practiceOver);
+						experiment.dpreStudy();
+				 	} else {
+				 		globalGame.practiceOver = false;
+						experiment.directorPractice(counter);
+					};
+				}, 3000);
+			}, 1);
+		});
+
+		// $("#donepractice").on('touchstart', function(event) {
+
+		// })
+	},
+	
+	//Moving from practice to study
 	mpreStudy: function() {
 		document.body.style.background = "white";
 		$("#prestudy").hide();
@@ -305,162 +466,6 @@ var experiment = {
 		}, normalpause);
 	},
 
-
-	// USE THIS CODE IF PRACTICE ROUND IS NEEDED
-
-	// directorPractice: function(){
-	// 	$('#prepractice').hide();
-
-	// 	// Create the object table for director (tr=table row; td= table data)
-
-	// 	var practiceobjects_html = "";
-	    
-	//    	//HTML for the first object on the left
-	// 	leftname = "practiceimages/" + practiceImages[0] + ".jpg";
-	// 	directorobjects_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic"/></td>';
-
-	
-	// 	//HTML for the first object on the right
-	// 	rightname = "practiceimages/" + practiceImages[1] + ".jpg";
-	//    	directorobjects_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic"/></td>';
-		
-	//   	directorobjects_html += '</tr></table>';
-		
-	// 	var target = "practiceimages/" + wordList[0] + ".jpg";
-	// 	$(target).css("margin", "-8px");
-
-	//     $("#objects").html(practiceobjects_html); 
-	// 	$("#directorpractice").fadeIn();
-	// },
-
-
-	// MATCHER PRACTICE
-
-	// //practice trials using food items
-
-	// matcherPractice: function(counter) {
-
-	// 	var numTrials = 4
-
-	// 	experiment.subid = globalGame.subid;
-	// 	$("#childinstructions").hide();
-
-	// 	var practiceobjects_html = "";
-
-	// 	// Create the object table (tr=table row; td= table data)
-	    
-	//    	//HTML for the first object on the left
-	// 	leftname = "practiceimages/" + practiceImages[0] + ".jpg";
-	// 	objects_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic1"/></td>';
-	
-	// 	//HTML for the first object on the right
-	// 	rightname = "practiceimages/" + practiceImages[1] + ".jpg";
-	//    	objects_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic1"/></td>';
-		
-	//   	objects_html += '</tr></table>';
-	//     $("#practiceobjects").html(objects_html); 
-	// 	$("#matcherpractice").fadeIn();
-
-	// 	var startTime = (new Date()).getTime();
-
-	// 	globalGame.clickDisabled = true;
-	// 	clickDisabled = true;
-	// 	setTimeout(function() {
-	// 		clickDisabled = false;
-	// 	},  1500);
-		
-
-	// 	$('.pic').on('touchstart', function(event) {
-	//     	if (clickDisabled) return;
-
-	//     	globalGame.clickDisabled = false;
-	    	
-	//     	//disable subsequent clicks once the participant has made their choice
-	// 		// clickDisabled = true; 
-
-			
-	//     	//time the participant clicked - the time the trial began
-	//     	experiment.reactiontime = (new Date()).getTime() - startTime;
-
-	// 		experiment.trialnum = counter;
-	// 		counter++;
-	// 		console.log(counter); 
-	// 			if(counter === numTrials){
-	// 				globalGame.practiceOver = true
-	// 				console.log(globalGame.practiceOver)
-	// 			}
-
-
-	//     	experiment.word = practiceWords[0]
-	//     	experiment.pic1 = practiceImages[0];
-	//     	experiment.pic2 = practiceImages[1];
-
-	//     	//Was the picture clicked on the right or the left?
-	//     	var picID = $(event.currentTarget).attr('id');
-
-	//     	switch(picID) {
-	//     		case "leftPic1":
-	//     			experiment.side = "L";
-	//     			experiment.chosenpic = practiceImages[0];
-	//     			break;
-
-	//     		default: // "rightPic"
-	//     			experiment.side = "R"
-	//     			experiment.chosenpic = practiceImages[1];		
-	//     	}
-
-	//     	//Play sound according to chosen picture
-	// 	    setTimeout(function() {winningSound.play();}, 100)
-
-	// 	    console.log(experiment.chosenpic)
-		    
-			
-	// 		//If the child picked the picture that matched with the word, then they were correct. If they did not, they were not correct.
-	// 		if (experiment.chosenpic === experiment.word) {
-	// 			experiment.response = "Y";
-	// 			winningSound = trialSounds[0];
-	// 		} else {
-	// 			experiment.response = "N";
-	// 			winningSound = trialSounds[1];
-	// 		}
-
-	// 		//Play sound according to chosen picture
-	// 	    setTimeout(function() {winningSound.play();}, 100);
-
-	// 		//what kind of trial was this?
-	// 		// experiment.trialtype = "practice";
-
-	// 		//Process the data to be saved 
-	// 		experiment.processOneRow();
-
-
-	//    	   $(document.getElementById(picID)).css('margin', "-8px");
-
-	// 		//remove the pictures from the image array that have been used, and the word from the wordList that has been used
-	// 		practiceImages.splice(0, 2);
-	// 		practiceWords.splice(0, 1);
-
-
-	// 		//hide objects and show only background for 2 seconds
-	// 		setTimeout(function() {
-	// 			$(".pic").delay().fadeOut(2000);
-
-	// 			setTimeout(function() {
-	// 				if(counter === numTrials){
-	// 					showSlide('child')
-	// 			 } else {
-	// 			 	globalGame.practiceOver = false
-	// 				experiment.practice(counter)
-	// 				};
-	// 			}, 3000);
-	// 		}, 1);
-	// 	});
-
-	// 	// $("#donepractice").on('touchstart', function(event) {
-
-	// 	// })
-	// },
-	
 	//break between blocks
 	matcherBreak: function() {
 		showSlide('break');
@@ -534,7 +539,6 @@ var experiment = {
 			default: //directorImages[1]
 				$("#rightPic1").addClass('target');		
 		};
-
 
 		$("#directorstage").fadeIn();
 	},

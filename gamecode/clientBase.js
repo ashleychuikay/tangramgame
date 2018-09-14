@@ -99,7 +99,7 @@ var sharedSetup = function(game) {
     globalGame.trialnum = 0;
 
     $('#childinstructions').hide();
-    experiment.mpreStudy();
+    experiment.matcherPractice();
   });
 
   // Tell server when child is done with dots game
@@ -119,14 +119,14 @@ var sharedSetup = function(game) {
   // });
 
   // Tell server when parent clicks the begin practice button
-  $('#beginPractice').on('click', function(event){
-        game.socket.send('beginPractice');
-        experiment.parentPractice();
-  });
+  // $('#beginPractice').on('click', function(event){
+  //       game.socket.send('beginPractice');
+  //       experiment.parentPractice();
+  // });
 
-  game.socket.on('beginPractice', function(){
-    experiment.practice(0);
-  });
+  // game.socket.on('beginPractice', function(){
+  //   experiment.practice(0);
+  // });
 
   // Tell server when child selects a picture during practice
   $('#practiceobjects').on('click touchstart', function(event){
@@ -134,7 +134,7 @@ var sharedSetup = function(game) {
     console.log(globalGame.practiceOver)
     if (globalGame.practiceOver){
       console.log('over!')
-        var msg = ['done', wordList].join('.');
+        var msg = 'done'
         game.socket.send(msg);
     } else {
     game.socket.send('practiceselected');
@@ -142,17 +142,16 @@ var sharedSetup = function(game) {
   });
 
   game.socket.on('practiceselected', function() {
-    $('#parentpractice').hide();
+    $('#directorpractice').hide();
     globalGame.trialnum++
     console.log(globalGame.trialnum)
-    experiment.parentPractice();
+    experiment.directorPractice(globalGame.trialnum);
   });
 
-  game.socket.on('done', function(data){
-     globalGame.correctList = data.msg;
+  game.socket.on('done', function(){
      globalGame.trialnum = 0;
       setTimeout(function(){
-        showSlide('prestudy');
+        experiment.dpreStudy();
       }, 2000);
   });
 

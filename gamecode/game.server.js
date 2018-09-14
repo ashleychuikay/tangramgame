@@ -105,8 +105,7 @@ var onMessage = function(client,message) {
 
   case 'done':
    _.map(others, function(p) {
-    var msg= message_parts[1]
-    p.player.instance.emit('done', {msg: msg})
+    p.player.instance.emit('done')
    });
    break;
 
