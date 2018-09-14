@@ -147,9 +147,9 @@ var matcherImages = [];
 var trialSounds = [];
 
 // shuffle practice trials
-// practiceTrials = [];
-// practiceWords = [];
-// practiceImages = [];
+practiceTrials = [];
+practiceWords = [];
+practiceImages = [];
 	
 // for(i=0; i<=1; i++){
 // 	newTrial = easyTrial.slice();
