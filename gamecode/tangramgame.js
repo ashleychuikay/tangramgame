@@ -124,8 +124,8 @@ getCurrentTime = function() {
 }
 
 //for practice
-var easyTrial = ["apple", "banana", "orange"];
-var hardTrial = ["asparagus", "artichoke", "onion"];
+var easyTrial = ["apple", "banana"];
+var hardTrial = ["artichoke", "onion"];
 var trialImages = [];
 
 //for trials
@@ -149,33 +149,41 @@ var trialSounds = [];
 // shuffle practice trials
 practiceTrials = [];
 practiceWords = [];
-practiceImages = [];
+dpracticeImages = [];
+mpracticeImages = [];
 	
-// for(i=0; i<=1; i++){
-// 	newTrial = easyTrial.slice();
-// 	shuffle(newTrial);
-// 	newTrial.push("apple");
-// 	practiceTrials.push(newTrial);
-// 	newTrial = hardTrial.slice();
-// 	shuffle(newTrial);
-// 	newTrial.push("artichoke");
-// 	practiceTrials.push(newTrial);
-// };
+for(i=0; i<=1; i++){
+	newTrial = easyTrial.slice();
+	shuffle(newTrial);
+	newTrial.push("apple");
+	practiceTrials.push(newTrial);
+	newTrial = hardTrial.slice();
+	shuffle(newTrial);
+	newTrial.push("artichoke");
+	practiceTrials.push(newTrial);
+};
 
-// //construct word list for practice trials
-// for(i=0; i<practiceTrials.length; i++){
-// 	var word = practiceTrials[i][3]
-// 	practiceWords.push(word)
-// };
+//construct word list for practice trials
+for(i=0; i<practiceTrials.length; i++){
+	var word = practiceTrials[i][3]
+	practiceWords.push(word)
+};
 
-// //order practice trial images
-// for(i=0; i<practiceTrials.length; i++) {
-// 	subImages = practiceTrials[i].slice();
-// 	 for(j=0; j<=2; j++) {
-// 	 	newImages = subImages.slice();
-// 	 	practiceImages.push(newImages[j]);
-// 	 }
-// };
+//order practice trial images
+for(i=0; i<practiceTrials.length; i++) {
+	subImages = practiceTrials[i].slice();
+	items = subImages.splice(0,2);
+
+	shuffle(items);
+	for(j=0; j<=2; j++) {
+	 	dpracticeImages.push(items[j]);
+	 };
+
+	shuffle(items);
+	for(k=0; k<=2; k++) {
+		mpracticeImages.push(items[k]);
+	};
+};
 
 // console.log(practiceTrials)
 // console.log(practiceImages)
@@ -292,33 +300,35 @@ var experiment = {
 
 	directorPractice: function(counter){
 
+		experiment.subid = globalGame.subid;
+
 		// Create the object table for director (tr=table row; td= table data)
 
-		var practiceobjects_html = "";
+		var directorpractice_html = "";
 	    
 	   	//HTML for the first object on the left
-		leftname = "practiceimages/" + practiceImages[0] + ".jpg";
-		directorobjects_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic"/></td>';
+		leftname = "practiceimages/" + dpracticeImages[0] + ".jpg";
+		directorpratice_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic"/></td>';
 
 	
 		//HTML for the first object on the right
-		rightname = "practiceimages/" + practiceImages[1] + ".jpg";
-	   	directorobjects_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic"/></td>';
+		rightname = "practiceimages/" + dpracticeImages[1] + ".jpg";
+	   	directorpractice_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic"/></td>';
 		
-	  	directorobjects_html += '</tr></table>';
+	  	directorpractice_html += '</tr></table>';
 		
-		var target = wordList[0];
+		var target = practiceWords[0];
 
 		switch(target) {
-			case directorImages[0]:
+			case dpracticeImages[0]:
 				$("#leftPic").addClass('target');
 				break;
 
-			default: //directorImages[1]
+			default: //dpracticeImages[1]
 				$("#rightPic").addClass('target');		
 		};
 
-	    $("#objects").html(practiceobjects_html); 
+	    $("#practiceobjects").html(directorpractice_html); 
 		$("#directorpractice").fadeIn();
 	},
 
@@ -334,20 +344,21 @@ var experiment = {
 		experiment.subid = globalGame.subid;
 		$("#childinstructions").hide();
 
-		var practiceobjects_html = "";
+		var matcherpractice_html = "";
 
 		// Create the object table (tr=table row; td= table data)
 	    
 	   	//HTML for the first object on the left
-		leftname = "practiceimages/" + practiceImages[0] + ".jpg";
-		objects_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic1"/></td>';
+		leftname = "practiceimages/" + mpracticeImages[0] + ".jpg";
+		matcherpractice_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic1"/></td>';
 	
 		//HTML for the first object on the right
-		rightname = "practiceimages/" + practiceImages[1] + ".jpg";
-	   	objects_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic1"/></td>';
+		rightname = "practiceimages/" + mpracticeImages[1] + ".jpg";
+	   	matcherpractice_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic1"/></td>';
 		
-	  	objects_html += '</tr></table>';
-	    $("#practiceobjects").html(objects_html); 
+	  	matcherpractice_html += '</tr></table>';
+
+	    $("#practiceobjects2").html(matcherpractice_html); 
 		$("#matcherpractice").fadeIn();
 
 		var startTime = (new Date()).getTime();
@@ -385,17 +396,17 @@ var experiment = {
 	    		case "leftPic":
 	    			console.log("left")
 	    			experiment.side = "L";
-	    			experiment.chosenpic = matcherImages[0];
-	    			$("#leftPic1").attr("src", "images/"+ practiceImages[0] +"_color.jpg")
-	    			$("#rightPic1").attr("src", "images/"+ practiceImages[1] +".jpg")
+	    			experiment.chosenpic = mpracticeImages[0];
+	    			$("#leftPic1").attr("src", "images/"+ mpracticeImages[0] +"_color.jpg")
+	    			$("#rightPic1").attr("src", "images/"+ mpracticeImages[1] +".jpg")
 	    			break;
 
 	    		default: // "rightPic"
 	    			console.log("right")
 	    			experiment.side = "R";
-	    			experiment.chosenpic = matcherImages[1];
-	    			$("#rightPic1").attr("src", "images/"+ practiceImages[1] +"_color.jpg")
-	    			$("#leftPic1").attr("src", "images/"+ practiceImages[0] +".jpg")
+	    			experiment.chosenpic = mpracticeImages[1];
+	    			$("#rightPic1").attr("src", "images/"+ mpracticeImages[1] +"_color.jpg")
+	    			$("#leftPic1").attr("src", "images/"+ mpracticeImages[0] +".jpg")
 	    	};
 		
 	    	console.log(picID);
@@ -408,7 +419,7 @@ var experiment = {
 				experiment.response = "Y";
 			} else {
 				experiment.response = "N";
-			}
+			};
 
 			//Play sound at end of trial
 		    setTimeout(function() {nextSound.play();}, 100);
@@ -420,7 +431,8 @@ var experiment = {
 			experiment.processOneRow();
 
 			//remove the pictures from the image array that have been used, and the word from the wordList that has been used
-			practiceImages.splice(0, 2);
+			mpracticeImages.splice(0, 2);
+			dpracticeImages.splice(0,2);
 			practiceWords.splice(0, 1);
 
 			//hide objects and show only background for 2 seconds
@@ -430,7 +442,7 @@ var experiment = {
 				setTimeout(function() {
 					counter++;
 					console.log(counter); 
-					if(counter === numTrials){
+					if(counter === 4){
 						globalGame.practiceOver = true;
 						console.log(globalGame.practiceOver);
 						experiment.dpreStudy();
