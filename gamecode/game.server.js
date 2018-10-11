@@ -123,7 +123,22 @@ var onMessage = function(client,message) {
   //   p.player.instance.emit('selected')
   //  });
   //  break;
+  
+  // go to next practice trial
 
+  case 'nextPractice':
+  _.map(others, function(p) {
+    setTimeout(function() {
+      var test= message_parts[1]
+      var list= message_parts[2]
+      var director= message_parts[3]
+      var matcher= message_parts[4]
+      var trialnum= message_parts[5]
+      p.player.instance.emit('nextPractice', {msg: test, list, director, matcher, trialnum})
+    }, 500);
+  });
+  break;
+ 
   // go to next trial
 
   case 'nextTrial':

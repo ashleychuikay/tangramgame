@@ -147,10 +147,10 @@ var matcherImages = [];
 var trialSounds = [];
 
 // shuffle practice trials
-practiceTrials = [];
-practiceWords = [];
-dpracticeImages = [];
-mpracticeImages = [];
+var practiceTrials = [];
+var practiceWords = [];
+var dpracticeImages = [];
+var mpracticeImages = [];
 	
 for(i=0; i<=1; i++){
 	newTrial = easyTrial.slice();
@@ -290,7 +290,7 @@ var experiment = {
 		experiment.subid = document.getElementById("subjectID").value;
 
 	  	$('#instructions').hide();
-	    experiment.directorPractice();
+	    experiment.directorPractice(0);
 
 		// showSlide("parent");
 	},
@@ -300,6 +300,7 @@ var experiment = {
 
 	directorPractice: function(counter){
 
+		experiment.trialnum = counter
 		experiment.subid = globalGame.subid;
 
 		// Create the object table for director (tr=table row; td= table data)
@@ -308,7 +309,7 @@ var experiment = {
 	    
 	   	//HTML for the first object on the left
 		leftname = "practiceimages/" + dpracticeImages[0] + ".jpg";
-		directorpratice_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic"/></td>';
+		directorpractice_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic"/></td>';
 
 	
 		//HTML for the first object on the right
@@ -339,10 +340,12 @@ var experiment = {
 
 	matcherPractice: function(counter) {
 
-		var numTrials = 4
-
 		experiment.subid = globalGame.subid;
 		$("#childinstructions").hide();
+
+		dpracticeImages = globalGame.director.split(',');
+		mpracticeImages = globalGame.matcher.split(',');
+		practiceWords = globalGame.correctList.split(',');
 
 		var matcherpractice_html = "";
 
@@ -437,20 +440,20 @@ var experiment = {
 
 			//hide objects and show only background for 2 seconds
 			setTimeout(function() {
-				$(".pic").delay().fadeOut(2000);
-
-				setTimeout(function() {
-					counter++;
-					console.log(counter); 
-					if(counter === 4){
-						globalGame.practiceOver = true;
-						console.log(globalGame.practiceOver);
-						experiment.dpreStudy();
-				 	} else {
-				 		globalGame.practiceOver = false;
-						experiment.directorPractice(counter);
-					};
-				}, 3000);
+				$(".pic").delay().fadeOut(1500);
+				document.getElementById("empty").click();
+				counter++
+				experiment.trialnum = counter;
+				console.log(counter)
+				console.log("matcher")
+				if(counter === 4){
+					globalGame.practiceOver = true;
+					console.log(globalGame.practiceOver);
+					experiment.dpreStudy();
+				} else {
+			 		globalGame.practiceOver = false;
+					experiment.directorPractice(counter);
+				};
 			}, 1);
 		});
 
@@ -474,7 +477,8 @@ var experiment = {
 			directorImages = globalGame.director;
 			matcherImages = globalGame.matcher;
 			wordList = globalGame.correctList;
-			experiment.directorStudy();
+			globalGame.trialnum = 0;
+			experiment.directorStudy(globalGame.trialnum);
 		}, normalpause);
 	},
 

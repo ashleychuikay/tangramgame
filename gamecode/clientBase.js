@@ -183,8 +183,47 @@ var sharedSetup = function(game) {
   //   experiment.preStudy();
   // });
 
+  //Tell server when matcher clicks a practice image
+  $('#empty').on('click', function(event){
 
-  // Tell server when matcher clicks the "next" button
+      var msg = ['nextPractice', 'hello', practiceWords, dpracticeImages, mpracticeImages, globalGame.trialnum].join('.');
+      // console.log(wordList);
+      game.socket.send(msg);
+
+    $('#matcherpractice').hide();
+  });
+
+  game.socket.on('nextPractice', function(data){
+    $('#directorpractice').hide();
+
+    globalGame.correctList = data.list; 
+    // console.log(globalGame.correctList);
+
+    globalGame.director = data.director;
+    globalGame.matcher = data.matcher;
+
+    globalGame.trialnum = data.trialnum;
+
+    // console.log(globalGame.trialnum);
+
+    globalGame.trialnum++;
+
+    // console.log(globalGame.trialnum);
+    // console.log("server");
+
+    if (globalGame.trialnum === 4) {
+      globalGame.practiceOver = true;
+      globalGame.trialnum = 0;
+      experiment.mpreStudy();
+    } else {
+      setTimeout(function() {
+      experiment.matcherPractice(globalGame.trialnum);
+    }, 2000)
+    }
+  });
+
+
+  // Tell server when matcher clicks a tangram
   $('#blank').on('click', function(event){
 
       var msg = ['nextTrial', 'hello', wordList, directorImages, matcherImages, globalGame.trialnum].join('.');
