@@ -85,6 +85,7 @@ var sharedSetup = function(game) {
     globalGame.matcher = mpracticeImages;
     globalGame.correctList = practiceWords;
     globalGame.subid = experiment.subid;
+    console.log(experiment.subid)
     // globalGame.trialnum = 0;
     game.socket.send(msg);
   });
@@ -92,7 +93,7 @@ var sharedSetup = function(game) {
   game.socket.on('startButton', function(data){
     // globalGame.test = data.test;
     globalGame.subid = data.subid;
-    // console.log(globalGame.subid);
+    console.log(globalGame.subid);
     globalGame.correctList = data.list;
     globalGame.director = data.director;
     globalGame.matcher = data.matcher;

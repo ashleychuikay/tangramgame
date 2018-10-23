@@ -346,6 +346,7 @@ var experiment = {
 	matcherPractice: function(counter) {
 
 		experiment.subid = globalGame.subid;
+		console.log(globalGame.subid);
 		$("#childinstructions").hide();
 
 		dpracticeImages = globalGame.director.split(',');
