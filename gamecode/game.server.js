@@ -114,7 +114,12 @@ var onMessage = function(client,message) {
 
   case 'beginButton':    
    _.map(others, function(p) {
-    p.player.instance.emit('beginButton')
+    var test= message_parts[1]
+    var subid= message_parts[2]
+    var list= message_parts[3]
+    var director= message_parts[4]
+    var matcher= message_parts[5]
+    p.player.instance.emit('startButton', {msg: test, subid, list, director, matcher})
   });
    break;
 

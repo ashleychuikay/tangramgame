@@ -138,6 +138,14 @@ This stuff will vary by experiment.
 
 }
 
+#practiceobjects2 {
+	margin-top: 15%;
+	overflow: hidden;
+	/* prevents grey highlighting from flashing on ipad when using on touchstart */
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+
+}
+
 #objects {
 	margin-top: 15%;
 	overflow: hidden;
@@ -173,10 +181,6 @@ This stuff will vary by experiment.
 	max-height: 295px;
 }
 
-/*#middlePic {
-	width: 295px;
-	max-height: 295px;
-}*/
 
 #rightPic {
 	width: 295px;
@@ -188,10 +192,6 @@ This stuff will vary by experiment.
 	max-height: 295px;
 }
 
-#middlePic1 {
-	width: 295px;
-	max-height: 295px;
-}
 
 #rightPic1 {
 	width: 295px;

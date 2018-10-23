@@ -80,10 +80,10 @@ var sharedSetup = function(game) {
   // Tell server when parent clicks the start button
   $('#beforeStudy').on('click', function(event){
     experiment.checkInput();
-    var msg = ['startButton', 'hello', experiment.subid, wordList, directorList, matcherList].join('.');
-    globalGame.director = directorList;
-    globalGame.matcher = matcherList;
-    globalGame.correctList = wordList;
+    var msg = ['startButton', 'hello', experiment.subid, practiceWords, dpracticeImages, mpracticeImages].join('.');
+    globalGame.director = dpracticeImages;
+    globalGame.matcher = mpracticeImages;
+    globalGame.correctList = practiceWords;
     globalGame.subid = experiment.subid;
     // globalGame.trialnum = 0;
     game.socket.send(msg);
@@ -99,7 +99,7 @@ var sharedSetup = function(game) {
     globalGame.trialnum = 0;
 
     $('#childinstructions').hide();
-    experiment.matcherPractice();
+    experiment.matcherPractice(0);
   });
 
   // Tell server when child is done with dots game
@@ -129,31 +129,31 @@ var sharedSetup = function(game) {
   // });
 
   // Tell server when child selects a picture during practice
-  $('#practiceobjects').on('click touchstart', function(event){
-    if(globalGame.clickDisabled) return;
-    console.log(globalGame.practiceOver)
-    if (globalGame.practiceOver){
-      console.log('over!')
-        var msg = 'done'
-        game.socket.send(msg);
-    } else {
-    game.socket.send('practiceselected');
-    globalGame.clickDisabled = true};
-  });
+  // $('#practiceobjects').on('click touchstart', function(event){
+  //   if(globalGame.clickDisabled) return;
+  //   console.log(globalGame.practiceOver)
+  //   if (globalGame.practiceOver){
+  //     console.log('over!')
+  //       var msg = 'done'
+  //       game.socket.send(msg);
+  //   } else {
+  //   game.socket.send('practiceselected');
+  //   globalGame.clickDisabled = true};
+  // });
 
-  game.socket.on('practiceselected', function() {
-    $('#directorpractice').hide();
-    globalGame.trialnum++
-    console.log(globalGame.trialnum)
-    experiment.directorPractice(globalGame.trialnum);
-  });
+  // game.socket.on('practiceselected', function() {
+  //   $('#directorpractice').hide();
+  //   globalGame.trialnum++
+  //   console.log(globalGame.trialnum)
+  //   experiment.directorPractice(globalGame.trialnum);
+  // });
 
-  game.socket.on('done', function(){
-     globalGame.trialnum = 0;
-      setTimeout(function(){
-        experiment.dpreStudy();
-      }, 2000);
-  });
+  // game.socket.on('done', function(){
+  //    globalGame.trialnum = 0;
+  //     setTimeout(function(){
+  //       experiment.dpreStudy();
+  //     }, 2000);
+  // });
 
 
   // Tell server when practice is over
@@ -172,16 +172,6 @@ var sharedSetup = function(game) {
   //     }, 2000);
   // });
 
-
-  // Tell server when parent clicks the begin button
-  // $('#beginStudy').on('click ', function(event){
-  //       game.socket.send('beginButton');
-  //       experiment.parentStudy();
-  // });
-
-  // game.socket.on('beginButton', function(){
-  //   experiment.preStudy();
-  // });
 
   //Tell server when matcher clicks a practice image
   $('#empty').on('click', function(event){
@@ -214,12 +204,36 @@ var sharedSetup = function(game) {
     if (globalGame.trialnum === 4) {
       globalGame.practiceOver = true;
       globalGame.trialnum = 0;
-      experiment.mpreStudy();
+      showSlide('child');
     } else {
       setTimeout(function() {
       experiment.matcherPractice(globalGame.trialnum);
     }, 2000)
     }
+  });
+
+
+  //Tell server when parent clicks the begin button
+  $('#beginStudy').on('click ', function(event){
+        var msg = ['beginButton', 'hello', experiment.subid, wordList, directorList, matcherList].join('.')
+        globalGame.director = directorList;
+        globalGame.matcher = matcherList;
+        globalGame.correctList = wordList;
+        globalGame.subid = experiment.subid;
+        // globalGame.trialnum = 0;
+        game.socket.send(msg);
+        experiment.dpreStudy();
+  });
+
+  game.socket.on('beginButton', function(){
+    globalGame.subid = data.subid;
+    // console.log(globalGame.subid);
+    globalGame.correctList = data.list;
+    globalGame.director = data.director;
+    globalGame.matcher = data.matcher;
+    globalGame.trialnum = 0;
+
+    experiment.mpreStudy();
   });
 
 

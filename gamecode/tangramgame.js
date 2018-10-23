@@ -165,7 +165,7 @@ for(i=0; i<=1; i++){
 
 //construct word list for practice trials
 for(i=0; i<practiceTrials.length; i++){
-	var word = practiceTrials[i][3]
+	var word = practiceTrials[i][2]
 	practiceWords.push(word)
 };
 
@@ -175,19 +175,20 @@ for(i=0; i<practiceTrials.length; i++) {
 	items = subImages.splice(0,2);
 
 	shuffle(items);
-	for(j=0; j<=2; j++) {
+	for(j=0; j<2; j++) {
 	 	dpracticeImages.push(items[j]);
 	 };
 
 	shuffle(items);
-	for(k=0; k<=2; k++) {
+	for(k=0; k<2; k++) {
 		mpracticeImages.push(items[k]);
 	};
 };
 
-// console.log(practiceTrials)
-// console.log(practiceImages)
-// console.log(practiceWords)
+console.log(practiceTrials)
+console.log(practiceWords)
+console.log(dpracticeImages)
+console.log(mpracticeImages)
 
 
 
@@ -303,6 +304,8 @@ var experiment = {
 		experiment.trialnum = counter
 		experiment.subid = globalGame.subid;
 
+		console.log(practiceWords)
+
 		// Create the object table for director (tr=table row; td= table data)
 
 		var directorpractice_html = "";
@@ -319,6 +322,8 @@ var experiment = {
 	  	directorpractice_html += '</tr></table>';
 		
 		var target = practiceWords[0];
+
+		console.log(target)
 
 		switch(target) {
 			case dpracticeImages[0]:
@@ -373,7 +378,7 @@ var experiment = {
 		},  1500);
 		
 
-		$('.pic').on('touchstart', function(event) {
+		$('.pic').on('click touchstart', function(event) {
 	    	if (clickDisabled) return;
 
 	    	globalGame.clickDisabled = false;
@@ -388,8 +393,8 @@ var experiment = {
 			experiment.trialnum = counter;
 
 	    	experiment.word = practiceWords[0]
-	    	experiment.pic1 = practiceImages[0];
-	    	experiment.pic2 = practiceImages[1];
+	    	experiment.pic1 = mpracticeImages[0];
+	    	experiment.pic2 = mpracticeImages[1];
 
 
 	    	//Add color to selected picture
@@ -449,7 +454,7 @@ var experiment = {
 				if(counter === 4){
 					globalGame.practiceOver = true;
 					console.log(globalGame.practiceOver);
-					experiment.dpreStudy();
+					experiment.preStudy();
 				} else {
 			 		globalGame.practiceOver = false;
 					experiment.directorPractice(counter);
@@ -462,6 +467,11 @@ var experiment = {
 		// })
 	},
 	
+	//Slide after practice
+	preStudy: function() {
+		showSlide('prestudy')
+	}
+
 	//Moving from practice to study
 	mpreStudy: function() {
 		document.body.style.background = "white";
