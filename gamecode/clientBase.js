@@ -225,7 +225,7 @@ var sharedSetup = function(game) {
         experiment.dpreStudy();
   });
 
-  game.socket.on('beginButton', function(){
+  game.socket.on('beginButton', function(data){
     globalGame.subid = data.subid;
     // console.log(globalGame.subid);
     globalGame.correctList = data.list;

@@ -119,7 +119,7 @@ var onMessage = function(client,message) {
     var list= message_parts[3]
     var director= message_parts[4]
     var matcher= message_parts[5]
-    p.player.instance.emit('startButton', {msg: test, subid, list, director, matcher})
+    p.player.instance.emit('beginButton', {msg: test, subid, list, director, matcher})
   });
    break;
 

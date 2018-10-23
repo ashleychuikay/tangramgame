@@ -405,16 +405,16 @@ var experiment = {
 	    			console.log("left")
 	    			experiment.side = "L";
 	    			experiment.chosenpic = mpracticeImages[0];
-	    			$("#leftPic1").attr("src", "images/"+ mpracticeImages[0] +"_color.jpg")
-	    			$("#rightPic1").attr("src", "images/"+ mpracticeImages[1] +".jpg")
+	    			$("#leftPic1").attr("src", "practiceimages/"+ mpracticeImages[0] +"_color.jpg")
+	    			$("#rightPic1").attr("src", "practiceimages/"+ mpracticeImages[1] +".jpg")
 	    			break;
 
 	    		default: // "rightPic"
 	    			console.log("right")
 	    			experiment.side = "R";
 	    			experiment.chosenpic = mpracticeImages[1];
-	    			$("#rightPic1").attr("src", "images/"+ mpracticeImages[1] +"_color.jpg")
-	    			$("#leftPic1").attr("src", "images/"+ mpracticeImages[0] +".jpg")
+	    			$("#rightPic1").attr("src", "practiceimages/"+ mpracticeImages[1] +"_color.jpg")
+	    			$("#leftPic1").attr("src", "practiceimages/"+ mpracticeImages[0] +".jpg")
 	    	};
 		
 	    	console.log(picID);
@@ -470,19 +470,20 @@ var experiment = {
 	//Slide after practice
 	preStudy: function() {
 		showSlide('prestudy')
-	}
+	},
 
 	//Moving from practice to study
 	mpreStudy: function() {
 		document.body.style.background = "white";
-		$("#prestudy").hide();
+		$("#child").hide();
 		setTimeout(function () {
-			experiment.matcherStudy(globalGame.trialnum);
+		experiment.matcherStudy(globalGame.trialnum);
 		}, normalpause);
 	},
 
 	dpreStudy: function() {
 		console.log("prestudy")
+		$('#prestudy').hide();
 		setTimeout(function () {
 			directorImages = globalGame.director;
 			matcherImages = globalGame.matcher;
