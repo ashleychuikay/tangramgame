@@ -292,9 +292,8 @@ var experiment = {
 		console.log(experiment.subid)
 
 	  	// $('#instructions').hide();
-	   //  experiment.directorPractice(0);
+	    // experiment.directorPractice(0);
 
-		// showSlide("parent");
 	},
 
 
@@ -424,7 +423,7 @@ var experiment = {
 		
 	    	console.log(picID);
 
-		    console.log(experiment.chosenpic)
+		    console.log(experiment.chosenpic);
 		    
 			
 			//If the child picked the picture that matched with the word, then they were correct. If they did not, they were not correct.

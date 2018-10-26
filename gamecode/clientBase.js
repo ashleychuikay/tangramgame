@@ -216,7 +216,7 @@ var sharedSetup = function(game) {
     } else {
       setTimeout(function() {
       experiment.matcherPractice(globalGame.trialnum);
-    }, 2000)
+    }, 1500)
     }
   });
 
