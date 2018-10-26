@@ -79,15 +79,22 @@ var sharedSetup = function(game) {
 
   // Tell server when parent clicks the start button
   $('#beforeStudy').on('click', function(event){
+    
     experiment.checkInput();
-    var msg = ['startButton', 'hello', experiment.subid, practiceWords, dpracticeImages, mpracticeImages].join('.');
-    globalGame.director = dpracticeImages;
-    globalGame.matcher = mpracticeImages;
-    globalGame.correctList = practiceWords;
-    globalGame.subid = experiment.subid;
-    console.log(experiment.subid)
-    // globalGame.trialnum = 0;
-    game.socket.send(msg);
+
+    setTimeout(function() {
+        var msg = ['startButton', 'hello', experiment.subid, practiceWords, dpracticeImages, mpracticeImages].join('.');
+        globalGame.director = dpracticeImages;
+        globalGame.matcher = mpracticeImages;
+        globalGame.correctList = practiceWords;
+        globalGame.subid = experiment.subid;
+        console.log(experiment.subid)
+        // globalGame.trialnum = 0;
+        game.socket.send(msg);
+        $('#instructions').hide();
+        experiment.directorPractice(0);
+    }, 500);
+
   });
 
   game.socket.on('startButton', function(data){

@@ -130,6 +130,15 @@ This stuff will vary by experiment.
 	object-fit: contain;
 }
 
+
+/*target picture on director practice*/
+.ptarget {
+	border-style: solid; 
+	border-width: 8px;
+	border-color: blue;
+}
+
+
 #practiceobjects {
 	margin-top: 15%;
 	overflow: hidden;
@@ -176,17 +185,6 @@ This stuff will vary by experiment.
 
 
 /*left pic, middle pic, right pic are large but fit comfortably in the ipad window*/
-#leftPic {
-	width: 295px;
-	max-height: 295px;
-}
-
-
-#rightPic {
-	width: 295px;
-	max-height: 295px;
-}
-
 #leftPic1 {
 	width: 295px;
 	max-height: 295px;
@@ -194,6 +192,39 @@ This stuff will vary by experiment.
 
 
 #rightPic1 {
+	width: 295px;
+	max-height: 295px;
+}
+
+#leftPic2 {
+	width: 295px;
+	max-height: 295px;
+}
+
+
+#rightPic2 {
+	width: 295px;
+	max-height: 295px;
+}
+
+#leftPic3 {
+	width: 295px;
+	max-height: 295px;
+}
+
+
+#rightPic3 {
+	width: 295px;
+	max-height: 295px;
+}
+
+#leftPic4 {
+	width: 295px;
+	max-height: 295px;
+}
+
+
+#rightPic4 {
 	width: 295px;
 	max-height: 295px;
 }

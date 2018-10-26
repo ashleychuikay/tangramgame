@@ -289,9 +289,10 @@ var experiment = {
 		};
 
 		experiment.subid = document.getElementById("subjectID").value;
+		console.log(experiment.subid)
 
-	  	$('#instructions').hide();
-	    experiment.directorPractice(0);
+	  	// $('#instructions').hide();
+	   //  experiment.directorPractice(0);
 
 		// showSlide("parent");
 	},
@@ -312,14 +313,16 @@ var experiment = {
 	    
 	   	//HTML for the first object on the left
 		leftname = "practiceimages/" + dpracticeImages[0] + ".jpg";
-		directorpractice_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic"/></td>';
+		directorpractice_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic1"/></td>';
 
 	
 		//HTML for the first object on the right
 		rightname = "practiceimages/" + dpracticeImages[1] + ".jpg";
-	   	directorpractice_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic"/></td>';
+	   	directorpractice_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic1"/></td>';
 		
 	  	directorpractice_html += '</tr></table>';
+	    
+	    $("#practiceobjects").html(directorpractice_html); 		
 		
 		var target = practiceWords[0];
 
@@ -327,14 +330,15 @@ var experiment = {
 
 		switch(target) {
 			case dpracticeImages[0]:
-				$("#leftPic").addClass('target');
+				console.log("left")
+				$("#leftPic1").addClass('target');
 				break;
 
 			default: //dpracticeImages[1]
-				$("#rightPic").addClass('target');		
+				console.log("right")
+				$("#rightPic1").addClass('target');		
 		};
 
-	    $("#practiceobjects").html(directorpractice_html); 
 		$("#directorpractice").fadeIn();
 	},
 
@@ -359,11 +363,11 @@ var experiment = {
 	    
 	   	//HTML for the first object on the left
 		leftname = "practiceimages/" + mpracticeImages[0] + ".jpg";
-		matcherpractice_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic1"/></td>';
+		matcherpractice_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic2"/></td>';
 	
 		//HTML for the first object on the right
 		rightname = "practiceimages/" + mpracticeImages[1] + ".jpg";
-	   	matcherpractice_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic1"/></td>';
+	   	matcherpractice_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic2"/></td>';
 		
 	  	matcherpractice_html += '</tr></table>';
 
@@ -402,20 +406,20 @@ var experiment = {
 	    	var picID = $(event.currentTarget).attr('id');
 
 	    	switch(picID) {
-	    		case "leftPic":
+	    		case "leftPic2":
 	    			console.log("left")
 	    			experiment.side = "L";
 	    			experiment.chosenpic = mpracticeImages[0];
-	    			$("#leftPic1").attr("src", "practiceimages/"+ mpracticeImages[0] +"_color.jpg")
-	    			$("#rightPic1").attr("src", "practiceimages/"+ mpracticeImages[1] +".jpg")
+	    			$("#leftPic2").attr("src", "practiceimages/"+ mpracticeImages[0] +"_color.jpg")
+	    			$("#rightPic2").attr("src", "practiceimages/"+ mpracticeImages[1] +".jpg")
 	    			break;
 
-	    		default: // "rightPic"
+	    		default: // "rightPic2"
 	    			console.log("right")
 	    			experiment.side = "R";
 	    			experiment.chosenpic = mpracticeImages[1];
-	    			$("#rightPic1").attr("src", "practiceimages/"+ mpracticeImages[1] +"_color.jpg")
-	    			$("#leftPic1").attr("src", "practiceimages/"+ mpracticeImages[0] +".jpg")
+	    			$("#rightPic2").attr("src", "practiceimages/"+ mpracticeImages[1] +"_color.jpg")
+	    			$("#leftPic2").attr("src", "practiceimages/"+ mpracticeImages[0] +".jpg")
 	    	};
 		
 	    	console.log(picID);
@@ -460,7 +464,7 @@ var experiment = {
 			 		globalGame.practiceOver = false;
 					experiment.directorPractice(counter);
 				};
-			}, 1);
+			}, 1000);
 		});
 
 		// $("#donepractice").on('touchstart', function(event) {
@@ -545,12 +549,12 @@ var experiment = {
 
 	   	//HTML for the first object on the left
 		leftname = "images/" + directorImages[0] + ".jpg";
-		directorobjects_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic1"/></td>';
+		directorobjects_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic3"/></td>';
 
 	
 		//HTML for the first object on the right
 		rightname = "images/" + directorImages[1] + ".jpg";
-	   	directorobjects_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic1"/></td>';
+	   	directorobjects_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic3"/></td>';
 		
 	  	directorobjects_html += '</tr></table>';
 		
@@ -561,11 +565,11 @@ var experiment = {
 
 		switch(target) {
 			case directorImages[0]:
-				$("#leftPic1").addClass('target');
+				$("#leftPic3").addClass('target');
 				break;
 
 			default: //directorImages[1]
-				$("#rightPic1").addClass('target');		
+				$("#rightPic3").addClass('target');		
 		};
 
 		$("#directorstage").fadeIn();
@@ -589,12 +593,12 @@ var experiment = {
 	    
 	   	//HTML for the first object on the left
 		leftname = "images/" + matcherImages[0] + ".jpg";
-		matcherobjects_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic"/></td>';
+		matcherobjects_html += '<table align = "center" cellpadding="25"><tr></tr><tr><td align="center"><img class="pic" src="' + leftname +  '"alt="' + leftname + '" id= "leftPic4"/></td>';
 
 	
 		//HTML for the first object on the right
 		rightname = "images/" + matcherImages[1] + ".jpg";
-	   	matcherobjects_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic"/></td>';
+	   	matcherobjects_html += '<td align="center"><img class="pic" src="' + rightname +  '"alt="' + rightname + '" id= "rightPic4"/></td>';
 		
 	  	matcherobjects_html += '</tr></table>';
 	    $("#objects2").html(matcherobjects_html);
@@ -639,20 +643,20 @@ var experiment = {
 	    	var picID = $(event.currentTarget).attr('id');
 
 	    	switch(picID) {
-	    		case "leftPic":
+	    		case "leftPic4":
 	    			console.log("left")
 	    			experiment.side = "L";
 	    			experiment.chosenpic = matcherImages[0];
-	    			$("#leftPic").attr("src", "images/"+ matcherImages[0] +"_color.jpg")
-	    			$("#rightPic").attr("src", "images/"+ matcherImages[1] +".jpg")
+	    			$("#leftPic4").attr("src", "images/"+ matcherImages[0] +"_color.jpg")
+	    			$("#rightPic4").attr("src", "images/"+ matcherImages[1] +".jpg")
 	    			break;
 
-	    		default: // "rightPic"
+	    		default: // "rightPic4"
 	    			console.log("right")
 	    			experiment.side = "R";
 	    			experiment.chosenpic = matcherImages[1];
-	    			$("#rightPic").attr("src", "images/"+ matcherImages[1] +"_color.jpg")
-	    			$("#leftPic").attr("src", "images/"+ matcherImages[0] +".jpg")
+	    			$("#rightPic4").attr("src", "images/"+ matcherImages[1] +"_color.jpg")
+	    			$("#leftPic4").attr("src", "images/"+ matcherImages[0] +".jpg")
 	    	};
 		
 	    	console.log(picID);
