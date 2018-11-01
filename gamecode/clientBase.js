@@ -184,11 +184,10 @@ var sharedSetup = function(game) {
   //Tell server when matcher clicks a practice image
   $('#empty').on('click', function(event){
 
-      var msg = ['nextPractice', 'hello', practiceWords, dpracticeImages, mpracticeImages, globalGame.trialnum].join('.');
-      // console.log(wordList);
-      game.socket.send(msg);
-
-    $('#matcherpractice').hide();
+    var msg = ['nextPractice', 'hello', practiceWords, dpracticeImages, mpracticeImages, globalGame.trialnum].join('.');
+    // console.log(wordList);
+    game.socket.send(msg);
+    
   });
 
   game.socket.on('nextPractice', function(data){
@@ -216,7 +215,7 @@ var sharedSetup = function(game) {
     } else {
       setTimeout(function() {
       experiment.matcherPractice(globalGame.trialnum);
-    }, 1500)
+    }, 500)
     }
   });
 

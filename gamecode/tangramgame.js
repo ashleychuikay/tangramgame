@@ -152,7 +152,7 @@ var practiceWords = [];
 var dpracticeImages = [];
 var mpracticeImages = [];
 	
-for(i=0; i<=3; i++){
+for(i=0; i<=2; i++){
 	newTrial = easyTrial.slice();
 	shuffle(newTrial);
 	newTrial.push("apple");
@@ -160,6 +160,14 @@ for(i=0; i<=3; i++){
 	newTrial = hardTrial.slice();
 	shuffle(newTrial);
 	newTrial.push("artichoke");
+	practiceTrials.push(newTrial);
+	newTrial = hardTrial.slice();
+	shuffle(newTrial);
+	newTrial.push("artichoke");
+	practiceTrials.push(newTrial);
+	newTrial = easyTrial.slice();
+	shuffle(newTrial);
+	newTrial.push("apple");
 	practiceTrials.push(newTrial);
 };
 
@@ -449,7 +457,7 @@ var experiment = {
 
 			//hide objects and show only background for 2 seconds
 			setTimeout(function() {
-				$(".pic").delay().fadeOut(1500);
+				$(".pic").delay().fadeOut(1000);
 				document.getElementById("empty").click();
 				counter++
 				experiment.trialnum = counter;
@@ -461,9 +469,12 @@ var experiment = {
 					experiment.preStudy();
 				} else {
 			 		globalGame.practiceOver = false;
-					experiment.directorPractice(counter);
+					setTimeout(function() {
+						$('#matcherpractice').hide();
+						experiment.directorPractice(counter);	
+					}, 1000)					
 				};
-			}, 2000);
+			}, 1000);
 		});
 
 		// $("#donepractice").on('touchstart', function(event) {
