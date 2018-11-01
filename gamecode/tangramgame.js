@@ -152,7 +152,7 @@ var practiceWords = [];
 var dpracticeImages = [];
 var mpracticeImages = [];
 	
-for(i=0; i<=1; i++){
+for(i=0; i<=3; i++){
 	newTrial = easyTrial.slice();
 	shuffle(newTrial);
 	newTrial.push("apple");
@@ -463,7 +463,7 @@ var experiment = {
 			 		globalGame.practiceOver = false;
 					experiment.directorPractice(counter);
 				};
-			}, 1000);
+			}, 2000);
 		});
 
 		// $("#donepractice").on('touchstart', function(event) {
