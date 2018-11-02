@@ -208,7 +208,7 @@ var sharedSetup = function(game) {
     // console.log(globalGame.trialnum);
     // console.log("server");
 
-    if (globalGame.trialnum === 4) {
+    if (globalGame.trialnum === 6) {
       globalGame.practiceOver = true;
       globalGame.trialnum = 0;
       showSlide('child');

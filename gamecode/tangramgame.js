@@ -163,12 +163,9 @@ for(i=0; i<=2; i++){
 	practiceTrials.push(newTrial);
 	newTrial = hardTrial.slice();
 	shuffle(newTrial);
-	newTrial.push("artichoke");
+	newTrial.push("onion");
 	practiceTrials.push(newTrial);
 	newTrial = easyTrial.slice();
-	shuffle(newTrial);
-	newTrial.push("apple");
-	practiceTrials.push(newTrial);
 };
 
 //construct word list for practice trials
@@ -463,7 +460,7 @@ var experiment = {
 				experiment.trialnum = counter;
 				console.log(counter)
 				console.log("matcher")
-				if(counter === 4){
+				if(counter === 6){
 					globalGame.practiceOver = true;
 					console.log(globalGame.practiceOver);
 					experiment.preStudy();
