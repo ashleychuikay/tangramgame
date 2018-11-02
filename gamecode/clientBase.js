@@ -281,7 +281,7 @@ var sharedSetup = function(game) {
     } else {
       setTimeout(function() {
         experiment.matcherStudy(globalGame.trialnum);
-      }, 2000)
+      }, 1000)
     }
   });
 
