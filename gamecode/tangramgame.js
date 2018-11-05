@@ -547,8 +547,17 @@ var experiment = {
     directorStudy: function(counter){
 
     	experiment.trialnum = counter;
-    	experiment.subid = globalGame.subid;
     	console.log(experiment.subid);
+
+    	if(counter == 10|| counter == 20|| counter == 30) {
+    		experiment.subid = globalGame.subid;
+		  	console.log(experiment.subid);
+		  	directorImages = globalGame.director.split(',');
+			matcherImages = globalGame.matcher.split(',');
+			wordList = globalGame.correctList.split(',');
+    	} else {
+    		experiment.subid = globalGame.subid;
+    	};
 
 		// Create the object table for director (tr=table row; td= table data)
 
@@ -588,11 +597,15 @@ var experiment = {
 
 	  	// Update information
 
-	  	experiment.subid = globalGame.subid;
-	  	console.log(experiment.subid);
-	  	directorImages = globalGame.director.split(',');
-		matcherImages = globalGame.matcher.split(',');
-		wordList = globalGame.correctList.split(',');
+	  	if (counter == 10|| counter == 20|| counter == 30) {
+	  		experiment.subid = globalGame.subid;
+	  	} else {
+		  	experiment.subid = globalGame.subid;
+		  	console.log(experiment.subid);
+		  	directorImages = globalGame.director.split(',');
+			matcherImages = globalGame.matcher.split(',');
+			wordList = globalGame.correctList.split(',');
+		}
 
 		// Create the object table for matcher (tr=table row; td= table data)
 
