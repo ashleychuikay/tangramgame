@@ -1,0 +1,78 @@
+---
+title: "Tangram Transcripts"
+author: "Ashley Leung, Alex Tunkel, and Dan Yurovsky"
+date: '`r Sys.Date()`'
+output: 
+  html_document:
+    toc: false
+    number_sections: false
+    theme: lumen
+    toc_float: false
+    code_folding: hide
+---
+```{r, message=FALSE, warning=FALSE, show = F}
+library(tidyverse)
+library(here)
+library(tidyboot)
+
+theme_set(theme_classic(base_size = 18))
+```
+
+```{r read_data}
+data <- read_csv(here("data/9597.csv")) %>%
+  mutate(subid = "2") %>%
+  filter(!is.na(Timeline.trial)) %>% 
+  mutate(type = if_else(str_detect(Timeline.trial, "p"), "practice", 
+                                   "test"),
+         trial = as.numeric(gsub("[^0-9]", "", Timeline.trial)))
+
+gametrials <- read_csv(here("data/tangramgameresults.csv")) %>%
+  filter(subid == "2") %>%
+  mutate(type = if_else(nchar(leftpic) > 2, "practice", "test")) %>%
+  mutate(trial = as.numeric(trial)+1)
+```
+
+```{r munge_data}
+tidy_data <- data %>%
+  left_join(gametrials, c("subid", "trial", "type")) %>%
+  gather(person, utterance, Timeline.parentspeech, Timeline.childspeech) %>%
+  mutate(utterance = if_else(utterance %in% c("<childspeech>", "<parentspeech>"),
+                             as.character(NA), utterance)) %>%
+  mutate(selection = if_else(Timeline.selection == "parent selects", "parent",
+                             if_else(Timeline.selection == "child selects",
+                                     "child", as.character(NA)))) %>%
+  filter(!is.na(selection) | !is.na(utterance)) %>%
+  arrange(Timeline.ordinal) %>%
+  mutate(person = if_else(str_detect(person, "parent"), "parent", "child")) %>%
+  filter(is.na(selection) | selection == person) %>%
+  group_by(subid, type, trial) %>%
+  mutate(select_pos = which(!is.na(selection)),
+         pos = 1:n(),
+         trial_selection = last(unique(selection)))
+```         
+   
+```{r conceptual_pacts}         
+tidy_data %>%
+  filter(type == "test", pos < select_pos) %>%
+  mutate(length = str_count(utterance, " ") +1) %>%
+  group_by(correct, target, trial) %>%
+  summarise(length = sum(length, na.rm = T),
+            nturns = n()) %>%
+  group_by(target) %>%
+  arrange(trial) %>%
+  mutate(trial = 1:n()) %>%
+  filter(correct == "Y") %>%
+  group_by(trial) %>%
+  tidyboot_mean(nturns) %>%
+  ggplot(aes(x = trial, y = empirical_stat)) + 
+  geom_line() + 
+  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper))
+```
+
+```{r accuracy}
+gametrials %>% filter(type == "test") %>% 
+  mutate(correct =  correct == "Y") %>%
+  mutate(cum_correct = cummean(correct)) %>%
+  ggplot(aes(x = trial, y = cum_correct)) + 
+  geom_point()
+```
