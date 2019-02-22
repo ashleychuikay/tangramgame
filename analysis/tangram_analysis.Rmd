@@ -1,6 +1,6 @@
 ---
 title: "Tangram Transcripts"
-author: "Ashley Leung, Alex Tunkel, and Dan Yurovsky"
+author: "Ashley Leung, and Dan Yurovsky"
 date: '`r Sys.Date()`'
 output: 
   html_document:
@@ -14,20 +14,24 @@ output:
 library(tidyverse)
 library(here)
 library(tidyboot)
+library(knitr)
+
+opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, 
+               error = FALSE, cache = TRUE, tidy = FALSE)
 
 theme_set(theme_classic(base_size = 18))
 ```
 
 ```{r read_data}
-data <- read_csv(here("data/9597.csv")) %>%
-  mutate(subid = "2") %>%
+data <- read_csv(here("data/10606.csv")) %>%
+  mutate(subid = "9") %>%
   filter(!is.na(Timeline.trial)) %>% 
   mutate(type = if_else(str_detect(Timeline.trial, "p"), "practice", 
                                    "test"),
          trial = as.numeric(gsub("[^0-9]", "", Timeline.trial)))
 
 gametrials <- read_csv(here("data/tangramgameresults.csv")) %>%
-  filter(subid == "2") %>%
+  filter(subid == "9") %>%
   mutate(type = if_else(nchar(leftpic) > 2, "practice", "test")) %>%
   mutate(trial = as.numeric(trial)+1)
 ```
@@ -36,19 +40,21 @@ gametrials <- read_csv(here("data/tangramgameresults.csv")) %>%
 tidy_data <- data %>%
   left_join(gametrials, c("subid", "trial", "type")) %>%
   gather(person, utterance, Timeline.parentspeech, Timeline.childspeech) %>%
-  mutate(utterance = if_else(utterance %in% c("<childspeech>", "<parentspeech>"),
-                             as.character(NA), utterance)) %>%
-  mutate(selection = if_else(Timeline.selection == "parent selects", "parent",
-                             if_else(Timeline.selection == "child selects",
-                                     "child", as.character(NA)))) %>%
+   #mutate(utterance = if_else(utterance %in% c("<childspeech>", "<parentspeech>"),
+   #                            as.character(NA), utterance)) %>%
+   #mutate(utterance = if_else(is.na(utterance), as.character(NA), utterance)) %>%  
+   mutate(selection = if_else(Timeline.selection == "parent", "parent",
+                              if_else(Timeline.selection == "child",
+                                      "child", as.character(NA)))) %>%
   filter(!is.na(selection) | !is.na(utterance)) %>%
   arrange(Timeline.ordinal) %>%
   mutate(person = if_else(str_detect(person, "parent"), "parent", "child")) %>%
   filter(is.na(selection) | selection == person) %>%
   group_by(subid, type, trial) %>%
-  mutate(select_pos = which(!is.na(selection)),
-         pos = 1:n(),
+  mutate(pos = 1:n(),
+         select_pos = which.max(!is.na(selection)),
          trial_selection = last(unique(selection)))
+
 ```         
    
 ```{r conceptual_pacts}         
