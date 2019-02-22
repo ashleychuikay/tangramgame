@@ -15,6 +15,7 @@ library(tidyverse)
 library(here)
 library(tidyboot)
 library(knitr)
+library(ggplot2)
 
 opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, 
                error = FALSE, cache = TRUE, tidy = FALSE)
@@ -69,10 +70,48 @@ tidy_data %>%
   mutate(trial = 1:n()) %>%
   filter(correct == "Y") %>%
   group_by(trial) %>%
-  tidyboot_mean(nturns) %>%
+  tidyboot_mean(length) %>%
   ggplot(aes(x = trial, y = empirical_stat)) + 
   geom_line() + 
   geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper))
+
+## Plotting reduction in length (individual)
+
+tidy_data %>%
+  filter(type == "test", pos < select_pos) %>%
+  mutate(length = str_count(utterance, " ") +1) %>%
+  group_by(correct, target, trial, person) %>%
+  filter(person != trial_selection) %>%
+  filter(person == "parent") %>%
+  summarise(length = sum(length, na.rm = T),
+            nturns = n()) %>%
+  group_by(target) %>%
+  #arrange(trial) %>%
+  mutate(trial = 1:n()) %>%
+  filter(correct == "Y") %>%
+  group_by(trial) %>%
+  tidyboot_mean(length) %>%
+  ggplot(aes(x = trial, y = empirical_stat)) + 
+  geom_line() + 
+  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper))
+
+## Plotting reduction in length (parent and child)
+
+tidy_data %>%
+  filter(type == "test", pos < select_pos) %>%
+  mutate(length = str_count(utterance, " ") +1) %>%
+  group_by(person, target, trial) %>%
+  filter(person != trial_selection) %>%
+  summarise(length = sum(length, na.rm = T),
+            nturns = n()) %>%
+  mutate(trial = 1:n()) %>%
+  arrange(trial) %>%
+  group_by(person, trial) %>%
+  tidyboot_mean(length) %>%
+  ggplot(aes(x = trial, y = empirical_stat, color = person)) +
+  geom_line() +
+  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper))
+
 ```
 
 ```{r accuracy}
