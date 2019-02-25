@@ -25,21 +25,13 @@ theme_set(theme_classic(base_size = 18))
 ```
 
 ```{r read_data}
-#data <- read_csv(here("data/10606.csv")) %>%
-#  mutate(subid = "9") %>%
-#  filter(!is.na(Timeline.trial)) %>% 
-#  mutate(type = if_else(str_detect(Timeline.trial, "p"), "practice", 
-#                                   "test"),
-#         trial = as.numeric(gsub("[^0-9]", "", Timeline.trial)))
 
 agedata <- read_csv(here("data/databaseid.csv")) %>%
   mutate(subid = as.character(subid))
 
 gametrials <- read_csv(here("data/tangramgameresults.csv")) %>%
   mutate(type = if_else(nchar(leftpic) > 2, "practice", "test")) %>%
-  mutate(trial = as.numeric(trial)+1) %>%
-  left_join(agedata, by = "subid") %>%
-  filter(!is.na(age))
+  mutate(trial = as.numeric(trial)+1)
 
 ## read transcripts and add col with database_id
 
@@ -57,24 +49,22 @@ read_transcript <- function(file) {
 }
 
 data <- map(transcripts, read_transcript) %>%
-  bind_rows()
+  bind_rows() %>%
+  left_join(agedata, by = "database_id")
 ```
 
 ```{r munge_data}
 tidy_data <- data %>%
   left_join(gametrials, c("subid", "trial", "type")) %>%
   gather(person, utterance, Timeline.parentspeech, Timeline.childspeech) %>%
-   #mutate(utterance = if_else(utterance %in% c("<childspeech>", "<parentspeech>"),
-   #                            as.character(NA), utterance)) %>%
-   #mutate(utterance = if_else(is.na(utterance), as.character(NA), utterance)) %>%  
-   mutate(selection = if_else(Timeline.selection == "parent", "parent",
-                              if_else(Timeline.selection == "child",
-                                      "child", as.character(NA)))) %>%
+  mutate(selection = if_else(Timeline.selection == "parent", "parent",
+                            if_else(Timeline.selection == "child",
+                                    "child", as.character(NA)))) %>%
   filter(!is.na(selection) | !is.na(utterance)) %>%
-  arrange(Timeline.ordinal) %>%
   mutate(person = if_else(str_detect(person, "parent"), "parent", "child")) %>%
   filter(is.na(selection) | selection == person) %>%
   group_by(subid, type, trial) %>%
+  arrange(Timeline.ordinal, .by_group = T) %>%
   mutate(pos = 1:n(),
          select_pos = which.max(!is.na(selection)),
          trial_selection = last(unique(selection)))
@@ -103,15 +93,15 @@ tidy_data %>%
 tidy_data %>%
   filter(type == "test", pos < select_pos) %>%
   mutate(length = str_count(utterance, " ") +1) %>%
-  group_by(correct, target, trial, person) %>%
+  group_by(subid, correct, target, trial, person) %>%
   filter(person != trial_selection) %>%
   filter(person == "parent") %>%
   summarise(length = sum(length, na.rm = T),
             nturns = n()) %>%
-  group_by(target) %>%
-  #arrange(trial) %>%
+  group_by(subid, target) %>%
   mutate(trial = 1:n()) %>%
   filter(correct == "Y") %>%
+  arrange(trial) %>%
   group_by(trial) %>%
   tidyboot_mean(length) %>%
   ggplot(aes(x = trial, y = empirical_stat)) + 
@@ -123,11 +113,13 @@ tidy_data %>%
 tidy_data %>%
   filter(type == "test", pos < select_pos) %>%
   mutate(length = str_count(utterance, " ") +1) %>%
-  group_by(person, target, trial) %>%
+  group_by(subid, correct, person, target, trial) %>%
   filter(person != trial_selection) %>%
   summarise(length = sum(length, na.rm = T),
             nturns = n()) %>%
+  group_by(subid, target) %>%
   mutate(trial = 1:n()) %>%
+  filter(correct == "Y") %>%
   arrange(trial) %>%
   group_by(person, trial) %>%
   tidyboot_mean(length) %>%
