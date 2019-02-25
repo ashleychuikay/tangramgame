@@ -127,6 +127,27 @@ tidy_data %>%
   geom_line() +
   geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper))
 
+## Plotting by age
+
+tidy_data %>%
+  filter(type == "test", pos < select_pos) %>%
+  mutate(length = str_count(utterance, " ") +1) %>%
+  group_by(subid, age, correct, person, target, trial) %>%
+  filter(person != trial_selection) %>%
+  summarise(length = sum(length, na.rm = T),
+            nturns = n()) %>%
+  group_by(subid, age, target) %>%
+  #mutate(trial = 1:n()) %>%
+  filter(correct == "Y") %>%
+  arrange(age, target, subid, trial) %>%
+  mutate(trial = 1:n()) %>%
+  group_by(age, trial) %>%
+  tidyboot_mean(length) %>%
+  ggplot(aes(x = trial, y = empirical_stat)) +
+  facet_wrap(~ age) +
+  geom_line() +
+  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper))
+
 ```
 
 ```{r accuracy}
