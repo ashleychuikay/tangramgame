@@ -16,6 +16,7 @@ library(here)
 library(tidyboot)
 library(knitr)
 library(ggplot2)
+library(janitor)
 
 opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, 
                error = FALSE, cache = TRUE, tidy = FALSE)
@@ -24,17 +25,39 @@ theme_set(theme_classic(base_size = 18))
 ```
 
 ```{r read_data}
-data <- read_csv(here("data/10606.csv")) %>%
-  mutate(subid = "9") %>%
-  filter(!is.na(Timeline.trial)) %>% 
-  mutate(type = if_else(str_detect(Timeline.trial, "p"), "practice", 
-                                   "test"),
-         trial = as.numeric(gsub("[^0-9]", "", Timeline.trial)))
+#data <- read_csv(here("data/10606.csv")) %>%
+#  mutate(subid = "9") %>%
+#  filter(!is.na(Timeline.trial)) %>% 
+#  mutate(type = if_else(str_detect(Timeline.trial, "p"), "practice", 
+#                                   "test"),
+#         trial = as.numeric(gsub("[^0-9]", "", Timeline.trial)))
+
+agedata <- read_csv(here("data/databaseid.csv")) %>%
+  mutate(subid = as.character(subid))
 
 gametrials <- read_csv(here("data/tangramgameresults.csv")) %>%
-  filter(subid == "9") %>%
   mutate(type = if_else(nchar(leftpic) > 2, "practice", "test")) %>%
-  mutate(trial = as.numeric(trial)+1)
+  mutate(trial = as.numeric(trial)+1) %>%
+  left_join(agedata, by = "subid") %>%
+  filter(!is.na(age))
+
+## read transcripts and add col with database_id
+
+transcripts <- list.files(here("data/coded"), "*.csv", full.names = T)
+
+read_transcript <- function(file) {
+  
+  transcript <- read_csv(file) %>%
+    remove_empty("cols") %>%
+    mutate(database_id = parse_number(basename(file))) %>%
+    filter(!is.na(Timeline.trial)) %>% 
+    mutate(type = if_else(str_detect(Timeline.trial, "p"), "practice", 
+                          "test"),
+           trial = as.numeric(gsub("[^0-9]", "", Timeline.trial)))
+}
+
+data <- map(transcripts, read_transcript) %>%
+  bind_rows()
 ```
 
 ```{r munge_data}
