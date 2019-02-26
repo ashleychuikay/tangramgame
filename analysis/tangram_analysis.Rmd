@@ -75,11 +75,11 @@ tidy_data <- data %>%
 tidy_data %>%
   filter(type == "test", pos < select_pos) %>%
   mutate(length = str_count(utterance, " ") +1) %>%
-  group_by(correct, target, trial) %>%
-  summarise(length = sum(length, na.rm = T),
-            nturns = n()) %>%
-  group_by(target) %>%
-  arrange(trial) %>%
+  group_by(subid, correct, target, trial) %>%
+  #summarise(length = sum(length, na.rm = T),
+  #          nturns = n()) %>%
+  group_by(subid, target) %>%
+  arrange(target, .by_group = T) %>%
   mutate(trial = 1:n()) %>%
   filter(correct == "Y") %>%
   group_by(trial) %>%
