@@ -57,10 +57,13 @@ data <- map(transcripts, read_transcript) %>%
 tidy_data <- data %>%
   left_join(gametrials, c("subid", "trial", "type")) %>%
   gather(person, utterance, Timeline.parentspeech, Timeline.childspeech) %>%
+  mutate(utterance = if_else(utterance %in% c("<childspeech>", "<parentspeech>"),
+                             as.character(NA), utterance)) %>%
   mutate(selection = if_else(Timeline.selection == "parent", "parent",
                             if_else(Timeline.selection == "child",
                                     "child", as.character(NA)))) %>%
   filter(!is.na(selection) | !is.na(utterance)) %>%
+  filter(!is.na(trial)) %>%
   mutate(person = if_else(str_detect(person, "parent"), "parent", "child")) %>%
   filter(is.na(selection) | selection == person) %>%
   group_by(subid, type, trial) %>%
@@ -137,7 +140,6 @@ tidy_data %>%
   summarise(length = sum(length, na.rm = T),
             nturns = n()) %>%
   group_by(subid, age, target) %>%
-  #mutate(trial = 1:n()) %>%
   filter(correct == "Y") %>%
   arrange(age, target, subid, trial) %>%
   mutate(trial = 1:n()) %>%
