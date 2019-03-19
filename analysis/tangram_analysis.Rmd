@@ -120,7 +120,7 @@ tidy_data %>%
   filter(person != trial_selection) %>%
   summarise(length = sum(length, na.rm = T),
             nturns = n()) %>%
-  group_by(subid, target) %>%
+  group_by(subid, target, person) %>%
   mutate(trial = 1:n()) %>%
   filter(correct == "Y") %>%
   arrange(trial) %>%
