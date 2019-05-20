@@ -140,13 +140,44 @@ tidy_data %>%
   summarise(length = sum(length, na.rm = T),
             nturns = n()) %>%
   group_by(subid, age, target) %>%
-  filter(correct == "Y") %>%
+  #filter(correct == "Y") %>%
   arrange(age, target, subid, trial) %>%
   mutate(trial = 1:n()) %>%
   group_by(age, trial) %>%
   tidyboot_mean(length) %>%
   ggplot(aes(x = trial, y = empirical_stat)) +
   facet_wrap(~ age) +
+  geom_line() +
+  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper))
+
+##output csv for conceptual pact coding
+coding <- tidy_data %>%
+  arrange(subid, type, target, trial) %>%
+  select(subid, type, trial, target, person, utterance, selection)
+
+#for (i in 1:59) {
+    newcols <- c("final_initial", "self", "other", "accept")
+    coding[, newcols] <- NA
+  #}
+```
+```{r reaction time}
+tidy_data %>%
+  filter(rt == unique(rt)) %>%
+  filter(rt < 50000) %>%
+  ggplot(aes(rt)) +
+  geom_histogram(binwidth = 1000)
+
+tidy_data %>%
+  filter(type == "test", person == trial_selection, rt < 120000) %>%
+  group_by(subid, target, age, trial) %>%
+  summarise(rt = mean(rt, na.rm = T),
+            nturns = n()) %>%
+  arrange(trial, .by_group = T) %>%
+  mutate(trial = 1:n()) %>%
+  group_by(trial, age) %>%
+  tidyboot_mean(rt) %>%
+  ggplot(aes(x = trial, y = empirical_stat))+
+  facet_wrap(~age) +
   geom_line() +
   geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper))
 
