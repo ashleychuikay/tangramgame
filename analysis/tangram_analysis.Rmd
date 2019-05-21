@@ -51,9 +51,29 @@ read_transcript <- function(file) {
 data <- map(transcripts, read_transcript) %>%
   bind_rows() %>%
   left_join(agedata, by = "database_id")
+
+## read transcripts without removing "na" (for coding conceptual pacts)
+
+coding_transcript <- function(file) {
+  
+  transcript <- read_csv(file) %>%
+    remove_empty("cols") %>%
+    mutate(database_id = parse_number(basename(file))) %>%
+    mutate(type = if_else(str_detect(Timeline.trial, "p"), "practice", 
+                          "test"),
+           trial = as.numeric(gsub("[^0-9]", "", Timeline.trial)))
+}
+
+cdata <- map(transcripts, coding_transcript) %>%
+  bind_rows() %>%
+  left_join(agedata, by = "database_id")
+
 ```
 
 ```{r munge_data}
+
+## for analysis
+
 tidy_data <- data %>%
   left_join(gametrials, c("subid", "trial", "type")) %>%
   gather(person, utterance, Timeline.parentspeech, Timeline.childspeech) %>%
@@ -72,15 +92,54 @@ tidy_data <- data %>%
          select_pos = which.max(!is.na(selection)),
          trial_selection = last(unique(selection)))
 
+## for conceptual pact coding
+
+coding_data <- cdata %>%
+  left_join(gametrials, c("subid", "trial", "type")) %>%
+  gather(person, utterance, Timeline.parentspeech, Timeline.childspeech) %>%
+  mutate(utterance = if_else(utterance %in% c("<childspeech>", "<parentspeech>"),
+                             as.character(NA), utterance)) %>%
+  mutate(selection = if_else(Timeline.selection == "parent", "parent",
+                            if_else(Timeline.selection == "child",
+                                    "child", as.character(NA)))) %>%
+  filter(!is.na(selection) | !is.na(utterance)) %>%
+  filter(!is.na(trial)) %>%
+  mutate(person = if_else(str_detect(person, "parent"), "parent", "child")) %>%
+  filter(is.na(selection) | selection == person) %>%
+  group_by(subid, type, trial) %>%
+  arrange(Timeline.ordinal, .by_group = T) %>%
+  mutate(pos = 1:n(),
+         select_pos = which.max(!is.na(selection)),
+         trial_selection = last(unique(selection)))
+
 ```         
+
+```{r coding pacts}
+##output csv for conceptual pact coding
+
+coding <- coding_data %>%
+  arrange(subid, type, target, trial) %>%
+  select(database_id, subid, type, trial, target, person, utterance, selection)
+
+newcols <- c("final_initial", "self", "other", "accept")
+coding[, newcols] <- NA
+
+subids <- unique(coding$subid)
+  
+for (i in subids) {
+  codingfile <- filter(coding, subid == i)
+  name <- paste0("cp", codingfile$database_id[1], ".csv")
+  write_csv(codingfile, here(paste0("pacts/", name)), na="", append = FALSE)
+}
+```
    
 ```{r conceptual_pacts}         
 tidy_data %>%
   filter(type == "test", pos < select_pos) %>%
   mutate(length = str_count(utterance, " ") +1) %>%
   group_by(subid, correct, target, trial) %>%
-  #summarise(length = sum(length, na.rm = T),
-  #          nturns = n()) %>%
+  summarise(length = sum(length, na.rm = T),
+            nturns = n()) %>%
   group_by(subid, target) %>%
   arrange(target, .by_group = T) %>%
   mutate(trial = 1:n()) %>%
@@ -139,27 +198,21 @@ tidy_data %>%
   filter(person != trial_selection) %>%
   summarise(length = sum(length, na.rm = T),
             nturns = n()) %>%
-  group_by(subid, age, target) %>%
+  group_by(subid, age, target, person) %>%
   #filter(correct == "Y") %>%
-  arrange(age, target, subid, trial) %>%
+  arrange(age, target, subid, person, trial) %>%
   mutate(trial = 1:n()) %>%
-  group_by(age, trial) %>%
+  filter(trial != 3) %>%
+  group_by(age, person, trial) %>%
   tidyboot_mean(length) %>%
-  ggplot(aes(x = trial, y = empirical_stat)) +
+  ggplot(aes(x = trial, y = empirical_stat, color = person)) +
   facet_wrap(~ age) +
   geom_line() +
-  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper))
+  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper)) +
+  xlim("1", "2")
 
-##output csv for conceptual pact coding
-coding <- tidy_data %>%
-  arrange(subid, type, target, trial) %>%
-  select(subid, type, trial, target, person, utterance, selection)
-
-#for (i in 1:59) {
-    newcols <- c("final_initial", "self", "other", "accept")
-    coding[, newcols] <- NA
-  #}
 ```
+
 ```{r reaction time}
 tidy_data %>%
   filter(rt == unique(rt)) %>%
