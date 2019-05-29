@@ -42,6 +42,7 @@ read_transcript <- function(file) {
   transcript <- read_csv(file) %>%
     remove_empty("cols") %>%
     mutate(database_id = parse_number(basename(file))) %>%
+    #mutate(row = 1:n()) %>%
     filter(!is.na(Timeline.trial)) %>% 
     mutate(type = if_else(str_detect(Timeline.trial, "p"), "practice", 
                           "test"),
@@ -58,6 +59,7 @@ coding_transcript <- function(file) {
   
   transcript <- read_csv(file) %>%
     remove_empty("cols") %>%
+    #mutate(row = 1:n()) %>% 
     mutate(database_id = parse_number(basename(file))) %>%
     mutate(type = if_else(str_detect(Timeline.trial, "p"), "practice", 
                           "test"),
@@ -103,7 +105,7 @@ coding_data <- cdata %>%
                             if_else(Timeline.selection == "child",
                                     "child", as.character(NA)))) %>%
   filter(!is.na(selection) | !is.na(utterance)) %>%
-  filter(!is.na(trial)) %>%
+  #filter(!is.na(trial)) %>%
   mutate(person = if_else(str_detect(person, "parent"), "parent", "child")) %>%
   filter(is.na(selection) | selection == person) %>%
   group_by(subid, type, trial) %>%
@@ -119,7 +121,7 @@ coding_data <- cdata %>%
 
 coding <- coding_data %>%
   arrange(subid, type, target, trial) %>%
-  select(database_id, subid, type, trial, target, person, utterance, selection)
+  select(Timeline.ordinal, database_id, subid, type, trial, target, person, utterance, selection)
 
 newcols <- c("final_initial", "self", "other", "accept")
 coding[, newcols] <- NA
