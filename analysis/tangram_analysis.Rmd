@@ -152,13 +152,15 @@ subids <- unique(coding$subid)
 ```{r grand_models}
 model_data <- tidy_data %>%
   filter(type == "test", pos < select_pos) %>%
-  mutate(length = str_count(utterance, " ") +1) %>%
+  mutate(length = str_count(utterance, " ") +1,
+         correct = correct == "Y") %>%
   group_by(age, subid, correct, target, trial) %>%
   summarise(length = sum(length, na.rm = T),
             nturns = n()) %>%
   group_by(age, subid, target) %>%
-  arrange(target, .by_group = T) %>%
-  mutate(trial = 1:n()) 
+  group_by(age, subid, target) %>%
+  arrange(target, trial, .by_group = T) %>%
+  mutate(target_trial = dense_rank(trial))
 
 
 model_checks <- model_data %>%
@@ -174,8 +176,8 @@ ggplot(model_checks, aes(x = value)) +
   geom_histogram() + 
   facet_grid(measure ~ type, scales = "free")
 
-length_lm <- lmer(log(length ) ~ age * trial + correct + 
-                   (correct + trial| subid) + (1| target), 
+length_lm <- lmer(log(length) ~ age + target_trial + correct + trial +
+                   (correct + target_trial | subid) + (1| target), 
                  control = lmerControl(optimizer = "bobyqa"),
                  data = model_data)
 
@@ -185,8 +187,8 @@ tidy(length_lm) %>%
   kable()
 
 
-turns_lm <- lmer(log(nturns) ~ age * trial + correct + 
-                   (correct + trial| subid) + (1| target), 
+turns_lm <- lmer(log(nturns) ~ age + target_trial + correct + trial +
+                   (correct + target_trial| subid) + (1| target), 
                  control = lmerControl(optimizer = "bobyqa"),
                  data = model_data)
 
@@ -200,18 +202,19 @@ tidy(turns_lm) %>%
 
 model_indiv_data <- tidy_data %>%
   filter(type == "test", pos < select_pos) %>%
-  mutate(length = str_count(utterance, " ") +1) %>%
+  mutate(length = str_count(utterance, " ") +1,
+         correct = T) %>%
   group_by(age, person, subid, correct, target, trial) %>%
   summarise(length = sum(length, na.rm = T),
             nturns = n()) %>%
-  group_by(age, person, subid, target) %>%
-  arrange(target, .by_group = T) %>%
-  mutate(trial = 1:n()) 
+  group_by(age, subid, target) %>%
+  arrange(target, trial, .by_group = T) %>%
+  mutate(target_trial = dense_rank(trial))
 
 
-indiv_length_lm <- lmer(log(length) ~ age * trial + age * person + 
-                          person * trial + correct + 
-                 (person + trial + correct |subid) + (1| target),
+indiv_length_lm <- lmer(log(length) ~ age * person + person * target_trial +
+                          age * target_trial + trial +
+                 (person + target_trial |subid) + (1| target),
                  control = lmerControl(optimizer = "bobyqa"),
                  data = model_indiv_data)
 
@@ -221,8 +224,8 @@ tidy(indiv_length_lm) %>%
   kable()
 
 
-indiv_turns_lm <-  lmer(log(nturns) ~ age * trial + person + correct + 
-                 (person + trial |subid) + (1| target),
+indiv_turns_lm <-  lmer(log(nturns) ~ age * target_trial + person + 
+                 (person + target_trial |subid) + (1| target),
                  control = lmerControl(optimizer = "bobyqa"),
                  data = model_indiv_data)
 
@@ -233,22 +236,38 @@ tidy(indiv_turns_lm) %>%
 
 ```
   
+```{r correctness}
+model_data %>%
+  group_by(age, target_trial, subid, target) %>%
+  distinct(correct) %>%
+  summarise(correct = mean(correct)) %>%
+  summarise(correct = mean(correct))  %>%
+  tidyboot_mean(correct) %>%
+  ggplot(aes(x = target_trial, y = empirical_stat)) + 
+  facet_wrap(~age) + 
+  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper)) + 
+  geom_line() +
+  labs(x = "trial", y = "accuracy")
 
+correct_lm <- glmer(correct ~ age * target_trial + trial +
+                 (1|subid) + (1| target), family = "binomial",
+                 control = glmerControl(optimizer = "bobyqa"),
+                 data = model_data)
+
+
+tidy(correct_lm) %>%
+  filter(effect == "fixed") %>%
+  select(-group) %>%
+  kable()
+```
 
 ```{r conceptual_pacts-plots}         
-tidy_data %>%
-  filter(type == "test", pos < select_pos) %>%
-  mutate(length = str_count(utterance, " ") +1) %>%
-  group_by(subid, correct, target, trial) %>%
-  summarise(length = sum(length, na.rm = T),
-            nturns = n()) %>%
-  group_by(subid, target) %>%
-  arrange(target, .by_group = T) %>%
-  mutate(trial = 1:n()) %>%
-  filter(correct == "Y") %>%
-  group_by(trial) %>%
+model_data %>%
+  group_by(age, target_trial, subid) %>%
+  summarise(length = mean(length)) %>%
   tidyboot_mean(length) %>%
-  ggplot(aes(x = trial, y = empirical_stat)) + 
+  ggplot(aes(x = target_trial, y = empirical_stat)) + 
+  facet_wrap(~ age) +
   geom_line() + 
   geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper))
 
@@ -292,24 +311,6 @@ tidy_data %>%
   geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper))
 
 ## Plotting by age
-
-tidy_data %>%
-  filter(type == "test", pos < select_pos) %>%
-  mutate(length = str_count(utterance, " ") +1) %>%
-  group_by(subid, age, correct, person, target, trial) %>%
-  filter(person != trial_selection) %>%
-  summarise(length = sum(length, na.rm = T),
-            nturns = n()) %>%
-  group_by(subid, age, target) %>%
-  #filter(correct == "Y") %>%
-  arrange(age, target, subid, trial) %>%
-  mutate(trial = 1:n()) %>%
-  group_by(age, trial) %>%
-  tidyboot_mean(length) %>%
-  ggplot(aes(x = trial, y = empirical_stat)) +
-  facet_wrap(~ age) +
-  geom_line() +
-  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper))
 
 # parent and child
 
