@@ -17,6 +17,9 @@ library(tidyboot)
 library(knitr)
 library(ggplot2)
 library(janitor)
+library(lme4)
+library(lmerTest)
+library(broom.mixed)
 
 opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, 
                error = FALSE, cache = TRUE, tidy = FALSE)
@@ -52,24 +55,6 @@ read_transcript <- function(file) {
 data <- map(transcripts, read_transcript) %>%
   bind_rows() %>%
   left_join(agedata, by = "database_id")
-
-## read transcripts without removing "na" (for coding conceptual pacts)
-
-coding_transcript <- function(file) {
-  
-  transcript <- read_csv(file) %>%
-    remove_empty("cols") %>%
-    #mutate(row = 1:n()) %>% 
-    mutate(database_id = parse_number(basename(file))) %>%
-    mutate(type = if_else(str_detect(Timeline.trial, "p"), "practice", 
-                          "test"),
-           trial = as.numeric(gsub("[^0-9]", "", Timeline.trial)))
-}
-
-cdata <- map(transcripts, coding_transcript) %>%
-  bind_rows() %>%
-  left_join(agedata, by = "database_id")
-
 ```
 
 ```{r munge_data}
@@ -93,9 +78,37 @@ tidy_data <- data %>%
   mutate(pos = 1:n(),
          select_pos = which.max(!is.na(selection)),
          trial_selection = last(unique(selection)))
+```
+
+```{r data_checking}
+tidy_data %>%
+  ungroup() %>%
+  distinct(age, subid) %>%
+  group_by(age) %>%
+  summarise(n = n()) %>%
+  kable()
+```
+
+```{r conceptual_coding, eval = F, include = F}
+
+## read transcripts without removing "na" (for coding conceptual pacts)
+
+coding_transcript <- function(file) {
+  
+  transcript <- read_csv(file) %>%
+    remove_empty("cols") %>%
+    #mutate(row = 1:n()) %>% 
+    mutate(database_id = parse_number(basename(file))) %>%
+    mutate(type = if_else(str_detect(Timeline.trial, "p"), "practice", 
+                          "test"),
+           trial = as.numeric(gsub("[^0-9]", "", Timeline.trial)))
+}
+
+cdata <- map(transcripts, coding_transcript) %>%
+  bind_rows() %>%
+  left_join(agedata, by = "database_id")
 
 ## for conceptual pact coding
-
 coding_data <- cdata %>%
   left_join(gametrials, c("subid", "trial", "type")) %>%
   gather(person, utterance, Timeline.parentspeech, Timeline.childspeech) %>%
@@ -116,7 +129,7 @@ coding_data <- cdata %>%
 
 ```         
 
-```{r coding pacts}
+```{r coding-pacts, eval = F, include = F}
 ##output csv for conceptual pact coding
 
 coding <- coding_data %>%
@@ -128,14 +141,101 @@ coding[, newcols] <- NA
 
 subids <- unique(coding$subid)
   
-for (i in subids) {
-  codingfile <- filter(coding, subid == i)
-  name <- paste0("cp", codingfile$database_id[1], ".csv")
-  write_csv(codingfile, here(paste0("pacts/", name)), na="", append = FALSE)
-}
+# for (i in subids) {
+#   codingfile <- filter(coding, subid == i)
+#   name <- paste0("cp", codingfile$database_id[1], ".csv")
+#   write_csv(codingfile, here(paste0("pacts/", name)), na="", append = FALSE)
+# }
 ```
-   
-```{r conceptual_pacts}         
+
+
+```{r grand_models}
+model_data <- tidy_data %>%
+  filter(type == "test", pos < select_pos) %>%
+  mutate(length = str_count(utterance, " ") +1) %>%
+  group_by(age, subid, correct, target, trial) %>%
+  summarise(length = sum(length, na.rm = T),
+            nturns = n()) %>%
+  group_by(age, subid, target) %>%
+  arrange(target, .by_group = T) %>%
+  mutate(trial = 1:n()) 
+
+
+model_checks <- model_data %>%
+  ungroup() %>%
+  select(length, nturns) %>%
+  gather(measure, original, length, nturns) %>%
+  mutate(log = log(original)) %>%
+  gather(type, value, original, log) %>%
+  mutate(type = factor(type, levels = c("original", "log")))
+  
+
+ggplot(model_checks, aes(x = value)) + 
+  geom_histogram() + 
+  facet_grid(measure ~ type, scales = "free")
+
+length_lm <- lmer(log(length ) ~ age * trial + correct + 
+                   (correct + trial| subid) + (1| target), 
+                 control = lmerControl(optimizer = "bobyqa"),
+                 data = model_data)
+
+tidy(length_lm) %>%
+  filter(effect == "fixed") %>%
+  select(-group) %>%
+  kable()
+
+
+turns_lm <- lmer(log(nturns) ~ age * trial + correct + 
+                   (correct + trial| subid) + (1| target), 
+                 control = lmerControl(optimizer = "bobyqa"),
+                 data = model_data)
+
+tidy(turns_lm) %>%
+  filter(effect == "fixed") %>%
+  select(-group) %>%
+  kable()
+```
+  
+```{r indiv_models}
+
+model_indiv_data <- tidy_data %>%
+  filter(type == "test", pos < select_pos) %>%
+  mutate(length = str_count(utterance, " ") +1) %>%
+  group_by(age, person, subid, correct, target, trial) %>%
+  summarise(length = sum(length, na.rm = T),
+            nturns = n()) %>%
+  group_by(age, person, subid, target) %>%
+  arrange(target, .by_group = T) %>%
+  mutate(trial = 1:n()) 
+
+
+indiv_length_lm <- lmer(log(length) ~ age * trial + age * person + 
+                          person * trial + correct + 
+                 (person + trial + correct |subid) + (1| target),
+                 control = lmerControl(optimizer = "bobyqa"),
+                 data = model_indiv_data)
+
+tidy(indiv_length_lm) %>%
+  filter(effect == "fixed") %>%
+  select(-group) %>%
+  kable()
+
+
+indiv_turns_lm <-  lmer(log(nturns) ~ age * trial + person + correct + 
+                 (person + trial |subid) + (1| target),
+                 control = lmerControl(optimizer = "bobyqa"),
+                 data = model_indiv_data)
+
+tidy(indiv_turns_lm) %>%
+  filter(effect == "fixed") %>%
+  select(-group) %>%
+  kable()
+
+```
+  
+
+
+```{r conceptual_pacts-plots}         
 tidy_data %>%
   filter(type == "test", pos < select_pos) %>%
   mutate(length = str_count(utterance, " ") +1) %>%
