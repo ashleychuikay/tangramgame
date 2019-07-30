@@ -118,7 +118,7 @@ coding_data <- cdata %>%
                             if_else(Timeline.selection == "child",
                                     "child", as.character(NA)))) %>%
   filter(!is.na(selection) | !is.na(utterance)) %>%
-  #filter(!is.na(trial)) %>%
+  filter(!is.na(trial)) %>%
   mutate(person = if_else(str_detect(person, "parent"), "parent", "child")) %>%
   filter(is.na(selection) | selection == person) %>%
   group_by(subid, type, trial) %>%
