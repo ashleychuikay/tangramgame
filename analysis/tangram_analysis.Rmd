@@ -134,7 +134,7 @@ coding_data <- cdata %>%
 
 coding <- coding_data %>%
   arrange(subid, type, target, trial) %>%
-  select(Timeline.ordinal, database_id, subid, type, trial, target, person, utterance, selection)
+  select(Timeline.ordinal, subid, type, trial, target, person, utterance, selection)
 
 #newcols <- c("final_initial", "self", "other", "accept")
 #coding[, newcols] <- NA
@@ -262,6 +262,8 @@ tidy(correct_lm) %>%
 ```
 
 ```{r conceptual_pacts-plots}         
+## reduction in length
+
 model_data %>%
   group_by(age, target_trial, subid) %>%
   summarise(length = mean(length)) %>%
