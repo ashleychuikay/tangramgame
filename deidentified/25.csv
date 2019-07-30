@@ -1,192 +1,192 @@
-Timeline.ordinal,database_id,subid,type,trial,target,person,utterance,selection
-0,6392,25,practice,1,apple,parent,The thing that has a box around it is an apple,
-2,6392,25,practice,1,apple,child,,child
-9,6392,25,practice,4,apple,child,it's an apple,
-10,6392,25,practice,4,apple,parent,,parent
-4,6392,25,practice,2,artichoke,child,"It looks like, an, a green thing with lines on it",
-5,6392,25,practice,2,artichoke,parent,A green thing with lines on it?,
-6,6392,25,practice,2,artichoke,parent,,parent
-11,6392,25,practice,5,artichoke,parent,The thing that you said was a green thing with lines on it remember we have those sometimes for dinner? We make it with butter? It's called an artichoke,
-12,6392,25,practice,5,artichoke,child,,child
-7,6392,25,practice,3,onion,parent,I'm describing an onion,
-8,6392,25,practice,3,onion,child,,child
-13,6392,25,practice,6,onion,child,I think it's a mushroom?,
-14,6392,25,practice,6,onion,parent,A mushroom?,
-16,6392,25,practice,6,onion,child,xxx,
-17,6392,25,practice,6,onion,parent,,parent
-63,6392,25,test,5,A1,parent,this one looks like someone is standing up and marching,
-64,6392,25,test,5,A1,child,okay,
-65,6392,25,test,5,A1,child,,child
-97,6392,25,test,15,A1,child,"this is like somebody is running, and he has a triangle and another triangle",
-98,6392,25,test,15,A1,parent,,parent
-99,6392,25,test,15,A1,child,and a triangle,
-111,6392,25,test,21,A1,parent,to me this looks like someone who's walking and marching forward,
-113,6392,25,test,21,A1,parent,someone's marching and one of their legs is sticking out and the other leg is on the ground,
-116,6392,25,test,21,A1,child,"i don't know, tell me more",
-117,6392,25,test,21,A1,parent,"it looks like someone's, um, someone is marching, they have one leg down, one leg sticking out, and there's a triangle sticking out above the leg",
-118,6392,25,test,21,A1,child,,child
-172,6392,25,test,35,A1,child,"it's a diamond head, and a triangle and triangle, and a",
-173,6392,25,test,35,A1,parent,,parent
-60,6392,25,test,4,B1,child,it looks like someone walking with their head down and box-,
-61,6392,25,test,4,B1,parent,someone's walking with their head down?,
-62,6392,25,test,4,B1,parent,,parent
-104,6392,25,test,18,B1,parent,"to me this looks like a person standing and walking and a little bit sad, cause their head is down",
-105,6392,25,test,18,B1,child,,child
-133,6392,25,test,26,B1,child,"so someone walking xxx, and they have a body, and um",
-134,6392,25,test,26,B1,parent,can you say a little more about it?,
-135,6392,25,test,26,B1,child,and they have a xxx,
-136,6392,25,test,26,B1,parent,"i didn't quite hear what you said, can you say it louder?",
-137,6392,25,test,26,B1,child,"it's a diamond head and triangle feet, and xxx",
-138,6392,25,test,26,B1,parent,okay,
-139,6392,25,test,26,B1,parent,,parent
-178,6392,25,test,38,B1,parent,"this looks to me like a person who is walking, she's a little bit sad, so her head is facing down",
-179,6392,25,test,38,B1,parent,"and their feet are on the ground, their feet are triangles, you can see both feet",
-180,6392,25,test,38,B1,child,,child
-66,6392,25,test,6,C1,child,this looks like a cat,
-67,6392,25,test,6,C1,parent,a cat?,
-68,6392,25,test,6,C1,child,and walking with their head down,
-69,6392,25,test,6,C1,parent,,parent
-86,6392,25,test,12,C1,parent,"to me this looks like someone is sort of kneeling on the ground like, or when yyy used to pray? at daycare? and she would pray and kneel on the ground on her rug, remember that? this kinda looks like that to me, someone's kneeling to pray",
-87,6392,25,test,12,C1,child,,child
-119,6392,25,test,22,C1,child,"this is xxx laying down with their head going like xxx, and their xxx going like this",
-120,6392,25,test,22,C1,parent,,parent
-174,6392,25,test,36,C1,parent,"to me this looks like someone kneeling down to pray, like yyy used to",
-175,6392,25,test,36,C1,child,,child
-70,6392,25,test,7,D1,parent,this looks to me like someone who is lying down on the ground and maybe reading a book,
-71,6392,25,test,7,D1,child,okay,
-72,6392,25,test,7,D1,child,,child
-102,6392,25,test,17,D1,child,"this one looks like, like lying down and xxx and reading a book",
-103,6392,25,test,17,D1,parent,,parent
-149,6392,25,test,29,D1,parent,"this one to me looks like someone who is lying on the ground on their tummy reading a book or something, and they have one foot sticking up in the air",
-150,6392,25,test,29,D1,child,,child
-166,6392,25,test,33,D1,child,i have a person on their tummy and reading a book,
-167,6392,25,test,33,D1,parent,,parent
-36,6392,25,test,2,E1,child,"it kinda looks like a diamond at the top, a triangle here, a triangle going down, triangle going up, one triangle, two triangles and then triangles xxx",
-37,6392,25,test,2,E1,parent,Can you describe it a little more?,
-38,6392,25,test,2,E1,child,"and it, is has, it has a pointy on its side",
-39,6392,25,test,2,E1,parent,it has a pointy thing on the side of it?,
-40,6392,25,test,2,E1,child,the bottom part of xxx,
-41,6392,25,test,2,E1,parent,,parent
-108,6392,25,test,20,E1,parent,this to me looks like someone who's jumping for joy and dancing because they're happy,
-109,6392,25,test,20,E1,parent,"and they're, they have two feet, and the feet are sort of parallel to each other, and but one's higher than the, right above the other, cause they're jumping, and their arms are up like an angel's arms",
-110,6392,25,test,20,E1,child,,child
-127,6392,25,test,24,E1,child,it looks like someone with their arms sticking out and the xxx at the top,
-128,6392,25,test,24,E1,parent,,parent
-183,6392,25,test,40,E1,parent,i have a person who looks like they're jumping for joy,
-186,6392,25,test,40,E1,parent,person who's kind of joyful,
-187,6392,25,test,40,E1,child,their arms up?,
-188,6392,25,test,40,E1,parent,"their arms are up, their arms kinda look like angel wings",
-189,6392,25,test,40,E1,child,,child
-190,6392,25,test,40,E1,parent,their feet are triangles,
-43,6392,25,test,3,F1,parent,"so, to me this looks kinda like someone who's having fun",
-45,6392,25,test,3,F1,parent,"it looks like someone who's having fun, not someone who's just sitting there being bored, someone kind of active, maybe jumping? and the legs are kind of far apart",
-46,6392,25,test,3,F1,parent,And the head is kind of sticking up,
-48,6392,25,test,3,F1,parent,"so, it looks like the person is kind of joyful, almost",
-49,6392,25,test,3,F1,child,dancing,
-50,6392,25,test,3,F1,parent,"yeah, dancing, yeah! so do you know which one i'm talking about?",
-52,6392,25,test,3,F1,child,i don't know,
-53,6392,25,test,3,F1,parent,"just, okay, it looks like it's dancing and it looks like the arm is sticking up into the sky",
-54,6392,25,test,3,F1,child,"okay, xxx",
-55,6392,25,test,3,F1,parent,"and it looks like there are two feet on the ground, the feet are triangles, he has two triangle feet",
-56,6392,25,test,3,F1,child,"okay, a box on its head?",
-57,6392,25,test,3,F1,parent,it's head does look like a box,
-58,6392,25,test,3,F1,child,,child
-84,6392,25,test,11,F1,child,"a triangle on top, another triangle, look! like this... and then it has another triangle, and the arm is a triangle, and triangle, triangle",
-85,6392,25,test,11,F1,parent,,parent
-129,6392,25,test,25,F1,parent,"to me this looks like a person, there are two triangles which look like feet, and the triangles are both touching the ground, but one's a little bit higher than the other but they're both on the ground, and then it kinda looks like their head is a square that's a little bit diagonal, and it looks kinda like a, at least one arm, going up to the sky",
-130,6392,25,test,25,F1,child,,child
-158,6392,25,test,31,F1,child,triangle,
-159,6392,25,test,31,F1,parent,"i can't hear you, what?",
-160,6392,25,test,31,F1,child,"a triangle like an arm, sticking up",
-161,6392,25,test,31,F1,parent,,parent
-78,6392,25,test,10,G1,child,"this looks like someone sitting, and their arms, their arms, are like, this",
-79,6392,25,test,10,G1,parent,can you use words?,
-80,6392,25,test,10,G1,child,"so their arms, are like, they they they have, they have, a xxx in the box",
-81,6392,25,test,10,G1,parent,,parent
-92,6392,25,test,14,G1,parent,"to me this looks like someone is sitting on a chair, sitting very straight up, and it looks like maybe they are wearing a dress, they're facing forward",
-93,6392,25,test,14,G1,child,a girl?,
-94,6392,25,test,14,G1,parent,"it could be a girl wearing a dress, yeah",
-95,6392,25,test,14,G1,parent,you know which one it is?,
-96,6392,25,test,14,G1,child,,child
-147,6392,25,test,28,G1,child,i have a person sitting on a chair with their head down and triangle feet and they xxx,
-148,6392,25,test,28,G1,parent,,parent
-162,6392,25,test,32,G1,parent,"to me this looks like somebody who's sitting on a little chair or bench or stool, and it looks like it's uh wearing a skirt, her head is facing down a little bit, looks like she's sitting very still",
-164,6392,25,test,32,G1,parent,do you know which one I'm talking about?,
-165,6392,25,test,32,G1,child,,child
-73,6392,25,test,8,H1,child,"this looks like someone is standing up, this looks like they're reading a book, and uh xxx",
-74,6392,25,test,8,H1,parent,,parent
-100,6392,25,test,16,H1,parent,"to me this one looks like the person is standing very still and holding an upside down hat like he used to wear, like a magician wears",
-101,6392,25,test,16,H1,child,,child
-153,6392,25,test,30,H1,child,a person is holding a hat and they have a diamond head,
-154,6392,25,test,30,H1,parent,,parent
-168,6392,25,test,34,H1,parent,"this one looks to me like a person who's holdin an upside down hat, like yyy used to wear",
-171,6392,25,test,34,H1,child,,child
-75,6392,25,test,9,I1,parent,"this looks to me like someone is holding a bowl of soup about to serve it to someone, they're about to serve the soup to someone",
-76,6392,25,test,9,I1,child,,child
-106,6392,25,test,19,I1,child,"this is a, this is a person that looks, this looks like a person giving up some pie, that someone",
-107,6392,25,test,19,I1,parent,,parent
-121,6392,25,test,23,I1,parent,this looks like someone is serving a bowl of pasta to a person,
-122,6392,25,test,23,I1,parent,"they're holding out a bowl that looks like a triangle, and they're a little stooped down, because they're going to serve",
-123,6392,25,test,23,I1,child,"the pasta like this, and going like this",
-125,6392,25,test,23,I1,child,,child
-176,6392,25,test,37,I1,child,i have someone giving you some soup,
-177,6392,25,test,37,I1,parent,,parent
-19,6392,25,test,1,K1,parent,"So to me this looks kind of like a dog standing up on its back legs and the head looks kind of like an arrow, and it does not look so much like a person running",
-20,6392,25,test,1,K1,parent,"And it has, kind of, it has some long pieces and some triangles, and at the very top it has an arrow that's going diagonally, and the arrow is a square and a triangle",
-21,6392,25,test,1,K1,parent,"Like if you're drawing an aeroplane or something, and the it kinda looks like it has a tail at the back? and then an arm sticking out front",
-22,6392,25,test,1,K1,parent,And it's big,
-23,6392,25,test,1,K1,child,it's got a triangle on its,
-24,6392,25,test,1,K1,parent,"do you think you know which one it is, from the way I described it?",
-25,6392,25,test,1,K1,parent,"okay, so it starts out- look at the bottom: it has kind of like a triangle attached to a rectangle, and then the rectangle goes up",
-27,6392,25,test,1,K1,parent,"And it kinda looks like it goes straight up and a little diagonal, and it has a triangle sticking out at the bottom going sideways, and on the other side sticking the other direction it's like maybe some arms coming out",
-28,6392,25,test,1,K1,child,oh,
-29,6392,25,test,1,K1,parent,You know which one it is?,
-30,6392,25,test,1,K1,child,a dog?,
-31,6392,25,test,1,K1,parent,"I think it kinda looks like a dog, you can interpret it the way you want",
-32,6392,25,test,1,K1,child,this one,
-33,6392,25,test,1,K1,parent,"yeah, press it!",
-34,6392,25,test,1,K1,child,,child
-88,6392,25,test,13,K1,child,this looks like the two-headed xxx and um doing this,
-89,6392,25,test,13,K1,parent,can you use words instead of gestures?,
-90,6392,25,test,13,K1,child,"with his arms, oh and it's got a tail in the back, and xxx and a triangle",
-91,6392,25,test,13,K1,parent,,parent
-140,6392,25,test,27,K1,parent,"this one looks like, it's a, the head is a square that's wearing a triangle hat",
-142,6392,25,test,27,K1,parent,"if the head is a square, then it's wearing a triangle hat",
-143,6392,25,test,27,K1,parent,"and it, it has its feet on the ground kinda leaning forward",
-144,6392,25,test,27,K1,parent,and to me it almost looks like a dog,
-145,6392,25,test,27,K1,parent,the triangle sticking out of its bottom,
-146,6392,25,test,27,K1,child,,child
-181,6392,25,test,39,K1,child,"i have a person, kinda looks like a dog",
-182,6392,25,test,39,K1,parent,,parent
-1,6392,25,test,,,parent,So remember you touch the thing,
-3,6392,25,test,,,parent,do you have the blue box on yours? then you describe it,
-15,6392,25,test,,,parent,"Oh no, you can't show me",
-26,6392,25,test,,,parent,Are you looking at the pictures sweetie? Look at the picture,
-35,6392,25,test,,,parent,it's your turn,
-42,6392,25,test,,,parent,ok now it's my turn to describe,
-44,6392,25,test,,,child,do you need a kleenex?,
-47,6392,25,test,,,parent,thank you,
-51,6392,25,test,,,parent,push the one you think i'm talking about!,
-59,6392,25,test,,,parent,your turn,
-77,6392,25,test,,,child,"and there's color, right?",
-82,6392,25,test,,,parent,"it says time for the next round, okay",
-83,6392,25,test,,,parent,do you have a box around yours?,
-112,6392,25,test,,,parent,sit down with your bottom on the chair,
-114,6392,25,test,,,parent,"yyy, do you see the picture i'm describing?",
-115,6392,25,test,,,child,yeah,
-124,6392,25,test,,,parent,sweetie can you put your bottom on the chair please? so that's the picture,
-126,6392,25,test,,,parent,do you have a box around one of your pictures?,
-131,6392,25,test,,,child,why don't i press a button when there's a square,
-132,6392,25,test,,,parent,"you don't press a button, you just use words to describe, the person without the square presses the button",
-141,6392,25,test,,,parent,"yyy, please finish the game",
-151,6392,25,test,,,child,i can't look at the other person,
-152,6392,25,test,,,parent,"right you can't look at the other person, that's how the game works",
-155,6392,25,test,,,parent,you have a square on yours?,
-156,6392,25,test,,,child,yeah,
-157,6392,25,test,,,parent,can you tell me what's in the square?,
-163,6392,25,test,,,child,xxx,
-169,6392,25,test,,,child,xxx,
-170,6392,25,test,,,parent,you said ladies and gentlemen? do you know which picture i'm talking about?,
-184,6392,25,test,,,child,xxx,
-185,6392,25,test,,,parent,"that's okay, you don't need to show them for this",
-18,6392,25,,,,parent,So that was the practice round,
+Timeline.ordinal,subid,type,trial,target,person,utterance,selection
+0,25,practice,1,apple,parent,The thing that has a box around it is an apple,
+2,25,practice,1,apple,child,,child
+9,25,practice,4,apple,child,it's an apple,
+10,25,practice,4,apple,parent,,parent
+4,25,practice,2,artichoke,child,"It looks like, an, a green thing with lines on it",
+5,25,practice,2,artichoke,parent,A green thing with lines on it?,
+6,25,practice,2,artichoke,parent,,parent
+11,25,practice,5,artichoke,parent,The thing that you said was a green thing with lines on it remember we have those sometimes for dinner? We make it with butter? It's called an artichoke,
+12,25,practice,5,artichoke,child,,child
+7,25,practice,3,onion,parent,I'm describing an onion,
+8,25,practice,3,onion,child,,child
+13,25,practice,6,onion,child,I think it's a mushroom?,
+14,25,practice,6,onion,parent,A mushroom?,
+16,25,practice,6,onion,child,xxx,
+17,25,practice,6,onion,parent,,parent
+63,25,test,5,A1,parent,this one looks like someone is standing up and marching,
+64,25,test,5,A1,child,okay,
+65,25,test,5,A1,child,,child
+97,25,test,15,A1,child,"this is like somebody is running, and he has a triangle and another triangle",
+98,25,test,15,A1,parent,,parent
+99,25,test,15,A1,child,and a triangle,
+111,25,test,21,A1,parent,to me this looks like someone who's walking and marching forward,
+113,25,test,21,A1,parent,someone's marching and one of their legs is sticking out and the other leg is on the ground,
+116,25,test,21,A1,child,"i don't know, tell me more",
+117,25,test,21,A1,parent,"it looks like someone's, um, someone is marching, they have one leg down, one leg sticking out, and there's a triangle sticking out above the leg",
+118,25,test,21,A1,child,,child
+172,25,test,35,A1,child,"it's a diamond head, and a triangle and triangle, and a",
+173,25,test,35,A1,parent,,parent
+60,25,test,4,B1,child,it looks like someone walking with their head down and box-,
+61,25,test,4,B1,parent,someone's walking with their head down?,
+62,25,test,4,B1,parent,,parent
+104,25,test,18,B1,parent,"to me this looks like a person standing and walking and a little bit sad, cause their head is down",
+105,25,test,18,B1,child,,child
+133,25,test,26,B1,child,"so someone walking xxx, and they have a body, and um",
+134,25,test,26,B1,parent,can you say a little more about it?,
+135,25,test,26,B1,child,and they have a xxx,
+136,25,test,26,B1,parent,"i didn't quite hear what you said, can you say it louder?",
+137,25,test,26,B1,child,"it's a diamond head and triangle feet, and xxx",
+138,25,test,26,B1,parent,okay,
+139,25,test,26,B1,parent,,parent
+178,25,test,38,B1,parent,"this looks to me like a person who is walking, she's a little bit sad, so her head is facing down",
+179,25,test,38,B1,parent,"and their feet are on the ground, their feet are triangles, you can see both feet",
+180,25,test,38,B1,child,,child
+66,25,test,6,C1,child,this looks like a cat,
+67,25,test,6,C1,parent,a cat?,
+68,25,test,6,C1,child,and walking with their head down,
+69,25,test,6,C1,parent,,parent
+86,25,test,12,C1,parent,"to me this looks like someone is sort of kneeling on the ground like, or when yyy used to pray? at daycare? and she would pray and kneel on the ground on her rug, remember that? this kinda looks like that to me, someone's kneeling to pray",
+87,25,test,12,C1,child,,child
+119,25,test,22,C1,child,"this is xxx laying down with their head going like xxx, and their xxx going like this",
+120,25,test,22,C1,parent,,parent
+174,25,test,36,C1,parent,"to me this looks like someone kneeling down to pray, like yyy used to",
+175,25,test,36,C1,child,,child
+70,25,test,7,D1,parent,this looks to me like someone who is lying down on the ground and maybe reading a book,
+71,25,test,7,D1,child,okay,
+72,25,test,7,D1,child,,child
+102,25,test,17,D1,child,"this one looks like, like lying down and xxx and reading a book",
+103,25,test,17,D1,parent,,parent
+149,25,test,29,D1,parent,"this one to me looks like someone who is lying on the ground on their tummy reading a book or something, and they have one foot sticking up in the air",
+150,25,test,29,D1,child,,child
+166,25,test,33,D1,child,i have a person on their tummy and reading a book,
+167,25,test,33,D1,parent,,parent
+36,25,test,2,E1,child,"it kinda looks like a diamond at the top, a triangle here, a triangle going down, triangle going up, one triangle, two triangles and then triangles xxx",
+37,25,test,2,E1,parent,Can you describe it a little more?,
+38,25,test,2,E1,child,"and it, is has, it has a pointy on its side",
+39,25,test,2,E1,parent,it has a pointy thing on the side of it?,
+40,25,test,2,E1,child,the bottom part of xxx,
+41,25,test,2,E1,parent,,parent
+108,25,test,20,E1,parent,this to me looks like someone who's jumping for joy and dancing because they're happy,
+109,25,test,20,E1,parent,"and they're, they have two feet, and the feet are sort of parallel to each other, and but one's higher than the, right above the other, cause they're jumping, and their arms are up like an angel's arms",
+110,25,test,20,E1,child,,child
+127,25,test,24,E1,child,it looks like someone with their arms sticking out and the xxx at the top,
+128,25,test,24,E1,parent,,parent
+183,25,test,40,E1,parent,i have a person who looks like they're jumping for joy,
+186,25,test,40,E1,parent,person who's kind of joyful,
+187,25,test,40,E1,child,their arms up?,
+188,25,test,40,E1,parent,"their arms are up, their arms kinda look like angel wings",
+189,25,test,40,E1,child,,child
+190,25,test,40,E1,parent,their feet are triangles,
+43,25,test,3,F1,parent,"so, to me this looks kinda like someone who's having fun",
+45,25,test,3,F1,parent,"it looks like someone who's having fun, not someone who's just sitting there being bored, someone kind of active, maybe jumping? and the legs are kind of far apart",
+46,25,test,3,F1,parent,And the head is kind of sticking up,
+48,25,test,3,F1,parent,"so, it looks like the person is kind of joyful, almost",
+49,25,test,3,F1,child,dancing,
+50,25,test,3,F1,parent,"yeah, dancing, yeah! so do you know which one i'm talking about?",
+52,25,test,3,F1,child,i don't know,
+53,25,test,3,F1,parent,"just, okay, it looks like it's dancing and it looks like the arm is sticking up into the sky",
+54,25,test,3,F1,child,"okay, xxx",
+55,25,test,3,F1,parent,"and it looks like there are two feet on the ground, the feet are triangles, he has two triangle feet",
+56,25,test,3,F1,child,"okay, a box on its head?",
+57,25,test,3,F1,parent,it's head does look like a box,
+58,25,test,3,F1,child,,child
+84,25,test,11,F1,child,"a triangle on top, another triangle, look! like this... and then it has another triangle, and the arm is a triangle, and triangle, triangle",
+85,25,test,11,F1,parent,,parent
+129,25,test,25,F1,parent,"to me this looks like a person, there are two triangles which look like feet, and the triangles are both touching the ground, but one's a little bit higher than the other but they're both on the ground, and then it kinda looks like their head is a square that's a little bit diagonal, and it looks kinda like a, at least one arm, going up to the sky",
+130,25,test,25,F1,child,,child
+158,25,test,31,F1,child,triangle,
+159,25,test,31,F1,parent,"i can't hear you, what?",
+160,25,test,31,F1,child,"a triangle like an arm, sticking up",
+161,25,test,31,F1,parent,,parent
+78,25,test,10,G1,child,"this looks like someone sitting, and their arms, their arms, are like, this",
+79,25,test,10,G1,parent,can you use words?,
+80,25,test,10,G1,child,"so their arms, are like, they they they have, they have, a xxx in the box",
+81,25,test,10,G1,parent,,parent
+92,25,test,14,G1,parent,"to me this looks like someone is sitting on a chair, sitting very straight up, and it looks like maybe they are wearing a dress, they're facing forward",
+93,25,test,14,G1,child,a girl?,
+94,25,test,14,G1,parent,"it could be a girl wearing a dress, yeah",
+95,25,test,14,G1,parent,you know which one it is?,
+96,25,test,14,G1,child,,child
+147,25,test,28,G1,child,i have a person sitting on a chair with their head down and triangle feet and they xxx,
+148,25,test,28,G1,parent,,parent
+162,25,test,32,G1,parent,"to me this looks like somebody who's sitting on a little chair or bench or stool, and it looks like it's uh wearing a skirt, her head is facing down a little bit, looks like she's sitting very still",
+164,25,test,32,G1,parent,do you know which one I'm talking about?,
+165,25,test,32,G1,child,,child
+73,25,test,8,H1,child,"this looks like someone is standing up, this looks like they're reading a book, and uh xxx",
+74,25,test,8,H1,parent,,parent
+100,25,test,16,H1,parent,"to me this one looks like the person is standing very still and holding an upside down hat like he used to wear, like a magician wears",
+101,25,test,16,H1,child,,child
+153,25,test,30,H1,child,a person is holding a hat and they have a diamond head,
+154,25,test,30,H1,parent,,parent
+168,25,test,34,H1,parent,"this one looks to me like a person who's holdin an upside down hat, like yyy used to wear",
+171,25,test,34,H1,child,,child
+75,25,test,9,I1,parent,"this looks to me like someone is holding a bowl of soup about to serve it to someone, they're about to serve the soup to someone",
+76,25,test,9,I1,child,,child
+106,25,test,19,I1,child,"this is a, this is a person that looks, this looks like a person giving up some pie, that someone",
+107,25,test,19,I1,parent,,parent
+121,25,test,23,I1,parent,this looks like someone is serving a bowl of pasta to a person,
+122,25,test,23,I1,parent,"they're holding out a bowl that looks like a triangle, and they're a little stooped down, because they're going to serve",
+123,25,test,23,I1,child,"the pasta like this, and going like this",
+125,25,test,23,I1,child,,child
+176,25,test,37,I1,child,i have someone giving you some soup,
+177,25,test,37,I1,parent,,parent
+19,25,test,1,K1,parent,"So to me this looks kind of like a dog standing up on its back legs and the head looks kind of like an arrow, and it does not look so much like a person running",
+20,25,test,1,K1,parent,"And it has, kind of, it has some long pieces and some triangles, and at the very top it has an arrow that's going diagonally, and the arrow is a square and a triangle",
+21,25,test,1,K1,parent,"Like if you're drawing an aeroplane or something, and the it kinda looks like it has a tail at the back? and then an arm sticking out front",
+22,25,test,1,K1,parent,And it's big,
+23,25,test,1,K1,child,it's got a triangle on its,
+24,25,test,1,K1,parent,"do you think you know which one it is, from the way I described it?",
+25,25,test,1,K1,parent,"okay, so it starts out- look at the bottom: it has kind of like a triangle attached to a rectangle, and then the rectangle goes up",
+27,25,test,1,K1,parent,"And it kinda looks like it goes straight up and a little diagonal, and it has a triangle sticking out at the bottom going sideways, and on the other side sticking the other direction it's like maybe some arms coming out",
+28,25,test,1,K1,child,oh,
+29,25,test,1,K1,parent,You know which one it is?,
+30,25,test,1,K1,child,a dog?,
+31,25,test,1,K1,parent,"I think it kinda looks like a dog, you can interpret it the way you want",
+32,25,test,1,K1,child,this one,
+33,25,test,1,K1,parent,"yeah, press it!",
+34,25,test,1,K1,child,,child
+88,25,test,13,K1,child,this looks like the two-headed xxx and um doing this,
+89,25,test,13,K1,parent,can you use words instead of gestures?,
+90,25,test,13,K1,child,"with his arms, oh and it's got a tail in the back, and xxx and a triangle",
+91,25,test,13,K1,parent,,parent
+140,25,test,27,K1,parent,"this one looks like, it's a, the head is a square that's wearing a triangle hat",
+142,25,test,27,K1,parent,"if the head is a square, then it's wearing a triangle hat",
+143,25,test,27,K1,parent,"and it, it has its feet on the ground kinda leaning forward",
+144,25,test,27,K1,parent,and to me it almost looks like a dog,
+145,25,test,27,K1,parent,the triangle sticking out of its bottom,
+146,25,test,27,K1,child,,child
+181,25,test,39,K1,child,"i have a person, kinda looks like a dog",
+182,25,test,39,K1,parent,,parent
+1,25,test,,,parent,So remember you touch the thing,
+3,25,test,,,parent,do you have the blue box on yours? then you describe it,
+15,25,test,,,parent,"Oh no, you can't show me",
+26,25,test,,,parent,Are you looking at the pictures sweetie? Look at the picture,
+35,25,test,,,parent,it's your turn,
+42,25,test,,,parent,ok now it's my turn to describe,
+44,25,test,,,child,do you need a kleenex?,
+47,25,test,,,parent,thank you,
+51,25,test,,,parent,push the one you think i'm talking about!,
+59,25,test,,,parent,your turn,
+77,25,test,,,child,"and there's color, right?",
+82,25,test,,,parent,"it says time for the next round, okay",
+83,25,test,,,parent,do you have a box around yours?,
+112,25,test,,,parent,sit down with your bottom on the chair,
+114,25,test,,,parent,"yyy, do you see the picture i'm describing?",
+115,25,test,,,child,yeah,
+124,25,test,,,parent,sweetie can you put your bottom on the chair please? so that's the picture,
+126,25,test,,,parent,do you have a box around one of your pictures?,
+131,25,test,,,child,why don't i press a button when there's a square,
+132,25,test,,,parent,"you don't press a button, you just use words to describe, the person without the square presses the button",
+141,25,test,,,parent,"yyy, please finish the game",
+151,25,test,,,child,i can't look at the other person,
+152,25,test,,,parent,"right you can't look at the other person, that's how the game works",
+155,25,test,,,parent,you have a square on yours?,
+156,25,test,,,child,yeah,
+157,25,test,,,parent,can you tell me what's in the square?,
+163,25,test,,,child,xxx,
+169,25,test,,,child,xxx,
+170,25,test,,,parent,you said ladies and gentlemen? do you know which picture i'm talking about?,
+184,25,test,,,child,xxx,
+185,25,test,,,parent,"that's okay, you don't need to show them for this",
+18,25,,,,parent,So that was the practice round,

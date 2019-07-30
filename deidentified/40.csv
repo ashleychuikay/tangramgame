@@ -1,136 +1,136 @@
-Timeline.ordinal,database_id,subid,type,trial,target,person,utterance,selection
-0,3436,40,practice,1,apple,parent,Alright this fruit it has a leaf on it,
-1,3436,40,practice,1,apple,child,,child
-8,3436,40,practice,4,apple,child,This vegetable is red,
-9,3436,40,practice,4,apple,parent,Is it a vegetable,
-10,3436,40,practice,4,apple,child,I mean fruit,
-11,3436,40,practice,4,apple,parent,It's red,
-12,3436,40,practice,4,apple,child,Yeah,
-13,3436,40,practice,4,apple,parent,,parent
-2,3436,40,practice,2,artichoke,child,This fruit has a stem on it,
-3,3436,40,practice,2,artichoke,parent,Ooh,
-4,3436,40,practice,2,artichoke,parent,,parent
-5,3436,40,practice,2,artichoke,parent,That was a vegetable,
-14,3436,40,practice,5,artichoke,parent,This vegetable kinda looks like it has scales,
-15,3436,40,practice,5,artichoke,child,,child
-6,3436,40,practice,3,onion,parent,This vegetable is super stinky,
-7,3436,40,practice,3,onion,child,,child
-16,3436,40,practice,6,onion,child,This vegetable has a stem and some little leaves on the bottom,
-17,3436,40,practice,6,onion,parent,,parent
-18,3436,40,practice,6,onion,parent,The roots coming out at the bottom,
-50,3436,40,test,10,A1,child,This guy looks like he's running,
-51,3436,40,test,10,A1,parent,Mmm,
-52,3436,40,test,10,A1,parent,,parent
-78,3436,40,test,20,A1,parent,This guy is could be running away,
-79,3436,40,test,20,A1,child,,child
-86,3436,40,test,22,A1,child,Runner,
-87,3436,40,test,22,A1,parent,,parent
-115,3436,40,test,34,A1,parent,The runner,
-116,3436,40,test,34,A1,child,,child
-34,3436,40,test,5,B1,parent,Uh this guys looks like he's walking away kinda sad,
-35,3436,40,test,5,B1,child,,child
-66,3436,40,test,15,B1,child,This guy looks like he's sad,
-67,3436,40,test,15,B1,parent,,parent
-93,3436,40,test,25,B1,parent,Walking away sad,
-94,3436,40,test,25,B1,child,,child
-133,3436,40,test,39,B1,child,The walker,
-134,3436,40,test,39,B1,parent,,parent
-135,3436,40,test,39,B1,parent,He looks so sad,
-27,3436,40,test,2,C1,child,This guy this looks like he's standing on his hands and doing a downward dog at the same time,
-28,3436,40,test,2,C1,parent,Oh that's a good one,
-29,3436,40,test,2,C1,parent,,parent
-68,3436,40,test,16,C1,parent,This guy looks like he's on the ground,
-69,3436,40,test,16,C1,child,,child
-104,3436,40,test,30,C1,child,The downward dog,
-105,3436,40,test,30,C1,parent,,parent
-111,3436,40,test,32,C1,parent,Downward dog,
-112,3436,40,test,32,C1,child,,child
-30,3436,40,test,3,D1,parent,OK this one looks like he's laying down and reading a book,
-31,3436,40,test,3,D1,child,,child
-76,3436,40,test,19,D1,parent,This guy is reading something,
-77,3436,40,test,19,D1,parent,,parent
-97,3436,40,test,27,D1,child,The reader,
-98,3436,40,test,27,D1,child,,child
-109,3436,40,test,31,D1,child,Reader,
-110,3436,40,test,31,D1,parent,,parent
-32,3436,40,test,4,E1,child,This guy looks like he's jumping,
-33,3436,40,test,4,E1,parent,,parent
-74,3436,40,test,18,E1,parent,This guy's jumping in the air,
-75,3436,40,test,18,E1,child,,child
-95,3436,40,test,26,E1,child,The jumper,
-96,3436,40,test,26,E1,parent,,parent
-119,3436,40,test,36,E1,parent,The jumper,
-120,3436,40,test,36,E1,child,,child
-36,3436,40,test,6,F1,child,This guy kinda looks like he's running with his arms up like this,
-37,3436,40,test,6,F1,parent,,parent
-58,3436,40,test,12,F1,parent,This guy could be happily dancing with his hands in the air,
-59,3436,40,test,12,F1,child,,child
-91,3436,40,test,24,F1,child,The jumper,
-92,3436,40,test,24,F1,parent,,parent
-136,3436,40,test,40,F1,parent,The jumper,
-137,3436,40,test,40,F1,child,,child
-41,3436,40,test,8,G1,child,This guy,
-42,3436,40,test,8,G1,child,Is probably sitting on the chair,
-43,3436,40,test,8,G1,parent,Mmm,
-45,3436,40,test,8,G1,parent,,parent
-46,3436,40,test,8,G1,child,With his head down,
-63,3436,40,test,14,G1,parent,This guy looks like he's sitting,
-64,3436,40,test,14,G1,child,,child
-65,3436,40,test,14,G1,parent,in prayer with his head down,
-99,3436,40,test,28,G1,child,The sitter,
-100,3436,40,test,28,G1,parent,,parent
-131,3436,40,test,38,G1,parent,Alright the sitter,
-132,3436,40,test,38,G1,child,,child
-38,3436,40,test,7,H1,parent,This guy is standing up,
-39,3436,40,test,7,H1,child,,child
-40,3436,40,test,7,H1,parent,tall,
-56,3436,40,test,11,H1,child,This guy looks like he's standing,
-57,3436,40,test,11,H1,parent,,parent
-102,3436,40,test,29,H1,parent,The stander,
-103,3436,40,test,29,H1,child,,child
-121,3436,40,test,37,H1,child,The reader,
-122,3436,40,test,37,H1,parent,The reader?,
-123,3436,40,test,37,H1,child,He's like standing up and reading,
-124,3436,40,test,37,H1,parent,"Ahh, okay",
-125,3436,40,test,37,H1,child,like for marriage,
-126,3436,40,test,37,H1,parent,,parent
-127,3436,40,test,37,H1,parent,Gotcha,
-128,3436,40,test,37,H1,parent,Oh so like a priest,
-129,3436,40,test,37,H1,child,Yeah,
-130,3436,40,test,37,H1,parent,Cool,
-47,3436,40,test,9,I1,parent,This guy looks like he's a waiter,
-48,3436,40,test,9,I1,child,,child
-49,3436,40,test,9,I1,parent,bringing some food,
-71,3436,40,test,17,I1,child,This guy is serving a triangle,
-72,3436,40,test,17,I1,parent,Ooh,
-73,3436,40,test,17,I1,parent,,parent
-84,3436,40,test,21,I1,parent,It's the waiter,
-85,3436,40,test,21,I1,child,,child
-117,3436,40,test,35,I1,child,The waiter,
-118,3436,40,test,35,I1,parent,,parent
-23,3436,40,test,1,K1,parent,"This shape kinda looks like someone's bending over, and..",
-25,3436,40,test,1,K1,child,,child
-26,3436,40,test,1,K1,parent,Ooh,
-60,3436,40,test,13,K1,child,This guy has his arm out and he has triangle hat,
-61,3436,40,test,13,K1,parent,,parent
-62,3436,40,test,13,K1,parent,Oh I like the triangle hat description,
-89,3436,40,test,23,K1,parent,Triangle hat,
-90,3436,40,test,23,K1,child,,child
-113,3436,40,test,33,K1,child,Triangle hat,
-114,3436,40,test,33,K1,parent,,parent
-19,3436,40,test,,,parent,Alright are we good,
-20,3436,40,test,,,child,Yup,
-21,3436,40,test,,,parent,Alright sh let's begin,
-22,3436,40,test,,,parent,Oh alright,
-53,3436,40,test,,,parent,Good job time for the next round,
-54,3436,40,test,,,child,Ready,
-55,3436,40,test,,,parent,OK,
-80,3436,40,test,,,child,Time for the next round,
-81,3436,40,test,,,parent,"alright, are you ready?",
-82,3436,40,test,,,child,Yeah,
-83,3436,40,test,,,parent,OK good,
-88,3436,40,test,,,parent,Um,
-101,3436,40,test,,,parent,Hmmm,
-106,3436,40,test,,,parent,Are you ready for the next one,
-107,3436,40,test,,,child,Yup,
-108,3436,40,test,,,parent,Yup,
+Timeline.ordinal,subid,type,trial,target,person,utterance,selection
+0,40,practice,1,apple,parent,Alright this fruit it has a leaf on it,
+1,40,practice,1,apple,child,,child
+8,40,practice,4,apple,child,This vegetable is red,
+9,40,practice,4,apple,parent,Is it a vegetable,
+10,40,practice,4,apple,child,I mean fruit,
+11,40,practice,4,apple,parent,It's red,
+12,40,practice,4,apple,child,Yeah,
+13,40,practice,4,apple,parent,,parent
+2,40,practice,2,artichoke,child,This fruit has a stem on it,
+3,40,practice,2,artichoke,parent,Ooh,
+4,40,practice,2,artichoke,parent,,parent
+5,40,practice,2,artichoke,parent,That was a vegetable,
+14,40,practice,5,artichoke,parent,This vegetable kinda looks like it has scales,
+15,40,practice,5,artichoke,child,,child
+6,40,practice,3,onion,parent,This vegetable is super stinky,
+7,40,practice,3,onion,child,,child
+16,40,practice,6,onion,child,This vegetable has a stem and some little leaves on the bottom,
+17,40,practice,6,onion,parent,,parent
+18,40,practice,6,onion,parent,The roots coming out at the bottom,
+50,40,test,10,A1,child,This guy looks like he's running,
+51,40,test,10,A1,parent,Mmm,
+52,40,test,10,A1,parent,,parent
+78,40,test,20,A1,parent,This guy is could be running away,
+79,40,test,20,A1,child,,child
+86,40,test,22,A1,child,Runner,
+87,40,test,22,A1,parent,,parent
+115,40,test,34,A1,parent,The runner,
+116,40,test,34,A1,child,,child
+34,40,test,5,B1,parent,Uh this guys looks like he's walking away kinda sad,
+35,40,test,5,B1,child,,child
+66,40,test,15,B1,child,This guy looks like he's sad,
+67,40,test,15,B1,parent,,parent
+93,40,test,25,B1,parent,Walking away sad,
+94,40,test,25,B1,child,,child
+133,40,test,39,B1,child,The walker,
+134,40,test,39,B1,parent,,parent
+135,40,test,39,B1,parent,He looks so sad,
+27,40,test,2,C1,child,This guy this looks like he's standing on his hands and doing a downward dog at the same time,
+28,40,test,2,C1,parent,Oh that's a good one,
+29,40,test,2,C1,parent,,parent
+68,40,test,16,C1,parent,This guy looks like he's on the ground,
+69,40,test,16,C1,child,,child
+104,40,test,30,C1,child,The downward dog,
+105,40,test,30,C1,parent,,parent
+111,40,test,32,C1,parent,Downward dog,
+112,40,test,32,C1,child,,child
+30,40,test,3,D1,parent,OK this one looks like he's laying down and reading a book,
+31,40,test,3,D1,child,,child
+76,40,test,19,D1,parent,This guy is reading something,
+77,40,test,19,D1,parent,,parent
+97,40,test,27,D1,child,The reader,
+98,40,test,27,D1,child,,child
+109,40,test,31,D1,child,Reader,
+110,40,test,31,D1,parent,,parent
+32,40,test,4,E1,child,This guy looks like he's jumping,
+33,40,test,4,E1,parent,,parent
+74,40,test,18,E1,parent,This guy's jumping in the air,
+75,40,test,18,E1,child,,child
+95,40,test,26,E1,child,The jumper,
+96,40,test,26,E1,parent,,parent
+119,40,test,36,E1,parent,The jumper,
+120,40,test,36,E1,child,,child
+36,40,test,6,F1,child,This guy kinda looks like he's running with his arms up like this,
+37,40,test,6,F1,parent,,parent
+58,40,test,12,F1,parent,This guy could be happily dancing with his hands in the air,
+59,40,test,12,F1,child,,child
+91,40,test,24,F1,child,The jumper,
+92,40,test,24,F1,parent,,parent
+136,40,test,40,F1,parent,The jumper,
+137,40,test,40,F1,child,,child
+41,40,test,8,G1,child,This guy,
+42,40,test,8,G1,child,Is probably sitting on the chair,
+43,40,test,8,G1,parent,Mmm,
+45,40,test,8,G1,parent,,parent
+46,40,test,8,G1,child,With his head down,
+63,40,test,14,G1,parent,This guy looks like he's sitting,
+64,40,test,14,G1,child,,child
+65,40,test,14,G1,parent,in prayer with his head down,
+99,40,test,28,G1,child,The sitter,
+100,40,test,28,G1,parent,,parent
+131,40,test,38,G1,parent,Alright the sitter,
+132,40,test,38,G1,child,,child
+38,40,test,7,H1,parent,This guy is standing up,
+39,40,test,7,H1,child,,child
+40,40,test,7,H1,parent,tall,
+56,40,test,11,H1,child,This guy looks like he's standing,
+57,40,test,11,H1,parent,,parent
+102,40,test,29,H1,parent,The stander,
+103,40,test,29,H1,child,,child
+121,40,test,37,H1,child,The reader,
+122,40,test,37,H1,parent,The reader?,
+123,40,test,37,H1,child,He's like standing up and reading,
+124,40,test,37,H1,parent,"Ahh, okay",
+125,40,test,37,H1,child,like for marriage,
+126,40,test,37,H1,parent,,parent
+127,40,test,37,H1,parent,Gotcha,
+128,40,test,37,H1,parent,Oh so like a priest,
+129,40,test,37,H1,child,Yeah,
+130,40,test,37,H1,parent,Cool,
+47,40,test,9,I1,parent,This guy looks like he's a waiter,
+48,40,test,9,I1,child,,child
+49,40,test,9,I1,parent,bringing some food,
+71,40,test,17,I1,child,This guy is serving a triangle,
+72,40,test,17,I1,parent,Ooh,
+73,40,test,17,I1,parent,,parent
+84,40,test,21,I1,parent,It's the waiter,
+85,40,test,21,I1,child,,child
+117,40,test,35,I1,child,The waiter,
+118,40,test,35,I1,parent,,parent
+23,40,test,1,K1,parent,"This shape kinda looks like someone's bending over, and..",
+25,40,test,1,K1,child,,child
+26,40,test,1,K1,parent,Ooh,
+60,40,test,13,K1,child,This guy has his arm out and he has triangle hat,
+61,40,test,13,K1,parent,,parent
+62,40,test,13,K1,parent,Oh I like the triangle hat description,
+89,40,test,23,K1,parent,Triangle hat,
+90,40,test,23,K1,child,,child
+113,40,test,33,K1,child,Triangle hat,
+114,40,test,33,K1,parent,,parent
+19,40,test,,,parent,Alright are we good,
+20,40,test,,,child,Yup,
+21,40,test,,,parent,Alright sh let's begin,
+22,40,test,,,parent,Oh alright,
+53,40,test,,,parent,Good job time for the next round,
+54,40,test,,,child,Ready,
+55,40,test,,,parent,OK,
+80,40,test,,,child,Time for the next round,
+81,40,test,,,parent,"alright, are you ready?",
+82,40,test,,,child,Yeah,
+83,40,test,,,parent,OK good,
+88,40,test,,,parent,Um,
+101,40,test,,,parent,Hmmm,
+106,40,test,,,parent,Are you ready for the next one,
+107,40,test,,,child,Yup,
+108,40,test,,,parent,Yup,

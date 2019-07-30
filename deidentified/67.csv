@@ -1,180 +1,180 @@
-Timeline.ordinal,database_id,subid,type,trial,target,person,utterance,selection
-5,37,67,practice,1,apple,parent,um tap on the uh tap on the apple,
-6,37,67,practice,1,apple,child,,child
-9,37,67,practice,1,apple,parent,"alright, I'm going to have you tap on the onion this time",
-10,37,67,practice,1,apple,child,onion?,
-17,37,67,practice,4,apple,child,tap on the banana,
-18,37,67,practice,4,apple,parent,,parent
-11,37,67,practice,2,artichoke,parent,,parent
-19,37,67,practice,5,artichoke,parent,"hoo, I gotta remember what this-- oh! okay, uh tap on the artichoke",
-20,37,67,practice,5,artichoke,child,,child
-12,37,67,practice,3,onion,parent,"okay, that's right, so you tell, so I got the blue box now, and I'm telling you tap on the onion",
-13,37,67,practice,3,onion,child,ohh,
-14,37,67,practice,3,onion,child,,child
-21,37,67,practice,6,onion,child,tap on the onion,
-22,37,67,practice,6,onion,parent,,parent
-61,37,67,test,9,A1,parent,"tap on, it looks like it's a woman walking away",
-62,37,67,test,9,A1,child,,child
-63,37,67,test,9,A1,child,I don't even know which way she's facing,
-72,37,67,test,11,A1,child,click on the one that looks like she's walking away,
-73,37,67,test,11,A1,parent,,parent
-128,37,67,test,27,A1,parent,"alright, tap on the one that looks like a woman running",
-130,37,67,test,27,A1,child,,child
-163,37,67,test,35,A1,child,tap on the one that ha- that looks like a woman walking away,
-164,37,67,test,35,A1,parent,,parent
-65,37,67,test,10,B1,child,"tap on, tap on the one that's looking down and it has no arms",
-66,37,67,test,10,B1,parent,okay,
-67,37,67,test,10,B1,parent,,parent
-84,37,67,test,14,B1,parent,"alright, I got one- one that with- with- with their head down walking away",
-85,37,67,test,14,B1,child,,child
-125,37,67,test,26,B1,child,tap on the one that's- that's head is down and he's walking away,
-126,37,67,test,26,B1,parent,,parent
-127,37,67,test,26,B1,parent,"see you're getting it, walking away, see",
-160,37,67,test,34,B1,parent,"alright, tap on the one that's walking away, where it look like he got the hands in the box",
-161,37,67,test,34,B1,child,,child
-31,37,67,test,1,C1,parent,"alright, tap on the figure that looks like he's crouching down walking like a dog",
-32,37,67,test,1,C1,child,,child
-95,37,67,test,17,C1,child,tap on the one that looks like crawling,
-96,37,67,test,17,C1,parent,,parent
-123,37,67,test,25,C1,parent,tap on the one that's crouching,
-124,37,67,test,25,C1,child,,child
-174,37,67,test,39,C1,child,tap on the one that looks like they're crouching,
-175,37,67,test,39,C1,parent,,parent
-33,37,67,test,2,D1,child,"in my games it looks like he's crouching down, like he's crawling, like",
-34,37,67,test,2,D1,parent,okay,
-35,37,67,test,2,D1,parent,,parent
-75,37,67,test,12,D1,parent,"okay, tap on- it looks like they're laying down",
-76,37,67,test,12,D1,child,,child
-112,37,67,test,22,D1,child,tap on the one that looks like they're flying,
-113,37,67,test,22,D1,parent,,parent
-172,37,67,test,38,D1,parent,tap on the one that looks like they're flying,
-173,37,67,test,38,D1,child,,child
-50,37,67,test,6,E1,child,look at the one that's jumping like he's happy,
-51,37,67,test,6,E1,parent,okay,
-52,37,67,test,6,E1,parent,,parent
-98,37,67,test,18,E1,parent,can you tap on the one that looks like they're jumping up,
-99,37,67,test,18,E1,child,,child
-118,37,67,test,24,E1,child,tap on the one that's jumping up-,
-119,37,67,test,24,E1,parent,,parent
-120,37,67,test,24,E1,child,like he's going to the moon,
-121,37,67,test,24,E1,parent,tryna do an air jordan or something,
-122,37,67,test,24,E1,child,basketball,
-176,37,67,test,40,E1,parent,tap on the one where it looks like they're jumping,
-177,37,67,test,40,E1,child,,child
-55,37,67,test,8,F1,child,"tap on the one that looks-- that looks like a bird, like uhh I don't  know how to put this at all",
-57,37,67,test,8,F1,child,tap on that's feet looks like a triangle,
-59,37,67,test,8,F1,parent,,parent
-60,37,67,test,8,F1,parent,mmm we'll go with this one cause they both got feet like triangles,
-107,37,67,test,20,F1,parent,"okay, I'm gonna go with uh tap on the one where it looks like they're running, like they got triangles for feet",
-108,37,67,test,20,F1,child,,child
-143,37,67,test,30,F1,child,tap on the one that's running,
-144,37,67,test,30,F1,parent,"running, okay",
-145,37,67,test,30,F1,parent,,parent
-168,37,67,test,36,F1,parent,"alright, tap on the one that looks like they're about to fly with those triangles for their feet",
-169,37,67,test,36,F1,child,,child
-53,37,67,test,7,G1,parent,"alright, tap on the one that looks like they're kneeling, as if they're praying",
-54,37,67,test,7,G1,child,,child
-100,37,67,test,19,G1,child,tap on the one that looks like he is not a human,
-101,37,67,test,19,G1,parent,hmm not a human,
-102,37,67,test,19,G1,child,"wait no, the one with, his neck is so long, but then a point is at his block head",
-103,37,67,test,19,G1,parent,,parent
-104,37,67,test,19,G1,child,I really had no idea how to put that,
-105,37,67,test,19,G1,parent,"alright, alright, alright",
-106,37,67,test,19,G1,child,I think they're head is misplaced,
-110,37,67,test,21,G1,parent,"alright, tap on the one that looks like they're kneeling",
-111,37,67,test,21,G1,child,,child
-170,37,67,test,37,G1,child,"tap on the one that looks like theykneeling",
-171,37,67,test,37,G1,parent,,parent
-42,37,67,test,4,H1,child,uh do the one that looks like he's carrying a large container,
-43,37,67,test,4,H1,parent,alright,
-44,37,67,test,4,H1,parent,,parent
-93,37,67,test,16,H1,parent,"okay, check out the one with the uh, one, it looks like a, it's like someone carrying a box",
-94,37,67,test,16,H1,child,,child
-135,37,67,test,28,H1,child,"alright, tap on the one that looks like carrying a box",
-136,37,67,test,28,H1,parent,,parent
-154,37,67,test,32,H1,parent,tap on the one that looks like it's carrying a box,
-155,37,67,test,32,H1,child,,child
-156,37,67,test,32,H1,child,that's not right,
-37,37,67,test,3,I1,parent,tap the one that looks like he's about to serve you dinner,
-38,37,67,test,3,I1,child,,child
-90,37,67,test,15,I1,child,look at the one- look at the one with a triangle in his hand,
-91,37,67,test,15,I1,parent,okay,
-92,37,67,test,15,I1,parent,,parent
-137,37,67,test,29,I1,parent,"alright, tap on the one that's about to serve you food",
-138,37,67,test,29,I1,child,,child
-139,37,67,test,29,I1,child,it's- it looks like he can just do this,
-140,37,67,test,29,I1,parent,tip over,
-141,37,67,test,29,I1,child,"tip over, yeah",
-157,37,67,test,33,I1,child,"tap on the one that looks like a butler, about to save the soup",
-158,37,67,test,33,I1,parent,,parent
-45,37,67,test,5,K1,parent,"hmm, alright",
-46,37,67,test,5,K1,parent,tap the one that looks like they're leaning forward-,
-47,37,67,test,5,K1,parent,ehm and looking upwards,
-48,37,67,test,5,K1,child,,child
-80,37,67,test,13,K1,child,"tap, tap on the one that's leaning forward and has a arrowhead",
-81,37,67,test,13,K1,parent,mhm,
-82,37,67,test,13,K1,parent,,parent
-83,37,67,test,13,K1,parent,okay,
-115,37,67,test,23,K1,parent,"alright, tap on the one that's leaning forward with the arrowhead",
-116,37,67,test,23,K1,child,,child
-149,37,67,test,31,K1,child,tap- tap on the one that has a arrow for a head,
-150,37,67,test,31,K1,parent,,parent
-0,37,67,test,,,parent,okay,
-1,37,67,test,,,child,what does it say,
-2,37,67,test,,,parent,"um okay, I got a okay,  I'm not really given an instruction here at this point, oh I that's right it's okay, so, alright",
-3,37,67,test,,,child,what is that?,
-4,37,67,test,,,parent,I'll tell you later,
-7,37,67,test,,,parent,alright,
-8,37,67,test,,,child,yay,
-15,37,67,test,,,child,aye,
-16,37,67,test,,,parent,"alright, you got the box now",
-23,37,67,test,,,parent,"alright, that is it",
-24,37,67,test,,,child,yeah,
-25,37,67,test,,,parent,any questions?,
-26,37,67,test,,,parent,so far so good?,
-27,37,67,test,,,child,mhm,
-28,37,67,test,,,parent,"okay, so I got the blue box, I tell you what to tap on, you got the blue box, tell me what to tap on, got it?",
-29,37,67,test,,,child,mhm,
-30,37,67,test,,,parent,let's go,
-36,37,67,test,,,child,"uh, wow how did you",
-39,37,67,test,,,child,serve me,
-40,37,67,test,,,child,tap on the one that looks li-- I don't even know how to put this,
-41,37,67,test,,,parent,do your best,
-49,37,67,test,,,child,yeah I got it right,
-56,37,67,test,,,parent,do your best,
-58,37,67,test,,,parent,mmm,
-64,37,67,test,,,parent,C'mon,
-68,37,67,test,,,parent,"alright, next round",
-69,37,67,test,,,child,yeahh,
-70,37,67,test,,,parent,I think you got the blue box,
-71,37,67,test,,,child,yup,
-74,37,67,test,,,child,yea,
-77,37,67,test,,,child,hey what's that sound?,
-78,37,67,test,,,parent,"oh I think it's 12 o'clock, it's a clock outside",
-79,37,67,test,,,child,"oh, anyway",
-86,37,67,test,,,child,"how do you even know which- which way they walked, how do you know they walked away?",
-87,37,67,test,,,parent,I figured,
-88,37,67,test,,,child,look-,
-89,37,67,test,,,parent,it's gotta be one or the other,
-97,37,67,test,,,parent,mhm,
-109,37,67,test,,,parent,"alright, next round",
-114,37,67,test,,,parent,sweet,
-117,37,67,test,,,child,I don't know why his head is a arrow,
-129,37,67,test,,,child,that one-,
-131,37,67,test,,,child,the other one looks like a butler,
-132,37,67,test,,,parent,"see, it's",
-133,37,67,test,,,child,"like, he trying to like say, 'your soup is ready sir'",
-134,37,67,test,,,parent,your turn,
-142,37,67,test,,,parent,alright,
-146,37,67,test,,,parent,oohh another round,
-147,37,67,test,,,child,I wonder how many rounds there are,
-148,37,67,test,,,parent,I'm not sure,
-151,37,67,test,,,parent,"oh my- tap on the one that is, it look like, like xxx let's do this the right way it's been consistent",
-152,37,67,test,,,child,that's not right,
-153,37,67,test,,,parent,I'ma keep- I'm gonna consis- keep it consistent,
-159,37,67,test,,,parent,alright,
-162,37,67,test,,,parent,oh sweet,
-165,37,67,test,,,child,wait I have a question,
-166,37,67,test,,,child,is there a right or a wrong answer on this?,
-167,37,67,test,,,parent,see?,
-178,37,67,test,,,parent,"alright, that's it",
+Timeline.ordinal,subid,type,trial,target,person,utterance,selection
+5,67,practice,1,apple,parent,um tap on the uh tap on the apple,
+6,67,practice,1,apple,child,,child
+9,67,practice,1,apple,parent,"alright, I'm going to have you tap on the onion this time",
+10,67,practice,1,apple,child,onion?,
+17,67,practice,4,apple,child,tap on the banana,
+18,67,practice,4,apple,parent,,parent
+11,67,practice,2,artichoke,parent,,parent
+19,67,practice,5,artichoke,parent,"hoo, I gotta remember what this-- oh! okay, uh tap on the artichoke",
+20,67,practice,5,artichoke,child,,child
+12,67,practice,3,onion,parent,"okay, that's right, so you tell, so I got the blue box now, and I'm telling you tap on the onion",
+13,67,practice,3,onion,child,ohh,
+14,67,practice,3,onion,child,,child
+21,67,practice,6,onion,child,tap on the onion,
+22,67,practice,6,onion,parent,,parent
+61,67,test,9,A1,parent,"tap on, it looks like it's a woman walking away",
+62,67,test,9,A1,child,,child
+63,67,test,9,A1,child,I don't even know which way she's facing,
+72,67,test,11,A1,child,click on the one that looks like she's walking away,
+73,67,test,11,A1,parent,,parent
+128,67,test,27,A1,parent,"alright, tap on the one that looks like a woman running",
+130,67,test,27,A1,child,,child
+163,67,test,35,A1,child,tap on the one that ha- that looks like a woman walking away,
+164,67,test,35,A1,parent,,parent
+65,67,test,10,B1,child,"tap on, tap on the one that's looking down and it has no arms",
+66,67,test,10,B1,parent,okay,
+67,67,test,10,B1,parent,,parent
+84,67,test,14,B1,parent,"alright, I got one- one that with- with- with their head down walking away",
+85,67,test,14,B1,child,,child
+125,67,test,26,B1,child,tap on the one that's- that's head is down and he's walking away,
+126,67,test,26,B1,parent,,parent
+127,67,test,26,B1,parent,"see you're getting it, walking away, see",
+160,67,test,34,B1,parent,"alright, tap on the one that's walking away, where it look like he got the hands in the box",
+161,67,test,34,B1,child,,child
+31,67,test,1,C1,parent,"alright, tap on the figure that looks like he's crouching down walking like a dog",
+32,67,test,1,C1,child,,child
+95,67,test,17,C1,child,tap on the one that looks like crawling,
+96,67,test,17,C1,parent,,parent
+123,67,test,25,C1,parent,tap on the one that's crouching,
+124,67,test,25,C1,child,,child
+174,67,test,39,C1,child,tap on the one that looks like they're crouching,
+175,67,test,39,C1,parent,,parent
+33,67,test,2,D1,child,"in my games it looks like he's crouching down, like he's crawling, like",
+34,67,test,2,D1,parent,okay,
+35,67,test,2,D1,parent,,parent
+75,67,test,12,D1,parent,"okay, tap on- it looks like they're laying down",
+76,67,test,12,D1,child,,child
+112,67,test,22,D1,child,tap on the one that looks like they're flying,
+113,67,test,22,D1,parent,,parent
+172,67,test,38,D1,parent,tap on the one that looks like they're flying,
+173,67,test,38,D1,child,,child
+50,67,test,6,E1,child,look at the one that's jumping like he's happy,
+51,67,test,6,E1,parent,okay,
+52,67,test,6,E1,parent,,parent
+98,67,test,18,E1,parent,can you tap on the one that looks like they're jumping up,
+99,67,test,18,E1,child,,child
+118,67,test,24,E1,child,tap on the one that's jumping up-,
+119,67,test,24,E1,parent,,parent
+120,67,test,24,E1,child,like he's going to the moon,
+121,67,test,24,E1,parent,tryna do an air jordan or something,
+122,67,test,24,E1,child,basketball,
+176,67,test,40,E1,parent,tap on the one where it looks like they're jumping,
+177,67,test,40,E1,child,,child
+55,67,test,8,F1,child,"tap on the one that looks-- that looks like a bird, like uhh I don't  know how to put this at all",
+57,67,test,8,F1,child,tap on that's feet looks like a triangle,
+59,67,test,8,F1,parent,,parent
+60,67,test,8,F1,parent,mmm we'll go with this one cause they both got feet like triangles,
+107,67,test,20,F1,parent,"okay, I'm gonna go with uh tap on the one where it looks like they're running, like they got triangles for feet",
+108,67,test,20,F1,child,,child
+143,67,test,30,F1,child,tap on the one that's running,
+144,67,test,30,F1,parent,"running, okay",
+145,67,test,30,F1,parent,,parent
+168,67,test,36,F1,parent,"alright, tap on the one that looks like they're about to fly with those triangles for their feet",
+169,67,test,36,F1,child,,child
+53,67,test,7,G1,parent,"alright, tap on the one that looks like they're kneeling, as if they're praying",
+54,67,test,7,G1,child,,child
+100,67,test,19,G1,child,tap on the one that looks like he is not a human,
+101,67,test,19,G1,parent,hmm not a human,
+102,67,test,19,G1,child,"wait no, the one with, his neck is so long, but then a point is at his block head",
+103,67,test,19,G1,parent,,parent
+104,67,test,19,G1,child,I really had no idea how to put that,
+105,67,test,19,G1,parent,"alright, alright, alright",
+106,67,test,19,G1,child,I think they're head is misplaced,
+110,67,test,21,G1,parent,"alright, tap on the one that looks like they're kneeling",
+111,67,test,21,G1,child,,child
+170,67,test,37,G1,child,"tap on the one that looks like theykneeling",
+171,67,test,37,G1,parent,,parent
+42,67,test,4,H1,child,uh do the one that looks like he's carrying a large container,
+43,67,test,4,H1,parent,alright,
+44,67,test,4,H1,parent,,parent
+93,67,test,16,H1,parent,"okay, check out the one with the uh, one, it looks like a, it's like someone carrying a box",
+94,67,test,16,H1,child,,child
+135,67,test,28,H1,child,"alright, tap on the one that looks like carrying a box",
+136,67,test,28,H1,parent,,parent
+154,67,test,32,H1,parent,tap on the one that looks like it's carrying a box,
+155,67,test,32,H1,child,,child
+156,67,test,32,H1,child,that's not right,
+37,67,test,3,I1,parent,tap the one that looks like he's about to serve you dinner,
+38,67,test,3,I1,child,,child
+90,67,test,15,I1,child,look at the one- look at the one with a triangle in his hand,
+91,67,test,15,I1,parent,okay,
+92,67,test,15,I1,parent,,parent
+137,67,test,29,I1,parent,"alright, tap on the one that's about to serve you food",
+138,67,test,29,I1,child,,child
+139,67,test,29,I1,child,it's- it looks like he can just do this,
+140,67,test,29,I1,parent,tip over,
+141,67,test,29,I1,child,"tip over, yeah",
+157,67,test,33,I1,child,"tap on the one that looks like a butler, about to save the soup",
+158,67,test,33,I1,parent,,parent
+45,67,test,5,K1,parent,"hmm, alright",
+46,67,test,5,K1,parent,tap the one that looks like they're leaning forward-,
+47,67,test,5,K1,parent,ehm and looking upwards,
+48,67,test,5,K1,child,,child
+80,67,test,13,K1,child,"tap, tap on the one that's leaning forward and has a arrowhead",
+81,67,test,13,K1,parent,mhm,
+82,67,test,13,K1,parent,,parent
+83,67,test,13,K1,parent,okay,
+115,67,test,23,K1,parent,"alright, tap on the one that's leaning forward with the arrowhead",
+116,67,test,23,K1,child,,child
+149,67,test,31,K1,child,tap- tap on the one that has a arrow for a head,
+150,67,test,31,K1,parent,,parent
+0,67,test,,,parent,okay,
+1,67,test,,,child,what does it say,
+2,67,test,,,parent,"um okay, I got a okay,  I'm not really given an instruction here at this point, oh I that's right it's okay, so, alright",
+3,67,test,,,child,what is that?,
+4,67,test,,,parent,I'll tell you later,
+7,67,test,,,parent,alright,
+8,67,test,,,child,yay,
+15,67,test,,,child,aye,
+16,67,test,,,parent,"alright, you got the box now",
+23,67,test,,,parent,"alright, that is it",
+24,67,test,,,child,yeah,
+25,67,test,,,parent,any questions?,
+26,67,test,,,parent,so far so good?,
+27,67,test,,,child,mhm,
+28,67,test,,,parent,"okay, so I got the blue box, I tell you what to tap on, you got the blue box, tell me what to tap on, got it?",
+29,67,test,,,child,mhm,
+30,67,test,,,parent,let's go,
+36,67,test,,,child,"uh, wow how did you",
+39,67,test,,,child,serve me,
+40,67,test,,,child,tap on the one that looks li-- I don't even know how to put this,
+41,67,test,,,parent,do your best,
+49,67,test,,,child,yeah I got it right,
+56,67,test,,,parent,do your best,
+58,67,test,,,parent,mmm,
+64,67,test,,,parent,C'mon,
+68,67,test,,,parent,"alright, next round",
+69,67,test,,,child,yeahh,
+70,67,test,,,parent,I think you got the blue box,
+71,67,test,,,child,yup,
+74,67,test,,,child,yea,
+77,67,test,,,child,hey what's that sound?,
+78,67,test,,,parent,"oh I think it's 12 o'clock, it's a clock outside",
+79,67,test,,,child,"oh, anyway",
+86,67,test,,,child,"how do you even know which- which way they walked, how do you know they walked away?",
+87,67,test,,,parent,I figured,
+88,67,test,,,child,look-,
+89,67,test,,,parent,it's gotta be one or the other,
+97,67,test,,,parent,mhm,
+109,67,test,,,parent,"alright, next round",
+114,67,test,,,parent,sweet,
+117,67,test,,,child,I don't know why his head is a arrow,
+129,67,test,,,child,that one-,
+131,67,test,,,child,the other one looks like a butler,
+132,67,test,,,parent,"see, it's",
+133,67,test,,,child,"like, he trying to like say, 'your soup is ready sir'",
+134,67,test,,,parent,your turn,
+142,67,test,,,parent,alright,
+146,67,test,,,parent,oohh another round,
+147,67,test,,,child,I wonder how many rounds there are,
+148,67,test,,,parent,I'm not sure,
+151,67,test,,,parent,"oh my- tap on the one that is, it look like, like xxx let's do this the right way it's been consistent",
+152,67,test,,,child,that's not right,
+153,67,test,,,parent,I'ma keep- I'm gonna consis- keep it consistent,
+159,67,test,,,parent,alright,
+162,67,test,,,parent,oh sweet,
+165,67,test,,,child,wait I have a question,
+166,67,test,,,child,is there a right or a wrong answer on this?,
+167,67,test,,,parent,see?,
+178,67,test,,,parent,"alright, that's it",

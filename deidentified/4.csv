@@ -1,171 +1,171 @@
-Timeline.ordinal,database_id,subid,type,trial,target,person,utterance,selection
-0,4283,4,practice,1,apple,parent,Is your game showing?,
-1,4283,4,practice,1,apple,child,Mhm,
-2,4283,4,practice,1,apple,parent,So do you see two fruits?,
-3,4283,4,practice,1,apple,child,Mhm,
-4,4283,4,practice,1,apple,parent,So my blue box is around the apple,
-5,4283,4,practice,1,apple,child,,child
-6,4283,4,practice,1,apple,parent,"Oh my goodness, I heard zzz! Oh, it worked! Now you be the leader",
-14,4283,4,practice,4,apple,child,Apple,
-15,4283,4,practice,4,apple,parent,the apple?,
-16,4283,4,practice,4,apple,child,Mhm,
-17,4283,4,practice,4,apple,parent,,parent
-18,4283,4,practice,4,apple,parent,woo-hoo!,
-7,4283,4,practice,2,artichoke,child,Mmm wait it looks like a it looks like a pineapple with a zzz,
-8,4283,4,practice,2,artichoke,parent,"Say that artichoke, I've got one on my screen too, I'll press it and see",
-9,4283,4,practice,2,artichoke,parent,,parent
-10,4283,4,practice,2,artichoke,parent,"Ah, yes! That was an artichoke zzz",
-19,4283,4,practice,5,artichoke,parent,"Now, do you remember what that's called? The one with zzz?",
-20,4283,4,practice,5,artichoke,child,artichoke,
-21,4283,4,practice,5,artichoke,parent,yes!,
-22,4283,4,practice,5,artichoke,child,,child
-11,4283,4,practice,3,onion,parent,Now I have a blue box and it's the same fruits well it's the same fruits as before but don't touch don't touch yet because now the blue box is around the onion,
-12,4283,4,practice,3,onion,child,,child
-13,4283,4,practice,3,onion,parent,Yeah!,
-23,4283,4,practice,6,onion,child,onion,
-24,4283,4,practice,6,onion,parent,,parent
-56,4283,4,test,8,A1,child,Mine looks like something walking away zzz,
-57,4283,4,test,8,A1,parent,,parent
-74,4283,4,test,14,A1,parent,Mine looks like a person running away zzz,
-75,4283,4,test,14,A1,child,,child
-116,4283,4,test,24,A1,child,Yes mine just looks like they're-they're just walking so peacefully because they had a good day,
-117,4283,4,test,24,A1,parent,oh yeah,
-118,4283,4,test,24,A1,parent,,parent
-119,4283,4,test,24,A1,parent,good job,
-152,4283,4,test,34,A1,parent,And now my person is just walking down the street because they missed it,
-153,4283,4,test,34,A1,child,,child
-50,4283,4,test,6,B1,child,My mine looks like a person that has their hands in their pocket and is walking away,
-51,4283,4,test,6,B1,parent,oh yeah!,
-52,4283,4,test,6,B1,parent,,parent
-53,4283,4,test,6,B1,child,good job!,
-93,4283,4,test,18,B1,parent,My person had a bad day,
-94,4283,4,test,18,B1,child,,child
-95,4283,4,test,18,B1,parent,good job,
-130,4283,4,test,28,B1,child,My person looks like they're sad because somebody zzz,
-131,4283,4,test,28,B1,parent,Oh maybe they're looking on the ground for another one maybe they're gonna see,
-132,4283,4,test,28,B1,parent,,parent
-168,4283,4,test,40,B1,parent,My person is looking for a rocket to play pinecone and kick on zzz,
-169,4283,4,test,40,B1,child,,child
-37,4283,4,test,2,C1,child,Mine looks like a guy bendi--mine looks kinda like a guy bending down,
-38,4283,4,test,2,C1,parent,Oh I see,
-39,4283,4,test,2,C1,parent,,parent
-40,4283,4,test,2,C1,child,Yes!,
-69,4283,4,test,12,C1,parent,Mine looks like a person who dropped their keys on the ground,
-70,4283,4,test,12,C1,child,,child
-111,4283,4,test,22,C1,child,My person looks like he just dropped a penny and picked it up,
-112,4283,4,test,22,C1,parent,"oh, good!",
-113,4283,4,test,22,C1,parent,,parent
-157,4283,4,test,36,C1,parent,"My person is diving into the pool, with their arms",
-158,4283,4,test,36,C1,child,,child
-159,4283,4,test,36,C1,parent,good job!,
-58,4283,4,test,9,D1,parent,Mine looks like a person swimming,
-59,4283,4,test,9,D1,child,,child
-96,4283,4,test,19,D1,child,My person looks like they're swimming,
-97,4283,4,test,19,D1,parent,oh yeah!,
-98,4283,4,test,19,D1,parent,,parent
-114,4283,4,test,23,D1,parent,My person is superman zzz,
-115,4283,4,test,23,D1,child,,child
-160,4283,4,test,37,D1,child,My person looks like they're swimming at the end of the ocean,
-161,4283,4,test,37,D1,parent,,parent
-44,4283,4,test,4,E1,child,Mine looks like a person jumping for joy,
-45,4283,4,test,4,E1,parent,,parent
-46,4283,4,test,4,E1,parent,Oh I love it that's a good description,
-99,4283,4,test,20,E1,parent,Oh my person looks like we just did the best job and they're like yeah,
-100,4283,4,test,20,E1,child,,child
-101,4283,4,test,20,E1,parent,good job!,
-135,4283,4,test,30,E1,child,Mine looks like they're jumping for joy because zzz,
-136,4283,4,test,30,E1,parent,Yeah!,
-137,4283,4,test,30,E1,parent,,parent
-162,4283,4,test,38,E1,parent,My person is jumping up to catch something,
-163,4283,4,test,38,E1,child,,child
-164,4283,4,test,38,E1,child,got it,
-60,4283,4,test,10,F1,child,Mine looks like a person raise mine looks like a person making their hands in like a triangle shape and and and their feet are apart,
-61,4283,4,test,10,F1,parent,Oh yeah they're like hold that bus,
-62,4283,4,test,10,F1,parent,,parent
-85,4283,4,test,16,F1,parent,"that's okay.  I have a person saying wait for me, wait up!",
-86,4283,4,test,16,F1,child,,child
-87,4283,4,test,16,F1,child,I love that person who is waiting for the bus,
-88,4283,4,test,16,F1,parent,"Yeah, hold that bus!",
-123,4283,4,test,26,F1,child,My person my person is waiting for the bus and the bus ran off so,
-124,4283,4,test,26,F1,parent,oh no!,
-125,4283,4,test,26,F1,parent,"Good, yeah",
-126,4283,4,test,26,F1,parent,,parent
-146,4283,4,test,32,F1,parent,"My person is running down the street saying here I am, here I am, here I am!",
-147,4283,4,test,32,F1,child,,child
-54,4283,4,test,7,G1,parent,Well mine looks like someone who's kneeling down maybe to do something on the ground,
-55,4283,4,test,7,G1,child,,child
-89,4283,4,test,17,G1,child,My uh my person looks like they're sitting down on a bench,
-90,4283,4,test,17,G1,parent,Oh yeah!,
-91,4283,4,test,17,G1,parent,,parent
-92,4283,4,test,17,G1,parent,that's a good description,
-133,4283,4,test,29,G1,parent,Mine looks like a person who is sitting down for a quiet break,
-134,4283,4,test,29,G1,child,,child
-148,4283,4,test,33,G1,child,Oh it's my turn wait for me but my person is quietly waiting for the bus on a bench,
-149,4283,4,test,33,G1,parent,Oh yeah!,
-150,4283,4,test,33,G1,parent,,parent
-151,4283,4,test,33,G1,parent,they're early for it,
-47,4283,4,test,5,H1,parent,Mine looks like someone's hungry and is like can I please have some more,
-48,4283,4,test,5,H1,child,,child
-49,4283,4,test,5,H1,parent,good job!,
-64,4283,4,test,11,H1,child,Mine looks like mine looks like a monk,
-65,4283,4,test,11,H1,parent,oh yeah!,
-66,4283,4,test,11,H1,child,Mhm,
-67,4283,4,test,11,H1,parent,,parent
-68,4283,4,test,11,H1,parent,You're right with that monk,
-120,4283,4,test,25,H1,parent,"My person, he does look like a monk, holding a bowl",
-121,4283,4,test,25,H1,child,,child
-122,4283,4,test,25,H1,parent,good job!,
-139,4283,4,test,31,H1,child,My person looks like my person looks like it's it's a person who gives the flowers at zzz,
-140,4283,4,test,31,H1,parent,oh,
-141,4283,4,test,31,H1,parent,,parent
-142,4283,4,test,31,H1,parent,Yeah holding something like that,
-143,4283,4,test,31,H1,child,Yeah,
-41,4283,4,test,3,I1,parent,Mine looks like a guy carrying a tray saying would you like some?,
-42,4283,4,test,3,I1,child,,child
-43,4283,4,test,3,I1,parent,"Yeah, these are funny!",
-76,4283,4,test,15,I1,child,Mine looks like zzz a water for their dog,
-77,4283,4,test,15,I1,parent,Oh yeah!,
-78,4283,4,test,15,I1,parent,,parent
-79,4283,4,test,15,I1,parent,good description!,
-127,4283,4,test,27,I1,child,What is your person,
-128,4283,4,test,27,I1,parent,Oh yeah it's my turn isn't it? I have a person who's saying hey brought you some flowers,
-129,4283,4,test,27,I1,child,,child
-165,4283,4,test,39,I1,child,"My person is holding my person is holding out out a bucket of flowers, they're holding the flowers and putting them down for for their garden",
-166,4283,4,test,39,I1,parent,oh yeah!,
-167,4283,4,test,39,I1,parent,,parent
-32,4283,4,test,1,K1,parent,"OK, so you see the tangrams? Do you remember this?",
-33,4283,4,test,1,K1,child,zzz,
-34,4283,4,test,1,K1,parent,"OK, so mine looks like a guy with a little hat and he's going",
-35,4283,4,test,1,K1,child,,child
-36,4283,4,test,1,K1,parent,"Yeah, you got it!",
-71,4283,4,test,13,K1,child,Mine looks like a person that's ready to eat something and waiting for someone give them food,
-72,4283,4,test,13,K1,parent,"OK, got it",
-73,4283,4,test,13,K1,parent,,parent
-105,4283,4,test,21,K1,parent,OK now mine is the person who's leaning forward and holding his hands out,
-106,4283,4,test,21,K1,child,,child
-107,4283,4,test,21,K1,child,I know I got it,
-108,4283,4,test,21,K1,parent,Yeah?,
-109,4283,4,test,21,K1,child,he's begging for food,
-110,4283,4,test,21,K1,parent,yeah,
-154,4283,4,test,35,K1,child,My person is holding out some water I mean holding out a pot of soup for anybody wants to get it,
-155,4283,4,test,35,K1,parent,"oh nice, yeah!",
-156,4283,4,test,35,K1,parent,,parent
-25,4283,4,test,,,parent,"Woo-hoo, do you have any questions",
-26,4283,4,test,,,child,mmmm,
-27,4283,4,test,,,parent,For the researchers at the zzz?,
-28,4283,4,test,,,child,no,
-29,4283,4,test,,,parent,"OK now we're going to start that, that was the practice, so now we're going to begin--",
-30,4283,4,test,,,child,shapes,
-31,4283,4,test,,,parent,"the shapes, yeah",
-63,4283,4,test,,,parent,It says that was a good job time for the next round yay OK,
-80,4283,4,test,,,child,Mine looks like,
-81,4283,4,test,,,parent,you have a blue box?,
-82,4283,4,test,,,child,No,
-83,4283,4,test,,,parent,"oh, ok!",
-84,4283,4,test,,,child,I keep on forgetting,
-102,4283,4,test,,,parent,Oh we did another it says good job time for the next round,
-103,4283,4,test,,,child,I love next rounds,
-104,4283,4,test,,,parent,me too!,
-138,4283,4,test,,,parent,time for the next round!,
-144,4283,4,test,,,child,Mom,
-145,4283,4,test,,,parent,Oh!,
+Timeline.ordinal,subid,type,trial,target,person,utterance,selection
+0,4,practice,1,apple,parent,Is your game showing?,
+1,4,practice,1,apple,child,Mhm,
+2,4,practice,1,apple,parent,So do you see two fruits?,
+3,4,practice,1,apple,child,Mhm,
+4,4,practice,1,apple,parent,So my blue box is around the apple,
+5,4,practice,1,apple,child,,child
+6,4,practice,1,apple,parent,"Oh my goodness, I heard zzz! Oh, it worked! Now you be the leader",
+14,4,practice,4,apple,child,Apple,
+15,4,practice,4,apple,parent,the apple?,
+16,4,practice,4,apple,child,Mhm,
+17,4,practice,4,apple,parent,,parent
+18,4,practice,4,apple,parent,woo-hoo!,
+7,4,practice,2,artichoke,child,Mmm wait it looks like a it looks like a pineapple with a zzz,
+8,4,practice,2,artichoke,parent,"Say that artichoke, I've got one on my screen too, I'll press it and see",
+9,4,practice,2,artichoke,parent,,parent
+10,4,practice,2,artichoke,parent,"Ah, yes! That was an artichoke zzz",
+19,4,practice,5,artichoke,parent,"Now, do you remember what that's called? The one with zzz?",
+20,4,practice,5,artichoke,child,artichoke,
+21,4,practice,5,artichoke,parent,yes!,
+22,4,practice,5,artichoke,child,,child
+11,4,practice,3,onion,parent,Now I have a blue box and it's the same fruits well it's the same fruits as before but don't touch don't touch yet because now the blue box is around the onion,
+12,4,practice,3,onion,child,,child
+13,4,practice,3,onion,parent,Yeah!,
+23,4,practice,6,onion,child,onion,
+24,4,practice,6,onion,parent,,parent
+56,4,test,8,A1,child,Mine looks like something walking away zzz,
+57,4,test,8,A1,parent,,parent
+74,4,test,14,A1,parent,Mine looks like a person running away zzz,
+75,4,test,14,A1,child,,child
+116,4,test,24,A1,child,Yes mine just looks like they're-they're just walking so peacefully because they had a good day,
+117,4,test,24,A1,parent,oh yeah,
+118,4,test,24,A1,parent,,parent
+119,4,test,24,A1,parent,good job,
+152,4,test,34,A1,parent,And now my person is just walking down the street because they missed it,
+153,4,test,34,A1,child,,child
+50,4,test,6,B1,child,My mine looks like a person that has their hands in their pocket and is walking away,
+51,4,test,6,B1,parent,oh yeah!,
+52,4,test,6,B1,parent,,parent
+53,4,test,6,B1,child,good job!,
+93,4,test,18,B1,parent,My person had a bad day,
+94,4,test,18,B1,child,,child
+95,4,test,18,B1,parent,good job,
+130,4,test,28,B1,child,My person looks like they're sad because somebody zzz,
+131,4,test,28,B1,parent,Oh maybe they're looking on the ground for another one maybe they're gonna see,
+132,4,test,28,B1,parent,,parent
+168,4,test,40,B1,parent,My person is looking for a rocket to play pinecone and kick on zzz,
+169,4,test,40,B1,child,,child
+37,4,test,2,C1,child,Mine looks like a guy bendi--mine looks kinda like a guy bending down,
+38,4,test,2,C1,parent,Oh I see,
+39,4,test,2,C1,parent,,parent
+40,4,test,2,C1,child,Yes!,
+69,4,test,12,C1,parent,Mine looks like a person who dropped their keys on the ground,
+70,4,test,12,C1,child,,child
+111,4,test,22,C1,child,My person looks like he just dropped a penny and picked it up,
+112,4,test,22,C1,parent,"oh, good!",
+113,4,test,22,C1,parent,,parent
+157,4,test,36,C1,parent,"My person is diving into the pool, with their arms",
+158,4,test,36,C1,child,,child
+159,4,test,36,C1,parent,good job!,
+58,4,test,9,D1,parent,Mine looks like a person swimming,
+59,4,test,9,D1,child,,child
+96,4,test,19,D1,child,My person looks like they're swimming,
+97,4,test,19,D1,parent,oh yeah!,
+98,4,test,19,D1,parent,,parent
+114,4,test,23,D1,parent,My person is superman zzz,
+115,4,test,23,D1,child,,child
+160,4,test,37,D1,child,My person looks like they're swimming at the end of the ocean,
+161,4,test,37,D1,parent,,parent
+44,4,test,4,E1,child,Mine looks like a person jumping for joy,
+45,4,test,4,E1,parent,,parent
+46,4,test,4,E1,parent,Oh I love it that's a good description,
+99,4,test,20,E1,parent,Oh my person looks like we just did the best job and they're like yeah,
+100,4,test,20,E1,child,,child
+101,4,test,20,E1,parent,good job!,
+135,4,test,30,E1,child,Mine looks like they're jumping for joy because zzz,
+136,4,test,30,E1,parent,Yeah!,
+137,4,test,30,E1,parent,,parent
+162,4,test,38,E1,parent,My person is jumping up to catch something,
+163,4,test,38,E1,child,,child
+164,4,test,38,E1,child,got it,
+60,4,test,10,F1,child,Mine looks like a person raise mine looks like a person making their hands in like a triangle shape and and and their feet are apart,
+61,4,test,10,F1,parent,Oh yeah they're like hold that bus,
+62,4,test,10,F1,parent,,parent
+85,4,test,16,F1,parent,"that's okay.  I have a person saying wait for me, wait up!",
+86,4,test,16,F1,child,,child
+87,4,test,16,F1,child,I love that person who is waiting for the bus,
+88,4,test,16,F1,parent,"Yeah, hold that bus!",
+123,4,test,26,F1,child,My person my person is waiting for the bus and the bus ran off so,
+124,4,test,26,F1,parent,oh no!,
+125,4,test,26,F1,parent,"Good, yeah",
+126,4,test,26,F1,parent,,parent
+146,4,test,32,F1,parent,"My person is running down the street saying here I am, here I am, here I am!",
+147,4,test,32,F1,child,,child
+54,4,test,7,G1,parent,Well mine looks like someone who's kneeling down maybe to do something on the ground,
+55,4,test,7,G1,child,,child
+89,4,test,17,G1,child,My uh my person looks like they're sitting down on a bench,
+90,4,test,17,G1,parent,Oh yeah!,
+91,4,test,17,G1,parent,,parent
+92,4,test,17,G1,parent,that's a good description,
+133,4,test,29,G1,parent,Mine looks like a person who is sitting down for a quiet break,
+134,4,test,29,G1,child,,child
+148,4,test,33,G1,child,Oh it's my turn wait for me but my person is quietly waiting for the bus on a bench,
+149,4,test,33,G1,parent,Oh yeah!,
+150,4,test,33,G1,parent,,parent
+151,4,test,33,G1,parent,they're early for it,
+47,4,test,5,H1,parent,Mine looks like someone's hungry and is like can I please have some more,
+48,4,test,5,H1,child,,child
+49,4,test,5,H1,parent,good job!,
+64,4,test,11,H1,child,Mine looks like mine looks like a monk,
+65,4,test,11,H1,parent,oh yeah!,
+66,4,test,11,H1,child,Mhm,
+67,4,test,11,H1,parent,,parent
+68,4,test,11,H1,parent,You're right with that monk,
+120,4,test,25,H1,parent,"My person, he does look like a monk, holding a bowl",
+121,4,test,25,H1,child,,child
+122,4,test,25,H1,parent,good job!,
+139,4,test,31,H1,child,My person looks like my person looks like it's it's a person who gives the flowers at zzz,
+140,4,test,31,H1,parent,oh,
+141,4,test,31,H1,parent,,parent
+142,4,test,31,H1,parent,Yeah holding something like that,
+143,4,test,31,H1,child,Yeah,
+41,4,test,3,I1,parent,Mine looks like a guy carrying a tray saying would you like some?,
+42,4,test,3,I1,child,,child
+43,4,test,3,I1,parent,"Yeah, these are funny!",
+76,4,test,15,I1,child,Mine looks like zzz a water for their dog,
+77,4,test,15,I1,parent,Oh yeah!,
+78,4,test,15,I1,parent,,parent
+79,4,test,15,I1,parent,good description!,
+127,4,test,27,I1,child,What is your person,
+128,4,test,27,I1,parent,Oh yeah it's my turn isn't it? I have a person who's saying hey brought you some flowers,
+129,4,test,27,I1,child,,child
+165,4,test,39,I1,child,"My person is holding my person is holding out out a bucket of flowers, they're holding the flowers and putting them down for for their garden",
+166,4,test,39,I1,parent,oh yeah!,
+167,4,test,39,I1,parent,,parent
+32,4,test,1,K1,parent,"OK, so you see the tangrams? Do you remember this?",
+33,4,test,1,K1,child,zzz,
+34,4,test,1,K1,parent,"OK, so mine looks like a guy with a little hat and he's going",
+35,4,test,1,K1,child,,child
+36,4,test,1,K1,parent,"Yeah, you got it!",
+71,4,test,13,K1,child,Mine looks like a person that's ready to eat something and waiting for someone give them food,
+72,4,test,13,K1,parent,"OK, got it",
+73,4,test,13,K1,parent,,parent
+105,4,test,21,K1,parent,OK now mine is the person who's leaning forward and holding his hands out,
+106,4,test,21,K1,child,,child
+107,4,test,21,K1,child,I know I got it,
+108,4,test,21,K1,parent,Yeah?,
+109,4,test,21,K1,child,he's begging for food,
+110,4,test,21,K1,parent,yeah,
+154,4,test,35,K1,child,My person is holding out some water I mean holding out a pot of soup for anybody wants to get it,
+155,4,test,35,K1,parent,"oh nice, yeah!",
+156,4,test,35,K1,parent,,parent
+25,4,test,,,parent,"Woo-hoo, do you have any questions",
+26,4,test,,,child,mmmm,
+27,4,test,,,parent,For the researchers at the zzz?,
+28,4,test,,,child,no,
+29,4,test,,,parent,"OK now we're going to start that, that was the practice, so now we're going to begin--",
+30,4,test,,,child,shapes,
+31,4,test,,,parent,"the shapes, yeah",
+63,4,test,,,parent,It says that was a good job time for the next round yay OK,
+80,4,test,,,child,Mine looks like,
+81,4,test,,,parent,you have a blue box?,
+82,4,test,,,child,No,
+83,4,test,,,parent,"oh, ok!",
+84,4,test,,,child,I keep on forgetting,
+102,4,test,,,parent,Oh we did another it says good job time for the next round,
+103,4,test,,,child,I love next rounds,
+104,4,test,,,parent,me too!,
+138,4,test,,,parent,time for the next round!,
+144,4,test,,,child,Mom,
+145,4,test,,,parent,Oh!,

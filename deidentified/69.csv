@@ -1,167 +1,167 @@
-Timeline.ordinal,database_id,subid,type,trial,target,person,utterance,selection
-0,5624,69,practice,1,apple,parent,"Ok, ah, sometimes it is red, and you can take a big bite, and it's delicious",
-1,5624,69,practice,1,apple,child,Apple,
-3,5624,69,practice,1,apple,child,,child
-15,5624,69,practice,4,apple,child,"It's a red thing that uh, that uhm-",
-16,5624,69,practice,4,apple,parent,Again? The apple?,
-17,5624,69,practice,4,apple,child,Uh yeah,
-18,5624,69,practice,4,apple,parent,,parent
-6,5624,69,practice,2,artichoke,child,"It, uh, its a um, its a thing that has things and, um, little sides that they don't eat",
-7,5624,69,practice,2,artichoke,parent,It's called an artichoke,
-8,5624,69,practice,2,artichoke,parent,,parent
-19,5624,69,practice,5,artichoke,parent,"The same as before. The spikey thing, that's green, and you don't like",
-21,5624,69,practice,5,artichoke,parent,It's a vegetable,
-23,5624,69,practice,5,artichoke,parent,"No it's not a pineapple, what did I say it was called? Artichoke",
-24,5624,69,practice,5,artichoke,child,,child
-10,5624,69,practice,3,onion,parent,"Well, it makes you cry when you cut it",
-11,5624,69,practice,3,onion,child,Onion?,
-12,5624,69,practice,3,onion,parent,That's right,
-13,5624,69,practice,3,onion,child,,child
-26,5624,69,practice,6,onion,child,"Oh. Oh, great, it's the thing where you cry again",
-27,5624,69,practice,6,onion,parent,"Oh, but, well, onion then",
-28,5624,69,practice,6,onion,parent,,parent
-36,5624,69,test,3,A1,parent,I think he's running away,
-37,5624,69,test,3,A1,child,,child
-81,5624,69,test,15,A1,child,I think he's like running fast,
-82,5624,69,test,15,A1,parent,,parent
-102,5624,69,test,21,A1,parent,This guy is running away from you because you're moody,
-103,5624,69,test,21,A1,child,,child
-141,5624,69,test,33,A1,child,He's running,
-142,5624,69,test,33,A1,parent,,parent
-143,5624,69,test,33,A1,child,"Like, happily, it's hot out",
-44,5624,69,test,6,B1,child,I think he's walking,
-46,5624,69,test,6,B1,parent,,parent
-79,5624,69,test,14,B1,parent,"Okay, alright, I think this guy's so sad, he's just walking around with his head down",
-80,5624,69,test,14,B1,child,,child
-110,5624,69,test,24,B1,child,This guy's just walking madly,
-113,5624,69,test,24,B1,parent,,parent
-152,5624,69,test,36,B1,parent,He's so sad,
-153,5624,69,test,36,B1,child,,child
-58,5624,69,test,9,C1,parent,I think he's praying,
-59,5624,69,test,9,C1,child,,child
-67,5624,69,test,11,C1,child,Falling down,
-68,5624,69,test,11,C1,parent,,parent
-129,5624,69,test,29,C1,parent,"Alright, this guy is begging you for cookies",
-130,5624,69,test,29,C1,child,,child
-146,5624,69,test,35,C1,parent,He's like um-,
-148,5624,69,test,35,C1,child,"begging for, to go on the plane",
-149,5624,69,test,35,C1,parent,,parent
-150,5624,69,test,35,C1,child,on vacation,
-34,5624,69,test,2,D1,child,I think he fell and he's laying down,
-35,5624,69,test,2,D1,parent,,parent
-90,5624,69,test,18,D1,parent,This guy is dead,
-91,5624,69,test,18,D1,child,,child
-92,5624,69,test,18,D1,child,He's not dead,
-131,5624,69,test,30,D1,child,He's laying down,
-132,5624,69,test,30,D1,parent,Taking a nap?,
-133,5624,69,test,30,D1,parent,,parent
-144,5624,69,test,34,D1,parent,"Oh, he just fell and hit his head",
-145,5624,69,test,34,D1,child,,child
-30,5624,69,test,1,E1,parent,I think this guy is falling,
-31,5624,69,test,1,E1,child,Yeah,
-32,5624,69,test,1,E1,child,,child
-93,5624,69,test,19,E1,child,"Again with the pink head. I think this guy's um, he like tripped on his knees and he's falling down",
-94,5624,69,test,19,E1,parent,Wow,
-95,5624,69,test,19,E1,child,In the air,
-96,5624,69,test,19,E1,parent,,parent
-108,5624,69,test,23,E1,parent,This guy's jumping up in the air,
-109,5624,69,test,23,E1,child,,child
-160,5624,69,test,39,E1,child,He's like...,
-161,5624,69,test,39,E1,parent,,parent
-162,5624,69,test,39,E1,parent,"Oh, okay",
-54,5624,69,test,8,F1,child,"Okay, I think he's like ahh",
-55,5624,69,test,8,F1,parent,"He's running around screaming? Okay, I got it",
-56,5624,69,test,8,F1,parent,,parent
-84,5624,69,test,16,F1,parent,"Uh, this guy is running around screaming like ahh",
-85,5624,69,test,16,F1,child,,child
-86,5624,69,test,16,F1,child,It has a pink head,
-124,5624,69,test,28,F1,child,He's running and jumping,
-125,5624,69,test,28,F1,parent,,parent
-163,5624,69,test,40,F1,parent,This guy's running away from you because you're crazy,
-164,5624,69,test,40,F1,child,,child
-38,5624,69,test,4,G1,child,I think he's sitting down,
-39,5624,69,test,4,G1,parent,,parent
-97,5624,69,test,20,G1,parent,I think he's just sitting,
-98,5624,69,test,20,G1,child,,child
-118,5624,69,test,26,G1,child,"I think this guy's just sitting down sadly, on a bench",
-119,5624,69,test,26,G1,parent,,parent
-137,5624,69,test,32,G1,parent,Uh I think he's sitting on a bench,
-138,5624,69,test,32,G1,child,,child
-47,5624,69,test,7,H1,parent,"Ooh, I think he went to college and now he's getting his degree",
-48,5624,69,test,7,H1,child,,child
-87,5624,69,test,17,H1,child,I think this guy is standing up and giving out a drink or something,
-88,5624,69,test,17,H1,parent,Ooh okay,
-89,5624,69,test,17,H1,parent,,parent
-122,5624,69,test,27,H1,parent,This guy is the same guy that brought you cookies earlier,
-123,5624,69,test,27,H1,child,,child
-135,5624,69,test,31,H1,child,He's giving out cookies,
-136,5624,69,test,31,H1,parent,,parent
-61,5624,69,test,10,I1,child,I think it's like a person that's holding something,
-62,5624,69,test,10,I1,parent,"He's holding a tray, very good",
-63,5624,69,test,10,I1,parent,,parent
-72,5624,69,test,12,I1,parent,I think this guy is bringing you drinks with a tray,
-73,5624,69,test,12,I1,child,,child
-105,5624,69,test,22,I1,child,I think this guy's giving out lemon water,
-107,5624,69,test,22,I1,parent,,parent
-157,5624,69,test,38,I1,parent,"Oh, this guy's-",
-158,5624,69,test,38,I1,child,,child
-159,5624,69,test,38,I1,parent,handing out cookies,
-41,5624,69,test,5,K1,parent,"I think he's jumping, I don't know. It's like a dog on two legs",
-42,5624,69,test,5,K1,child,,child
-74,5624,69,test,13,K1,child,"I think he's like... I don't, I don't know how to say",
-75,5624,69,test,13,K1,parent,Okay,
-78,5624,69,test,13,K1,parent,,parent
-115,5624,69,test,25,K1,parent,Uh this guy's-,
-116,5624,69,test,25,K1,child,,child
-117,5624,69,test,25,K1,parent,bringing you cookies,
-154,5624,69,test,37,K1,child,"He's- he's like, he has a- he's giving out drinks xxx",
-156,5624,69,test,37,K1,parent,,parent
-2,5624,69,test,,,parent,"Okay, touch the picture",
-4,5624,69,test,,,parent,You win,
-5,5624,69,test,,,child,I get to talk,
-9,5624,69,test,,,parent,Yes,
-14,5624,69,test,,,child,That's easy because xxx,
-20,5624,69,test,,,child,Ohh,
-22,5624,69,test,,,child,Pineapple,
-25,5624,69,test,,,parent,There you go,
-29,5624,69,test,,,parent,"Okay that was-- oh, we're gonna start the real game now you ready? Set, push",
-33,5624,69,test,,,parent,Good job,
-40,5624,69,test,,,parent,You are so smart,
-43,5624,69,test,,,parent,You're so smart,
-45,5624,69,test,,,parent,"Oh, you are so smart",
-49,5624,69,test,,,parent,"Nice hat, huh?",
-50,5624,69,test,,,child,"I think, I don't know what he is doing",
-51,5624,69,test,,,parent,I think he's-- what do you think he's doing?,
-52,5624,69,test,,,child,I need to ask a question,
-53,5624,69,test,,,parent,"No, you can ask me",
-57,5624,69,test,,,parent,Smart one,
-60,5624,69,test,,,child,How do you explain it?,
-64,5624,69,test,,,parent,"Time for the next one, are you ready?",
-65,5624,69,test,,,child,Mhm,
-66,5624,69,test,,,parent,Okay,
-69,5624,69,test,,,parent,You're so smart,
-70,5624,69,test,,,child,That was actually easy,
-71,5624,69,test,,,parent,Mhm,
-76,5624,69,test,,,child,I'm thirsty daddy,
-77,5624,69,test,,,parent,"You're thirsty? It's okay, we're almost done",
-83,5624,69,test,,,parent,Look at that,
-99,5624,69,test,,,parent,Good job. You ready for the next one?,
-100,5624,69,test,,,child,I want to go get water xxx,
-101,5624,69,test,,,parent,I know we gotta go quick,
-104,5624,69,test,,,parent,Keep going,
-106,5624,69,test,,,parent,Oh because you're thirsty,
-111,5624,69,test,,,parent,He's mad at you?,
-112,5624,69,test,,,child,No,
-114,5624,69,test,,,child,He's mad at you. 'Cause you're mean,
-120,5624,69,test,,,child,I'm smart,
-121,5624,69,test,,,parent,Uh huh,
-126,5624,69,test,,,child,Im really thirsty,
-127,5624,69,test,,,parent,"I know, I know, we're almost done",
-128,5624,69,test,,,child,I'm gonna thirst to death,
-134,5624,69,test,,,parent,"Okay, one more round. You ready? I know I'm thirsty too",
-139,5624,69,test,,,child,I said that once,
-140,5624,69,test,,,parent,Mhm,
-147,5624,69,test,,,parent,"Uh unh, sit",
-151,5624,69,test,,,parent,Wow,
-155,5624,69,test,,,parent,Huh,
-165,5624,69,test,,,parent,"This is the end of the study, thank you so much, go get some water",
+Timeline.ordinal,subid,type,trial,target,person,utterance,selection
+0,69,practice,1,apple,parent,"Ok, ah, sometimes it is red, and you can take a big bite, and it's delicious",
+1,69,practice,1,apple,child,Apple,
+3,69,practice,1,apple,child,,child
+15,69,practice,4,apple,child,"It's a red thing that uh, that uhm-",
+16,69,practice,4,apple,parent,Again? The apple?,
+17,69,practice,4,apple,child,Uh yeah,
+18,69,practice,4,apple,parent,,parent
+6,69,practice,2,artichoke,child,"It, uh, its a um, its a thing that has things and, um, little sides that they don't eat",
+7,69,practice,2,artichoke,parent,It's called an artichoke,
+8,69,practice,2,artichoke,parent,,parent
+19,69,practice,5,artichoke,parent,"The same as before. The spikey thing, that's green, and you don't like",
+21,69,practice,5,artichoke,parent,It's a vegetable,
+23,69,practice,5,artichoke,parent,"No it's not a pineapple, what did I say it was called? Artichoke",
+24,69,practice,5,artichoke,child,,child
+10,69,practice,3,onion,parent,"Well, it makes you cry when you cut it",
+11,69,practice,3,onion,child,Onion?,
+12,69,practice,3,onion,parent,That's right,
+13,69,practice,3,onion,child,,child
+26,69,practice,6,onion,child,"Oh. Oh, great, it's the thing where you cry again",
+27,69,practice,6,onion,parent,"Oh, but, well, onion then",
+28,69,practice,6,onion,parent,,parent
+36,69,test,3,A1,parent,I think he's running away,
+37,69,test,3,A1,child,,child
+81,69,test,15,A1,child,I think he's like running fast,
+82,69,test,15,A1,parent,,parent
+102,69,test,21,A1,parent,This guy is running away from you because you're moody,
+103,69,test,21,A1,child,,child
+141,69,test,33,A1,child,He's running,
+142,69,test,33,A1,parent,,parent
+143,69,test,33,A1,child,"Like, happily, it's hot out",
+44,69,test,6,B1,child,I think he's walking,
+46,69,test,6,B1,parent,,parent
+79,69,test,14,B1,parent,"Okay, alright, I think this guy's so sad, he's just walking around with his head down",
+80,69,test,14,B1,child,,child
+110,69,test,24,B1,child,This guy's just walking madly,
+113,69,test,24,B1,parent,,parent
+152,69,test,36,B1,parent,He's so sad,
+153,69,test,36,B1,child,,child
+58,69,test,9,C1,parent,I think he's praying,
+59,69,test,9,C1,child,,child
+67,69,test,11,C1,child,Falling down,
+68,69,test,11,C1,parent,,parent
+129,69,test,29,C1,parent,"Alright, this guy is begging you for cookies",
+130,69,test,29,C1,child,,child
+146,69,test,35,C1,parent,He's like um-,
+148,69,test,35,C1,child,"begging for, to go on the plane",
+149,69,test,35,C1,parent,,parent
+150,69,test,35,C1,child,on vacation,
+34,69,test,2,D1,child,I think he fell and he's laying down,
+35,69,test,2,D1,parent,,parent
+90,69,test,18,D1,parent,This guy is dead,
+91,69,test,18,D1,child,,child
+92,69,test,18,D1,child,He's not dead,
+131,69,test,30,D1,child,He's laying down,
+132,69,test,30,D1,parent,Taking a nap?,
+133,69,test,30,D1,parent,,parent
+144,69,test,34,D1,parent,"Oh, he just fell and hit his head",
+145,69,test,34,D1,child,,child
+30,69,test,1,E1,parent,I think this guy is falling,
+31,69,test,1,E1,child,Yeah,
+32,69,test,1,E1,child,,child
+93,69,test,19,E1,child,"Again with the pink head. I think this guy's um, he like tripped on his knees and he's falling down",
+94,69,test,19,E1,parent,Wow,
+95,69,test,19,E1,child,In the air,
+96,69,test,19,E1,parent,,parent
+108,69,test,23,E1,parent,This guy's jumping up in the air,
+109,69,test,23,E1,child,,child
+160,69,test,39,E1,child,He's like...,
+161,69,test,39,E1,parent,,parent
+162,69,test,39,E1,parent,"Oh, okay",
+54,69,test,8,F1,child,"Okay, I think he's like ahh",
+55,69,test,8,F1,parent,"He's running around screaming? Okay, I got it",
+56,69,test,8,F1,parent,,parent
+84,69,test,16,F1,parent,"Uh, this guy is running around screaming like ahh",
+85,69,test,16,F1,child,,child
+86,69,test,16,F1,child,It has a pink head,
+124,69,test,28,F1,child,He's running and jumping,
+125,69,test,28,F1,parent,,parent
+163,69,test,40,F1,parent,This guy's running away from you because you're crazy,
+164,69,test,40,F1,child,,child
+38,69,test,4,G1,child,I think he's sitting down,
+39,69,test,4,G1,parent,,parent
+97,69,test,20,G1,parent,I think he's just sitting,
+98,69,test,20,G1,child,,child
+118,69,test,26,G1,child,"I think this guy's just sitting down sadly, on a bench",
+119,69,test,26,G1,parent,,parent
+137,69,test,32,G1,parent,Uh I think he's sitting on a bench,
+138,69,test,32,G1,child,,child
+47,69,test,7,H1,parent,"Ooh, I think he went to college and now he's getting his degree",
+48,69,test,7,H1,child,,child
+87,69,test,17,H1,child,I think this guy is standing up and giving out a drink or something,
+88,69,test,17,H1,parent,Ooh okay,
+89,69,test,17,H1,parent,,parent
+122,69,test,27,H1,parent,This guy is the same guy that brought you cookies earlier,
+123,69,test,27,H1,child,,child
+135,69,test,31,H1,child,He's giving out cookies,
+136,69,test,31,H1,parent,,parent
+61,69,test,10,I1,child,I think it's like a person that's holding something,
+62,69,test,10,I1,parent,"He's holding a tray, very good",
+63,69,test,10,I1,parent,,parent
+72,69,test,12,I1,parent,I think this guy is bringing you drinks with a tray,
+73,69,test,12,I1,child,,child
+105,69,test,22,I1,child,I think this guy's giving out lemon water,
+107,69,test,22,I1,parent,,parent
+157,69,test,38,I1,parent,"Oh, this guy's-",
+158,69,test,38,I1,child,,child
+159,69,test,38,I1,parent,handing out cookies,
+41,69,test,5,K1,parent,"I think he's jumping, I don't know. It's like a dog on two legs",
+42,69,test,5,K1,child,,child
+74,69,test,13,K1,child,"I think he's like... I don't, I don't know how to say",
+75,69,test,13,K1,parent,Okay,
+78,69,test,13,K1,parent,,parent
+115,69,test,25,K1,parent,Uh this guy's-,
+116,69,test,25,K1,child,,child
+117,69,test,25,K1,parent,bringing you cookies,
+154,69,test,37,K1,child,"He's- he's like, he has a- he's giving out drinks xxx",
+156,69,test,37,K1,parent,,parent
+2,69,test,,,parent,"Okay, touch the picture",
+4,69,test,,,parent,You win,
+5,69,test,,,child,I get to talk,
+9,69,test,,,parent,Yes,
+14,69,test,,,child,That's easy because xxx,
+20,69,test,,,child,Ohh,
+22,69,test,,,child,Pineapple,
+25,69,test,,,parent,There you go,
+29,69,test,,,parent,"Okay that was-- oh, we're gonna start the real game now you ready? Set, push",
+33,69,test,,,parent,Good job,
+40,69,test,,,parent,You are so smart,
+43,69,test,,,parent,You're so smart,
+45,69,test,,,parent,"Oh, you are so smart",
+49,69,test,,,parent,"Nice hat, huh?",
+50,69,test,,,child,"I think, I don't know what he is doing",
+51,69,test,,,parent,I think he's-- what do you think he's doing?,
+52,69,test,,,child,I need to ask a question,
+53,69,test,,,parent,"No, you can ask me",
+57,69,test,,,parent,Smart one,
+60,69,test,,,child,How do you explain it?,
+64,69,test,,,parent,"Time for the next one, are you ready?",
+65,69,test,,,child,Mhm,
+66,69,test,,,parent,Okay,
+69,69,test,,,parent,You're so smart,
+70,69,test,,,child,That was actually easy,
+71,69,test,,,parent,Mhm,
+76,69,test,,,child,I'm thirsty daddy,
+77,69,test,,,parent,"You're thirsty? It's okay, we're almost done",
+83,69,test,,,parent,Look at that,
+99,69,test,,,parent,Good job. You ready for the next one?,
+100,69,test,,,child,I want to go get water xxx,
+101,69,test,,,parent,I know we gotta go quick,
+104,69,test,,,parent,Keep going,
+106,69,test,,,parent,Oh because you're thirsty,
+111,69,test,,,parent,He's mad at you?,
+112,69,test,,,child,No,
+114,69,test,,,child,He's mad at you. 'Cause you're mean,
+120,69,test,,,child,I'm smart,
+121,69,test,,,parent,Uh huh,
+126,69,test,,,child,Im really thirsty,
+127,69,test,,,parent,"I know, I know, we're almost done",
+128,69,test,,,child,I'm gonna thirst to death,
+134,69,test,,,parent,"Okay, one more round. You ready? I know I'm thirsty too",
+139,69,test,,,child,I said that once,
+140,69,test,,,parent,Mhm,
+147,69,test,,,parent,"Uh unh, sit",
+151,69,test,,,parent,Wow,
+155,69,test,,,parent,Huh,
+165,69,test,,,parent,"This is the end of the study, thank you so much, go get some water",

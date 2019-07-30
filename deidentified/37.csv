@@ -1,110 +1,110 @@
-Timeline.ordinal,database_id,subid,type,trial,target,person,utterance,selection
-0,3688,37,practice,1,apple,parent,apple,
-1,3688,37,practice,1,apple,child,,child
-6,3688,37,practice,4,apple,child,apple,
-7,3688,37,practice,4,apple,parent,,parent
-2,3688,37,practice,2,artichoke,child,"um, I forgot the name. It has spines",
-3,3688,37,practice,2,artichoke,parent,,parent
-8,3688,37,practice,5,artichoke,parent,artichoke,
-9,3688,37,practice,5,artichoke,child,,child
-10,3688,37,practice,5,artichoke,child,oh that's what that is!,
-4,3688,37,practice,3,onion,parent,"uh, it's an onion",
-5,3688,37,practice,3,onion,child,,child
-11,3688,37,practice,6,onion,child,onion,
-12,3688,37,practice,6,onion,parent,,parent
-38,3688,37,test,10,A1,child,it looks like a man,
-39,3688,37,test,10,A1,parent,kind of walking?,
-40,3688,37,test,10,A1,child,not jeeves,
-41,3688,37,test,10,A1,parent,,parent
-44,3688,37,test,12,A1,parent,it's a woman walking,
-45,3688,37,test,12,A1,child,,child
-73,3688,37,test,24,A1,child,it's not the airplane,
-74,3688,37,test,24,A1,parent,,parent
-103,3688,37,test,38,A1,parent,"oh, walking",
-104,3688,37,test,38,A1,child,,child
-28,3688,37,test,6,B1,child,it's a man walking,
-29,3688,37,test,6,B1,parent,with his head down?,
-30,3688,37,test,6,B1,child,yeah,
-31,3688,37,test,6,B1,parent,,parent
-64,3688,37,test,20,B1,parent,someone walking with their head down,
-65,3688,37,test,20,B1,child,,child
-81,3688,37,test,28,B1,child,walking with his head down,
-82,3688,37,test,28,B1,parent,,parent
-98,3688,37,test,36,B1,parent,walking with their head down,
-99,3688,37,test,36,B1,child,,child
-15,3688,37,test,2,C1,child,it's person,
-16,3688,37,test,2,C1,parent,are they,
-17,3688,37,test,2,C1,child,laying down,
-18,3688,37,test,2,C1,parent,,parent
-48,3688,37,test,14,C1,parent,it's someone jumping off a diving board,
-49,3688,37,test,14,C1,child,,child
-77,3688,37,test,26,C1,child,a man ducking like  ‘wah' like he’s afraid,
-78,3688,37,test,26,C1,parent,,parent
-90,3688,37,test,32,C1,parent,diving,
-91,3688,37,test,32,C1,child,,child
-19,3688,37,test,3,D1,parent,it looks like an airplane,
-20,3688,37,test,3,D1,child,,child
-46,3688,37,test,13,D1,child,it's a person laying down,
-47,3688,37,test,13,D1,parent,,parent
-75,3688,37,test,25,D1,parent,airplane,
-76,3688,37,test,25,D1,child,,child
-101,3688,37,test,37,D1,child,airplane,
-102,3688,37,test,37,D1,parent,,parent
-36,3688,37,test,9,E1,parent,this one looks like they're jumping for joy,
-37,3688,37,test,9,E1,child,,child
-42,3688,37,test,11,E1,child,it's a man jumping for joy,
-43,3688,37,test,11,E1,parent,,parent
-71,3688,37,test,23,E1,parent,jumping for joy,
-72,3688,37,test,23,E1,child,,child
-88,3688,37,test,31,E1,child,jumping,
-89,3688,37,test,31,E1,parent,,parent
-22,3688,37,test,4,F1,child,"it's not the tall one, it's the one, it doesn't have the square on top",
-23,3688,37,test,4,F1,parent,does it look more like a bird?,
-24,3688,37,test,4,F1,child,"yeah, it looks like a woman kind of",
-25,3688,37,test,4,F1,parent,,parent
-54,3688,37,test,16,F1,parent,this one is someone who's breakdancing,
-55,3688,37,test,16,F1,child,,child
-56,3688,37,test,16,F1,parent,or dabbing,
-86,3688,37,test,30,F1,child,the person like. the person like. it's a woman and she's like she's running with her purse,
-87,3688,37,test,30,F1,parent,,parent
-107,3688,37,test,40,F1,parent,dabbing or a woman running with a purse,
-108,3688,37,test,40,F1,child,,child
-13,3688,37,test,1,G1,parent,"it's like a building, it's really tall",
-14,3688,37,test,1,G1,child,,child
-50,3688,37,test,15,G1,child,it's like jeeves. it's more like jeeves than the other picture.,
-51,3688,37,test,15,G1,parent,kind of like a seal with a ball on top?,
-52,3688,37,test,15,G1,parent,,parent
-53,3688,37,test,15,G1,child,yeah! that's exactly it! And if you turn it the other way,
-66,3688,37,test,21,G1,parent,"uh, it's a seal",
-67,3688,37,test,21,G1,child,,child
-68,3688,37,test,21,G1,child,it is a seal,
-92,3688,37,test,33,G1,child,not jeeves. uhh a seal,
-93,3688,37,test,33,G1,parent,,parent
-32,3688,37,test,7,H1,parent,this one looks like someone who's singing and holding a,
-33,3688,37,test,7,H1,child,,child
-62,3688,37,test,19,H1,child,it's a woman singing,
-63,3688,37,test,19,H1,parent,,parent
-79,3688,37,test,27,H1,parent,singing,
-80,3688,37,test,27,H1,child,,child
-96,3688,37,test,35,H1,child,singing,
-97,3688,37,test,35,H1,parent,,parent
-26,3688,37,test,5,I1,parent,this looks like it’s jeeves,
-27,3688,37,test,5,I1,child,,child
-57,3688,37,test,17,I1,child,it's jeeves,
-58,3688,37,test,17,I1,parent,,parent
-83,3688,37,test,29,I1,parent,jeeves,
-84,3688,37,test,29,I1,child,,child
-105,3688,37,test,39,I1,child,jeeves,
-106,3688,37,test,39,I1,parent,,parent
-34,3688,37,test,8,K1,child,it's like jeeves,
-35,3688,37,test,8,K1,parent,,parent
-59,3688,37,test,18,K1,parent,jeeves,
-60,3688,37,test,18,K1,child,,child
-69,3688,37,test,22,K1,child,it's jeeves,
-70,3688,37,test,22,K1,parent,,parent
-94,3688,37,test,34,K1,parent,jeeves,
-95,3688,37,test,34,K1,child,,child
-21,3688,37,test,,,child,that didn't sound like an airplane,
-61,3688,37,test,,,child,there's two jeeves,
-85,3688,37,test,,,child,i was about to press jumping for joy,
-100,3688,37,test,,,child,not jeeves. why can't jeeves come up again.,
+Timeline.ordinal,subid,type,trial,target,person,utterance,selection
+0,37,practice,1,apple,parent,apple,
+1,37,practice,1,apple,child,,child
+6,37,practice,4,apple,child,apple,
+7,37,practice,4,apple,parent,,parent
+2,37,practice,2,artichoke,child,"um, I forgot the name. It has spines",
+3,37,practice,2,artichoke,parent,,parent
+8,37,practice,5,artichoke,parent,artichoke,
+9,37,practice,5,artichoke,child,,child
+10,37,practice,5,artichoke,child,oh that's what that is!,
+4,37,practice,3,onion,parent,"uh, it's an onion",
+5,37,practice,3,onion,child,,child
+11,37,practice,6,onion,child,onion,
+12,37,practice,6,onion,parent,,parent
+38,37,test,10,A1,child,it looks like a man,
+39,37,test,10,A1,parent,kind of walking?,
+40,37,test,10,A1,child,not jeeves,
+41,37,test,10,A1,parent,,parent
+44,37,test,12,A1,parent,it's a woman walking,
+45,37,test,12,A1,child,,child
+73,37,test,24,A1,child,it's not the airplane,
+74,37,test,24,A1,parent,,parent
+103,37,test,38,A1,parent,"oh, walking",
+104,37,test,38,A1,child,,child
+28,37,test,6,B1,child,it's a man walking,
+29,37,test,6,B1,parent,with his head down?,
+30,37,test,6,B1,child,yeah,
+31,37,test,6,B1,parent,,parent
+64,37,test,20,B1,parent,someone walking with their head down,
+65,37,test,20,B1,child,,child
+81,37,test,28,B1,child,walking with his head down,
+82,37,test,28,B1,parent,,parent
+98,37,test,36,B1,parent,walking with their head down,
+99,37,test,36,B1,child,,child
+15,37,test,2,C1,child,it's person,
+16,37,test,2,C1,parent,are they,
+17,37,test,2,C1,child,laying down,
+18,37,test,2,C1,parent,,parent
+48,37,test,14,C1,parent,it's someone jumping off a diving board,
+49,37,test,14,C1,child,,child
+77,37,test,26,C1,child,a man ducking like  ‘wah' like he’s afraid,
+78,37,test,26,C1,parent,,parent
+90,37,test,32,C1,parent,diving,
+91,37,test,32,C1,child,,child
+19,37,test,3,D1,parent,it looks like an airplane,
+20,37,test,3,D1,child,,child
+46,37,test,13,D1,child,it's a person laying down,
+47,37,test,13,D1,parent,,parent
+75,37,test,25,D1,parent,airplane,
+76,37,test,25,D1,child,,child
+101,37,test,37,D1,child,airplane,
+102,37,test,37,D1,parent,,parent
+36,37,test,9,E1,parent,this one looks like they're jumping for joy,
+37,37,test,9,E1,child,,child
+42,37,test,11,E1,child,it's a man jumping for joy,
+43,37,test,11,E1,parent,,parent
+71,37,test,23,E1,parent,jumping for joy,
+72,37,test,23,E1,child,,child
+88,37,test,31,E1,child,jumping,
+89,37,test,31,E1,parent,,parent
+22,37,test,4,F1,child,"it's not the tall one, it's the one, it doesn't have the square on top",
+23,37,test,4,F1,parent,does it look more like a bird?,
+24,37,test,4,F1,child,"yeah, it looks like a woman kind of",
+25,37,test,4,F1,parent,,parent
+54,37,test,16,F1,parent,this one is someone who's breakdancing,
+55,37,test,16,F1,child,,child
+56,37,test,16,F1,parent,or dabbing,
+86,37,test,30,F1,child,the person like. the person like. it's a woman and she's like she's running with her purse,
+87,37,test,30,F1,parent,,parent
+107,37,test,40,F1,parent,dabbing or a woman running with a purse,
+108,37,test,40,F1,child,,child
+13,37,test,1,G1,parent,"it's like a building, it's really tall",
+14,37,test,1,G1,child,,child
+50,37,test,15,G1,child,it's like jeeves. it's more like jeeves than the other picture.,
+51,37,test,15,G1,parent,kind of like a seal with a ball on top?,
+52,37,test,15,G1,parent,,parent
+53,37,test,15,G1,child,yeah! that's exactly it! And if you turn it the other way,
+66,37,test,21,G1,parent,"uh, it's a seal",
+67,37,test,21,G1,child,,child
+68,37,test,21,G1,child,it is a seal,
+92,37,test,33,G1,child,not jeeves. uhh a seal,
+93,37,test,33,G1,parent,,parent
+32,37,test,7,H1,parent,this one looks like someone who's singing and holding a,
+33,37,test,7,H1,child,,child
+62,37,test,19,H1,child,it's a woman singing,
+63,37,test,19,H1,parent,,parent
+79,37,test,27,H1,parent,singing,
+80,37,test,27,H1,child,,child
+96,37,test,35,H1,child,singing,
+97,37,test,35,H1,parent,,parent
+26,37,test,5,I1,parent,this looks like it’s jeeves,
+27,37,test,5,I1,child,,child
+57,37,test,17,I1,child,it's jeeves,
+58,37,test,17,I1,parent,,parent
+83,37,test,29,I1,parent,jeeves,
+84,37,test,29,I1,child,,child
+105,37,test,39,I1,child,jeeves,
+106,37,test,39,I1,parent,,parent
+34,37,test,8,K1,child,it's like jeeves,
+35,37,test,8,K1,parent,,parent
+59,37,test,18,K1,parent,jeeves,
+60,37,test,18,K1,child,,child
+69,37,test,22,K1,child,it's jeeves,
+70,37,test,22,K1,parent,,parent
+94,37,test,34,K1,parent,jeeves,
+95,37,test,34,K1,child,,child
+21,37,test,,,child,that didn't sound like an airplane,
+61,37,test,,,child,there's two jeeves,
+85,37,test,,,child,i was about to press jumping for joy,
+100,37,test,,,child,not jeeves. why can't jeeves come up again.,

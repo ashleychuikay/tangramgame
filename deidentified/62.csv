@@ -1,126 +1,126 @@
-Timeline.ordinal,database_id,subid,type,trial,target,person,utterance,selection
-0,7151,62,practice,1,apple,parent,This is an apple,
-1,7151,62,practice,1,apple,child,,child
-8,7151,62,practice,4,apple,child,Apple,
-9,7151,62,practice,4,apple,parent,,parent
-3,7151,62,practice,2,artichoke,child,It's sort of looks like it has scales with a stem like a little cactus,
-4,7151,62,practice,2,artichoke,parent,Okay I think I know which one you're talking about,
-5,7151,62,practice,2,artichoke,parent,,parent
-10,7151,62,practice,5,artichoke,parent,Okay this is called an artichoke and it's kinda looks like a turtle shell,
-11,7151,62,practice,5,artichoke,child,,child
-6,7151,62,practice,3,onion,parent,Okay um this is an onion,
-7,7151,62,practice,3,onion,child,,child
-12,7151,62,practice,6,onion,child,Onion,
-13,7151,62,practice,6,onion,parent,,parent
-31,7151,62,test,5,A1,parent,Uh mine is the man walking again,
-32,7151,62,test,5,A1,child,,child
-74,7151,62,test,19,A1,child,A guy who's running,
-75,7151,62,test,19,A1,parent,,parent
-79,7151,62,test,21,A1,parent,Okay mine looks like a person running,
-80,7151,62,test,21,A1,child,,child
-100,7151,62,test,31,A1,child,Someone running,
-101,7151,62,test,31,A1,parent,Okay,
-102,7151,62,test,31,A1,parent,,parent
-26,7151,62,test,3,B1,parent,Okay mine looks like a man walking,
-27,7151,62,test,3,B1,child,,child
-70,7151,62,test,17,B1,child,The guy walking with his head down,
-71,7151,62,test,17,B1,parent,,parent
-91,7151,62,test,27,B1,parent,"Uh, this one looks like someone walking with their head down",
-92,7151,62,test,27,B1,child,,child
-117,7151,62,test,39,B1,child,The guy walking with his head down,
-119,7151,62,test,39,B1,parent,,parent
-23,7151,62,test,2,C1,child,Okay so it's sort of like a guy crouching over on stairs or something,
-24,7151,62,test,2,C1,parent,Okay,
-25,7151,62,test,2,C1,parent,,parent
-76,7151,62,test,20,C1,parent,Um mine looks like someone that is kneeling down on their hands and elbows praying,
-77,7151,62,test,20,C1,child,,child
-89,7151,62,test,26,C1,child,The guy sitting on the stairs kneeling,
-90,7151,62,test,26,C1,parent,,parent
-103,7151,62,test,32,C1,parent,"Uh, this one looks like someone that's kneeling down, praying with their head on the floor",
-104,7151,62,test,32,C1,child,,child
-17,7151,62,test,1,D1,parent,"Okay this picture kind of looks like a boat, it's got a, um, a triangle on the left side",
-18,7151,62,test,1,D1,child,Wait I think I know which one you're talking about,
-19,7151,62,test,1,D1,child,,child
-64,7151,62,test,15,D1,child,A guy in something that looks like a hover with a triangle at the back,
-65,7151,62,test,15,D1,parent,,parent
-95,7151,62,test,29,D1,parent,"Uh, this is the person in the hover craft",
-96,7151,62,test,29,D1,child,,child
-113,7151,62,test,37,D1,child,The hover- the guy in the hovercraft,
-114,7151,62,test,37,D1,parent,,parent
-33,7151,62,test,6,E1,child,It's sort of looks like a bat trying to fly or something,
-34,7151,62,test,6,E1,parent,Okay,
-35,7151,62,test,6,E1,parent,,parent
-66,7151,62,test,16,E1,parent,Okay this looks like- like- like that bat cape costume-,
-67,7151,62,test,16,E1,child,"Okay, okay",
-68,7151,62,test,16,E1,parent,jumping up in the air,
-69,7151,62,test,16,E1,child,,child
-81,7151,62,test,22,E1,child,A bat running,
-82,7151,62,test,22,E1,parent,,parent
-122,7151,62,test,40,E1,parent,"Uh, this is the bat looking-",
-123,7151,62,test,40,E1,child,,child
-124,7151,62,test,40,E1,parent,person,
-40,7151,62,test,8,F1,child,It looks like someone's running with their hands up,
-42,7151,62,test,8,F1,parent,Like a dog?,
-43,7151,62,test,8,F1,child,No they're running with their hands up,
-44,7151,62,test,8,F1,parent,Okay oh yeah I see it now,
-45,7151,62,test,8,F1,parent,,parent
-60,7151,62,test,14,F1,parent,"Okay this is the one that you said had their arms raised up running, they had-",
-61,7151,62,test,14,F1,child,"Yeah, okay",
-62,7151,62,test,14,F1,parent,little triangle feet,
-63,7151,62,test,14,F1,child,,child
-97,7151,62,test,30,F1,child,Someone running with their hands up,
-98,7151,62,test,30,F1,parent,,parent
-115,7151,62,test,38,F1,parent,"Uh, the person running with their arms out stretched",
-116,7151,62,test,38,F1,child,,child
-28,7151,62,test,4,G1,child,It's sort of looks like someone with a dress sitting on something,
-29,7151,62,test,4,G1,parent,Okay,
-30,7151,62,test,4,G1,parent,,parent
-72,7151,62,test,18,G1,parent,"Okay mine is like, uh, the one wearing a dress sitting on a square block",
-73,7151,62,test,18,G1,child,,child
-93,7151,62,test,28,G1,child,"The person with the dress sitting on the stairs, like xxx",
-94,7151,62,test,28,G1,parent,,parent
-107,7151,62,test,34,G1,parent,"Um, this is the one that looks like they're in a dress sitting on the floor",
-108,7151,62,test,34,G1,child,,child
-36,7151,62,test,7,H1,parent,Um mine looks like someone is holding a bowl and-,
-37,7151,62,test,7,H1,child,Okay I know which one,
-38,7151,62,test,7,H1,parent,xxx in the sky,
-39,7151,62,test,7,H1,child,,child
-57,7151,62,test,13,H1,child,"The one holding out something, and sort of like a cloak or something",
-58,7151,62,test,13,H1,parent,Okay,
-59,7151,62,test,13,H1,parent,,parent
-87,7151,62,test,25,H1,parent,"Um, this is the one that looks like it's wearing a cloak holding a triangle bowl again",
-88,7151,62,test,25,H1,child,,child
-109,7151,62,test,35,H1,child,The guy with the cloak with his hands out,
-110,7151,62,test,35,H1,parent,,parent
-46,7151,62,test,9,I1,parent,"Okay mine is, uh, looks like a person holding out a triangle bowl",
-47,7151,62,test,9,I1,child,,child
-52,7151,62,test,11,I1,child,Someone holding out a triangle bowl,
-53,7151,62,test,11,I1,parent,,parent
-83,7151,62,test,23,I1,parent,"Um, a person holding out a triangle bowl",
-84,7151,62,test,23,I1,child,,child
-105,7151,62,test,33,I1,child,Someone holding out a triangular bowl,
-106,7151,62,test,33,I1,parent,,parent
-48,7151,62,test,10,K1,child,It's sort of looks like someone with a triangle hat,
-49,7151,62,test,10,K1,parent,Okay,
-50,7151,62,test,10,K1,parent,,parent
-54,7151,62,test,12,K1,parent,Uh so mine is the person holding with the triangle hat it uh kinda looks like a dog to me-,
-55,7151,62,test,12,K1,child,,child
-56,7151,62,test,12,K1,parent,uh jumping up,
-85,7151,62,test,24,K1,child,The house guy,
-86,7151,62,test,24,K1,parent,,parent
-111,7151,62,test,36,K1,parent,"Uh, the house-head person, or dog",
-112,7151,62,test,36,K1,child,,child
-2,7151,62,test,,,child,Um,
-14,7151,62,test,,,parent,Okay you ready to play the real game?,
-15,7151,62,test,,,child,Yeah,
-16,7151,62,test,,,parent,Alright,
-20,7151,62,test,,,child,One second,
-21,7151,62,test,,,child,These look recgonizable these are like the xxx,
-22,7151,62,test,,,parent,Mhm,
-41,7151,62,test,,,parent,Hmm,
-51,7151,62,test,,,child,Good job time for the next round,
-78,7151,62,test,,,child,Good job time for the next round,
-99,7151,62,test,,,child,Good job time for the next round,
-118,7151,62,test,,,parent,You bored?,
-120,7151,62,test,,,child,No,
-121,7151,62,test,,,parent,Okay,
+Timeline.ordinal,subid,type,trial,target,person,utterance,selection
+0,62,practice,1,apple,parent,This is an apple,
+1,62,practice,1,apple,child,,child
+8,62,practice,4,apple,child,Apple,
+9,62,practice,4,apple,parent,,parent
+3,62,practice,2,artichoke,child,It's sort of looks like it has scales with a stem like a little cactus,
+4,62,practice,2,artichoke,parent,Okay I think I know which one you're talking about,
+5,62,practice,2,artichoke,parent,,parent
+10,62,practice,5,artichoke,parent,Okay this is called an artichoke and it's kinda looks like a turtle shell,
+11,62,practice,5,artichoke,child,,child
+6,62,practice,3,onion,parent,Okay um this is an onion,
+7,62,practice,3,onion,child,,child
+12,62,practice,6,onion,child,Onion,
+13,62,practice,6,onion,parent,,parent
+31,62,test,5,A1,parent,Uh mine is the man walking again,
+32,62,test,5,A1,child,,child
+74,62,test,19,A1,child,A guy who's running,
+75,62,test,19,A1,parent,,parent
+79,62,test,21,A1,parent,Okay mine looks like a person running,
+80,62,test,21,A1,child,,child
+100,62,test,31,A1,child,Someone running,
+101,62,test,31,A1,parent,Okay,
+102,62,test,31,A1,parent,,parent
+26,62,test,3,B1,parent,Okay mine looks like a man walking,
+27,62,test,3,B1,child,,child
+70,62,test,17,B1,child,The guy walking with his head down,
+71,62,test,17,B1,parent,,parent
+91,62,test,27,B1,parent,"Uh, this one looks like someone walking with their head down",
+92,62,test,27,B1,child,,child
+117,62,test,39,B1,child,The guy walking with his head down,
+119,62,test,39,B1,parent,,parent
+23,62,test,2,C1,child,Okay so it's sort of like a guy crouching over on stairs or something,
+24,62,test,2,C1,parent,Okay,
+25,62,test,2,C1,parent,,parent
+76,62,test,20,C1,parent,Um mine looks like someone that is kneeling down on their hands and elbows praying,
+77,62,test,20,C1,child,,child
+89,62,test,26,C1,child,The guy sitting on the stairs kneeling,
+90,62,test,26,C1,parent,,parent
+103,62,test,32,C1,parent,"Uh, this one looks like someone that's kneeling down, praying with their head on the floor",
+104,62,test,32,C1,child,,child
+17,62,test,1,D1,parent,"Okay this picture kind of looks like a boat, it's got a, um, a triangle on the left side",
+18,62,test,1,D1,child,Wait I think I know which one you're talking about,
+19,62,test,1,D1,child,,child
+64,62,test,15,D1,child,A guy in something that looks like a hover with a triangle at the back,
+65,62,test,15,D1,parent,,parent
+95,62,test,29,D1,parent,"Uh, this is the person in the hover craft",
+96,62,test,29,D1,child,,child
+113,62,test,37,D1,child,The hover- the guy in the hovercraft,
+114,62,test,37,D1,parent,,parent
+33,62,test,6,E1,child,It's sort of looks like a bat trying to fly or something,
+34,62,test,6,E1,parent,Okay,
+35,62,test,6,E1,parent,,parent
+66,62,test,16,E1,parent,Okay this looks like- like- like that bat cape costume-,
+67,62,test,16,E1,child,"Okay, okay",
+68,62,test,16,E1,parent,jumping up in the air,
+69,62,test,16,E1,child,,child
+81,62,test,22,E1,child,A bat running,
+82,62,test,22,E1,parent,,parent
+122,62,test,40,E1,parent,"Uh, this is the bat looking-",
+123,62,test,40,E1,child,,child
+124,62,test,40,E1,parent,person,
+40,62,test,8,F1,child,It looks like someone's running with their hands up,
+42,62,test,8,F1,parent,Like a dog?,
+43,62,test,8,F1,child,No they're running with their hands up,
+44,62,test,8,F1,parent,Okay oh yeah I see it now,
+45,62,test,8,F1,parent,,parent
+60,62,test,14,F1,parent,"Okay this is the one that you said had their arms raised up running, they had-",
+61,62,test,14,F1,child,"Yeah, okay",
+62,62,test,14,F1,parent,little triangle feet,
+63,62,test,14,F1,child,,child
+97,62,test,30,F1,child,Someone running with their hands up,
+98,62,test,30,F1,parent,,parent
+115,62,test,38,F1,parent,"Uh, the person running with their arms out stretched",
+116,62,test,38,F1,child,,child
+28,62,test,4,G1,child,It's sort of looks like someone with a dress sitting on something,
+29,62,test,4,G1,parent,Okay,
+30,62,test,4,G1,parent,,parent
+72,62,test,18,G1,parent,"Okay mine is like, uh, the one wearing a dress sitting on a square block",
+73,62,test,18,G1,child,,child
+93,62,test,28,G1,child,"The person with the dress sitting on the stairs, like xxx",
+94,62,test,28,G1,parent,,parent
+107,62,test,34,G1,parent,"Um, this is the one that looks like they're in a dress sitting on the floor",
+108,62,test,34,G1,child,,child
+36,62,test,7,H1,parent,Um mine looks like someone is holding a bowl and-,
+37,62,test,7,H1,child,Okay I know which one,
+38,62,test,7,H1,parent,xxx in the sky,
+39,62,test,7,H1,child,,child
+57,62,test,13,H1,child,"The one holding out something, and sort of like a cloak or something",
+58,62,test,13,H1,parent,Okay,
+59,62,test,13,H1,parent,,parent
+87,62,test,25,H1,parent,"Um, this is the one that looks like it's wearing a cloak holding a triangle bowl again",
+88,62,test,25,H1,child,,child
+109,62,test,35,H1,child,The guy with the cloak with his hands out,
+110,62,test,35,H1,parent,,parent
+46,62,test,9,I1,parent,"Okay mine is, uh, looks like a person holding out a triangle bowl",
+47,62,test,9,I1,child,,child
+52,62,test,11,I1,child,Someone holding out a triangle bowl,
+53,62,test,11,I1,parent,,parent
+83,62,test,23,I1,parent,"Um, a person holding out a triangle bowl",
+84,62,test,23,I1,child,,child
+105,62,test,33,I1,child,Someone holding out a triangular bowl,
+106,62,test,33,I1,parent,,parent
+48,62,test,10,K1,child,It's sort of looks like someone with a triangle hat,
+49,62,test,10,K1,parent,Okay,
+50,62,test,10,K1,parent,,parent
+54,62,test,12,K1,parent,Uh so mine is the person holding with the triangle hat it uh kinda looks like a dog to me-,
+55,62,test,12,K1,child,,child
+56,62,test,12,K1,parent,uh jumping up,
+85,62,test,24,K1,child,The house guy,
+86,62,test,24,K1,parent,,parent
+111,62,test,36,K1,parent,"Uh, the house-head person, or dog",
+112,62,test,36,K1,child,,child
+2,62,test,,,child,Um,
+14,62,test,,,parent,Okay you ready to play the real game?,
+15,62,test,,,child,Yeah,
+16,62,test,,,parent,Alright,
+20,62,test,,,child,One second,
+21,62,test,,,child,These look recgonizable these are like the xxx,
+22,62,test,,,parent,Mhm,
+41,62,test,,,parent,Hmm,
+51,62,test,,,child,Good job time for the next round,
+78,62,test,,,child,Good job time for the next round,
+99,62,test,,,child,Good job time for the next round,
+118,62,test,,,parent,You bored?,
+120,62,test,,,child,No,
+121,62,test,,,parent,Okay,

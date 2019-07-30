@@ -1,130 +1,130 @@
-Timeline.ordinal,database_id,subid,type,trial,target,person,utterance,selection
-0,4424,10,practice,1,apple,parent,Apple,
-1,4424,10,practice,1,apple,child,,child
-7,4424,10,practice,4,apple,child,apple,
-8,4424,10,practice,4,apple,parent,,parent
-2,4424,10,practice,2,artichoke,child,pineapple,
-3,4424,10,practice,2,artichoke,child,Wait no uh artichoke,
-4,4424,10,practice,2,artichoke,parent,,parent
-9,4424,10,practice,5,artichoke,parent,artichoke,
-10,4424,10,practice,5,artichoke,child,,child
-5,4424,10,practice,3,onion,parent,"uh, onion",
-6,4424,10,practice,3,onion,child,,child
-11,4424,10,practice,6,onion,child,onion,
-12,4424,10,practice,6,onion,parent,,parent
-39,4424,10,test,10,A1,child,Person who looks like they're about to run,
-40,4424,10,test,10,A1,parent,,parent
-64,4424,10,test,18,A1,parent,Person who looks like they're sort of running away,
-65,4424,10,test,18,A1,child,,child
-91,4424,10,test,28,A1,child,Um uh person not laying down,
-92,4424,10,test,28,A1,parent,"Okay, standing up running?",
-93,4424,10,test,28,A1,child,mhm,
-94,4424,10,test,28,A1,parent,,parent
-113,4424,10,test,34,A1,parent,Running away,
-114,4424,10,test,34,A1,child,,child
-33,4424,10,test,7,B1,parent,A person who looks like they're walking away,
-34,4424,10,test,7,B1,child,,child
-66,4424,10,test,19,B1,child,Um a person who's walking away with their head down,
-67,4424,10,test,19,B1,parent,,parent
-89,4424,10,test,27,B1,parent,Person who looks like they're walking away with their head down,
-90,4424,10,test,27,B1,child,,child
-120,4424,10,test,27,B1,child,Walking away,
-121,4424,10,test,37,B1,parent,,parent
-24,4424,10,test,4,C1,child,Person who looks like they're um uh about to do a push-up,
-25,4424,10,test,4,C1,parent,,parent
-68,4424,10,test,20,C1,parent,Person who looks like they're kneeling down in prayer,
-69,4424,10,test,20,C1,child,,child
-70,4424,10,test,20,C1,child,And like their hands are like down,
-71,4424,10,test,20,C1,parent,Yeah,
-80,4424,10,test,24,C1,child,This is a good one person who looks like um they're uh doing this,
-81,4424,10,test,24,C1,parent,kneeling in prayer? like lying down? Like not even kneeling but like laying down in prayer?,
-82,4424,10,test,24,C1,parent,,parent
-83,4424,10,test,24,C1,child,Yeah,
-122,4424,10,test,38,C1,parent,Uh laying down in prayer,
-123,4424,10,test,38,C1,child,,child
-22,4424,10,test,3,D1,parent,Person who looks like they're laying down with long legs sticking up in the air,
-23,4424,10,test,3,D1,child,,child
-56,4424,10,test,15,D1,child,Person who looks like they're a mom doing yoga,
-57,4424,10,test,15,D1,parent,Oh are they laying down on their tummy?,
-58,4424,10,test,15,D1,child,yeah,
-59,4424,10,test,15,D1,parent,,parent
-95,4424,10,test,29,D1,parent,Person who's laying down with their leg in the air,
-96,4424,10,test,29,D1,child,,child
-115,4424,10,test,35,D1,child,Leg up,
-116,4424,10,test,35,D1,parent,,parent
-117,4424,10,test,35,D1,parent,You're a bit more zzz than that,
-18,4424,10,test,1,E1,parent,Uh press one who looks like they're jumping in the air like this (arms up),
-19,4424,10,test,1,E1,child,,child
-47,4424,10,test,13,E1,child,Person who looks like they're jumping,
-48,4424,10,test,13,E1,parent,,parent
-73,4424,10,test,21,E1,parent,Person who looks like they're jumping like this ah,
-74,4424,10,test,21,E1,child,,child
-105,4424,10,test,31,E1,child,"Person doing this, wee",
-106,4424,10,test,31,E1,parent,,parent
-35,4424,10,test,8,F1,child,Person who looks like they're jumping with one arm up like this,
-36,4424,10,test,8,F1,parent,,parent
-49,4424,10,test,14,F1,parent,Person who is like looks like they're sort of,
-50,4424,10,test,14,F1,child,like this? (gestures),
-51,4424,10,test,14,F1,child,yeah,
-52,4424,10,test,14,F1,child,,child
-53,4424,10,test,14,F1,parent,doing a dab,
-54,4424,10,test,14,F1,child,this (gestures),
-75,4424,10,test,22,F1,child,Person who looks like they're um zzz like this,
-76,4424,10,test,22,F1,parent,,parent
-118,4424,10,test,36,F1,parent,Dabbing,
-119,4424,10,test,36,F1,child,,child
-37,4424,10,test,9,G1,parent,Person who looks like they're sitting in a chair,
-38,4424,10,test,9,G1,child,,child
-43,4424,10,test,11,G1,child,Person who looks like they're sitting down,
-44,4424,10,test,11,G1,parent,,parent
-78,4424,10,test,23,G1,parent,Person who looks like they're sitting in a chair,
-79,4424,10,test,23,G1,child,,child
-109,4424,10,test,33,G1,child,sitting down,
-110,4424,10,test,33,G1,parent,,parent
-20,4424,10,test,2,H1,child,Um a person who looks like they're sitting down,
-21,4424,10,test,2,H1,parent,,parent
-45,4424,10,test,12,H1,parent,Person who looks like they're holding a bowl close to them,
-46,4424,10,test,12,H1,child,,child
-87,4424,10,test,26,H1,child,Um a person who's sitting down holding a bowl of soup,
-88,4424,10,test,26,H1,parent,,parent
-107,4424,10,test,32,H1,parent,Person holding a bowl of soup again,
-108,4424,10,test,32,H1,child,,child
-29,4424,10,test,6,I1,child,Person who's carrying like a bowl or something,
-30,4424,10,test,6,I1,parent,Like a triangle bowl,
-31,4424,10,test,6,I1,child,yeah,
-32,4424,10,test,6,I1,parent,,parent
-60,4424,10,test,16,I1,parent,Person who looks like they're holding the bowl out,
-61,4424,10,test,16,I1,child,,child
-97,4424,10,test,30,I1,child,Um a person with a square head,
-98,4424,10,test,30,I1,parent,mhm,
-99,4424,10,test,30,I1,child,triangle foot,
-100,4424,10,test,30,I1,parent,"mhm, and they're holding a ball?",
-101,4424,10,test,30,I1,child,Holding a triangle.,
-102,4424,10,test,30,I1,parent,,parent
-127,4424,10,test,40,I1,parent,Holding a bowl of soup out,
-128,4424,10,test,40,I1,child,,child
-26,4424,10,test,5,K1,parent,Person who looks like they're sticking their bum out like this,
-27,4424,10,test,5,K1,child,,child
-28,4424,10,test,5,K1,child,zzz I'll remember that,
-62,4424,10,test,17,K1,child,Um uh person who's an zzz sticking their butt out,
-63,4424,10,test,17,K1,parent,,parent
-84,4424,10,test,25,K1,parent,Person who's sticking their butt out again,
-85,4424,10,test,25,K1,child,,child
-86,4424,10,test,25,K1,parent,xxx,
-124,4424,10,test,39,K1,child,Sticking their butt out,
-125,4424,10,test,39,K1,parent,Sticking their butt out oh yeah,
-126,4424,10,test,39,K1,parent,,parent
-13,4424,10,test,,,parent,xxx,
-14,4424,10,test,,,parent,OK press the study to begin when you're ready. do you have a begin on your box?,
-15,4424,10,test,,,child,yeah,
-16,4424,10,test,,,parent,Alright you ready to start,
-17,4424,10,test,,,child,Mhm,
-41,4424,10,test,,,parent,Good job time for the next round,
-42,4424,10,test,,,child,uh huh,
-55,4424,10,test,,,parent,your turn,
-72,4424,10,test,,,parent,Good job it's time for the next round,
-77,4424,10,test,,,child,Person zzz,
-103,4424,10,test,,,parent,Good job time for the next round,
-104,4424,10,test,,,child,Let's go!,
-111,4424,10,test,,,child,not long xxx,
-112,4424,10,test,,,parent,mhm,
+Timeline.ordinal,subid,type,trial,target,person,utterance,selection
+0,10,practice,1,apple,parent,Apple,
+1,10,practice,1,apple,child,,child
+7,10,practice,4,apple,child,apple,
+8,10,practice,4,apple,parent,,parent
+2,10,practice,2,artichoke,child,pineapple,
+3,10,practice,2,artichoke,child,Wait no uh artichoke,
+4,10,practice,2,artichoke,parent,,parent
+9,10,practice,5,artichoke,parent,artichoke,
+10,10,practice,5,artichoke,child,,child
+5,10,practice,3,onion,parent,"uh, onion",
+6,10,practice,3,onion,child,,child
+11,10,practice,6,onion,child,onion,
+12,10,practice,6,onion,parent,,parent
+39,10,test,10,A1,child,Person who looks like they're about to run,
+40,10,test,10,A1,parent,,parent
+64,10,test,18,A1,parent,Person who looks like they're sort of running away,
+65,10,test,18,A1,child,,child
+91,10,test,28,A1,child,Um uh person not laying down,
+92,10,test,28,A1,parent,"Okay, standing up running?",
+93,10,test,28,A1,child,mhm,
+94,10,test,28,A1,parent,,parent
+113,10,test,34,A1,parent,Running away,
+114,10,test,34,A1,child,,child
+33,10,test,7,B1,parent,A person who looks like they're walking away,
+34,10,test,7,B1,child,,child
+66,10,test,19,B1,child,Um a person who's walking away with their head down,
+67,10,test,19,B1,parent,,parent
+89,10,test,27,B1,parent,Person who looks like they're walking away with their head down,
+90,10,test,27,B1,child,,child
+120,10,test,27,B1,child,Walking away,
+121,10,test,37,B1,parent,,parent
+24,10,test,4,C1,child,Person who looks like they're um uh about to do a push-up,
+25,10,test,4,C1,parent,,parent
+68,10,test,20,C1,parent,Person who looks like they're kneeling down in prayer,
+69,10,test,20,C1,child,,child
+70,10,test,20,C1,child,And like their hands are like down,
+71,10,test,20,C1,parent,Yeah,
+80,10,test,24,C1,child,This is a good one person who looks like um they're uh doing this,
+81,10,test,24,C1,parent,kneeling in prayer? like lying down? Like not even kneeling but like laying down in prayer?,
+82,10,test,24,C1,parent,,parent
+83,10,test,24,C1,child,Yeah,
+122,10,test,38,C1,parent,Uh laying down in prayer,
+123,10,test,38,C1,child,,child
+22,10,test,3,D1,parent,Person who looks like they're laying down with long legs sticking up in the air,
+23,10,test,3,D1,child,,child
+56,10,test,15,D1,child,Person who looks like they're a mom doing yoga,
+57,10,test,15,D1,parent,Oh are they laying down on their tummy?,
+58,10,test,15,D1,child,yeah,
+59,10,test,15,D1,parent,,parent
+95,10,test,29,D1,parent,Person who's laying down with their leg in the air,
+96,10,test,29,D1,child,,child
+115,10,test,35,D1,child,Leg up,
+116,10,test,35,D1,parent,,parent
+117,10,test,35,D1,parent,You're a bit more zzz than that,
+18,10,test,1,E1,parent,Uh press one who looks like they're jumping in the air like this (arms up),
+19,10,test,1,E1,child,,child
+47,10,test,13,E1,child,Person who looks like they're jumping,
+48,10,test,13,E1,parent,,parent
+73,10,test,21,E1,parent,Person who looks like they're jumping like this ah,
+74,10,test,21,E1,child,,child
+105,10,test,31,E1,child,"Person doing this, wee",
+106,10,test,31,E1,parent,,parent
+35,10,test,8,F1,child,Person who looks like they're jumping with one arm up like this,
+36,10,test,8,F1,parent,,parent
+49,10,test,14,F1,parent,Person who is like looks like they're sort of,
+50,10,test,14,F1,child,like this? (gestures),
+51,10,test,14,F1,child,yeah,
+52,10,test,14,F1,child,,child
+53,10,test,14,F1,parent,doing a dab,
+54,10,test,14,F1,child,this (gestures),
+75,10,test,22,F1,child,Person who looks like they're um zzz like this,
+76,10,test,22,F1,parent,,parent
+118,10,test,36,F1,parent,Dabbing,
+119,10,test,36,F1,child,,child
+37,10,test,9,G1,parent,Person who looks like they're sitting in a chair,
+38,10,test,9,G1,child,,child
+43,10,test,11,G1,child,Person who looks like they're sitting down,
+44,10,test,11,G1,parent,,parent
+78,10,test,23,G1,parent,Person who looks like they're sitting in a chair,
+79,10,test,23,G1,child,,child
+109,10,test,33,G1,child,sitting down,
+110,10,test,33,G1,parent,,parent
+20,10,test,2,H1,child,Um a person who looks like they're sitting down,
+21,10,test,2,H1,parent,,parent
+45,10,test,12,H1,parent,Person who looks like they're holding a bowl close to them,
+46,10,test,12,H1,child,,child
+87,10,test,26,H1,child,Um a person who's sitting down holding a bowl of soup,
+88,10,test,26,H1,parent,,parent
+107,10,test,32,H1,parent,Person holding a bowl of soup again,
+108,10,test,32,H1,child,,child
+29,10,test,6,I1,child,Person who's carrying like a bowl or something,
+30,10,test,6,I1,parent,Like a triangle bowl,
+31,10,test,6,I1,child,yeah,
+32,10,test,6,I1,parent,,parent
+60,10,test,16,I1,parent,Person who looks like they're holding the bowl out,
+61,10,test,16,I1,child,,child
+97,10,test,30,I1,child,Um a person with a square head,
+98,10,test,30,I1,parent,mhm,
+99,10,test,30,I1,child,triangle foot,
+100,10,test,30,I1,parent,"mhm, and they're holding a ball?",
+101,10,test,30,I1,child,Holding a triangle.,
+102,10,test,30,I1,parent,,parent
+127,10,test,40,I1,parent,Holding a bowl of soup out,
+128,10,test,40,I1,child,,child
+26,10,test,5,K1,parent,Person who looks like they're sticking their bum out like this,
+27,10,test,5,K1,child,,child
+28,10,test,5,K1,child,zzz I'll remember that,
+62,10,test,17,K1,child,Um uh person who's an zzz sticking their butt out,
+63,10,test,17,K1,parent,,parent
+84,10,test,25,K1,parent,Person who's sticking their butt out again,
+85,10,test,25,K1,child,,child
+86,10,test,25,K1,parent,xxx,
+124,10,test,39,K1,child,Sticking their butt out,
+125,10,test,39,K1,parent,Sticking their butt out oh yeah,
+126,10,test,39,K1,parent,,parent
+13,10,test,,,parent,xxx,
+14,10,test,,,parent,OK press the study to begin when you're ready. do you have a begin on your box?,
+15,10,test,,,child,yeah,
+16,10,test,,,parent,Alright you ready to start,
+17,10,test,,,child,Mhm,
+41,10,test,,,parent,Good job time for the next round,
+42,10,test,,,child,uh huh,
+55,10,test,,,parent,your turn,
+72,10,test,,,parent,Good job it's time for the next round,
+77,10,test,,,child,Person zzz,
+103,10,test,,,parent,Good job time for the next round,
+104,10,test,,,child,Let's go!,
+111,10,test,,,child,not long xxx,
+112,10,test,,,parent,mhm,

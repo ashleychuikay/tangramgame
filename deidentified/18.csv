@@ -1,141 +1,141 @@
-Timeline.ordinal,database_id,subid,type,trial,target,person,utterance,selection
-0,9348,18,practice,1,apple,parent,"i see an apple, can you pick the one.. on yours, look at yours",
-1,9348,18,practice,1,apple,child,,child
-16,9348,18,practice,4,apple,child,xxx,
-17,9348,18,practice,4,apple,parent,banana?,
-18,9348,18,practice,4,apple,parent,,parent
-5,9348,18,practice,2,artichoke,parent,what's it look like?,
-6,9348,18,practice,2,artichoke,child,i don't know,
-7,9348,18,practice,2,artichoke,parent,well just describe it to me,
-8,9348,18,practice,2,artichoke,parent,is it bumpy or smooth?,
-11,9348,18,practice,2,artichoke,child,it's bumpy,
-12,9348,18,practice,2,artichoke,parent,it's bumpy,
-13,9348,18,practice,2,artichoke,parent,,parent
-19,9348,18,practice,5,artichoke,parent,the bumpy one,
-20,9348,18,practice,5,artichoke,child,,child
-14,9348,18,practice,3,onion,parent,i have the one that's smooth,
-15,9348,18,practice,3,onion,child,,child
-22,9348,18,practice,6,onion,child,"um, uh, um",
-23,9348,18,practice,6,onion,parent,can you describe it to me? what does it look like?,
-24,9348,18,practice,6,onion,child,"um, it is a onion",
-25,9348,18,practice,6,onion,parent,,parent
-42,9348,18,test,7,A1,parent,this one looks like they're running,
-43,9348,18,test,7,A1,child,,child
-61,9348,18,test,13,A1,child,this one thinks he is running,
-62,9348,18,test,13,A1,parent,,parent
-89,9348,18,test,23,A1,parent,this one looks like they're skipping,
-90,9348,18,test,23,A1,child,,child
-128,9348,18,test,37,A1,child,this one thinks he's running,
-129,9348,18,test,37,A1,parent,running?,
-130,9348,18,test,37,A1,child,yeah,
-131,9348,18,test,37,A1,parent,,parent
-44,9348,18,test,8,B1,child,"this one means, it is walking",
-45,9348,18,test,8,B1,parent,,parent
-76,9348,18,test,20,B1,parent,"this one looks like he's walking but he's sad, that his head is down",
-77,9348,18,test,20,B1,child,,child
-87,9348,18,test,22,B1,child,this one means he's walking and he's sad,
-88,9348,18,test,22,B1,parent,,parent
-138,9348,18,test,40,B1,parent,this one looks like they're walking slowly and sad,
-139,9348,18,test,40,B1,child,,child
-31,9348,18,test,2,C1,child,"um, sitting",
-32,9348,18,test,2,C1,parent,,parent
-63,9348,18,test,14,C1,parent,this one looks like they're bending down,
-64,9348,18,test,14,C1,child,,child
-106,9348,18,test,28,C1,child,this one thinks he's bending down,
-107,9348,18,test,28,C1,parent,,parent
-118,9348,18,test,32,C1,parent,this one looks like they're kneeling on the floor,
-119,9348,18,test,32,C1,child,,child
-40,9348,18,test,6,D1,child,"this one means he is, he is falling down",
-41,9348,18,test,6,D1,parent,,parent
-67,9348,18,test,16,D1,parent,this one looks like he's laying on the ground,
-68,9348,18,test,16,D1,child,,child
-110,9348,18,test,30,D1,child,this one thinks he's laying down,
-111,9348,18,test,30,D1,parent,,parent
-126,9348,18,test,36,D1,parent,this one looks like he's laying on the floor reading a book,
-127,9348,18,test,36,D1,child,,child
-38,9348,18,test,5,E1,parent,"this one looks like, um, they're jumping in the air",
-39,9348,18,test,5,E1,child,,child
-65,9348,18,test,15,E1,child,this one means he's jumping,
-66,9348,18,test,15,E1,parent,,parent
-108,9348,18,test,29,E1,parent,"hm, this one looks like they're jumping in the air",
-109,9348,18,test,29,E1,child,,child
-114,9348,18,test,31,E1,child,"uh, jump",
-115,9348,18,test,31,E1,parent,jumping?,
-116,9348,18,test,31,E1,child,yeah,
-117,9348,18,test,31,E1,parent,,parent
-33,9348,18,test,3,F1,parent,this person looks like they've got their hands in the air,
-34,9348,18,test,3,F1,child,,child
-69,9348,18,test,17,F1,child,this one thinks he's running and chewing something,
-70,9348,18,test,17,F1,parent,cool,
-71,9348,18,test,17,F1,parent,,parent
-94,9348,18,test,25,F1,parent,"this one looks like their legs are split, and they're holding something up in the air",
-95,9348,18,test,25,F1,child,"this one, or this one?",
-96,9348,18,test,25,F1,parent,you pick the one you think I'm telling you,
-97,9348,18,test,25,F1,child,,child
-120,9348,18,test,33,F1,child,"this one thinks he's running, and holding stuff in the air",
-121,9348,18,test,33,F1,parent,,parent
-26,9348,18,test,1,G1,parent,this looks like a person sitting. pick the one that's like a person sitting,
-27,9348,18,test,1,G1,child,this one?,
-28,9348,18,test,1,G1,parent,pick it!,
-29,9348,18,test,1,G1,child,,child
-74,9348,18,test,19,G1,child,this one thinks he's just standing and wait,
-75,9348,18,test,19,G1,parent,,parent
-104,9348,18,test,27,G1,parent,this one looks like they're sitting in a chair,
-105,9348,18,test,27,G1,child,,child
-134,9348,18,test,39,G1,child,"this thinks he is standing and, he, I think this one is sitting",
-135,9348,18,test,39,G1,parent,sitting?,
-136,9348,18,test,39,G1,child,yeah,
-137,9348,18,test,39,G1,parent,,parent
-46,9348,18,test,9,H1,parent,this one looks like he's sitting reading a book,
-47,9348,18,test,9,H1,child,,child
-55,9348,18,test,11,H1,child,it looks like he's standing reading a book again,
-56,9348,18,test,11,H1,parent,,parent
-84,9348,18,test,21,H1,parent,this one looks like standing holding something,
-85,9348,18,test,21,H1,child,,child
-124,9348,18,test,35,H1,child,he looks like he is standing,
-125,9348,18,test,35,H1,parent,,parent
-49,9348,18,test,10,I1,child,um this one's standing and reading a book,
-50,9348,18,test,10,I1,parent,,parent
-57,9348,18,test,12,I1,parent,"this one looks like they're holding a plate, or a bowl",
-58,9348,18,test,12,I1,child,this one?,
-59,9348,18,test,12,I1,child,,child
-60,9348,18,test,12,I1,parent,"standing and holding, yep",
-91,9348,18,test,24,I1,child,look like he's standing and not doing nothing,
-92,9348,18,test,24,I1,parent,,parent
-132,9348,18,test,38,I1,parent,this one looks like they're holding a bowl,
-133,9348,18,test,38,I1,child,,child
-36,9348,18,test,4,K1,child,"like, like putting one arm up",
-37,9348,18,test,4,K1,parent,,parent
-72,9348,18,test,18,K1,parent,this one looks like they're standing up and leaning over,
-73,9348,18,test,18,K1,child,,child
-101,9348,18,test,26,K1,child,it looks like he is standing and bending,
-102,9348,18,test,26,K1,parent,standing and bending?,
-103,9348,18,test,26,K1,parent,,parent
-122,9348,18,test,34,K1,parent,this one looks like leaning over a counter,
-123,9348,18,test,34,K1,child,,child
-2,9348,18,test,,,parent,"no, you just look at yours, do you have a blue box?",
-3,9348,18,test,,,child,yeah,
-4,9348,18,test,,,parent,what's in the blue box?,
-9,9348,18,test,,,parent,put the ipad down,
-10,9348,18,test,,,parent,you have to tell me with your words,
-21,9348,18,test,,,parent,wait until i tell you if you don't have a blue box,
-30,9348,18,test,,,parent,know you tell me which one,
-35,9348,18,test,,,parent,what does yours look like?,
-48,9348,18,test,,,parent,ok tell me,
-51,9348,18,test,,,parent,ready for the next round,
-52,9348,18,test,,,parent,blue box?,
-53,9348,18,test,,,child,yeah,
-54,9348,18,test,,,parent,okay tell me,
-78,9348,18,test,,,parent,"alright, it says good job. wanna keep going?",
-79,9348,18,test,,,child,uh-uh,
-80,9348,18,test,,,parent,let's do a couple more,
-81,9348,18,test,,,child,why?,
-82,9348,18,test,,,parent,it will be fast,
-83,9348,18,test,,,child,one more?,
-86,9348,18,test,,,parent,you tell me,
-93,9348,18,test,,,parent,it's my turn,
-98,9348,18,test,,,parent,you tell me what's in your blue box,
-99,9348,18,test,,,child,um,
-100,9348,18,test,,,parent,what does it look like?,
-112,9348,18,test,,,parent,good job!,
-113,9348,18,test,,,parent,whatcha got?,
+Timeline.ordinal,subid,type,trial,target,person,utterance,selection
+0,18,practice,1,apple,parent,"i see an apple, can you pick the one.. on yours, look at yours",
+1,18,practice,1,apple,child,,child
+16,18,practice,4,apple,child,xxx,
+17,18,practice,4,apple,parent,banana?,
+18,18,practice,4,apple,parent,,parent
+5,18,practice,2,artichoke,parent,what's it look like?,
+6,18,practice,2,artichoke,child,i don't know,
+7,18,practice,2,artichoke,parent,well just describe it to me,
+8,18,practice,2,artichoke,parent,is it bumpy or smooth?,
+11,18,practice,2,artichoke,child,it's bumpy,
+12,18,practice,2,artichoke,parent,it's bumpy,
+13,18,practice,2,artichoke,parent,,parent
+19,18,practice,5,artichoke,parent,the bumpy one,
+20,18,practice,5,artichoke,child,,child
+14,18,practice,3,onion,parent,i have the one that's smooth,
+15,18,practice,3,onion,child,,child
+22,18,practice,6,onion,child,"um, uh, um",
+23,18,practice,6,onion,parent,can you describe it to me? what does it look like?,
+24,18,practice,6,onion,child,"um, it is a onion",
+25,18,practice,6,onion,parent,,parent
+42,18,test,7,A1,parent,this one looks like they're running,
+43,18,test,7,A1,child,,child
+61,18,test,13,A1,child,this one thinks he is running,
+62,18,test,13,A1,parent,,parent
+89,18,test,23,A1,parent,this one looks like they're skipping,
+90,18,test,23,A1,child,,child
+128,18,test,37,A1,child,this one thinks he's running,
+129,18,test,37,A1,parent,running?,
+130,18,test,37,A1,child,yeah,
+131,18,test,37,A1,parent,,parent
+44,18,test,8,B1,child,"this one means, it is walking",
+45,18,test,8,B1,parent,,parent
+76,18,test,20,B1,parent,"this one looks like he's walking but he's sad, that his head is down",
+77,18,test,20,B1,child,,child
+87,18,test,22,B1,child,this one means he's walking and he's sad,
+88,18,test,22,B1,parent,,parent
+138,18,test,40,B1,parent,this one looks like they're walking slowly and sad,
+139,18,test,40,B1,child,,child
+31,18,test,2,C1,child,"um, sitting",
+32,18,test,2,C1,parent,,parent
+63,18,test,14,C1,parent,this one looks like they're bending down,
+64,18,test,14,C1,child,,child
+106,18,test,28,C1,child,this one thinks he's bending down,
+107,18,test,28,C1,parent,,parent
+118,18,test,32,C1,parent,this one looks like they're kneeling on the floor,
+119,18,test,32,C1,child,,child
+40,18,test,6,D1,child,"this one means he is, he is falling down",
+41,18,test,6,D1,parent,,parent
+67,18,test,16,D1,parent,this one looks like he's laying on the ground,
+68,18,test,16,D1,child,,child
+110,18,test,30,D1,child,this one thinks he's laying down,
+111,18,test,30,D1,parent,,parent
+126,18,test,36,D1,parent,this one looks like he's laying on the floor reading a book,
+127,18,test,36,D1,child,,child
+38,18,test,5,E1,parent,"this one looks like, um, they're jumping in the air",
+39,18,test,5,E1,child,,child
+65,18,test,15,E1,child,this one means he's jumping,
+66,18,test,15,E1,parent,,parent
+108,18,test,29,E1,parent,"hm, this one looks like they're jumping in the air",
+109,18,test,29,E1,child,,child
+114,18,test,31,E1,child,"uh, jump",
+115,18,test,31,E1,parent,jumping?,
+116,18,test,31,E1,child,yeah,
+117,18,test,31,E1,parent,,parent
+33,18,test,3,F1,parent,this person looks like they've got their hands in the air,
+34,18,test,3,F1,child,,child
+69,18,test,17,F1,child,this one thinks he's running and chewing something,
+70,18,test,17,F1,parent,cool,
+71,18,test,17,F1,parent,,parent
+94,18,test,25,F1,parent,"this one looks like their legs are split, and they're holding something up in the air",
+95,18,test,25,F1,child,"this one, or this one?",
+96,18,test,25,F1,parent,you pick the one you think I'm telling you,
+97,18,test,25,F1,child,,child
+120,18,test,33,F1,child,"this one thinks he's running, and holding stuff in the air",
+121,18,test,33,F1,parent,,parent
+26,18,test,1,G1,parent,this looks like a person sitting. pick the one that's like a person sitting,
+27,18,test,1,G1,child,this one?,
+28,18,test,1,G1,parent,pick it!,
+29,18,test,1,G1,child,,child
+74,18,test,19,G1,child,this one thinks he's just standing and wait,
+75,18,test,19,G1,parent,,parent
+104,18,test,27,G1,parent,this one looks like they're sitting in a chair,
+105,18,test,27,G1,child,,child
+134,18,test,39,G1,child,"this thinks he is standing and, he, I think this one is sitting",
+135,18,test,39,G1,parent,sitting?,
+136,18,test,39,G1,child,yeah,
+137,18,test,39,G1,parent,,parent
+46,18,test,9,H1,parent,this one looks like he's sitting reading a book,
+47,18,test,9,H1,child,,child
+55,18,test,11,H1,child,it looks like he's standing reading a book again,
+56,18,test,11,H1,parent,,parent
+84,18,test,21,H1,parent,this one looks like standing holding something,
+85,18,test,21,H1,child,,child
+124,18,test,35,H1,child,he looks like he is standing,
+125,18,test,35,H1,parent,,parent
+49,18,test,10,I1,child,um this one's standing and reading a book,
+50,18,test,10,I1,parent,,parent
+57,18,test,12,I1,parent,"this one looks like they're holding a plate, or a bowl",
+58,18,test,12,I1,child,this one?,
+59,18,test,12,I1,child,,child
+60,18,test,12,I1,parent,"standing and holding, yep",
+91,18,test,24,I1,child,look like he's standing and not doing nothing,
+92,18,test,24,I1,parent,,parent
+132,18,test,38,I1,parent,this one looks like they're holding a bowl,
+133,18,test,38,I1,child,,child
+36,18,test,4,K1,child,"like, like putting one arm up",
+37,18,test,4,K1,parent,,parent
+72,18,test,18,K1,parent,this one looks like they're standing up and leaning over,
+73,18,test,18,K1,child,,child
+101,18,test,26,K1,child,it looks like he is standing and bending,
+102,18,test,26,K1,parent,standing and bending?,
+103,18,test,26,K1,parent,,parent
+122,18,test,34,K1,parent,this one looks like leaning over a counter,
+123,18,test,34,K1,child,,child
+2,18,test,,,parent,"no, you just look at yours, do you have a blue box?",
+3,18,test,,,child,yeah,
+4,18,test,,,parent,what's in the blue box?,
+9,18,test,,,parent,put the ipad down,
+10,18,test,,,parent,you have to tell me with your words,
+21,18,test,,,parent,wait until i tell you if you don't have a blue box,
+30,18,test,,,parent,know you tell me which one,
+35,18,test,,,parent,what does yours look like?,
+48,18,test,,,parent,ok tell me,
+51,18,test,,,parent,ready for the next round,
+52,18,test,,,parent,blue box?,
+53,18,test,,,child,yeah,
+54,18,test,,,parent,okay tell me,
+78,18,test,,,parent,"alright, it says good job. wanna keep going?",
+79,18,test,,,child,uh-uh,
+80,18,test,,,parent,let's do a couple more,
+81,18,test,,,child,why?,
+82,18,test,,,parent,it will be fast,
+83,18,test,,,child,one more?,
+86,18,test,,,parent,you tell me,
+93,18,test,,,parent,it's my turn,
+98,18,test,,,parent,you tell me what's in your blue box,
+99,18,test,,,child,um,
+100,18,test,,,parent,what does it look like?,
+112,18,test,,,parent,good job!,
+113,18,test,,,parent,whatcha got?,

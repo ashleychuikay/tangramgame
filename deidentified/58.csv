@@ -1,128 +1,128 @@
-Timeline.ordinal,database_id,subid,type,trial,target,person,utterance,selection
-0,8631,58,practice,1,apple,parent,I have the blue box. Do you have a blue box?,
-1,8631,58,practice,1,apple,child,no,
-2,8631,58,practice,1,apple,parent,okay so my blue box there's something that's usually red and has a leaf on top of it,
-3,8631,58,practice,1,apple,child,an apple!,
-21,8631,58,practice,4,apple,child,it is red and it has a stem,
-22,8631,58,practice,4,apple,parent,I think it's the apple,
-23,8631,58,practice,4,apple,parent,,parent
-7,8631,58,practice,2,artichoke,parent,"okay, now you have the blue box, right?",
-8,8631,58,practice,2,artichoke,child,yeah,
-9,8631,58,practice,2,artichoke,child,it has like a shape like this,
-10,8631,58,practice,2,artichoke,parent,you have to use your words,
-11,8631,58,practice,2,artichoke,child,it shapes like a circle and a square at the bottom,
-12,8631,58,practice,2,artichoke,parent,does it have hair coming out of it a little bit?,
-13,8631,58,practice,2,artichoke,child,there's little circles on the top,
-14,8631,58,practice,2,artichoke,parent,okay I'm thinking it's the artichoke,
-15,8631,58,practice,2,artichoke,parent,,parent
-24,8631,58,practice,5,artichoke,parent,"so my box has it's kind of a circle, but it looks like it has leaves on it",
-25,8631,58,practice,5,artichoke,child,apple? We all have the same picture?,
-26,8631,58,practice,5,artichoke,parent,which one looks like it kind of has leaves on it,
-27,8631,58,practice,5,artichoke,child,,child
-28,8631,58,practice,5,artichoke,child,artichoke!,
-16,8631,58,practice,3,onion,parent,"my blue box is circle with a top and a bottom piece coming out of it, and it's pink in the bottom",
-17,8631,58,practice,3,onion,child,I know what is is but I don't know the name,
-18,8631,58,practice,3,onion,parent,it's okay you can touch it,
-19,8631,58,practice,3,onion,child,,child
-20,8631,58,practice,3,onion,parent,it's an onion,
-29,8631,58,practice,6,onion,child,it's something round and it looks like it has a paint brush,
-30,8631,58,practice,6,onion,parent,,parent
-31,8631,58,practice,6,onion,parent,it's an onion,
-51,8631,58,test,8,A1,child,it looks like a guy that's running and he has his foot up,
-52,8631,58,test,8,A1,parent,,parent
-64,8631,58,test,14,A1,parent,this looks like somebody running,
-65,8631,58,test,14,A1,child,,child
-99,8631,58,test,28,A1,child,it looks like a guy jogging,
-100,8631,58,test,28,A1,parent,,parent
-126,8631,58,test,40,A1,parent,this looks like somebody walking down the street snapping their fingers,
-127,8631,58,test,40,A1,child,,child
-53,8631,58,test,9,B1,parent,my box looks like a person that's walking with their hands in the pockets with their head down,
-54,8631,58,test,9,B1,child,that's so easy,
-55,8631,58,test,9,B1,child,,child
-74,8631,58,test,19,B1,child,it looks like a guy with his head down and his hands in his pocket,
-75,8631,58,test,19,B1,parent,that sounds exactly like what I said,
-76,8631,58,test,19,B1,parent,,parent
-85,8631,58,test,21,B1,parent,somebody walking down the street,
-86,8631,58,test,21,B1,child,,child
-106,8631,58,test,31,B1,child,it looks like a butler holding something just kidding,
-107,8631,58,test,31,B1,parent,is it the opposite of the butler holding something?,
-108,8631,58,test,31,B1,child,someone putting their hands in the pockets,
-109,8631,58,test,31,B1,parent,,parent
-43,8631,58,test,5,C1,parent,my box looks like somebody kneeling kind of,
-44,8631,58,test,5,C1,child,he's like bowing,
-45,8631,58,test,5,C1,parent,pick the picture,
-46,8631,58,test,5,C1,child,,child
-58,8631,58,test,11,C1,child,it looks like a guy kneeling down and bowing,
-59,8631,58,test,11,C1,parent,,parent
-93,8631,58,test,25,C1,parent,looks like somebody bowing..on the ground,
-94,8631,58,test,25,C1,child,,child
-116,8631,58,test,35,C1,child,looks like a guy with his head down on the ground,
-117,8631,58,test,35,C1,parent,,parent
-56,8631,58,test,10,D1,child,"it looks like a boat, but it looks like a guy",
-57,8631,58,test,10,D1,parent,,parent
-68,8631,58,test,16,D1,parent,this looks like somebody flying an airplane,
-69,8631,58,test,16,D1,child,,child
-87,8631,58,test,22,D1,child,somebody driving an airplane,
-88,8631,58,test,22,D1,child,,child
-110,8631,58,test,32,D1,parent,that looks like somebody on a boat,
-111,8631,58,test,32,D1,child,,child
-38,8631,58,test,3,E1,parent,my box looks like somebody that has no arms that's jumping in the air,
-39,8631,58,test,3,E1,child,i know what that it,
-40,8631,58,test,3,E1,child,,child
-70,8631,58,test,17,E1,child,it looks like a dad jumping,
-71,8631,58,test,17,E1,parent,,parent
-97,8631,58,test,27,E1,parent,jumping for joy,
-98,8631,58,test,27,E1,child,,child
-112,8631,58,test,33,E1,child,it looks like a guy jumping for joy,
-113,8631,58,test,33,E1,parent,,parent
-35,8631,58,test,2,F1,child,it's a guy looks like a square sticking out of his head,
-36,8631,58,test,2,F1,parent,i think it's this one,
-37,8631,58,test,2,F1,parent,,parent
-77,8631,58,test,20,F1,parent,"this box looks like...somebody... I don't know…somebody like, it looks like an old woman in a dress jumping",
-78,8631,58,test,20,F1,child,that's not on here,
-79,8631,58,test,20,F1,parent,it's on your screen I don't know how to describe it,
-80,8631,58,test,20,F1,child,,child
-81,8631,58,test,20,F1,child,was it the guy sitting,
-82,8631,58,test,20,F1,parent,"maybe, okay.",
-103,8631,58,test,30,F1,child,looks like a guy and he's running from a scary monster,
-104,8631,58,test,30,F1,parent,ooh I like that!,
-105,8631,58,test,30,F1,parent,,parent
-114,8631,58,test,34,F1,parent,it looks like a crazy chicken,
-115,8631,58,test,34,F1,child,,child
-49,8631,58,test,7,G1,parent,this box kind of looks like somebody's sitting or kneeling,
-50,8631,58,test,7,G1,child,,child
-62,8631,58,test,13,G1,child,it looks like a guy his head down and he has a traingle for his arms,
-63,8631,58,test,13,G1,parent,,parent
-89,8631,58,test,23,G1,parent,someone kneeling on a box,
-90,8631,58,test,23,G1,child,,child
-120,8631,58,test,37,G1,child,it looks like a guy like playing on their phone or something,
-121,8631,58,test,37,G1,parent,,parent
-41,8631,58,test,4,H1,child,mine looks like somebody holding.. it looks like a square and kind of a triangle shape mixed with a rectangle,
-42,8631,58,test,4,H1,parent,,parent
-72,8631,58,test,18,H1,parent,this looks like somebody holding..,
-73,8631,58,test,18,H1,child,,child
-95,8631,58,test,26,H1,child,it's a guy moving something,
-96,8631,58,test,26,H1,parent,,parent
-122,8631,58,test,38,H1,parent,this looks like somebody holding a tray,
-123,8631,58,test,38,H1,child,,child
-32,8631,58,test,1,I1,parent,okay now I have the box. my box looks like somebody holding something,
-33,8631,58,test,1,I1,child,"it's easy, a guy holding a triangle",
-34,8631,58,test,1,I1,child,,child
-66,8631,58,test,15,I1,child,it looks like a guy moving something,
-67,8631,58,test,15,I1,parent,,parent
-101,8631,58,test,29,I1,parent,this one looks like a butler serving something,
-102,8631,58,test,29,I1,child,,child
-124,8631,58,test,39,I1,child,it looks like a guy he's like bending his arm,
-125,8631,58,test,39,I1,parent,,parent
-47,8631,58,test,6,K1,child,it's a thing that looks like it has a tail and a triangle on its head,
-48,8631,58,test,6,K1,parent,,parent
-60,8631,58,test,12,K1,parent,this box kind of looks like a dog on its hind legs,
-91,8631,58,test,24,K1,child,it looks like a dog,
-92,8631,58,test,24,K1,parent,,parent
-118,8631,58,test,36,K1,parent,this looks like a frankie with a tail in a party,
-119,8631,58,test,36,K1,child,,child
-4,8631,58,test,,,child,i have the same picture as you,
-5,8631,58,test,,,parent,you do?,
-6,8631,58,test,,,parent,"okay, touch it",
-83,8631,58,test,,,parent,my box...,
-84,8631,58,test,,,child,"wait you just had your box, then that means I got it wrong",
+Timeline.ordinal,subid,type,trial,target,person,utterance,selection
+0,58,practice,1,apple,parent,I have the blue box. Do you have a blue box?,
+1,58,practice,1,apple,child,no,
+2,58,practice,1,apple,parent,okay so my blue box there's something that's usually red and has a leaf on top of it,
+3,58,practice,1,apple,child,an apple!,
+21,58,practice,4,apple,child,it is red and it has a stem,
+22,58,practice,4,apple,parent,I think it's the apple,
+23,58,practice,4,apple,parent,,parent
+7,58,practice,2,artichoke,parent,"okay, now you have the blue box, right?",
+8,58,practice,2,artichoke,child,yeah,
+9,58,practice,2,artichoke,child,it has like a shape like this,
+10,58,practice,2,artichoke,parent,you have to use your words,
+11,58,practice,2,artichoke,child,it shapes like a circle and a square at the bottom,
+12,58,practice,2,artichoke,parent,does it have hair coming out of it a little bit?,
+13,58,practice,2,artichoke,child,there's little circles on the top,
+14,58,practice,2,artichoke,parent,okay I'm thinking it's the artichoke,
+15,58,practice,2,artichoke,parent,,parent
+24,58,practice,5,artichoke,parent,"so my box has it's kind of a circle, but it looks like it has leaves on it",
+25,58,practice,5,artichoke,child,apple? We all have the same picture?,
+26,58,practice,5,artichoke,parent,which one looks like it kind of has leaves on it,
+27,58,practice,5,artichoke,child,,child
+28,58,practice,5,artichoke,child,artichoke!,
+16,58,practice,3,onion,parent,"my blue box is circle with a top and a bottom piece coming out of it, and it's pink in the bottom",
+17,58,practice,3,onion,child,I know what is is but I don't know the name,
+18,58,practice,3,onion,parent,it's okay you can touch it,
+19,58,practice,3,onion,child,,child
+20,58,practice,3,onion,parent,it's an onion,
+29,58,practice,6,onion,child,it's something round and it looks like it has a paint brush,
+30,58,practice,6,onion,parent,,parent
+31,58,practice,6,onion,parent,it's an onion,
+51,58,test,8,A1,child,it looks like a guy that's running and he has his foot up,
+52,58,test,8,A1,parent,,parent
+64,58,test,14,A1,parent,this looks like somebody running,
+65,58,test,14,A1,child,,child
+99,58,test,28,A1,child,it looks like a guy jogging,
+100,58,test,28,A1,parent,,parent
+126,58,test,40,A1,parent,this looks like somebody walking down the street snapping their fingers,
+127,58,test,40,A1,child,,child
+53,58,test,9,B1,parent,my box looks like a person that's walking with their hands in the pockets with their head down,
+54,58,test,9,B1,child,that's so easy,
+55,58,test,9,B1,child,,child
+74,58,test,19,B1,child,it looks like a guy with his head down and his hands in his pocket,
+75,58,test,19,B1,parent,that sounds exactly like what I said,
+76,58,test,19,B1,parent,,parent
+85,58,test,21,B1,parent,somebody walking down the street,
+86,58,test,21,B1,child,,child
+106,58,test,31,B1,child,it looks like a butler holding something just kidding,
+107,58,test,31,B1,parent,is it the opposite of the butler holding something?,
+108,58,test,31,B1,child,someone putting their hands in the pockets,
+109,58,test,31,B1,parent,,parent
+43,58,test,5,C1,parent,my box looks like somebody kneeling kind of,
+44,58,test,5,C1,child,he's like bowing,
+45,58,test,5,C1,parent,pick the picture,
+46,58,test,5,C1,child,,child
+58,58,test,11,C1,child,it looks like a guy kneeling down and bowing,
+59,58,test,11,C1,parent,,parent
+93,58,test,25,C1,parent,looks like somebody bowing..on the ground,
+94,58,test,25,C1,child,,child
+116,58,test,35,C1,child,looks like a guy with his head down on the ground,
+117,58,test,35,C1,parent,,parent
+56,58,test,10,D1,child,"it looks like a boat, but it looks like a guy",
+57,58,test,10,D1,parent,,parent
+68,58,test,16,D1,parent,this looks like somebody flying an airplane,
+69,58,test,16,D1,child,,child
+87,58,test,22,D1,child,somebody driving an airplane,
+88,58,test,22,D1,child,,child
+110,58,test,32,D1,parent,that looks like somebody on a boat,
+111,58,test,32,D1,child,,child
+38,58,test,3,E1,parent,my box looks like somebody that has no arms that's jumping in the air,
+39,58,test,3,E1,child,i know what that it,
+40,58,test,3,E1,child,,child
+70,58,test,17,E1,child,it looks like a dad jumping,
+71,58,test,17,E1,parent,,parent
+97,58,test,27,E1,parent,jumping for joy,
+98,58,test,27,E1,child,,child
+112,58,test,33,E1,child,it looks like a guy jumping for joy,
+113,58,test,33,E1,parent,,parent
+35,58,test,2,F1,child,it's a guy looks like a square sticking out of his head,
+36,58,test,2,F1,parent,i think it's this one,
+37,58,test,2,F1,parent,,parent
+77,58,test,20,F1,parent,"this box looks like...somebody... I don't know…somebody like, it looks like an old woman in a dress jumping",
+78,58,test,20,F1,child,that's not on here,
+79,58,test,20,F1,parent,it's on your screen I don't know how to describe it,
+80,58,test,20,F1,child,,child
+81,58,test,20,F1,child,was it the guy sitting,
+82,58,test,20,F1,parent,"maybe, okay.",
+103,58,test,30,F1,child,looks like a guy and he's running from a scary monster,
+104,58,test,30,F1,parent,ooh I like that!,
+105,58,test,30,F1,parent,,parent
+114,58,test,34,F1,parent,it looks like a crazy chicken,
+115,58,test,34,F1,child,,child
+49,58,test,7,G1,parent,this box kind of looks like somebody's sitting or kneeling,
+50,58,test,7,G1,child,,child
+62,58,test,13,G1,child,it looks like a guy his head down and he has a traingle for his arms,
+63,58,test,13,G1,parent,,parent
+89,58,test,23,G1,parent,someone kneeling on a box,
+90,58,test,23,G1,child,,child
+120,58,test,37,G1,child,it looks like a guy like playing on their phone or something,
+121,58,test,37,G1,parent,,parent
+41,58,test,4,H1,child,mine looks like somebody holding.. it looks like a square and kind of a triangle shape mixed with a rectangle,
+42,58,test,4,H1,parent,,parent
+72,58,test,18,H1,parent,this looks like somebody holding..,
+73,58,test,18,H1,child,,child
+95,58,test,26,H1,child,it's a guy moving something,
+96,58,test,26,H1,parent,,parent
+122,58,test,38,H1,parent,this looks like somebody holding a tray,
+123,58,test,38,H1,child,,child
+32,58,test,1,I1,parent,okay now I have the box. my box looks like somebody holding something,
+33,58,test,1,I1,child,"it's easy, a guy holding a triangle",
+34,58,test,1,I1,child,,child
+66,58,test,15,I1,child,it looks like a guy moving something,
+67,58,test,15,I1,parent,,parent
+101,58,test,29,I1,parent,this one looks like a butler serving something,
+102,58,test,29,I1,child,,child
+124,58,test,39,I1,child,it looks like a guy he's like bending his arm,
+125,58,test,39,I1,parent,,parent
+47,58,test,6,K1,child,it's a thing that looks like it has a tail and a triangle on its head,
+48,58,test,6,K1,parent,,parent
+60,58,test,12,K1,parent,this box kind of looks like a dog on its hind legs,
+91,58,test,24,K1,child,it looks like a dog,
+92,58,test,24,K1,parent,,parent
+118,58,test,36,K1,parent,this looks like a frankie with a tail in a party,
+119,58,test,36,K1,child,,child
+4,58,test,,,child,i have the same picture as you,
+5,58,test,,,parent,you do?,
+6,58,test,,,parent,"okay, touch it",
+83,58,test,,,parent,my box...,
+84,58,test,,,child,"wait you just had your box, then that means I got it wrong",

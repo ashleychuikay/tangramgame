@@ -1,121 +1,121 @@
-Timeline.ordinal,database_id,subid,type,trial,target,person,utterance,selection
-0,7912,43,practice,1,apple,parent,It's an apple,
-2,7912,43,practice,1,apple,child,,child
-9,7912,43,practice,4,apple,child,It has a leaf,
-10,7912,43,practice,4,apple,parent,,parent
-3,7912,43,practice,2,artichoke,child,It's spikey,
-4,7912,43,practice,2,artichoke,parent,,parent
-11,7912,43,practice,5,artichoke,parent,It's spikey,
-12,7912,43,practice,5,artichoke,child,,child
-6,7912,43,practice,3,onion,parent,It's I think it's an onion or a garlic it's a bulb it's not,
-7,7912,43,practice,3,onion,child,,child
-8,7912,43,practice,3,onion,parent,spikey,
-13,7912,43,practice,6,onion,child,It has lines,
-14,7912,43,practice,6,onion,parent,,parent
-26,7912,43,test,3,A1,parent,It is a person facing away with one leg up,
-27,7912,43,test,3,A1,child,,child
-44,7912,43,test,11,A1,child,Walking on one foot,
-45,7912,43,test,11,A1,parent,,parent
-89,7912,43,test,29,A1,parent,One leg up looks like not does not have a bowl,
-90,7912,43,test,29,A1,child,,child
-98,7912,43,test,33,A1,child,Running and playing,
-99,7912,43,test,33,A1,parent,Running and playing,
-100,7912,43,test,33,A1,child,Running,
-101,7912,43,test,33,A1,parent,,parent
-28,7912,43,test,4,B1,child,It is walking slowly with his head down,
-29,7912,43,test,4,B1,parent,,parent
-55,7912,43,test,16,B1,parent,Walking looking,
-56,7912,43,test,16,B1,child,,child
-91,7912,43,test,30,B1,child,Walking with head down,
-92,7912,43,test,30,B1,parent,,parent
-110,7912,43,test,36,B1,parent,Walking,
-111,7912,43,test,36,B1,child,,child
-34,7912,43,test,7,C1,parent,Um it's like leaning over like leapfrog,
-35,7912,43,test,7,C1,child,,child
-58,7912,43,test,17,C1,child,Bending over,
-59,7912,43,test,17,C1,parent,,parent
-70,7912,43,test,21,C1,parent,Leaned over leapfrog,
-71,7912,43,test,21,C1,child,,child
-112,7912,43,test,37,C1,child,Leapfrog,
-113,7912,43,test,37,C1,parent,,parent
-30,7912,43,test,5,D1,parent,It's lying down,
-31,7912,43,test,5,D1,child,,child
-49,7912,43,test,13,D1,child,Swinging,
-50,7912,43,test,13,D1,parent,,parent
-79,7912,43,test,25,D1,parent,Swimming,
-80,7912,43,test,25,D1,child,,child
-116,7912,43,test,39,D1,child,Swimming,
-117,7912,43,test,39,D1,parent,,parent
-36,7912,43,test,8,E1,child,It is jumping up,
-37,7912,43,test,8,E1,parent,,parent
-47,7912,43,test,12,E1,parent,Jumping two feet out,
-48,7912,43,test,12,E1,child,,child
-77,7912,43,test,24,E1,child,Jumping up,
-78,7912,43,test,24,E1,parent,,parent
-118,7912,43,test,40,E1,parent,Jumping up with arms out,
-119,7912,43,test,40,E1,child,,child
-39,7912,43,test,9,F1,parent,It has legs spread out and hands pointing up,
-40,7912,43,test,9,F1,child,,child
-53,7912,43,test,15,F1,child,Arms up,
-54,7912,43,test,15,F1,parent,,parent
-75,7912,43,test,23,F1,parent,Arms point out too are legs far apart,
-76,7912,43,test,23,F1,child,,child
-93,7912,43,test,31,F1,child,Um legs far apart,
-94,7912,43,test,31,F1,parent,,parent
-32,7912,43,test,6,G1,child,It has it is standing up,
-33,7912,43,test,6,G1,parent,,parent
-68,7912,43,test,20,G1,parent,Looks like he's kneeling,
-69,7912,43,test,20,G1,child,,child
-72,7912,43,test,22,G1,child,Standing up,
-73,7912,43,test,22,G1,child,Not jumping,
-74,7912,43,test,22,G1,parent,,parent
-95,7912,43,test,32,G1,parent,Kneeling,
-96,7912,43,test,32,G1,parent,Not the not not leapfrog,
-97,7912,43,test,32,G1,child,,child
-20,7912,43,test,1,H1,parent,OK it looks like a person standing up,
-21,7912,43,test,1,H1,child,,child
-63,7912,43,test,19,H1,child,Arms out,
-64,7912,43,test,19,H1,child,Looks,
-65,7912,43,test,19,H1,parent,With,
-66,7912,43,test,19,H1,child,Looks like um only has one leg,
-67,7912,43,test,19,H1,parent,,parent
-85,7912,43,test,27,H1,parent,Um not swimming,
-86,7912,43,test,27,H1,child,,child
-104,7912,43,test,35,H1,child,Arms out,
-105,7912,43,test,35,H1,parent,Jumping,
-106,7912,43,test,35,H1,child,No,
-107,7912,43,test,35,H1,parent,Just standing,
-108,7912,43,test,35,H1,child,Yeah,
-109,7912,43,test,35,H1,parent,,parent
-41,7912,43,test,10,I1,child,He is holding something,
-42,7912,43,test,10,I1,parent,,parent
-51,7912,43,test,14,I1,parent,Holding something,
-52,7912,43,test,14,I1,child,,child
-81,7912,43,test,26,I1,child,Bowl,
-82,7912,43,test,26,I1,parent,Holding a bowl,
-83,7912,43,test,26,I1,child,Yeah,
-84,7912,43,test,26,I1,parent,,parent
-102,7912,43,test,34,I1,parent,Bowl,
-103,7912,43,test,34,I1,child,,child
-22,7912,43,test,2,K1,child,It is praying,
-23,7912,43,test,2,K1,parent,Praying,
-24,7912,43,test,2,K1,parent,,parent
-25,7912,43,test,2,K1,child,It is bending over,
-61,7912,43,test,18,K1,parent,Hands straight out looks like he has a tail,
-62,7912,43,test,18,K1,child,,child
-87,7912,43,test,28,K1,child,Looks like it has a tail,
-88,7912,43,test,28,K1,parent,,parent
-114,7912,43,test,38,K1,parent,Standing with the tail,
-115,7912,43,test,38,K1,child,,child
-1,7912,43,test,,,child,I think you're supposed to describe it,
-5,7912,43,test,,,parent,It's um like a,
-15,7912,43,test,,,child,Now I am,
-16,7912,43,test,,,parent,Mhm,
-17,7912,43,test,,,parent,OK now we press begin,
-18,7912,43,test,,,child,I want to begin pressing,
-19,7912,43,test,,,parent,Oh OK,
-38,7912,43,test,,,parent,Um,
-43,7912,43,test,,,child,Next round,
-46,7912,43,test,,,parent,Um,
-57,7912,43,test,,,parent,Yeah,
-60,7912,43,test,,,parent,Um,
+Timeline.ordinal,subid,type,trial,target,person,utterance,selection
+0,43,practice,1,apple,parent,It's an apple,
+2,43,practice,1,apple,child,,child
+9,43,practice,4,apple,child,It has a leaf,
+10,43,practice,4,apple,parent,,parent
+3,43,practice,2,artichoke,child,It's spikey,
+4,43,practice,2,artichoke,parent,,parent
+11,43,practice,5,artichoke,parent,It's spikey,
+12,43,practice,5,artichoke,child,,child
+6,43,practice,3,onion,parent,It's I think it's an onion or a garlic it's a bulb it's not,
+7,43,practice,3,onion,child,,child
+8,43,practice,3,onion,parent,spikey,
+13,43,practice,6,onion,child,It has lines,
+14,43,practice,6,onion,parent,,parent
+26,43,test,3,A1,parent,It is a person facing away with one leg up,
+27,43,test,3,A1,child,,child
+44,43,test,11,A1,child,Walking on one foot,
+45,43,test,11,A1,parent,,parent
+89,43,test,29,A1,parent,One leg up looks like not does not have a bowl,
+90,43,test,29,A1,child,,child
+98,43,test,33,A1,child,Running and playing,
+99,43,test,33,A1,parent,Running and playing,
+100,43,test,33,A1,child,Running,
+101,43,test,33,A1,parent,,parent
+28,43,test,4,B1,child,It is walking slowly with his head down,
+29,43,test,4,B1,parent,,parent
+55,43,test,16,B1,parent,Walking looking,
+56,43,test,16,B1,child,,child
+91,43,test,30,B1,child,Walking with head down,
+92,43,test,30,B1,parent,,parent
+110,43,test,36,B1,parent,Walking,
+111,43,test,36,B1,child,,child
+34,43,test,7,C1,parent,Um it's like leaning over like leapfrog,
+35,43,test,7,C1,child,,child
+58,43,test,17,C1,child,Bending over,
+59,43,test,17,C1,parent,,parent
+70,43,test,21,C1,parent,Leaned over leapfrog,
+71,43,test,21,C1,child,,child
+112,43,test,37,C1,child,Leapfrog,
+113,43,test,37,C1,parent,,parent
+30,43,test,5,D1,parent,It's lying down,
+31,43,test,5,D1,child,,child
+49,43,test,13,D1,child,Swinging,
+50,43,test,13,D1,parent,,parent
+79,43,test,25,D1,parent,Swimming,
+80,43,test,25,D1,child,,child
+116,43,test,39,D1,child,Swimming,
+117,43,test,39,D1,parent,,parent
+36,43,test,8,E1,child,It is jumping up,
+37,43,test,8,E1,parent,,parent
+47,43,test,12,E1,parent,Jumping two feet out,
+48,43,test,12,E1,child,,child
+77,43,test,24,E1,child,Jumping up,
+78,43,test,24,E1,parent,,parent
+118,43,test,40,E1,parent,Jumping up with arms out,
+119,43,test,40,E1,child,,child
+39,43,test,9,F1,parent,It has legs spread out and hands pointing up,
+40,43,test,9,F1,child,,child
+53,43,test,15,F1,child,Arms up,
+54,43,test,15,F1,parent,,parent
+75,43,test,23,F1,parent,Arms point out too are legs far apart,
+76,43,test,23,F1,child,,child
+93,43,test,31,F1,child,Um legs far apart,
+94,43,test,31,F1,parent,,parent
+32,43,test,6,G1,child,It has it is standing up,
+33,43,test,6,G1,parent,,parent
+68,43,test,20,G1,parent,Looks like he's kneeling,
+69,43,test,20,G1,child,,child
+72,43,test,22,G1,child,Standing up,
+73,43,test,22,G1,child,Not jumping,
+74,43,test,22,G1,parent,,parent
+95,43,test,32,G1,parent,Kneeling,
+96,43,test,32,G1,parent,Not the not not leapfrog,
+97,43,test,32,G1,child,,child
+20,43,test,1,H1,parent,OK it looks like a person standing up,
+21,43,test,1,H1,child,,child
+63,43,test,19,H1,child,Arms out,
+64,43,test,19,H1,child,Looks,
+65,43,test,19,H1,parent,With,
+66,43,test,19,H1,child,Looks like um only has one leg,
+67,43,test,19,H1,parent,,parent
+85,43,test,27,H1,parent,Um not swimming,
+86,43,test,27,H1,child,,child
+104,43,test,35,H1,child,Arms out,
+105,43,test,35,H1,parent,Jumping,
+106,43,test,35,H1,child,No,
+107,43,test,35,H1,parent,Just standing,
+108,43,test,35,H1,child,Yeah,
+109,43,test,35,H1,parent,,parent
+41,43,test,10,I1,child,He is holding something,
+42,43,test,10,I1,parent,,parent
+51,43,test,14,I1,parent,Holding something,
+52,43,test,14,I1,child,,child
+81,43,test,26,I1,child,Bowl,
+82,43,test,26,I1,parent,Holding a bowl,
+83,43,test,26,I1,child,Yeah,
+84,43,test,26,I1,parent,,parent
+102,43,test,34,I1,parent,Bowl,
+103,43,test,34,I1,child,,child
+22,43,test,2,K1,child,It is praying,
+23,43,test,2,K1,parent,Praying,
+24,43,test,2,K1,parent,,parent
+25,43,test,2,K1,child,It is bending over,
+61,43,test,18,K1,parent,Hands straight out looks like he has a tail,
+62,43,test,18,K1,child,,child
+87,43,test,28,K1,child,Looks like it has a tail,
+88,43,test,28,K1,parent,,parent
+114,43,test,38,K1,parent,Standing with the tail,
+115,43,test,38,K1,child,,child
+1,43,test,,,child,I think you're supposed to describe it,
+5,43,test,,,parent,It's um like a,
+15,43,test,,,child,Now I am,
+16,43,test,,,parent,Mhm,
+17,43,test,,,parent,OK now we press begin,
+18,43,test,,,child,I want to begin pressing,
+19,43,test,,,parent,Oh OK,
+38,43,test,,,parent,Um,
+43,43,test,,,child,Next round,
+46,43,test,,,parent,Um,
+57,43,test,,,parent,Yeah,
+60,43,test,,,parent,Um,

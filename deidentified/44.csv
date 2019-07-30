@@ -1,204 +1,204 @@
-Timeline.ordinal,database_id,subid,type,trial,target,person,utterance,selection
-0,8183,44,practice,1,apple,parent,An apple,
-2,8183,44,practice,1,apple,child,,child
-11,8183,44,practice,4,apple,child,It's a banana with a straight zzz,
-12,8183,44,practice,4,apple,parent,,parent
-5,8183,44,practice,2,artichoke,child,It's a pine cone,
-6,8183,44,practice,2,artichoke,parent,,parent
-13,8183,44,practice,5,artichoke,parent,It is an artichoke that looks like a pine cone,
-14,8183,44,practice,5,artichoke,child,,child
-8,8183,44,practice,3,onion,parent,It's um onion like a more round ball,
-9,8183,44,practice,3,onion,child,,child
-15,8183,44,practice,6,onion,child,It's a onion with a round sack,
-16,8183,44,practice,6,onion,parent,,parent
-42,8183,44,test,3,A1,parent,Alright now you have to select the one that has the person running with one foot on the ground,
-43,8183,44,test,3,A1,child,OK it's a a person running with one foot,
-44,8183,44,test,3,A1,child,,child
-45,8183,44,test,3,A1,child,on the ground and and two and a and then,
-127,8183,44,test,17,A1,child,In the blue square there's a person walking with one foot on the ground,
-128,8183,44,test,17,A1,parent,,parent
-164,8183,44,test,27,A1,parent,This is the person running,
-165,8183,44,test,27,A1,child,,child
-193,8183,44,test,37,A1,child,It's the a person running with,
-194,8183,44,test,37,A1,parent,,parent
-68,8183,44,test,8,B1,child,Um it's a people uh lonely uh by itself with a with a with one foot walking on the ground and its face up they um at they at the,
-69,8183,44,test,8,B1,parent,Is it wearing a hat,
-70,8183,44,test,8,B1,child,No,
-71,8183,44,test,8,B1,parent,No hat,
-72,8183,44,test,8,B1,child,No,
-73,8183,44,test,8,B1,parent,,parent
-121,8183,44,test,16,B1,parent,Alright yyy this is a persn standing up and walking,
-122,8183,44,test,16,B1,child,,child
-154,8183,44,test,24,B1,child,It's a person lonely and sad with a with one feet walking and another feet walking and,
-155,8183,44,test,24,B1,parent,,parent
-156,8183,44,test,24,B1,parent,He does look zzz yyy he does look lonely and sad doesn't he he does yeah,
-196,8183,44,test,38,B1,parent,It's the person who looks sad and lonely,
-197,8183,44,test,38,B1,child,,child
-52,8183,44,test,5,C1,parent,OK now this is a person kind of crouching down with their head near the ground,
-53,8183,44,test,5,C1,child,,child
-94,8183,44,test,11,C1,child,It's a person crouching on the floor,
-95,8183,44,test,11,C1,parent,,parent
-159,8183,44,test,25,C1,parent,Oh this is the one crouching down,
-160,8183,44,test,25,C1,child,,child
-178,8183,44,test,31,C1,child,Ok it's a person crouching down zzz,
-179,8183,44,test,31,C1,parent,,parent
-77,8183,44,test,9,D1,child,,child
-114,8183,44,test,15,D1,child,It's a person lying down with,
-115,8183,44,test,15,D1,parent,,parent
-143,8183,44,test,21,D1,parent,This is a person lying down,
-144,8183,44,test,21,D1,child,,child
-189,8183,44,test,35,D1,child,It's a person lied down,
-190,8183,44,test,35,D1,parent,,parent
-28,8183,44,test,2,E1,child,It's a shape,
-30,8183,44,test,2,E1,parent,Does it look like a shape of someoen running or someone jumping,
-31,8183,44,test,2,E1,child,Someone uh running on their tippy toes,
-32,8183,44,test,2,E1,parent,Do they have one foot on the ground or two feet on the ground,
-33,8183,44,test,2,E1,child,Two feet,
-34,8183,44,test,2,E1,parent,On the ground,
-35,8183,44,test,2,E1,child,Yeah,
-36,8183,44,test,2,E1,child,With their knees they're running with their knees,
-37,8183,44,test,2,E1,parent,Is one foot forward and one foot back,
-38,8183,44,test,2,E1,child,No both feet back,
-39,8183,44,test,2,E1,parent,,parent
-132,8183,44,test,18,E1,parent,Alright this is a person jumping with two feet in the air and their hands up,
-133,8183,44,test,18,E1,child,,child
-166,8183,44,test,28,E1,child,This is the person jumping with two feet,
-167,8183,44,test,28,E1,parent,,parent
-181,8183,44,test,32,E1,parent,Person jumping in the air,
-182,8183,44,test,32,E1,child,,child
-63,8183,44,test,7,F1,parent,This is a person that's kind of bent in half like kind of bent over and their feet are really wide apart,
-64,8183,44,test,7,F1,child,,child
-104,8183,44,test,13,F1,child,In the blue square um it's a people wide with its legs straight open,
-105,8183,44,test,13,F1,parent,,parent
-150,8183,44,test,23,F1,parent,Alright this is a person whose legs spread wide open with his feet wide open,
-151,8183,44,test,23,F1,child,,child
-185,8183,44,test,33,F1,child,It's a person walking with it's wide open,
-186,8183,44,test,33,F1,parent,,parent
-56,8183,44,test,6,G1,child,OK it's a people sitting with no feet and a head,
-57,8183,44,test,6,G1,parent,,parent
-99,8183,44,test,12,G1,parent,This is a person sitting down in his seat,
-100,8183,44,test,12,G1,child,,child
-147,8183,44,test,22,G1,child,OK it's a person sitting on a chair,
-148,8183,44,test,22,G1,parent,,parent
-187,8183,44,test,34,G1,parent,This is a person sitting down,
-188,8183,44,test,34,G1,child,,child
-81,8183,44,test,10,H1,child,Um it's a person staying still with its eyes with its eyes straight and it's a little a little um finger pointing,
-82,8183,44,test,10,H1,parent,Hm does it have one foot on the ground or one foot behind him,
-83,8183,44,test,10,H1,child,No no no no two feet on the ground and face,
-84,8183,44,test,10,H1,parent,,parent
-139,8183,44,test,20,H1,parent,Alright this is a person with standing up with like a tray in his hand,
-140,8183,44,test,20,H1,child,,child
-162,8183,44,test,26,H1,child,It's a person with another tray in his hand,
-163,8183,44,test,26,H1,parent,,parent
-202,8183,44,test,40,H1,parent,This is the person with a tray in his hand,
-203,8183,44,test,40,H1,child,,child
-48,8183,44,test,4,I1,child,Um it's a people standing with a uh um a a a different kind of shaped triangle um it's in its hand,
-108,8183,44,test,14,I1,parent,OK this is like a guy holding a triangle in his hand,
-109,8183,44,test,14,I1,parent,He he's leaning,
-110,8183,44,test,14,I1,child,,child
-111,8183,44,test,14,I1,parent,over good job,
-172,8183,44,test,30,I1,child,Um there's a person um who um have in his hand like a triangle,
-173,8183,44,test,30,I1,parent,,parent
-191,8183,44,test,36,I1,parent,It's the person with a triangle on his hand,
-192,8183,44,test,36,I1,child,,child
-21,8183,44,test,1,K1,child,,child
-136,8183,44,test,19,K1,child,It's a person wearing a hat and it's got,
-137,8183,44,test,19,K1,parent,,parent
-170,8183,44,test,29,K1,parent,OK this is a person leaning over with his toushie out and a tray in his hand and he's wearing a hat,
-171,8183,44,test,29,K1,child,,child
-198,8183,44,test,39,K1,child,This is a person um have the zzz and,
-199,8183,44,test,39,K1,parent,,parent
-1,8183,44,test,,,parent,Can you zzz,
-3,8183,44,test,,,parent,Nice job,
-4,8183,44,test,,,parent,Your turn,
-10,8183,44,test,,,child,Woah,
-17,8183,44,test,,,parent,Alright that was cool,
-18,8183,44,test,,,child,Oh,
-19,8183,44,test,,,parent,Oh are you ready,
-20,8183,44,test,,,child,Yup,
-22,8183,44,test,,,parent,OK,
-23,8183,44,test,,,child,Got you,
-24,8183,44,test,,,child,Now what,
-25,8183,44,test,,,parent,Now you tell me you describe what's in the  blue square you need to tell me,
-26,8183,44,test,,,child,Um,
-27,8183,44,test,,,parent,what it is,
-29,8183,44,test,,,parent,Hm,
-40,8183,44,test,,,parent,I got it alright,
-41,8183,44,test,,,child,Good job,
-46,8183,44,test,,,parent,OK,
-47,8183,44,test,,,parent,Now now you tell me tell me what's in the blue shape,
-50,8183,44,test,,,parent,Good great description yyy,
-51,8183,44,test,,,child,Your turn,
-54,8183,44,test,,,child,You say,
-55,8183,44,test,,,parent,Now you tell me describe this new blue shape,
-58,8183,44,test,,,child,Good job,
-59,8183,44,test,,,parent,You got it yyy that was cool,
-60,8183,44,test,,,child,Your turn,
-61,8183,44,test,,,parent,Oh boy this is a hard one yyy,
-62,8183,44,test,,,parent,This is hm,
-65,8183,44,test,,,child,You tell me you tell me mom,
-66,8183,44,test,,,child,You tell me mom,
-67,8183,44,test,,,parent,OK you describe the one in the blue square,
-74,8183,44,test,,,child,Good job,
-75,8183,44,test,,,child,Your turn,
-78,8183,44,test,,,parent,Nice,
-79,8183,44,test,,,child,You do it,
-80,8183,44,test,,,parent,You need to tell me describe the one in the blue square,
-85,8183,44,test,,,child,And great good job,
-86,8183,44,test,,,parent,Yeah,
-87,8183,44,test,,,parent,Oh OK we're ready for the next round,
-88,8183,44,test,,,parent,OK,
-89,8183,44,test,,,parent,Now you begin,
-90,8183,44,test,,,child,OK,
-91,8183,44,test,,,parent,Do you see the blue square,
-92,8183,44,test,,,child,Yup,
-93,8183,44,test,,,parent,OK,
-96,8183,44,test,,,child,Good job,
-97,8183,44,test,,,parent,Yes,
-98,8183,44,test,,,child,Your turn,
-101,8183,44,test,,,child,Your turn,
-102,8183,44,test,,,parent,Now you tell you you describe you describe the what's in the blue square,
-103,8183,44,test,,,child,OK,
-106,8183,44,test,,,parent,Great description,
-107,8183,44,test,,,child,Your turn,
-112,8183,44,test,,,child,Your turn,
-113,8183,44,test,,,parent,You have to describe what's in the blue square,
-116,8183,44,test,,,child,Oh,
-117,8183,44,test,,,parent,See that that was perfect,
-118,8183,44,test,,,parent,Uh oh,
-119,8183,44,test,,,child,Oh zzz,
-120,8183,44,test,,,parent,Uh oh that's okay should we keep going,
-123,8183,44,test,,,child,Your turn,
-124,8183,44,test,,,parent,Can yo udescribe what you see,
-125,8183,44,test,,,child,OK,
-126,8183,44,test,,,parent,In the blue square,
-129,8183,44,test,,,child,Oh,
-130,8183,44,test,,,parent,Good job yyy,
-131,8183,44,test,,,child,Your turn,
-134,8183,44,test,,,child,Your turn,
-135,8183,44,test,,,parent,Can you describe what's in the blue square,
-138,8183,44,test,,,child,Oh,
-141,8183,44,test,,,child,How long are we gonna go back and play in this room,
-142,8183,44,test,,,parent,I don't know I think that I think we're ready for this oh one more round OK,
-145,8183,44,test,,,child,You you tell me,
-146,8183,44,test,,,parent,No blue square,
-149,8183,44,test,,,child,Aw you got me,
-152,8183,44,test,,,child,Your turn,
-153,8183,44,test,,,parent,OK you need to tell me what you see,
-157,8183,44,test,,,child,Why,
-158,8183,44,test,,,parent,I don't know,
-161,8183,44,test,,,parent,Good job,
-168,8183,44,test,,,parent,Mmm,
-169,8183,44,test,,,parent,What was that,
-174,8183,44,test,,,child,Uh uh,
-175,8183,44,test,,,parent,Good job yyy,
-176,8183,44,test,,,child,What's now,
-177,8183,44,test,,,parent,Oh we'll go more your turn,
-180,8183,44,test,,,child,You tell me,
-183,8183,44,test,,,child,You tell me,
-184,8183,44,test,,,parent,zzz,
-195,8183,44,test,,,child,Aw,
-200,8183,44,test,,,parent,Cool,
-201,8183,44,test,,,child,zzz,
-7,8183,44,,,,child,Good job,
-76,8183,44,,,,parent,Alright uh this is the one the person's lying down,
+Timeline.ordinal,subid,type,trial,target,person,utterance,selection
+0,44,practice,1,apple,parent,An apple,
+2,44,practice,1,apple,child,,child
+11,44,practice,4,apple,child,It's a banana with a straight zzz,
+12,44,practice,4,apple,parent,,parent
+5,44,practice,2,artichoke,child,It's a pine cone,
+6,44,practice,2,artichoke,parent,,parent
+13,44,practice,5,artichoke,parent,It is an artichoke that looks like a pine cone,
+14,44,practice,5,artichoke,child,,child
+8,44,practice,3,onion,parent,It's um onion like a more round ball,
+9,44,practice,3,onion,child,,child
+15,44,practice,6,onion,child,It's a onion with a round sack,
+16,44,practice,6,onion,parent,,parent
+42,44,test,3,A1,parent,Alright now you have to select the one that has the person running with one foot on the ground,
+43,44,test,3,A1,child,OK it's a a person running with one foot,
+44,44,test,3,A1,child,,child
+45,44,test,3,A1,child,on the ground and and two and a and then,
+127,44,test,17,A1,child,In the blue square there's a person walking with one foot on the ground,
+128,44,test,17,A1,parent,,parent
+164,44,test,27,A1,parent,This is the person running,
+165,44,test,27,A1,child,,child
+193,44,test,37,A1,child,It's the a person running with,
+194,44,test,37,A1,parent,,parent
+68,44,test,8,B1,child,Um it's a people uh lonely uh by itself with a with a with one foot walking on the ground and its face up they um at they at the,
+69,44,test,8,B1,parent,Is it wearing a hat,
+70,44,test,8,B1,child,No,
+71,44,test,8,B1,parent,No hat,
+72,44,test,8,B1,child,No,
+73,44,test,8,B1,parent,,parent
+121,44,test,16,B1,parent,Alright yyy this is a persn standing up and walking,
+122,44,test,16,B1,child,,child
+154,44,test,24,B1,child,It's a person lonely and sad with a with one feet walking and another feet walking and,
+155,44,test,24,B1,parent,,parent
+156,44,test,24,B1,parent,He does look zzz yyy he does look lonely and sad doesn't he he does yeah,
+196,44,test,38,B1,parent,It's the person who looks sad and lonely,
+197,44,test,38,B1,child,,child
+52,44,test,5,C1,parent,OK now this is a person kind of crouching down with their head near the ground,
+53,44,test,5,C1,child,,child
+94,44,test,11,C1,child,It's a person crouching on the floor,
+95,44,test,11,C1,parent,,parent
+159,44,test,25,C1,parent,Oh this is the one crouching down,
+160,44,test,25,C1,child,,child
+178,44,test,31,C1,child,Ok it's a person crouching down zzz,
+179,44,test,31,C1,parent,,parent
+77,44,test,9,D1,child,,child
+114,44,test,15,D1,child,It's a person lying down with,
+115,44,test,15,D1,parent,,parent
+143,44,test,21,D1,parent,This is a person lying down,
+144,44,test,21,D1,child,,child
+189,44,test,35,D1,child,It's a person lied down,
+190,44,test,35,D1,parent,,parent
+28,44,test,2,E1,child,It's a shape,
+30,44,test,2,E1,parent,Does it look like a shape of someoen running or someone jumping,
+31,44,test,2,E1,child,Someone uh running on their tippy toes,
+32,44,test,2,E1,parent,Do they have one foot on the ground or two feet on the ground,
+33,44,test,2,E1,child,Two feet,
+34,44,test,2,E1,parent,On the ground,
+35,44,test,2,E1,child,Yeah,
+36,44,test,2,E1,child,With their knees they're running with their knees,
+37,44,test,2,E1,parent,Is one foot forward and one foot back,
+38,44,test,2,E1,child,No both feet back,
+39,44,test,2,E1,parent,,parent
+132,44,test,18,E1,parent,Alright this is a person jumping with two feet in the air and their hands up,
+133,44,test,18,E1,child,,child
+166,44,test,28,E1,child,This is the person jumping with two feet,
+167,44,test,28,E1,parent,,parent
+181,44,test,32,E1,parent,Person jumping in the air,
+182,44,test,32,E1,child,,child
+63,44,test,7,F1,parent,This is a person that's kind of bent in half like kind of bent over and their feet are really wide apart,
+64,44,test,7,F1,child,,child
+104,44,test,13,F1,child,In the blue square um it's a people wide with its legs straight open,
+105,44,test,13,F1,parent,,parent
+150,44,test,23,F1,parent,Alright this is a person whose legs spread wide open with his feet wide open,
+151,44,test,23,F1,child,,child
+185,44,test,33,F1,child,It's a person walking with it's wide open,
+186,44,test,33,F1,parent,,parent
+56,44,test,6,G1,child,OK it's a people sitting with no feet and a head,
+57,44,test,6,G1,parent,,parent
+99,44,test,12,G1,parent,This is a person sitting down in his seat,
+100,44,test,12,G1,child,,child
+147,44,test,22,G1,child,OK it's a person sitting on a chair,
+148,44,test,22,G1,parent,,parent
+187,44,test,34,G1,parent,This is a person sitting down,
+188,44,test,34,G1,child,,child
+81,44,test,10,H1,child,Um it's a person staying still with its eyes with its eyes straight and it's a little a little um finger pointing,
+82,44,test,10,H1,parent,Hm does it have one foot on the ground or one foot behind him,
+83,44,test,10,H1,child,No no no no two feet on the ground and face,
+84,44,test,10,H1,parent,,parent
+139,44,test,20,H1,parent,Alright this is a person with standing up with like a tray in his hand,
+140,44,test,20,H1,child,,child
+162,44,test,26,H1,child,It's a person with another tray in his hand,
+163,44,test,26,H1,parent,,parent
+202,44,test,40,H1,parent,This is the person with a tray in his hand,
+203,44,test,40,H1,child,,child
+48,44,test,4,I1,child,Um it's a people standing with a uh um a a a different kind of shaped triangle um it's in its hand,
+108,44,test,14,I1,parent,OK this is like a guy holding a triangle in his hand,
+109,44,test,14,I1,parent,He he's leaning,
+110,44,test,14,I1,child,,child
+111,44,test,14,I1,parent,over good job,
+172,44,test,30,I1,child,Um there's a person um who um have in his hand like a triangle,
+173,44,test,30,I1,parent,,parent
+191,44,test,36,I1,parent,It's the person with a triangle on his hand,
+192,44,test,36,I1,child,,child
+21,44,test,1,K1,child,,child
+136,44,test,19,K1,child,It's a person wearing a hat and it's got,
+137,44,test,19,K1,parent,,parent
+170,44,test,29,K1,parent,OK this is a person leaning over with his toushie out and a tray in his hand and he's wearing a hat,
+171,44,test,29,K1,child,,child
+198,44,test,39,K1,child,This is a person um have the zzz and,
+199,44,test,39,K1,parent,,parent
+1,44,test,,,parent,Can you zzz,
+3,44,test,,,parent,Nice job,
+4,44,test,,,parent,Your turn,
+10,44,test,,,child,Woah,
+17,44,test,,,parent,Alright that was cool,
+18,44,test,,,child,Oh,
+19,44,test,,,parent,Oh are you ready,
+20,44,test,,,child,Yup,
+22,44,test,,,parent,OK,
+23,44,test,,,child,Got you,
+24,44,test,,,child,Now what,
+25,44,test,,,parent,Now you tell me you describe what's in the  blue square you need to tell me,
+26,44,test,,,child,Um,
+27,44,test,,,parent,what it is,
+29,44,test,,,parent,Hm,
+40,44,test,,,parent,I got it alright,
+41,44,test,,,child,Good job,
+46,44,test,,,parent,OK,
+47,44,test,,,parent,Now now you tell me tell me what's in the blue shape,
+50,44,test,,,parent,Good great description yyy,
+51,44,test,,,child,Your turn,
+54,44,test,,,child,You say,
+55,44,test,,,parent,Now you tell me describe this new blue shape,
+58,44,test,,,child,Good job,
+59,44,test,,,parent,You got it yyy that was cool,
+60,44,test,,,child,Your turn,
+61,44,test,,,parent,Oh boy this is a hard one yyy,
+62,44,test,,,parent,This is hm,
+65,44,test,,,child,You tell me you tell me mom,
+66,44,test,,,child,You tell me mom,
+67,44,test,,,parent,OK you describe the one in the blue square,
+74,44,test,,,child,Good job,
+75,44,test,,,child,Your turn,
+78,44,test,,,parent,Nice,
+79,44,test,,,child,You do it,
+80,44,test,,,parent,You need to tell me describe the one in the blue square,
+85,44,test,,,child,And great good job,
+86,44,test,,,parent,Yeah,
+87,44,test,,,parent,Oh OK we're ready for the next round,
+88,44,test,,,parent,OK,
+89,44,test,,,parent,Now you begin,
+90,44,test,,,child,OK,
+91,44,test,,,parent,Do you see the blue square,
+92,44,test,,,child,Yup,
+93,44,test,,,parent,OK,
+96,44,test,,,child,Good job,
+97,44,test,,,parent,Yes,
+98,44,test,,,child,Your turn,
+101,44,test,,,child,Your turn,
+102,44,test,,,parent,Now you tell you you describe you describe the what's in the blue square,
+103,44,test,,,child,OK,
+106,44,test,,,parent,Great description,
+107,44,test,,,child,Your turn,
+112,44,test,,,child,Your turn,
+113,44,test,,,parent,You have to describe what's in the blue square,
+116,44,test,,,child,Oh,
+117,44,test,,,parent,See that that was perfect,
+118,44,test,,,parent,Uh oh,
+119,44,test,,,child,Oh zzz,
+120,44,test,,,parent,Uh oh that's okay should we keep going,
+123,44,test,,,child,Your turn,
+124,44,test,,,parent,Can yo udescribe what you see,
+125,44,test,,,child,OK,
+126,44,test,,,parent,In the blue square,
+129,44,test,,,child,Oh,
+130,44,test,,,parent,Good job yyy,
+131,44,test,,,child,Your turn,
+134,44,test,,,child,Your turn,
+135,44,test,,,parent,Can you describe what's in the blue square,
+138,44,test,,,child,Oh,
+141,44,test,,,child,How long are we gonna go back and play in this room,
+142,44,test,,,parent,I don't know I think that I think we're ready for this oh one more round OK,
+145,44,test,,,child,You you tell me,
+146,44,test,,,parent,No blue square,
+149,44,test,,,child,Aw you got me,
+152,44,test,,,child,Your turn,
+153,44,test,,,parent,OK you need to tell me what you see,
+157,44,test,,,child,Why,
+158,44,test,,,parent,I don't know,
+161,44,test,,,parent,Good job,
+168,44,test,,,parent,Mmm,
+169,44,test,,,parent,What was that,
+174,44,test,,,child,Uh uh,
+175,44,test,,,parent,Good job yyy,
+176,44,test,,,child,What's now,
+177,44,test,,,parent,Oh we'll go more your turn,
+180,44,test,,,child,You tell me,
+183,44,test,,,child,You tell me,
+184,44,test,,,parent,zzz,
+195,44,test,,,child,Aw,
+200,44,test,,,parent,Cool,
+201,44,test,,,child,zzz,
+7,44,,,,child,Good job,
+76,44,,,,parent,Alright uh this is the one the person's lying down,

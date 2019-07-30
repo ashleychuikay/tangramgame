@@ -1,132 +1,132 @@
-Timeline.ordinal,database_id,subid,type,trial,target,person,utterance,selection
-0,5529,39,practice,1,apple,parent,"ok, do you see an apple?",
-1,5529,39,practice,1,apple,child,yes,
-3,5529,39,practice,1,apple,child,,child
-11,5529,39,practice,4,apple,parent,now describe to me which one's in your blue box,
-12,5529,39,practice,4,apple,child,it's red and it's very tasty,
-13,5529,39,practice,4,apple,parent,"ohh, i think i know",
-14,5529,39,practice,4,apple,parent,,parent
-4,5529,39,practice,2,artichoke,parent,which one of yours is in a blue box? can you describe it to me?,
-5,5529,39,practice,2,artichoke,child,it's bristly,
-6,5529,39,practice,2,artichoke,parent,bristly. like an onion or not like an onion?,
-7,5529,39,practice,2,artichoke,child,not like an onion,
-8,5529,39,practice,2,artichoke,parent,,parent
-15,5529,39,practice,5,artichoke,parent,"ok, now this one is bristly like the one you said before",
-16,5529,39,practice,5,artichoke,child,,child
-9,5529,39,practice,3,onion,parent,"ok, now this one i have the one in the blue box looks like an onion",
-10,5529,39,practice,3,onion,child,,child
-17,5529,39,practice,6,onion,parent,which one of yours is in a blue box now?,
-18,5529,39,practice,6,onion,child,it's crunchy like an onion,
-19,5529,39,practice,6,onion,parent,,parent
-47,5529,39,test,10,A1,child,mine looks like a person standing on one leg,
-48,5529,39,test,10,A1,parent,,parent
-65,5529,39,test,16,A1,parent,"alright, this almost looks like somebody standing on one leg or running",
-66,5529,39,test,16,A1,child,,child
-103,5529,39,test,30,A1,child,mine looks like someone standing on one foot,
-104,5529,39,test,30,A1,parent,,parent
-120,5529,39,test,36,A1,parent,mine looks like a person running on one leg,
-121,5529,39,test,36,A1,child,,child
-27,5529,39,test,3,B1,parent,this one looks like a man standing up and walking with it's head tilted,
-28,5529,39,test,3,B1,child,,child
-52,5529,39,test,11,B1,child,it looks like a person walking with its head down,
-53,5529,39,test,11,B1,parent,,parent
-93,5529,39,test,27,B1,parent,mine looks like somebody walking with their head down,
-94,5529,39,test,27,B1,child,,child
-109,5529,39,test,31,B1,child,the one walking with his head down,
-110,5529,39,test,31,B1,parent,,parent
-29,5529,39,test,4,C1,child,mine looks like a person crouching,
-30,5529,39,test,4,C1,parent,,parent
-54,5529,39,test,12,C1,parent,"alright, this one looks like someone crouching or kneeling or something like that",
-55,5529,39,test,12,C1,child,,child
-81,5529,39,test,22,C1,child,mine looks like someone crouching,
-82,5529,39,test,22,C1,parent,,parent
-124,5529,39,test,38,C1,parent,mine looks like a person crouching,
-125,5529,39,test,38,C1,child,,child
-37,5529,39,test,7,D1,parent,"alright, mine looks like a person laying down",
-38,5529,39,test,7,D1,child,,child
-58,5529,39,test,13,D1,child,he's laying down,
-59,5529,39,test,13,D1,parent,,parent
-83,5529,39,test,23,D1,parent,mine looks like somebody laying down,
-84,5529,39,test,23,D1,child,,child
-114,5529,39,test,33,D1,child,this looks like a person reading,
-115,5529,39,test,33,D1,parent,,parent
-44,5529,39,test,9,E1,parent,mine kind of looks like somebody jumping up in the air like they're very excited,
-45,5529,39,test,9,E1,child,,child
-73,5529,39,test,19,E1,child,mine looks like a person jumping,
-74,5529,39,test,19,E1,parent,,parent
-79,5529,39,test,21,E1,parent,ok now the one in my blue square looks like somebody jumping into the air,
-80,5529,39,test,21,E1,child,,child
-122,5529,39,test,37,E1,child,mine looks like a person jumping,
-123,5529,39,test,37,E1,parent,,parent
-21,5529,39,test,1,F1,parent,"ok, the shape i want you to click on has a square and some pointy pieces and some triangles on the bottom corner",
-22,5529,39,test,1,F1,child,,child
-69,5529,39,test,17,F1,child,mine looks like a person doing the splits in zzz,
-70,5529,39,test,17,F1,parent,,parent
-101,5529,39,test,29,F1,parent,mine looks like somebody doing the splits in the hallway,
-102,5529,39,test,29,F1,child,,child
-118,5529,39,test,35,F1,child,mine looks like a person doing splits,
-119,5529,39,test,35,F1,parent,,parent
-24,5529,39,test,2,G1,parent,"ok, describe to me the one that's in the blue box for you now",
-25,5529,39,test,2,G1,child,she has a dress and the head is tilted and it's sitting on the square,
-26,5529,39,test,2,G1,parent,,parent
-75,5529,39,test,20,G1,parent,i heard you describe this one before as someone wearing a dress,
-76,5529,39,test,20,G1,child,,child
-89,5529,39,test,26,G1,child,mine looks like someone sitting down,
-90,5529,39,test,26,G1,parent,sitting down or laying down?,
-91,5529,39,test,26,G1,child,sitting down,
-92,5529,39,test,26,G1,parent,,parent
-116,5529,39,test,34,G1,parent,mine looks like a person sitting down,
-117,5529,39,test,34,G1,child,,child
-33,5529,39,test,6,H1,child,it looks like he's worshiping,
-34,5529,39,test,6,H1,parent,"interesting. ok, does it look like he's standing or jumping?",
-35,5529,39,test,6,H1,child,standing,
-36,5529,39,test,6,H1,parent,,parent
-71,5529,39,test,18,H1,parent,"um, mine looks like somebody who's maybe wearing a robe and standing up, and maybe they're hodling something?",
-72,5529,39,test,18,H1,child,,child
-97,5529,39,test,28,H1,child,now it looks like a priest,
-98,5529,39,test,28,H1,parent,hmm. a priest walking or running or just standing?,
-99,5529,39,test,28,H1,child,Just standing,
-100,5529,39,test,28,H1,parent,,parent
-111,5529,39,test,32,H1,parent,this one looks like the priest,
-112,5529,39,test,32,H1,child,,child
-39,5529,39,test,8,I1,child,"mine looks like a boy kneeling with a hand behind his back, carrying a pitcher",
-40,5529,39,test,8,I1,parent,carrying a pitcher?,
-41,5529,39,test,8,I1,child,that's a square,
-42,5529,39,test,8,I1,parent,"hmm, okay",
-43,5529,39,test,8,I1,parent,,parent
-60,5529,39,test,14,I1,parent,"ok, mine looks like somebody bending over and it looks like he's holding a bowl or something",
-61,5529,39,test,14,I1,child,,child
-85,5529,39,test,24,I1,child,mine looks like someone bending over,
-86,5529,39,test,24,I1,parent,,parent
-129,5529,39,test,40,I1,parent,mine looks like a person bending over holding a bowl,
-130,5529,39,test,40,I1,child,,child
-31,5529,39,test,5,K1,parent,mine looks like somebody bending over and it almost looks like they have a tail,
-32,5529,39,test,5,K1,child,,child
-63,5529,39,test,15,K1,child,it's a guy kneeling over,
-64,5529,39,test,15,K1,parent,,parent
-87,5529,39,test,25,K1,parent,"mine also looks like someone bending over this time, maybe they have a tail though",
-88,5529,39,test,25,K1,child,,child
-127,5529,39,test,39,K1,child,mine looks like a person bending over,
-128,5529,39,test,39,K1,parent,,parent
-2,5529,39,test,,,parent,"ok, click on it",
-20,5529,39,test,,,parent,"alright, you ready to do the real one now?",
-23,5529,39,test,,,child,i got that one right,
-46,5529,39,test,,,parent,"oh, good job!",
-49,5529,39,test,,,parent,"alright, does one of yours have a blue square on it?",
-50,5529,39,test,,,child,yes,
-51,5529,39,test,,,parent,decribe it to me,
-56,5529,39,test,,,parent,yeah!,
-57,5529,39,test,,,parent,what does the one in the blue square look like?,
-62,5529,39,test,,,parent,what about yours?,
-67,5529,39,test,,,child,i did it!,
-68,5529,39,test,,,parent,yay!,
-77,5529,39,test,,,parent,"oh, how did you know!",
-78,5529,39,test,,,child,i just did,
-95,5529,39,test,,,child,i got it right!,
-96,5529,39,test,,,parent,what now?,
-105,5529,39,test,,,parent,good job! time for the next round,
-106,5529,39,test,,,child,is it going to be different?,
-107,5529,39,test,,,parent,"i don't know, it looks like the same",
-108,5529,39,test,,,parent,what's in your blue square?,
-113,5529,39,test,,,child,this is not as fun as the other games,
-126,5529,39,test,,,child,i got that right,
+Timeline.ordinal,subid,type,trial,target,person,utterance,selection
+0,39,practice,1,apple,parent,"ok, do you see an apple?",
+1,39,practice,1,apple,child,yes,
+3,39,practice,1,apple,child,,child
+11,39,practice,4,apple,parent,now describe to me which one's in your blue box,
+12,39,practice,4,apple,child,it's red and it's very tasty,
+13,39,practice,4,apple,parent,"ohh, i think i know",
+14,39,practice,4,apple,parent,,parent
+4,39,practice,2,artichoke,parent,which one of yours is in a blue box? can you describe it to me?,
+5,39,practice,2,artichoke,child,it's bristly,
+6,39,practice,2,artichoke,parent,bristly. like an onion or not like an onion?,
+7,39,practice,2,artichoke,child,not like an onion,
+8,39,practice,2,artichoke,parent,,parent
+15,39,practice,5,artichoke,parent,"ok, now this one is bristly like the one you said before",
+16,39,practice,5,artichoke,child,,child
+9,39,practice,3,onion,parent,"ok, now this one i have the one in the blue box looks like an onion",
+10,39,practice,3,onion,child,,child
+17,39,practice,6,onion,parent,which one of yours is in a blue box now?,
+18,39,practice,6,onion,child,it's crunchy like an onion,
+19,39,practice,6,onion,parent,,parent
+47,39,test,10,A1,child,mine looks like a person standing on one leg,
+48,39,test,10,A1,parent,,parent
+65,39,test,16,A1,parent,"alright, this almost looks like somebody standing on one leg or running",
+66,39,test,16,A1,child,,child
+103,39,test,30,A1,child,mine looks like someone standing on one foot,
+104,39,test,30,A1,parent,,parent
+120,39,test,36,A1,parent,mine looks like a person running on one leg,
+121,39,test,36,A1,child,,child
+27,39,test,3,B1,parent,this one looks like a man standing up and walking with it's head tilted,
+28,39,test,3,B1,child,,child
+52,39,test,11,B1,child,it looks like a person walking with its head down,
+53,39,test,11,B1,parent,,parent
+93,39,test,27,B1,parent,mine looks like somebody walking with their head down,
+94,39,test,27,B1,child,,child
+109,39,test,31,B1,child,the one walking with his head down,
+110,39,test,31,B1,parent,,parent
+29,39,test,4,C1,child,mine looks like a person crouching,
+30,39,test,4,C1,parent,,parent
+54,39,test,12,C1,parent,"alright, this one looks like someone crouching or kneeling or something like that",
+55,39,test,12,C1,child,,child
+81,39,test,22,C1,child,mine looks like someone crouching,
+82,39,test,22,C1,parent,,parent
+124,39,test,38,C1,parent,mine looks like a person crouching,
+125,39,test,38,C1,child,,child
+37,39,test,7,D1,parent,"alright, mine looks like a person laying down",
+38,39,test,7,D1,child,,child
+58,39,test,13,D1,child,he's laying down,
+59,39,test,13,D1,parent,,parent
+83,39,test,23,D1,parent,mine looks like somebody laying down,
+84,39,test,23,D1,child,,child
+114,39,test,33,D1,child,this looks like a person reading,
+115,39,test,33,D1,parent,,parent
+44,39,test,9,E1,parent,mine kind of looks like somebody jumping up in the air like they're very excited,
+45,39,test,9,E1,child,,child
+73,39,test,19,E1,child,mine looks like a person jumping,
+74,39,test,19,E1,parent,,parent
+79,39,test,21,E1,parent,ok now the one in my blue square looks like somebody jumping into the air,
+80,39,test,21,E1,child,,child
+122,39,test,37,E1,child,mine looks like a person jumping,
+123,39,test,37,E1,parent,,parent
+21,39,test,1,F1,parent,"ok, the shape i want you to click on has a square and some pointy pieces and some triangles on the bottom corner",
+22,39,test,1,F1,child,,child
+69,39,test,17,F1,child,mine looks like a person doing the splits in zzz,
+70,39,test,17,F1,parent,,parent
+101,39,test,29,F1,parent,mine looks like somebody doing the splits in the hallway,
+102,39,test,29,F1,child,,child
+118,39,test,35,F1,child,mine looks like a person doing splits,
+119,39,test,35,F1,parent,,parent
+24,39,test,2,G1,parent,"ok, describe to me the one that's in the blue box for you now",
+25,39,test,2,G1,child,she has a dress and the head is tilted and it's sitting on the square,
+26,39,test,2,G1,parent,,parent
+75,39,test,20,G1,parent,i heard you describe this one before as someone wearing a dress,
+76,39,test,20,G1,child,,child
+89,39,test,26,G1,child,mine looks like someone sitting down,
+90,39,test,26,G1,parent,sitting down or laying down?,
+91,39,test,26,G1,child,sitting down,
+92,39,test,26,G1,parent,,parent
+116,39,test,34,G1,parent,mine looks like a person sitting down,
+117,39,test,34,G1,child,,child
+33,39,test,6,H1,child,it looks like he's worshiping,
+34,39,test,6,H1,parent,"interesting. ok, does it look like he's standing or jumping?",
+35,39,test,6,H1,child,standing,
+36,39,test,6,H1,parent,,parent
+71,39,test,18,H1,parent,"um, mine looks like somebody who's maybe wearing a robe and standing up, and maybe they're hodling something?",
+72,39,test,18,H1,child,,child
+97,39,test,28,H1,child,now it looks like a priest,
+98,39,test,28,H1,parent,hmm. a priest walking or running or just standing?,
+99,39,test,28,H1,child,Just standing,
+100,39,test,28,H1,parent,,parent
+111,39,test,32,H1,parent,this one looks like the priest,
+112,39,test,32,H1,child,,child
+39,39,test,8,I1,child,"mine looks like a boy kneeling with a hand behind his back, carrying a pitcher",
+40,39,test,8,I1,parent,carrying a pitcher?,
+41,39,test,8,I1,child,that's a square,
+42,39,test,8,I1,parent,"hmm, okay",
+43,39,test,8,I1,parent,,parent
+60,39,test,14,I1,parent,"ok, mine looks like somebody bending over and it looks like he's holding a bowl or something",
+61,39,test,14,I1,child,,child
+85,39,test,24,I1,child,mine looks like someone bending over,
+86,39,test,24,I1,parent,,parent
+129,39,test,40,I1,parent,mine looks like a person bending over holding a bowl,
+130,39,test,40,I1,child,,child
+31,39,test,5,K1,parent,mine looks like somebody bending over and it almost looks like they have a tail,
+32,39,test,5,K1,child,,child
+63,39,test,15,K1,child,it's a guy kneeling over,
+64,39,test,15,K1,parent,,parent
+87,39,test,25,K1,parent,"mine also looks like someone bending over this time, maybe they have a tail though",
+88,39,test,25,K1,child,,child
+127,39,test,39,K1,child,mine looks like a person bending over,
+128,39,test,39,K1,parent,,parent
+2,39,test,,,parent,"ok, click on it",
+20,39,test,,,parent,"alright, you ready to do the real one now?",
+23,39,test,,,child,i got that one right,
+46,39,test,,,parent,"oh, good job!",
+49,39,test,,,parent,"alright, does one of yours have a blue square on it?",
+50,39,test,,,child,yes,
+51,39,test,,,parent,decribe it to me,
+56,39,test,,,parent,yeah!,
+57,39,test,,,parent,what does the one in the blue square look like?,
+62,39,test,,,parent,what about yours?,
+67,39,test,,,child,i did it!,
+68,39,test,,,parent,yay!,
+77,39,test,,,parent,"oh, how did you know!",
+78,39,test,,,child,i just did,
+95,39,test,,,child,i got it right!,
+96,39,test,,,parent,what now?,
+105,39,test,,,parent,good job! time for the next round,
+106,39,test,,,child,is it going to be different?,
+107,39,test,,,parent,"i don't know, it looks like the same",
+108,39,test,,,parent,what's in your blue square?,
+113,39,test,,,child,this is not as fun as the other games,
+126,39,test,,,child,i got that right,

@@ -1,158 +1,158 @@
-Timeline.ordinal,database_id,subid,type,trial,target,person,utterance,selection
-0,9088,36,practice,1,apple,parent,Apple,
-22,9088,36,practice,4,apple,child,Apple,
-23,9088,36,practice,4,apple,parent,,parent
-1,9088,36,practice,2,artichoke,child,,child
-4,9088,36,practice,2,artichoke,parent,Which one is it is it the onion or the artichoke,
-5,9088,36,practice,2,artichoke,child,Artichoke,
-7,9088,36,practice,2,artichoke,parent,,parent
-24,9088,36,practice,5,artichoke,parent,Artichoke,
-25,9088,36,practice,5,artichoke,child,,child
-8,9088,36,practice,3,onion,parent,What did we talk about today,
-9,9088,36,practice,3,onion,child,Hm,
-10,9088,36,practice,3,onion,parent,People are like,
-11,9088,36,practice,3,onion,child,Onions,
-12,9088,36,practice,3,onion,child,This is the onion,
-13,9088,36,practice,3,onion,parent,Which one is the onion,
-14,9088,36,practice,3,onion,child,The one on this side,
-16,9088,36,practice,3,onion,child,It has like zzz and it's like a like a a sphere and has a stick at the bottom,
-18,9088,36,practice,3,onion,parent,It's an you know what an artichoke is right,
-20,9088,36,practice,3,onion,parent,Well it's not the artichoke pick don't pick the artichoke,
-21,9088,36,practice,3,onion,child,,child
-26,9088,36,practice,6,onion,child,Onion,
-27,9088,36,practice,6,onion,parent,,parent
-51,9088,36,test,6,A1,child,This one looks like a person who's running,
-52,9088,36,test,6,A1,parent,Fast or slow,
-53,9088,36,test,6,A1,child,Jogging,
-54,9088,36,test,6,A1,parent,,parent
-78,9088,36,test,14,A1,parent,This one looks like someone jogging,
-79,9088,36,test,14,A1,child,,child
-98,9088,36,test,22,A1,child,He's this is looks like somebody jog jogging,
-99,9088,36,test,22,A1,parent,,parent
-148,9088,36,test,38,A1,parent,This looks like skip skip skip to my lou,
-149,9088,36,test,38,A1,child,,child
-38,9088,36,test,2,B1,child,The one who's walking lonely,
-39,9088,36,test,2,B1,parent,Look like he's sad,
-40,9088,36,test,2,B1,child,Yeah,
-41,9088,36,test,2,B1,parent,Not the one that's holding a bowl right,
-42,9088,36,test,2,B1,child,Yeah not the one that's holding a bowl,
-43,9088,36,test,2,B1,parent,,parent
-73,9088,36,test,12,B1,parent,This looks like someone who's walking sad and lonely,
-74,9088,36,test,12,B1,child,,child
-106,9088,36,test,26,B1,parent,This one look this one looks like somebody walking lonely,
-108,9088,36,test,26,B1,parent,,parent
-134,9088,36,test,32,B1,child,,child
-66,9088,36,test,10,C1,child,This one this one it look like two feet and then there there's one rock,
-67,9088,36,test,10,C1,parent,Two feet and one rock oh like someone's kicking a ball,
-68,9088,36,test,10,C1,parent,,parent
-69,9088,36,test,10,C1,parent,Like soccer,
-92,9088,36,test,20,C1,parent,This one looks like someone playing soccer,
-93,9088,36,test,20,C1,child,,child
-102,9088,36,test,24,C1,child,This looks like someone kicking a ball in soccer,
-103,9088,36,test,24,C1,parent,,parent
-137,9088,36,test,34,C1,parent,Oh oh oh oh oh oh oh,
-138,9088,36,test,34,C1,child,,child
-55,9088,36,test,7,D1,parent,Ah I'm sleepy,
-56,9088,36,test,7,D1,child,Um,
-57,9088,36,test,7,D1,parent,The the one who looks sleepy,
-58,9088,36,test,7,D1,child,,child
-80,9088,36,test,15,D1,child,This one looks like someone sleeping,
-81,9088,36,test,15,D1,parent,,parent
-100,9088,36,test,23,D1,parent,Ah I'm sleepy,
-101,9088,36,test,23,D1,child,,child
-146,9088,36,test,37,D1,child,Ah I'm sleepy,
-147,9088,36,test,37,D1,parent,,parent
-34,9088,36,test,1,E1,parent,So the the blue box is around the one that looks like he's falling down,
-35,9088,36,test,1,E1,parent,And,
-36,9088,36,test,1,E1,child,,child
-90,9088,36,test,19,E1,child,This one looks like somebody's trying to jump to catch a ball,
-91,9088,36,test,19,E1,parent,,parent
-111,9088,36,test,27,E1,parent,This one looks like someone saying hooray,
-112,9088,36,test,27,E1,child,,child
-139,9088,36,test,35,E1,child,Hooray I'm gonna catch a ball,
-140,9088,36,test,35,E1,parent,,parent
-45,9088,36,test,3,F1,parent,This one looks like the one that's trying to catch a basketball that's in the air,
-46,9088,36,test,3,F1,child,,child
-86,9088,36,test,17,F1,child,This looks like someone try... running to catch a ball,
-87,9088,36,test,17,F1,parent,,parent
-96,9088,36,test,21,F1,parent,This is what you do when you're at basketball class and the ball misses,
-97,9088,36,test,21,F1,child,,child
-135,9088,36,test,33,F1,child,Yay hooray I'm gonna catch a ball,
-136,9088,36,test,33,F1,parent,,parent
-49,9088,36,test,5,G1,parent,Oh this one looks like the person that's praying on their knees,
-50,9088,36,test,5,G1,child,,child
-75,9088,36,test,13,G1,child,This one is somebody on his on her on,
-76,9088,36,test,13,G1,child,This this picture is somebody on their knees playing,
-77,9088,36,test,13,G1,parent,,parent
-117,9088,36,test,29,G1,parent,Someone doing some squats,
-118,9088,36,test,29,G1,child,,child
-131,9088,36,test,31,G1,child,Oh I'm gonna pray,
-132,9088,36,test,31,G1,parent,,parent
-64,9088,36,test,9,H1,parent,Oh so this one looks like a student who's holding a box in front of him,
-65,9088,36,test,9,H1,child,,child
-71,9088,36,test,11,H1,child,This this looks like a standing who's holding a box,
-72,9088,36,test,11,H1,parent,,parent
-104,9088,36,test,25,H1,parent,Well this one looks like someone holding a box,
-105,9088,36,test,25,H1,child,,child
-152,9088,36,test,39,H1,child,Excuse me there you go,
-153,9088,36,test,39,H1,parent,,parent
-47,9088,36,test,4,I1,child,He this guy is is hold... thsi this person is holding a a bowl,
-48,9088,36,test,4,I1,parent,,parent
-82,9088,36,test,16,I1,parent,This one looks like,
-83,9088,36,test,16,I1,parent,Uh someone,
-84,9088,36,test,16,I1,parent,Delivering a package,
-85,9088,36,test,16,I1,child,,child
-113,9088,36,test,28,I1,child,This one looks like someone giving somebody a bowl,
-114,9088,36,test,28,I1,parent,,parent
-141,9088,36,test,36,I1,parent,Excuse me sir can I,
-142,9088,36,test,36,I1,child,,child
-59,9088,36,test,8,K1,child,The one who's like,
-60,9088,36,test,8,K1,child,The one,
-61,9088,36,test,8,K1,child,The one who's holding a some who's not holdi who's trying to catch something like this who,
-62,9088,36,test,8,K1,parent,OK,
-63,9088,36,test,8,K1,parent,,parent
-88,9088,36,test,18,K1,parent,This one looks like someone holding their arms out for something,
-89,9088,36,test,18,K1,child,,child
-119,9088,36,test,30,K1,child,Somebody who's doing a pledge,
-120,9088,36,test,30,K1,parent,A pledge,
-121,9088,36,test,30,K1,child,It looks like a pledge,
-122,9088,36,test,30,K1,parent,,parent
-155,9088,36,test,40,K1,child,Yay hooray I'm gonna catch the ball,
-156,9088,36,test,40,K1,parent,No it's not that one I got the blue,
-157,9088,36,test,40,K1,child,,child
-2,9088,36,test,,,parent,You have a blue box,
-3,9088,36,test,,,child,Yeah,
-6,9088,36,test,,,parent,Could you press it,
-15,9088,36,test,,,parent,What does the onion look like,
-17,9088,36,test,,,parent,Mmm,
-19,9088,36,test,,,child,Yeah,
-28,9088,36,test,,,parent,You ready,
-29,9088,36,test,,,child,Mhm,
-30,9088,36,test,,,parent,Set,
-31,9088,36,test,,,parent,Go,
-32,9088,36,test,,,parent,What the,
-33,9088,36,test,,,child,Hm,
-37,9088,36,test,,,parent,There you go,
-44,9088,36,test,,,parent,OK,
-70,9088,36,test,,,parent,Time for the next round,
-94,9088,36,test,,,parent,Next round,
-95,9088,36,test,,,child,Next round,
-107,9088,36,test,,,parent,I'm so lonely,
-109,9088,36,test,,,child,Who said that,
-110,9088,36,test,,,parent,I don't know,
-115,9088,36,test,,,parent,Uh,
-116,9088,36,test,,,parent,Hm,
-123,9088,36,test,,,parent,You sure,
-124,9088,36,test,,,child,Mhm,
-125,9088,36,test,,,parent,It's another round,
-126,9088,36,test,,,child,Another round,
-127,9088,36,test,,,parent,You ready,
-128,9088,36,test,,,child,Please tell me it's something different,
-129,9088,36,test,,,parent,Oh,
-130,9088,36,test,,,child,This,
-143,9088,36,test,,,parent,How'd you know it was that one,
-144,9088,36,test,,,parent,Did you just guess,
-145,9088,36,test,,,child,No,
-150,9088,36,test,,,parent,zzz,
-154,9088,36,test,,,parent,This one looks like,
-133,9088,36,,,,parent,I'm so sad I'm walk,
+Timeline.ordinal,subid,type,trial,target,person,utterance,selection
+0,36,practice,1,apple,parent,Apple,
+22,36,practice,4,apple,child,Apple,
+23,36,practice,4,apple,parent,,parent
+1,36,practice,2,artichoke,child,,child
+4,36,practice,2,artichoke,parent,Which one is it is it the onion or the artichoke,
+5,36,practice,2,artichoke,child,Artichoke,
+7,36,practice,2,artichoke,parent,,parent
+24,36,practice,5,artichoke,parent,Artichoke,
+25,36,practice,5,artichoke,child,,child
+8,36,practice,3,onion,parent,What did we talk about today,
+9,36,practice,3,onion,child,Hm,
+10,36,practice,3,onion,parent,People are like,
+11,36,practice,3,onion,child,Onions,
+12,36,practice,3,onion,child,This is the onion,
+13,36,practice,3,onion,parent,Which one is the onion,
+14,36,practice,3,onion,child,The one on this side,
+16,36,practice,3,onion,child,It has like zzz and it's like a like a a sphere and has a stick at the bottom,
+18,36,practice,3,onion,parent,It's an you know what an artichoke is right,
+20,36,practice,3,onion,parent,Well it's not the artichoke pick don't pick the artichoke,
+21,36,practice,3,onion,child,,child
+26,36,practice,6,onion,child,Onion,
+27,36,practice,6,onion,parent,,parent
+51,36,test,6,A1,child,This one looks like a person who's running,
+52,36,test,6,A1,parent,Fast or slow,
+53,36,test,6,A1,child,Jogging,
+54,36,test,6,A1,parent,,parent
+78,36,test,14,A1,parent,This one looks like someone jogging,
+79,36,test,14,A1,child,,child
+98,36,test,22,A1,child,He's this is looks like somebody jog jogging,
+99,36,test,22,A1,parent,,parent
+148,36,test,38,A1,parent,This looks like skip skip skip to my lou,
+149,36,test,38,A1,child,,child
+38,36,test,2,B1,child,The one who's walking lonely,
+39,36,test,2,B1,parent,Look like he's sad,
+40,36,test,2,B1,child,Yeah,
+41,36,test,2,B1,parent,Not the one that's holding a bowl right,
+42,36,test,2,B1,child,Yeah not the one that's holding a bowl,
+43,36,test,2,B1,parent,,parent
+73,36,test,12,B1,parent,This looks like someone who's walking sad and lonely,
+74,36,test,12,B1,child,,child
+106,36,test,26,B1,parent,This one look this one looks like somebody walking lonely,
+108,36,test,26,B1,parent,,parent
+134,36,test,32,B1,child,,child
+66,36,test,10,C1,child,This one this one it look like two feet and then there there's one rock,
+67,36,test,10,C1,parent,Two feet and one rock oh like someone's kicking a ball,
+68,36,test,10,C1,parent,,parent
+69,36,test,10,C1,parent,Like soccer,
+92,36,test,20,C1,parent,This one looks like someone playing soccer,
+93,36,test,20,C1,child,,child
+102,36,test,24,C1,child,This looks like someone kicking a ball in soccer,
+103,36,test,24,C1,parent,,parent
+137,36,test,34,C1,parent,Oh oh oh oh oh oh oh,
+138,36,test,34,C1,child,,child
+55,36,test,7,D1,parent,Ah I'm sleepy,
+56,36,test,7,D1,child,Um,
+57,36,test,7,D1,parent,The the one who looks sleepy,
+58,36,test,7,D1,child,,child
+80,36,test,15,D1,child,This one looks like someone sleeping,
+81,36,test,15,D1,parent,,parent
+100,36,test,23,D1,parent,Ah I'm sleepy,
+101,36,test,23,D1,child,,child
+146,36,test,37,D1,child,Ah I'm sleepy,
+147,36,test,37,D1,parent,,parent
+34,36,test,1,E1,parent,So the the blue box is around the one that looks like he's falling down,
+35,36,test,1,E1,parent,And,
+36,36,test,1,E1,child,,child
+90,36,test,19,E1,child,This one looks like somebody's trying to jump to catch a ball,
+91,36,test,19,E1,parent,,parent
+111,36,test,27,E1,parent,This one looks like someone saying hooray,
+112,36,test,27,E1,child,,child
+139,36,test,35,E1,child,Hooray I'm gonna catch a ball,
+140,36,test,35,E1,parent,,parent
+45,36,test,3,F1,parent,This one looks like the one that's trying to catch a basketball that's in the air,
+46,36,test,3,F1,child,,child
+86,36,test,17,F1,child,This looks like someone try... running to catch a ball,
+87,36,test,17,F1,parent,,parent
+96,36,test,21,F1,parent,This is what you do when you're at basketball class and the ball misses,
+97,36,test,21,F1,child,,child
+135,36,test,33,F1,child,Yay hooray I'm gonna catch a ball,
+136,36,test,33,F1,parent,,parent
+49,36,test,5,G1,parent,Oh this one looks like the person that's praying on their knees,
+50,36,test,5,G1,child,,child
+75,36,test,13,G1,child,This one is somebody on his on her on,
+76,36,test,13,G1,child,This this picture is somebody on their knees playing,
+77,36,test,13,G1,parent,,parent
+117,36,test,29,G1,parent,Someone doing some squats,
+118,36,test,29,G1,child,,child
+131,36,test,31,G1,child,Oh I'm gonna pray,
+132,36,test,31,G1,parent,,parent
+64,36,test,9,H1,parent,Oh so this one looks like a student who's holding a box in front of him,
+65,36,test,9,H1,child,,child
+71,36,test,11,H1,child,This this looks like a standing who's holding a box,
+72,36,test,11,H1,parent,,parent
+104,36,test,25,H1,parent,Well this one looks like someone holding a box,
+105,36,test,25,H1,child,,child
+152,36,test,39,H1,child,Excuse me there you go,
+153,36,test,39,H1,parent,,parent
+47,36,test,4,I1,child,He this guy is is hold... thsi this person is holding a a bowl,
+48,36,test,4,I1,parent,,parent
+82,36,test,16,I1,parent,This one looks like,
+83,36,test,16,I1,parent,Uh someone,
+84,36,test,16,I1,parent,Delivering a package,
+85,36,test,16,I1,child,,child
+113,36,test,28,I1,child,This one looks like someone giving somebody a bowl,
+114,36,test,28,I1,parent,,parent
+141,36,test,36,I1,parent,Excuse me sir can I,
+142,36,test,36,I1,child,,child
+59,36,test,8,K1,child,The one who's like,
+60,36,test,8,K1,child,The one,
+61,36,test,8,K1,child,The one who's holding a some who's not holdi who's trying to catch something like this who,
+62,36,test,8,K1,parent,OK,
+63,36,test,8,K1,parent,,parent
+88,36,test,18,K1,parent,This one looks like someone holding their arms out for something,
+89,36,test,18,K1,child,,child
+119,36,test,30,K1,child,Somebody who's doing a pledge,
+120,36,test,30,K1,parent,A pledge,
+121,36,test,30,K1,child,It looks like a pledge,
+122,36,test,30,K1,parent,,parent
+155,36,test,40,K1,child,Yay hooray I'm gonna catch the ball,
+156,36,test,40,K1,parent,No it's not that one I got the blue,
+157,36,test,40,K1,child,,child
+2,36,test,,,parent,You have a blue box,
+3,36,test,,,child,Yeah,
+6,36,test,,,parent,Could you press it,
+15,36,test,,,parent,What does the onion look like,
+17,36,test,,,parent,Mmm,
+19,36,test,,,child,Yeah,
+28,36,test,,,parent,You ready,
+29,36,test,,,child,Mhm,
+30,36,test,,,parent,Set,
+31,36,test,,,parent,Go,
+32,36,test,,,parent,What the,
+33,36,test,,,child,Hm,
+37,36,test,,,parent,There you go,
+44,36,test,,,parent,OK,
+70,36,test,,,parent,Time for the next round,
+94,36,test,,,parent,Next round,
+95,36,test,,,child,Next round,
+107,36,test,,,parent,I'm so lonely,
+109,36,test,,,child,Who said that,
+110,36,test,,,parent,I don't know,
+115,36,test,,,parent,Uh,
+116,36,test,,,parent,Hm,
+123,36,test,,,parent,You sure,
+124,36,test,,,child,Mhm,
+125,36,test,,,parent,It's another round,
+126,36,test,,,child,Another round,
+127,36,test,,,parent,You ready,
+128,36,test,,,child,Please tell me it's something different,
+129,36,test,,,parent,Oh,
+130,36,test,,,child,This,
+143,36,test,,,parent,How'd you know it was that one,
+144,36,test,,,parent,Did you just guess,
+145,36,test,,,child,No,
+150,36,test,,,parent,zzz,
+154,36,test,,,parent,This one looks like,
+133,36,,,,parent,I'm so sad I'm walk,

@@ -1,222 +1,222 @@
-Timeline.ordinal,database_id,subid,type,trial,target,person,utterance,selection
-0,8528,56,practice,1,apple,parent,do you see a picture on your ipad?,
-1,8528,56,practice,1,apple,child,"yup, a nana and that",
-2,8528,56,practice,1,apple,parent,i want you to choose the apple,
-3,8528,56,practice,1,apple,child,the apple,
-4,8528,56,practice,1,apple,child,,child
-12,8528,56,practice,4,apple,parent,tell me which one to choose,
-13,8528,56,practice,4,apple,child,banana,
-14,8528,56,practice,4,apple,parent,"banana? okay, got it.",
-15,8528,56,practice,4,apple,parent,,parent
-5,8528,56,practice,2,artichoke,parent,which one should i choose?,
-6,8528,56,practice,2,artichoke,child,"um, broccoli",
-7,8528,56,practice,2,artichoke,parent,i think you think this one's broccoli,
-8,8528,56,practice,2,artichoke,parent,,parent
-16,8528,56,practice,5,artichoke,child,tell me which one,
-17,8528,56,practice,5,artichoke,parent,i want you to choose the one on the right,
-18,8528,56,practice,5,artichoke,child,,child
-19,8528,56,practice,5,artichoke,parent,"that's called, what's that called. artichoke",
-9,8528,56,practice,3,onion,parent,"go ahead, okay",
-10,8528,56,practice,3,onion,child,,child
-11,8528,56,practice,3,onion,parent,"hold on, ready, oh",
-20,8528,56,practice,6,onion,parent,which one do you think?,
-21,8528,56,practice,6,onion,child,this one,
-22,8528,56,practice,6,onion,parent,what's it look like?,
-23,8528,56,practice,6,onion,child,it looks like nana,
-24,8528,56,practice,6,onion,parent,it looks like what?,
-25,8528,56,practice,6,onion,child,it looks like a banana,
-26,8528,56,practice,6,onion,parent,"hm, i think you mean this one",
-27,8528,56,practice,6,onion,parent,,parent
-28,8528,56,practice,6,onion,parent,"that's, um, I think that was an onion",
-72,8528,56,test,9,A1,parent,this one is the person running. do you see it looks like a person running with their foot up?,
-73,8528,56,test,9,A1,child,yup,
-74,8528,56,test,9,A1,child,,child
-102,8528,56,test,17,A1,parent,can you show me which one the picture is around? tell me with your words?,
-103,8528,56,test,17,A1,child,this one.,
-104,8528,56,test,17,A1,parent,what does it look like?,
-105,8528,56,test,17,A1,child,it looks like a people walking so fast,
-106,8528,56,test,17,A1,parent,,parent
-107,8528,56,test,17,A1,parent,"ok, very good, xxx!",
-162,8528,56,test,27,A1,parent,cool!,
-163,8528,56,test,27,A1,parent,my blue square is around the person running towards the doggie,
-164,8528,56,test,27,A1,child,,child
-208,8528,56,test,37,A1,child,i have the blue square around the peoples running,
-209,8528,56,test,37,A1,parent,alright,
-210,8528,56,test,37,A1,parent,,parent
-40,8528,56,test,4,B1,parent,"okay, which one do you have?",
-41,8528,56,test,4,B1,child,a doggie and a person walking,
-42,8528,56,test,4,B1,parent,which one is the blue box around?,
-43,8528,56,test,4,B1,child,that one. the person,
-44,8528,56,test,4,B1,parent,the person walking?,
-45,8528,56,test,4,B1,child,yeah,
-46,8528,56,test,4,B1,parent,okay,
-47,8528,56,test,4,B1,parent,,parent
-121,8528,56,test,20,B1,parent,"mine is the person walking. do you see that? it's not the doggie getting on the couch, it's the other one. can you pick that one for me?",
-122,8528,56,test,20,B1,child,yup,
-123,8528,56,test,20,B1,child,,child
-156,8528,56,test,26,B1,parent,good job!,
-157,8528,56,test,26,B1,parent,which one do you have?,
-158,8528,56,test,26,B1,child,"uh, blue square",
-159,8528,56,test,26,B1,parent,the blue square is around what?,
-160,8528,56,test,26,B1,child,around the peoples walking and sad,
-161,8528,56,test,26,B1,parent,,parent
-205,8528,56,test,36,B1,parent,i have a blue square around a person walking. can you press the square that looks like the person walking?,
-206,8528,56,test,36,B1,child,i have it,
-207,8528,56,test,36,B1,child,,child
-68,8528,56,test,8,C1,parent,"alright, which one do you think? your blue box is around what?",
-69,8528,56,test,8,C1,child,"this, it's a human sitting. i mean sleeping in the morning",
-70,8528,56,test,8,C1,parent,okay,
-71,8528,56,test,8,C1,parent,,parent
-85,8528,56,test,12,C1,parent,"this one is the picture of the person that looks like they're kissing the ground., they are kneeling",
-86,8528,56,test,12,C1,child,,child
-175,8528,56,test,30,C1,parent,which one do you have with a blue square around?,
-176,8528,56,test,30,C1,child,this one,
-177,8528,56,test,30,C1,parent,what does it look like?,
-178,8528,56,test,30,C1,child,it looks like a doggie,
-179,8528,56,test,30,C1,parent,,parent
-217,8528,56,test,40,C1,parent,my blue square is around the person laying in bed,
-218,8528,56,test,40,C1,child,i don't have it,
-219,8528,56,test,40,C1,parent,you don't have that?,
-220,8528,56,test,40,C1,child,,child
-33,8528,56,test,2,D1,parent,which one is your blue box around?,
-34,8528,56,test,2,D1,child,a airplane,
-35,8528,56,test,2,D1,parent,the one that looks like an airplane? you got it.,
-36,8528,56,test,2,D1,parent,,parent
-90,8528,56,test,14,D1,parent,this one looks like the airplane,
-91,8528,56,test,14,D1,child,it is! i have the airplane too!,
-92,8528,56,test,14,D1,parent,pick that one!,
-93,8528,56,test,14,D1,child,,child
-94,8528,56,test,14,D1,child,i picked that one,
-165,8528,56,test,28,D1,parent,it's running,
-166,8528,56,test,28,D1,child,i press it!,
-167,8528,56,test,28,D1,parent,"ok, which one do you have?",
-168,8528,56,test,28,D1,child,a person riding in an airplane,
-169,8528,56,test,28,D1,parent,"in an airplane, huh?",
-170,8528,56,test,28,D1,parent,,parent
-171,8528,56,test,28,D1,parent,"cool, are they going to florida?",
-172,8528,56,test,28,D1,child,yeah,
-185,8528,56,test,32,D1,parent,my blue square is around the airplane,
-186,8528,56,test,32,D1,child,i don't have no blue square,
-187,8528,56,test,32,D1,parent,put it back down. i have a blue square that has an airplane. can you pick the airplane one?,
-188,8528,56,test,32,D1,child,,child
-29,8528,56,test,1,E1,parent,"okay, you see two pictures?",
-30,8528,56,test,1,E1,child,yup,
-31,8528,56,test,1,E1,parent,pick the one that looks like a person jumping,
-32,8528,56,test,1,E1,child,,child
-95,8528,56,test,15,E1,child,that is a people jumping and it looks like a square around it,
-96,8528,56,test,15,E1,parent,okay,
-97,8528,56,test,15,E1,parent,,parent
-173,8528,56,test,29,E1,child,,child
-174,8528,56,test,29,E1,parent,oh you... alright,
-181,8528,56,test,31,E1,parent,"ok, which one do you have a blue square around?",
-182,8528,56,test,31,E1,child,around the people jumping!,
-183,8528,56,test,31,E1,parent,yay that's so fun!,
-184,8528,56,test,31,E1,parent,,parent
-48,8528,56,test,5,F1,parent,"hmmm, it's not the doggie looking one, it's the other one. what do you think that is? maybe somebody running?",
-49,8528,56,test,5,F1,parent,it looks like somebody running with their arms up,
-50,8528,56,test,5,F1,child,i think it's a dog,
-51,8528,56,test,5,F1,parent,"not the dog, the other one",
-52,8528,56,test,5,F1,child,this one?,
-53,8528,56,test,5,F1,parent,yeah,
-54,8528,56,test,5,F1,child,it's a human?,
-55,8528,56,test,5,F1,parent,i don't know,
-56,8528,56,test,5,F1,child,i'm going to pick this,
-57,8528,56,test,5,F1,child,,child
-87,8528,56,test,13,F1,parent,what's your picture of?,
-88,8528,56,test,13,F1,child,i have a human running so fast,
-89,8528,56,test,13,F1,parent,,parent
-125,8528,56,test,21,F1,parent,"this one is a person running really fast, do you see that one?",
-126,8528,56,test,21,F1,child,yeah,
-127,8528,56,test,21,F1,parent,pick that one for me,
-128,8528,56,test,21,F1,child,,child
-214,8528,56,test,39,F1,child,"i have a triangle with a person who's running, really fast",
-215,8528,56,test,39,F1,parent,okay,
-216,8528,56,test,39,F1,parent,,parent
-37,8528,56,test,3,G1,parent,"ok, this one looks like somebody sitting down",
-38,8528,56,test,3,G1,child,,child
-39,8528,56,test,3,G1,child,i picked it!,
-113,8528,56,test,19,G1,child,this is a doggie,
-114,8528,56,test,19,G1,parent,you got a doggie too?,
-115,8528,56,test,19,G1,parent,does it have a blue box around it?,
-116,8528,56,test,19,G1,child,nope,
-117,8528,56,test,19,G1,parent,okay,
-118,8528,56,test,19,G1,parent,,parent
-119,8528,56,test,19,G1,child,this is a people,
-120,8528,56,test,19,G1,parent,"ahh, got it.",
-136,8528,56,test,23,G1,parent,how about the one with the person sitting down?,
-137,8528,56,test,23,G1,child,its when a person's in an airplane flying to florida,
-138,8528,56,test,23,G1,child,,child
-189,8528,56,test,33,G1,parent,"do you have a blue square? no, put it down sweetie.",
-190,8528,56,test,33,G1,child,yes,
-191,8528,56,test,33,G1,parent,tell me what it's around,
-192,8528,56,test,33,G1,child,it's around the people falling,
-193,8528,56,test,33,G1,parent,they're falling or they're sitting down?,
-194,8528,56,test,33,G1,child,falling,
-195,8528,56,test,33,G1,parent,they're falling,
-196,8528,56,test,33,G1,parent,,parent
-197,8528,56,test,33,G1,parent,"ok, if that's what it looks like",
-75,8528,56,test,10,H1,parent,there's a person standing up or a person laying down. which one is it?,
-76,8528,56,test,10,H1,child,this is a person standing,
-77,8528,56,test,10,H1,parent,okay,
-78,8528,56,test,10,H1,parent,,parent
-100,8528,56,test,16,H1,child,,child
-139,8528,56,test,24,H1,parent,which one should i pick?,
-140,8528,56,test,24,H1,child,uh,
-141,8528,56,test,24,H1,parent,which one has a blue box around it?,
-142,8528,56,test,24,H1,child,that one,
-143,8528,56,test,24,H1,parent,what does it look like?,
-144,8528,56,test,24,H1,child,it look like a human,
-145,8528,56,test,24,H1,parent,it does? what is the human doing?,
-146,8528,56,test,24,H1,child,sitting in a wheelchair,
-147,8528,56,test,24,H1,parent,"sitting in a wheelchair, huh?",
-150,8528,56,test,24,H1,parent,are they standing up or are they laying down?,
-151,8528,56,test,24,H1,child,they sitting up,
-152,8528,56,test,24,H1,parent,,parent
-211,8528,56,test,38,H1,parent,"i have a blue square around the person holding a tray, not jumping",
-212,8528,56,test,38,H1,child,i'm xxx,
-213,8528,56,test,38,H1,child,,child
-58,8528,56,test,6,I1,parent,which one do i have to pick? look at your screen and tell me where is the blue box around?,
-59,8528,56,test,6,I1,child,it's that,
-60,8528,56,test,6,I1,parent,what does the picture look like? does it look like somebody kissing the ground or a doggie on a couch?,
-61,8528,56,test,6,I1,child,a doggie on a couch,
-62,8528,56,test,6,I1,parent,okay,
-63,8528,56,test,6,I1,parent,,parent
-108,8528,56,test,18,I1,parent,do you want to know which one my blue box is around?,
-109,8528,56,test,18,I1,child,yeah,
-110,8528,56,test,18,I1,parent,it's the one like the doggie's getting on the couch,
-111,8528,56,test,18,I1,child,okay,
-112,8528,56,test,18,I1,child,,child
-129,8528,56,test,22,I1,parent,which one do you want me to pick?,
-130,8528,56,test,22,I1,child,i have a person sweating,
-131,8528,56,test,22,I1,parent,and they have the blue square around them?,
-132,8528,56,test,22,I1,child,yeah,
-133,8528,56,test,22,I1,parent,"ok, good job",
-134,8528,56,test,22,I1,parent,,parent
-135,8528,56,test,22,I1,child,my xxx too,
-198,8528,56,test,34,I1,parent,ok my blue square is around the one that looks like a doggie getting on the couch,
-199,8528,56,test,34,I1,parent,my blue square is around the one that looks like a doggie getting on the couch,
-200,8528,56,test,34,I1,child,"i don't have a blue square, i have a person",
-201,8528,56,test,34,I1,child,,child
-64,8528,56,test,7,K1,parent,you should choose the one with the doggie on the couch,
-65,8528,56,test,7,K1,child,okay,
-66,8528,56,test,7,K1,child,,child
-67,8528,56,test,7,K1,parent,thank you,
-79,8528,56,test,11,K1,child,it's a dog. it looks like a doggie.,
-80,8528,56,test,11,K1,parent,is that what the blue box is around?,
-81,8528,56,test,11,K1,child,yeah,
-82,8528,56,test,11,K1,parent,i think it looks like a doggie too,
-83,8528,56,test,11,K1,parent,,parent
-84,8528,56,test,11,K1,child,it is!,
-153,8528,56,test,25,K1,parent,this one is the doggie getting on the couch. can you pick that one for me?,
-154,8528,56,test,25,K1,child,yeah,
-155,8528,56,test,25,K1,child,,child
-202,8528,56,test,35,K1,parent,"ok, which one do you have?",
-203,8528,56,test,35,K1,child,"i have the blue square around the doggie, the dog get on the couch!",
-204,8528,56,test,35,K1,parent,,parent
-98,8528,56,test,,,child,i don't want to play this game,
-99,8528,56,test,,,parent,"well we only have a few more left, okay",
-101,8528,56,test,,,child,i'm not gonna ask anymore,
-124,8528,56,test,,,child,xxx,
-148,8528,56,test,,,child,imma press it,
-149,8528,56,test,,,parent,"no don't press it, it's my turn",
-180,8528,56,test,,,parent,alright,
+Timeline.ordinal,subid,type,trial,target,person,utterance,selection
+0,56,practice,1,apple,parent,do you see a picture on your ipad?,
+1,56,practice,1,apple,child,"yup, a nana and that",
+2,56,practice,1,apple,parent,i want you to choose the apple,
+3,56,practice,1,apple,child,the apple,
+4,56,practice,1,apple,child,,child
+12,56,practice,4,apple,parent,tell me which one to choose,
+13,56,practice,4,apple,child,banana,
+14,56,practice,4,apple,parent,"banana? okay, got it.",
+15,56,practice,4,apple,parent,,parent
+5,56,practice,2,artichoke,parent,which one should i choose?,
+6,56,practice,2,artichoke,child,"um, broccoli",
+7,56,practice,2,artichoke,parent,i think you think this one's broccoli,
+8,56,practice,2,artichoke,parent,,parent
+16,56,practice,5,artichoke,child,tell me which one,
+17,56,practice,5,artichoke,parent,i want you to choose the one on the right,
+18,56,practice,5,artichoke,child,,child
+19,56,practice,5,artichoke,parent,"that's called, what's that called. artichoke",
+9,56,practice,3,onion,parent,"go ahead, okay",
+10,56,practice,3,onion,child,,child
+11,56,practice,3,onion,parent,"hold on, ready, oh",
+20,56,practice,6,onion,parent,which one do you think?,
+21,56,practice,6,onion,child,this one,
+22,56,practice,6,onion,parent,what's it look like?,
+23,56,practice,6,onion,child,it looks like nana,
+24,56,practice,6,onion,parent,it looks like what?,
+25,56,practice,6,onion,child,it looks like a banana,
+26,56,practice,6,onion,parent,"hm, i think you mean this one",
+27,56,practice,6,onion,parent,,parent
+28,56,practice,6,onion,parent,"that's, um, I think that was an onion",
+72,56,test,9,A1,parent,this one is the person running. do you see it looks like a person running with their foot up?,
+73,56,test,9,A1,child,yup,
+74,56,test,9,A1,child,,child
+102,56,test,17,A1,parent,can you show me which one the picture is around? tell me with your words?,
+103,56,test,17,A1,child,this one.,
+104,56,test,17,A1,parent,what does it look like?,
+105,56,test,17,A1,child,it looks like a people walking so fast,
+106,56,test,17,A1,parent,,parent
+107,56,test,17,A1,parent,"ok, very good, xxx!",
+162,56,test,27,A1,parent,cool!,
+163,56,test,27,A1,parent,my blue square is around the person running towards the doggie,
+164,56,test,27,A1,child,,child
+208,56,test,37,A1,child,i have the blue square around the peoples running,
+209,56,test,37,A1,parent,alright,
+210,56,test,37,A1,parent,,parent
+40,56,test,4,B1,parent,"okay, which one do you have?",
+41,56,test,4,B1,child,a doggie and a person walking,
+42,56,test,4,B1,parent,which one is the blue box around?,
+43,56,test,4,B1,child,that one. the person,
+44,56,test,4,B1,parent,the person walking?,
+45,56,test,4,B1,child,yeah,
+46,56,test,4,B1,parent,okay,
+47,56,test,4,B1,parent,,parent
+121,56,test,20,B1,parent,"mine is the person walking. do you see that? it's not the doggie getting on the couch, it's the other one. can you pick that one for me?",
+122,56,test,20,B1,child,yup,
+123,56,test,20,B1,child,,child
+156,56,test,26,B1,parent,good job!,
+157,56,test,26,B1,parent,which one do you have?,
+158,56,test,26,B1,child,"uh, blue square",
+159,56,test,26,B1,parent,the blue square is around what?,
+160,56,test,26,B1,child,around the peoples walking and sad,
+161,56,test,26,B1,parent,,parent
+205,56,test,36,B1,parent,i have a blue square around a person walking. can you press the square that looks like the person walking?,
+206,56,test,36,B1,child,i have it,
+207,56,test,36,B1,child,,child
+68,56,test,8,C1,parent,"alright, which one do you think? your blue box is around what?",
+69,56,test,8,C1,child,"this, it's a human sitting. i mean sleeping in the morning",
+70,56,test,8,C1,parent,okay,
+71,56,test,8,C1,parent,,parent
+85,56,test,12,C1,parent,"this one is the picture of the person that looks like they're kissing the ground., they are kneeling",
+86,56,test,12,C1,child,,child
+175,56,test,30,C1,parent,which one do you have with a blue square around?,
+176,56,test,30,C1,child,this one,
+177,56,test,30,C1,parent,what does it look like?,
+178,56,test,30,C1,child,it looks like a doggie,
+179,56,test,30,C1,parent,,parent
+217,56,test,40,C1,parent,my blue square is around the person laying in bed,
+218,56,test,40,C1,child,i don't have it,
+219,56,test,40,C1,parent,you don't have that?,
+220,56,test,40,C1,child,,child
+33,56,test,2,D1,parent,which one is your blue box around?,
+34,56,test,2,D1,child,a airplane,
+35,56,test,2,D1,parent,the one that looks like an airplane? you got it.,
+36,56,test,2,D1,parent,,parent
+90,56,test,14,D1,parent,this one looks like the airplane,
+91,56,test,14,D1,child,it is! i have the airplane too!,
+92,56,test,14,D1,parent,pick that one!,
+93,56,test,14,D1,child,,child
+94,56,test,14,D1,child,i picked that one,
+165,56,test,28,D1,parent,it's running,
+166,56,test,28,D1,child,i press it!,
+167,56,test,28,D1,parent,"ok, which one do you have?",
+168,56,test,28,D1,child,a person riding in an airplane,
+169,56,test,28,D1,parent,"in an airplane, huh?",
+170,56,test,28,D1,parent,,parent
+171,56,test,28,D1,parent,"cool, are they going to florida?",
+172,56,test,28,D1,child,yeah,
+185,56,test,32,D1,parent,my blue square is around the airplane,
+186,56,test,32,D1,child,i don't have no blue square,
+187,56,test,32,D1,parent,put it back down. i have a blue square that has an airplane. can you pick the airplane one?,
+188,56,test,32,D1,child,,child
+29,56,test,1,E1,parent,"okay, you see two pictures?",
+30,56,test,1,E1,child,yup,
+31,56,test,1,E1,parent,pick the one that looks like a person jumping,
+32,56,test,1,E1,child,,child
+95,56,test,15,E1,child,that is a people jumping and it looks like a square around it,
+96,56,test,15,E1,parent,okay,
+97,56,test,15,E1,parent,,parent
+173,56,test,29,E1,child,,child
+174,56,test,29,E1,parent,oh you... alright,
+181,56,test,31,E1,parent,"ok, which one do you have a blue square around?",
+182,56,test,31,E1,child,around the people jumping!,
+183,56,test,31,E1,parent,yay that's so fun!,
+184,56,test,31,E1,parent,,parent
+48,56,test,5,F1,parent,"hmmm, it's not the doggie looking one, it's the other one. what do you think that is? maybe somebody running?",
+49,56,test,5,F1,parent,it looks like somebody running with their arms up,
+50,56,test,5,F1,child,i think it's a dog,
+51,56,test,5,F1,parent,"not the dog, the other one",
+52,56,test,5,F1,child,this one?,
+53,56,test,5,F1,parent,yeah,
+54,56,test,5,F1,child,it's a human?,
+55,56,test,5,F1,parent,i don't know,
+56,56,test,5,F1,child,i'm going to pick this,
+57,56,test,5,F1,child,,child
+87,56,test,13,F1,parent,what's your picture of?,
+88,56,test,13,F1,child,i have a human running so fast,
+89,56,test,13,F1,parent,,parent
+125,56,test,21,F1,parent,"this one is a person running really fast, do you see that one?",
+126,56,test,21,F1,child,yeah,
+127,56,test,21,F1,parent,pick that one for me,
+128,56,test,21,F1,child,,child
+214,56,test,39,F1,child,"i have a triangle with a person who's running, really fast",
+215,56,test,39,F1,parent,okay,
+216,56,test,39,F1,parent,,parent
+37,56,test,3,G1,parent,"ok, this one looks like somebody sitting down",
+38,56,test,3,G1,child,,child
+39,56,test,3,G1,child,i picked it!,
+113,56,test,19,G1,child,this is a doggie,
+114,56,test,19,G1,parent,you got a doggie too?,
+115,56,test,19,G1,parent,does it have a blue box around it?,
+116,56,test,19,G1,child,nope,
+117,56,test,19,G1,parent,okay,
+118,56,test,19,G1,parent,,parent
+119,56,test,19,G1,child,this is a people,
+120,56,test,19,G1,parent,"ahh, got it.",
+136,56,test,23,G1,parent,how about the one with the person sitting down?,
+137,56,test,23,G1,child,its when a person's in an airplane flying to florida,
+138,56,test,23,G1,child,,child
+189,56,test,33,G1,parent,"do you have a blue square? no, put it down sweetie.",
+190,56,test,33,G1,child,yes,
+191,56,test,33,G1,parent,tell me what it's around,
+192,56,test,33,G1,child,it's around the people falling,
+193,56,test,33,G1,parent,they're falling or they're sitting down?,
+194,56,test,33,G1,child,falling,
+195,56,test,33,G1,parent,they're falling,
+196,56,test,33,G1,parent,,parent
+197,56,test,33,G1,parent,"ok, if that's what it looks like",
+75,56,test,10,H1,parent,there's a person standing up or a person laying down. which one is it?,
+76,56,test,10,H1,child,this is a person standing,
+77,56,test,10,H1,parent,okay,
+78,56,test,10,H1,parent,,parent
+100,56,test,16,H1,child,,child
+139,56,test,24,H1,parent,which one should i pick?,
+140,56,test,24,H1,child,uh,
+141,56,test,24,H1,parent,which one has a blue box around it?,
+142,56,test,24,H1,child,that one,
+143,56,test,24,H1,parent,what does it look like?,
+144,56,test,24,H1,child,it look like a human,
+145,56,test,24,H1,parent,it does? what is the human doing?,
+146,56,test,24,H1,child,sitting in a wheelchair,
+147,56,test,24,H1,parent,"sitting in a wheelchair, huh?",
+150,56,test,24,H1,parent,are they standing up or are they laying down?,
+151,56,test,24,H1,child,they sitting up,
+152,56,test,24,H1,parent,,parent
+211,56,test,38,H1,parent,"i have a blue square around the person holding a tray, not jumping",
+212,56,test,38,H1,child,i'm xxx,
+213,56,test,38,H1,child,,child
+58,56,test,6,I1,parent,which one do i have to pick? look at your screen and tell me where is the blue box around?,
+59,56,test,6,I1,child,it's that,
+60,56,test,6,I1,parent,what does the picture look like? does it look like somebody kissing the ground or a doggie on a couch?,
+61,56,test,6,I1,child,a doggie on a couch,
+62,56,test,6,I1,parent,okay,
+63,56,test,6,I1,parent,,parent
+108,56,test,18,I1,parent,do you want to know which one my blue box is around?,
+109,56,test,18,I1,child,yeah,
+110,56,test,18,I1,parent,it's the one like the doggie's getting on the couch,
+111,56,test,18,I1,child,okay,
+112,56,test,18,I1,child,,child
+129,56,test,22,I1,parent,which one do you want me to pick?,
+130,56,test,22,I1,child,i have a person sweating,
+131,56,test,22,I1,parent,and they have the blue square around them?,
+132,56,test,22,I1,child,yeah,
+133,56,test,22,I1,parent,"ok, good job",
+134,56,test,22,I1,parent,,parent
+135,56,test,22,I1,child,my xxx too,
+198,56,test,34,I1,parent,ok my blue square is around the one that looks like a doggie getting on the couch,
+199,56,test,34,I1,parent,my blue square is around the one that looks like a doggie getting on the couch,
+200,56,test,34,I1,child,"i don't have a blue square, i have a person",
+201,56,test,34,I1,child,,child
+64,56,test,7,K1,parent,you should choose the one with the doggie on the couch,
+65,56,test,7,K1,child,okay,
+66,56,test,7,K1,child,,child
+67,56,test,7,K1,parent,thank you,
+79,56,test,11,K1,child,it's a dog. it looks like a doggie.,
+80,56,test,11,K1,parent,is that what the blue box is around?,
+81,56,test,11,K1,child,yeah,
+82,56,test,11,K1,parent,i think it looks like a doggie too,
+83,56,test,11,K1,parent,,parent
+84,56,test,11,K1,child,it is!,
+153,56,test,25,K1,parent,this one is the doggie getting on the couch. can you pick that one for me?,
+154,56,test,25,K1,child,yeah,
+155,56,test,25,K1,child,,child
+202,56,test,35,K1,parent,"ok, which one do you have?",
+203,56,test,35,K1,child,"i have the blue square around the doggie, the dog get on the couch!",
+204,56,test,35,K1,parent,,parent
+98,56,test,,,child,i don't want to play this game,
+99,56,test,,,parent,"well we only have a few more left, okay",
+101,56,test,,,child,i'm not gonna ask anymore,
+124,56,test,,,child,xxx,
+148,56,test,,,child,imma press it,
+149,56,test,,,parent,"no don't press it, it's my turn",
+180,56,test,,,parent,alright,

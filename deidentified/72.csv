@@ -1,123 +1,123 @@
-Timeline.ordinal,database_id,subid,type,trial,target,person,utterance,selection
-0,3243,72,practice,1,apple,parent,apple,
-1,3243,72,practice,1,apple,parent,do you see it over there? so you have to click it,
-2,3243,72,practice,1,apple,child,,child
-11,3243,72,practice,4,apple,child,there is an apple on the screen,
-12,3243,72,practice,4,apple,parent,,parent
-6,3243,72,practice,2,artichoke,child,it's a artichoke,
-7,3243,72,practice,2,artichoke,parent,,parent
-13,3243,72,practice,5,artichoke,parent,artichoke,
-14,3243,72,practice,5,artichoke,child,,child
-9,3243,72,practice,3,onion,parent,onion,
-10,3243,72,practice,3,onion,child,,child
-15,3243,72,practice,6,onion,child,onion,
-16,3243,72,practice,6,onion,parent,,parent
-33,3243,72,test,5,A1,parent,okay this one looks like a person running with a square balanced on top,
-34,3243,72,test,5,A1,child,oh,
-35,3243,72,test,5,A1,child,,child
-68,3243,72,test,19,A1,child,somebody running,
-69,3243,72,test,19,A1,parent,,parent
-77,3243,72,test,23,A1,parent,uh somebody looks like running,
-78,3243,72,test,23,A1,child,,child
-79,3243,72,test,23,A1,parent,with a diamond on the top,
-118,3243,72,test,39,A1,child,somebody running,
-119,3243,72,test,39,A1,parent,,parent
-45,3243,72,test,9,B1,parent,this is a person walking looking down,
-46,3243,72,test,9,B1,child,,child
-54,3243,72,test,13,B1,child,somebody walking looking down,
-55,3243,72,test,13,B1,parent,,parent
-73,3243,72,test,21,B1,parent,somebody walking looking down,
-74,3243,72,test,21,B1,child,,child
-110,3243,72,test,37,B1,child,somebody looking down,
-111,3243,72,test,37,B1,parent,,parent
-112,3243,72,test,37,B1,parent,oops nope,
-113,3243,72,test,37,B1,parent,you said looking down?,
-114,3243,72,test,37,B1,child,uh hmm,
-115,3243,72,test,37,B1,parent,I don't know if that was the right one,
-42,3243,72,test,8,C1,child,this one it's lying down its head is floating and it's a square,
-43,3243,72,test,8,C1,parent,"it's head is floating, ok",
-44,3243,72,test,8,C1,parent,,parent
-56,3243,72,test,14,C1,parent,uh somebody almost going up into a hand stand,
-57,3243,72,test,14,C1,parent,"with head down, the floating square, okay",
-58,3243,72,test,14,C1,child,,child
-84,3243,72,test,26,C1,child,somebody kneeling,
-85,3243,72,test,26,C1,parent,,parent
-120,3243,72,test,40,C1,parent,somebody going into a handstand,
-121,3243,72,test,40,C1,child,,child
-30,3243,72,test,4,D1,child,"it's lying down, triangle feet and it's hand is-",
-31,3243,72,test,4,D1,parent,,parent
-32,3243,72,test,4,D1,parent,that was a good description,
-61,3243,72,test,16,D1,parent,uh somebody lying on the floor with one,
-62,3243,72,test,16,D1,child,,child
-80,3243,72,test,24,D1,child,somebody lying down pointing up,
-81,3243,72,test,24,D1,parent,,parent
-99,3243,72,test,32,D1,parent,somebody lying down with their leg up,
-100,3243,72,test,32,D1,child,,child
-40,3243,72,test,7,E1,parent,this one looks like somebody jumping for joy with their arms up  in the air,
-41,3243,72,test,7,E1,child,,child
-59,3243,72,test,15,E1,child,it's a man jumping,
-60,3243,72,test,15,E1,parent,,parent
-82,3243,72,test,25,E1,parent,somebody jumping for joy,
-83,3243,72,test,25,E1,child,,child
-106,3243,72,test,35,E1,child,somebody jumping,
-107,3243,72,test,35,E1,parent,,parent
-26,3243,72,test,3,F1,parent,"um with this one the sqaure is on the left side on a point,  kind of tilted, look like--looks like it's gonna roll down a hill",
-27,3243,72,test,3,F1,child,oh yeah,
-28,3243,72,test,3,F1,child,,child
-29,3243,72,test,3,F1,parent,okay,
-50,3243,72,test,11,F1,child,"person with a fish-like mouth, uh",
-51,3243,72,test,11,F1,parent,,parent
-92,3243,72,test,29,F1,parent,oh this looks like a shark with its mouth open,
-93,3243,72,test,29,F1,child,,child
-97,3243,72,test,31,F1,child,somebody pointing with the shark mouth,
-98,3243,72,test,31,F1,parent,,parent
-20,3243,72,test,1,G1,parent,um there is a weird shape on the bottom and there is a square on the top kind of tilted sitting on top of a point,
-21,3243,72,test,1,G1,child,yeah,
-22,3243,72,test,1,G1,child,,child
-63,3243,72,test,17,G1,child,somebody just sitting there with his head balanced and looks like its'-- gonna teeter off,
-64,3243,72,test,17,G1,parent,,parent
-65,3243,72,test,17,G1,parent,yeah,
-86,3243,72,test,27,G1,parent,"oh, somebody, well it's an upright, oh sitting I think with their legs",
-87,3243,72,test,27,G1,child,,child
-88,3243,72,test,27,G1,parent,at an angle,
-101,3243,72,test,33,G1,child,somebody sitting,
-102,3243,72,test,33,G1,parent,,parent
-47,3243,72,test,10,H1,child,this is a person pointing at something,
-48,3243,72,test,10,H1,parent,,parent
-52,3243,72,test,12,H1,parent,um a person that has a diamond head on top and it looks like they are holding something out for somebody,
-53,3243,72,test,12,H1,child,,child
-75,3243,72,test,22,H1,child,somebody pointing,
-76,3243,72,test,22,H1,parent,,parent
-108,3243,72,test,36,H1,parent,holding out a tray,
-109,3243,72,test,36,H1,child,,child
-37,3243,72,test,6,I1,child,"this one has a, triangle um hand and",
-38,3243,72,test,6,I1,parent,a triangle hand? okay,
-39,3243,72,test,6,I1,parent,,parent
-66,3243,72,test,18,I1,parent,somebody holding out a triangular tray,
-67,3243,72,test,18,I1,child,,child
-89,3243,72,test,28,I1,child,somebody holding um,
-90,3243,72,test,28,I1,parent,,parent
-91,3243,72,test,28,I1,child,something,
-103,3243,72,test,34,I1,parent,"somebody holding out a diamond tray, er-",
-104,3243,72,test,34,I1,child,,child
-105,3243,72,test,34,I1,parent,triangular tray,
-23,3243,72,test,2,K1,child,"the same kind of dog like things, with the square thing on the top under the bottom, the point thing",
-24,3243,72,test,2,K1,parent,there is a square under the point thing? okay so it's that one,
-25,3243,72,test,2,K1,parent,,parent
-70,3243,72,test,20,K1,parent,somebody with their tails sticking out,
-71,3243,72,test,20,K1,child,,child
-94,3243,72,test,30,K1,child,somebody with their butt out,
-95,3243,72,test,30,K1,parent,,parent
-116,3243,72,test,38,K1,parent,okay somebody holding out a tray,
-117,3243,72,test,38,K1,child,,child
-3,3243,72,test,,,parent,now do you have a picture on there that has a blue line around it?,
-4,3243,72,test,,,child,um hmm,
-5,3243,72,test,,,parent,ok either tell me what it is or describe it,
-8,3243,72,test,,,parent,so I clicked artichoke over here and now I get to be the leader,
-17,3243,72,test,,,parent,"okay, that was practice, now my screen says begin, are you ready to do it for real?",
-18,3243,72,test,,,child,mhm,
-19,3243,72,test,,,parent,are we supposed to do it as fast as we can? do you wanna go fast? do you wanna just go normal? okay,
-36,3243,72,test,,,parent,okay,
-49,3243,72,test,,,parent,"good job, time for the next round, it says over here, so does yours say the same thing? okay",
-72,3243,72,test,,,parent,oh time for the next round,
-96,3243,72,test,,,parent,"good job, time for the next round, are you- see the same sentence on your own? okay go ahead",
+Timeline.ordinal,subid,type,trial,target,person,utterance,selection
+0,72,practice,1,apple,parent,apple,
+1,72,practice,1,apple,parent,do you see it over there? so you have to click it,
+2,72,practice,1,apple,child,,child
+11,72,practice,4,apple,child,there is an apple on the screen,
+12,72,practice,4,apple,parent,,parent
+6,72,practice,2,artichoke,child,it's a artichoke,
+7,72,practice,2,artichoke,parent,,parent
+13,72,practice,5,artichoke,parent,artichoke,
+14,72,practice,5,artichoke,child,,child
+9,72,practice,3,onion,parent,onion,
+10,72,practice,3,onion,child,,child
+15,72,practice,6,onion,child,onion,
+16,72,practice,6,onion,parent,,parent
+33,72,test,5,A1,parent,okay this one looks like a person running with a square balanced on top,
+34,72,test,5,A1,child,oh,
+35,72,test,5,A1,child,,child
+68,72,test,19,A1,child,somebody running,
+69,72,test,19,A1,parent,,parent
+77,72,test,23,A1,parent,uh somebody looks like running,
+78,72,test,23,A1,child,,child
+79,72,test,23,A1,parent,with a diamond on the top,
+118,72,test,39,A1,child,somebody running,
+119,72,test,39,A1,parent,,parent
+45,72,test,9,B1,parent,this is a person walking looking down,
+46,72,test,9,B1,child,,child
+54,72,test,13,B1,child,somebody walking looking down,
+55,72,test,13,B1,parent,,parent
+73,72,test,21,B1,parent,somebody walking looking down,
+74,72,test,21,B1,child,,child
+110,72,test,37,B1,child,somebody looking down,
+111,72,test,37,B1,parent,,parent
+112,72,test,37,B1,parent,oops nope,
+113,72,test,37,B1,parent,you said looking down?,
+114,72,test,37,B1,child,uh hmm,
+115,72,test,37,B1,parent,I don't know if that was the right one,
+42,72,test,8,C1,child,this one it's lying down its head is floating and it's a square,
+43,72,test,8,C1,parent,"it's head is floating, ok",
+44,72,test,8,C1,parent,,parent
+56,72,test,14,C1,parent,uh somebody almost going up into a hand stand,
+57,72,test,14,C1,parent,"with head down, the floating square, okay",
+58,72,test,14,C1,child,,child
+84,72,test,26,C1,child,somebody kneeling,
+85,72,test,26,C1,parent,,parent
+120,72,test,40,C1,parent,somebody going into a handstand,
+121,72,test,40,C1,child,,child
+30,72,test,4,D1,child,"it's lying down, triangle feet and it's hand is-",
+31,72,test,4,D1,parent,,parent
+32,72,test,4,D1,parent,that was a good description,
+61,72,test,16,D1,parent,uh somebody lying on the floor with one,
+62,72,test,16,D1,child,,child
+80,72,test,24,D1,child,somebody lying down pointing up,
+81,72,test,24,D1,parent,,parent
+99,72,test,32,D1,parent,somebody lying down with their leg up,
+100,72,test,32,D1,child,,child
+40,72,test,7,E1,parent,this one looks like somebody jumping for joy with their arms up  in the air,
+41,72,test,7,E1,child,,child
+59,72,test,15,E1,child,it's a man jumping,
+60,72,test,15,E1,parent,,parent
+82,72,test,25,E1,parent,somebody jumping for joy,
+83,72,test,25,E1,child,,child
+106,72,test,35,E1,child,somebody jumping,
+107,72,test,35,E1,parent,,parent
+26,72,test,3,F1,parent,"um with this one the sqaure is on the left side on a point,  kind of tilted, look like--looks like it's gonna roll down a hill",
+27,72,test,3,F1,child,oh yeah,
+28,72,test,3,F1,child,,child
+29,72,test,3,F1,parent,okay,
+50,72,test,11,F1,child,"person with a fish-like mouth, uh",
+51,72,test,11,F1,parent,,parent
+92,72,test,29,F1,parent,oh this looks like a shark with its mouth open,
+93,72,test,29,F1,child,,child
+97,72,test,31,F1,child,somebody pointing with the shark mouth,
+98,72,test,31,F1,parent,,parent
+20,72,test,1,G1,parent,um there is a weird shape on the bottom and there is a square on the top kind of tilted sitting on top of a point,
+21,72,test,1,G1,child,yeah,
+22,72,test,1,G1,child,,child
+63,72,test,17,G1,child,somebody just sitting there with his head balanced and looks like its'-- gonna teeter off,
+64,72,test,17,G1,parent,,parent
+65,72,test,17,G1,parent,yeah,
+86,72,test,27,G1,parent,"oh, somebody, well it's an upright, oh sitting I think with their legs",
+87,72,test,27,G1,child,,child
+88,72,test,27,G1,parent,at an angle,
+101,72,test,33,G1,child,somebody sitting,
+102,72,test,33,G1,parent,,parent
+47,72,test,10,H1,child,this is a person pointing at something,
+48,72,test,10,H1,parent,,parent
+52,72,test,12,H1,parent,um a person that has a diamond head on top and it looks like they are holding something out for somebody,
+53,72,test,12,H1,child,,child
+75,72,test,22,H1,child,somebody pointing,
+76,72,test,22,H1,parent,,parent
+108,72,test,36,H1,parent,holding out a tray,
+109,72,test,36,H1,child,,child
+37,72,test,6,I1,child,"this one has a, triangle um hand and",
+38,72,test,6,I1,parent,a triangle hand? okay,
+39,72,test,6,I1,parent,,parent
+66,72,test,18,I1,parent,somebody holding out a triangular tray,
+67,72,test,18,I1,child,,child
+89,72,test,28,I1,child,somebody holding um,
+90,72,test,28,I1,parent,,parent
+91,72,test,28,I1,child,something,
+103,72,test,34,I1,parent,"somebody holding out a diamond tray, er-",
+104,72,test,34,I1,child,,child
+105,72,test,34,I1,parent,triangular tray,
+23,72,test,2,K1,child,"the same kind of dog like things, with the square thing on the top under the bottom, the point thing",
+24,72,test,2,K1,parent,there is a square under the point thing? okay so it's that one,
+25,72,test,2,K1,parent,,parent
+70,72,test,20,K1,parent,somebody with their tails sticking out,
+71,72,test,20,K1,child,,child
+94,72,test,30,K1,child,somebody with their butt out,
+95,72,test,30,K1,parent,,parent
+116,72,test,38,K1,parent,okay somebody holding out a tray,
+117,72,test,38,K1,child,,child
+3,72,test,,,parent,now do you have a picture on there that has a blue line around it?,
+4,72,test,,,child,um hmm,
+5,72,test,,,parent,ok either tell me what it is or describe it,
+8,72,test,,,parent,so I clicked artichoke over here and now I get to be the leader,
+17,72,test,,,parent,"okay, that was practice, now my screen says begin, are you ready to do it for real?",
+18,72,test,,,child,mhm,
+19,72,test,,,parent,are we supposed to do it as fast as we can? do you wanna go fast? do you wanna just go normal? okay,
+36,72,test,,,parent,okay,
+49,72,test,,,parent,"good job, time for the next round, it says over here, so does yours say the same thing? okay",
+72,72,test,,,parent,oh time for the next round,
+96,72,test,,,parent,"good job, time for the next round, are you- see the same sentence on your own? okay go ahead",
