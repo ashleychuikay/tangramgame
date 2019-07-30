@@ -1,0 +1,152 @@
+Timeline.ordinal,database_id,subid,type,trial,target,person,utterance,selection
+0,10367,31,practice,1,apple,parent,An apple,
+1,10367,31,practice,1,apple,child,"um, it's round?",
+2,10367,31,practice,1,apple,parent,"no baby, so you have the press the button, what I'm saying",
+3,10367,31,practice,1,apple,child,,child
+8,10367,31,practice,4,apple,child,"um, something that cleans your teeth",
+9,10367,31,practice,4,apple,parent,uh,
+10,10367,31,practice,4,apple,child,"it starts with a ""A""",
+11,10367,31,practice,4,apple,parent,an apple? okay,
+12,10367,31,practice,4,apple,parent,,parent
+13,10367,31,practice,4,apple,parent,"cleans your teeth, really? does an apple clean your teeth?",
+4,10367,31,practice,2,artichoke,child,"it, it, it looks like a tree",
+5,10367,31,practice,2,artichoke,parent,,parent
+14,10367,31,practice,5,artichoke,parent,"it, well you described it as looking like a tree",
+15,10367,31,practice,5,artichoke,child,,child
+6,10367,31,practice,3,onion,parent,an onion,
+7,10367,31,practice,3,onion,child,,child
+16,10367,31,practice,6,onion,child,"it is round, but it has some hair that's smooth on top",
+17,10367,31,practice,6,onion,parent,,parent
+24,10367,31,test,3,A1,parent,"alright, this person looks like they, he or she is walking",
+25,10367,31,test,3,A1,child,,child
+67,10367,31,test,17,A1,child,"this lady, this girl looks like she's running and it looks like",
+68,10367,31,test,17,A1,parent,,parent
+69,10367,31,test,17,A1,child,she's running and it looks like she's going to the bathroom,
+109,10367,31,test,29,A1,parent,and this person looks like they might be walking somewhere,
+110,10367,31,test,29,A1,child,,child
+111,10367,31,test,29,A1,parent,head held high,
+138,10367,31,test,37,A1,child,this one looks like she's running,
+139,10367,31,test,37,A1,parent,,parent
+140,10367,31,test,37,A1,child,and i think she's running in the hallways,
+34,10367,31,test,7,B1,parent,"this person looks like he or she is walking with the head down, maybe kinda sad",
+35,10367,31,test,7,B1,child,,child
+36,10367,31,test,7,B1,parent,walking kinda slowly,
+37,10367,31,test,7,B1,child,got that one,
+60,10367,31,test,15,B1,child,"this look- this guy, this girl looks pretty sad, she's walking",
+61,10367,31,test,15,B1,parent,,parent
+62,10367,31,test,15,B1,child,she looks so- you didn't even let me talk!,
+63,10367,31,test,15,B1,parent,i hear what you had to say!,
+96,10367,31,test,25,B1,parent,"okay, this person has their head down",
+97,10367,31,test,25,B1,child,,child
+98,10367,31,test,25,B1,parent,"they're one, they, oh okay",
+120,10367,31,test,31,B1,child,"mine is saying, it looks like her head's down, she looks like she's walking",
+121,10367,31,test,31,B1,parent,,parent
+122,10367,31,test,31,B1,child,because I think she had a accident with someone bumping into her,
+40,10367,31,test,9,C1,parent,"and this person looks like they might be kneeling on the ground, their arms",
+41,10367,31,test,9,C1,child,,child
+42,10367,31,test,9,C1,parent,and their legs are on the ground,
+49,10367,31,test,11,C1,child,this one looks like her legs are up and it looks like she's trying to find something under a bed,
+50,10367,31,test,11,C1,parent,,parent
+101,10367,31,test,27,C1,parent,and this person looks like they might be kneeling on the ground praying,
+102,10367,31,test,27,C1,child,,child
+103,10367,31,test,27,C1,child,"nope, that doesn't, it doesn't look like",
+130,10367,31,test,35,C1,child,"this one looks like she's kicking up her leg, and she's like",
+131,10367,31,test,35,C1,parent,,parent
+132,10367,31,test,35,C1,child,xxx,
+26,10367,31,test,4,D1,child,"right here, it looks like she's laying down with",
+27,10367,31,test,4,D1,parent,,parent
+28,10367,31,test,4,D1,child,legs up,
+64,10367,31,test,16,D1,parent,this person looks like he or she might be laying down on the floor,
+65,10367,31,test,16,D1,child,,child
+66,10367,31,test,16,D1,parent,"maybe reading a book, working on the ipad",
+113,10367,31,test,30,D1,child,"this lady looks like she is wasasa, i'm just playing, it looks like she's wasasawing, you know, it means laying down in my langauge",
+114,10367,31,test,30,D1,parent,,parent
+115,10367,31,test,30,D1,parent,"okay, your language",
+133,10367,31,test,36,D1,parent,"so this one looks like someone who has one foot in the air, one foot down",
+134,10367,31,test,36,D1,child,,child
+135,10367,31,test,36,D1,parent,laying down not looking back,
+32,10367,31,test,6,E1,parent,"this one, this girl looks like she's jumping up",
+33,10367,31,test,6,E1,parent,,parent
+70,10367,31,test,18,E1,parent,"this person looks like he or she is jumping high, reaching way high",
+71,10367,31,test,18,E1,child,,child
+82,10367,31,test,22,E1,child,this girl looks like she's jumping up with some cute little sneakers on,
+83,10367,31,test,22,E1,parent,,parent
+84,10367,31,test,22,E1,child,with the little legs up,
+128,10367,31,test,34,E1,parent,so this is like someone who is jumping for joy,
+129,10367,31,test,34,E1,child,,child
+22,10367,31,test,2,F1,child,this one looks like it's dabbing,
+23,10367,31,test,2,F1,parent,,parent
+74,10367,31,test,20,F1,parent,"so this person looks like, don't look so much like a person, um, has two like triangles for feet and they're spread way apart, the triangle feet are really way apart",
+75,10367,31,test,20,F1,child,,child
+94,10367,31,test,24,F1,child,there's a woman and her legs are spread out and she looks like she's ready to fly,
+95,10367,31,test,24,F1,parent,,parent
+123,10367,31,test,32,F1,parent,"this one looks like, um, two triangles, um someone wearing a dress with maybe two triangular heels",
+124,10367,31,test,32,F1,child,,child
+20,10367,31,test,1,G1,parent,this looks like a person who has a straight back and bent knees,
+21,10367,31,test,1,G1,child,,child
+53,10367,31,test,13,G1,child,this lady looks like she's on the bath- on the toilet,
+54,10367,31,test,13,G1,parent,,parent
+55,10367,31,test,13,G1,parent,that's a interesting way of saying it,
+87,10367,31,test,23,G1,parent,this person looks like maybe it could be a lady sitting in a dress on a bench,
+88,10367,31,test,23,G1,child,"no, it really looks like a potty",
+89,10367,31,test,23,G1,parent,i would say it looks,
+90,10367,31,test,23,G1,child,a square shaped potty,
+91,10367,31,test,23,G1,parent,just pick your item,
+92,10367,31,test,23,G1,child,,child
+125,10367,31,test,33,G1,child,this looks like a lady on the potty,
+126,10367,31,test,33,G1,parent,,parent
+127,10367,31,test,33,G1,child,"no seriously, it looks like someone's on the potty",
+29,10367,31,test,5,H1,parent,"this person looks like they could be sitting or standing and perhaps reading a book, it has a straight back",
+30,10367,31,test,5,H1,child,,child
+31,10367,31,test,5,H1,child,I just did that one!,
+72,10367,31,test,19,H1,child,"this person looks like he's ministering and he's getting a book and he's like ""lalalala""",
+73,10367,31,test,19,H1,parent,,parent
+78,10367,31,test,21,H1,parent,"okay, so this one looks like someone who's standing, perhaps reading from a book at a podium, or, um",
+79,10367,31,test,21,H1,child,,child
+80,10367,31,test,21,H1,child,doing some ministering,
+81,10367,31,test,21,H1,parent,"right, maybe it's a minister",
+144,10367,31,test,39,H1,child,this looks like a person ministering,
+145,10367,31,test,39,H1,parent,,parent
+146,10367,31,test,39,H1,child,"and saying ""lalalala""",
+43,10367,31,test,10,I1,child,"this one looks like she's giving maybe some stew, maybe some apple xxx",
+44,10367,31,test,10,I1,parent,,parent
+56,10367,31,test,14,I1,parent,"so, again, what you described is someone giving someone stew or maybe soup",
+57,10367,31,test,14,I1,child,or maybe some apple xxx,
+58,10367,31,test,14,I1,parent,okay baby,
+59,10367,31,test,14,I1,child,,child
+99,10367,31,test,26,I1,child,it looks like she's giving some stew,
+100,10367,31,test,26,I1,parent,,parent
+147,10367,31,test,40,I1,parent,"so this looks like maybe a butler, or someone like that, holding a basin or bowl",
+148,10367,31,test,40,I1,child,,child
+149,10367,31,test,40,I1,parent,for someone to wash their hands,
+38,10367,31,test,8,K1,child,this one looks like it's giving something but it has a tail sticking out,
+39,10367,31,test,8,K1,parent,,parent
+51,10367,31,test,12,K1,parent,this person looks like they are handing something to someone else,
+52,10367,31,test,12,K1,child,,child
+104,10367,31,test,28,K1,child,okay this lady is like this,
+107,10367,31,test,28,K1,child,"it looks like she's doing something, she's like giving someone something like maybe a little present, but nothing, she's like, ""here, give me some money""",
+108,10367,31,test,28,K1,parent,,parent
+141,10367,31,test,38,K1,parent,okay this one looks like it has a triangular hat,
+142,10367,31,test,38,K1,child,,child
+18,10367,31,test,,,parent,are you ready to begin?,
+19,10367,31,test,,,child,yeah,
+45,10367,31,test,,,child,mine says good job,
+46,10367,31,test,,,parent,okay your turn,
+47,10367,31,test,,,child,okie i'm so excited i'm so,
+48,10367,31,test,,,parent,sit down,
+76,10367,31,test,,,child,"good job, ready for the next round",
+77,10367,31,test,,,child,i wanted it to give me a chance!,
+85,10367,31,test,,,child,you are so rude,
+86,10367,31,test,,,parent,what?,
+93,10367,31,test,,,child,"okay, my next one is",
+105,10367,31,test,,,parent,"no I can't see you, only hear your words, so focus on what you're saying",
+106,10367,31,test,,,child,"okay, so it says, it's actually saying, let me focus, and rewind",
+112,10367,31,test,,,parent,oh okay,
+116,10367,31,test,,,child,good job. how many rounds are we doing?,
+117,10367,31,test,,,child,"so, it's my turn right?",
+118,10367,31,test,,,parent,mhm,
+119,10367,31,test,,,child,"okay, so um",
+136,10367,31,test,,,child,my turn,
+137,10367,31,test,,,parent,ok,
+143,10367,31,test,,,parent,"okay, i don't know what you clicked",
+150,10367,31,test,,,parent,"ok, that was easy!",

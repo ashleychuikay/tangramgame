@@ -1,0 +1,129 @@
+Timeline.ordinal,database_id,subid,type,trial,target,person,utterance,selection
+0,5072,21,practice,1,apple,parent,An apple,
+1,5072,21,practice,1,apple,parent,Okay tap on it! Go!,
+2,5072,21,practice,1,apple,child,,child
+9,5072,21,practice,4,apple,parent,I think it's your turn,
+10,5072,21,practice,4,apple,child,"Oh, the apple's in the blue box",
+11,5072,21,practice,4,apple,parent,,parent
+3,5072,21,practice,2,artichoke,child,A radish?,
+4,5072,21,practice,2,artichoke,parent,What? A radish?,
+5,5072,21,practice,2,artichoke,parent,,parent
+6,5072,21,practice,2,artichoke,parent,I think it's an onion,
+12,5072,21,practice,5,artichoke,parent,An artichoke!,
+13,5072,21,practice,5,artichoke,child,Press?,
+14,5072,21,practice,5,artichoke,parent,No you press it!,
+15,5072,21,practice,5,artichoke,child,,child
+7,5072,21,practice,3,onion,parent,"Um, uh, an onion",
+8,5072,21,practice,3,onion,child,,child
+17,5072,21,practice,6,onion,child,An artichoke,
+18,5072,21,practice,6,onion,parent,Yes!,
+19,5072,21,practice,6,onion,parent,,parent
+45,5072,21,test,8,A1,child,"The person that is, like, it's running",
+46,5072,21,test,8,A1,parent,,parent
+65,5072,21,test,16,A1,parent,"Uh, the one who is running",
+66,5072,21,test,16,A1,child,,child
+94,5072,21,test,28,A1,child,A person holding a tray,
+95,5072,21,test,28,A1,parent,,parent
+108,5072,21,test,34,A1,parent,One who's running,
+109,5072,21,test,34,A1,child,,child
+30,5072,21,test,2,B1,child,A one that's bending over,
+31,5072,21,test,2,B1,parent,,parent
+60,5072,21,test,14,B1,parent,Person who is walking contemplatively,
+61,5072,21,test,14,B1,parent,thoughtfully,
+62,5072,21,test,14,B1,child,,child
+81,5072,21,test,22,B1,child,"Uh, person that's sadly walking",
+82,5072,21,test,22,B1,parent,,parent
+83,5072,21,test,22,B1,parent,Sadly walking,
+104,5072,21,test,32,B1,parent,The one who's walking slowly sadly,
+105,5072,21,test,32,B1,child,,child
+38,5072,21,test,6,C1,child,A person that's running,
+39,5072,21,test,6,C1,parent,,parent
+75,5072,21,test,20,C1,parent,The one who is bending over touching the ground,
+76,5072,21,test,20,C1,child,,child
+90,5072,21,test,26,C1,child,A person that's bending,
+91,5072,21,test,26,C1,parent,,parent
+124,5072,21,test,40,C1,parent,the one who is bent over,
+125,5072,21,test,40,C1,child,Both of them are bent over,
+126,5072,21,test,40,C1,parent,bent over on the ground,
+127,5072,21,test,40,C1,child,,child
+36,5072,21,test,5,D1,parent,A man- a person who's lying down and reading a book,
+37,5072,21,test,5,D1,child,,child
+53,5072,21,test,11,D1,parent,Do you have a box?,
+54,5072,21,test,11,D1,child,"Um, the one that has a book is praying",
+55,5072,21,test,11,D1,parent,,parent
+92,5072,21,test,27,D1,parent,A person who is lying down and reading a book,
+93,5072,21,test,27,D1,child,,child
+106,5072,21,test,33,D1,child,The one that's running,
+107,5072,21,test,33,D1,parent,,parent
+28,5072,21,test,1,E1,parent,"Okay, the man that's looking like he's leaping in the air",
+29,5072,21,test,1,E1,child,,child
+73,5072,21,test,19,E1,child,"Okay, um, the one that's jumping up",
+74,5072,21,test,19,E1,parent,,parent
+84,5072,21,test,23,E1,parent,A person who's leaping into the air,
+85,5072,21,test,23,E1,child,,child
+115,5072,21,test,37,E1,child,The one that's running,
+116,5072,21,test,37,E1,parent,,parent
+47,5072,21,test,9,F1,parent,"A person who looks like their looking up, their pointing up to the sky",
+48,5072,21,test,9,F1,child,,child
+67,5072,21,test,17,F1,child,The one that looks like a dog,
+68,5072,21,test,17,F1,child,With the arrow,
+69,5072,21,test,17,F1,parent,,parent
+88,5072,21,test,25,F1,parent,A person who's pointing up to the sky,
+89,5072,21,test,25,F1,child,,child
+110,5072,21,test,35,F1,child,The one that's leaping up into the sky,
+111,5072,21,test,35,F1,parent,,parent
+34,5072,21,test,4,G1,child,A one that's sitting down,
+35,5072,21,test,4,G1,parent,,parent
+56,5072,21,test,12,G1,parent,Person who's sitting down,
+57,5072,21,test,12,G1,child,,child
+86,5072,21,test,24,G1,child,Person that's sitting,
+87,5072,21,test,24,G1,parent,,parent
+112,5072,21,test,36,G1,parent,The one who is sitting,
+113,5072,21,test,36,G1,parent,Like looking down,
+114,5072,21,test,36,G1,child,,child
+40,5072,21,test,7,H1,parent,A person who is praying,
+41,5072,21,test,7,H1,parent,"Oh, um, praying like in a church, not at the mosque",
+42,5072,21,test,7,H1,child,Hmm,
+43,5072,21,test,7,H1,parent,A person who looks like they're holding a book,
+44,5072,21,test,7,H1,child,,child
+58,5072,21,test,13,H1,child,Person that's running,
+59,5072,21,test,13,H1,parent,,parent
+96,5072,21,test,29,H1,parent,A person who is holding a book,
+97,5072,21,test,29,H1,child,,child
+102,5072,21,test,31,H1,child,"Um, the one who's bending over",
+103,5072,21,test,31,H1,parent,,parent
+32,5072,21,test,3,I1,parent,A man who has a tray in his hand,
+33,5072,21,test,3,I1,child,,child
+63,5072,21,test,15,I1,child,One that's pointing up to the sky,
+64,5072,21,test,15,I1,parent,,parent
+79,5072,21,test,21,I1,parent,"Man holding a tray, a man holding a tray",
+80,5072,21,test,21,I1,child,,child
+121,5072,21,test,39,I1,parent,Your turn,
+122,5072,21,test,39,I1,child,The one that has a tray,
+123,5072,21,test,39,I1,parent,,parent
+49,5072,21,test,10,K1,child,"Uh, the one that's swimming",
+50,5072,21,test,10,K1,parent,Running?,
+51,5072,21,test,10,K1,child,swimming,
+52,5072,21,test,10,K1,parent,,parent
+70,5072,21,test,18,K1,parent,"Uh, the one who looks like they're bending over and leaning on something, not running",
+71,5072,21,test,18,K1,child,,child
+72,5072,21,test,18,K1,child,That looks like they're touching the sky,
+98,5072,21,test,30,K1,parent,"A person who's, I mean the dog",
+99,5072,21,test,30,K1,parent,,parent
+117,5072,21,test,38,K1,parent,"The one who looks like, you call it a dog",
+118,5072,21,test,38,K1,child,Yeah!,
+119,5072,21,test,38,K1,parent,Go ahead,
+120,5072,21,test,38,K1,child,,child
+16,5072,21,test,,,parent,Your turn,
+20,5072,21,test,,,parent,"So if you get something with a blue box around it, it means it's your turn to speak and tell me which one to pick. If you don't have a blue box, you're telling me what to do. If you have the blue box, you're the boss",
+21,5072,21,test,,,child,Okay,
+22,5072,21,test,,,parent,Or is your box blue or red?,
+23,5072,21,test,,,child,Okay let's just do it,
+24,5072,21,test,,,parent,"Okay I think, so can we start?",
+25,5072,21,test,,,parent,"Hey are you ready, are you excited?",
+26,5072,21,test,,,child,You go first,
+27,5072,21,test,,,parent,Well we don't know who's first. Okay,
+77,5072,21,test,,,parent,"Good job, time for next round. Does it say that on yours? Look at the top",
+78,5072,21,test,,,parent,Okay here we go,
+100,5072,21,test,,,parent,"Good job, time for next round. Can you see if it says that on yours?",
+101,5072,21,test,,,parent,"Do you have a box, honey?",

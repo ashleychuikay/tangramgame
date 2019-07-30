@@ -1,0 +1,146 @@
+Timeline.ordinal,database_id,subid,type,trial,target,person,utterance,selection
+0,3963,30,practice,1,apple,parent,pick the fruit with the leaf on it,
+1,3963,30,practice,1,apple,child,,child
+12,3963,30,practice,4,apple,child,pick the one that has a leaf on it,
+13,3963,30,practice,4,apple,parent,,parent
+2,3963,30,practice,2,artichoke,child,I don't know what it's called,
+3,3963,30,practice,2,artichoke,parent,just try to describe it,
+4,3963,30,practice,2,artichoke,parent,"does it have many pieces, or-",
+6,3963,30,practice,2,artichoke,parent,"The one that looks like it has many pieces, or?",
+7,3963,30,practice,2,artichoke,child,It looks like it has a lot of leaves,
+8,3963,30,practice,2,artichoke,parent,"A lot of leaves, okay",
+9,3963,30,practice,2,artichoke,parent,,parent
+14,3963,30,practice,5,artichoke,parent,"i think that this is like an artichoke, and it looks like it has many leaves on it",
+15,3963,30,practice,5,artichoke,child,,child
+10,3963,30,practice,3,onion,parent,pick the one that looks like an onion,
+11,3963,30,practice,3,onion,child,,child
+16,3963,30,practice,6,onion,child,pick the one that looks like an onion,
+17,3963,30,practice,6,onion,parent,,parent
+58,3963,30,test,10,A1,child,"one, one looks like, uh, one looks like it's um, has like church clothes, pick the other one that's not that",
+59,3963,30,test,10,A1,parent,describe the picture more,
+60,3963,30,test,10,A1,child,"the picture has like a square and then like it has a triangle pointing back there, and it has a triangle foot like all the way up there, pointed like-",
+61,3963,30,test,10,A1,parent,"so it's like one foot's on the ground, and one's in the air?",
+62,3963,30,test,10,A1,child,yes,
+63,3963,30,test,10,A1,parent,,parent
+86,3963,30,test,18,A1,parent,"this looks like it's, it's running a race",
+87,3963,30,test,18,A1,child,,child
+88,3963,30,test,18,A1,parent,and it's got a cape or something behind,
+99,3963,30,test,22,A1,child,"it looks like, it has a cape behind it and it's running",
+100,3963,30,test,22,A1,parent,okay,
+101,3963,30,test,22,A1,parent,,parent
+143,3963,30,test,40,A1,parent,someone's running with a cape,
+144,3963,30,test,40,A1,child,,child
+37,3963,30,test,4,B1,child,"one that's like, that looks like he's walking, or, the one looks like he's kneeling and the other one looks like he's walking",
+38,3963,30,test,4,B1,child,so pick the one that looks like he's walking,
+39,3963,30,test,4,B1,parent,,parent
+82,3963,30,test,16,B1,parent,this is sad person,
+83,3963,30,test,16,B1,child,,child
+110,3963,30,test,26,B1,child,um this looks like it's walking sadly,
+111,3963,30,test,26,B1,parent,,parent
+138,3963,30,test,38,B1,parent,walking with the head down,
+139,3963,30,test,38,B1,child,,child
+140,3963,30,test,38,B1,child,"like hands in the pocket, walking with the head down",
+52,3963,30,test,8,C1,child,pick the one that looks like it's kneeling,
+53,3963,30,test,8,C1,parent,,parent
+75,3963,30,test,14,C1,parent,the choice is kneeling,
+76,3963,30,test,14,C1,child,,child
+105,3963,30,test,24,C1,child,"this one looks like it's kneeling, like head down",
+106,3963,30,test,24,C1,parent,,parent
+133,3963,30,test,36,C1,parent,kneeling down,
+134,3963,30,test,36,C1,child,,child
+49,3963,30,test,7,D1,parent,"this one has a, uh, it almost, it looks like an airplane actually, and the-",
+50,3963,30,test,7,D1,child,,child
+51,3963,30,test,7,D1,parent,airplane has a- oh you know what i'm talking about,
+77,3963,30,test,15,D1,child,pick the one that looks like it's in an airplane and it has a circle on top,
+78,3963,30,test,15,D1,parent,a circle or a square?,
+79,3963,30,test,15,D1,child,"well, um, square on top",
+80,3963,30,test,15,D1,parent,mhmm,
+81,3963,30,test,15,D1,parent,,parent
+118,3963,30,test,29,D1,parent,"uh, this is airplane with the cube on top",
+119,3963,30,test,29,D1,child,,child
+131,3963,30,test,35,D1,child,airplane with a cube on top,
+132,3963,30,test,35,D1,parent,,parent
+32,3963,30,test,3,E1,parent,"one looks like a person who's jumping really excited like they'd just gotten good news, or, or they're just graduated from college or something",
+33,3963,30,test,3,E1,child,which one?,
+34,3963,30,test,3,E1,parent,"pick that one, the one that looks like somebody's jumping",
+35,3963,30,test,3,E1,child,,child
+36,3963,30,test,3,E1,parent,with both feet off the ground,
+65,3963,30,test,11,E1,child,one looks like it's jumping for joy,
+66,3963,30,test,11,E1,parent,is that the one i'm supposed to pick?,
+67,3963,30,test,11,E1,child,yes,
+68,3963,30,test,11,E1,parent,,parent
+112,3963,30,test,27,E1,parent,jumping for joy,
+113,3963,30,test,27,E1,child,,child
+127,3963,30,test,33,E1,child,jumping for joy,
+128,3963,30,test,33,E1,parent,,parent
+54,3963,30,test,9,F1,child,like it's running like this? or-,
+55,3963,30,test,9,F1,parent,"so, there's one that looks like it's kneeling, it's not that one, it's the one with the-",
+56,3963,30,test,9,F1,child,,child
+57,3963,30,test,9,F1,parent,legs are spread out,
+72,3963,30,test,13,F1,child,"one looks like, like, it's like, a tower, but it has a triangle like this and then a triangle like that, but then it has like a square right there, not the one that look like walking like it's sad like-",
+73,3963,30,test,13,F1,parent,,parent
+74,3963,30,test,13,F1,child,pick the other one,
+102,3963,30,test,23,F1,parent,"this one looks like it's doing the dab, right",
+103,3963,30,test,23,F1,child,,child
+104,3963,30,test,23,F1,child,"oh yeah, like",
+136,3963,30,test,37,F1,child,like this,
+137,3963,30,test,37,F1,parent,,parent
+22,3963,30,test,1,G1,parent,"one of them looks like there's a person kneeling over, the other looks like there's a woman standing straight up",
+23,3963,30,test,1,G1,child,"okay, so which one?",
+24,3963,30,test,1,G1,parent,the one that looks like there's a lady standing straight up,
+25,3963,30,test,1,G1,child,,child
+26,3963,30,test,1,G1,parent,and the block is at the top,
+27,3963,30,test,1,G1,child,"mhm, I got it",
+89,3963,30,test,19,G1,child,this one looks like it's sitting down,
+90,3963,30,test,19,G1,parent,,parent
+91,3963,30,test,19,G1,child,and it's a person sitting down,
+107,3963,30,test,25,G1,parent,this looks like a lady,
+108,3963,30,test,25,G1,child,,child
+109,3963,30,test,25,G1,parent,who's kneeling in church,
+141,3963,30,test,39,G1,child,the lady sitting at church,
+142,3963,30,test,39,G1,parent,,parent
+28,3963,30,test,2,H1,child,"there's one that looks like it's swimming, and the other one looks like, um, it has something that you hold at church",
+29,3963,30,test,2,H1,parent,so which one am I supposed to pick?,
+30,3963,30,test,2,H1,child,the one that looks like he has like a dress cloak thing cause of church,
+31,3963,30,test,2,H1,parent,,parent
+92,3963,30,test,20,H1,child,"kneeling one, or the holding the like-",
+93,3963,30,test,20,H1,parent,"yeah, the one that looks like it's holding a diploma, it looks like a cap and gown",
+94,3963,30,test,20,H1,child,,child
+114,3963,30,test,28,H1,child,the church person,
+115,3963,30,test,28,H1,child,"cloak, not the one that looks like it's running, but that's like-",
+116,3963,30,test,28,H1,parent,,parent
+117,3963,30,test,28,H1,child,wearing like a cloak,
+129,3963,30,test,34,H1,parent,this looks like it's in a cap and gown,
+130,3963,30,test,34,H1,child,,child
+40,3963,30,test,5,I1,parent,"this looks like, uh, someone serving something on a tray",
+41,3963,30,test,5,I1,child,yeah,
+42,3963,30,test,5,I1,parent,"like they're serving on a tray, right, in a restaurant",
+43,3963,30,test,5,I1,parent,"yeah, right, pick that one",
+44,3963,30,test,5,I1,child,,child
+84,3963,30,test,17,I1,child,this is the one that looks like it's holding a bowl,
+85,3963,30,test,17,I1,parent,,parent
+97,3963,30,test,21,I1,parent,holding a tray,
+98,3963,30,test,21,I1,child,,child
+123,3963,30,test,31,I1,child,he like the xxx um holding a bowl,
+124,3963,30,test,31,I1,parent,,parent
+45,3963,30,test,6,K1,child,"looks like, like, it's a man or something, with a hat on like a triangle hat on",
+46,3963,30,test,6,K1,parent,mhmm,
+47,3963,30,test,6,K1,parent,,parent
+48,3963,30,test,6,K1,parent,mhmm,
+69,3963,30,test,12,K1,parent,"one looks like it's kinda bending over, with the-",
+70,3963,30,test,12,K1,child,,child
+71,3963,30,test,12,K1,parent,with the triangle hat,
+120,3963,30,test,30,K1,child,"um, like, it's holding its hands out like it's about to get something",
+121,3963,30,test,30,K1,parent,,parent
+125,3963,30,test,32,K1,parent,hands out looking to receive,
+126,3963,30,test,32,K1,child,,child
+5,3963,30,test,,,parent,"I'm not allowed to do that, am I",
+18,3963,30,test,,,parent,so now we hit begin?,
+19,3963,30,test,,,child,I guess it's gonna be harder,
+20,3963,30,test,,,child,these are the pictures?,
+21,3963,30,test,,,parent,"yeah, okay",
+64,3963,30,test,,,child,getting harder,
+95,3963,30,test,,,child,it's not over,
+96,3963,30,test,,,parent,"we'll see, gotta keep going",
+122,3963,30,test,,,child,time for a next round!,
+135,3963,30,test,,,parent,gotta describe it,

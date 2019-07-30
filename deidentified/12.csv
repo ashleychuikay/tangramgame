@@ -1,0 +1,201 @@
+Timeline.ordinal,database_id,subid,type,trial,target,person,utterance,selection
+0,5842,12,practice,1,apple,parent,OK do you see the apple,
+1,5842,12,practice,1,apple,child,Mhm,
+2,5842,12,practice,1,apple,parent,OK pick the apple,
+3,5842,12,practice,1,apple,child,,child
+15,5842,12,practice,4,apple,child,An apple,
+19,5842,12,practice,4,apple,parent,OK I have the thing that looks like a tree,
+20,5842,12,practice,4,apple,parent,Do you have that,
+21,5842,12,practice,4,apple,child,,child
+22,5842,12,practice,4,apple,child,Mhm,
+23,5842,12,practice,4,apple,parent,OK,
+6,5842,12,practice,2,artichoke,child,Mmm um the tree,
+7,5842,12,practice,2,artichoke,parent,The tree,
+8,5842,12,practice,2,artichoke,child,Mhm,
+10,5842,12,practice,2,artichoke,parent,,parent
+25,5842,12,practice,5,artichoke,child,The the onion,
+27,5842,12,practice,5,artichoke,parent,,parent
+11,5842,12,practice,3,onion,parent,OK I have the the thing that does not look like a tree,
+12,5842,12,practice,3,onion,parent,You gotta pick thing that don't look like a tree,
+13,5842,12,practice,3,onion,child,,child
+16,5842,12,practice,3,onion,parent,An apple,
+17,5842,12,practice,3,onion,parent,,parent
+61,5842,12,test,7,A1,parent,OK I have a man walking this way,
+62,5842,12,test,7,A1,child,,child
+95,5842,12,test,15,A1,child,Um I have a man walking,
+96,5842,12,test,15,A1,parent,"Which way is he walking, this way or?",
+97,5842,12,test,15,A1,child,This this way,
+98,5842,12,test,15,A1,parent,"Is he walking there, OK",
+99,5842,12,test,15,A1,parent,,parent
+126,5842,12,test,23,A1,parent,Yeah I got a man walking,
+127,5842,12,test,23,A1,child,,child
+175,5842,12,test,35,A1,child,I have a man um zzz,
+176,5842,12,test,35,A1,parent,Is it the big one or the little one,
+177,5842,12,test,35,A1,child,Big one,
+179,5842,12,test,35,A1,parent,,parent
+57,5842,12,test,6,B1,child,A man um walking,
+59,5842,12,test,6,B1,parent,,parent
+115,5842,12,test,20,B1,parent,Alright OK I have a man walking this way,
+116,5842,12,test,20,B1,child,,child
+129,5842,12,test,24,B1,child,I have a man holding a triangle,
+130,5842,12,test,24,B1,parent,A man with the triangle,
+131,5842,12,test,24,B1,parent,,parent
+180,5842,12,test,36,B1,parent,OK I have a man looking at the ground,
+181,5842,12,test,36,B1,child,,child
+53,5842,12,test,5,C1,parent,OK I have a man bending down,
+54,5842,12,test,5,C1,child,,child
+111,5842,12,test,19,C1,child,I have the man bending down,
+112,5842,12,test,19,C1,parent,OK you know that could be a dog too,
+113,5842,12,test,19,C1,parent,,parent
+133,5842,12,test,25,C1,parent,"I got I got the thing that look like a dog, bending down",
+134,5842,12,test,25,C1,child,,child
+158,5842,12,test,31,C1,child,I have a man with,
+159,5842,12,test,31,C1,child,A dog,
+160,5842,12,test,31,C1,parent,You got the dog OK,
+161,5842,12,test,31,C1,parent,,parent
+47,5842,12,test,3,D1,parent,OK I have a man laying down,
+48,5842,12,test,3,D1,child,,child
+83,5842,12,test,11,D1,child,I have a man um laying down,
+84,5842,12,test,11,D1,parent,You got the man laying down OK,
+85,5842,12,test,11,D1,parent,,parent
+142,5842,12,test,27,D1,parent,I got I got a man laying down,
+143,5842,12,test,27,D1,child,,child
+192,5842,12,test,39,D1,child,I have the man laying down,
+193,5842,12,test,39,D1,parent,You got the man laying down,
+194,5842,12,test,39,D1,parent,,parent
+74,5842,12,test,10,E1,child,I have a a man who uh uh walking,
+75,5842,12,test,10,E1,parent,You got a man walking,
+76,5842,12,test,10,E1,child,Mhm,
+77,5842,12,test,10,E1,parent,,parent
+109,5842,12,test,18,E1,parent,I got a man jumping in the air,
+110,5842,12,test,18,E1,child,,child
+145,5842,12,test,28,E1,child,I got a man,
+146,5842,12,test,28,E1,child,Um jumping,
+147,5842,12,test,28,E1,parent,Jumping zzz,
+148,5842,12,test,28,E1,parent,,parent
+162,5842,12,test,32,E1,parent,I have a man jumping in the air,
+163,5842,12,test,32,E1,child,,child
+71,5842,12,test,9,F1,parent,I have a I have a man pointing to the sky,
+72,5842,12,test,9,F1,child,,child
+89,5842,12,test,13,F1,child,I have a uh man walking,
+90,5842,12,test,13,F1,parent,You got the man walking OK,
+91,5842,12,test,13,F1,parent,,parent
+150,5842,12,test,29,F1,parent,I have a man pointing to the sky,
+151,5842,12,test,29,F1,child,,child
+183,5842,12,test,37,F1,child,I have a man um pointing,
+184,5842,12,test,37,F1,parent,OK pointing to the sky,
+185,5842,12,test,37,F1,child,Mhm,
+186,5842,12,test,37,F1,parent,,parent
+43,5842,12,test,2,G1,child,Um I have a man bending down,
+102,5842,12,test,16,G1,parent,Oh I I got a man sitting down,
+103,5842,12,test,16,G1,child,,child
+137,5842,12,test,26,G1,child,"I have a uh man, uh pointing, sitting down",
+138,5842,12,test,26,G1,parent,He's sitting down,
+140,5842,12,test,26,G1,parent,,parent
+199,5842,12,test,40,G1,parent,I got the man sitting down,
+200,5842,12,test,40,G1,child,,child
+37,5842,12,test,1,H1,parent,A a it look like a a diamond on the top it look like a man pointing this way can you pick that man,
+40,5842,12,test,1,H1,child,,child
+105,5842,12,test,17,H1,child,I have a man pointing,
+106,5842,12,test,17,H1,parent,Pointing,
+107,5842,12,test,17,H1,parent,,parent
+120,5842,12,test,21,H1,parent,I have a man pointing this way,
+121,5842,12,test,21,H1,child,,child
+165,5842,12,test,33,H1,child,I have a man pointing,
+166,5842,12,test,33,H1,parent,Is he laying down,
+167,5842,12,test,33,H1,child,No,
+169,5842,12,test,33,H1,parent,,parent
+50,5842,12,test,4,I1,child,Um a man holding a triangle,
+52,5842,12,test,4,I1,parent,,parent
+92,5842,12,test,14,I1,parent,OK I got I got the man with the triangle,
+93,5842,12,test,14,I1,child,,child
+153,5842,12,test,30,I1,child,I have a man um holding a triangle,
+154,5842,12,test,30,I1,parent,,parent
+155,5842,12,test,30,I1,parent,A triangle again it's like a waiter when they're bringing your food you know how they bring out food to the customer,
+156,5842,12,test,30,I1,parent,It's like a waiter,
+170,5842,12,test,34,I1,parent,I have a man with the upside down triangle,
+172,5842,12,test,34,I1,child,,child
+173,5842,12,test,34,I1,parent,Bring your food right it's like they're bringing your food,
+64,5842,12,test,8,K1,child,I have a man,
+66,5842,12,test,8,K1,child,He's bending down,
+67,5842,12,test,8,K1,parent,You got the man bending down OK,
+68,5842,12,test,8,K1,parent,,parent
+86,5842,12,test,12,K1,parent,I have a man bending over,
+87,5842,12,test,12,K1,child,,child
+123,5842,12,test,22,K1,child,I have a zzz man laying down,
+124,5842,12,test,22,K1,parent,Laying down,
+125,5842,12,test,22,K1,parent,,parent
+187,5842,12,test,38,K1,parent,OK I have a man I got the man pointing,
+188,5842,12,test,38,K1,parent,Not the one jumping,
+189,5842,12,test,38,K1,child,,child
+190,5842,12,test,38,K1,parent,The other OK,
+4,5842,12,test,,,parent,Good job,
+5,5842,12,test,,,parent,OK what's what what's in your blue box,
+9,5842,12,test,,,parent,OK,
+14,5842,12,test,,,parent,What what do you have,
+18,5842,12,test,,,parent,OK,
+24,5842,12,test,,,parent,OK what what do you have now,
+26,5842,12,test,,,parent,The onion,
+28,5842,12,test,,,parent,You know what onion is I didn't know you know what onion was,
+29,5842,12,test,,,parent,OK,
+30,5842,12,test,,,parent,Do you have any questions,
+31,5842,12,test,,,child,Um no,
+32,5842,12,test,,,parent,You want to play some more,
+33,5842,12,test,,,child,Mhm,
+34,5842,12,test,,,parent,OK let's play some more,
+35,5842,12,test,,,parent,OK I have,
+36,5842,12,test,,,parent,A,
+38,5842,12,test,,,child,Uh huh,
+39,5842,12,test,,,parent,OK,
+41,5842,12,test,,,parent,You picked good,
+42,5842,12,test,,,parent,OK what do you have,
+44,5842,12,test,,,parent,OK,
+46,5842,12,test,,,parent,Good job,
+49,5842,12,test,,,parent,What do you have,
+55,5842,12,test,,,parent,What do you have,
+56,5842,12,test,,,child,Um,
+58,5842,12,test,,,parent,OK,
+60,5842,12,test,,,child,Good job,
+63,5842,12,test,,,child,Good job,
+65,5842,12,test,,,child,Um,
+69,5842,12,test,,,parent,Mhm,
+70,5842,12,test,,,child,Ready,
+73,5842,12,test,,,parent,What do you have,
+78,5842,12,test,,,parent,Are you ready for some more,
+79,5842,12,test,,,child,Yes,
+80,5842,12,test,,,parent,OK we'll play some more OK,
+81,5842,12,test,,,child,OK,
+82,5842,12,test,,,parent,Well what do you have,
+88,5842,12,test,,,parent,What you got in the blue box,
+94,5842,12,test,,,parent,What you got in your blue box,
+100,5842,12,test,,,parent,OK,
+101,5842,12,test,,,parent,What do you have,
+104,5842,12,test,,,parent,OK what do you have now,
+108,5842,12,test,,,parent,OK,
+114,5842,12,test,,,parent,Yes,
+117,5842,12,test,,,parent,So are you ready for some more,
+118,5842,12,test,,,child,Mhm,
+119,5842,12,test,,,parent,Let's play some more,
+122,5842,12,test,,,parent,What do you have,
+128,5842,12,test,,,parent,What do you have,
+132,5842,12,test,,,parent,OK,parent
+135,5842,12,test,,,parent,What do you have in your blue box,
+136,5842,12,test,,,child,Um I have a,
+139,5842,12,test,,,parent,OK,
+141,5842,12,test,,,parent,I think that's it,
+144,5842,12,test,,,parent,What you got in the blue box,
+149,5842,12,test,,,parent,OK,
+152,5842,12,test,,,parent,What do you have im your blue box now,
+157,5842,12,test,,,parent,OK what do you have in your blue box,
+164,5842,12,test,,,parent,What do you have in your blue box,
+168,5842,12,test,,,parent,OK,
+174,5842,12,test,,,parent,OK what do you have,
+178,5842,12,test,,,parent,OK,
+182,5842,12,test,,,parent,What do you have in your blue box,
+191,5842,12,test,,,parent,What do you what's in your blue box,
+195,5842,12,test,,,parent,OK,
+196,5842,12,test,,,parent,You OK,
+197,5842,12,test,,,parent,Good,
+198,5842,12,test,,,child,Mhm,
+51,5842,12,,,,parent,OK good job,
+171,5842,12,,,,parent,It's like they,

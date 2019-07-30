@@ -1,0 +1,131 @@
+Timeline.ordinal,database_id,subid,type,trial,target,person,utterance,selection
+1,6328,53,practice,1,apple,parent,"so the one that has a blue box is a fruit and it's round, so press which one?",
+2,6328,53,practice,1,apple,child,apple,
+3,6328,53,practice,1,apple,parent,"yep, it's the apple",
+4,6328,53,practice,1,apple,child,,child
+16,6328,53,practice,4,apple,parent,alright it's your turn,
+17,6328,53,practice,4,apple,child,this one is round and has a leaf on the stem,
+18,6328,53,practice,4,apple,parent,"ok, is it an apple?",
+19,6328,53,practice,4,apple,child,yup,
+20,6328,53,practice,4,apple,parent,,parent
+5,6328,53,practice,2,artichoke,parent,now it's your turn to tell me about the fruit or the vegetable,
+6,6328,53,practice,2,artichoke,child,this one has a things poking out,
+7,6328,53,practice,2,artichoke,parent,"it has things poking out of it, okay",
+8,6328,53,practice,2,artichoke,child,and a stem,
+9,6328,53,practice,2,artichoke,parent,"and a stem, okay, hmm is it the artichoke?",
+10,6328,53,practice,2,artichoke,child,yeah!,
+11,6328,53,practice,2,artichoke,parent,,parent
+21,6328,53,practice,5,artichoke,parent,this one is an artichoke and it has little leaves,
+22,6328,53,practice,5,artichoke,child,,child
+12,6328,53,practice,3,onion,parent,"ok, this one is an onion",
+13,6328,53,practice,3,onion,child,,child
+24,6328,53,practice,6,onion,parent,"your turn, xxx",
+25,6328,53,practice,6,onion,child,it has a stem and it's round,
+26,6328,53,practice,6,onion,parent,is it the onion?,
+27,6328,53,practice,6,onion,child,yeah,
+28,6328,53,practice,6,onion,parent,,parent
+53,6328,53,test,10,A1,child,this one looks like they're running,
+54,6328,53,test,10,A1,parent,they're running? does it look like one foot is up in the air?,
+55,6328,53,test,10,A1,child,yup,
+56,6328,53,test,10,A1,parent,okay,
+57,6328,53,test,10,A1,parent,,parent
+75,6328,53,test,18,A1,parent,this one is someone walking with one foot in the air,
+76,6328,53,test,18,A1,child,,child
+91,6328,53,test,26,A1,child,this one is someone uh running,
+92,6328,53,test,26,A1,parent,running?,
+93,6328,53,test,26,A1,parent,,parent
+116,6328,53,test,36,A1,parent,This is someone walking with their foot in the air,
+117,6328,53,test,36,A1,child,,child
+37,6328,53,test,4,B1,child,this is somebody walking with their head down,
+38,6328,53,test,4,B1,parent,,parent
+65,6328,53,test,14,B1,parent,this one looks like someone walking with their head down,
+66,6328,53,test,14,B1,child,,child
+96,6328,53,test,28,B1,child,this is somebody walking with their head down,
+97,6328,53,test,28,B1,parent,,parent
+112,6328,53,test,34,B1,parent,This is someone walking with their head down,
+113,6328,53,test,34,B1,child,,child
+51,6328,53,test,9,C1,parent,this one looks like they're about to do a somersault or a headstand,
+52,6328,53,test,9,C1,child,,child
+58,6328,53,test,11,C1,child,this one looks like somebody's going to do a somersault or a headstand,
+59,6328,53,test,11,C1,parent,"ooh, okay",
+60,6328,53,test,11,C1,parent,,parent
+89,6328,53,test,25,C1,parent,this is someone about to do a somersault or a headstand,
+90,6328,53,test,25,C1,child,,child
+105,6328,53,test,31,C1,child,It's somebody is about to about to do something with a about to do a somersault,
+107,6328,53,test,31,C1,parent,,parent
+35,6328,53,test,3,D1,parent,this looks like someone laying down,
+36,6328,53,test,3,D1,child,,child
+67,6328,53,test,15,D1,child,this one looks like somebody laying down with one foot in the air,
+68,6328,53,test,15,D1,parent,"ooh, this one",
+69,6328,53,test,15,D1,parent,,parent
+94,6328,53,test,27,D1,parent,this is someone laying down with a foot in the air,
+95,6328,53,test,27,D1,child,,child
+118,6328,53,test,37,D1,child,This is somebody laying down with their foot up in the air,
+119,6328,53,test,37,D1,parent,,parent
+46,6328,53,test,7,E1,parent,this one it looks like they're jumping in the air,
+47,6328,53,test,7,E1,child,,child
+63,6328,53,test,13,E1,child,this one looks like someone's jumping in the air,
+64,6328,53,test,13,E1,parent,,parent
+85,6328,53,test,23,E1,parent,this is someone jumping in the air,
+86,6328,53,test,23,E1,child,,child
+110,6328,53,test,33,E1,child,This one is somebody jumping in the air and saying hooray,
+111,6328,53,test,33,E1,parent,,parent
+31,6328,53,test,2,F1,child,this one is somebody running,
+32,6328,53,test,2,F1,parent,"okay, does it look like they have their hands in the air?",
+33,6328,53,test,2,F1,child,yeah,
+34,6328,53,test,2,F1,parent,,parent
+61,6328,53,test,12,F1,parent,this one is someone that looks like they're walking and their hand is in the air,
+62,6328,53,test,12,F1,child,,child
+83,6328,53,test,22,F1,child,this is someone running with their hands in the air,
+84,6328,53,test,22,F1,parent,,parent
+128,6328,53,test,40,F1,parent,This is someone that looks like they're walking with their hand in the air,
+129,6328,53,test,40,F1,child,,child
+48,6328,53,test,8,G1,child,this one it looks like they're sitting down,
+49,6328,53,test,8,G1,parent,oh,
+50,6328,53,test,8,G1,parent,,parent
+79,6328,53,test,20,G1,parent,this is someone who looks like they're sitting down with their head down,
+80,6328,53,test,20,G1,child,,child
+102,6328,53,test,30,G1,child,This one is somebody sitting down,
+103,6328,53,test,30,G1,parent,,parent
+122,6328,53,test,38,G1,parent,This is someone that looks like they're sitting down,
+123,6328,53,test,38,G1,child,,child
+39,6328,53,test,5,H1,parent,this is someone just standing up and it looks like they're just holding something,
+40,6328,53,test,5,H1,child,,child
+77,6328,53,test,19,H1,child,this one is somebody with their hand out and some xxx on the sleeve,
+78,6328,53,test,19,H1,parent,,parent
+99,6328,53,test,29,H1,parent,this is someone standing up and it looks like they're holding a tray,
+100,6328,53,test,29,H1,child,,child
+124,6328,53,test,39,H1,child,This one is somebody uh that's putting out their arm,
+125,6328,53,test,39,H1,parent,Putting out their arm standing up,
+126,6328,53,test,39,H1,child,Yup,
+127,6328,53,test,39,H1,parent,,parent
+29,6328,53,test,1,I1,parent,"oh, this is, uh it kind of looks like a person holding a tray",
+30,6328,53,test,1,I1,child,,child
+72,6328,53,test,17,I1,child,this one looks like somebody's giving something to someone,
+73,6328,53,test,17,I1,parent,,parent
+81,6328,53,test,21,I1,parent,this is someone holding a tray,
+82,6328,53,test,21,I1,child,,child
+114,6328,53,test,35,I1,child,This is somebody holding out a tray,
+115,6328,53,test,35,I1,parent,,parent
+41,6328,53,test,6,K1,child,this one is with somebody uh somebody that has a hind leg xxx and their hand is out,
+42,6328,53,test,6,K1,parent,oh and it looks like they're standing up?,
+43,6328,53,test,6,K1,child,yup,
+44,6328,53,test,6,K1,parent,okay,
+45,6328,53,test,6,K1,parent,,parent
+70,6328,53,test,16,K1,parent,this one looks like someone is kind of bending over and holding something in their hand,
+71,6328,53,test,16,K1,child,,child
+87,6328,53,test,24,K1,child,this is someone with their hand out with something,
+88,6328,53,test,24,K1,parent,,parent
+108,6328,53,test,32,K1,parent,This person looks like they're holding a tray and bending over a little bit,
+109,6328,53,test,32,K1,child,,child
+0,6328,53,test,,,parent,"ok, xxx, look down at your screen",
+14,6328,53,test,,,child,dont say it!,
+15,6328,53,test,,,parent,she said we could say it!,
+23,6328,53,test,,,child,don't say the name!,
+74,6328,53,test,,,parent,okay,
+98,6328,53,test,,,parent,"oh wait oh, it's my turn",
+101,6328,53,test,,,parent,Alright your turn right,
+104,6328,53,test,,,parent,OK,
+106,6328,53,test,,,parent,OK,
+120,6328,53,test,,,child,This is someone laying down with their foot in the air,
+121,6328,53,test,,,parent,Now it's my turn,

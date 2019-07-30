@@ -136,16 +136,16 @@ coding <- coding_data %>%
   arrange(subid, type, target, trial) %>%
   select(Timeline.ordinal, database_id, subid, type, trial, target, person, utterance, selection)
 
-newcols <- c("final_initial", "self", "other", "accept")
-coding[, newcols] <- NA
+#newcols <- c("final_initial", "self", "other", "accept")
+#coding[, newcols] <- NA
 
 subids <- unique(coding$subid)
   
-# for (i in subids) {
-#   codingfile <- filter(coding, subid == i)
-#   name <- paste0("cp", codingfile$database_id[1], ".csv")
-#   write_csv(codingfile, here(paste0("pacts/", name)), na="", append = FALSE)
-# }
+for (i in subids) {
+   codingfile <- filter(coding, subid == i)
+   name <- paste0(codingfile$subid[1], ".csv")
+   write_csv(codingfile, here(paste0("deidentified/", name)), na="", append = FALSE)
+ }
 ```
 
 

@@ -1,0 +1,176 @@
+Timeline.ordinal,database_id,subid,type,trial,target,person,utterance,selection
+0,8309,59,practice,1,apple,parent,"So, it is an apple. It is red or green. Which fruit?",
+1,8309,59,practice,1,apple,child,Red.,
+2,8309,59,practice,1,apple,child,,child
+7,8309,59,practice,4,apple,child,"This one is an apple... red, or sometime green",
+8,8309,59,practice,4,apple,parent,,parent
+3,8309,59,practice,2,artichoke,child,"SO, this one should be green",
+4,8309,59,practice,2,artichoke,parent,,parent
+9,8309,59,practice,5,artichoke,parent,"This one is an artichoke, I want to say so. It is sometimes green",
+10,8309,59,practice,5,artichoke,child,,child
+5,8309,59,practice,3,onion,parent,This one is sometime red or white. I think this one is an onion.,
+6,8309,59,practice,3,onion,child,,child
+11,8309,59,practice,6,onion,child,This is.. uh... a...,
+12,8309,59,practice,6,onion,parent,"I don't see something I can't say. You have the kitchen, we play the restaurant all the time. So, what dish is that for?",
+13,8309,59,practice,6,onion,child,This is.. uh.. I forgot.,
+14,8309,59,practice,6,onion,parent,"You can tell me. Is it big, is it little?",
+15,8309,59,practice,6,onion,child,It is little and has these sticky...,
+16,8309,59,practice,6,onion,parent,,parent
+17,8309,59,practice,6,onion,child,What is it?,
+31,8309,59,test,4,A1,child,This is a person that's running and is on the left side,
+32,8309,59,test,4,A1,parent,,parent
+68,8309,59,test,14,A1,parent,"Okay, this one looks like Mariah when she is running her race and she is running super super fast. So which",
+69,8309,59,test,14,A1,child,,child
+113,8309,59,test,26,A1,child,"Okay, yes. This one is like a girl serving a thing",
+114,8309,59,test,26,A1,parent,,parent
+157,8309,59,test,38,A1,child,,child
+40,8309,59,test,7,B1,parent,This one looks like a person walking with his head down like he is sad,
+41,8309,59,test,7,B1,child,,child
+55,8309,59,test,11,B1,child,"okay, uhmm.. this is the same thing.",
+57,8309,59,test,11,B1,child,Is it girl that have a head down or boy that had a..,
+58,8309,59,test,11,B1,parent,,parent
+107,8309,59,test,25,B1,child,,child
+144,8309,59,test,33,B1,child,Yes. This,
+145,8309,59,test,33,B1,parent,What does it decribe so I can pick it?,
+146,8309,59,test,33,B1,child,Is like yellow and red.... walk slow.,
+147,8309,59,test,33,B1,parent,,parent
+28,8309,59,test,3,C1,parent,"This one looks like Apollo when he is running in the house. This shape looks like he is running in the house. Apollo. What, which one looks like a dog running?",
+29,8309,59,test,3,C1,child,,child
+84,8309,59,test,19,C1,child,This one have a dog... it's like a .. would go on her knees for a prayer.,
+85,8309,59,test,19,C1,parent,,parent
+93,8309,59,test,21,C1,parent,Okay. Mine is a... It's like when we're crawling around looking for something on the floor.,
+94,8309,59,test,21,C1,child,,child
+155,8309,59,test,37,C1,child,This one's like a Apollo xxx and it's sniffing,
+156,8309,59,test,37,C1,parent,,parent
+46,8309,59,test,9,D1,parent,This one looks like Mariah when she is in her room reading on the floor.,
+47,8309,59,test,9,D1,child,,child
+65,8309,59,test,13,D1,child,This is like I'm in a cardboard box reading my book in outer space.,
+66,8309,59,test,13,D1,parent,,parent
+116,8309,59,test,27,D1,parent,Okay. This looks like when you and yyy are laying down the floor watching tv.,
+119,8309,59,test,27,D1,child,,child
+161,8309,59,test,39,D1,child,This one... i'm thinking... this one's when I'm reading my book with my mom,
+162,8309,59,test,39,D1,parent,,parent
+26,8309,59,test,2,E1,child,This one has a diamod on the top,
+27,8309,59,test,2,E1,parent,Diamond on the top,parent
+61,8309,59,test,12,E1,parent,"This one looks like a little girl jumping up for joy. Like she is very happy, she is very excited, and she is just jumping. Which one is it? You have to select which picture!",
+62,8309,59,test,12,E1,child,,child
+105,8309,59,test,24,E1,child,"This time, it's it's like joy when it's Mother's Day.",
+106,8309,59,test,24,E1,parent,,parent
+164,8309,59,test,40,E1,parent,Okay. Turn over. This is when you know you get to talk to Morgan on the phone and you are super excited. What do you do?,
+173,8309,59,test,40,E1,parent,Okay. When you are super excited to play with Morgan.,
+174,8309,59,test,40,E1,child,,child
+48,8309,59,test,10,F1,child,This is .. uhm .. there is square on top.,
+49,8309,59,test,10,F1,parent,There is a square on top?,
+50,8309,59,test,10,F1,parent,,parent
+79,8309,59,test,18,F1,parent,This one looks like a giant bird.,
+80,8309,59,test,18,F1,child,It's a duck. Nevermind.,
+82,8309,59,test,18,F1,child,,child
+131,8309,59,test,30,F1,child,This one looks like I'm doing ballet in the middle of a night,
+132,8309,59,test,30,F1,parent,,parent
+148,8309,59,test,34,F1,parent,This one looks like a big bird that we see on a zoo.,
+149,8309,59,test,34,F1,child,,child
+43,8309,59,test,8,G1,child,This is.. uhm.. person sitting down for bus or doctor.,
+44,8309,59,test,8,G1,parent,,parent
+45,8309,59,test,8,G1,parent,Waiting for doctor?,
+74,8309,59,test,16,G1,parent,This one looks like when we are sending our prayers on our knees.,
+75,8309,59,test,16,G1,child,,child
+124,8309,59,test,28,G1,child,"Okay, so this one have a lady that looking down and reading like a book or waiting for a bus or train or",
+125,8309,59,test,28,G1,parent,,parent
+153,8309,59,test,36,G1,parent,This one looks like when we are sitting on our chair eating dinner.,
+154,8309,59,test,36,G1,child,,child
+22,8309,59,test,1,H1,parent,This has a square at the top,
+23,8309,59,test,1,H1,child,,child
+76,8309,59,test,17,H1,child,This one is like a person outside our door giving us a present for Christmas or Mother's Day,
+77,8309,59,test,17,H1,parent,,parent
+100,8309,59,test,23,H1,child,,child
+150,8309,59,test,35,H1,child,This one look like some daddy bringing a handsome gift,
+151,8309,59,test,35,H1,parent,,parent
+35,8309,59,test,5,I1,parent,This one looks like a waitress that has a tray with food that they are serving you. It's like,
+36,8309,59,test,5,I1,child,,child
+70,8309,59,test,15,I1,child,This one is like a waitress that is serving spagetti and meatballs or a shrimp.,
+71,8309,59,test,15,I1,parent,,parent
+127,8309,59,test,29,I1,parent,This one is when you and Papa are playing restaurant,
+129,8309,59,test,29,I1,parent,It's my turn. This one's like when you and Papa are playing restaurant and you're bringing him food.,
+130,8309,59,test,29,I1,child,,child
+134,8309,59,test,31,I1,child,This one has a,
+137,8309,59,test,31,I1,child,This one has a  nice food.,
+138,8309,59,test,31,I1,parent,,parent
+37,8309,59,test,6,K1,child,This one is like Apollo hugging my mommy or my daddy,
+38,8309,59,test,6,K1,parent,,parent
+86,8309,59,test,20,K1,parent,Okay. This looks like a dog begging for food like Apollo when you guys were eating dinner and Apollo is begging for food.,
+87,8309,59,test,20,K1,child,,child
+96,8309,59,test,22,K1,child,This one is like a dog when we are walking Apollo it's like jumping on a person making it,
+97,8309,59,test,22,K1,parent,,parent
+139,8309,59,test,32,K1,child,this one has,
+140,8309,59,test,32,K1,parent,This is my turn,
+142,8309,59,test,32,K1,child,,child
+18,8309,59,test,,,parent,"Did you get any questions so that you can tell me if it's big or it is little, you can use color... Use your outside voice",
+19,8309,59,test,,,parent,"Okay, alright. Are you ready?",
+20,8309,59,test,,,child,Hmm-hmm.,
+21,8309,59,test,,,parent,Okay.,
+24,8309,59,test,,,child,sorry,
+25,8309,59,test,,,parent,Okay.,
+30,8309,59,test,,,parent,"It's your turn, I think.",
+33,8309,59,test,,,parent,ha ha,
+34,8309,59,test,,,child,what?,
+39,8309,59,test,,,parent,Haaa.,
+42,8309,59,test,,,child,what?,
+51,8309,59,test,,,child,your turn?,
+52,8309,59,test,,,parent,do you have a blue box?,
+53,8309,59,test,,,child,yeah.,
+54,8309,59,test,,,parent,"okay, so it's your turn.",
+56,8309,59,test,,,parent,"It's okay, tell me what you see.",
+59,8309,59,test,,,child,Mommy!,
+60,8309,59,test,,,parent,"Okay, I'm sorry.",
+63,8309,59,test,,,child,"This one.. oh wait, I don't have a blue box.",
+64,8309,59,test,,,parent,I don't have a blue box either. You don't have a blue box? Are you tricking me?,
+67,8309,59,test,,,child,"Mommy, I want my cuddle.",
+72,8309,59,test,,,child,Mommy! I didn't finish!,
+73,8309,59,test,,,parent,"Oh, I'm sorry.",
+78,8309,59,test,,,child,Mommy! I want to press.,
+81,8309,59,test,,,parent,Did you pick it?,
+83,8309,59,test,,,parent,"Come back, come back Mariah. Take a seat. It's your turn",
+88,8309,59,test,,,child,Are you finished?,
+89,8309,59,test,,,parent,"Okay, this one",
+90,8309,59,test,,,child,This one,
+91,8309,59,test,,,parent,I have a blue box,
+92,8309,59,test,,,child,I do too.,
+95,8309,59,test,,,parent,"Okay, check your screen for the blue box.",
+98,8309,59,test,,,child,Mom!,
+99,8309,59,test,,,parent,Oh come on,
+101,8309,59,test,,,child,It said tap.,
+102,8309,59,test,,,parent,"Okay, do you have a blue box? You don't have a blue box? Put it down. Neither one of us have blue boxes. yyy! You tricked me!",
+103,8309,59,test,,,child,is it your turn or mine?,
+104,8309,59,test,,,parent,"It's your turn, you have a blue box. Tell mommy.",
+108,8309,59,test,,,parent,yyy!,
+109,8309,59,test,,,child,What? I pushed the button.,
+110,8309,59,test,,,parent,Are you done? Are you going to be serious? Are you going to do it?,
+111,8309,59,test,,,child,Fine.,
+112,8309,59,test,,,parent,Do you have the blue box?,
+115,8309,59,test,,,child,"Mommy, I tricked you.",
+117,8309,59,test,,,child,Where's yyy?,
+118,8309,59,test,,,parent,Which one is it?,
+120,8309,59,test,,,child,Where is Yyy though?,
+121,8309,59,test,,,parent,"Okay, go ahead.",
+122,8309,59,test,,,child,"So, I don't have a blue box.",
+123,8309,59,test,,,parent,"Are you being serious right now? Are you serious? You are the leader, so if you have the blue box,you have to be the leader so you have to guide me to pick the right picture.",
+126,8309,59,test,,,parent,Thank you.,
+128,8309,59,test,,,child,Mommy!,
+133,8309,59,test,,,child,Good job! time for the next round!,
+135,8309,59,test,,,parent,"I'm not supposed to see, remember?",
+136,8309,59,test,,,child,Sorry.,
+141,8309,59,test,,,child,a xxx,
+143,8309,59,test,,,parent,Do you have a blue box?,
+152,8309,59,test,,,parent,You like when dad brings you gifts?,
+158,8309,59,test,,,parent,Do you have the blue box?,
+159,8309,59,test,,,child,"Uhmm, I got a blue box",
+160,8309,59,test,,,parent,Okay now you need to describe it to mama so we could be a team.,
+163,8309,59,test,,,child,Mommy!,
+165,8309,59,test,,,parent,"Are you done, Yyy? Do you want me to tell her you're done since you can't sit still? Are you done? If you are done, that's okay. Are you done?",
+166,8309,59,test,,,child,No.,
+167,8309,59,test,,,parent,"So, sit down like mommy is sitting.",
+168,8309,59,test,,,child,I'm sitting too.,
+169,8309,59,test,,,parent,Okay. Did you hear the clue that I gave you?,
+170,8309,59,test,,,child,No.,
+171,8309,59,test,,,parent,So you have to be serious.,
+172,8309,59,test,,,child,I was laughing mommy!,

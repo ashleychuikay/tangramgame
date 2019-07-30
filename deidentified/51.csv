@@ -1,0 +1,132 @@
+Timeline.ordinal,database_id,subid,type,trial,target,person,utterance,selection
+0,9815,51,practice,1,apple,parent,"choose the one that has a leaf on top of it, and it is usually red",
+2,9815,51,practice,1,apple,child,,child
+12,9815,51,practice,4,apple,parent,do you have a blue box?,
+13,9815,51,practice,4,apple,child,yes!,
+14,9815,51,practice,4,apple,parent,tell me what's in your blue box,
+15,9815,51,practice,4,apple,child,"it has a green leaf on top, and it's red and has a brown stem",
+16,9815,51,practice,4,apple,parent,,parent
+3,9815,51,practice,2,artichoke,parent,ok do you see a blue box around one of them?,
+4,9815,51,practice,2,artichoke,child,yeah?,
+5,9815,51,practice,2,artichoke,parent,describe it to mommy so I can touch it on my screen,
+6,9815,51,practice,2,artichoke,child,"it looks like it has this little thing right here, its this size and",
+7,9815,51,practice,2,artichoke,parent,can you tell me some more about it?,
+8,9815,51,practice,2,artichoke,parent,Do you think you know what it is?,
+9,9815,51,practice,2,artichoke,parent,,parent
+17,9815,51,practice,5,artichoke,parent,"alright so this is an artichoke, it has little things that look like little flower petals. Which one do you think it is?",
+18,9815,51,practice,5,artichoke,child,,child
+10,9815,51,practice,3,onion,parent,ok now the blue box is on my side. This is likely an onion and it has smooth circle,
+11,9815,51,practice,3,onion,child,,child
+20,9815,51,practice,6,onion,parent,ok tell me whats in your blue box,
+21,9815,51,practice,6,onion,child,onion,
+22,9815,51,practice,6,onion,parent,,parent
+39,9815,51,test,4,A1,child,Looks like someone walking,
+40,9815,51,test,4,A1,parent,,parent
+87,9815,51,test,20,A1,parent,"this looks like at the very top there is a small square head, and there's a series of triangles...",
+88,9815,51,test,20,A1,child,,child
+103,9815,51,test,28,A1,child,this person is skipping,
+104,9815,51,test,28,A1,parent,,parent
+125,9815,51,test,38,A1,parent,"walking, skipping",
+126,9815,51,test,38,A1,child,,child
+41,9815,51,test,5,B1,parent,"this looks like they are blocks and there is a square at the very top, and it's looking down",
+42,9815,51,test,5,B1,child,"ooh, I got it",
+43,9815,51,test,5,B1,child,,child
+79,9815,51,test,17,B1,child,"it's someone walking, with their hands in the pocket",
+80,9815,51,test,17,B1,parent,they're walking with their hands in the pocket is that it?,
+81,9815,51,test,17,B1,parent,,parent
+89,9815,51,test,21,B1,parent,this is the one where you said a man walking with his head down with his hands in his pocket,
+90,9815,51,test,21,B1,child,,child
+119,9815,51,test,35,B1,child,it's someone walking,
+120,9815,51,test,35,B1,parent,,parent
+29,9815,51,test,2,C1,child,it looks like it has.. it looks like a dog or something,
+30,9815,51,test,2,C1,parent,looks like a dog? what is the dog doing,
+31,9815,51,test,2,C1,child,i think it's a person bowing at a concert or something,
+32,9815,51,test,2,C1,parent,,parent
+68,9815,51,test,12,C1,parent,ok this is the picture that has the two blocks separated and the square is looking down,
+69,9815,51,test,12,C1,child,,child
+107,9815,51,test,30,C1,child,this person is laying down like a dog,
+108,9815,51,test,30,C1,parent,,parent
+111,9815,51,test,32,C1,parent,"this is something or somebody kneeling, the square is not connected",
+112,9815,51,test,32,C1,child,you mean the jumping for joy one?,
+113,9815,51,test,32,C1,parent,"no, the other one",
+114,9815,51,test,32,C1,child,,child
+53,9815,51,test,9,D1,parent,"right I have the blue box again. Okay so this has a triangle for a tail and the triangle tail, it's two triangles at the tail, almost looks like it's an airplane, and then I see a square at the front",
+54,9815,51,test,9,D1,child,this may look like an airplane?,
+55,9815,51,test,9,D1,parent,I think it looks like an airplane,
+56,9815,51,test,9,D1,child,,child
+84,9815,51,test,19,D1,child,"it looks like someone that's laying down and it's playing on a tablet, and it has its one foot down on the floor and one foot up",
+85,9815,51,test,19,D1,parent,ok laying down playing on a tablet?,
+86,9815,51,test,19,D1,parent,,parent
+101,9815,51,test,27,D1,parent,this is the one you said that a person laying down playing on a tablet with one foot in the air,
+102,9815,51,test,27,D1,child,,child
+127,9815,51,test,39,D1,child,it's someone lying down on his tablet,
+128,9815,51,test,39,D1,parent,,parent
+33,9815,51,test,3,E1,parent,ooh this looks like somebody is happy and jumping for joy! Yay! and it looks like it has both hands in the air and just jumping. It's like they are skipping or jumping up high,
+36,9815,51,test,3,E1,child,,child
+75,9815,51,test,15,E1,child,"so it's someone happy and xxx and it's really happy, and it has diamond face and it's really happy, it has a diamond face... And it's jumping for joy",
+76,9815,51,test,15,E1,parent,,parent
+105,9815,51,test,29,E1,parent,this person is jumping for joy,
+106,9815,51,test,29,E1,child,,child
+115,9815,51,test,33,E1,child,this is the one that's jumping for joy,
+116,9815,51,test,33,E1,parent,,parent
+58,9815,51,test,10,F1,child,"it's someone that has a square head and has arm up, and it's trying to do a jump",
+59,9815,51,test,10,F1,parent,it's trying to jump?,
+60,9815,51,test,10,F1,child,its doing a split jump,
+61,9815,51,test,10,F1,parent,ok,
+62,9815,51,test,10,F1,parent,,parent
+77,9815,51,test,16,F1,parent,"this looks like one triangle facing down and then another triangle facing to the side, and then it's a square on top that is also tilted",
+78,9815,51,test,16,F1,child,,child
+99,9815,51,test,26,F1,child,"this one was jumping, and it has its hand in the air, and it's doing a split jump",
+100,9815,51,test,26,F1,parent,,parent
+121,9815,51,test,36,F1,parent,doing a split,
+122,9815,51,test,36,F1,child,,child
+45,9815,51,test,6,G1,child,someone that's sitting in a chair,
+46,9815,51,test,6,G1,parent,,parent
+72,9815,51,test,14,G1,parent,"this looks like there is a square, a large square bottom, and it's like it's making a L shape with the block and then it's a square on its top. So it just looks like it has three shapes, with the square on top, like L-shape looking block that's sitting on a square",
+73,9815,51,test,14,G1,child,,child
+74,9815,51,test,14,G1,child,"it looked like someone sitting on a chair, on a block",
+91,9815,51,test,22,G1,child,it's someone sitting with his head down looking like... has a necklace in his hands,
+92,9815,51,test,22,G1,parent,,parent
+117,9815,51,test,34,G1,parent,this is not the one jumping for joy,
+118,9815,51,test,34,G1,child,,child
+47,9815,51,test,7,H1,parent,"this has a square at the very top but it's like a diamond. It is touching another like large area.. Oooh no they both got diamonds at the top...This one looks like a rectangle, and it's the top of the triangle with a square at the top",
+48,9815,51,test,7,H1,child,,child
+70,9815,51,test,13,H1,child,"it has a square face, and has a diamond face, and the diamond face is shaped like a diamond, and it's like has a food in its hands and its sitting down eating some food",
+71,9815,51,test,13,H1,parent,,parent
+97,9815,51,test,25,H1,parent,this is the one that is not the one looking like its skipping. Its the other one,
+98,9815,51,test,25,H1,child,,child
+109,9815,51,test,31,H1,child,this one is someone that's holding a plate with soup in it at a restaurant,
+110,9815,51,test,31,H1,parent,,parent
+49,9815,51,test,8,I1,child,it's someone that's giving a drink to someone and it's bending man,
+50,9815,51,test,8,I1,parent,You think it's a man bending and giving a drink?,
+51,9815,51,test,8,I1,child,"yes, someone that's a",
+52,9815,51,test,8,I1,parent,,parent
+82,9815,51,test,18,I1,parent,this is the one that you said looks like they are serving drinks at the restaurant,
+83,9815,51,test,18,I1,child,,child
+95,9815,51,test,24,I1,child,this one looks like at a restaurant and it has a drink to someone,
+96,9815,51,test,24,I1,parent,,parent
+129,9815,51,test,40,I1,parent,this is the one not walking,
+130,9815,51,test,40,I1,child,,child
+24,9815,51,test,1,K1,parent,okay so this looks like a man bending over and serving something to somebody,
+25,9815,51,test,1,K1,child,,child
+64,9815,51,test,11,K1,child,its like a man that has a hat on and he has a like a thorn somewhere on his back,
+65,9815,51,test,11,K1,parent,he has a thorn on his back?,
+66,9815,51,test,11,K1,child,"yeah it's a prickle standing, its a pointy thing",
+67,9815,51,test,11,K1,parent,,parent
+93,9815,51,test,23,K1,parent,this is the one you said they had a thorn inside,
+94,9815,51,test,23,K1,child,,child
+123,9815,51,test,37,K1,child,it's someone that's giving someone the food at the restaurant,
+124,9815,51,test,37,K1,parent,,parent
+1,9815,51,test,,,child,can I press on it?,
+19,9815,51,test,,,child,oh great I have the blue box!,
+23,9815,51,test,,,parent,so now it says we can press this button and we're gonna keep playing ok,
+26,9815,51,test,,,parent,is your box blue?,
+27,9815,51,test,,,child,yes,
+28,9815,51,test,,,parent,can you try to describe it to mommy?,
+34,9815,51,test,,,child,can I press that one,
+35,9815,51,test,,,parent,if you think you know what it is,
+37,9815,51,test,,,child,I have a blue box,
+38,9815,51,test,,,parent,okay what's inside of the box,
+44,9815,51,test,,,parent,tell me what's in your blue box,
+57,9815,51,test,,,child,I have the blue box,
+63,9815,51,test,,,parent,mine says good job time for the next round,

@@ -1,0 +1,169 @@
+Timeline.ordinal,database_id,subid,type,trial,target,person,utterance,selection
+0,10635,70,practice,1,apple,parent,"let's see, I'm heart-shaped and I have a leaf",
+2,10635,70,practice,1,apple,child,apple,
+3,10635,70,practice,1,apple,child,,child
+19,10635,70,practice,4,apple,child,apple,
+21,10635,70,practice,4,apple,parent,it's round with a leaf,
+22,10635,70,practice,4,apple,parent,,parent
+7,10635,70,practice,2,artichoke,child,this one,
+9,10635,70,practice,2,artichoke,child,the one that xxx um something with the blue box,
+11,10635,70,practice,2,artichoke,child,"something on the left, uhh I see a...",
+12,10635,70,practice,2,artichoke,parent,,parent
+14,10635,70,practice,2,artichoke,child,mm,
+23,10635,70,practice,5,artichoke,parent,"mmm, I have different shapes inside of xxx",
+24,10635,70,practice,5,artichoke,child,,child
+13,10635,70,practice,3,onion,parent,"let's see, I'm round and it look like I got a little bit of hair at the bottom",
+16,10635,70,practice,3,onion,child,,child
+25,10635,70,practice,6,onion,child,it's one with hair on the bottom,
+26,10635,70,practice,6,onion,parent,you gon' steal what I said?,
+27,10635,70,practice,6,onion,child,it look like it,
+28,10635,70,practice,6,onion,parent,okay,
+29,10635,70,practice,6,onion,parent,,parent
+47,10635,70,test,5,A1,parent,"mmm, okay it look like somebody walking again, but got their leg all the way kicked back",
+48,10635,70,test,5,A1,child,umm okay,
+49,10635,70,test,5,A1,child,,child
+70,10635,70,test,11,A1,child,it look like a person walking with the leg all the way back,
+71,10635,70,test,11,A1,parent,,parent
+126,10635,70,test,27,A1,child,"lee, left",
+127,10635,70,test,27,A1,child,,child
+151,10635,70,test,33,A1,child,someone running I think he happy,
+152,10635,70,test,33,A1,parent,,parent
+43,10635,70,test,3,B1,parent,it look like a person walking,
+44,10635,70,test,3,B1,child,,child
+75,10635,70,test,13,B1,child,"it look like it's a person walking sadly,looking like he's walking sadly",
+76,10635,70,test,13,B1,parent,sad?,
+77,10635,70,test,13,B1,parent,,parent
+78,10635,70,test,13,B1,child,mhm,
+141,10635,70,test,29,B1,parent,it look like somebody is sad and walking away,
+142,10635,70,test,29,B1,child,,child
+160,10635,70,test,37,B1,child,someone sad,
+161,10635,70,test,37,B1,parent,,parent
+45,10635,70,test,4,C1,child,"it look, hm, it look like a person crawling",
+46,10635,70,test,4,C1,parent,,parent
+79,10635,70,test,14,C1,child,you got the one that was up?,
+80,10635,70,test,14,C1,parent,umm it look like somebody's bent over...on the ground,
+81,10635,70,test,14,C1,child,,child
+128,10635,70,test,28,C1,child,oh it look like someone like crawling down to the basement,
+129,10635,70,test,28,C1,parent,what?,
+130,10635,70,test,28,C1,child,it look like someone crawling down--,
+131,10635,70,test,28,C1,parent,how somebody look crawling down to the basement?,
+132,10635,70,test,28,C1,child,it look like,
+133,10635,70,test,28,C1,parent,who you say crawling in the basement?,
+134,10635,70,test,28,C1,parent,,parent
+135,10635,70,test,28,C1,child,"it look like you, mommy",
+136,10635,70,test,28,C1,parent,"how do somebody, who you think crawl in the basement?",
+137,10635,70,test,28,C1,child,no one,
+162,10635,70,test,38,C1,parent,someone bent over on their knees,
+163,10635,70,test,38,C1,child,,child
+52,10635,70,test,6,D1,child,it look like he crawling away on the ground,
+53,10635,70,test,6,D1,parent,it look like what?,
+54,10635,70,test,6,D1,child,it look like he a person crawling or laying on the ground,
+55,10635,70,test,6,D1,parent,,parent
+100,10635,70,test,18,D1,parent,"it look like somebody could be inside of a boat maybe? or a car, maybe",
+101,10635,70,test,18,D1,child,,child
+143,10635,70,test,30,D1,child,it look like someone on a board,
+144,10635,70,test,30,D1,parent,,parent
+158,10635,70,test,36,D1,parent,"let's see, someone driving a car",
+159,10635,70,test,36,D1,child,,child
+65,10635,70,test,10,E1,child,it looks like the person jumped,
+66,10635,70,test,10,E1,parent,,parent
+67,10635,70,test,10,E1,child,"like, yeah i think",
+72,10635,70,test,12,E1,parent,it look like somebody is jumping in the sky,
+73,10635,70,test,12,E1,child,"I agree, I saw that one when I was running xxx",
+74,10635,70,test,12,E1,child,,child
+119,10635,70,test,24,E1,child,"it look like someone jumping, going",
+120,10635,70,test,24,E1,parent,,parent
+166,10635,70,test,40,E1,parent,someone leaping in the air,
+167,10635,70,test,40,E1,child,,child
+62,10635,70,test,9,F1,parent,"umm let's see, it look like they might have wings",
+63,10635,70,test,9,F1,child,,child
+64,10635,70,test,9,F1,parent,that's as good as it's gon' get,
+82,10635,70,test,15,F1,child,it look like someone jumping my xxx a split,
+83,10635,70,test,15,F1,parent,jumping and doing the split?,
+84,10635,70,test,15,F1,child,mhmm,
+85,10635,70,test,15,F1,parent,okay,
+86,10635,70,test,15,F1,parent,,parent
+114,10635,70,test,23,F1,parent,"mmm it look like somebody is on a slide, like it could be a little kid on a slide",
+115,10635,70,test,23,F1,child,,child
+146,10635,70,test,31,F1,child,it look like someone have a xxx or doing the split,
+147,10635,70,test,31,F1,parent,,parent
+41,10635,70,test,2,G1,child,"I see a person with, it look like a person with a.. a like little, he look like he sitting on something",
+42,10635,70,test,2,G1,parent,,parent
+87,10635,70,test,16,G1,parent,it look like some sitting down,
+88,10635,70,test,16,G1,child,hm?,
+89,10635,70,test,16,G1,parent,it look like somebody sitting down on a block,
+90,10635,70,test,16,G1,child,that's what I said,
+91,10635,70,test,16,G1,child,,child
+92,10635,70,test,16,G1,parent,he's sitting on a block,
+93,10635,70,test,16,G1,parent,it look like it could be a block,
+94,10635,70,test,16,G1,child,it showed the colors and I saw the block,
+111,10635,70,test,22,G1,child,"it look, it's someone sitting on a block or something",
+112,10635,70,test,22,G1,parent,,parent
+149,10635,70,test,32,G1,parent,a lady sitting down,
+150,10635,70,test,32,G1,child,,child
+58,10635,70,test,8,H1,child,it look like a person standing up but I don't see no legs,
+59,10635,70,test,8,H1,parent,you don't see no legs?,
+60,10635,70,test,8,H1,child,mm mmm,
+61,10635,70,test,8,H1,parent,,parent
+104,10635,70,test,20,H1,parent,it look like somebody may be holding a bucket or something,
+105,10635,70,test,20,H1,child,it look like to me too,
+106,10635,70,test,20,H1,child,,child
+123,10635,70,test,26,H1,child,"it look like he had a house, mm it's the one with diamond head, the-- it look like he have a diamond head holding water or something",
+124,10635,70,test,26,H1,parent,,parent
+125,10635,70,test,26,H1,parent,it look like somebody's dancing,
+154,10635,70,test,34,H1,parent,"someone hmm, let's see, someone carrying a bucket",
+155,10635,70,test,34,H1,child,,child
+35,10635,70,test,1,I1,parent,"wow okay, I look like a person holding something",
+36,10635,70,test,1,I1,child,and I look like--,
+38,10635,70,test,1,I1,parent,"look at the screen, loo-- look for a person that look like they're holding something",
+39,10635,70,test,1,I1,child,,child
+102,10635,70,test,19,I1,child,I see someone holding a upside down triangle,
+103,10635,70,test,19,I1,parent,,parent
+108,10635,70,test,21,I1,parent,it look like somebody serving you some food at a restaurant,
+109,10635,70,test,21,I1,child,"mmm left, I mean right",
+110,10635,70,test,21,I1,child,,child
+164,10635,70,test,39,I1,child,"someone holding something that, that's a triangle",
+165,10635,70,test,39,I1,parent,,parent
+56,10635,70,test,7,K1,parent,"hmm, it look like somebody reaching forward",
+57,10635,70,test,7,K1,child,,child
+95,10635,70,test,17,K1,child,"it look, it's someone that's bending over",
+96,10635,70,test,17,K1,parent,,parent
+97,10635,70,test,17,K1,child,it look like a tail on his back,
+98,10635,70,test,17,K1,parent,you say he got a tail?,
+99,10635,70,test,17,K1,child,mhm,
+121,10635,70,test,25,K1,parent,mmm it could be a dog on its hindlegs,
+122,10635,70,test,25,K1,child,,child
+156,10635,70,test,35,K1,child,"someone that have a head, someone with a tail",
+157,10635,70,test,35,K1,parent,,parent
+1,10635,70,test,,,parent,"you've gotta tap, tap which one it is",
+4,10635,70,test,,,parent,is it blue on your screen?,
+5,10635,70,test,,,child,mhm,
+6,10635,70,test,,,parent,okay so describe what you're looking at,
+8,10635,70,test,,,parent,no you gotta tell me what you're looking at,
+10,10635,70,test,,,parent,"you have to describe it, what do you see?",
+15,10635,70,test,,,parent,tap which one you think it might be,
+17,10635,70,test,,,child,i got it,
+18,10635,70,test,,,child,blue box,
+20,10635,70,test,,,parent,"no, you can't just tell me what it is, you gotta describe it, tell me what does it look like?",
+30,10635,70,test,,,child,"good job, it say good job",
+31,10635,70,test,,,parent,it say good job?,
+32,10635,70,test,,,child,mhm,
+33,10635,70,test,,,parent,"okay, you ready",
+34,10635,70,test,,,child,mhm,
+37,10635,70,test,,,parent,"--no, listen to what I am saying, okay? cause it's my turn to tell you something and you supposed to listen",
+40,10635,70,test,,,parent,good job,
+50,10635,70,test,,,child,I like the cover of it,
+51,10635,70,test,,,parent,you like the cover of it?,
+68,10635,70,test,,,child,"good job, time for the next round",
+69,10635,70,test,,,parent,"good job, go ahead",
+107,10635,70,test,,,child,"good job, next, I mean good job, time--dang it",
+113,10635,70,test,,,child,I think it's connected,
+116,10635,70,test,,,child,xxx,
+117,10635,70,test,,,parent,pay attention,
+118,10635,70,test,,,child,I am,
+138,10635,70,test,,,parent,"okay so next time, use a better way to describe somethinng, instead of just saying stuff off the top of your head, okay?",
+139,10635,70,test,,,child,yeah,
+140,10635,70,test,,,parent,thank you,
+145,10635,70,test,,,child,"good job, time for next round",
+148,10635,70,test,,,child,xxx,
+153,10635,70,test,,,child,xxx,

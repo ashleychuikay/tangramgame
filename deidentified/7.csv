@@ -1,0 +1,113 @@
+Timeline.ordinal,database_id,subid,type,trial,target,person,utterance,selection
+0,4571,7,practice,1,apple,parent,pick the apple,
+1,4571,7,practice,1,apple,child,,child
+10,4571,7,practice,4,apple,child,this one is a apple,
+11,4571,7,practice,4,apple,parent,,parent
+12,4571,7,practice,4,apple,parent,"oh, that's a good one",
+2,4571,7,practice,2,artichoke,parent,Can I ask some questions to help?,
+3,4571,7,practice,2,artichoke,parent,is it one that has a triangle on its head or the onions,
+4,4571,7,practice,2,artichoke,child,it's the triangle one not the onions,
+5,4571,7,practice,2,artichoke,parent,is it the artichoke?,
+6,4571,7,practice,2,artichoke,child,yes yes,
+7,4571,7,practice,2,artichoke,parent,,parent
+13,4571,7,practice,5,artichoke,parent,this one is the artichoke with its diamond shapes,
+14,4571,7,practice,5,artichoke,child,,child
+8,4571,7,practice,3,onion,parent,this time it's the onion. it's the big round one.,
+9,4571,7,practice,3,onion,child,,child
+15,4571,7,practice,6,onion,child,this one is an onion,
+16,4571,7,practice,6,onion,parent,,parent
+43,4571,7,test,8,A1,child,this one is the one that's running,
+44,4571,7,test,8,A1,child,,child
+52,4571,7,test,12,A1,parent,this one is when he is running and he's only using one foot right now,
+53,4571,7,test,12,A1,child,,child
+77,4571,7,test,24,A1,child,this one's when he's running,
+78,4571,7,test,24,A1,parent,,parent
+106,4571,7,test,38,A1,parent,this one is when he's running but only got one foot on the ground,
+107,4571,7,test,38,A1,child,,child
+31,4571,7,test,4,B1,child,this one is walking,
+32,4571,7,test,4,B1,parent,Is he looking at the ground kinda?,
+33,4571,7,test,4,B1,child,yeah,
+34,4571,7,test,4,B1,parent,,parent
+61,4571,7,test,16,B1,parent,This one's when he's walking and looking at the ground,
+62,4571,7,test,16,B1,child,,child
+89,4571,7,test,30,B1,child,this one's when he's walking and looking down,
+90,4571,7,test,30,B1,parent,,parent
+110,4571,7,test,40,B1,parent,this one is walking looking down,
+111,4571,7,test,40,B1,child,,child
+23,4571,7,test,2,C1,child,this one is a person is lying down,
+24,4571,7,test,2,C1,parent,lying down? on his knees?,
+25,4571,7,test,2,C1,child,uh-huh,
+26,4571,7,test,2,C1,parent,with his elbows on the ground?,
+27,4571,7,test,2,C1,child,yeah,
+28,4571,7,test,2,C1,parent,,parent
+65,4571,7,test,18,C1,parent,this one's when he's on his elbows and knees on the floor,
+66,4571,7,test,18,C1,child,,child
+85,4571,7,test,28,C1,child,this is when he's on his knees and hamds,
+86,4571,7,test,28,C1,parent,,parent
+93,4571,7,test,32,C1,parent,this one's when he's on his elbows and knees,
+94,4571,7,test,32,C1,child,,child
+35,4571,7,test,5,D1,parent,"this one is when it's laying on its belly, like reading on the floor, kicking his knees up",
+36,4571,7,test,5,D1,child,,child
+63,4571,7,test,17,D1,child,this one is when he's reading a book laying down,
+64,4571,7,test,17,D1,parent,,parent
+71,4571,7,test,21,D1,parent,this one is when he's laying on the floor reading a book,
+72,4571,7,test,21,D1,child,,child
+91,4571,7,test,31,D1,child,this one he is laying down reading a book,
+92,4571,7,test,31,D1,parent,,parent
+47,4571,7,test,10,E1,child,this one is doing jumping,
+48,4571,7,test,10,E1,parent,,parent
+69,4571,7,test,20,E1,parent,this one is when he's jumping for joy,
+70,4571,7,test,20,E1,child,,child
+81,4571,7,test,26,E1,child,this one's when he's jumping,
+82,4571,7,test,26,E1,parent,,parent
+102,4571,7,test,36,E1,parent,this one is jumping for joy,
+103,4571,7,test,36,E1,child,,child
+45,4571,7,test,9,F1,parent,this one looks like he's been doing dabs,
+46,4571,7,test,9,F1,child,,child
+58,4571,7,test,15,F1,child,this one is the one when he is dabbings,
+59,4571,7,test,15,F1,parent,dabbing,
+60,4571,7,test,15,F1,parent,,parent
+75,4571,7,test,23,F1,parent,this one's when he's dabbing,
+76,4571,7,test,23,F1,child,,child
+99,4571,7,test,35,F1,child,this one is when he's doing that,
+100,4571,7,test,35,F1,parent,dabbing?,
+101,4571,7,test,35,F1,parent,,parent
+41,4571,7,test,7,G1,parent,So this one is sitting in chair,
+42,4571,7,test,7,G1,child,,child
+49,4571,7,test,11,G1,child,this one is sitting,
+50,4571,7,test,11,G1,parent,sitting in a chair?,
+51,4571,7,test,11,G1,parent,,parent
+87,4571,7,test,29,G1,parent,this one is when he's sitting in that chair,
+88,4571,7,test,29,G1,child,,child
+104,4571,7,test,37,G1,child,this one is when he's sitting down on a chair,
+105,4571,7,test,37,G1,parent,,parent
+29,4571,7,test,3,H1,parent,this one's when it's standing up in a row and it's holding a plate again,
+30,4571,7,test,3,H1,child,,child
+54,4571,7,test,13,H1,child,this one is the ... holding something with his zzz,
+55,4571,7,test,13,H1,parent,,parent
+79,4571,7,test,25,H1,parent,this one's when he's in the robe and he's holding a bowl,
+80,4571,7,test,25,H1,child,,child
+95,4571,7,test,33,H1,child,that one is when he has zzz and he's holding a bowl,
+96,4571,7,test,33,H1,parent,,parent
+20,4571,7,test,1,I1,parent,this one looks like a person holding a tray of food,
+21,4571,7,test,1,I1,child,,child
+67,4571,7,test,19,I1,child,this one is when he's holding a book,
+68,4571,7,test,19,I1,parent,,parent
+83,4571,7,test,27,I1,parent,"this one's when he's leaned over a little bit, holding that bowl",
+84,4571,7,test,27,I1,parent,,parent
+108,4571,7,test,39,I1,child,this one is when he has a zzz,
+109,4571,7,test,39,I1,parent,,parent
+37,4571,7,test,6,K1,child,this one is... leaning over. he's bowing.,
+38,4571,7,test,6,K1,parent,is there a triangle on his tush?,
+39,4571,7,test,6,K1,child,yeah,
+40,4571,7,test,6,K1,parent,,parent
+56,4571,7,test,14,K1,parent,this one is when he's bending over a little bit and looking up at the sky,
+57,4571,7,test,14,K1,child,,child
+73,4571,7,test,22,K1,child,this one is when he leaning down and looks like he's gonna slide,
+74,4571,7,test,22,K1,parent,,parent
+97,4571,7,test,34,K1,parent,this one's when he's got that triangle on his tush and he's leaned over a bit,
+98,4571,7,test,34,K1,child,,child
+17,4571,7,test,,,parent,So this one,
+18,4571,7,test,,,child,why aren't these zzz,
+19,4571,7,test,,,parent,like the little shapes,
+22,4571,7,test,,,child,it's so colorful!,

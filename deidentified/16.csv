@@ -1,0 +1,198 @@
+Timeline.ordinal,database_id,subid,type,trial,target,person,utterance,selection
+0,7455,16,practice,1,apple,parent,Apple,
+1,7455,16,practice,1,apple,child,,child
+13,7455,16,practice,4,apple,child,Apple,
+14,7455,16,practice,4,apple,parent,Apple,
+15,7455,16,practice,4,apple,child,Yeah,
+16,7455,16,practice,4,apple,parent,,parent
+3,7455,16,practice,2,artichoke,child,I don't know what that is,
+5,7455,16,practice,2,artichoke,child,Kinda looks like pineapple,
+6,7455,16,practice,2,artichoke,parent,Kinda like a pineapple,
+7,7455,16,practice,2,artichoke,parent,,parent
+8,7455,16,practice,2,artichoke,parent,It's an artichoke,
+10,7455,16,practice,2,artichoke,parent,"By the way or a or a brussel sprout maybe no, artichoke",
+17,7455,16,practice,5,artichoke,child,Um artichoke,
+18,7455,16,practice,5,artichoke,child,,child
+11,7455,16,practice,3,onion,parent,Um onion,
+12,7455,16,practice,3,onion,child,,child
+19,7455,16,practice,6,onion,child,Onion,
+20,7455,16,practice,6,onion,parent,,parent
+62,7455,16,test,6,A1,child,It looks like a person dancing,
+63,7455,16,test,6,A1,parent,Oh,
+64,7455,16,test,6,A1,parent,,parent
+65,7455,16,test,6,A1,child,With a diamond on its head,
+120,7455,16,test,20,A1,parent,This looks like a person running with a diamond head,
+121,7455,16,test,20,A1,child,,child
+129,7455,16,test,20,A1,child,With a bunch of triangles,
+126,7455,16,test,22,A1,child,This looks like somebody running with a diamond head,
+128,7455,16,test,22,A1,parent,,parent
+168,7455,16,test,34,A1,parent,This is somebody with a diamond head running,
+169,7455,16,test,34,A1,child,,child
+75,7455,16,test,9,B1,parent,This looks like somebody,
+76,7455,16,test,9,B1,parent,Looking at the ground and walking,
+77,7455,16,test,9,B1,child,,child
+86,7455,16,test,11,B1,child,It looks like someone looking at the ground,
+87,7455,16,test,11,B1,child,And walking,
+88,7455,16,test,11,B1,parent,,parent
+150,7455,16,test,29,B1,parent,This one looks like a person with a square head looking at the ground standing,
+151,7455,16,test,29,B1,child,,child
+192,7455,16,test,39,B1,child,This,
+193,7455,16,test,39,B1,child,This is the one guy looking at the ground sadly,
+194,7455,16,test,39,B1,parent,,parent
+78,7455,16,test,10,C1,child,The the zzz the zzz was like a square on that for example feet walking,
+80,7455,16,test,10,C1,child,Um it's legs and feet that's walking and the square,
+81,7455,16,test,10,C1,parent,Is it this isn't look like somebody kneeling on the ground like they're crawling on the ground or like they're jumping in the air,
+82,7455,16,test,10,C1,child,Um it's like this earthquake it's legs and a feet,
+83,7455,16,test,10,C1,parent,OK,
+84,7455,16,test,10,C1,parent,,parent
+105,7455,16,test,16,C1,parent,This looks like somebody crawling around on the ground,
+106,7455,16,test,16,C1,child,That look no with no a no more pause of a body,
+107,7455,16,test,16,C1,parent,Right,
+108,7455,16,test,16,C1,child,,child
+146,7455,16,test,28,C1,child,This looks like somebody with their feet and legs and zzz square,
+147,7455,16,test,28,C1,parent,Are they on the ground,
+148,7455,16,test,28,C1,child,Yeah,
+149,7455,16,test,28,C1,parent,,parent
+172,7455,16,test,36,C1,parent,This looks like a person crawling on the ground,
+173,7455,16,test,36,C1,child,Um I don't know that,
+174,7455,16,test,36,C1,parent,You don't have a person crawling on the ground,
+175,7455,16,test,36,C1,child,No,
+176,7455,16,test,36,C1,parent,Does he have a square head,
+177,7455,16,test,36,C1,child,No,
+178,7455,16,test,36,C1,parent,Mmm,
+179,7455,16,test,36,C1,parent,What do you have,
+180,7455,16,test,36,C1,child,I have somebody like with feet on legs and with a square and a diamond head,
+181,7455,16,test,36,C1,parent,OK so you have somebody with a diamond head and then somebody with feet,
+182,7455,16,test,36,C1,child,And legs with a square,
+183,7455,16,test,36,C1,parent,OK um the the one that looks like it's just uh legs and feet and a square that one,
+185,7455,16,test,36,C1,child,,child
+34,7455,16,test,2,D1,child,It looks like,
+35,7455,16,test,2,D1,child,That,
+36,7455,16,test,2,D1,parent,I can't see your pictures can you tell me what it looks like,
+37,7455,16,test,2,D1,child,Um it looks like there's a triangle top square top,
+38,7455,16,test,2,D1,parent,A triangle top and a square top,
+39,7455,16,test,2,D1,child,No I mean square top not a triangle one,
+40,7455,16,test,2,D1,parent,Are they together,
+41,7455,16,test,2,D1,child,Yeah,
+42,7455,16,test,2,D1,parent,,parent
+95,7455,16,test,14,D1,parent,This looks like an airplane with a square on top,
+96,7455,16,test,14,D1,child,,child
+152,7455,16,test,30,D1,child,This looks like somebody crawling on the ground,
+153,7455,16,test,30,D1,parent,Crawling on the ground,
+154,7455,16,test,30,D1,child,Yeah,
+155,7455,16,test,30,D1,parent,,parent
+160,7455,16,test,32,D1,parent,This looks like uh an airplane with a square on top,
+161,7455,16,test,32,D1,child,,child
+27,7455,16,test,1,E1,parent,It looks like a person jumping,
+28,7455,16,test,1,E1,child,Uh which one that is,
+30,7455,16,test,1,E1,parent,Um it's got a diamond head and triangle,
+31,7455,16,test,1,E1,child,,child
+32,7455,16,test,1,E1,parent,Feet,
+97,7455,16,test,15,E1,child,This looks like somebody like,
+98,7455,16,test,15,E1,child,Like this,
+99,7455,16,test,15,E1,parent,Do they have uh,
+100,7455,16,test,15,E1,child,Triangle arms triangle feet,
+101,7455,16,test,15,E1,parent,Triangle arms triangle feet,
+102,7455,16,test,15,E1,child,And a diamond head,
+103,7455,16,test,15,E1,parent,A diamond head,
+104,7455,16,test,15,E1,parent,,parent
+143,7455,16,test,27,E1,parent,This is,
+144,7455,16,test,27,E1,parent,Somebody with a diamond head who looks like they're jumping in the air,
+145,7455,16,test,27,E1,child,,child
+158,7455,16,test,31,E1,child,This looks like somebody jumped like jumping in the air,
+159,7455,16,test,31,E1,parent,,parent
+56,7455,16,test,5,F1,parent,It's the one from last time,
+57,7455,16,test,5,F1,child,This one,
+58,7455,16,test,5,F1,parent,Is that the one from last time,
+59,7455,16,test,5,F1,child,Yeah,
+60,7455,16,test,5,F1,parent,OK,
+61,7455,16,test,5,F1,child,,child
+91,7455,16,test,13,F1,child,This looks like somebody holding his arm in the air,
+92,7455,16,test,13,F1,parent,Holding his arm in the air,
+93,7455,16,test,13,F1,child,Yeah,
+94,7455,16,test,13,F1,parent,,parent
+122,7455,16,test,21,F1,parent,This looks like somebody,
+123,7455,16,test,21,F1,parent,Who has triangle feet and a square head and holding their arms in the air,
+124,7455,16,test,21,F1,child,,child
+125,7455,16,test,21,F1,child,The that makes them powerful,
+186,7455,16,test,37,F1,child,This looks like someone wanted to its arms in the air of the square head with triangle feet,
+187,7455,16,test,37,F1,parent,,parent
+43,7455,16,test,3,G1,parent,OK this one looks like,
+44,7455,16,test,3,G1,parent,A rocketship with a square on top,
+45,7455,16,test,3,G1,child,,child
+109,7455,16,test,17,G1,child,This looks like somebody had a square head and hat,
+110,7455,16,test,17,G1,parent,A square head and hat,
+111,7455,16,test,17,G1,child,Yeah,
+112,7455,16,test,17,G1,parent,,parent
+134,7455,16,test,25,G1,parent,This is like a rocketship touching a square,
+135,7455,16,test,25,G1,child,,child
+170,7455,16,test,35,G1,child,This looks like some a rocketship touching a square,
+171,7455,16,test,35,G1,parent,,parent
+69,7455,16,test,8,H1,child,This looks like somebody,
+70,7455,16,test,8,H1,child,Has a diamond head on top,
+71,7455,16,test,8,H1,parent,A diamond head on top,
+72,7455,16,test,8,H1,child,Yeah,
+74,7455,16,test,8,H1,parent,,parent
+89,7455,16,test,12,H1,parent,This looks like a man with a diamond head,
+90,7455,16,test,12,H1,child,,child
+138,7455,16,test,26,H1,child,This looks like somebody standing on the foots with a diamond head,
+139,7455,16,test,26,H1,parent,Mmm,
+140,7455,16,test,26,H1,parent,Are they standing on both feet or just one foot,
+141,7455,16,test,26,H1,child,Both feet,
+142,7455,16,test,26,H1,parent,,parent
+188,7455,16,test,38,H1,parent,This looks like a person with a diamond head,
+189,7455,16,test,38,H1,child,,child
+67,7455,16,test,7,I1,parent,This looks like somebody holding a triangle,
+68,7455,16,test,7,I1,child,,child
+116,7455,16,test,19,I1,child,zzz it's this person somebody holding a triangle,
+117,7455,16,test,19,I1,parent,Holding a triangle,
+118,7455,16,test,19,I1,child,Yeah,
+119,7455,16,test,19,I1,parent,,parent
+130,7455,16,test,23,I1,parent,This is somebody holding a triangle,
+131,7455,16,test,23,I1,child,,child
+164,7455,16,test,33,I1,child,This looks like somebody holding a triangle,
+165,7455,16,test,33,I1,parent,,parent
+46,7455,16,test,4,K1,child,It looks like airplane with a triangle on top,
+48,7455,16,test,4,K1,parent,Is it like the last one that you did,
+49,7455,16,test,4,K1,child,No,
+50,7455,16,test,4,K1,parent,No,
+51,7455,16,test,4,K1,child,It's different,
+52,7455,16,test,4,K1,parent,It's different,
+53,7455,16,test,4,K1,parent,zzz,
+54,7455,16,test,4,K1,parent,,parent
+113,7455,16,test,18,K1,parent,This one looks like a dog that jumped up,
+114,7455,16,test,18,K1,parent,He's got a little triangle tail,
+115,7455,16,test,18,K1,child,,child
+132,7455,16,test,24,K1,child,This is some a dog jumping in the in the air,
+133,7455,16,test,24,K1,parent,,parent
+195,7455,16,test,40,K1,parent,This looks like a dog that's jumping up,
+196,7455,16,test,40,K1,child,,child
+2,7455,16,test,,,parent,yyy so you need to tell me what's in the blue box,
+4,7455,16,test,,,parent,That's OK what does it look like,
+9,7455,16,test,,,child,Oh,
+21,7455,16,test,,,parent,Alright,
+22,7455,16,test,,,parent,We don't have any questions,
+23,7455,16,test,,,parent,Should we just proceed,
+24,7455,16,test,,,parent,Alright ready to start,
+25,7455,16,test,,,child,Yeah,
+26,7455,16,test,,,parent,Um,
+29,7455,16,test,,,parent,Hm,
+33,7455,16,test,,,parent,OK,
+47,7455,16,test,,,parent,Um,
+55,7455,16,test,,,parent,Um,
+66,7455,16,test,,,parent,Oh yeah yeah,
+73,7455,16,test,,,parent,OK,
+79,7455,16,test,,,parent,What's what's in the blue square can you tell me,
+85,7455,16,test,,,child,Where is the square,
+127,7455,16,test,,,parent,Alright,
+136,7455,16,test,,,child,That makes them powerful,
+137,7455,16,test,,,parent,Yeah,
+156,7455,16,test,,,child,Ready,
+157,7455,16,test,,,parent,I am,
+162,7455,16,test,,,child,This is a cool game,
+163,7455,16,test,,,parent,Mmm,
+166,7455,16,test,,,child,This is a long game,
+167,7455,16,test,,,parent,It is,
+184,7455,16,test,,,child,Oh,
+190,7455,16,test,,,child,That that makes them powerful,
+191,7455,16,test,,,child,This makes,

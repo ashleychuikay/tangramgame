@@ -1,0 +1,153 @@
+Timeline.ordinal,database_id,subid,type,trial,target,person,utterance,selection
+1,4485,33,practice,1,apple,child,,child
+14,4485,33,practice,4,apple,child,Apple,
+15,4485,33,practice,4,apple,parent,,parent
+4,4485,33,practice,2,artichoke,child,The ma mango,
+5,4485,33,practice,2,artichoke,parent,Mango,
+6,4485,33,practice,2,artichoke,child,Yeah,
+8,4485,33,practice,2,artichoke,parent,,parent
+18,4485,33,practice,5,artichoke,parent,I don't I think you don't know what this vegetable is it's called an artichoke it has a lot of leaves on it it almost,
+20,4485,33,practice,5,artichoke,parent,Looks like a pine cone,
+22,4485,33,practice,5,artichoke,child,,child
+10,4485,33,practice,3,onion,parent,OK so uh it's an onion do you know you know what an onion looks like,
+11,4485,33,practice,3,onion,child,Yeah,
+13,4485,33,practice,3,onion,child,,child
+24,4485,33,practice,6,onion,child,Onion,
+25,4485,33,practice,6,onion,parent,,parent
+56,4485,33,test,9,A1,parent,Uh like a person maybe running a person running,
+57,4485,33,test,9,A1,child,,child
+82,4485,33,test,17,A1,parent,Um a person running,
+83,4485,33,test,17,A1,parent,,parent
+93,4485,33,test,21,A1,parent,OK a person running,
+94,4485,33,test,21,A1,child,,child
+120,4485,33,test,31,A1,child,A person on one leg,
+121,4485,33,test,31,A1,parent,,parent
+40,4485,33,test,4,B1,child,Something walking,
+42,4485,33,test,4,B1,parent,,parent
+84,4485,33,test,18,B1,child,A person crawling,
+85,4485,33,test,18,B1,parent,No this is a person walking,
+86,4485,33,test,18,B1,child,,child
+111,4485,33,test,28,B1,child,A person that looks like a old man walking,
+112,4485,33,test,28,B1,parent,OK,
+113,4485,33,test,28,B1,parent,,parent
+137,4485,33,test,36,B1,parent,Um a person walking like an old man,
+138,4485,33,test,36,B1,child,,child
+53,4485,33,test,8,C1,child,Uh the person crawling,
+55,4485,33,test,8,C1,parent,,parent
+80,4485,33,test,16,C1,parent,Alright how bout a person crawling,
+81,4485,33,test,16,C1,child,,child
+105,4485,33,test,26,C1,parent,,parent
+106,4485,33,test,26,C1,child,They're crawling,
+132,4485,33,test,34,C1,parent,Which one do you think it is it's a person crawling,
+133,4485,33,test,34,C1,child,,child
+50,4485,33,test,7,D1,parent,OK like a person maybe lying down,
+51,4485,33,test,7,D1,child,,child
+52,4485,33,test,7,D1,parent,With their legs up yup,
+62,4485,33,test,11,D1,child,Um a person lying down,
+63,4485,33,test,11,D1,parent,,parent
+97,4485,33,test,23,D1,parent,A person lying down,
+99,4485,33,test,23,D1,child,,child
+139,4485,33,test,37,D1,child,A person lying down and right his zzz down,
+140,4485,33,test,37,D1,parent,Lying down,
+141,4485,33,test,37,D1,child,Yeah,
+143,4485,33,test,37,D1,parent,,parent
+44,4485,33,test,5,E1,parent,It looks like somebody it looks like a person maybe jumping in the air,
+45,4485,33,test,5,E1,child,,child
+67,4485,33,test,13,E1,child,Um a person jumping,
+68,4485,33,test,13,E1,parent,,parent
+102,4485,33,test,25,E1,parent,OK a perosn jumping up in the air,
+103,4485,33,test,25,E1,child,,child
+147,4485,33,test,39,E1,child,A person jumping,
+148,4485,33,test,39,E1,parent,,parent
+35,4485,33,test,3,F1,parent,Oh this one's tricky um uh um,
+37,4485,33,test,3,F1,parent,It looks like a maybe like a clown with a funny hat on like a birthday hat,
+38,4485,33,test,3,F1,child,,child
+73,4485,33,test,15,F1,child,Um a person running like this,
+75,4485,33,test,15,F1,parent,,parent
+109,4485,33,test,27,F1,parent,Like a person taking a really big step like a person like like walking,
+110,4485,33,test,27,F1,child,,child
+134,4485,33,test,35,F1,child,A person run like this,
+136,4485,33,test,35,F1,parent,,parent
+32,4485,33,test,2,G1,child,A a tower,
+34,4485,33,test,2,G1,parent,,parent
+65,4485,33,test,12,G1,parent,OK like a tower,
+66,4485,33,test,12,G1,child,,child
+95,4485,33,test,22,G1,child,Um a tower,
+96,4485,33,test,22,G1,parent,,parent
+145,4485,33,test,38,G1,parent,Like a tower,
+146,4485,33,test,38,G1,child,,child
+27,4485,33,test,1,H1,parent,OK the uh OK so um it looks like a tower,
+29,4485,33,test,1,H1,parent,The tower,
+30,4485,33,test,1,H1,child,,child
+87,4485,33,test,19,H1,child,A person that looks like they're giving something,
+89,4485,33,test,19,H1,parent,,parent
+114,4485,33,test,29,H1,parent,OK a person holding a bowl maybe with a robe on,
+115,4485,33,test,29,H1,child,No that looks like no that looks like,
+116,4485,33,test,29,H1,child,,child
+117,4485,33,test,29,H1,child,I don't know,
+128,4485,33,test,33,H1,child,A person giving a bowl,
+130,4485,33,test,33,H1,parent,,parent
+47,4485,33,test,6,I1,child,Somebody giving something to something that looks like someboy stealing something,
+49,4485,33,test,6,I1,parent,,parent
+90,4485,33,test,20,I1,parent,Uh a person giving somebody a bowl like somebody giving a bowl,
+91,4485,33,test,20,I1,child,,child
+100,4485,33,test,24,I1,child,A person with a bowl in their hand,
+101,4485,33,test,24,I1,parent,,parent
+124,4485,33,test,32,I1,parent,Which one do you think it is,
+125,4485,33,test,32,I1,child,A person crawling,
+126,4485,33,test,32,I1,parent,Nope it's the person giving a bowl,
+127,4485,33,test,32,I1,child,,child
+58,4485,33,test,10,K1,child,Um a person with a house playing on top of them,
+59,4485,33,test,10,K1,parent,,parent
+70,4485,33,test,14,K1,parent,Uh like a person uh with that with a house on top of them,
+71,4485,33,test,14,K1,parent,Got it giving something maybe,
+72,4485,33,test,14,K1,child,,child
+118,4485,33,test,30,K1,child,A person with a house top on him,
+119,4485,33,test,30,K1,parent,,parent
+149,4485,33,test,40,K1,parent,Uh like a person bending over to give something to someone,
+150,4485,33,test,40,K1,child,,child
+2,4485,33,test,,,child,Uh,
+3,4485,33,test,,,child,Um,
+7,4485,33,test,,,parent,Uh OK,
+9,4485,33,test,,,parent,I don't know what's going on,
+12,4485,33,test,,,parent,Yeah,
+16,4485,33,test,,,child,Uh,
+17,4485,33,test,,,parent,Are you I have a blue box,
+21,4485,33,test,,,child,Already tell me that,
+23,4485,33,test,,,child,Um,
+26,4485,33,test,,,child,Good job,
+28,4485,33,test,,,child,Uh,
+31,4485,33,test,,,child,Um,
+33,4485,33,test,,,parent,OK,
+36,4485,33,test,,,child,Just tell me what it looks like,
+39,4485,33,test,,,child,Uh,
+41,4485,33,test,,,parent,OK,
+43,4485,33,test,,,parent,Uh,
+48,4485,33,test,,,parent,OK,
+54,4485,33,test,,,parent,OK,
+60,4485,33,test,,,parent,OK,
+64,4485,33,test,,,parent,OK,
+69,4485,33,test,,,parent,Alright,
+74,4485,33,test,,,parent,OK,
+76,4485,33,test,,,child,I got,
+77,4485,33,test,,,parent,OK,
+78,4485,33,test,,,child,I got one wrong,
+79,4485,33,test,,,parent,Oh yeah,
+88,4485,33,test,,,parent,OK,
+92,4485,33,test,,,child,Good job time for the next round,
+98,4485,33,test,,,parent,You got it,
+107,4485,33,test,,,parent,Oh well,
+108,4485,33,test,,,parent,Uh this one's weird um uh,
+122,4485,33,test,,,child,zzz,
+123,4485,33,test,,,parent,zzz,
+123,4485,33,test,,,child,I don't know,
+129,4485,33,test,,,parent,OK,
+131,4485,33,test,,,child,A,
+135,4485,33,test,,,parent,OK,
+142,4485,33,test,,,parent,OK,
+144,4485,33,test,,,parent,Um,
+0,4485,33,,,,parent,Wait is it gonna start automatically or do I need to press something,
+19,4485,33,,,,child,Alright,
+46,4485,33,,,,child,Um,
+61,4485,33,,,,child,Good job time for the next round,
+104,4485,33,,,,child,A person dancing in the air cause,

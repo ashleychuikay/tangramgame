@@ -1,0 +1,118 @@
+Timeline.ordinal,database_id,subid,type,trial,target,person,utterance,selection
+0,8423,34,practice,1,apple,parent,The picture I see is an apple,
+1,8423,34,practice,1,apple,child,,child
+12,8423,34,practice,4,apple,child,My picture is an apple,
+13,8423,34,practice,4,apple,parent,,parent
+5,8423,34,practice,2,artichoke,child,Something that looks like a tree,
+6,8423,34,practice,2,artichoke,parent,So does it have a lot of little leaves going up,
+7,8423,34,practice,2,artichoke,child,Yes,
+8,8423,34,practice,2,artichoke,parent,,parent
+14,8423,34,practice,5,artichoke,parent,Oh I picked that my mine is that same one that looks like a tree it's called an artichoke,
+15,8423,34,practice,5,artichoke,child,,child
+9,8423,34,practice,3,onion,parent,My picture is the is the other one it's the onion it has a little,
+10,8423,34,practice,3,onion,child,,child
+11,8423,34,practice,3,onion,parent,shock at the bottom,
+16,8423,34,practice,6,onion,child,Mine is a onion,
+17,8423,34,practice,6,onion,parent,,parent
+31,8423,34,test,5,A1,parent,Mine looks like somebody running to the left,
+32,8423,34,test,5,A1,child,,child
+58,8423,34,test,15,A1,child,Mine looks like a person walking to the left,
+59,8423,34,test,15,A1,parent,,parent
+74,8423,34,test,21,A1,parent,Mine looks like a person running to the left,
+75,8423,34,test,21,A1,child,,child
+109,8423,34,test,37,A1,child,Now it looks someone like someone running to the left,
+110,8423,34,test,37,A1,parent,,parent
+19,8423,34,test,1,B1,parent,Mine looks like a man walking to the left,
+20,8423,34,test,1,B1,child,,child
+62,8423,34,test,17,B1,child,Mine looks like a person walking slowly to the left,
+63,8423,34,test,17,B1,parent,,parent
+92,8423,34,test,29,B1,parent,Mine looks like a sad person walking to the left,
+93,8423,34,test,29,B1,child,,child
+113,8423,34,test,39,B1,child,Now it's the person person who's sad walking to the left,
+114,8423,34,test,39,B1,parent,,parent
+26,8423,34,test,3,C1,parent,Mine looks like someone praying or diving into the water,
+27,8423,34,test,3,C1,child,,child
+69,8423,34,test,19,C1,child,Mine looks like someone kneeling down,
+70,8423,34,test,19,C1,parent,,parent
+82,8423,34,test,25,C1,parent,Mine looks like a person kneeling down,
+83,8423,34,test,25,C1,child,,child
+105,8423,34,test,35,C1,child,This looks somebody like someone kneeling,
+106,8423,34,test,35,C1,parent,,parent
+29,8423,34,test,4,D1,child,Car or something,
+30,8423,34,test,4,D1,parent,,parent
+50,8423,34,test,12,D1,parent,Mine looks like a a boat surrounded by mountains,
+51,8423,34,test,12,D1,child,,child
+90,8423,34,test,28,D1,child,Mine looks like a rocket,
+91,8423,34,test,28,D1,parent,,parent
+115,8423,34,test,40,D1,parent,Now it's the ocean that has the mountains and the boat,
+116,8423,34,test,40,D1,child,,child
+21,8423,34,test,2,E1,child,Mine looks like a man dancing to the right,
+23,8423,34,test,2,E1,parent,What size is it the biggest triangles or the smaller triangles,
+24,8423,34,test,2,E1,child,Biggest,
+25,8423,34,test,2,E1,parent,,parent
+60,8423,34,test,16,E1,parent,Mine looks like maybe like a bird it has like two triangles at the bottom,
+61,8423,34,test,16,E1,child,,child
+76,8423,34,test,22,E1,child,Mine looks like a person jumping and trying their zzz on like a bird,
+77,8423,34,test,22,E1,parent,,parent
+99,8423,34,test,32,E1,parent,Mine looks like a bird flying away,
+100,8423,34,test,32,E1,child,,child
+35,8423,34,test,7,F1,parent,This is mine is the one that has the bigger shapes to it and including,
+36,8423,34,test,7,F1,child,,child
+37,8423,34,test,7,F1,parent,the square,
+46,8423,34,test,11,F1,child,Mine looks like a person with that's made of triangles,
+47,8423,34,test,11,F1,parent,Like a sad person walking,
+48,8423,34,test,11,F1,child,No the one the one with the one with bigger shapes,
+49,8423,34,test,11,F1,parent,,parent
+86,8423,34,test,27,F1,parent,This is the one that doesn't look like a person kneeling,
+87,8423,34,test,27,F1,parent,With the triangles,
+88,8423,34,test,27,F1,child,,child
+89,8423,34,test,27,F1,parent,at the bottom,
+97,8423,34,test,31,F1,child,Mine looks like someone with a square head and has triangle feet,
+98,8423,34,test,31,F1,parent,,parent
+41,8423,34,test,9,G1,parent,A square on the top and a big square on the bottom and triangles on the square,
+42,8423,34,test,9,G1,child,,child
+52,8423,34,test,13,G1,child,Mine looks like something like a building or something,
+53,8423,34,test,13,G1,parent,Does it have a square on top,
+54,8423,34,test,13,G1,child,Yes,
+55,8423,34,test,13,G1,parent,,parent
+78,8423,34,test,23,G1,parent,Mine looks like someone sitting and kneeling uh square,
+79,8423,34,test,23,G1,child,,child
+101,8423,34,test,33,G1,child,Mine looks like someone sitting down,
+102,8423,34,test,33,G1,parent,,parent
+38,8423,34,test,8,H1,child,Mine is the one that has the bigger pieces,
+39,8423,34,test,8,H1,parent,,parent
+64,8423,34,test,18,H1,parent,Mine looks like a person holding something and we have a s square head,
+65,8423,34,test,18,H1,child,,child
+84,8423,34,test,26,H1,child,Mine looks like someone with a big diamond in the,
+85,8423,34,test,26,H1,parent,,parent
+103,8423,34,test,34,H1,parent,This looks like somebody holding a box,
+104,8423,34,test,34,H1,child,,child
+33,8423,34,test,6,I1,child,Mine looks like someone holding something,
+34,8423,34,test,6,I1,parent,,parent
+71,8423,34,test,20,I1,parent,Mine looks like a person holding a bowl,
+72,8423,34,test,20,I1,child,,child
+94,8423,34,test,30,I1,child,Mine looks like someone holding a bowl,
+95,8423,34,test,30,I1,parent,,parent
+107,8423,34,test,36,I1,parent,Now it looks like someone holding a bowl,
+108,8423,34,test,36,I1,child,,child
+43,8423,34,test,10,K1,child,Mine has the arrow at the top,
+44,8423,34,test,10,K1,parent,,parent
+56,8423,34,test,14,K1,parent,Mine looks like like a dog with a zzz at the top,
+57,8423,34,test,14,K1,child,,child
+80,8423,34,test,24,K1,child,Mine looks like a dog with a arrow head,
+81,8423,34,test,24,K1,parent,,parent
+111,8423,34,test,38,K1,parent,Now it's the dog with the arrow head,
+112,8423,34,test,38,K1,child,,child
+2,8423,34,test,,,child,The picture I see is a,
+3,8423,34,test,,,child,A,
+4,8423,34,test,,,parent,You can describe it doesn't you don't have to say what it is just,
+18,8423,34,test,,,parent,OK it says we can press the begin button,
+22,8423,34,test,,,parent,Does,
+28,8423,34,test,,,child,Mine looks like a,
+40,8423,34,test,,,parent,Mine ha mine has,
+45,8423,34,test,,,child,OK next,
+66,8423,34,test,,,child,Is there a way we could tie this mom,
+67,8423,34,test,,,parent,Well it's a tie if you zzz,
+73,8423,34,test,,,child,Next,
+96,8423,34,test,,,child,Um,
+68,8423,34,,,,child,Uh,

@@ -1,0 +1,209 @@
+Timeline.ordinal,database_id,subid,type,trial,target,person,utterance,selection
+0,5625,68,practice,1,apple,parent,"kay, I am, I can be red or I can be crunchy",
+1,5625,68,practice,1,apple,child,I already know,
+3,5625,68,practice,1,apple,child,,child
+20,5625,68,practice,4,apple,child,umm something smushy and it could be yellow,
+21,5625,68,practice,4,apple,parent,it could be yellow?,
+22,5625,68,practice,4,apple,parent,,parent
+23,5625,68,practice,4,apple,parent,I think I might know,
+6,5625,68,practice,2,artichoke,child,it's-,
+8,5625,68,practice,2,artichoke,child,it's spiky and it has a stick at the front of it,
+9,5625,68,practice,2,artichoke,parent,both have a stick at the front of it,
+10,5625,68,practice,2,artichoke,child,no,
+11,5625,68,practice,2,artichoke,parent,it's spiky?,
+12,5625,68,practice,2,artichoke,parent,okay I'm gonna pick this one,
+13,5625,68,practice,2,artichoke,parent,,parent
+24,5625,68,practice,5,artichoke,parent,oh we're back to something spiky with a tail at the bottom,
+25,5625,68,practice,5,artichoke,child,,child
+15,5625,68,practice,3,onion,parent,"okay, so, this one has little hair on one side and a pointy head on the other side-",
+16,5625,68,practice,3,onion,parent,and it makes you cry,
+17,5625,68,practice,3,onion,child,,child
+28,5625,68,practice,6,onion,child,uhh something a brownish color,
+29,5625,68,practice,6,onion,parent,these don't even have colors- here I'll pick this one,
+30,5625,68,practice,6,onion,parent,,parent
+40,5625,68,test,2,A1,child,you're looking for something that has a triangle on,
+41,5625,68,test,2,A1,parent,,parent
+42,5625,68,test,2,A1,parent,okay,
+111,5625,68,test,18,A1,parent,"okay, this is, I'm running to catch the bus",
+112,5625,68,test,18,A1,child,,child
+114,5625,68,test,18,A1,child,he had a blue head,
+170,5625,68,test,30,A1,child,"is- he, he's like I'm getting out of here this is bad",
+171,5625,68,test,30,A1,parent,,parent
+180,5625,68,test,32,A1,parent,"kay, you are running away from the rainstorm",
+181,5625,68,test,32,A1,child,,child
+56,5625,68,test,6,B1,child,you are walking like you're sad,
+57,5625,68,test,6,B1,parent,oh okay,
+58,5625,68,test,6,B1,parent,,parent
+103,5625,68,test,16,B1,parent,kay this one is you just got bad news,
+104,5625,68,test,16,B1,child,,child
+134,5625,68,test,22,B1,child,you're like- you have a hat on,
+135,5625,68,test,22,B1,parent,,parent
+136,5625,68,test,22,B1,child,i think that's part of the head,
+201,5625,68,test,38,B1,parent,you are sad cause you just lost your money,
+202,5625,68,test,38,B1,child,,child
+37,5625,68,test,1,C1,parent,okay so the one that I'm looking at is- you're looking for something that's on the sidewalk,
+38,5625,68,test,1,C1,child,,child
+117,5625,68,test,19,C1,child,you're like-,
+119,5625,68,test,19,C1,child,"I know, you're like",
+120,5625,68,test,19,C1,parent,,parent
+158,5625,68,test,27,C1,parent,you are looking for your lost earring,
+159,5625,68,test,27,C1,child,,child
+182,5625,68,test,33,C1,child,he's saying please your majesty don't hurt me,
+183,5625,68,test,33,C1,parent,,parent
+70,5625,68,test,10,D1,child,uh you're laying down,
+71,5625,68,test,10,D1,parent,,parent
+86,5625,68,test,12,D1,parent,this is how you read your iPad in bed,
+87,5625,68,test,12,D1,child,,child
+161,5625,68,test,28,D1,child,you are sleeping,
+162,5625,68,test,28,D1,parent,sleeping,
+163,5625,68,test,28,D1,parent,,parent
+164,5625,68,test,28,D1,parent,except your head is up,
+165,5625,68,test,28,D1,child,no I'm like rea- getting ready to tan,
+197,5625,68,test,36,D1,parent,mmm you are reading a book in bed,
+198,5625,68,test,36,D1,child,,child
+43,5625,68,test,3,E1,parent,"let's see, this one you are jumping up in the air cause you're so excited",
+44,5625,68,test,3,E1,child,,child
+45,5625,68,test,3,E1,child,it- it has wings,
+46,5625,68,test,3,E1,parent,I think those were the arms,
+47,5625,68,test,3,E1,child,mmm,
+107,5625,68,test,17,E1,child,"uh you're like, oooo",
+108,5625,68,test,17,E1,parent,,parent
+150,5625,68,test,25,E1,parent,you are clicking your heels together,
+151,5625,68,test,25,E1,parent,click click,
+152,5625,68,test,25,E1,child,,child
+199,5625,68,test,37,E1,child,you are walking away,
+200,5625,68,test,37,E1,parent,,parent
+59,5625,68,test,7,F1,parent,you are doing the splits in the air,
+60,5625,68,test,7,F1,child,,child
+61,5625,68,test,7,F1,child,it had arms like prrrr,
+62,5625,68,test,7,F1,parent,it totally did,
+89,5625,68,test,13,F1,child,you are saying yayy,
+90,5625,68,test,13,F1,parent,yayy,
+91,5625,68,test,13,F1,parent,,parent
+137,5625,68,test,23,F1,parent,umm you are so excited cause you just won a bunch of money,
+138,5625,68,test,23,F1,child,,child
+191,5625,68,test,35,F1,child,um it's like-,
+193,5625,68,test,35,F1,child,he has triangle feet,
+194,5625,68,test,35,F1,parent,triangle feet,
+195,5625,68,test,35,F1,parent,,parent
+67,5625,68,test,9,G1,parent,"kay, this one you're sitting watching tv",
+68,5625,68,test,9,G1,child,,child
+98,5625,68,test,15,G1,child,"uh, it looks like kind of a house",
+99,5625,68,test,15,G1,parent,kind of a house?,
+100,5625,68,test,15,G1,child,uh huh,
+101,5625,68,test,15,G1,parent,,parent
+167,5625,68,test,29,G1,parent,"this one is sitting, waiting for the bus",
+168,5625,68,test,29,G1,child,,child
+177,5625,68,test,31,G1,child,"you're like, you're like, woohoo!",
+178,5625,68,test,31,G1,parent,,parent
+179,5625,68,test,31,G1,parent,woohoo,
+53,5625,68,test,5,H1,parent,you are uhh standing at the store waiting for coffee,
+54,5625,68,test,5,H1,child,,child
+80,5625,68,test,11,H1,child,the one that's doing prr,
+82,5625,68,test,11,H1,child,the one that has the head sticking out,
+83,5625,68,test,11,H1,parent,oh kay,
+84,5625,68,test,11,H1,parent,,parent
+129,5625,68,test,21,H1,parent,it is a statue,
+130,5625,68,test,21,H1,child,,child
+203,5625,68,test,39,H1,child,you are looking inside a box,
+204,5625,68,test,39,H1,parent,,parent
+49,5625,68,test,4,I1,child,"something that has, jumping up in the air",
+50,5625,68,test,4,I1,parent,ah,
+51,5625,68,test,4,I1,parent,,parent
+122,5625,68,test,20,I1,parent,"okay, this one is, I'm the waiter and I'm coming to your table with food",
+123,5625,68,test,20,I1,child,that's what I did last time,
+124,5625,68,test,20,I1,child,,child
+155,5625,68,test,26,I1,child,uhh you're walking away,
+156,5625,68,test,26,I1,parent,,parent
+157,5625,68,test,26,I1,parent,"walking away, good",
+206,5625,68,test,40,I1,parent,you are presenting someone with a drink,
+207,5625,68,test,40,I1,child,,child
+63,5625,68,test,8,K1,child,"uhh, it's like it has a hat on",
+64,5625,68,test,8,K1,parent,,parent
+65,5625,68,test,8,K1,parent,"that is a hat, I thought it was just an arrowhead",
+66,5625,68,test,8,K1,child,it's not an arrowhead!,
+93,5625,68,test,14,K1,parent,"kay, your head is an arrow",
+94,5625,68,test,14,K1,child,,child
+95,5625,68,test,14,K1,child,it's a hat,
+96,5625,68,test,14,K1,parent,I don't know if it's a hat,
+140,5625,68,test,24,K1,child,"umm you're like hauww, please give me this food",
+141,5625,68,test,24,K1,parent,please give me this food,
+142,5625,68,test,24,K1,parent,I don't know which one it is,
+145,5625,68,test,24,K1,child,you're like-,
+147,5625,68,test,24,K1,child,and holding something out,
+148,5625,68,test,24,K1,parent,,parent
+185,5625,68,test,34,K1,parent,you have a triangle on your butt,
+186,5625,68,test,34,K1,child,ouu are you-,
+187,5625,68,test,34,K1,child,,child
+188,5625,68,test,34,K1,child,it's part of his body,
+2,5625,68,test,,,parent,"well you have to pick, pick it",
+4,5625,68,test,,,parent,oh it makes a noise looks at that,
+5,5625,68,test,,,parent,"now which one is, the one that's circled squared in blue, you have to explain that one",
+7,5625,68,test,,,parent,which one is it?,
+14,5625,68,test,,,parent,I think I got it right,
+18,5625,68,test,,,parent,oh oh I think we got it right,
+19,5625,68,test,,,parent,"kay, your turn",
+26,5625,68,test,,,parent,this is fun,
+27,5625,68,test,,,parent,kay you go,
+31,5625,68,test,,,parent,oh I think I got it,
+32,5625,68,test,,,parent,"okay now it says begin, can we begin?",
+33,5625,68,test,,,child,well mine says good job,
+34,5625,68,test,,,parent,oh it does? do you have another one- another new- new picture?,
+35,5625,68,test,,,child,I don't even know what these mean,
+36,5625,68,test,,,parent,but do you have the pictures?,
+39,5625,68,test,,,parent,very good,
+48,5625,68,test,,,parent,"okay, you go",
+52,5625,68,test,,,parent,did that twice in a row,
+55,5625,68,test,,,parent,kay you go,
+69,5625,68,test,,,parent,your turn,
+72,5625,68,test,,,parent,"okay, let's see",
+73,5625,68,test,,,child,good job,
+74,5625,68,test,,,parent,"huh fantastic, says time for the next round",
+75,5625,68,test,,,parent,oh your turn,
+76,5625,68,test,,,child,we just had these,
+77,5625,68,test,,,parent,"I know, but they're not gonna do them again",
+78,5625,68,test,,,child,no they're doing them all over,
+79,5625,68,test,,,parent,"okay, well you have to start, yours has the blue",
+81,5625,68,test,,,parent,"no you can't do that, you have to describe it to me",
+85,5625,68,test,,,parent,good,
+88,5625,68,test,,,parent,kay you go,
+92,5625,68,test,,,parent,that one,
+97,5625,68,test,,,parent,your turn,
+102,5625,68,test,,,parent,well I knew that one I would assume,
+105,5625,68,test,,,parent,you're good,
+106,5625,68,test,,,parent,your turn,
+109,5625,68,test,,,parent,is that your sad face?,
+110,5625,68,test,,,child,ooo,
+113,5625,68,test,,,parent,good,
+115,5625,68,test,,,parent,xxx,
+116,5625,68,test,,,parent,hit it,
+118,5625,68,test,,,parent,roun- the,
+121,5625,68,test,,,parent,that's not very descriptive,
+125,5625,68,test,,,parent,I- that's correct,
+126,5625,68,test,,,parent,"oh it says good job, time for the next round",
+127,5625,68,test,,,child,it has more symbols of the same,
+128,5625,68,test,,,parent,"I know, this is my turn now, ready?",
+131,5625,68,test,,,parent,very good,
+132,5625,68,test,,,child,you don't even know what I picked,
+133,5625,68,test,,,parent,well I assume you did it correctly,
+139,5625,68,test,,,parent,"you have to tell me, you have the  blue",
+143,5625,68,test,,,child,you just have to pick one,
+144,5625,68,test,,,parent,well you have to explain it to me better,
+146,5625,68,test,,,parent,so you're just-,
+149,5625,68,test,,,parent,"okay, it's prabably this",
+153,5625,68,test,,,child,i jus- I did this and it went,
+154,5625,68,test,,,parent,"nice, kay",
+160,5625,68,test,,,parent,very good,
+166,5625,68,test,,,parent,I see,
+169,5625,68,test,,,parent,good,
+172,5625,68,test,,,parent,"alright, good job, says time for the next round",
+173,5625,68,test,,,child,oh no please dont have the same,
+174,5625,68,test,,,child,ahhhhh!,
+175,5625,68,test,,,child,I hate these symbols,
+176,5625,68,test,,,parent,"aw no we're gonna go through it, come on",
+184,5625,68,test,,,parent,okay,
+189,5625,68,test,,,parent,aw well you knew which one it was so I don't know,
+190,5625,68,test,,,parent,go,
+192,5625,68,test,,,parent,you have to explain it to me,
+196,5625,68,test,,,parent,very good,
+205,5625,68,test,,,parent,good,

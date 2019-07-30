@@ -1,0 +1,147 @@
+Timeline.ordinal,database_id,subid,type,trial,target,person,utterance,selection
+0,7888,28,practice,1,apple,parent,OK can you press the apple,
+1,7888,28,practice,1,apple,child,,child
+6,7888,28,practice,4,apple,child,Can you press the banana,
+7,7888,28,practice,4,apple,parent,,parent
+2,7888,28,practice,2,artichoke,child,A blue square! Can you press the onion,
+3,7888,28,practice,2,artichoke,parent,,parent
+9,7888,28,practice,5,artichoke,parent,Can you press the artichoke,
+10,7888,28,practice,5,artichoke,child,,child
+4,7888,28,practice,3,onion,parent,Can you press the onion,
+5,7888,28,practice,3,onion,child,,child
+11,7888,28,practice,6,onion,child,Can you press the artichoke,
+12,7888,28,practice,6,onion,parent,,parent
+51,7888,28,test,10,A1,child,Can you press the one can you press the one with one foot,
+52,7888,28,test,10,A1,parent,,parent
+75,7888,28,test,16,A1,parent,Can you press the can you touch the person who is standing upright,
+77,7888,28,test,16,A1,child,,child
+97,7888,28,test,22,A1,child,Now can you press the one uh who is walking on one foot,
+98,7888,28,test,22,A1,parent,,parent
+144,7888,28,test,40,A1,parent,Can you touch the person who's walking on one foot,
+145,7888,28,test,40,A1,child,,child
+16,7888,28,test,1,B1,parent,Can you press the person walking,
+17,7888,28,test,1,B1,child,,child
+60,7888,28,test,13,B1,child,Can you press the one like a dog,
+61,7888,28,test,13,B1,child,With a hat on,
+62,7888,28,test,13,B1,parent,,parent
+63,7888,28,test,13,B1,parent,I'm glad you told me about the hat,
+114,7888,28,test,29,B1,parent,Can you touch the person who is um who is walking,
+115,7888,28,test,29,B1,child,,child
+137,7888,28,test,37,B1,child,Can you press the person walking,
+138,7888,28,test,37,B1,parent,,parent
+32,7888,28,test,6,C1,child,Now you press the one kneeling on the ground,
+33,7888,28,test,6,C1,parent,,parent
+58,7888,28,test,12,C1,parent,OK can you press the one that is kneeling down,
+59,7888,28,test,12,C1,child,,child
+102,7888,28,test,24,C1,child,Can you press the one with leaning down on the ground,
+103,7888,28,test,24,C1,parent,,parent
+126,7888,28,test,34,C1,parent,Can you touch the person who is leaning down,
+127,7888,28,test,34,C1,child,,child
+44,7888,28,test,8,D1,child,Can you press the one standing up,
+45,7888,28,test,8,D1,parent,,parent
+90,7888,28,test,20,D1,parent,Can you touch the person who's lying down,
+91,7888,28,test,20,D1,child,,child
+111,7888,28,test,28,D1,child,Can you press the person who is lying down,
+112,7888,28,test,28,D1,parent,,parent
+135,7888,28,test,36,D1,parent,Can you touch the person who's lying down,
+136,7888,28,test,36,D1,child,,child
+26,7888,28,test,5,E1,parent,Can you press the the one with the person with the their feet behind them,
+27,7888,28,test,5,E1,child,That or this one,
+28,7888,28,test,5,E1,parent,It looks like they're jumping,
+31,7888,28,test,5,E1,child,,child
+86,7888,28,test,19,E1,child,Can you press the one who has his feet back,
+87,7888,28,test,19,E1,parent,Uh both does it have both feet back or just one foot,
+88,7888,28,test,19,E1,child,Both,
+89,7888,28,test,19,E1,parent,,parent
+109,7888,28,test,27,E1,parent,Can you touch the person who's jumping in the air,
+110,7888,28,test,27,E1,child,,child
+141,7888,28,test,39,E1,child,Can you press the person walking on one foot,
+142,7888,28,test,39,E1,parent,,parent
+21,7888,28,test,3,F1,parent,Can you press the person who is raising their arms in the air,
+22,7888,28,test,3,F1,child,,child
+66,7888,28,test,15,F1,child,Can you press the one who's who's in the blue square,
+67,7888,28,test,15,F1,parent,I can't see the blue square you have to tell me what the person looks like,
+68,7888,28,test,15,F1,parent,It looks like he's dropping with his arms out with a diamond as his head,
+69,7888,28,test,15,F1,parent,With a diamond as his head let's try this one,
+70,7888,28,test,15,F1,parent,,parent
+71,7888,28,test,15,F1,parent,Is that right,
+72,7888,28,test,15,F1,child,Yes,
+95,7888,28,test,21,F1,parent,Notice I I have the blue square right now can you touch the person um who's with their hands in the air,
+96,7888,28,test,21,F1,child,,child
+128,7888,28,test,35,F1,child,Can you press the person very still,
+129,7888,28,test,35,F1,parent,Very still hmm I'm not sure I know which one is very still,
+130,7888,28,test,35,F1,child,Look at this one this is very still but this one is walking so this one,
+132,7888,28,test,35,F1,parent,,parent
+23,7888,28,test,4,G1,child,Can you press the one who's jumping,
+24,7888,28,test,4,G1,parent,,parent
+83,7888,28,test,18,G1,parent,OK can you touch the person who's sitting down,
+85,7888,28,test,18,G1,child,,child
+107,7888,28,test,26,G1,child,Can you press the one who has a diamond head and he is standing still,
+108,7888,28,test,26,G1,parent,,parent
+139,7888,28,test,38,G1,parent,Can you touch the person who's sitting down,
+140,7888,28,test,38,G1,child,,child
+36,7888,28,test,7,H1,parent,OK can you press the the person with the with the head that looks more like a diamond,
+38,7888,28,test,7,H1,parent,I I can't see it so they have a head like a diamond and their arms are in front of them and their body is thicker,
+41,7888,28,test,7,H1,child,,child
+54,7888,28,test,11,H1,child,Can you press the one can you press the one that is leaning down,
+55,7888,28,test,11,H1,parent,,parent
+104,7888,28,test,25,H1,parent,Can you touch the person um person who's standing still,
+105,7888,28,test,25,H1,child,,child
+124,7888,28,test,33,H1,child,Can you press the person jumping,
+125,7888,28,test,33,H1,parent,,parent
+18,7888,28,test,2,I1,child,Can you press the person tumbling,
+19,7888,28,test,2,I1,parent,,parent
+64,7888,28,test,14,I1,parent,Can you press the one can you press the person that is holding an upside down triangle,
+65,7888,28,test,14,I1,child,,child
+116,7888,28,test,30,I1,child,Can you press the one who has a who is walking with one foot,
+117,7888,28,test,30,I1,parent,,parent
+122,7888,28,test,32,I1,parent,OK can you touch the person who's holding the triangle,
+123,7888,28,test,32,I1,child,,child
+46,7888,28,test,9,K1,parent,Can you press the person who is leaning over and they have their head they have a hat on they have a triangle hat,
+49,7888,28,test,9,K1,child,,child
+50,7888,28,test,9,K1,parent,Press the one with the triangle hat,
+78,7888,28,test,17,K1,child,Can you press the one which is jumping,
+79,7888,28,test,17,K1,parent,Jumping,
+81,7888,28,test,17,K1,parent,,parent
+100,7888,28,test,23,K1,parent,Can you touch the person um with the triangle hat,
+101,7888,28,test,23,K1,child,,child
+119,7888,28,test,31,K1,child,Can you press the one leaning down with one foot on the ground one foot in the air and,
+120,7888,28,test,31,K1,parent,,parent
+121,7888,28,test,31,K1,child,triangle,
+8,7888,28,test,,,parent,We're good at this game,
+13,7888,28,test,,,child,Good job it says,
+14,7888,28,test,,,parent,OK,
+15,7888,28,test,,,parent,So that was the practice round now we're gonna start,
+20,7888,28,test,,,child,Good,
+25,7888,28,test,,,child,Good,
+30,7888,28,test,,,parent,OK well I can't see what you're seeing so,
+34,7888,28,test,,,parent,Pretty good,
+35,7888,28,test,,,child,Can you,
+37,7888,28,test,,,child,This one,
+39,7888,28,test,,,child,I think this one,
+40,7888,28,test,,,parent,Will you touch what touch whichever one you think it is,
+42,7888,28,test,,,child,Good,
+43,7888,28,test,,,parent,Yay OK,
+47,7888,28,test,,,child,That,
+48,7888,28,test,,,parent,Touch the one that you think is right,
+53,7888,28,test,,,parent,OK it says good job time for the next round,
+56,7888,28,test,,,parent,Is that the right one,
+57,7888,28,test,,,child,Yes,
+73,7888,28,test,,,parent,OK,
+74,7888,28,test,,,child,zzz,
+76,7888,28,test,,,child,Yeah,
+80,7888,28,test,,,parent,Let's try that one,
+82,7888,28,test,,,child,Good,
+84,7888,28,test,,,child,There,
+92,7888,28,test,,,child,Good job time for the next round,
+93,7888,28,test,,,parent,These look like your pattern blocks,
+94,7888,28,test,,,child,Can you press the one with,
+99,7888,28,test,,,child,Can you press,
+106,7888,28,test,,,parent,You're very good at this game,
+113,7888,28,test,,,child,Can you press,
+118,7888,28,test,,,parent,Good job time for the next round,
+131,7888,28,test,,,parent,Oh OK I think,
+133,7888,28,test,,,parent,I think I know what you're talking about then,
+134,7888,28,test,,,child,Good,
+143,7888,28,test,,,child,Good,
+29,7888,28,,,,child,I think that one,

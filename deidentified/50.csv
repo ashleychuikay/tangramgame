@@ -1,0 +1,124 @@
+Timeline.ordinal,database_id,subid,type,trial,target,person,utterance,selection
+0,9766,50,practice,1,apple,parent,i have an apple in the blue box,
+1,9766,50,practice,1,apple,parent,"i think you're supposed to touch the apple, if you have it",
+2,9766,50,practice,1,apple,child,,child
+3,9766,50,practice,1,apple,child,i did,
+4,9766,50,practice,1,apple,parent,ok,
+14,9766,50,practice,4,apple,child,i have an apple,
+15,9766,50,practice,4,apple,parent,,parent
+5,9766,50,practice,2,artichoke,child,i have a blue box,
+6,9766,50,practice,2,artichoke,parent,what's inside?,
+7,9766,50,practice,2,artichoke,child,it's uh... i don't know this vegetable,
+8,9766,50,practice,2,artichoke,parent,is it a turnip or an artichoke?,
+9,9766,50,practice,2,artichoke,child,artichoke,
+10,9766,50,practice,2,artichoke,parent,,parent
+16,9766,50,practice,5,artichoke,parent,i have the artichoke again,
+17,9766,50,practice,5,artichoke,child,,child
+18,9766,50,practice,5,artichoke,child,got it,
+11,9766,50,practice,3,onion,parent,i have the turnip now,
+12,9766,50,practice,3,onion,child,turnip,
+13,9766,50,practice,3,onion,child,,child
+19,9766,50,practice,6,onion,child,i have the... what was the round one?,
+20,9766,50,practice,6,onion,parent,turnip,
+21,9766,50,practice,6,onion,child,i have the turnip,
+22,9766,50,practice,6,onion,parent,,parent
+35,9766,50,test,4,A1,child,i have like a person who's like standing on one leg,
+36,9766,50,test,4,A1,parent,"oh, i see",
+37,9766,50,test,4,A1,parent,,parent
+66,9766,50,test,16,A1,parent,"this person is walking to the left, one leg, yeah",
+67,9766,50,test,16,A1,child,,child
+86,9766,50,test,24,A1,child,i have a person standing on one leg,
+87,9766,50,test,24,A1,parent,,parent
+117,9766,50,test,38,A1,parent,the person walking left,
+118,9766,50,test,38,A1,child,,child
+41,9766,50,test,6,B1,child,i have like a person walking,
+42,9766,50,test,6,B1,parent,,parent
+55,9766,50,test,12,B1,parent,"i have a person, he's walking left",
+56,9766,50,test,12,B1,child,,child
+101,9766,50,test,30,B1,child,I have a walking person,
+102,9766,50,test,30,B1,parent,,parent
+109,9766,50,test,34,B1,parent,walking to the left,
+110,9766,50,test,34,B1,child,,child
+29,9766,50,test,2,C1,child,"i have like, a person who's like, crawling",
+30,9766,50,test,2,C1,parent,,parent
+31,9766,50,test,2,C1,parent,mhm,
+60,9766,50,test,14,C1,parent,i have the one that's sort of crawling,
+61,9766,50,test,14,C1,child,,child
+62,9766,50,test,14,C1,child,that's what i said,
+63,9766,50,test,14,C1,parent,mhm,
+96,9766,50,test,28,C1,child,i have the crawling one,
+97,9766,50,test,28,C1,parent,,parent
+113,9766,50,test,36,C1,parent,i have the crawling person,
+114,9766,50,test,36,C1,child,,child
+50,9766,50,test,10,D1,child,i have like a person laying down on their belly,
+51,9766,50,test,10,D1,parent,"oh on their belly, yes",
+52,9766,50,test,10,D1,parent,,parent
+76,9766,50,test,20,D1,parent,this is the person on their belly,
+77,9766,50,test,20,D1,child,,child
+81,9766,50,test,22,D1,child,i have a person lying down on its belly,
+82,9766,50,test,22,D1,parent,,parent
+105,9766,50,test,32,D1,parent,"i have the belly, lying down",
+106,9766,50,test,32,D1,child,,child
+48,9766,50,test,9,E1,parent,i have a person jumping,
+49,9766,50,test,9,E1,child,,child
+53,9766,50,test,11,E1,child,i have a person jumping,
+54,9766,50,test,11,E1,parent,,parent
+83,9766,50,test,23,E1,child,what you got?,
+84,9766,50,test,23,E1,parent,I have the person jumping,
+85,9766,50,test,23,E1,child,,child
+107,9766,50,test,33,E1,child,jumping,
+108,9766,50,test,33,E1,parent,,parent
+32,9766,50,test,3,F1,parent,i have a person who's maybe running or something?,
+33,9766,50,test,3,F1,child,,child
+68,9766,50,test,17,F1,child,i have a person who has his hands in the air,
+69,9766,50,test,17,F1,parent,oh,
+70,9766,50,test,17,F1,parent,,parent
+92,9766,50,test,27,F1,parent,i have the jumping person,
+93,9766,50,test,27,F1,child,his hands in the air?,
+94,9766,50,test,27,F1,parent,yeah,
+95,9766,50,test,27,F1,child,,child
+115,9766,50,test,37,F1,child,i have the person with their hands in the air,
+116,9766,50,test,37,F1,parent,,parent
+46,9766,50,test,8,G1,child,i have a person who has both hands like straight not crawling but straight,
+47,9766,50,test,8,G1,parent,,parent
+71,9766,50,test,18,G1,parent,"um, this is the person who's sitting, sitting",
+72,9766,50,test,18,G1,child,,child
+90,9766,50,test,26,G1,child,i got a person sitting,
+91,9766,50,test,26,G1,parent,,parent
+121,9766,50,test,40,G1,parent,i have the person who's sitting,
+122,9766,50,test,40,G1,child,,child
+44,9766,50,test,7,H1,parent,"this person is not moving, not jumping, just standing",
+45,9766,50,test,7,H1,child,,child
+64,9766,50,test,15,H1,child,i have a person not standing on one leg,
+65,9766,50,test,15,H1,parent,,parent
+88,9766,50,test,25,H1,parent,i have the standing person,
+89,9766,50,test,25,H1,child,,child
+119,9766,50,test,39,H1,child,i have the person who's standing up,
+120,9766,50,test,39,H1,parent,,parent
+38,9766,50,test,5,I1,parent,"i have a person, he's like holding something like a tray",
+39,9766,50,test,5,I1,child,,child
+40,9766,50,test,5,I1,child,got it,
+73,9766,50,test,19,I1,child,i have a person who's holding something,
+74,9766,50,test,19,I1,parent,mhm,
+75,9766,50,test,19,I1,parent,,parent
+78,9766,50,test,21,I1,child,what you got?,
+79,9766,50,test,21,I1,parent,i have the person holding something,
+80,9766,50,test,21,I1,child,,child
+111,9766,50,test,35,I1,child,person holding a tray,
+112,9766,50,test,35,I1,parent,,parent
+24,9766,50,test,1,K1,child,i don't have a blue box,
+25,9766,50,test,1,K1,parent,"ok, so inside is a man. he's sort of reaching to the right.",
+26,9766,50,test,1,K1,child,,child
+27,9766,50,test,1,K1,child,got it,
+57,9766,50,test,13,K1,child,i have a guy who's like putting his hands right,
+58,9766,50,test,13,K1,parent,,parent
+98,9766,50,test,29,K1,parent,i have the standing person facing the right,
+99,9766,50,test,29,K1,child,,child
+100,9766,50,test,29,K1,parent,"i guess he's bending, sort of, isn't he?",
+103,9766,50,test,31,K1,child,i have a person who's bending over,
+104,9766,50,test,31,K1,parent,,parent
+23,9766,50,test,,,parent,"ok, are you ready to start? i'll press begin. it says begin here.",
+28,9766,50,test,,,parent,these are different,
+34,9766,50,test,,,parent,something fell on the floor,
+43,9766,50,test,,,child,what do you have now?,
+59,9766,50,test,,,child,what do you have,
