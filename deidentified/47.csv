@@ -1,118 +1,113 @@
-Timeline.ordinal,subid,type,trial,target,person,utterance,selection
-0,47,practice,1,apple,parent,so I want you to select the apple,
-1,47,practice,1,apple,child,,child
-8,47,practice,4,apple,child,"i want you to select the, the one with, the one that makes a crunching sound when you eat it",
-9,47,practice,4,apple,parent,,parent
-10,47,practice,4,apple,parent,you can just tell me what it was,
-2,47,practice,2,artichoke,parent,you tell me which one,
-3,47,practice,2,artichoke,child,"ok, um, I want you to select, um, the one that looks like a hot air balloon like with a",
-4,47,practice,2,artichoke,parent,okay,
-5,47,practice,2,artichoke,parent,,parent
-11,47,practice,5,artichoke,parent,i want you to select the one that you said looked like a hot air balloon,
-12,47,practice,5,artichoke,child,,child
-6,47,practice,3,onion,parent,i want you to select the opposite one of the one you just had,
-7,47,practice,3,onion,child,,child
-13,47,practice,6,onion,child,"i want you to select the one that is round and at the end is kind of like, leafy",
-14,47,practice,6,onion,parent,,parent
-40,47,test,9,A1,parent,"and i want you to.. well, they both look like they're standing up, but one looks like a dog like you said before. don't pick the dog, pick the one that looks like a regular person just standing on one leg",
-41,47,test,9,A1,child,,child
-42,47,test,9,A1,child,i was about to pick the dog,
-66,47,test,19,A1,child,i want you to choose the one with all different kind of swirls and curls on its body,
-67,47,test,19,A1,parent,does it look like a person running? or maybe a person laying down,
-68,47,test,19,A1,child,"a person, like, running",
-69,47,test,19,A1,parent,,parent
-70,47,test,19,A1,child,in a hustle,
-77,47,test,23,A1,parent,"i want you to choose the one that looks like it is walking, not the one holding the triangle",
-78,47,test,23,A1,child,,child
-112,47,test,39,A1,child,i want you to choose the one that looks like it's standing up straight with all kind of arms and,
-113,47,test,39,A1,parent,,parent
-27,47,test,4,B1,child,"so, i want you to pick the one that looks like it's walking instead of holding a triangle",
-28,47,test,4,B1,parent,,parent
-29,47,test,4,B1,parent,that was a good description,
-53,47,test,14,B1,parent,"i want you to pick the one that looks like it's walking, not laying down",
-54,47,test,14,B1,child,sad?,
-55,47,test,14,B1,parent,yes,
-56,47,test,14,B1,child,,child
-57,47,test,14,B1,parent,he's walking with his head hanging down,
-83,47,test,26,B1,child,i want you to choose the one who's like walking away sadly,
-84,47,test,26,B1,parent,,parent
-109,47,test,38,B1,parent,"i want you to choose the one that looks like it's walking away, sad",
-110,47,test,38,B1,child,the one with the head down?,
-111,47,test,38,B1,child,,child
-43,47,test,10,C1,child,"i want you to pick the one that looks like, uh, them praying?",
-44,47,test,10,C1,parent,,parent
-45,47,test,10,C1,parent,"i thought the same thing! it does look like they're praying, doesn't it",
-60,47,test,16,C1,parent,i want you to choose the one that is praying,
-61,47,test,16,C1,child,,child
-91,47,test,30,C1,child,"i want you to choose, sorry! i want you to choose the one that is praying",
-92,47,test,30,C1,parent,,parent
-105,47,test,36,C1,parent,choose the one that is praying,
-106,47,test,36,C1,child,,child
-30,47,test,5,D1,parent,i want you to pick the one that looks like its laying down,
-31,47,test,5,D1,child,,child
-62,47,test,17,D1,child,"i want you to choose the one that's laying down, like crazy",
-63,47,test,17,D1,parent,,parent
-73,47,test,21,D1,parent,i want you to choose the one that looks like its laying down,
-74,47,test,21,D1,child,,child
-107,47,test,37,D1,child,"um, i want you to choose the one that doesn't look like the dog, the one that looks like it's having no fun",
-108,47,test,37,D1,parent,,parent
-23,47,test,3,E1,parent,"i want you to choose the one that has the two big points at the top. so there's a diamond head in both of them, right?",
-24,47,test,3,E1,child,yes,
-25,47,test,3,E1,parent,but there's only one that has a skinnier bottom and one that has a wider bottom. can you choose the one with the wider bottom?,
-26,47,test,3,E1,child,,child
-46,47,test,11,E1,child,i want you to pick the one that looks like it is being crazy instead of holding something very delicate in the hand,
-47,47,test,11,E1,parent,,parent
-85,47,test,27,E1,parent,i want you to pick the one that's jumping for joy,
-86,47,test,27,E1,child,,child
-102,47,test,35,E1,child,i want you to choose someone that doesn't look sad,
-103,47,test,35,E1,parent,,parent
-104,47,test,35,E1,child,jumping for joy,
-38,47,test,8,F1,child,i want you to pick the one that doesn't look like a teacher. the one that looks like a student running,
-39,47,test,8,F1,parent,,parent
-48,47,test,12,F1,parent,"and i want you to choose the one that looks like it's running, not the doggy one",
-49,47,test,12,F1,child,,child
-79,47,test,24,F1,child,i want you to choose the one that's imagining that it's a bird,
-80,47,test,24,F1,parent,,parent
-100,47,test,34,F1,parent,"i want you to choose the one that looks like they're running, not praying",
-101,47,test,34,F1,child,,child
-19,47,test,1,G1,parent,i want you to choose the one that looks like there's a teacher sitting on a chair looking downward,
-20,47,test,1,G1,child,,child
-58,47,test,15,G1,child,"i want you to pick the one that looks like a teacher, not a crazy student bounding around",
-59,47,test,15,G1,parent,,parent
-81,47,test,25,G1,parent,"i want you to pick the one that looks like she's sitting on a chair, reading a book",
-82,47,test,25,G1,child,,child
-98,47,test,33,G1,child,"i want you to choose the one who doesn't look like a dog, the opposite one",
-99,47,test,33,G1,parent,,parent
-35,47,test,7,H1,parent,"so i want you to pick the one that looks like a person pointing, not jumping up and down",
-36,47,test,7,H1,child,,child
-37,47,test,7,H1,child,good description,
-50,47,test,13,H1,child,i want you to pick the one that looks like a pastor with the book,
-51,47,test,13,H1,parent,,parent
-52,47,test,13,H1,child,"what, it does!",
-89,47,test,29,H1,parent,"and i want you to choose the one that looks like it's sitting still, holding something maybe",
-89,47,test,29,H1,child,and not walking,
-90,47,test,29,H1,child,,child
-93,47,test,31,H1,child,i want you to choose the one who looks like the pastor preaching,
-94,47,test,31,H1,parent,,parent
-21,47,test,2,I1,child,i want you to pick the one that looks like a person holding like a triangle,
-22,47,test,2,I1,parent,,parent
-64,47,test,18,I1,parent,i want you to choose the one that's holding the triangle,
-65,47,test,18,I1,child,,child
-87,47,test,28,I1,child,"i want you to choose the one that's, like, holding a delicate thing in its hand",
-88,47,test,28,I1,parent,,parent
-114,47,test,40,I1,parent,i want you to choose the one that's holding the triangle,
-115,47,test,40,I1,child,,child
-32,47,test,6,K1,child,"i want you to pick the one that kind of looks like a dog almost because it has a triangle tail, and it's not laying up it's like standing up",
-33,47,test,6,K1,parent,mhm,
-34,47,test,6,K1,parent,,parent
-71,47,test,20,K1,parent,i want you to choose the one that looks like a doggie standing up on its legs,
-72,47,test,20,K1,child,,child
-75,47,test,22,K1,child,i want you to choose the one that looks like the dog i said earlier,
-76,47,test,22,K1,parent,,parent
-95,47,test,32,K1,parent,"ok, i want you to choose the doggie, with his tail",
-96,47,test,32,K1,child,,child
-15,47,test,,,child,i don't want to give it away,
-16,47,test,,,parent,it's not like a gameshow where you can't use certain words,
-17,47,test,,,child,but I want to do that,
-18,47,test,,,parent,we'll let's as them the question <asks about wording>,
-97,47,test,,,child,the dog looks like he xxx,
+subid,type,trial,target,person,utterance,selection,correct
+47,practice,1,apple,parent,so I want you to select the apple,,Y
+47,practice,1,apple,child,,child,Y
+47,practice,4,apple,child,"i want you to select the, the one with, the one that makes a crunching sound when you eat it",,Y
+47,practice,4,apple,parent,,parent,Y
+47,practice,4,apple,parent,you can just tell me what it was,,Y
+47,practice,2,artichoke,parent,you tell me which one,,Y
+47,practice,2,artichoke,child,"ok, um, I want you to select, um, the one that looks like a hot air balloon like with a",,Y
+47,practice,2,artichoke,parent,okay,,Y
+47,practice,2,artichoke,parent,,parent,Y
+47,practice,5,artichoke,parent,i want you to select the one that you said looked like a hot air balloon,,Y
+47,practice,5,artichoke,child,,child,Y
+47,practice,3,onion,parent,i want you to select the opposite one of the one you just had,,Y
+47,practice,3,onion,child,,child,Y
+47,practice,6,onion,child,"i want you to select the one that is round and at the end is kind of like, leafy",,Y
+47,practice,6,onion,parent,,parent,Y
+47,test,9,A1,parent,"and i want you to.. well, they both look like they're standing up, but one looks like a dog like you said before. don't pick the dog, pick the one that looks like a regular person just standing on one leg",,Y
+47,test,9,A1,child,,child,Y
+47,test,9,A1,child,i was about to pick the dog,,Y
+47,test,19,A1,child,i want you to choose the one with all different kind of swirls and curls on its body,,Y
+47,test,19,A1,parent,does it look like a person running? or maybe a person laying down,,Y
+47,test,19,A1,child,"a person, like, running",,Y
+47,test,19,A1,parent,,parent,Y
+47,test,19,A1,child,in a hustle,,Y
+47,test,23,A1,parent,"i want you to choose the one that looks like it is walking, not the one holding the triangle",,Y
+47,test,23,A1,child,,child,Y
+47,test,39,A1,child,i want you to choose the one that looks like it's standing up straight with all kind of arms and,,Y
+47,test,39,A1,parent,,parent,Y
+47,test,4,B1,child,"so, i want you to pick the one that looks like it's walking instead of holding a triangle",,Y
+47,test,4,B1,parent,,parent,Y
+47,test,4,B1,parent,that was a good description,,Y
+47,test,14,B1,parent,"i want you to pick the one that looks like it's walking, not laying down",,Y
+47,test,14,B1,child,sad?,,Y
+47,test,14,B1,parent,yes,,Y
+47,test,14,B1,child,,child,Y
+47,test,14,B1,parent,he's walking with his head hanging down,,Y
+47,test,26,B1,child,i want you to choose the one who's like walking away sadly,,Y
+47,test,26,B1,parent,,parent,Y
+47,test,38,B1,parent,"i want you to choose the one that looks like it's walking away, sad",,Y
+47,test,38,B1,child,the one with the head down?,,Y
+47,test,38,B1,child,,child,Y
+47,test,10,C1,child,"i want you to pick the one that looks like, uh, them praying?",,Y
+47,test,10,C1,parent,,parent,Y
+47,test,10,C1,parent,"i thought the same thing! it does look like they're praying, doesn't it",,Y
+47,test,16,C1,parent,i want you to choose the one that is praying,,Y
+47,test,16,C1,child,,child,Y
+47,test,30,C1,child,"i want you to choose, sorry! i want you to choose the one that is praying",,Y
+47,test,30,C1,parent,,parent,Y
+47,test,36,C1,parent,choose the one that is praying,,Y
+47,test,36,C1,child,,child,Y
+47,test,5,D1,parent,i want you to pick the one that looks like its laying down,,Y
+47,test,5,D1,child,,child,Y
+47,test,17,D1,child,"i want you to choose the one that's laying down, like crazy",,Y
+47,test,17,D1,parent,,parent,Y
+47,test,21,D1,parent,i want you to choose the one that looks like its laying down,,Y
+47,test,21,D1,child,,child,Y
+47,test,37,D1,child,"um, i want you to choose the one that doesn't look like the dog, the one that looks like it's having no fun",,Y
+47,test,37,D1,parent,,parent,Y
+47,test,3,E1,parent,"i want you to choose the one that has the two big points at the top. so there's a diamond head in both of them, right?",,N
+47,test,3,E1,child,yes,,N
+47,test,3,E1,parent,but there's only one that has a skinnier bottom and one that has a wider bottom. can you choose the one with the wider bottom?,,N
+47,test,3,E1,child,,child,N
+47,test,11,E1,child,i want you to pick the one that looks like it is being crazy instead of holding something very delicate in the hand,,Y
+47,test,11,E1,parent,,parent,Y
+47,test,27,E1,parent,i want you to pick the one that's jumping for joy,,Y
+47,test,27,E1,child,,child,Y
+47,test,35,E1,child,i want you to choose someone that doesn't look sad,,Y
+47,test,35,E1,parent,,parent,Y
+47,test,35,E1,child,jumping for joy,,Y
+47,test,8,F1,child,i want you to pick the one that doesn't look like a teacher. the one that looks like a student running,,Y
+47,test,8,F1,parent,,parent,Y
+47,test,12,F1,parent,"and i want you to choose the one that looks like it's running, not the doggy one",,Y
+47,test,12,F1,child,,child,Y
+47,test,24,F1,child,i want you to choose the one that's imagining that it's a bird,,Y
+47,test,24,F1,parent,,parent,Y
+47,test,34,F1,parent,"i want you to choose the one that looks like they're running, not praying",,Y
+47,test,34,F1,child,,child,Y
+47,test,1,G1,parent,i want you to choose the one that looks like there's a teacher sitting on a chair looking downward,,Y
+47,test,1,G1,child,,child,Y
+47,test,15,G1,child,"i want you to pick the one that looks like a teacher, not a crazy student bounding around",,Y
+47,test,15,G1,parent,,parent,Y
+47,test,25,G1,parent,"i want you to pick the one that looks like she's sitting on a chair, reading a book",,Y
+47,test,25,G1,child,,child,Y
+47,test,33,G1,child,"i want you to choose the one who doesn't look like a dog, the opposite one",,Y
+47,test,33,G1,parent,,parent,Y
+47,test,7,H1,parent,"so i want you to pick the one that looks like a person pointing, not jumping up and down",,Y
+47,test,7,H1,child,,child,Y
+47,test,7,H1,child,good description,,Y
+47,test,13,H1,child,i want you to pick the one that looks like a pastor with the book,,Y
+47,test,13,H1,parent,,parent,Y
+47,test,13,H1,child,"what, it does!",,Y
+47,test,29,H1,parent,"and i want you to choose the one that looks like it's sitting still, holding something maybe",,Y
+47,test,29,H1,child,and not walking,,Y
+47,test,29,H1,child,,child,Y
+47,test,31,H1,child,i want you to choose the one who looks like the pastor preaching,,Y
+47,test,31,H1,parent,,parent,Y
+47,test,2,I1,child,i want you to pick the one that looks like a person holding like a triangle,,Y
+47,test,2,I1,parent,,parent,Y
+47,test,18,I1,parent,i want you to choose the one that's holding the triangle,,Y
+47,test,18,I1,child,,child,Y
+47,test,28,I1,child,"i want you to choose the one that's, like, holding a delicate thing in its hand",,Y
+47,test,28,I1,parent,,parent,Y
+47,test,40,I1,parent,i want you to choose the one that's holding the triangle,,Y
+47,test,40,I1,child,,child,Y
+47,test,6,K1,child,"i want you to pick the one that kind of looks like a dog almost because it has a triangle tail, and it's not laying up it's like standing up",,Y
+47,test,6,K1,parent,mhm,,Y
+47,test,6,K1,parent,,parent,Y
+47,test,20,K1,parent,i want you to choose the one that looks like a doggie standing up on its legs,,Y
+47,test,20,K1,child,,child,Y
+47,test,22,K1,child,i want you to choose the one that looks like the dog i said earlier,,Y
+47,test,22,K1,parent,,parent,Y
+47,test,32,K1,parent,"ok, i want you to choose the doggie, with his tail",,Y
+47,test,32,K1,child,,child,Y

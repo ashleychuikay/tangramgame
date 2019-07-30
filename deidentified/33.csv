@@ -1,153 +1,108 @@
-Timeline.ordinal,subid,type,trial,target,person,utterance,selection
-1,33,practice,1,apple,child,,child
-14,33,practice,4,apple,child,Apple,
-15,33,practice,4,apple,parent,,parent
-4,33,practice,2,artichoke,child,The ma mango,
-5,33,practice,2,artichoke,parent,Mango,
-6,33,practice,2,artichoke,child,Yeah,
-8,33,practice,2,artichoke,parent,,parent
-18,33,practice,5,artichoke,parent,I don't I think you don't know what this vegetable is it's called an artichoke it has a lot of leaves on it it almost,
-20,33,practice,5,artichoke,parent,Looks like a pine cone,
-22,33,practice,5,artichoke,child,,child
-10,33,practice,3,onion,parent,OK so uh it's an onion do you know you know what an onion looks like,
-11,33,practice,3,onion,child,Yeah,
-13,33,practice,3,onion,child,,child
-24,33,practice,6,onion,child,Onion,
-25,33,practice,6,onion,parent,,parent
-56,33,test,9,A1,parent,Uh like a person maybe running a person running,
-57,33,test,9,A1,child,,child
-82,33,test,17,A1,parent,Um a person running,
-83,33,test,17,A1,parent,,parent
-93,33,test,21,A1,parent,OK a person running,
-94,33,test,21,A1,child,,child
-120,33,test,31,A1,child,A person on one leg,
-121,33,test,31,A1,parent,,parent
-40,33,test,4,B1,child,Something walking,
-42,33,test,4,B1,parent,,parent
-84,33,test,18,B1,child,A person crawling,
-85,33,test,18,B1,parent,No this is a person walking,
-86,33,test,18,B1,child,,child
-111,33,test,28,B1,child,A person that looks like a old man walking,
-112,33,test,28,B1,parent,OK,
-113,33,test,28,B1,parent,,parent
-137,33,test,36,B1,parent,Um a person walking like an old man,
-138,33,test,36,B1,child,,child
-53,33,test,8,C1,child,Uh the person crawling,
-55,33,test,8,C1,parent,,parent
-80,33,test,16,C1,parent,Alright how bout a person crawling,
-81,33,test,16,C1,child,,child
-105,33,test,26,C1,parent,,parent
-106,33,test,26,C1,child,They're crawling,
-132,33,test,34,C1,parent,Which one do you think it is it's a person crawling,
-133,33,test,34,C1,child,,child
-50,33,test,7,D1,parent,OK like a person maybe lying down,
-51,33,test,7,D1,child,,child
-52,33,test,7,D1,parent,With their legs up yup,
-62,33,test,11,D1,child,Um a person lying down,
-63,33,test,11,D1,parent,,parent
-97,33,test,23,D1,parent,A person lying down,
-99,33,test,23,D1,child,,child
-139,33,test,37,D1,child,A person lying down and right his zzz down,
-140,33,test,37,D1,parent,Lying down,
-141,33,test,37,D1,child,Yeah,
-143,33,test,37,D1,parent,,parent
-44,33,test,5,E1,parent,It looks like somebody it looks like a person maybe jumping in the air,
-45,33,test,5,E1,child,,child
-67,33,test,13,E1,child,Um a person jumping,
-68,33,test,13,E1,parent,,parent
-102,33,test,25,E1,parent,OK a perosn jumping up in the air,
-103,33,test,25,E1,child,,child
-147,33,test,39,E1,child,A person jumping,
-148,33,test,39,E1,parent,,parent
-35,33,test,3,F1,parent,Oh this one's tricky um uh um,
-37,33,test,3,F1,parent,It looks like a maybe like a clown with a funny hat on like a birthday hat,
-38,33,test,3,F1,child,,child
-73,33,test,15,F1,child,Um a person running like this,
-75,33,test,15,F1,parent,,parent
-109,33,test,27,F1,parent,Like a person taking a really big step like a person like like walking,
-110,33,test,27,F1,child,,child
-134,33,test,35,F1,child,A person run like this,
-136,33,test,35,F1,parent,,parent
-32,33,test,2,G1,child,A a tower,
-34,33,test,2,G1,parent,,parent
-65,33,test,12,G1,parent,OK like a tower,
-66,33,test,12,G1,child,,child
-95,33,test,22,G1,child,Um a tower,
-96,33,test,22,G1,parent,,parent
-145,33,test,38,G1,parent,Like a tower,
-146,33,test,38,G1,child,,child
-27,33,test,1,H1,parent,OK the uh OK so um it looks like a tower,
-29,33,test,1,H1,parent,The tower,
-30,33,test,1,H1,child,,child
-87,33,test,19,H1,child,A person that looks like they're giving something,
-89,33,test,19,H1,parent,,parent
-114,33,test,29,H1,parent,OK a person holding a bowl maybe with a robe on,
-115,33,test,29,H1,child,No that looks like no that looks like,
-116,33,test,29,H1,child,,child
-117,33,test,29,H1,child,I don't know,
-128,33,test,33,H1,child,A person giving a bowl,
-130,33,test,33,H1,parent,,parent
-47,33,test,6,I1,child,Somebody giving something to something that looks like someboy stealing something,
-49,33,test,6,I1,parent,,parent
-90,33,test,20,I1,parent,Uh a person giving somebody a bowl like somebody giving a bowl,
-91,33,test,20,I1,child,,child
-100,33,test,24,I1,child,A person with a bowl in their hand,
-101,33,test,24,I1,parent,,parent
-124,33,test,32,I1,parent,Which one do you think it is,
-125,33,test,32,I1,child,A person crawling,
-126,33,test,32,I1,parent,Nope it's the person giving a bowl,
-127,33,test,32,I1,child,,child
-58,33,test,10,K1,child,Um a person with a house playing on top of them,
-59,33,test,10,K1,parent,,parent
-70,33,test,14,K1,parent,Uh like a person uh with that with a house on top of them,
-71,33,test,14,K1,parent,Got it giving something maybe,
-72,33,test,14,K1,child,,child
-118,33,test,30,K1,child,A person with a house top on him,
-119,33,test,30,K1,parent,,parent
-149,33,test,40,K1,parent,Uh like a person bending over to give something to someone,
-150,33,test,40,K1,child,,child
-2,33,test,,,child,Uh,
-3,33,test,,,child,Um,
-7,33,test,,,parent,Uh OK,
-9,33,test,,,parent,I don't know what's going on,
-12,33,test,,,parent,Yeah,
-16,33,test,,,child,Uh,
-17,33,test,,,parent,Are you I have a blue box,
-21,33,test,,,child,Already tell me that,
-23,33,test,,,child,Um,
-26,33,test,,,child,Good job,
-28,33,test,,,child,Uh,
-31,33,test,,,child,Um,
-33,33,test,,,parent,OK,
-36,33,test,,,child,Just tell me what it looks like,
-39,33,test,,,child,Uh,
-41,33,test,,,parent,OK,
-43,33,test,,,parent,Uh,
-48,33,test,,,parent,OK,
-54,33,test,,,parent,OK,
-60,33,test,,,parent,OK,
-64,33,test,,,parent,OK,
-69,33,test,,,parent,Alright,
-74,33,test,,,parent,OK,
-76,33,test,,,child,I got,
-77,33,test,,,parent,OK,
-78,33,test,,,child,I got one wrong,
-79,33,test,,,parent,Oh yeah,
-88,33,test,,,parent,OK,
-92,33,test,,,child,Good job time for the next round,
-98,33,test,,,parent,You got it,
-107,33,test,,,parent,Oh well,
-108,33,test,,,parent,Uh this one's weird um uh,
-122,33,test,,,child,zzz,
-123,33,test,,,parent,zzz,
-123,33,test,,,child,I don't know,
-129,33,test,,,parent,OK,
-131,33,test,,,child,A,
-135,33,test,,,parent,OK,
-142,33,test,,,parent,OK,
-144,33,test,,,parent,Um,
-0,33,,,,parent,Wait is it gonna start automatically or do I need to press something,
-19,33,,,,child,Alright,
-46,33,,,,child,Um,
-61,33,,,,child,Good job time for the next round,
-104,33,,,,child,A person dancing in the air cause,
+subid,type,trial,target,person,utterance,selection,correct
+33,practice,1,apple,child,,child,Y
+33,practice,4,apple,child,Apple,,Y
+33,practice,4,apple,parent,,parent,Y
+33,practice,2,artichoke,child,The ma mango,,N
+33,practice,2,artichoke,parent,Mango,,N
+33,practice,2,artichoke,child,Yeah,,N
+33,practice,2,artichoke,parent,,parent,N
+33,practice,5,artichoke,parent,I don't I think you don't know what this vegetable is it's called an artichoke it has a lot of leaves on it it almost,,Y
+33,practice,5,artichoke,parent,Looks like a pine cone,,Y
+33,practice,5,artichoke,child,,child,Y
+33,practice,3,onion,parent,OK so uh it's an onion do you know you know what an onion looks like,,Y
+33,practice,3,onion,child,Yeah,,Y
+33,practice,3,onion,child,,child,Y
+33,practice,6,onion,child,Onion,,Y
+33,practice,6,onion,parent,,parent,Y
+33,test,9,A1,parent,Uh like a person maybe running a person running,,Y
+33,test,9,A1,child,,child,Y
+33,test,17,A1,parent,Um a person running,,Y
+33,test,17,A1,parent,,parent,Y
+33,test,21,A1,parent,OK a person running,,Y
+33,test,21,A1,child,,child,Y
+33,test,31,A1,child,A person on one leg,,Y
+33,test,31,A1,parent,,parent,Y
+33,test,4,B1,child,Something walking,,Y
+33,test,4,B1,parent,,parent,Y
+33,test,18,B1,child,A person crawling,,Y
+33,test,18,B1,parent,No this is a person walking,,Y
+33,test,18,B1,child,,child,Y
+33,test,28,B1,child,A person that looks like a old man walking,,Y
+33,test,28,B1,parent,OK,,Y
+33,test,28,B1,parent,,parent,Y
+33,test,36,B1,parent,Um a person walking like an old man,,Y
+33,test,36,B1,child,,child,Y
+33,test,8,C1,child,Uh the person crawling,,Y
+33,test,8,C1,parent,,parent,Y
+33,test,16,C1,parent,Alright how bout a person crawling,,Y
+33,test,16,C1,child,,child,Y
+33,test,26,C1,parent,,parent,N
+33,test,26,C1,child,They're crawling,,N
+33,test,34,C1,parent,Which one do you think it is it's a person crawling,,Y
+33,test,34,C1,child,,child,Y
+33,test,7,D1,parent,OK like a person maybe lying down,,Y
+33,test,7,D1,child,,child,Y
+33,test,7,D1,parent,With their legs up yup,,Y
+33,test,11,D1,child,Um a person lying down,,Y
+33,test,11,D1,parent,,parent,Y
+33,test,23,D1,parent,A person lying down,,Y
+33,test,23,D1,child,,child,Y
+33,test,37,D1,child,A person lying down and right his zzz down,,Y
+33,test,37,D1,parent,Lying down,,Y
+33,test,37,D1,child,Yeah,,Y
+33,test,37,D1,parent,,parent,Y
+33,test,5,E1,parent,It looks like somebody it looks like a person maybe jumping in the air,,Y
+33,test,5,E1,child,,child,Y
+33,test,13,E1,child,Um a person jumping,,Y
+33,test,13,E1,parent,,parent,Y
+33,test,25,E1,parent,OK a perosn jumping up in the air,,Y
+33,test,25,E1,child,,child,Y
+33,test,39,E1,child,A person jumping,,Y
+33,test,39,E1,parent,,parent,Y
+33,test,3,F1,parent,Oh this one's tricky um uh um,,Y
+33,test,3,F1,parent,It looks like a maybe like a clown with a funny hat on like a birthday hat,,Y
+33,test,3,F1,child,,child,Y
+33,test,15,F1,child,Um a person running like this,,Y
+33,test,15,F1,parent,,parent,Y
+33,test,27,F1,parent,Like a person taking a really big step like a person like like walking,,Y
+33,test,27,F1,child,,child,Y
+33,test,35,F1,child,A person run like this,,Y
+33,test,35,F1,parent,,parent,Y
+33,test,2,G1,child,A a tower,,Y
+33,test,2,G1,parent,,parent,Y
+33,test,12,G1,parent,OK like a tower,,Y
+33,test,12,G1,child,,child,Y
+33,test,22,G1,child,Um a tower,,Y
+33,test,22,G1,parent,,parent,Y
+33,test,38,G1,parent,Like a tower,,Y
+33,test,38,G1,child,,child,Y
+33,test,1,H1,parent,OK the uh OK so um it looks like a tower,,Y
+33,test,1,H1,parent,The tower,,Y
+33,test,1,H1,child,,child,Y
+33,test,19,H1,child,A person that looks like they're giving something,,Y
+33,test,19,H1,parent,,parent,Y
+33,test,29,H1,parent,OK a person holding a bowl maybe with a robe on,,Y
+33,test,29,H1,child,No that looks like no that looks like,,Y
+33,test,29,H1,child,,child,Y
+33,test,29,H1,child,I don't know,,Y
+33,test,33,H1,child,A person giving a bowl,,Y
+33,test,33,H1,parent,,parent,Y
+33,test,6,I1,child,Somebody giving something to something that looks like someboy stealing something,,Y
+33,test,6,I1,parent,,parent,Y
+33,test,20,I1,parent,Uh a person giving somebody a bowl like somebody giving a bowl,,Y
+33,test,20,I1,child,,child,Y
+33,test,24,I1,child,A person with a bowl in their hand,,Y
+33,test,24,I1,parent,,parent,Y
+33,test,32,I1,parent,Which one do you think it is,,Y
+33,test,32,I1,child,A person crawling,,Y
+33,test,32,I1,parent,Nope it's the person giving a bowl,,Y
+33,test,32,I1,child,,child,Y
+33,test,10,K1,child,Um a person with a house playing on top of them,,Y
+33,test,10,K1,parent,,parent,Y
+33,test,14,K1,parent,Uh like a person uh with that with a house on top of them,,N
+33,test,14,K1,parent,Got it giving something maybe,,N
+33,test,14,K1,child,,child,N
+33,test,30,K1,child,A person with a house top on him,,Y
+33,test,30,K1,parent,,parent,Y
+33,test,40,K1,parent,Uh like a person bending over to give something to someone,,Y
+33,test,40,K1,child,,child,Y

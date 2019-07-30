@@ -1,128 +1,125 @@
-Timeline.ordinal,subid,type,trial,target,person,utterance,selection
-0,48,practice,1,apple,parent,"ok, so you gonna have to pick apple",
-1,48,practice,1,apple,child,apple,
-2,48,practice,1,apple,parent,press the apple,
-3,48,practice,1,apple,child,,child
-11,48,practice,4,apple,child,apple,
-12,48,practice,4,apple,parent,,parent
-5,48,practice,2,artichoke,child,pineapple,
-6,48,practice,2,artichoke,parent,,parent
-13,48,practice,5,artichoke,child,onion again?,
-14,48,practice,5,artichoke,parent,"no, the pineapple",
-15,48,practice,5,artichoke,child,,child
-7,48,practice,3,onion,parent,onion,
-8,48,practice,3,onion,child,i think,
-9,48,practice,3,onion,parent,pick whichever one you think it is. onion.,
-10,48,practice,3,onion,child,,child
-16,48,practice,6,onion,child,"um, what's this?",
-17,48,practice,6,onion,parent,you tell me what you think it is,
-18,48,practice,6,onion,child,nothing,
-19,48,practice,6,onion,parent,"you have to describe it for me... no no no, describe it for me",
-20,48,practice,6,onion,parent,what did mommy say before? onion?,
-21,48,practice,6,onion,child,onion,
-22,48,practice,6,onion,parent,and you said the other one is pineapple,
-23,48,practice,6,onion,child,pineapple,
-24,48,practice,6,onion,parent,"ok, which one do you have?",
-25,48,practice,6,onion,child,onion,
-26,48,practice,6,onion,parent,okay,
-27,48,practice,6,onion,parent,,parent
-34,48,test,2,A1,child,a peep- a cocka-doodle-doo,
-35,48,test,2,A1,parent,a cocka-doodle-doo?,
-36,48,test,2,A1,child,"no, i don't know",
-37,48,test,2,A1,parent,you have to describe it for me. what does it look like?,
-38,48,test,2,A1,child,"hm, i think it is a people",
-39,48,test,2,A1,parent,okay,
-40,48,test,2,A1,parent,,parent
-85,48,test,20,A1,parent,this person is running,
-86,48,test,20,A1,child,,child
-105,48,test,30,A1,child,this person is running,
-106,48,test,30,A1,parent,,parent
-125,48,test,40,A1,parent,this person is running,
-126,48,test,40,A1,child,,child
-57,48,test,8,B1,child,"um, a person who's standing up",
-58,48,test,8,B1,parent,standing up? okay,
-59,48,test,8,B1,parent,,parent
-81,48,test,18,B1,parent,this person is walking,
-82,48,test,18,B1,child,,child
-97,48,test,26,B1,child,this person looks like he's walking,
-98,48,test,26,B1,parent,,parent
-121,48,test,38,B1,parent,this person is walking,
-122,48,test,38,B1,child,,child
-41,48,test,3,C1,parent,this looks like a person on his arms and feet,
-42,48,test,3,C1,child,i do it?,
-43,48,test,3,C1,child,,child
-79,48,test,17,C1,child,this person looks like he's laying down,
-80,48,test,17,C1,parent,,parent
-99,48,test,27,C1,parent,this person is on his arms and legs,
-100,48,test,27,C1,child,,child
-123,48,test,39,C1,child,this person is laying down,
-124,48,test,39,C1,parent,,parent
-55,48,test,7,D1,parent,"this looks like a person that's laying down, like sleeping",
-56,48,test,7,D1,child,,child
-83,48,test,19,D1,child,this person is laying down,
-84,48,test,19,D1,parent,,parent
-87,48,test,21,D1,parent,this person is sleeping,
-88,48,test,21,D1,child,,child
-119,48,test,37,D1,child,this person is laying down,
-120,48,test,37,D1,parent,,parent
-52,48,test,6,E1,child,a person who's standing up,
-53,48,test,6,E1,parent,okay,
-54,48,test,6,E1,parent,,parent
-77,48,test,16,E1,parent,this person looks like he's dancing,
-78,48,test,16,E1,child,,child
-89,48,test,22,E1,child,"this person looks like, um, dancing",
-90,48,test,22,E1,parent,,parent
-113,48,test,34,E1,parent,this person looks like he is dancing,
-114,48,test,34,E1,child,,child
-29,48,test,1,F1,parent,"oh, so this one is a shape that does not look like a human, not a human",
-30,48,test,1,F1,child,what do you want me to do?,
-31,48,test,1,F1,parent,you pick one,
-32,48,test,1,F1,child,,child
-33,48,test,1,F1,child,i picked a cocka-doodle-doo,
-75,48,test,15,F1,child,this is a person who's walking,
-76,48,test,15,F1,parent,,parent
-95,48,test,25,F1,parent,"this person looks like he's, um, running",
-96,48,test,25,F1,child,,child
-115,48,test,35,F1,child,this person is a duckie,
-116,48,test,35,F1,parent,,parent
-44,48,test,4,G1,child,it looks like a people again,
-45,48,test,4,G1,parent,okay. you have to describe it. what is that person doing,
-46,48,test,4,G1,child,"uh, it looks like its sitting on his butt and doing like this",
-47,48,test,4,G1,parent,sitting on his butt? okay,
-48,48,test,4,G1,parent,,parent
-68,48,test,12,G1,parent,this is a person sitting down on a chair,
-69,48,test,12,G1,child,,child
-101,48,test,28,G1,child,this person looks like she's giving you something,
-102,48,test,28,G1,parent,,parent
-109,48,test,32,G1,parent,this person is sitting down,
-110,48,test,32,G1,child,,child
-49,48,test,5,H1,parent,"this also looks like a person, just standing up",
-50,48,test,5,H1,child,i pick it?,
-51,48,test,5,H1,child,,child
-65,48,test,11,H1,child,"um, one who's sitting down with his butt xxx",
-66,48,test,11,H1,parent,sitting down with his butt again?,
-67,48,test,11,H1,parent,,parent
-91,48,test,23,H1,parent,"this person is standing up, giving you something",
-92,48,test,23,H1,child,,child
-107,48,test,31,H1,child,this person is giving you something,
-108,48,test,31,H1,parent,,parent
-62,48,test,10,I1,child,um someone who's holding a triangle,
-63,48,test,10,I1,parent,okay,
-64,48,test,10,I1,parent,,parent
-73,48,test,14,I1,parent,this is a person holding a triangle,
-74,48,test,14,I1,child,,child
-93,48,test,24,I1,child,this person is giving you a triangle,
-94,48,test,24,I1,parent,,parent
-117,48,test,36,I1,parent,this person is holding a triangle,
-118,48,test,36,I1,child,,child
-60,48,test,9,K1,parent,this looks like a person standing up but bending over trying to give you something,
-61,48,test,9,K1,child,,child
-70,48,test,13,K1,child,the one who's giving you something,
-72,48,test,13,K1,parent,,parent
-103,48,test,29,K1,parent,"this person is standing up, and looks like he is giving you something",
-104,48,test,29,K1,child,,child
-111,48,test,33,K1,child,this person is giving you something,
-112,48,test,33,K1,parent,,parent
-4,48,test,,,parent,you have to tell me which one has a blue box around it,
-28,48,test,,,parent,"alright, ready, ok.",
-71,48,test,,,parent,good,
+subid,type,trial,target,person,utterance,selection,correct
+48,practice,1,apple,parent,"ok, so you gonna have to pick apple",,Y
+48,practice,1,apple,child,apple,,Y
+48,practice,1,apple,parent,press the apple,,Y
+48,practice,1,apple,child,,child,Y
+48,practice,4,apple,child,apple,,Y
+48,practice,4,apple,parent,,parent,Y
+48,practice,2,artichoke,child,pineapple,,Y
+48,practice,2,artichoke,parent,,parent,Y
+48,practice,5,artichoke,child,onion again?,,Y
+48,practice,5,artichoke,parent,"no, the pineapple",,Y
+48,practice,5,artichoke,child,,child,Y
+48,practice,3,onion,parent,onion,,Y
+48,practice,3,onion,child,i think,,Y
+48,practice,3,onion,parent,pick whichever one you think it is. onion.,,Y
+48,practice,3,onion,child,,child,Y
+48,practice,6,onion,child,"um, what's this?",,Y
+48,practice,6,onion,parent,you tell me what you think it is,,Y
+48,practice,6,onion,child,nothing,,Y
+48,practice,6,onion,parent,"you have to describe it for me... no no no, describe it for me",,Y
+48,practice,6,onion,parent,what did mommy say before? onion?,,Y
+48,practice,6,onion,child,onion,,Y
+48,practice,6,onion,parent,and you said the other one is pineapple,,Y
+48,practice,6,onion,child,pineapple,,Y
+48,practice,6,onion,parent,"ok, which one do you have?",,Y
+48,practice,6,onion,child,onion,,Y
+48,practice,6,onion,parent,okay,,Y
+48,practice,6,onion,parent,,parent,Y
+48,test,2,A1,child,a peep- a cocka-doodle-doo,,Y
+48,test,2,A1,parent,a cocka-doodle-doo?,,Y
+48,test,2,A1,child,"no, i don't know",,Y
+48,test,2,A1,parent,you have to describe it for me. what does it look like?,,Y
+48,test,2,A1,child,"hm, i think it is a people",,Y
+48,test,2,A1,parent,okay,,Y
+48,test,2,A1,parent,,parent,Y
+48,test,20,A1,parent,this person is running,,Y
+48,test,20,A1,child,,child,Y
+48,test,30,A1,child,this person is running,,Y
+48,test,30,A1,parent,,parent,Y
+48,test,40,A1,parent,this person is running,,Y
+48,test,40,A1,child,,child,Y
+48,test,8,B1,child,"um, a person who's standing up",,Y
+48,test,8,B1,parent,standing up? okay,,Y
+48,test,8,B1,parent,,parent,Y
+48,test,18,B1,parent,this person is walking,,Y
+48,test,18,B1,child,,child,Y
+48,test,26,B1,child,this person looks like he's walking,,Y
+48,test,26,B1,parent,,parent,Y
+48,test,38,B1,parent,this person is walking,,Y
+48,test,38,B1,child,,child,Y
+48,test,3,C1,parent,this looks like a person on his arms and feet,,Y
+48,test,3,C1,child,i do it?,,Y
+48,test,3,C1,child,,child,Y
+48,test,17,C1,child,this person looks like he's laying down,,Y
+48,test,17,C1,parent,,parent,Y
+48,test,27,C1,parent,this person is on his arms and legs,,Y
+48,test,27,C1,child,,child,Y
+48,test,39,C1,child,this person is laying down,,Y
+48,test,39,C1,parent,,parent,Y
+48,test,7,D1,parent,"this looks like a person that's laying down, like sleeping",,Y
+48,test,7,D1,child,,child,Y
+48,test,19,D1,child,this person is laying down,,Y
+48,test,19,D1,parent,,parent,Y
+48,test,21,D1,parent,this person is sleeping,,Y
+48,test,21,D1,child,,child,Y
+48,test,37,D1,child,this person is laying down,,Y
+48,test,37,D1,parent,,parent,Y
+48,test,6,E1,child,a person who's standing up,,N
+48,test,6,E1,parent,okay,,N
+48,test,6,E1,parent,,parent,N
+48,test,16,E1,parent,this person looks like he's dancing,,Y
+48,test,16,E1,child,,child,Y
+48,test,22,E1,child,"this person looks like, um, dancing",,Y
+48,test,22,E1,parent,,parent,Y
+48,test,34,E1,parent,this person looks like he is dancing,,Y
+48,test,34,E1,child,,child,Y
+48,test,1,F1,parent,"oh, so this one is a shape that does not look like a human, not a human",,Y
+48,test,1,F1,child,what do you want me to do?,,Y
+48,test,1,F1,parent,you pick one,,Y
+48,test,1,F1,child,,child,Y
+48,test,1,F1,child,i picked a cocka-doodle-doo,,Y
+48,test,15,F1,child,this is a person who's walking,,Y
+48,test,15,F1,parent,,parent,Y
+48,test,25,F1,parent,"this person looks like he's, um, running",,Y
+48,test,25,F1,child,,child,Y
+48,test,35,F1,child,this person is a duckie,,Y
+48,test,35,F1,parent,,parent,Y
+48,test,4,G1,child,it looks like a people again,,Y
+48,test,4,G1,parent,okay. you have to describe it. what is that person doing,,Y
+48,test,4,G1,child,"uh, it looks like its sitting on his butt and doing like this",,Y
+48,test,4,G1,parent,sitting on his butt? okay,,Y
+48,test,4,G1,parent,,parent,Y
+48,test,12,G1,parent,this is a person sitting down on a chair,,Y
+48,test,12,G1,child,,child,Y
+48,test,28,G1,child,this person looks like she's giving you something,,N
+48,test,28,G1,parent,,parent,N
+48,test,32,G1,parent,this person is sitting down,,Y
+48,test,32,G1,child,,child,Y
+48,test,5,H1,parent,"this also looks like a person, just standing up",,N
+48,test,5,H1,child,i pick it?,,N
+48,test,5,H1,child,,child,N
+48,test,11,H1,child,"um, one who's sitting down with his butt xxx",,Y
+48,test,11,H1,parent,sitting down with his butt again?,,Y
+48,test,11,H1,parent,,parent,Y
+48,test,23,H1,parent,"this person is standing up, giving you something",,Y
+48,test,23,H1,child,,child,Y
+48,test,31,H1,child,this person is giving you something,,Y
+48,test,31,H1,parent,,parent,Y
+48,test,10,I1,child,um someone who's holding a triangle,,Y
+48,test,10,I1,parent,okay,,Y
+48,test,10,I1,parent,,parent,Y
+48,test,14,I1,parent,this is a person holding a triangle,,Y
+48,test,14,I1,child,,child,Y
+48,test,24,I1,child,this person is giving you a triangle,,Y
+48,test,24,I1,parent,,parent,Y
+48,test,36,I1,parent,this person is holding a triangle,,Y
+48,test,36,I1,child,,child,Y
+48,test,9,K1,parent,this looks like a person standing up but bending over trying to give you something,,Y
+48,test,9,K1,child,,child,Y
+48,test,13,K1,child,the one who's giving you something,,Y
+48,test,13,K1,parent,,parent,Y
+48,test,29,K1,parent,"this person is standing up, and looks like he is giving you something",,Y
+48,test,29,K1,child,,child,Y
+48,test,33,K1,child,this person is giving you something,,Y
+48,test,33,K1,parent,,parent,Y

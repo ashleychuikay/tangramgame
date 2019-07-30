@@ -1,170 +1,143 @@
-Timeline.ordinal,subid,type,trial,target,person,utterance,selection
-0,60,practice,1,apple,parent,"alright, click on the apple.",
-1,60,practice,1,apple,child,,child
-10,60,practice,4,apple,child,Click on the banana,
-11,60,practice,4,apple,parent,,parent
-3,60,practice,2,artichoke,child,click on the pear,
-4,60,practice,2,artichoke,parent,the pear? hmm,
-5,60,practice,2,artichoke,parent,,parent
-12,60,practice,5,artichoke,parent,okay now I want you to click on the artichoke,
-13,60,practice,5,artichoke,child,is this the artichoke?,
-15,60,practice,5,artichoke,parent,"it's the one that has, um, it almost looks like a flower. it has lots of little scales on the side",
-16,60,practice,5,artichoke,child,this one?,
-17,60,practice,5,artichoke,parent,"I can't see yours, so you have to pick the one that has lots of leaf looking things on the side to that",
-18,60,practice,5,artichoke,child,,child
-6,60,practice,3,onion,parent,"okay now you click on the... I think it's actually an onion, not a pear um.",
-7,60,practice,3,onion,child,,child
-19,60,practice,6,onion,child,"tap, tap on your b-, tap on your onion.",
-21,60,practice,6,onion,parent,my onion?,
-22,60,practice,6,onion,parent,,parent
-53,60,test,7,A1,parent,okay. I want you to click on the one that looks like somebody running and looking up.,
-54,60,test,7,A1,child,,child
-69,60,test,11,A1,child,"tap on the one one with, with, with that looks like, tap on the one that, that's, that, that's in the blue square.",
-70,60,test,11,A1,parent,what does the one in your blue square look like?,
-71,60,test,11,A1,child,he looks like he is running with his arms up and down,
-72,60,test,11,A1,parent,"cool, thank you",
-73,60,test,11,A1,parent,,parent
-109,60,test,23,A1,parent,okay tap on the guy who is looking up and running.,
-110,60,test,23,A1,child,,child
-154,60,test,37,A1,child,"it's the man wal..., running, and",
-155,60,test,37,A1,parent,,parent
-156,60,test,37,A1,parent,okay,
-45,60,test,6,B1,parent,now which one should I click on? Which one has,
-46,60,test,6,B1,child,"click on the one with, w- who looks like they are, they are, looks like, xxx, tap on the one that, that, that's in the blue square",
-47,60,test,6,B1,parent,what does the one in the blue square look like? does it look like someone walking,
-48,60,test,6,B1,child,no it looks like that,
-49,60,test,6,B1,child,"yeah, it looks like someone walking and looking down at the ground.",
-50,60,test,6,B1,parent,"I can't look at yours, you need to describe it to me. Does it look like someone walking looking at the ground or",
-51,60,test,6,B1,parent,okay,
-52,60,test,6,B1,parent,,parent
-74,60,test,12,B1,parent,"thank you. okay, I want you to tap on the one that looks like someone walking and looking down at the ground",
-75,60,test,12,B1,child,,child
-133,60,test,30,B1,child,"tap on the one that, that, that's in the blue square. He looks like he is looking down by walking.",
-134,60,test,30,B1,parent,,parent
-135,60,test,30,B1,parent,got it!,
-151,60,test,36,B1,parent,tap on the one that looks like a man walking looking down at the ground.,
-152,60,test,36,B1,child,,child
-25,60,test,1,C1,parent,okay. tap on the guy who is bending down,
-26,60,test,1,C1,child,,child
-27,60,test,1,C1,parent,or kneeling,
-91,60,test,19,C1,child,"tap on the one that looks like, that's in the blue square.",
-92,60,test,19,C1,parent,Now can you describe the picture in the blue square?,
-93,60,test,19,C1,child,yeah. It looks like some laying down and putting their hands up and pretending they are a doggy.,
-94,60,test,19,C1,parent,hmm,
-95,60,test,19,C1,parent,,parent
-130,60,test,29,C1,child,now which one do I tap?,
-131,60,test,29,C1,parent,"you should tap on the one that, that's on his knees looking down, yyy, like a dog.",
-132,60,test,29,C1,child,,child
-144,60,test,33,C1,child,tap on the one that's in the blue square. He looks like he's a doggy.,
-145,60,test,33,C1,parent,,parent
-37,60,test,3,D1,parent,okay. I want you to click on the one that looks like somebody lying down on his belly.,
-38,60,test,3,D1,child,,child
-87,60,test,17,D1,child,hmm-hmm. It looks like a person laying down.,
-88,60,test,17,D1,parent,,parent
-99,60,test,21,D1,parent,tap on the one,
-102,60,test,21,D1,parent,"So, the guy laying down on his belly his feet in the air.",
-103,60,test,21,D1,child,,child
-159,60,test,39,D1,child,"tap on the one that, that, tap on the one that's out of the blue square.",
-160,60,test,39,D1,parent,what does the one in the blue square look like?,
-161,60,test,39,D1,child,"no I mean, out of the blue square.",
-162,60,test,39,D1,parent,well can you describe the one that's inside the blue square?,
-163,60,test,39,D1,child,it's a person laying down on his belly.,
-164,60,test,39,D1,parent,,parent
-43,60,test,5,E1,parent,okay. I want you to click on the one that looks like someone jumping up with their arms up in the air.,
-44,60,test,5,E1,child,,child
-82,60,test,15,E1,child,tap on the one that looks like a doggy.,
-83,60,test,15,E1,parent,,parent
-119,60,test,25,E1,parent,can you tap on the guy who is jumping with his arms trenched out?,
-120,60,test,25,E1,child,,child
-149,60,test,35,E1,child,"tap on the one that's in the blue square. He, he's he's jumping with his feet this w-, backwards, and he is putting his hands straight up",
-150,60,test,35,E1,parent,,parent
-29,60,test,2,F1,child,this one,
-30,60,test,2,F1,parent,can you describe it?,
-31,60,test,2,F1,child,hmm hmm.,
-32,60,test,2,F1,parent,is it somebody... does it look like someone kneeling down or someone holding up their hands?,
-33,60,test,2,F1,child,someone jumping and holding up their hands,
-34,60,test,2,F1,parent,,parent
-80,60,test,14,F1,parent,I'd like you tap on the one that looks like somebody is running with both arms up in the air in the same direction.,
-81,60,test,14,F1,child,,child
-104,60,test,22,F1,child,tap on the guy that's in the blue square.,
-105,60,test,22,F1,parent,"what's- what does the guy, what does it looks like?",
-106,60,test,22,F1,child,Well he is jumping up and putting his hands in the right direction.,
-107,60,test,22,F1,parent,okay,
-108,60,test,22,F1,parent,,parent
-157,60,test,38,F1,parent,can you tap on the one that looks like he is running with triangle feet?,
-158,60,test,38,F1,child,,child
-61,60,test,10,G1,child,tap one the one that looks like it's jumping up and putting its hands in the air,
-62,60,test,10,G1,parent,,parent
-63,60,test,10,G1,parent,okay,
-89,60,test,18,G1,parent,"Okay, I'd like you to tap on the one that looks like someone kneeling and looking down, looks like they are praying.",
-90,60,test,18,G1,child,,child
-111,60,test,24,G1,child,tap on the guy that's in the blue square.,
-112,60,test,24,G1,parent,what does he look like?,
-113,60,test,24,G1,child,"I don't know, so just tap it.",
-114,60,test,24,G1,parent,Well I don't have a blue square so you have to describe it to me so I know which one to click,
-115,60,test,24,G1,child,"it, it's someone is looking down by sitting down on a chair with pointy things, a pointy, a pointy bottom.",
-116,60,test,24,G1,parent,"okay, hmm-hmm.",
-117,60,test,24,G1,parent,,parent
-142,60,test,32,G1,parent,"uhmm, tap on the one that looks like they are sitting on a square.",
-143,60,test,32,G1,child,,child
-55,60,test,8,H1,child,"now tap on the one that looks like it's, it's, like it's running, and, and putting it on his up",
-56,60,test,8,H1,parent,,parent
-57,60,test,8,H1,parent,hmm,
-58,60,test,8,H1,parent,,parent
-84,60,test,16,H1,parent,now you should tap on the one that looks like a guy standing and holding out his hat.,
-85,60,test,16,H1,child,,child
-126,60,test,28,H1,child,click on the one that's in the blue square,
-127,60,test,28,H1,parent,what does the one in the blue square look like?,
-128,60,test,28,H1,child,"it looks like he's holding out, putting his hands in the right direction in this way and, and, and looking, and looking, this way.",
-129,60,test,28,H1,parent,,parent
-165,60,test,40,H1,parent,"the person in my blue square looks like they are standing up, holding up their hands in their hat",
-166,60,test,40,H1,child,"well what is it? Oh yeah, this one.",
-167,60,test,40,H1,child,,child
-59,60,test,9,I1,parent,I want you to tap on the one that looks like kind of like a doggy on its hind legs,
-60,60,test,9,I1,child,,child
-76,60,test,13,I1,child,"tap on the one that look, that's in the blue square.",
-77,60,test,13,I1,parent,"okay, what does the one on the blue square look like?",
-78,60,test,13,I1,child,it looks like a doggy.,
-79,60,test,13,I1,parent,,parent
-124,60,test,27,I1,parent,mine looks like a doggy kicking a triangle. Click on that.,
-125,60,test,27,I1,child,,child
-140,60,test,31,I1,child,hmm-hmm. It looks like a doggy.,
-141,60,test,31,I1,parent,,parent
-40,60,test,4,K1,child,dog.,
-41,60,test,4,K1,parent,looks like a dog? Okay,
-42,60,test,4,K1,parent,,parent
-96,60,test,20,K1,parent,tap on the one that looks like a dog on his hind legs.,
-97,60,test,20,K1,child,,child
-121,60,test,26,K1,parent,"can you describe yours, describe maybe the shape of his head? What does the one in the blue square look like?",
-122,60,test,26,K1,child,"that, it's like a doggy",
-123,60,test,26,K1,parent,,parent
-146,60,test,34,K1,parent,"can you tap on the one who's, who has a head that is on the shape of a house",
-147,60,test,34,K1,child,uh huh,
-148,60,test,34,K1,child,,child
-2,60,test,,,parent,now tell me which one should I click on.,
-8,60,test,,,parent,good job,
-9,60,test,,,parent,which one should I click on?,
-23,60,test,,,parent,"alright, are you ready? That was the test, now we are going to start for real, ready?",
-24,60,test,,,child,okay,
-28,60,test,,,parent,"now which one is circled on yours, tell me which one is circled. Which one has a blue square on it? Can you describe it?",
-39,60,test,,,parent,can you describe the one that has a blue square on it? What does it look like?,
-64,60,test,,,parent,"alright, time for the next round. Are you ready?",
-65,60,test,,,child,hmm-hmm,
-66,60,test,,,parent,is this fun?,
-67,60,test,,,child,hmm-hmm,
-68,60,test,,,parent,"okay, tell me which one I should tap on.",
-86,60,test,,,parent,which one has a blue square for you? Can you describe it?,
-98,60,test,,,parent,good job! Time for the next round. Ready?,
-100,60,test,,,child,can we just do a different one than this xxx shape.,
-101,60,test,,,parent,I think this is almost over and then we are going to do a different game after this one. Okay?,
-118,60,test,,,parent,good job.,
-136,60,test,,,parent,Okay another round are you ready?,
-137,60,test,,,child,hmm-hmm,
-138,60,test,,,parent,We're getting close.,
-139,60,test,,,parent,describe the one in the blue square,
-153,60,test,,,parent,describe the one in the blue square.,
-,60,test,,,child,now what,
-35,60,,,,child,someone,
-36,60,,,,parent,good job,
-,60,,,,parent,okay,
-,60,,,,child,mhm.,
+subid,type,trial,target,person,utterance,selection,correct
+60,practice,1,apple,parent,"alright, click on the apple.",,Y
+60,practice,1,apple,child,,child,Y
+60,practice,4,apple,child,Click on the banana,,N
+60,practice,4,apple,parent,,parent,N
+60,practice,2,artichoke,child,click on the pear,,N
+60,practice,2,artichoke,parent,the pear? hmm,,N
+60,practice,2,artichoke,parent,,parent,N
+60,practice,5,artichoke,parent,okay now I want you to click on the artichoke,,Y
+60,practice,5,artichoke,child,is this the artichoke?,,Y
+60,practice,5,artichoke,parent,"it's the one that has, um, it almost looks like a flower. it has lots of little scales on the side",,Y
+60,practice,5,artichoke,child,this one?,,Y
+60,practice,5,artichoke,parent,"I can't see yours, so you have to pick the one that has lots of leaf looking things on the side to that",,Y
+60,practice,5,artichoke,child,,child,Y
+60,practice,3,onion,parent,"okay now you click on the... I think it's actually an onion, not a pear um.",,Y
+60,practice,3,onion,child,,child,Y
+60,practice,6,onion,child,"tap, tap on your b-, tap on your onion.",,Y
+60,practice,6,onion,parent,my onion?,,Y
+60,practice,6,onion,parent,,parent,Y
+60,test,7,A1,parent,okay. I want you to click on the one that looks like somebody running and looking up.,,Y
+60,test,7,A1,child,,child,Y
+60,test,11,A1,child,"tap on the one one with, with, with that looks like, tap on the one that, that's, that, that's in the blue square.",,Y
+60,test,11,A1,parent,what does the one in your blue square look like?,,Y
+60,test,11,A1,child,he looks like he is running with his arms up and down,,Y
+60,test,11,A1,parent,"cool, thank you",,Y
+60,test,11,A1,parent,,parent,Y
+60,test,23,A1,parent,okay tap on the guy who is looking up and running.,,Y
+60,test,23,A1,child,,child,Y
+60,test,37,A1,child,"it's the man wal..., running, and",,Y
+60,test,37,A1,parent,,parent,Y
+60,test,37,A1,parent,okay,,Y
+60,test,6,B1,parent,now which one should I click on? Which one has,,Y
+60,test,6,B1,child,"click on the one with, w- who looks like they are, they are, looks like, xxx, tap on the one that, that, that's in the blue square",,Y
+60,test,6,B1,parent,what does the one in the blue square look like? does it look like someone walking,,Y
+60,test,6,B1,child,no it looks like that,,Y
+60,test,6,B1,child,"yeah, it looks like someone walking and looking down at the ground.",,Y
+60,test,6,B1,parent,"I can't look at yours, you need to describe it to me. Does it look like someone walking looking at the ground or",,Y
+60,test,6,B1,parent,okay,,Y
+60,test,6,B1,parent,,parent,Y
+60,test,12,B1,parent,"thank you. okay, I want you to tap on the one that looks like someone walking and looking down at the ground",,Y
+60,test,12,B1,child,,child,Y
+60,test,30,B1,child,"tap on the one that, that, that's in the blue square. He looks like he is looking down by walking.",,Y
+60,test,30,B1,parent,,parent,Y
+60,test,30,B1,parent,got it!,,Y
+60,test,36,B1,parent,tap on the one that looks like a man walking looking down at the ground.,,Y
+60,test,36,B1,child,,child,Y
+60,test,1,C1,parent,okay. tap on the guy who is bending down,,N
+60,test,1,C1,child,,child,N
+60,test,1,C1,parent,or kneeling,,N
+60,test,19,C1,child,"tap on the one that looks like, that's in the blue square.",,Y
+60,test,19,C1,parent,Now can you describe the picture in the blue square?,,Y
+60,test,19,C1,child,yeah. It looks like some laying down and putting their hands up and pretending they are a doggy.,,Y
+60,test,19,C1,parent,hmm,,Y
+60,test,19,C1,parent,,parent,Y
+60,test,29,C1,child,now which one do I tap?,,Y
+60,test,29,C1,parent,"you should tap on the one that, that's on his knees looking down, yyy, like a dog.",,Y
+60,test,29,C1,child,,child,Y
+60,test,33,C1,child,tap on the one that's in the blue square. He looks like he's a doggy.,,Y
+60,test,33,C1,parent,,parent,Y
+60,test,3,D1,parent,okay. I want you to click on the one that looks like somebody lying down on his belly.,,Y
+60,test,3,D1,child,,child,Y
+60,test,17,D1,child,hmm-hmm. It looks like a person laying down.,,Y
+60,test,17,D1,parent,,parent,Y
+60,test,21,D1,parent,tap on the one,,Y
+60,test,21,D1,parent,"So, the guy laying down on his belly his feet in the air.",,Y
+60,test,21,D1,child,,child,Y
+60,test,39,D1,child,"tap on the one that, that, tap on the one that's out of the blue square.",,Y
+60,test,39,D1,parent,what does the one in the blue square look like?,,Y
+60,test,39,D1,child,"no I mean, out of the blue square.",,Y
+60,test,39,D1,parent,well can you describe the one that's inside the blue square?,,Y
+60,test,39,D1,child,it's a person laying down on his belly.,,Y
+60,test,39,D1,parent,,parent,Y
+60,test,5,E1,parent,okay. I want you to click on the one that looks like someone jumping up with their arms up in the air.,,Y
+60,test,5,E1,child,,child,Y
+60,test,15,E1,child,tap on the one that looks like a doggy.,,N
+60,test,15,E1,parent,,parent,N
+60,test,25,E1,parent,can you tap on the guy who is jumping with his arms trenched out?,,Y
+60,test,25,E1,child,,child,Y
+60,test,35,E1,child,"tap on the one that's in the blue square. He, he's he's jumping with his feet this w-, backwards, and he is putting his hands straight up",,Y
+60,test,35,E1,parent,,parent,Y
+60,test,2,F1,child,this one,,Y
+60,test,2,F1,parent,can you describe it?,,Y
+60,test,2,F1,child,hmm hmm.,,Y
+60,test,2,F1,parent,is it somebody... does it look like someone kneeling down or someone holding up their hands?,,Y
+60,test,2,F1,child,someone jumping and holding up their hands,,Y
+60,test,2,F1,parent,,parent,Y
+60,test,14,F1,parent,I'd like you tap on the one that looks like somebody is running with both arms up in the air in the same direction.,,Y
+60,test,14,F1,child,,child,Y
+60,test,22,F1,child,tap on the guy that's in the blue square.,,Y
+60,test,22,F1,parent,"what's- what does the guy, what does it looks like?",,Y
+60,test,22,F1,child,Well he is jumping up and putting his hands in the right direction.,,Y
+60,test,22,F1,parent,okay,,Y
+60,test,22,F1,parent,,parent,Y
+60,test,38,F1,parent,can you tap on the one that looks like he is running with triangle feet?,,Y
+60,test,38,F1,child,,child,Y
+60,test,10,G1,child,tap one the one that looks like it's jumping up and putting its hands in the air,,N
+60,test,10,G1,parent,,parent,N
+60,test,10,G1,parent,okay,,N
+60,test,18,G1,parent,"Okay, I'd like you to tap on the one that looks like someone kneeling and looking down, looks like they are praying.",,Y
+60,test,18,G1,child,,child,Y
+60,test,24,G1,child,tap on the guy that's in the blue square.,,Y
+60,test,24,G1,parent,what does he look like?,,Y
+60,test,24,G1,child,"I don't know, so just tap it.",,Y
+60,test,24,G1,parent,Well I don't have a blue square so you have to describe it to me so I know which one to click,,Y
+60,test,24,G1,child,"it, it's someone is looking down by sitting down on a chair with pointy things, a pointy, a pointy bottom.",,Y
+60,test,24,G1,parent,"okay, hmm-hmm.",,Y
+60,test,24,G1,parent,,parent,Y
+60,test,32,G1,parent,"uhmm, tap on the one that looks like they are sitting on a square.",,Y
+60,test,32,G1,child,,child,Y
+60,test,8,H1,child,"now tap on the one that looks like it's, it's, like it's running, and, and putting it on his up",,N
+60,test,8,H1,parent,,parent,N
+60,test,8,H1,parent,hmm,,N
+60,test,8,H1,parent,,parent,N
+60,test,16,H1,parent,now you should tap on the one that looks like a guy standing and holding out his hat.,,Y
+60,test,16,H1,child,,child,Y
+60,test,28,H1,child,click on the one that's in the blue square,,Y
+60,test,28,H1,parent,what does the one in the blue square look like?,,Y
+60,test,28,H1,child,"it looks like he's holding out, putting his hands in the right direction in this way and, and, and looking, and looking, this way.",,Y
+60,test,28,H1,parent,,parent,Y
+60,test,40,H1,parent,"the person in my blue square looks like they are standing up, holding up their hands in their hat",,Y
+60,test,40,H1,child,"well what is it? Oh yeah, this one.",,Y
+60,test,40,H1,child,,child,Y
+60,test,9,I1,parent,I want you to tap on the one that looks like kind of like a doggy on its hind legs,,N
+60,test,9,I1,child,,child,N
+60,test,13,I1,child,"tap on the one that look, that's in the blue square.",,Y
+60,test,13,I1,parent,"okay, what does the one on the blue square look like?",,Y
+60,test,13,I1,child,it looks like a doggy.,,Y
+60,test,13,I1,parent,,parent,Y
+60,test,27,I1,parent,mine looks like a doggy kicking a triangle. Click on that.,,Y
+60,test,27,I1,child,,child,Y
+60,test,31,I1,child,hmm-hmm. It looks like a doggy.,,Y
+60,test,31,I1,parent,,parent,Y
+60,test,4,K1,child,dog.,,Y
+60,test,4,K1,parent,looks like a dog? Okay,,Y
+60,test,4,K1,parent,,parent,Y
+60,test,20,K1,parent,tap on the one that looks like a dog on his hind legs.,,Y
+60,test,20,K1,child,,child,Y
+60,test,26,K1,parent,"can you describe yours, describe maybe the shape of his head? What does the one in the blue square look like?",,Y
+60,test,26,K1,child,"that, it's like a doggy",,Y
+60,test,26,K1,parent,,parent,Y
+60,test,34,K1,parent,"can you tap on the one who's, who has a head that is on the shape of a house",,Y
+60,test,34,K1,child,uh huh,,Y
+60,test,34,K1,child,,child,Y

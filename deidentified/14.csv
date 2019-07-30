@@ -1,103 +1,103 @@
-Timeline.ordinal,subid,type,trial,target,person,utterance,selection
-0,14,practice,1,apple,child,,child
-6,14,practice,4,apple,child,Pick the apple,
-7,14,practice,4,apple,parent,,parent
-1,14,practice,2,artichoke,parent,Now can you tell me?,
-2,14,practice,2,artichoke,child,Pick the pineapple,
-3,14,practice,2,artichoke,parent,,parent
-8,14,practice,5,artichoke,parent,Pick pineapple,
-9,14,practice,5,artichoke,child,,child
-4,14,practice,3,onion,parent,Pick the onion,
-5,14,practice,3,onion,child,,child
-10,14,practice,6,onion,child,"Pick, um",
-11,14,practice,6,onion,parent,Onion?,
-12,14,practice,6,onion,child,Yeah,
-13,14,practice,6,onion,parent,,parent
-29,14,test,8,A1,child,pick the one that looks like a person on one foot,
-30,14,test,8,A1,parent,,parent
-58,14,test,20,A1,parent,pick the one that looks like it's a person running,
-59,14,test,20,A1,child,,child
-74,14,test,28,A1,child,pick the one that's jogging,
-75,14,test,28,A1,parent,,parent
-90,14,test,36,A1,parent,pick the one that looks like they're running,
-91,14,test,36,A1,child,,child
-21,14,test,4,B1,child,Pick the one that looks like a human walking,
-22,14,test,4,B1,parent,,parent
-50,14,test,16,B1,parent,pick the one that looks like it's a person walking,
-51,14,test,16,B1,child,,child
-78,14,test,30,B1,child,the one that looks like it's running,
-79,14,test,30,B1,parent,,parent
-100,14,test,40,B1,parent,pick the person who looks like they're walking,
-101,14,test,40,B1,child,,child
-19,14,test,3,C1,parent,Pick the one that looks like a dome,
-20,14,test,3,C1,child,,child
-56,14,test,19,C1,child,pick the one that's like a dome,
-57,14,test,19,C1,parent,,parent
-72,14,test,27,C1,parent,pick the one that looks like it's a person bowing,
-73,14,test,27,C1,child,,child
-88,14,test,35,C1,child,pick the one that's like a dome,
-89,14,test,35,C1,parent,,parent
-14,14,test,1,D1,parent,Ok pick the one,
-15,14,test,1,D1,child,,child
-16,14,test,1,D1,parent,That looks like the car,
-52,14,test,17,D1,child,pick the one that looks like a racecar,
-53,14,test,17,D1,parent,,parent
-60,14,test,21,D1,parent,pick the one that looks like a racecar,
-61,14,test,21,D1,child,,child
-84,14,test,33,D1,child,pick the one that looks like racecar,
-85,14,test,33,D1,parent,,parent
-17,14,test,2,E1,child,pick the one that looks like a boat,
-18,14,test,2,E1,parent,,parent
-42,14,test,12,E1,parent,pick the one that looks like it's flying,
-43,14,test,12,E1,child,,child
-62,14,test,22,E1,child,pick the one that looks like flying,
-63,14,test,22,E1,parent,,parent
-94,14,test,38,E1,parent,pick the one that looks like jumping,
-95,14,test,38,E1,child,,child
-33,14,test,10,F1,child,pick the one that looks like...,
-34,14,test,10,F1,parent,"the one that looks like someone's running, or kneeling?",
-35,14,test,10,F1,child,running,
-36,14,test,10,F1,parent,,parent
-54,14,test,18,F1,parent,pick the one that looks like it's a person who's running with their arms up,
-55,14,test,18,F1,child,,child
-70,14,test,26,F1,child,pick the one that looks like it xxx,
-71,14,test,26,F1,parent,,parent
-86,14,test,34,F1,parent,pick the one that's like they're running,
-87,14,test,34,F1,child,,child
-25,14,test,6,G1,child,Pick the one that looks like standing,
-26,14,test,6,G1,parent,,parent
-46,14,test,14,G1,parent,"pick the one that looks like she's kneeling, in a seat",
-47,14,test,14,G1,child,,child
-66,14,test,24,G1,child,pick the one that looks like sitting,
-67,14,test,24,G1,parent,,parent
-82,14,test,32,G1,parent,pick the one that's like kneeling and sitting in a seat,
-83,14,test,32,G1,child,,child
-23,14,test,5,H1,parent,Pick the one that looks like the pastor at the podium,
-24,14,test,5,H1,child,,child
-44,14,test,13,H1,child,pick the one xxx,
-45,14,test,13,H1,parent,,parent
-64,14,test,23,H1,parent,pick the one that looks like a pastor,
-65,14,test,23,H1,child,,child
-80,14,test,31,H1,child,pick the one that's like a pastor,
-81,14,test,31,H1,parent,,parent
-31,14,test,9,I1,parent,pick the one that looks like a waiter delivering food to the table,
-32,14,test,9,I1,child,,child
-48,14,test,15,I1,child,pick the one that has a xxx,
-49,14,test,15,I1,parent,,parent
-76,14,test,29,I1,parent,pick the one that looks like a waiter,
-77,14,test,29,I1,child,,child
-92,14,test,37,I1,child,pick the one that's like a server,
-93,14,test,37,I1,parent,,parent
-27,14,test,7,K1,parent,"Pick the one that looks like a sideways, a sideway desk propped up",
-28,14,test,7,K1,child,,child
-37,14,test,11,K1,child,pick the one that looks like it's playing,
-38,14,test,11,K1,parent,"it's playing, or looks like a racecar?",
-39,14,test,11,K1,child,playing,
-40,14,test,11,K1,parent,ok,
-41,14,test,11,K1,parent,,parent
-68,14,test,25,K1,parent,pick the one that looks like it's a person bending over,
-69,14,test,25,K1,child,,child
-96,14,test,39,K1,child,pick the one that looks like it's,
-97,14,test,39,K1,parent,can you tell me?,
-98,14,test,39,K1,child,like it's serving,
-99,14,test,39,K1,parent,,parent
+subid,type,trial,target,person,utterance,selection,correct
+14,practice,1,apple,child,,child,Y
+14,practice,4,apple,child,Pick the apple,,Y
+14,practice,4,apple,parent,,parent,Y
+14,practice,2,artichoke,parent,Now can you tell me?,,Y
+14,practice,2,artichoke,child,Pick the pineapple,,Y
+14,practice,2,artichoke,parent,,parent,Y
+14,practice,5,artichoke,parent,Pick pineapple,,Y
+14,practice,5,artichoke,child,,child,Y
+14,practice,3,onion,parent,Pick the onion,,Y
+14,practice,3,onion,child,,child,Y
+14,practice,6,onion,child,"Pick, um",,Y
+14,practice,6,onion,parent,Onion?,,Y
+14,practice,6,onion,child,Yeah,,Y
+14,practice,6,onion,parent,,parent,Y
+14,test,8,A1,child,pick the one that looks like a person on one foot,,Y
+14,test,8,A1,parent,,parent,Y
+14,test,20,A1,parent,pick the one that looks like it's a person running,,Y
+14,test,20,A1,child,,child,Y
+14,test,28,A1,child,pick the one that's jogging,,Y
+14,test,28,A1,parent,,parent,Y
+14,test,36,A1,parent,pick the one that looks like they're running,,Y
+14,test,36,A1,child,,child,Y
+14,test,4,B1,child,Pick the one that looks like a human walking,,Y
+14,test,4,B1,parent,,parent,Y
+14,test,16,B1,parent,pick the one that looks like it's a person walking,,Y
+14,test,16,B1,child,,child,Y
+14,test,30,B1,child,the one that looks like it's running,,Y
+14,test,30,B1,parent,,parent,Y
+14,test,40,B1,parent,pick the person who looks like they're walking,,Y
+14,test,40,B1,child,,child,Y
+14,test,3,C1,parent,Pick the one that looks like a dome,,Y
+14,test,3,C1,child,,child,Y
+14,test,19,C1,child,pick the one that's like a dome,,Y
+14,test,19,C1,parent,,parent,Y
+14,test,27,C1,parent,pick the one that looks like it's a person bowing,,Y
+14,test,27,C1,child,,child,Y
+14,test,35,C1,child,pick the one that's like a dome,,Y
+14,test,35,C1,parent,,parent,Y
+14,test,1,D1,parent,Ok pick the one,,Y
+14,test,1,D1,child,,child,Y
+14,test,1,D1,parent,That looks like the car,,Y
+14,test,17,D1,child,pick the one that looks like a racecar,,Y
+14,test,17,D1,parent,,parent,Y
+14,test,21,D1,parent,pick the one that looks like a racecar,,Y
+14,test,21,D1,child,,child,Y
+14,test,33,D1,child,pick the one that looks like racecar,,Y
+14,test,33,D1,parent,,parent,Y
+14,test,2,E1,child,pick the one that looks like a boat,,Y
+14,test,2,E1,parent,,parent,Y
+14,test,12,E1,parent,pick the one that looks like it's flying,,Y
+14,test,12,E1,child,,child,Y
+14,test,22,E1,child,pick the one that looks like flying,,Y
+14,test,22,E1,parent,,parent,Y
+14,test,38,E1,parent,pick the one that looks like jumping,,N
+14,test,38,E1,child,,child,N
+14,test,10,F1,child,pick the one that looks like...,,Y
+14,test,10,F1,parent,"the one that looks like someone's running, or kneeling?",,Y
+14,test,10,F1,child,running,,Y
+14,test,10,F1,parent,,parent,Y
+14,test,18,F1,parent,pick the one that looks like it's a person who's running with their arms up,,Y
+14,test,18,F1,child,,child,Y
+14,test,26,F1,child,pick the one that looks like it xxx,,Y
+14,test,26,F1,parent,,parent,Y
+14,test,34,F1,parent,pick the one that's like they're running,,Y
+14,test,34,F1,child,,child,Y
+14,test,6,G1,child,Pick the one that looks like standing,,Y
+14,test,6,G1,parent,,parent,Y
+14,test,14,G1,parent,"pick the one that looks like she's kneeling, in a seat",,Y
+14,test,14,G1,child,,child,Y
+14,test,24,G1,child,pick the one that looks like sitting,,Y
+14,test,24,G1,parent,,parent,Y
+14,test,32,G1,parent,pick the one that's like kneeling and sitting in a seat,,Y
+14,test,32,G1,child,,child,Y
+14,test,5,H1,parent,Pick the one that looks like the pastor at the podium,,Y
+14,test,5,H1,child,,child,Y
+14,test,13,H1,child,pick the one xxx,,Y
+14,test,13,H1,parent,,parent,Y
+14,test,23,H1,parent,pick the one that looks like a pastor,,Y
+14,test,23,H1,child,,child,Y
+14,test,31,H1,child,pick the one that's like a pastor,,Y
+14,test,31,H1,parent,,parent,Y
+14,test,9,I1,parent,pick the one that looks like a waiter delivering food to the table,,Y
+14,test,9,I1,child,,child,Y
+14,test,15,I1,child,pick the one that has a xxx,,Y
+14,test,15,I1,parent,,parent,Y
+14,test,29,I1,parent,pick the one that looks like a waiter,,Y
+14,test,29,I1,child,,child,Y
+14,test,37,I1,child,pick the one that's like a server,,Y
+14,test,37,I1,parent,,parent,Y
+14,test,7,K1,parent,"Pick the one that looks like a sideways, a sideway desk propped up",,Y
+14,test,7,K1,child,,child,Y
+14,test,11,K1,child,pick the one that looks like it's playing,,Y
+14,test,11,K1,parent,"it's playing, or looks like a racecar?",,Y
+14,test,11,K1,child,playing,,Y
+14,test,11,K1,parent,ok,,Y
+14,test,11,K1,parent,,parent,Y
+14,test,25,K1,parent,pick the one that looks like it's a person bending over,,Y
+14,test,25,K1,child,,child,Y
+14,test,39,K1,child,pick the one that looks like it's,,Y
+14,test,39,K1,parent,can you tell me?,,Y
+14,test,39,K1,child,like it's serving,,Y
+14,test,39,K1,parent,,parent,Y

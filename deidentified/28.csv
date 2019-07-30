@@ -1,147 +1,110 @@
-Timeline.ordinal,subid,type,trial,target,person,utterance,selection
-0,28,practice,1,apple,parent,OK can you press the apple,
-1,28,practice,1,apple,child,,child
-6,28,practice,4,apple,child,Can you press the banana,
-7,28,practice,4,apple,parent,,parent
-2,28,practice,2,artichoke,child,A blue square! Can you press the onion,
-3,28,practice,2,artichoke,parent,,parent
-9,28,practice,5,artichoke,parent,Can you press the artichoke,
-10,28,practice,5,artichoke,child,,child
-4,28,practice,3,onion,parent,Can you press the onion,
-5,28,practice,3,onion,child,,child
-11,28,practice,6,onion,child,Can you press the artichoke,
-12,28,practice,6,onion,parent,,parent
-51,28,test,10,A1,child,Can you press the one can you press the one with one foot,
-52,28,test,10,A1,parent,,parent
-75,28,test,16,A1,parent,Can you press the can you touch the person who is standing upright,
-77,28,test,16,A1,child,,child
-97,28,test,22,A1,child,Now can you press the one uh who is walking on one foot,
-98,28,test,22,A1,parent,,parent
-144,28,test,40,A1,parent,Can you touch the person who's walking on one foot,
-145,28,test,40,A1,child,,child
-16,28,test,1,B1,parent,Can you press the person walking,
-17,28,test,1,B1,child,,child
-60,28,test,13,B1,child,Can you press the one like a dog,
-61,28,test,13,B1,child,With a hat on,
-62,28,test,13,B1,parent,,parent
-63,28,test,13,B1,parent,I'm glad you told me about the hat,
-114,28,test,29,B1,parent,Can you touch the person who is um who is walking,
-115,28,test,29,B1,child,,child
-137,28,test,37,B1,child,Can you press the person walking,
-138,28,test,37,B1,parent,,parent
-32,28,test,6,C1,child,Now you press the one kneeling on the ground,
-33,28,test,6,C1,parent,,parent
-58,28,test,12,C1,parent,OK can you press the one that is kneeling down,
-59,28,test,12,C1,child,,child
-102,28,test,24,C1,child,Can you press the one with leaning down on the ground,
-103,28,test,24,C1,parent,,parent
-126,28,test,34,C1,parent,Can you touch the person who is leaning down,
-127,28,test,34,C1,child,,child
-44,28,test,8,D1,child,Can you press the one standing up,
-45,28,test,8,D1,parent,,parent
-90,28,test,20,D1,parent,Can you touch the person who's lying down,
-91,28,test,20,D1,child,,child
-111,28,test,28,D1,child,Can you press the person who is lying down,
-112,28,test,28,D1,parent,,parent
-135,28,test,36,D1,parent,Can you touch the person who's lying down,
-136,28,test,36,D1,child,,child
-26,28,test,5,E1,parent,Can you press the the one with the person with the their feet behind them,
-27,28,test,5,E1,child,That or this one,
-28,28,test,5,E1,parent,It looks like they're jumping,
-31,28,test,5,E1,child,,child
-86,28,test,19,E1,child,Can you press the one who has his feet back,
-87,28,test,19,E1,parent,Uh both does it have both feet back or just one foot,
-88,28,test,19,E1,child,Both,
-89,28,test,19,E1,parent,,parent
-109,28,test,27,E1,parent,Can you touch the person who's jumping in the air,
-110,28,test,27,E1,child,,child
-141,28,test,39,E1,child,Can you press the person walking on one foot,
-142,28,test,39,E1,parent,,parent
-21,28,test,3,F1,parent,Can you press the person who is raising their arms in the air,
-22,28,test,3,F1,child,,child
-66,28,test,15,F1,child,Can you press the one who's who's in the blue square,
-67,28,test,15,F1,parent,I can't see the blue square you have to tell me what the person looks like,
-68,28,test,15,F1,parent,It looks like he's dropping with his arms out with a diamond as his head,
-69,28,test,15,F1,parent,With a diamond as his head let's try this one,
-70,28,test,15,F1,parent,,parent
-71,28,test,15,F1,parent,Is that right,
-72,28,test,15,F1,child,Yes,
-95,28,test,21,F1,parent,Notice I I have the blue square right now can you touch the person um who's with their hands in the air,
-96,28,test,21,F1,child,,child
-128,28,test,35,F1,child,Can you press the person very still,
-129,28,test,35,F1,parent,Very still hmm I'm not sure I know which one is very still,
-130,28,test,35,F1,child,Look at this one this is very still but this one is walking so this one,
-132,28,test,35,F1,parent,,parent
-23,28,test,4,G1,child,Can you press the one who's jumping,
-24,28,test,4,G1,parent,,parent
-83,28,test,18,G1,parent,OK can you touch the person who's sitting down,
-85,28,test,18,G1,child,,child
-107,28,test,26,G1,child,Can you press the one who has a diamond head and he is standing still,
-108,28,test,26,G1,parent,,parent
-139,28,test,38,G1,parent,Can you touch the person who's sitting down,
-140,28,test,38,G1,child,,child
-36,28,test,7,H1,parent,OK can you press the the person with the with the head that looks more like a diamond,
-38,28,test,7,H1,parent,I I can't see it so they have a head like a diamond and their arms are in front of them and their body is thicker,
-41,28,test,7,H1,child,,child
-54,28,test,11,H1,child,Can you press the one can you press the one that is leaning down,
-55,28,test,11,H1,parent,,parent
-104,28,test,25,H1,parent,Can you touch the person um person who's standing still,
-105,28,test,25,H1,child,,child
-124,28,test,33,H1,child,Can you press the person jumping,
-125,28,test,33,H1,parent,,parent
-18,28,test,2,I1,child,Can you press the person tumbling,
-19,28,test,2,I1,parent,,parent
-64,28,test,14,I1,parent,Can you press the one can you press the person that is holding an upside down triangle,
-65,28,test,14,I1,child,,child
-116,28,test,30,I1,child,Can you press the one who has a who is walking with one foot,
-117,28,test,30,I1,parent,,parent
-122,28,test,32,I1,parent,OK can you touch the person who's holding the triangle,
-123,28,test,32,I1,child,,child
-46,28,test,9,K1,parent,Can you press the person who is leaning over and they have their head they have a hat on they have a triangle hat,
-49,28,test,9,K1,child,,child
-50,28,test,9,K1,parent,Press the one with the triangle hat,
-78,28,test,17,K1,child,Can you press the one which is jumping,
-79,28,test,17,K1,parent,Jumping,
-81,28,test,17,K1,parent,,parent
-100,28,test,23,K1,parent,Can you touch the person um with the triangle hat,
-101,28,test,23,K1,child,,child
-119,28,test,31,K1,child,Can you press the one leaning down with one foot on the ground one foot in the air and,
-120,28,test,31,K1,parent,,parent
-121,28,test,31,K1,child,triangle,
-8,28,test,,,parent,We're good at this game,
-13,28,test,,,child,Good job it says,
-14,28,test,,,parent,OK,
-15,28,test,,,parent,So that was the practice round now we're gonna start,
-20,28,test,,,child,Good,
-25,28,test,,,child,Good,
-30,28,test,,,parent,OK well I can't see what you're seeing so,
-34,28,test,,,parent,Pretty good,
-35,28,test,,,child,Can you,
-37,28,test,,,child,This one,
-39,28,test,,,child,I think this one,
-40,28,test,,,parent,Will you touch what touch whichever one you think it is,
-42,28,test,,,child,Good,
-43,28,test,,,parent,Yay OK,
-47,28,test,,,child,That,
-48,28,test,,,parent,Touch the one that you think is right,
-53,28,test,,,parent,OK it says good job time for the next round,
-56,28,test,,,parent,Is that the right one,
-57,28,test,,,child,Yes,
-73,28,test,,,parent,OK,
-74,28,test,,,child,zzz,
-76,28,test,,,child,Yeah,
-80,28,test,,,parent,Let's try that one,
-82,28,test,,,child,Good,
-84,28,test,,,child,There,
-92,28,test,,,child,Good job time for the next round,
-93,28,test,,,parent,These look like your pattern blocks,
-94,28,test,,,child,Can you press the one with,
-99,28,test,,,child,Can you press,
-106,28,test,,,parent,You're very good at this game,
-113,28,test,,,child,Can you press,
-118,28,test,,,parent,Good job time for the next round,
-131,28,test,,,parent,Oh OK I think,
-133,28,test,,,parent,I think I know what you're talking about then,
-134,28,test,,,child,Good,
-143,28,test,,,child,Good,
-29,28,,,,child,I think that one,
+subid,type,trial,target,person,utterance,selection,correct
+28,practice,1,apple,parent,OK can you press the apple,,Y
+28,practice,1,apple,child,,child,Y
+28,practice,4,apple,child,Can you press the banana,,N
+28,practice,4,apple,parent,,parent,N
+28,practice,2,artichoke,child,A blue square! Can you press the onion,,N
+28,practice,2,artichoke,parent,,parent,N
+28,practice,5,artichoke,parent,Can you press the artichoke,,Y
+28,practice,5,artichoke,child,,child,Y
+28,practice,3,onion,parent,Can you press the onion,,Y
+28,practice,3,onion,child,,child,Y
+28,practice,6,onion,child,Can you press the artichoke,,N
+28,practice,6,onion,parent,,parent,N
+28,test,10,A1,child,Can you press the one can you press the one with one foot,,Y
+28,test,10,A1,parent,,parent,Y
+28,test,16,A1,parent,Can you press the can you touch the person who is standing upright,,Y
+28,test,16,A1,child,,child,Y
+28,test,22,A1,child,Now can you press the one uh who is walking on one foot,,Y
+28,test,22,A1,parent,,parent,Y
+28,test,40,A1,parent,Can you touch the person who's walking on one foot,,Y
+28,test,40,A1,child,,child,Y
+28,test,1,B1,parent,Can you press the person walking,,Y
+28,test,1,B1,child,,child,Y
+28,test,13,B1,child,Can you press the one like a dog,,N
+28,test,13,B1,child,With a hat on,,N
+28,test,13,B1,parent,,parent,N
+28,test,13,B1,parent,I'm glad you told me about the hat,,N
+28,test,29,B1,parent,Can you touch the person who is um who is walking,,Y
+28,test,29,B1,child,,child,Y
+28,test,37,B1,child,Can you press the person walking,,Y
+28,test,37,B1,parent,,parent,Y
+28,test,6,C1,child,Now you press the one kneeling on the ground,,Y
+28,test,6,C1,parent,,parent,Y
+28,test,12,C1,parent,OK can you press the one that is kneeling down,,Y
+28,test,12,C1,child,,child,Y
+28,test,24,C1,child,Can you press the one with leaning down on the ground,,Y
+28,test,24,C1,parent,,parent,Y
+28,test,34,C1,parent,Can you touch the person who is leaning down,,Y
+28,test,34,C1,child,,child,Y
+28,test,8,D1,child,Can you press the one standing up,,N
+28,test,8,D1,parent,,parent,N
+28,test,20,D1,parent,Can you touch the person who's lying down,,Y
+28,test,20,D1,child,,child,Y
+28,test,28,D1,child,Can you press the person who is lying down,,Y
+28,test,28,D1,parent,,parent,Y
+28,test,36,D1,parent,Can you touch the person who's lying down,,Y
+28,test,36,D1,child,,child,Y
+28,test,5,E1,parent,Can you press the the one with the person with the their feet behind them,,Y
+28,test,5,E1,child,That or this one,,Y
+28,test,5,E1,parent,It looks like they're jumping,,Y
+28,test,5,E1,child,,child,Y
+28,test,19,E1,child,Can you press the one who has his feet back,,Y
+28,test,19,E1,parent,Uh both does it have both feet back or just one foot,,Y
+28,test,19,E1,child,Both,,Y
+28,test,19,E1,parent,,parent,Y
+28,test,27,E1,parent,Can you touch the person who's jumping in the air,,Y
+28,test,27,E1,child,,child,Y
+28,test,39,E1,child,Can you press the person walking on one foot,,N
+28,test,39,E1,parent,,parent,N
+28,test,3,F1,parent,Can you press the person who is raising their arms in the air,,Y
+28,test,3,F1,child,,child,Y
+28,test,15,F1,child,Can you press the one who's who's in the blue square,,Y
+28,test,15,F1,parent,I can't see the blue square you have to tell me what the person looks like,,Y
+28,test,15,F1,parent,It looks like he's dropping with his arms out with a diamond as his head,,Y
+28,test,15,F1,parent,With a diamond as his head let's try this one,,Y
+28,test,15,F1,parent,,parent,Y
+28,test,15,F1,parent,Is that right,,Y
+28,test,15,F1,child,Yes,,Y
+28,test,21,F1,parent,Notice I I have the blue square right now can you touch the person um who's with their hands in the air,,Y
+28,test,21,F1,child,,child,Y
+28,test,35,F1,child,Can you press the person very still,,Y
+28,test,35,F1,parent,Very still hmm I'm not sure I know which one is very still,,Y
+28,test,35,F1,child,Look at this one this is very still but this one is walking so this one,,Y
+28,test,35,F1,parent,,parent,Y
+28,test,4,G1,child,Can you press the one who's jumping,,N
+28,test,4,G1,parent,,parent,N
+28,test,18,G1,parent,OK can you touch the person who's sitting down,,N
+28,test,18,G1,child,,child,N
+28,test,26,G1,child,Can you press the one who has a diamond head and he is standing still,,Y
+28,test,26,G1,parent,,parent,Y
+28,test,38,G1,parent,Can you touch the person who's sitting down,,Y
+28,test,38,G1,child,,child,Y
+28,test,7,H1,parent,OK can you press the the person with the with the head that looks more like a diamond,,N
+28,test,7,H1,parent,I I can't see it so they have a head like a diamond and their arms are in front of them and their body is thicker,,N
+28,test,7,H1,child,,child,N
+28,test,11,H1,child,Can you press the one can you press the one that is leaning down,,N
+28,test,11,H1,parent,,parent,N
+28,test,25,H1,parent,Can you touch the person um person who's standing still,,Y
+28,test,25,H1,child,,child,Y
+28,test,33,H1,child,Can you press the person jumping,,N
+28,test,33,H1,parent,,parent,N
+28,test,2,I1,child,Can you press the person tumbling,,N
+28,test,2,I1,parent,,parent,N
+28,test,14,I1,parent,Can you press the one can you press the person that is holding an upside down triangle,,Y
+28,test,14,I1,child,,child,Y
+28,test,30,I1,child,Can you press the one who has a who is walking with one foot,,N
+28,test,30,I1,parent,,parent,N
+28,test,32,I1,parent,OK can you touch the person who's holding the triangle,,Y
+28,test,32,I1,child,,child,Y
+28,test,9,K1,parent,Can you press the person who is leaning over and they have their head they have a hat on they have a triangle hat,,Y
+28,test,9,K1,child,,child,Y
+28,test,9,K1,parent,Press the one with the triangle hat,,Y
+28,test,17,K1,child,Can you press the one which is jumping,,N
+28,test,17,K1,parent,Jumping,,N
+28,test,17,K1,parent,,parent,N
+28,test,23,K1,parent,Can you touch the person um with the triangle hat,,Y
+28,test,23,K1,child,,child,Y
+28,test,31,K1,child,Can you press the one leaning down with one foot on the ground one foot in the air and,,N
+28,test,31,K1,parent,,parent,N
+28,test,31,K1,child,triangle,,N

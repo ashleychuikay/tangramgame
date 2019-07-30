@@ -1,126 +1,112 @@
-Timeline.ordinal,subid,type,trial,target,person,utterance,selection
-0,74,practice,1,apple,parent,"okay um, okay so it's something you eat, and it's red",
-1,74,practice,1,apple,child,uh apple,
-2,74,practice,1,apple,parent,yes,
-5,74,practice,1,apple,child,,child
-23,74,practice,4,apple,child,"um, it's something that's red, and it grows on trees",
-24,74,practice,4,apple,parent,it grows on trees?,
-25,74,practice,4,apple,parent,,parent
-26,74,practice,4,apple,child,yes,
-7,74,practice,2,artichoke,child,"um, it's something that, is that um, it's a fruit, is it a vegetable? is it a vegetable?",
-8,74,practice,2,artichoke,parent,does it look like a vegetable?,
-9,74,practice,2,artichoke,child,yes,
-10,74,practice,2,artichoke,parent,okay,
-11,74,practice,2,artichoke,child,"uh, it ha, it has it has uh, what's it called, you know, uh, it has",
-13,74,practice,2,artichoke,child,"it, okay so it uh, um, when you eat part of it goes up, and that's all",
-14,74,practice,2,artichoke,parent,"okay, I think it sounds like this one",
-15,74,practice,2,artichoke,parent,,parent
-27,74,practice,5,artichoke,parent,"okay um, I think it's a vegetable, and, it has a lot of patternrings on it, a lot, a patterns on it",
-28,74,practice,5,artichoke,child,,child
-19,74,practice,3,onion,parent,"um, this one, it comes from, you got to look at the screen. it comes from the ground, and it looks like an onion, but it's not, I don't think it's an onion but it looks like an onion",
-22,74,practice,3,onion,child,,child
-29,74,practice,6,onion,child,"um, it's something that grows on the ground, and you cut, and you use a knife to cut it with",
-30,74,practice,6,onion,parent,you cut it open?,
-31,74,practice,6,onion,parent,,parent
-32,74,practice,6,onion,child,yeah,
-47,74,test,5,A1,parent,"um, it looks like, the shape looks like it's got, um, hold on, the shape looks like one leg is up, and, one leg is up, okay",
-48,74,test,5,A1,child,,child
-75,74,test,19,A1,child,it's something that's running,
-76,74,test,19,A1,parent,,parent
-90,74,test,25,A1,parent,"um, it looks like it's somebody walking or running",
-91,74,test,25,A1,child,,child
-115,74,test,37,A1,child,"oh it's something that looks, it's something that looks like it's running",
-116,74,test,37,A1,parent,running?,
-117,74,test,37,A1,child,yes,
-118,74,test,37,A1,parent,,parent
-45,74,test,4,B1,child,so it's a man that's walking,
-46,74,test,4,B1,parent,,parent
-73,74,test,18,B1,parent,it looks like it's got its head head down but it's walking,
-74,74,test,18,B1,child,,child
-88,74,test,24,B1,child,it's a man walking,
-89,74,test,24,B1,parent,,parent
-113,74,test,36,B1,parent,"um, it looks like it's walking away",
-114,74,test,36,B1,child,,child
-49,74,test,6,C1,child,so it's something that's on the ground crawling,
-50,74,test,6,C1,parent,,parent
-77,74,test,20,C1,parent,"um it's kneeling down on the ground, like it's praying",
-78,74,test,20,C1,child,,child
-96,74,test,28,C1,child,it looks like it's on the ground,
-97,74,test,28,C1,parent,okay,
-98,74,test,28,C1,parent,,parent
-119,74,test,38,C1,parent,it looks like it's falling down,
-120,74,test,38,C1,child,,child
-53,74,test,8,D1,child,"oh it's on the ground, oh it's my turn, it's um, it's a man on the ground and one foot is up",
-54,74,test,8,D1,parent,,parent
-69,74,test,16,D1,parent,um it looks like it's it can be laying on its stomach with it's hands up,
-70,74,test,16,D1,child,,child
-92,74,test,26,D1,child,it's- it's- it looks like it's on the floor,
-93,74,test,26,D1,parent,,parent
-109,74,test,34,D1,parent,"it looks like it's laying on it's stomach with a leg, its leg up",
-110,74,test,34,D1,child,,child
-43,74,test,3,E1,parent,okay it looks like it's jumping,
-44,74,test,3,E1,child,,child
-59,74,test,11,E1,child,"it's something that's flapping it hand, it's something that looks like it's flying",
-60,74,test,11,E1,parent,,parent
-94,74,test,27,E1,parent,it looks like it's jumping up in the air,
-95,74,test,27,E1,child,,child
-103,74,test,31,E1,child,it's something that's flying,
-104,74,test,31,E1,parent,,parent
-51,74,test,7,F1,parent,"um, it looks like it's running",
-52,74,test,7,F1,child,,child
-67,74,test,15,F1,child,it's something that look like a drawing,
-68,74,test,15,F1,parent,,parent
-86,74,test,23,F1,parent,"um, it looks like it's running or it looks like a bird",
-87,74,test,23,F1,child,,child
-107,74,test,33,F1,child,it looks like it's- it looks like it's looking up in the sky,
-108,74,test,33,F1,parent,,parent
-40,74,test,2,G1,child,"so um, it's like a thing, it, it has a square on the top, and it's like, it's like a statue",
-41,74,test,2,G1,parent,it's- okay,
-42,74,test,2,G1,parent,,parent
-61,74,test,12,G1,parent,"um, it looks like it's kneeling",
-62,74,test,12,G1,child,,child
-81,74,test,22,G1,child,"it something it's a statue, think, think so",
-82,74,test,22,G1,parent,okay what's the statue doing,
-83,74,test,22,G1,child,it's has cube on the top,
-84,74,test,22,G1,parent,oh,
-85,74,test,22,G1,parent,,parent
-105,74,test,32,G1,parent,it looks like it's sitting,
-106,74,test,32,G1,child,,child
-35,74,test,1,H1,parent,"it looks like the person is pointing, um, or the shape, it looks like a per- it looks like a person, but it is a sh- it looks like it's pointing towards something",
-38,74,test,1,H1,child,,child
-71,74,test,17,H1,child,"it's something that standing up and, it's maybe it has something in his hand",
-72,74,test,17,H1,parent,,parent
-79,74,test,21,H1,parent,"it looks like, it looks like it can be on a-- oh I'm going to try and throw you off--  it looks like maybe a candle, or-",
-80,74,test,21,H1,child,,child
-121,74,test,39,H1,child,it's something that's look like it's giving to you a coin,
-122,74,test,39,H1,parent,,parent
-57,74,test,10,I1,child,um it's a man that standing up and it has something in its hands,
-58,74,test,10,I1,parent,,parent
-65,74,test,14,I1,parent,"um, it looks like it has something in its hand",
-66,74,test,14,I1,child,,child
-101,74,test,30,I1,child,it's something that has something in its hand,
-102,74,test,30,I1,parent,,parent
-123,74,test,40,I1,parent,"um, it looks like it's handing you something",
-124,74,test,40,I1,child,,child
-55,74,test,9,K1,parent,"um, it looks like it has a tail",
-56,74,test,9,K1,child,,child
-63,74,test,13,K1,child,oh it's something that's standing up and it has a tail,
-64,74,test,13,K1,parent,,parent
-99,74,test,29,K1,parent,"um, it looks like it's handing something to you or to somebody",
-100,74,test,29,K1,child,,child
-111,74,test,35,K1,child,it's something that looks like it's giving to you,
-112,74,test,35,K1,parent,,parent
-3,74,test,,,parent,okay then what do I do,
-4,74,test,,,parent,oh,
-6,74,test,,,parent,"oh, okay",
-12,74,test,,,parent,"describe, just describe what it looks like",
-16,74,test,,,parent,was that right?,
-17,74,test,,,child,mhm,
-18,74,test,,,parent,okay,
-20,74,test,,,child,I don't know what it is called,
-21,74,test,,,parent,no you click it,
-33,74,test,,,parent,"okay, uh I think we begin then. okay, ooh this is tricky, um",
-34,74,test,,,child,these are shapes,
-36,74,test,,,child,so do I press it,
-37,74,test,,,parent,yeah you press the one that I'm talking about,
-39,74,test,,,parent,okay your turn,
+subid,type,trial,target,person,utterance,selection,correct
+74,practice,1,apple,parent,"okay um, okay so it's something you eat, and it's red",,Y
+74,practice,1,apple,child,uh apple,,Y
+74,practice,1,apple,parent,yes,,Y
+74,practice,1,apple,child,,child,Y
+74,practice,4,apple,child,"um, it's something that's red, and it grows on trees",,Y
+74,practice,4,apple,parent,it grows on trees?,,Y
+74,practice,4,apple,parent,,parent,Y
+74,practice,4,apple,child,yes,,Y
+74,practice,2,artichoke,child,"um, it's something that, is that um, it's a fruit, is it a vegetable? is it a vegetable?",,Y
+74,practice,2,artichoke,parent,does it look like a vegetable?,,Y
+74,practice,2,artichoke,child,yes,,Y
+74,practice,2,artichoke,parent,okay,,Y
+74,practice,2,artichoke,child,"uh, it ha, it has it has uh, what's it called, you know, uh, it has",,Y
+74,practice,2,artichoke,child,"it, okay so it uh, um, when you eat part of it goes up, and that's all",,Y
+74,practice,2,artichoke,parent,"okay, I think it sounds like this one",,Y
+74,practice,2,artichoke,parent,,parent,Y
+74,practice,5,artichoke,parent,"okay um, I think it's a vegetable, and, it has a lot of patternrings on it, a lot, a patterns on it",,Y
+74,practice,5,artichoke,child,,child,Y
+74,practice,3,onion,parent,"um, this one, it comes from, you got to look at the screen. it comes from the ground, and it looks like an onion, but it's not, I don't think it's an onion but it looks like an onion",,N
+74,practice,3,onion,child,,child,N
+74,practice,6,onion,child,"um, it's something that grows on the ground, and you cut, and you use a knife to cut it with",,Y
+74,practice,6,onion,parent,you cut it open?,,Y
+74,practice,6,onion,parent,,parent,Y
+74,practice,6,onion,child,yeah,,Y
+74,test,5,A1,parent,"um, it looks like, the shape looks like it's got, um, hold on, the shape looks like one leg is up, and, one leg is up, okay",,Y
+74,test,5,A1,child,,child,Y
+74,test,19,A1,child,it's something that's running,,Y
+74,test,19,A1,parent,,parent,Y
+74,test,25,A1,parent,"um, it looks like it's somebody walking or running",,Y
+74,test,25,A1,child,,child,Y
+74,test,37,A1,child,"oh it's something that looks, it's something that looks like it's running",,Y
+74,test,37,A1,parent,running?,,Y
+74,test,37,A1,child,yes,,Y
+74,test,37,A1,parent,,parent,Y
+74,test,4,B1,child,so it's a man that's walking,,Y
+74,test,4,B1,parent,,parent,Y
+74,test,18,B1,parent,it looks like it's got its head head down but it's walking,,Y
+74,test,18,B1,child,,child,Y
+74,test,24,B1,child,it's a man walking,,Y
+74,test,24,B1,parent,,parent,Y
+74,test,36,B1,parent,"um, it looks like it's walking away",,Y
+74,test,36,B1,child,,child,Y
+74,test,6,C1,child,so it's something that's on the ground crawling,,Y
+74,test,6,C1,parent,,parent,Y
+74,test,20,C1,parent,"um it's kneeling down on the ground, like it's praying",,Y
+74,test,20,C1,child,,child,Y
+74,test,28,C1,child,it looks like it's on the ground,,Y
+74,test,28,C1,parent,okay,,Y
+74,test,28,C1,parent,,parent,Y
+74,test,38,C1,parent,it looks like it's falling down,,N
+74,test,38,C1,child,,child,N
+74,test,8,D1,child,"oh it's on the ground, oh it's my turn, it's um, it's a man on the ground and one foot is up",,Y
+74,test,8,D1,parent,,parent,Y
+74,test,16,D1,parent,um it looks like it's it can be laying on its stomach with it's hands up,,Y
+74,test,16,D1,child,,child,Y
+74,test,26,D1,child,it's- it's- it looks like it's on the floor,,Y
+74,test,26,D1,parent,,parent,Y
+74,test,34,D1,parent,"it looks like it's laying on it's stomach with a leg, its leg up",,Y
+74,test,34,D1,child,,child,Y
+74,test,3,E1,parent,okay it looks like it's jumping,,Y
+74,test,3,E1,child,,child,Y
+74,test,11,E1,child,"it's something that's flapping it hand, it's something that looks like it's flying",,Y
+74,test,11,E1,parent,,parent,Y
+74,test,27,E1,parent,it looks like it's jumping up in the air,,Y
+74,test,27,E1,child,,child,Y
+74,test,31,E1,child,it's something that's flying,,Y
+74,test,31,E1,parent,,parent,Y
+74,test,7,F1,parent,"um, it looks like it's running",,Y
+74,test,7,F1,child,,child,Y
+74,test,15,F1,child,it's something that look like a drawing,,Y
+74,test,15,F1,parent,,parent,Y
+74,test,23,F1,parent,"um, it looks like it's running or it looks like a bird",,Y
+74,test,23,F1,child,,child,Y
+74,test,33,F1,child,it looks like it's- it looks like it's looking up in the sky,,Y
+74,test,33,F1,parent,,parent,Y
+74,test,2,G1,child,"so um, it's like a thing, it, it has a square on the top, and it's like, it's like a statue",,Y
+74,test,2,G1,parent,it's- okay,,Y
+74,test,2,G1,parent,,parent,Y
+74,test,12,G1,parent,"um, it looks like it's kneeling",,N
+74,test,12,G1,child,,child,N
+74,test,22,G1,child,"it something it's a statue, think, think so",,Y
+74,test,22,G1,parent,okay what's the statue doing,,Y
+74,test,22,G1,child,it's has cube on the top,,Y
+74,test,22,G1,parent,oh,,Y
+74,test,22,G1,parent,,parent,Y
+74,test,32,G1,parent,it looks like it's sitting,,Y
+74,test,32,G1,child,,child,Y
+74,test,1,H1,parent,"it looks like the person is pointing, um, or the shape, it looks like a per- it looks like a person, but it is a sh- it looks like it's pointing towards something",,Y
+74,test,1,H1,child,,child,Y
+74,test,17,H1,child,"it's something that standing up and, it's maybe it has something in his hand",,Y
+74,test,17,H1,parent,,parent,Y
+74,test,21,H1,parent,"it looks like, it looks like it can be on a-- oh I'm going to try and throw you off--  it looks like maybe a candle, or-",,Y
+74,test,21,H1,child,,child,Y
+74,test,39,H1,child,it's something that's look like it's giving to you a coin,,Y
+74,test,39,H1,parent,,parent,Y
+74,test,10,I1,child,um it's a man that standing up and it has something in its hands,,Y
+74,test,10,I1,parent,,parent,Y
+74,test,14,I1,parent,"um, it looks like it has something in its hand",,Y
+74,test,14,I1,child,,child,Y
+74,test,30,I1,child,it's something that has something in its hand,,Y
+74,test,30,I1,parent,,parent,Y
+74,test,40,I1,parent,"um, it looks like it's handing you something",,Y
+74,test,40,I1,child,,child,Y
+74,test,9,K1,parent,"um, it looks like it has a tail",,Y
+74,test,9,K1,child,,child,Y
+74,test,13,K1,child,oh it's something that's standing up and it has a tail,,Y
+74,test,13,K1,parent,,parent,Y
+74,test,29,K1,parent,"um, it looks like it's handing something to you or to somebody",,Y
+74,test,29,K1,child,,child,Y
+74,test,35,K1,child,it's something that looks like it's giving to you,,Y
+74,test,35,K1,parent,,parent,Y

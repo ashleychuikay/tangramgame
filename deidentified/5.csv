@@ -1,507 +1,495 @@
-Timeline.ordinal,subid,type,trial,target,person,utterance,selection
-0,5,practice,1,apple,child,,child
-31,5,practice,4,apple,child,Now I see a red apple I'll pick banana,
-32,5,practice,4,apple,parent,What does it tell me the shape of the banana,
-34,5,practice,4,apple,parent,What does it look like is it a circle does it look like a person,
-35,5,practice,4,apple,child,Like it looks like a person,
-36,5,practice,4,apple,child,OK I'll pick banana,
-37,5,practice,4,apple,parent,OK,
-38,5,practice,4,apple,parent,,parent
-1,5,practice,2,artichoke,parent,OK now you tell me what you're seeing in the blue box,
-2,5,practice,2,artichoke,child,Um it's,
-3,5,practice,2,artichoke,parent,On the iPad look on the iPad,
-4,5,practice,2,artichoke,child,In the blue box is a,
-5,5,practice,2,artichoke,parent,But don't say what it is,
-6,5,practice,2,artichoke,child,It's,
-7,5,practice,2,artichoke,parent,Tell me like describe like the shape,
-8,5,practice,2,artichoke,child,Um it's a apple,
-9,5,practice,2,artichoke,parent,What else do you see?,
-10,5,practice,2,artichoke,child,It's a pineapple,
-11,5,practice,2,artichoke,parent,That's what you see,
-12,5,practice,2,artichoke,child,Yeah,
-13,5,practice,2,artichoke,parent,"Well like what's in your blue box, tell me what you see in the blue box",
-14,5,practice,2,artichoke,child,In the blue box is a apple and a pineapple,
-15,5,practice,2,artichoke,parent,Them both,
-16,5,practice,2,artichoke,parent,,parent
-17,5,practice,2,artichoke,child,Yeah,
-18,5,practice,2,artichoke,parent,OK,
-39,5,practice,5,artichoke,parent,OK what do you see,
-40,5,practice,5,artichoke,child,I see a pineapple and a thing again,
-41,5,practice,5,artichoke,parent,Are you sure that's a pineapple,
-42,5,practice,5,artichoke,child,Um this is not  a pineapple,
-43,5,practice,5,artichoke,parent,Hm but it looks like a pineapple,
-44,5,practice,5,artichoke,child,No it doesn't I'll just pick pineapple,
-45,5,practice,5,artichoke,parent,Do you think that's the right answer,
-46,5,practice,5,artichoke,child,No yeah,
-47,5,practice,5,artichoke,parent,OK,
-48,5,practice,5,artichoke,child,,child
-19,5,practice,3,onion,child,Wait I know what's in here a pineapple and a thing that lives in the ground,
-20,5,practice,3,onion,parent,Lives in the ground,
-21,5,practice,3,onion,child,Yeah,
-22,5,practice,3,onion,parent,OK um,
-23,5,practice,3,onion,parent,Do you see a circle,
-24,5,practice,3,onion,child,I see two circles,
-25,5,practice,3,onion,parent,Do you see,
-26,5,practice,3,onion,child,The pineapple has a circle and a and this thing has a circle,
-27,5,practice,3,onion,parent,Click on the one that doesn't look like a pineapple,
-28,5,practice,3,onion,child,I'll click this,
-29,5,practice,3,onion,child,,child
-30,5,practice,3,onion,parent,Good job,
-33,5,practice,3,onion,child,The banana um it has a line down it has a line going up and then that's how the shape is is,
-49,5,practice,6,onion,child,Now I see I'll pick this,
-50,5,practice,6,onion,parent,Describe it to me what does it look like,
-51,5,practice,6,onion,child,It looks like a pineapple,
-52,5,practice,6,onion,parent,Mhm what else,
-53,5,practice,6,onion,child,Um it it has a circle on two sides this one and this one,
-54,5,practice,6,onion,parent,And which one is in the blue box,
-55,5,practice,6,onion,child,Um it's this one,
-56,5,practice,6,onion,parent,Well what does that one look like,
-57,5,practice,6,onion,child,It looks like you zzz cut it and then and you just peel it,
-58,5,practice,6,onion,parent,You peel it,
-59,5,practice,6,onion,child,Yeah when all when all the thing is on it,
-60,5,practice,6,onion,parent,Mm that sounds good,
-61,5,practice,6,onion,child,So I'll pick pineapple again,
-62,5,practice,6,onion,parent,No,
-63,5,practice,6,onion,child,I'll pick this,
-64,5,practice,6,onion,parent,,parent
-65,5,practice,6,onion,parent,Mhm,
-66,5,practice,6,onion,child,Wait,
-67,5,practice,6,onion,child,I was gonna choose,
-112,5,test,5,A1,child,But now,
-113,5,test,5,A1,child,Now,
-114,5,test,5,A1,parent,OK,
-115,5,test,5,A1,child,Now,
-116,5,test,5,A1,parent,What do you see two shapes together,
-117,5,test,5,A1,child,zzz,
-118,5,test,5,A1,parent,OK,
-119,5,test,5,A1,child,OK wait I see a person a running zzz all going that way,
-120,5,test,5,A1,parent,Does it look like a person on one standing on one leg,
-121,5,test,5,A1,child,Yeah he's standing on one leg,
-122,5,test,5,A1,parent,Yeah that's what it look like right,
-123,5,test,5,A1,child,So I'll pick it,
-124,5,test,5,A1,parent,Mhm,
-125,5,test,5,A1,child,,child
-245,5,test,19,A1,child,Now I see a doggy standing on its legs and I see a person running into the blue box,
-246,5,test,19,A1,parent,That's what you see in the blue box,
-247,5,test,19,A1,child,Mhm,
-248,5,test,19,A1,parent,,parent
-252,5,test,19,A1,parent,Yes it does,
-279,5,test,23,A1,parent,What do you see now,
-280,5,test,23,A1,child,I see two triangles that that's holding up,
-281,5,test,23,A1,parent,That's all you see,
-282,5,test,23,A1,child,Yeah,
-283,5,test,23,A1,parent,What type of uh which one uh,
-284,5,test,23,A1,parent,Describe the one on the left to me,
-285,5,test,23,A1,child,The guy that's running,
-286,5,test,23,A1,parent,Mhm describe that one to me,
-287,5,test,23,A1,child,,child
-288,5,test,23,A1,parent,I said describe you're not even listening I didn't say pick it,
-289,5,test,23,A1,child,Oh OK you wanted me to um,
-290,5,test,23,A1,parent,To tell me what it looks like,
-291,5,test,23,A1,child,Oh,
-448,5,test,37,A1,child,Now I see a person running in the blue box and I see a guy with a triangle head in his in his face and um triangle that way,
-449,5,test,37,A1,parent,zzz,
-450,5,test,37,A1,child,It's a zzz,
-451,5,test,37,A1,parent,What side zzz,
-452,5,test,37,A1,child,Um it's the right,
-453,5,test,37,A1,parent,zzz,
-454,5,test,37,A1,child,The left,
-455,5,test,37,A1,parent,Which one is in the blue box,
-456,5,test,37,A1,child,The guy that's running,
-457,5,test,37,A1,parent,,parent
-101,5,test,4,B1,child,Now I see someone having a traingle down,
-102,5,test,4,B1,parent,Mhm,
-103,5,test,4,B1,child,And facing that way and and it's down,
-104,5,test,4,B1,parent,What shapes do you see,
-105,5,test,4,B1,child,I see,
-106,5,test,4,B1,child,One going down and a zzz,
-107,5,test,4,B1,parent,Mm so which one is in the blue box,
-108,5,test,4,B1,child,Uh it's the person walking,
-109,5,test,4,B1,parent,That's what it looks like,
-110,5,test,4,B1,child,Yeah,
-111,5,test,4,B1,parent,,parent
-222,5,test,16,B1,parent,What do you see now,
-223,5,test,16,B1,child,I see a person um walking that way and I see a doggy um he's standing on his legs,
-224,5,test,16,B1,parent,Can you describe the one with the person walking what shapes do you see,
-225,5,test,16,B1,child,Um I see a diamond that is that is facing that way,
-226,5,test,16,B1,parent,Pick the one with the diamond,
-227,5,test,16,B1,child,,child
-311,5,test,26,B1,parent,What do you see now,
-312,5,test,26,B1,child,I see a person crawling and a person walking slow,
-313,5,test,26,B1,parent,What kind of shapes do you see,
-314,5,test,26,B1,child,I see I see I see a diamond facing down and I see um a square facing down,
-315,5,test,26,B1,parent,Which one do you see in the blue box zzz,
-316,5,test,26,B1,child,Um it's the person,
-317,5,test,26,B1,parent,There's two persons zzz right,
-318,5,test,26,B1,child,It's the person in the blue box,
-319,5,test,26,B1,parent,Well what are they doing,
-320,5,test,26,B1,parent,On the blocks,
-321,5,test,26,B1,parent,Is he walking,
-322,5,test,26,B1,child,He's walking slow,
-323,5,test,26,B1,parent,,parent
-324,5,test,26,B1,parent,Mhm,
-477,5,test,40,B1,child,Now I see a airplane and,
-480,5,test,40,B1,child,OK and now I see and I see now um wait,
-481,5,test,40,B1,parent,Uh uh uh uh stay there,
-482,5,test,40,B1,child,Now I see I see now um I see a person walking slow and a airplane running into him and and it's gonna crush into him,
-483,5,test,40,B1,parent,It's gonna crash,
-484,5,test,40,B1,child,Yeah into him,
-485,5,test,40,B1,parent,Can you describe the person,
-486,5,test,40,B1,child,OK uh he has a ankle down and he's like walking walking,
-487,5,test,40,B1,parent,Can you describe the airplane,
-488,5,test,40,B1,child,Um it um I'll pick three triangles it has three triangles,
-489,5,test,40,B1,parent,Do you see triangles on the person,
-490,5,test,40,B1,child,I see a triangle on the person but it looks like he's zzz holding on the person and it and it it's not in a bowl because that's not it because that's where the airplane begins,
-491,5,test,40,B1,parent,Mhm,
-492,5,test,40,B1,parent,Which which one do you think you should pick,
-493,5,test,40,B1,child,I'll pick the person again,
-494,5,test,40,B1,parent,Why do you think that's a good choice,
-495,5,test,40,B1,child,No what I'm not gonna pick it because that's why I'm picking the airplane,
-496,5,test,40,B1,parent,No I said why do you think the person is a good choice,
-497,5,test,40,B1,child,Because uh it's,
-498,5,test,40,B1,child,Because it's finna crash into that um person,
-499,5,test,40,B1,parent,zzz,
-500,5,test,40,B1,child,Yeah,
-501,5,test,40,B1,child,I think the person should go around and so the airplane can keep on going that way so it own't crash into him,
-502,5,test,40,B1,child,So I'll pick the person,
-503,5,test,40,B1,parent,OK,
-504,5,test,40,B1,child,,child
-68,5,test,1,C1,parent,Alright you see the first box?,
-69,5,test,1,C1,child,,child
-167,5,test,11,C1,child,zzz,
-168,5,test,11,C1,parent,zzz,
-169,5,test,11,C1,child,I see a zzz I see zzz and the blue box,
-170,5,test,11,C1,parent,zzz,
-171,5,test,11,C1,child,Yeah,
-172,5,test,11,C1,parent,OK,
-173,5,test,11,C1,parent,,parent
-325,5,test,27,C1,child,Now I see a um triangle,
-326,5,test,27,C1,parent,Mhm,
-327,5,test,27,C1,child,I see a zzz facing down and I see a a diamond and another diamond,
-328,5,test,27,C1,parent,Mhm,
-329,5,test,27,C1,parent,What does the person look like the one that looks like they're crawling on the floor on all fours,
-330,5,test,27,C1,child,Um it's this one,
-331,5,test,27,C1,parent,"what are they, what what kind of shapes do you see",
-332,5,test,27,C1,child,I see a diamond,
-333,5,test,27,C1,parent,Mhm,
-334,5,test,27,C1,child,Down,
-335,5,test,27,C1,parent,Mhm,
-336,5,test,27,C1,child,And I see and I see a triangle pointing and facing this way,
-337,5,test,27,C1,child,And zzz,
-338,5,test,27,C1,child,,child
-339,5,test,27,C1,child,I picked it again,
-390,5,test,33,C1,child,Now I see someone in the blue box crawling in the blue box,
-391,5,test,33,C1,parent,And what do you see outside of the blue box,
-392,5,test,33,C1,child,Um it's a someone running,
-393,5,test,33,C1,parent,Mhm what shapes do you see,
-394,5,test,33,C1,child,I see a diamond,
-395,5,test,33,C1,parent,Mhm,
-396,5,test,33,C1,child,In there and I see a diamond on the person,
-397,5,test,33,C1,parent,,parent
-161,5,test,10,D1,parent,Tell me what you see,
-162,5,test,10,D1,child,I see a airplane and a blue box,
-163,5,test,10,D1,child,And I see someone jumping and someone crawling,
-164,5,test,10,D1,parent,zzz,
-165,5,test,10,D1,child,zzz,
-166,5,test,10,D1,parent,,parent
-174,5,test,12,D1,parent,What do you see now,
-175,5,test,12,D1,child,I see an airplane and someone jumping,
-176,5,test,12,D1,parent,Where do you see anyone jumping,
-177,5,test,12,D1,child,zzz,
-178,5,test,12,D1,parent,zzz,
-179,5,test,12,D1,child,zzz,
-180,5,test,12,D1,child,I didn't see you walking but he I didn't see him stop walking and I think he's holding his hands that way,
-181,5,test,12,D1,parent,Pick the one that looks like it's a airplane,
-182,5,test,12,D1,child,,child
-183,5,test,12,D1,parent,What shapes did you see,
-184,5,test,12,D1,child,I did saw,
-185,5,test,12,D1,child,A diamond,
-186,5,test,12,D1,child,Um and a triangle how do you say down and it's facing that way um down,
-292,5,test,24,D1,parent,OK what do you see now,
-293,5,test,24,D1,child,I see a airplane in the blue box and a doggy standing on its legs again,
-294,5,test,24,D1,parent,Can you see the zzz the zzz other shapes do you see,
-295,5,test,24,D1,child,I see um a triangle on the doggy head and I see a airplane that has a square on the triangle,
-296,5,test,24,D1,parent,,parent
-428,5,test,36,D1,child,"Now I see a airplane that has zzz triangle and I see a person like a bird going to fly, it's taking off",
-429,5,test,36,D1,parent,How many,
-430,5,test,36,D1,child,zzz,
-431,5,test,36,D1,parent,How many triangles do you see in the other thing,
-432,5,test,36,D1,child,Um it's zzz,
-433,5,test,36,D1,parent,It's zzz,
-434,5,test,36,D1,parent,How many triangles do you see,
-435,5,test,36,D1,child,Um one and two and three,
-436,5,test,36,D1,parent,Uh huh,
-437,5,test,36,D1,child,I'll pick the bird,
-438,5,test,36,D1,parent,No,
-439,5,test,36,D1,child,I'll pick,
-440,5,test,36,D1,parent,It's not a good choice,
-441,5,test,36,D1,child,OK I'll pick the rocket,
-442,5,test,36,D1,parent,It's a rocket now?,
-443,5,test,36,D1,child,Wait it's a airplane first,
-444,5,test,36,D1,parent,OK,
-445,5,test,36,D1,child,So I'll pick it,
-446,5,test,36,D1,parent,Mhm,
-447,5,test,36,D1,child,,child
-158,5,test,9,E1,child,Now now I see someone jumping and he's gonna fall down and I see someone um,
-159,5,test,9,E1,child,,child
-160,5,test,9,E1,child,Wait I picked it,
-187,5,test,13,E1,parent,What do you see now,
-188,5,test,13,E1,child,I see someone jumping in the blue box and someone running to into the blue box to hit him,
-189,5,test,13,E1,parent,zzz blue box,
-190,5,test,13,E1,child,Hm,
-191,5,test,13,E1,parent,Ok which one was in the blue box,
-192,5,test,13,E1,child,Um it's the jumping guy,
-193,5,test,13,E1,parent,OK,
-194,5,test,13,E1,parent,,parent
-348,5,test,29,E1,child,Now I see a person walking slow and I see a person jumping,
-349,5,test,29,E1,parent,What does the person who is jumping look like what kind of shapes do you see,
-350,5,test,29,E1,child,I see a um triangle pointing um thing facing up and I see a pointing um,
-351,5,test,29,E1,child,,child
-352,5,test,29,E1,child,Wow I did it I just tapped it,
-353,5,test,29,E1,parent,zzz,
-354,5,test,29,E1,child,Yeah I did just tap it is that OK,
-355,5,test,29,E1,parent,Mhm,
-356,5,test,29,E1,child,OK,
-363,5,test,31,E1,child,Now I see someone jumped and I see a triangle and now they're pointing it facing down,
-364,5,test,31,E1,parent,Tell me what you see in the blue box,
-365,5,test,31,E1,child,Um it's the person jumped,
-366,5,test,31,E1,parent,,parent
-70,5,test,2,F1,child,I pick I'll pick this one,
-71,5,test,2,F1,parent,OK no wait you have to describe to me what it looks like,
-72,5,test,2,F1,child,It looks like it has um one point on like it has one point right here and another point right here and it looks like a line down and a line down right here,
-73,5,test,2,F1,parent,Does it look like a person,
-74,5,test,2,F1,child,Yeah,
-75,5,test,2,F1,parent,What does it look like the person is doing,
-76,5,test,2,F1,child,I I think he's walking,
-77,5,test,2,F1,parent,It looks like a person walking?,
-79,5,test,2,F1,parent,OK,
-80,5,test,2,F1,child,I'll pick this,
-81,5,test,2,F1,parent,,parent
-82,5,test,2,F1,parent,Alright,
-83,5,test,2,F1,child,Wait,
-249,5,test,20,F1,child,Now I see now I see a thing climbing and I see someone crawling that way,
-250,5,test,20,F1,parent,zzz,
-251,5,test,20,F1,child,Yes it do,
-253,5,test,20,F1,child,Yes it does,
-254,5,test,20,F1,parent,Pick that pick the one that look like a diamond,
-255,5,test,20,F1,child,OK,
-256,5,test,20,F1,child,,child
-357,5,test,30,F1,parent,What do you see now,
-358,5,test,30,F1,child,I see I see a guy and then I see a doggy um he's standing on his legs,
-359,5,test,30,F1,parent,Which one do you see in the blue box,
-360,5,test,30,F1,child,Um it's the guy,
-361,5,test,30,F1,parent,OK,
-362,5,test,30,F1,parent,,parent
-398,5,test,34,F1,parent,What do you see now,
-399,5,test,34,F1,child,I see bird looking like he's gonna fly,
-400,5,test,34,F1,parent,Like he's ready for take off,
-401,5,test,34,F1,child,Yeah,
-402,5,test,34,F1,parent,And what else you see,
-403,5,test,34,F1,child,I see um I see a guy again is and his hands over that way,
-412,5,test,34,F1,child,,child
-145,5,test,8,G1,child,Now I see someone crawling,
-146,5,test,8,G1,parent,Crawling and what else,
-147,5,test,8,G1,child,And it looks like a shape like a diamond again and it and it looks like it's going down and and up and go down,
-148,5,test,8,G1,parent,Which one do you see in the blue box,
-149,5,test,8,G1,child,It's this one,
-150,5,test,8,G1,parent,Which one describe it to me,
-151,5,test,8,G1,child,It's the person it's the person that way,
-152,5,test,8,G1,parent,Which one is what does it look like they're doing,
-153,5,test,8,G1,child,It looks like he's um walking um and he's holding his hands on that way,
-154,5,test,8,G1,parent,The one that looks like he's crawling,
-155,5,test,8,G1,child,Yeah,
-156,5,test,8,G1,parent,,parent
-235,5,test,18,G1,parent,What do you see now,
-236,5,test,18,G1,child,I see a airplane coming in and toward this guy the person that's pointing that way,
-237,5,test,18,G1,parent,How many zzz do you see,
-238,5,test,18,G1,child,I see um ok um a square on the top there um,
-239,5,test,18,G1,parent,Do you have somebody kneel zzz,
-240,5,test,18,G1,child,They on um,
-241,5,test,18,G1,child,This guy is on top of the triangle,
-242,5,test,18,G1,parent,zzz pick that one,
-243,5,test,18,G1,child,OK,
-244,5,test,18,G1,child,,child
-271,5,test,22,G1,child,Now I see someone its triangle is facing that way,
-272,5,test,22,G1,parent,Mhm,
-273,5,test,22,G1,child,And I see the um blue square and I see the pointing thing up and I see a doggy standing on its legs,
-274,5,test,22,G1,parent,Which one is in the blue box,
-275,5,test,22,G1,child,The person that has a triangle facing that way,
-276,5,test,22,G1,parent,The person,
-277,5,test,22,G1,child,Yeah,
-278,5,test,22,G1,parent,,parent
-367,5,test,32,G1,parent,What do you see now,
-368,5,test,32,G1,child,I see um I see a guy that that that he's holding his hands on the um that way zzz this is the last one,
-369,5,test,32,G1,parent,Mhm,
-370,5,test,32,G1,child,Like he's pointing um he's pointing his hands on the right,
-371,5,test,32,G1,parent,Mhm,
-372,5,test,32,G1,parent,Does it look like somebody kneeling,
-373,5,test,32,G1,child,I think he's like holding like a like he's holding like zzz like a gondora zzz holding the um he's holding the square going that way,
-374,5,test,32,G1,parent,Yeah,
-375,5,test,32,G1,parent,Does it looks like criss cross applesauce,
-376,5,test,32,G1,child,Like he's not like he's not holding it in his hands um like he's not holding anything like uh like he's not holding anything like zzz over there and he's not um zzz over there and like he's not doing that like he's um zzz over there,
-377,5,test,32,G1,parent,Mhm,
-378,5,test,32,G1,parent,Tell me what you see with the person whose legs look like they're folded,
-379,5,test,32,G1,child,Um it's this one,
-380,5,test,32,G1,parent,zzz,
-381,5,test,32,G1,child,I'll pick it,
-382,5,test,32,G1,parent,What does it look like,
-383,5,test,32,G1,child,It looks like a guy who has a square on his head and it looks like a square down pointing that way,
-384,5,test,32,G1,parent,OK you can please push that one,
-385,5,test,32,G1,child,OK,
-386,5,test,32,G1,parent,Do you think that's a good choice,
-387,5,test,32,G1,child,Yeah,
-388,5,test,32,G1,parent,OK,
-389,5,test,32,G1,child,,child
-126,5,test,6,H1,parent,Now what do you see,
-127,5,test,6,H1,child,I see someone jump into the air and he gonna fall down,
-128,5,test,6,H1,parent,What else do you see,
-129,5,test,6,H1,child,I see I see a a diamond in a blue box up,
-130,5,test,6,H1,parent,So you see it in the blue box,
-131,5,test,6,H1,child,Yeah turning up,
-132,5,test,6,H1,parent,He's holding something,
-133,5,test,6,H1,child,Yeah,
-134,5,test,6,H1,parent,That's what it looks like?,
-135,5,test,6,H1,child,Yeah,
-136,5,test,6,H1,parent,OK,
-137,5,test,6,H1,parent,,parent
-138,5,test,6,H1,child,So,
-195,5,test,14,H1,child,Now I see someone running,
-196,5,test,14,H1,parent,Mhm,
-197,5,test,14,H1,child,And someone with hands facing that way,
-198,5,test,14,H1,parent,What do you see with the person who has their hands facing that way like what shapes do you see,
-199,5,test,14,H1,child,Like it's this one,
-200,5,test,14,H1,parent,What shapes,
-201,5,test,14,H1,child,Um it's a triangle facing down and and a square facing that way and that way up,
-202,5,test,14,H1,parent,I want you to pick that one,
-203,5,test,14,H1,child,I want to pick this one,
-204,5,test,14,H1,parent,The one which one,
-205,5,test,14,H1,child,This one,
-206,5,test,14,H1,parent,Describe what you are seeing,
-207,5,test,14,H1,child,I'll pick this guy,
-208,5,test,14,H1,parent,That's the right one,
-209,5,test,14,H1,child,He's holding his hands that way,
-210,5,test,14,H1,parent,OK,
-211,5,test,14,H1,child,I'll pick him,
-212,5,test,14,H1,parent,Ok,
-213,5,test,14,H1,child,,child
-340,5,test,28,H1,parent,OK what do you see now,
-341,5,test,28,H1,child,I see a airplane that I see a triangle facing that way and I see a square on the pointing um triangle,
-342,5,test,28,H1,parent,And which one is in the blue box,
-343,5,test,28,H1,child,Um it's the person,
-344,5,test,28,H1,parent,Mhm you said the person is in the blue box,
-345,5,test,28,H1,parent,You said the person is in the blue box,
-346,5,test,28,H1,child,Mhm,
-347,5,test,28,H1,parent,,parent
-458,5,test,38,H1,child,Now I see a person holding his triangle that way again and I see a guy that has a diamond head down and I see him facing that way and he's crawling that way,
-459,5,test,38,H1,parent,zzz,
-460,5,test,38,H1,child,Yeah,
-461,5,test,38,H1,parent,Um can you describe zzz with the person holding something,
-462,5,test,38,H1,child,Yeah he's um holding something without crawling I'll pick it,
-463,5,test,38,H1,parent,No zzz I said can you describe the one zzz where the person is holding something,
-464,5,test,38,H1,child,OK I'll pick this one,
-465,5,test,38,H1,parent,Can you describe it tell me what it looks like,
-465,5,test,38,H1,child,No zzz I said can you describe the one zzz where the person is holding something,
-466,5,test,38,H1,child,It looks like it has a a diamond on a head and it looks like it has a triangle facing that way on the right,
-467,5,test,38,H1,parent,Do you think it's a good choice,
-468,5,test,38,H1,child,Yeah,
-469,5,test,38,H1,parent,OK,
-470,5,test,38,H1,child,Pick it,
-471,5,test,38,H1,parent,Mhm,
-472,5,test,38,H1,child,,child
-473,5,test,38,H1,child,Now I see a now I see a baby crawling over there and a and a doggy and a doggy has a triangle that has a pointy thing facing down and I see two pointy things facing that way and the doggy and a thing and a pointy thing facing and a baby,
-139,5,test,7,I1,parent,Ok you see any uh do you see any more pictures in here,
-140,5,test,7,I1,child,Now I see a doggy and he he's holding on one leg,
-141,5,test,7,I1,parent,Do you see the person who looks like do you see the thing that looks like a person jumping?,
-142,5,test,7,I1,child,Yeah and he's gonna fall down,
-143,5,test,7,I1,parent,I want you to pick the one with the doggy standing,
-144,5,test,7,I1,child,,child
-228,5,test,17,I1,child,Now I see um a triangle facing that way,
-229,5,test,17,I1,parent,Mhm,
-230,5,test,17,I1,child,And I see a guy walking zzz,
-231,5,test,17,I1,parent,And which one is in the blue box?,
-232,5,test,17,I1,child,The um triangle and the face that is a diamond,
-233,5,test,17,I1,parent,Mhm,
-234,5,test,17,I1,parent,,parent
-258,5,test,21,I1,child,Now I see a triangle wait now I see a triangle and a person running and it looks and the face is looking like a diamond,
-259,5,test,21,I1,parent,Mhm,
-260,5,test,21,I1,parent,What do you see,
-261,5,test,21,I1,child,I see a triangle and a face that looks like a diamond zzz,
-262,5,test,21,I1,parent,Do you see them holding something that's what it looks like or no,
-263,5,test,21,I1,child,Um yeah,
-264,5,test,21,I1,parent,OK pick the one where it looks like someone holding something,
-265,5,test,21,I1,child,Like someone running,
-266,5,test,21,I1,parent,Like someone that like hurry up and pick somebody that's holding something,
-267,5,test,21,I1,child,OK like the doggy,
-268,5,test,21,I1,parent,Mhm,
-269,5,test,21,I1,child,OK,
-270,5,test,21,I1,child,,child
-474,5,test,39,I1,parent,Which one do you see in the blue box,
-475,5,test,39,I1,child,Um the doggy,
-476,5,test,39,I1,parent,,parent
-78,5,test,3,K1,child,Mhm,
-84,5,test,3,K1,parent,OK you see the next shape?,
-85,5,test,3,K1,child,Now I see,
-86,5,test,3,K1,parent,You see the next two shapes?,
-87,5,test,3,K1,child,I see the next shape with a triangle,
-88,5,test,3,K1,parent,Mhm,
-89,5,test,3,K1,child,Up and down and I see a point up and now I I see another triangle hanging down,
-90,5,test,3,K1,parent,Does it look doesn't one look like a airplane and one look like a doggy,
-91,5,test,3,K1,child,I don't,
-92,5,test,3,K1,child,I'll pick I'll pick both,
-93,5,test,3,K1,parent,No you can't pick both you have to pick the right one,
-94,5,test,3,K1,child,I'll pick,
-95,5,test,3,K1,parent,Do you see the one that looks like a doggy tryna like stand on uh on its legs,
-96,5,test,3,K1,child,Yeah,
-97,5,test,3,K1,parent,OK I think that's the one you should pick,
-98,5,test,3,K1,child,"Oh, ok",
-99,5,test,3,K1,child,,child
-100,5,test,3,K1,parent,There you go,
-214,5,test,15,K1,child,Now,
-215,5,test,15,K1,parent,What do you see,
-216,5,test,15,K1,child,I see a doggy standing up with his legs,
-217,5,test,15,K1,child,And I see a person running into it,
-218,5,test,15,K1,parent,Now which one is in the blue box,
-219,5,test,15,K1,child,The doggy,
-220,5,test,15,K1,parent,OK,
-221,5,test,15,K1,parent,,parent
-297,5,test,25,K1,parent,What do you see next,
-298,5,test,25,K1,child,I see a square and I see a I see a triangle on a doggy head again,
-299,5,test,25,K1,parent,OK what else do you see on the doggy what other shapes do you see,
-300,5,test,25,K1,child,I see a angle down and he's standing on,
-301,5,test,25,K1,child,Mhm,
-302,5,test,25,K1,parent,Which one do you think you should do,
-303,5,test,25,K1,child,I think I'll pick the um the doggy,
-304,5,test,25,K1,parent,OK,
-305,5,test,25,K1,child,Wait I'll pick the bird again,
-306,5,test,25,K1,parent,No,
-307,5,test,25,K1,child,OK,
-308,5,test,25,K1,parent,That's not what we decided on,
-309,5,test,25,K1,child,OK I'll pick the doggy,
-310,5,test,25,K1,child,,child
-413,5,test,35,K1,child,Now I see a doggy um he's standing on one leg,
-414,5,test,35,K1,parent,Mhm,
-415,5,test,35,K1,child,And he's um and he um standing there,
-416,5,test,35,K1,parent,What else do you see,
-417,5,test,35,K1,child,I see a person running into him,
-418,5,test,35,K1,parent,Mhm,
-419,5,test,35,K1,child,And a blue box,
-420,5,test,35,K1,parent,and now zzz,
-421,5,test,35,K1,child,I think the person is running and the doggy is standing on one leg,
-422,5,test,35,K1,parent,Mhm,
-423,5,test,35,K1,child,I'll pick the person running,
-424,5,test,35,K1,parent,Which one is in the blue box,
-425,5,test,35,K1,child,The doggy standing on one leg,
-426,5,test,35,K1,parent,OK,
-427,5,test,35,K1,parent,,parent
-157,5,test,,,child,OK,
-257,5,test,,,child,Wait I'm not done,
-404,5,test,,,parent,Mhm do you like the bird,
-405,5,test,,,child,yeah I like the birds and i like binoculars to look at bids,
-406,5,test,,,parent,You do,
-407,5,test,,,child,Mhm,
-408,5,test,,,parent,do you do that at school?,
-409,5,test,,,child,no I do that at home,
-410,5,test,,,parent,zzz,
-411,5,test,,,child,OK,
-478,5,test,,,child,Woah sorry,
-479,5,test,,,parent,It's OK,
+subid,type,trial,target,person,utterance,selection,correct
+5,practice,1,apple,child,,child,Y
+5,practice,4,apple,child,Now I see a red apple I'll pick banana,,N
+5,practice,4,apple,parent,What does it tell me the shape of the banana,,N
+5,practice,4,apple,parent,What does it look like is it a circle does it look like a person,,N
+5,practice,4,apple,child,Like it looks like a person,,N
+5,practice,4,apple,child,OK I'll pick banana,,N
+5,practice,4,apple,parent,OK,,N
+5,practice,4,apple,parent,,parent,N
+5,practice,2,artichoke,parent,OK now you tell me what you're seeing in the blue box,,N
+5,practice,2,artichoke,child,Um it's,,N
+5,practice,2,artichoke,parent,On the iPad look on the iPad,,N
+5,practice,2,artichoke,child,In the blue box is a,,N
+5,practice,2,artichoke,parent,But don't say what it is,,N
+5,practice,2,artichoke,child,It's,,N
+5,practice,2,artichoke,parent,Tell me like describe like the shape,,N
+5,practice,2,artichoke,child,Um it's a apple,,N
+5,practice,2,artichoke,parent,What else do you see?,,N
+5,practice,2,artichoke,child,It's a pineapple,,N
+5,practice,2,artichoke,parent,That's what you see,,N
+5,practice,2,artichoke,child,Yeah,,N
+5,practice,2,artichoke,parent,"Well like what's in your blue box, tell me what you see in the blue box",,N
+5,practice,2,artichoke,child,In the blue box is a apple and a pineapple,,N
+5,practice,2,artichoke,parent,Them both,,N
+5,practice,2,artichoke,parent,,parent,N
+5,practice,2,artichoke,child,Yeah,,N
+5,practice,2,artichoke,parent,OK,,N
+5,practice,5,artichoke,parent,OK what do you see,,Y
+5,practice,5,artichoke,child,I see a pineapple and a thing again,,Y
+5,practice,5,artichoke,parent,Are you sure that's a pineapple,,Y
+5,practice,5,artichoke,child,Um this is not  a pineapple,,Y
+5,practice,5,artichoke,parent,Hm but it looks like a pineapple,,Y
+5,practice,5,artichoke,child,No it doesn't I'll just pick pineapple,,Y
+5,practice,5,artichoke,parent,Do you think that's the right answer,,Y
+5,practice,5,artichoke,child,No yeah,,Y
+5,practice,5,artichoke,parent,OK,,Y
+5,practice,5,artichoke,child,,child,Y
+5,practice,3,onion,child,Wait I know what's in here a pineapple and a thing that lives in the ground,,Y
+5,practice,3,onion,parent,Lives in the ground,,Y
+5,practice,3,onion,child,Yeah,,Y
+5,practice,3,onion,parent,OK um,,Y
+5,practice,3,onion,parent,Do you see a circle,,Y
+5,practice,3,onion,child,I see two circles,,Y
+5,practice,3,onion,parent,Do you see,,Y
+5,practice,3,onion,child,The pineapple has a circle and a and this thing has a circle,,Y
+5,practice,3,onion,parent,Click on the one that doesn't look like a pineapple,,Y
+5,practice,3,onion,child,I'll click this,,Y
+5,practice,3,onion,child,,child,Y
+5,practice,3,onion,parent,Good job,,Y
+5,practice,3,onion,child,The banana um it has a line down it has a line going up and then that's how the shape is is,,Y
+5,practice,6,onion,child,Now I see I'll pick this,,Y
+5,practice,6,onion,parent,Describe it to me what does it look like,,Y
+5,practice,6,onion,child,It looks like a pineapple,,Y
+5,practice,6,onion,parent,Mhm what else,,Y
+5,practice,6,onion,child,Um it it has a circle on two sides this one and this one,,Y
+5,practice,6,onion,parent,And which one is in the blue box,,Y
+5,practice,6,onion,child,Um it's this one,,Y
+5,practice,6,onion,parent,Well what does that one look like,,Y
+5,practice,6,onion,child,It looks like you zzz cut it and then and you just peel it,,Y
+5,practice,6,onion,parent,You peel it,,Y
+5,practice,6,onion,child,Yeah when all when all the thing is on it,,Y
+5,practice,6,onion,parent,Mm that sounds good,,Y
+5,practice,6,onion,child,So I'll pick pineapple again,,Y
+5,practice,6,onion,parent,No,,Y
+5,practice,6,onion,child,I'll pick this,,Y
+5,practice,6,onion,parent,,parent,Y
+5,practice,6,onion,parent,Mhm,,Y
+5,practice,6,onion,child,Wait,,Y
+5,practice,6,onion,child,I was gonna choose,,Y
+5,test,5,A1,child,But now,,Y
+5,test,5,A1,child,Now,,Y
+5,test,5,A1,parent,OK,,Y
+5,test,5,A1,child,Now,,Y
+5,test,5,A1,parent,What do you see two shapes together,,Y
+5,test,5,A1,child,zzz,,Y
+5,test,5,A1,parent,OK,,Y
+5,test,5,A1,child,OK wait I see a person a running zzz all going that way,,Y
+5,test,5,A1,parent,Does it look like a person on one standing on one leg,,Y
+5,test,5,A1,child,Yeah he's standing on one leg,,Y
+5,test,5,A1,parent,Yeah that's what it look like right,,Y
+5,test,5,A1,child,So I'll pick it,,Y
+5,test,5,A1,parent,Mhm,,Y
+5,test,5,A1,child,,child,Y
+5,test,19,A1,child,Now I see a doggy standing on its legs and I see a person running into the blue box,,Y
+5,test,19,A1,parent,That's what you see in the blue box,,Y
+5,test,19,A1,child,Mhm,,Y
+5,test,19,A1,parent,,parent,Y
+5,test,19,A1,parent,Yes it does,,Y
+5,test,23,A1,parent,What do you see now,,Y
+5,test,23,A1,child,I see two triangles that that's holding up,,Y
+5,test,23,A1,parent,That's all you see,,Y
+5,test,23,A1,child,Yeah,,Y
+5,test,23,A1,parent,What type of uh which one uh,,Y
+5,test,23,A1,parent,Describe the one on the left to me,,Y
+5,test,23,A1,child,The guy that's running,,Y
+5,test,23,A1,parent,Mhm describe that one to me,,Y
+5,test,23,A1,child,,child,Y
+5,test,23,A1,parent,I said describe you're not even listening I didn't say pick it,,Y
+5,test,23,A1,child,Oh OK you wanted me to um,,Y
+5,test,23,A1,parent,To tell me what it looks like,,Y
+5,test,23,A1,child,Oh,,Y
+5,test,37,A1,child,Now I see a person running in the blue box and I see a guy with a triangle head in his in his face and um triangle that way,,Y
+5,test,37,A1,parent,zzz,,Y
+5,test,37,A1,child,It's a zzz,,Y
+5,test,37,A1,parent,What side zzz,,Y
+5,test,37,A1,child,Um it's the right,,Y
+5,test,37,A1,parent,zzz,,Y
+5,test,37,A1,child,The left,,Y
+5,test,37,A1,parent,Which one is in the blue box,,Y
+5,test,37,A1,child,The guy that's running,,Y
+5,test,37,A1,parent,,parent,Y
+5,test,4,B1,child,Now I see someone having a traingle down,,Y
+5,test,4,B1,parent,Mhm,,Y
+5,test,4,B1,child,And facing that way and and it's down,,Y
+5,test,4,B1,parent,What shapes do you see,,Y
+5,test,4,B1,child,I see,,Y
+5,test,4,B1,child,One going down and a zzz,,Y
+5,test,4,B1,parent,Mm so which one is in the blue box,,Y
+5,test,4,B1,child,Uh it's the person walking,,Y
+5,test,4,B1,parent,That's what it looks like,,Y
+5,test,4,B1,child,Yeah,,Y
+5,test,4,B1,parent,,parent,Y
+5,test,16,B1,parent,What do you see now,,Y
+5,test,16,B1,child,I see a person um walking that way and I see a doggy um he's standing on his legs,,Y
+5,test,16,B1,parent,Can you describe the one with the person walking what shapes do you see,,Y
+5,test,16,B1,child,Um I see a diamond that is that is facing that way,,Y
+5,test,16,B1,parent,Pick the one with the diamond,,Y
+5,test,16,B1,child,,child,Y
+5,test,26,B1,parent,What do you see now,,Y
+5,test,26,B1,child,I see a person crawling and a person walking slow,,Y
+5,test,26,B1,parent,What kind of shapes do you see,,Y
+5,test,26,B1,child,I see I see I see a diamond facing down and I see um a square facing down,,Y
+5,test,26,B1,parent,Which one do you see in the blue box zzz,,Y
+5,test,26,B1,child,Um it's the person,,Y
+5,test,26,B1,parent,There's two persons zzz right,,Y
+5,test,26,B1,child,It's the person in the blue box,,Y
+5,test,26,B1,parent,Well what are they doing,,Y
+5,test,26,B1,parent,On the blocks,,Y
+5,test,26,B1,parent,Is he walking,,Y
+5,test,26,B1,child,He's walking slow,,Y
+5,test,26,B1,parent,,parent,Y
+5,test,26,B1,parent,Mhm,,Y
+5,test,40,B1,child,Now I see a airplane and,,Y
+5,test,40,B1,child,OK and now I see and I see now um wait,,Y
+5,test,40,B1,parent,Uh uh uh uh stay there,,Y
+5,test,40,B1,child,Now I see I see now um I see a person walking slow and a airplane running into him and and it's gonna crush into him,,Y
+5,test,40,B1,parent,It's gonna crash,,Y
+5,test,40,B1,child,Yeah into him,,Y
+5,test,40,B1,parent,Can you describe the person,,Y
+5,test,40,B1,child,OK uh he has a ankle down and he's like walking walking,,Y
+5,test,40,B1,parent,Can you describe the airplane,,Y
+5,test,40,B1,child,Um it um I'll pick three triangles it has three triangles,,Y
+5,test,40,B1,parent,Do you see triangles on the person,,Y
+5,test,40,B1,child,I see a triangle on the person but it looks like he's zzz holding on the person and it and it it's not in a bowl because that's not it because that's where the airplane begins,,Y
+5,test,40,B1,parent,Mhm,,Y
+5,test,40,B1,parent,Which which one do you think you should pick,,Y
+5,test,40,B1,child,I'll pick the person again,,Y
+5,test,40,B1,parent,Why do you think that's a good choice,,Y
+5,test,40,B1,child,No what I'm not gonna pick it because that's why I'm picking the airplane,,Y
+5,test,40,B1,parent,No I said why do you think the person is a good choice,,Y
+5,test,40,B1,child,Because uh it's,,Y
+5,test,40,B1,child,Because it's finna crash into that um person,,Y
+5,test,40,B1,parent,zzz,,Y
+5,test,40,B1,child,Yeah,,Y
+5,test,40,B1,child,I think the person should go around and so the airplane can keep on going that way so it own't crash into him,,Y
+5,test,40,B1,child,So I'll pick the person,,Y
+5,test,40,B1,parent,OK,,Y
+5,test,40,B1,child,,child,Y
+5,test,1,C1,parent,Alright you see the first box?,,N
+5,test,1,C1,child,,child,N
+5,test,11,C1,child,zzz,,Y
+5,test,11,C1,parent,zzz,,Y
+5,test,11,C1,child,I see a zzz I see zzz and the blue box,,Y
+5,test,11,C1,parent,zzz,,Y
+5,test,11,C1,child,Yeah,,Y
+5,test,11,C1,parent,OK,,Y
+5,test,11,C1,parent,,parent,Y
+5,test,27,C1,child,Now I see a um triangle,,Y
+5,test,27,C1,parent,Mhm,,Y
+5,test,27,C1,child,I see a zzz facing down and I see a a diamond and another diamond,,Y
+5,test,27,C1,parent,Mhm,,Y
+5,test,27,C1,parent,What does the person look like the one that looks like they're crawling on the floor on all fours,,Y
+5,test,27,C1,child,Um it's this one,,Y
+5,test,27,C1,parent,"what are they, what what kind of shapes do you see",,Y
+5,test,27,C1,child,I see a diamond,,Y
+5,test,27,C1,parent,Mhm,,Y
+5,test,27,C1,child,Down,,Y
+5,test,27,C1,parent,Mhm,,Y
+5,test,27,C1,child,And I see and I see a triangle pointing and facing this way,,Y
+5,test,27,C1,child,And zzz,,Y
+5,test,27,C1,child,,child,Y
+5,test,27,C1,child,I picked it again,,Y
+5,test,33,C1,child,Now I see someone in the blue box crawling in the blue box,,Y
+5,test,33,C1,parent,And what do you see outside of the blue box,,Y
+5,test,33,C1,child,Um it's a someone running,,Y
+5,test,33,C1,parent,Mhm what shapes do you see,,Y
+5,test,33,C1,child,I see a diamond,,Y
+5,test,33,C1,parent,Mhm,,Y
+5,test,33,C1,child,In there and I see a diamond on the person,,Y
+5,test,33,C1,parent,,parent,Y
+5,test,10,D1,parent,Tell me what you see,,Y
+5,test,10,D1,child,I see a airplane and a blue box,,Y
+5,test,10,D1,child,And I see someone jumping and someone crawling,,Y
+5,test,10,D1,parent,zzz,,Y
+5,test,10,D1,child,zzz,,Y
+5,test,10,D1,parent,,parent,Y
+5,test,12,D1,parent,What do you see now,,Y
+5,test,12,D1,child,I see an airplane and someone jumping,,Y
+5,test,12,D1,parent,Where do you see anyone jumping,,Y
+5,test,12,D1,child,zzz,,Y
+5,test,12,D1,parent,zzz,,Y
+5,test,12,D1,child,zzz,,Y
+5,test,12,D1,child,I didn't see you walking but he I didn't see him stop walking and I think he's holding his hands that way,,Y
+5,test,12,D1,parent,Pick the one that looks like it's a airplane,,Y
+5,test,12,D1,child,,child,Y
+5,test,12,D1,parent,What shapes did you see,,Y
+5,test,12,D1,child,I did saw,,Y
+5,test,12,D1,child,A diamond,,Y
+5,test,12,D1,child,Um and a triangle how do you say down and it's facing that way um down,,Y
+5,test,24,D1,parent,OK what do you see now,,Y
+5,test,24,D1,child,I see a airplane in the blue box and a doggy standing on its legs again,,Y
+5,test,24,D1,parent,Can you see the zzz the zzz other shapes do you see,,Y
+5,test,24,D1,child,I see um a triangle on the doggy head and I see a airplane that has a square on the triangle,,Y
+5,test,24,D1,parent,,parent,Y
+5,test,36,D1,child,"Now I see a airplane that has zzz triangle and I see a person like a bird going to fly, it's taking off",,Y
+5,test,36,D1,parent,How many,,Y
+5,test,36,D1,child,zzz,,Y
+5,test,36,D1,parent,How many triangles do you see in the other thing,,Y
+5,test,36,D1,child,Um it's zzz,,Y
+5,test,36,D1,parent,It's zzz,,Y
+5,test,36,D1,parent,How many triangles do you see,,Y
+5,test,36,D1,child,Um one and two and three,,Y
+5,test,36,D1,parent,Uh huh,,Y
+5,test,36,D1,child,I'll pick the bird,,Y
+5,test,36,D1,parent,No,,Y
+5,test,36,D1,child,I'll pick,,Y
+5,test,36,D1,parent,It's not a good choice,,Y
+5,test,36,D1,child,OK I'll pick the rocket,,Y
+5,test,36,D1,parent,It's a rocket now?,,Y
+5,test,36,D1,child,Wait it's a airplane first,,Y
+5,test,36,D1,parent,OK,,Y
+5,test,36,D1,child,So I'll pick it,,Y
+5,test,36,D1,parent,Mhm,,Y
+5,test,36,D1,child,,child,Y
+5,test,9,E1,child,Now now I see someone jumping and he's gonna fall down and I see someone um,,N
+5,test,9,E1,child,,child,N
+5,test,9,E1,child,Wait I picked it,,N
+5,test,13,E1,parent,What do you see now,,Y
+5,test,13,E1,child,I see someone jumping in the blue box and someone running to into the blue box to hit him,,Y
+5,test,13,E1,parent,zzz blue box,,Y
+5,test,13,E1,child,Hm,,Y
+5,test,13,E1,parent,Ok which one was in the blue box,,Y
+5,test,13,E1,child,Um it's the jumping guy,,Y
+5,test,13,E1,parent,OK,,Y
+5,test,13,E1,parent,,parent,Y
+5,test,29,E1,child,Now I see a person walking slow and I see a person jumping,,Y
+5,test,29,E1,parent,What does the person who is jumping look like what kind of shapes do you see,,Y
+5,test,29,E1,child,I see a um triangle pointing um thing facing up and I see a pointing um,,Y
+5,test,29,E1,child,,child,Y
+5,test,29,E1,child,Wow I did it I just tapped it,,Y
+5,test,29,E1,parent,zzz,,Y
+5,test,29,E1,child,Yeah I did just tap it is that OK,,Y
+5,test,29,E1,parent,Mhm,,Y
+5,test,29,E1,child,OK,,Y
+5,test,31,E1,child,Now I see someone jumped and I see a triangle and now they're pointing it facing down,,Y
+5,test,31,E1,parent,Tell me what you see in the blue box,,Y
+5,test,31,E1,child,Um it's the person jumped,,Y
+5,test,31,E1,parent,,parent,Y
+5,test,2,F1,child,I pick I'll pick this one,,N
+5,test,2,F1,parent,OK no wait you have to describe to me what it looks like,,N
+5,test,2,F1,child,It looks like it has um one point on like it has one point right here and another point right here and it looks like a line down and a line down right here,,N
+5,test,2,F1,parent,Does it look like a person,,N
+5,test,2,F1,child,Yeah,,N
+5,test,2,F1,parent,What does it look like the person is doing,,N
+5,test,2,F1,child,I I think he's walking,,N
+5,test,2,F1,parent,It looks like a person walking?,,N
+5,test,2,F1,parent,OK,,N
+5,test,2,F1,child,I'll pick this,,N
+5,test,2,F1,parent,,parent,N
+5,test,2,F1,parent,Alright,,N
+5,test,2,F1,child,Wait,,N
+5,test,20,F1,child,Now I see now I see a thing climbing and I see someone crawling that way,,Y
+5,test,20,F1,parent,zzz,,Y
+5,test,20,F1,child,Yes it do,,Y
+5,test,20,F1,child,Yes it does,,Y
+5,test,20,F1,parent,Pick that pick the one that look like a diamond,,Y
+5,test,20,F1,child,OK,,Y
+5,test,20,F1,child,,child,Y
+5,test,30,F1,parent,What do you see now,,Y
+5,test,30,F1,child,I see I see a guy and then I see a doggy um he's standing on his legs,,Y
+5,test,30,F1,parent,Which one do you see in the blue box,,Y
+5,test,30,F1,child,Um it's the guy,,Y
+5,test,30,F1,parent,OK,,Y
+5,test,30,F1,parent,,parent,Y
+5,test,34,F1,parent,What do you see now,,Y
+5,test,34,F1,child,I see bird looking like he's gonna fly,,Y
+5,test,34,F1,parent,Like he's ready for take off,,Y
+5,test,34,F1,child,Yeah,,Y
+5,test,34,F1,parent,And what else you see,,Y
+5,test,34,F1,child,I see um I see a guy again is and his hands over that way,,Y
+5,test,34,F1,child,,child,Y
+5,test,8,G1,child,Now I see someone crawling,,N
+5,test,8,G1,parent,Crawling and what else,,N
+5,test,8,G1,child,And it looks like a shape like a diamond again and it and it looks like it's going down and and up and go down,,N
+5,test,8,G1,parent,Which one do you see in the blue box,,N
+5,test,8,G1,child,It's this one,,N
+5,test,8,G1,parent,Which one describe it to me,,N
+5,test,8,G1,child,It's the person it's the person that way,,N
+5,test,8,G1,parent,Which one is what does it look like they're doing,,N
+5,test,8,G1,child,It looks like he's um walking um and he's holding his hands on that way,,N
+5,test,8,G1,parent,The one that looks like he's crawling,,N
+5,test,8,G1,child,Yeah,,N
+5,test,8,G1,parent,,parent,N
+5,test,18,G1,parent,What do you see now,,N
+5,test,18,G1,child,I see a airplane coming in and toward this guy the person that's pointing that way,,N
+5,test,18,G1,parent,How many zzz do you see,,N
+5,test,18,G1,child,I see um ok um a square on the top there um,,N
+5,test,18,G1,parent,Do you have somebody kneel zzz,,N
+5,test,18,G1,child,They on um,,N
+5,test,18,G1,child,This guy is on top of the triangle,,N
+5,test,18,G1,parent,zzz pick that one,,N
+5,test,18,G1,child,OK,,N
+5,test,18,G1,child,,child,N
+5,test,22,G1,child,Now I see someone its triangle is facing that way,,Y
+5,test,22,G1,parent,Mhm,,Y
+5,test,22,G1,child,And I see the um blue square and I see the pointing thing up and I see a doggy standing on its legs,,Y
+5,test,22,G1,parent,Which one is in the blue box,,Y
+5,test,22,G1,child,The person that has a triangle facing that way,,Y
+5,test,22,G1,parent,The person,,Y
+5,test,22,G1,child,Yeah,,Y
+5,test,22,G1,parent,,parent,Y
+5,test,32,G1,parent,What do you see now,,Y
+5,test,32,G1,child,I see um I see a guy that that that he's holding his hands on the um that way zzz this is the last one,,Y
+5,test,32,G1,parent,Mhm,,Y
+5,test,32,G1,child,Like he's pointing um he's pointing his hands on the right,,Y
+5,test,32,G1,parent,Mhm,,Y
+5,test,32,G1,parent,Does it look like somebody kneeling,,Y
+5,test,32,G1,child,I think he's like holding like a like he's holding like zzz like a gondora zzz holding the um he's holding the square going that way,,Y
+5,test,32,G1,parent,Yeah,,Y
+5,test,32,G1,parent,Does it looks like criss cross applesauce,,Y
+5,test,32,G1,child,Like he's not like he's not holding it in his hands um like he's not holding anything like uh like he's not holding anything like zzz over there and he's not um zzz over there and like he's not doing that like he's um zzz over there,,Y
+5,test,32,G1,parent,Mhm,,Y
+5,test,32,G1,parent,Tell me what you see with the person whose legs look like they're folded,,Y
+5,test,32,G1,child,Um it's this one,,Y
+5,test,32,G1,parent,zzz,,Y
+5,test,32,G1,child,I'll pick it,,Y
+5,test,32,G1,parent,What does it look like,,Y
+5,test,32,G1,child,It looks like a guy who has a square on his head and it looks like a square down pointing that way,,Y
+5,test,32,G1,parent,OK you can please push that one,,Y
+5,test,32,G1,child,OK,,Y
+5,test,32,G1,parent,Do you think that's a good choice,,Y
+5,test,32,G1,child,Yeah,,Y
+5,test,32,G1,parent,OK,,Y
+5,test,32,G1,child,,child,Y
+5,test,6,H1,parent,Now what do you see,,Y
+5,test,6,H1,child,I see someone jump into the air and he gonna fall down,,Y
+5,test,6,H1,parent,What else do you see,,Y
+5,test,6,H1,child,I see I see a a diamond in a blue box up,,Y
+5,test,6,H1,parent,So you see it in the blue box,,Y
+5,test,6,H1,child,Yeah turning up,,Y
+5,test,6,H1,parent,He's holding something,,Y
+5,test,6,H1,child,Yeah,,Y
+5,test,6,H1,parent,That's what it looks like?,,Y
+5,test,6,H1,child,Yeah,,Y
+5,test,6,H1,parent,OK,,Y
+5,test,6,H1,parent,,parent,Y
+5,test,6,H1,child,So,,Y
+5,test,14,H1,child,Now I see someone running,,Y
+5,test,14,H1,parent,Mhm,,Y
+5,test,14,H1,child,And someone with hands facing that way,,Y
+5,test,14,H1,parent,What do you see with the person who has their hands facing that way like what shapes do you see,,Y
+5,test,14,H1,child,Like it's this one,,Y
+5,test,14,H1,parent,What shapes,,Y
+5,test,14,H1,child,Um it's a triangle facing down and and a square facing that way and that way up,,Y
+5,test,14,H1,parent,I want you to pick that one,,Y
+5,test,14,H1,child,I want to pick this one,,Y
+5,test,14,H1,parent,The one which one,,Y
+5,test,14,H1,child,This one,,Y
+5,test,14,H1,parent,Describe what you are seeing,,Y
+5,test,14,H1,child,I'll pick this guy,,Y
+5,test,14,H1,parent,That's the right one,,Y
+5,test,14,H1,child,He's holding his hands that way,,Y
+5,test,14,H1,parent,OK,,Y
+5,test,14,H1,child,I'll pick him,,Y
+5,test,14,H1,parent,Ok,,Y
+5,test,14,H1,child,,child,Y
+5,test,28,H1,parent,OK what do you see now,,Y
+5,test,28,H1,child,I see a airplane that I see a triangle facing that way and I see a square on the pointing um triangle,,Y
+5,test,28,H1,parent,And which one is in the blue box,,Y
+5,test,28,H1,child,Um it's the person,,Y
+5,test,28,H1,parent,Mhm you said the person is in the blue box,,Y
+5,test,28,H1,parent,You said the person is in the blue box,,Y
+5,test,28,H1,child,Mhm,,Y
+5,test,28,H1,parent,,parent,Y
+5,test,38,H1,child,Now I see a person holding his triangle that way again and I see a guy that has a diamond head down and I see him facing that way and he's crawling that way,,Y
+5,test,38,H1,parent,zzz,,Y
+5,test,38,H1,child,Yeah,,Y
+5,test,38,H1,parent,Um can you describe zzz with the person holding something,,Y
+5,test,38,H1,child,Yeah he's um holding something without crawling I'll pick it,,Y
+5,test,38,H1,parent,No zzz I said can you describe the one zzz where the person is holding something,,Y
+5,test,38,H1,child,OK I'll pick this one,,Y
+5,test,38,H1,parent,Can you describe it tell me what it looks like,,Y
+5,test,38,H1,child,No zzz I said can you describe the one zzz where the person is holding something,,Y
+5,test,38,H1,child,It looks like it has a a diamond on a head and it looks like it has a triangle facing that way on the right,,Y
+5,test,38,H1,parent,Do you think it's a good choice,,Y
+5,test,38,H1,child,Yeah,,Y
+5,test,38,H1,parent,OK,,Y
+5,test,38,H1,child,Pick it,,Y
+5,test,38,H1,parent,Mhm,,Y
+5,test,38,H1,child,,child,Y
+5,test,38,H1,child,Now I see a now I see a baby crawling over there and a and a doggy and a doggy has a triangle that has a pointy thing facing down and I see two pointy things facing that way and the doggy and a thing and a pointy thing facing and a baby,,Y
+5,test,7,I1,parent,Ok you see any uh do you see any more pictures in here,,Y
+5,test,7,I1,child,Now I see a doggy and he he's holding on one leg,,Y
+5,test,7,I1,parent,Do you see the person who looks like do you see the thing that looks like a person jumping?,,Y
+5,test,7,I1,child,Yeah and he's gonna fall down,,Y
+5,test,7,I1,parent,I want you to pick the one with the doggy standing,,Y
+5,test,7,I1,child,,child,Y
+5,test,17,I1,child,Now I see um a triangle facing that way,,Y
+5,test,17,I1,parent,Mhm,,Y
+5,test,17,I1,child,And I see a guy walking zzz,,Y
+5,test,17,I1,parent,And which one is in the blue box?,,Y
+5,test,17,I1,child,The um triangle and the face that is a diamond,,Y
+5,test,17,I1,parent,Mhm,,Y
+5,test,17,I1,parent,,parent,Y
+5,test,21,I1,child,Now I see a triangle wait now I see a triangle and a person running and it looks and the face is looking like a diamond,,Y
+5,test,21,I1,parent,Mhm,,Y
+5,test,21,I1,parent,What do you see,,Y
+5,test,21,I1,child,I see a triangle and a face that looks like a diamond zzz,,Y
+5,test,21,I1,parent,Do you see them holding something that's what it looks like or no,,Y
+5,test,21,I1,child,Um yeah,,Y
+5,test,21,I1,parent,OK pick the one where it looks like someone holding something,,Y
+5,test,21,I1,child,Like someone running,,Y
+5,test,21,I1,parent,Like someone that like hurry up and pick somebody that's holding something,,Y
+5,test,21,I1,child,OK like the doggy,,Y
+5,test,21,I1,parent,Mhm,,Y
+5,test,21,I1,child,OK,,Y
+5,test,21,I1,child,,child,Y
+5,test,39,I1,parent,Which one do you see in the blue box,,Y
+5,test,39,I1,child,Um the doggy,,Y
+5,test,39,I1,parent,,parent,Y
+5,test,3,K1,child,Mhm,,Y
+5,test,3,K1,parent,OK you see the next shape?,,Y
+5,test,3,K1,child,Now I see,,Y
+5,test,3,K1,parent,You see the next two shapes?,,Y
+5,test,3,K1,child,I see the next shape with a triangle,,Y
+5,test,3,K1,parent,Mhm,,Y
+5,test,3,K1,child,Up and down and I see a point up and now I I see another triangle hanging down,,Y
+5,test,3,K1,parent,Does it look doesn't one look like a airplane and one look like a doggy,,Y
+5,test,3,K1,child,I don't,,Y
+5,test,3,K1,child,I'll pick I'll pick both,,Y
+5,test,3,K1,parent,No you can't pick both you have to pick the right one,,Y
+5,test,3,K1,child,I'll pick,,Y
+5,test,3,K1,parent,Do you see the one that looks like a doggy tryna like stand on uh on its legs,,Y
+5,test,3,K1,child,Yeah,,Y
+5,test,3,K1,parent,OK I think that's the one you should pick,,Y
+5,test,3,K1,child,"Oh, ok",,Y
+5,test,3,K1,child,,child,Y
+5,test,3,K1,parent,There you go,,Y
+5,test,15,K1,child,Now,,Y
+5,test,15,K1,parent,What do you see,,Y
+5,test,15,K1,child,I see a doggy standing up with his legs,,Y
+5,test,15,K1,child,And I see a person running into it,,Y
+5,test,15,K1,parent,Now which one is in the blue box,,Y
+5,test,15,K1,child,The doggy,,Y
+5,test,15,K1,parent,OK,,Y
+5,test,15,K1,parent,,parent,Y
+5,test,25,K1,parent,What do you see next,,Y
+5,test,25,K1,child,I see a square and I see a I see a triangle on a doggy head again,,Y
+5,test,25,K1,parent,OK what else do you see on the doggy what other shapes do you see,,Y
+5,test,25,K1,child,I see a angle down and he's standing on,,Y
+5,test,25,K1,child,Mhm,,Y
+5,test,25,K1,parent,Which one do you think you should do,,Y
+5,test,25,K1,child,I think I'll pick the um the doggy,,Y
+5,test,25,K1,parent,OK,,Y
+5,test,25,K1,child,Wait I'll pick the bird again,,Y
+5,test,25,K1,parent,No,,Y
+5,test,25,K1,child,OK,,Y
+5,test,25,K1,parent,That's not what we decided on,,Y
+5,test,25,K1,child,OK I'll pick the doggy,,Y
+5,test,25,K1,child,,child,Y
+5,test,35,K1,child,Now I see a doggy um he's standing on one leg,,Y
+5,test,35,K1,parent,Mhm,,Y
+5,test,35,K1,child,And he's um and he um standing there,,Y
+5,test,35,K1,parent,What else do you see,,Y
+5,test,35,K1,child,I see a person running into him,,Y
+5,test,35,K1,parent,Mhm,,Y
+5,test,35,K1,child,And a blue box,,Y
+5,test,35,K1,parent,and now zzz,,Y
+5,test,35,K1,child,I think the person is running and the doggy is standing on one leg,,Y
+5,test,35,K1,parent,Mhm,,Y
+5,test,35,K1,child,I'll pick the person running,,Y
+5,test,35,K1,parent,Which one is in the blue box,,Y
+5,test,35,K1,child,The doggy standing on one leg,,Y
+5,test,35,K1,parent,OK,,Y
+5,test,35,K1,parent,,parent,Y

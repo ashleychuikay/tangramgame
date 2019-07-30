@@ -1,129 +1,116 @@
-Timeline.ordinal,subid,type,trial,target,person,utterance,selection
-0,21,practice,1,apple,parent,An apple,
-1,21,practice,1,apple,parent,Okay tap on it! Go!,
-2,21,practice,1,apple,child,,child
-9,21,practice,4,apple,parent,I think it's your turn,
-10,21,practice,4,apple,child,"Oh, the apple's in the blue box",
-11,21,practice,4,apple,parent,,parent
-3,21,practice,2,artichoke,child,A radish?,
-4,21,practice,2,artichoke,parent,What? A radish?,
-5,21,practice,2,artichoke,parent,,parent
-6,21,practice,2,artichoke,parent,I think it's an onion,
-12,21,practice,5,artichoke,parent,An artichoke!,
-13,21,practice,5,artichoke,child,Press?,
-14,21,practice,5,artichoke,parent,No you press it!,
-15,21,practice,5,artichoke,child,,child
-7,21,practice,3,onion,parent,"Um, uh, an onion",
-8,21,practice,3,onion,child,,child
-17,21,practice,6,onion,child,An artichoke,
-18,21,practice,6,onion,parent,Yes!,
-19,21,practice,6,onion,parent,,parent
-45,21,test,8,A1,child,"The person that is, like, it's running",
-46,21,test,8,A1,parent,,parent
-65,21,test,16,A1,parent,"Uh, the one who is running",
-66,21,test,16,A1,child,,child
-94,21,test,28,A1,child,A person holding a tray,
-95,21,test,28,A1,parent,,parent
-108,21,test,34,A1,parent,One who's running,
-109,21,test,34,A1,child,,child
-30,21,test,2,B1,child,A one that's bending over,
-31,21,test,2,B1,parent,,parent
-60,21,test,14,B1,parent,Person who is walking contemplatively,
-61,21,test,14,B1,parent,thoughtfully,
-62,21,test,14,B1,child,,child
-81,21,test,22,B1,child,"Uh, person that's sadly walking",
-82,21,test,22,B1,parent,,parent
-83,21,test,22,B1,parent,Sadly walking,
-104,21,test,32,B1,parent,The one who's walking slowly sadly,
-105,21,test,32,B1,child,,child
-38,21,test,6,C1,child,A person that's running,
-39,21,test,6,C1,parent,,parent
-75,21,test,20,C1,parent,The one who is bending over touching the ground,
-76,21,test,20,C1,child,,child
-90,21,test,26,C1,child,A person that's bending,
-91,21,test,26,C1,parent,,parent
-124,21,test,40,C1,parent,the one who is bent over,
-125,21,test,40,C1,child,Both of them are bent over,
-126,21,test,40,C1,parent,bent over on the ground,
-127,21,test,40,C1,child,,child
-36,21,test,5,D1,parent,A man- a person who's lying down and reading a book,
-37,21,test,5,D1,child,,child
-53,21,test,11,D1,parent,Do you have a box?,
-54,21,test,11,D1,child,"Um, the one that has a book is praying",
-55,21,test,11,D1,parent,,parent
-92,21,test,27,D1,parent,A person who is lying down and reading a book,
-93,21,test,27,D1,child,,child
-106,21,test,33,D1,child,The one that's running,
-107,21,test,33,D1,parent,,parent
-28,21,test,1,E1,parent,"Okay, the man that's looking like he's leaping in the air",
-29,21,test,1,E1,child,,child
-73,21,test,19,E1,child,"Okay, um, the one that's jumping up",
-74,21,test,19,E1,parent,,parent
-84,21,test,23,E1,parent,A person who's leaping into the air,
-85,21,test,23,E1,child,,child
-115,21,test,37,E1,child,The one that's running,
-116,21,test,37,E1,parent,,parent
-47,21,test,9,F1,parent,"A person who looks like their looking up, their pointing up to the sky",
-48,21,test,9,F1,child,,child
-67,21,test,17,F1,child,The one that looks like a dog,
-68,21,test,17,F1,child,With the arrow,
-69,21,test,17,F1,parent,,parent
-88,21,test,25,F1,parent,A person who's pointing up to the sky,
-89,21,test,25,F1,child,,child
-110,21,test,35,F1,child,The one that's leaping up into the sky,
-111,21,test,35,F1,parent,,parent
-34,21,test,4,G1,child,A one that's sitting down,
-35,21,test,4,G1,parent,,parent
-56,21,test,12,G1,parent,Person who's sitting down,
-57,21,test,12,G1,child,,child
-86,21,test,24,G1,child,Person that's sitting,
-87,21,test,24,G1,parent,,parent
-112,21,test,36,G1,parent,The one who is sitting,
-113,21,test,36,G1,parent,Like looking down,
-114,21,test,36,G1,child,,child
-40,21,test,7,H1,parent,A person who is praying,
-41,21,test,7,H1,parent,"Oh, um, praying like in a church, not at the mosque",
-42,21,test,7,H1,child,Hmm,
-43,21,test,7,H1,parent,A person who looks like they're holding a book,
-44,21,test,7,H1,child,,child
-58,21,test,13,H1,child,Person that's running,
-59,21,test,13,H1,parent,,parent
-96,21,test,29,H1,parent,A person who is holding a book,
-97,21,test,29,H1,child,,child
-102,21,test,31,H1,child,"Um, the one who's bending over",
-103,21,test,31,H1,parent,,parent
-32,21,test,3,I1,parent,A man who has a tray in his hand,
-33,21,test,3,I1,child,,child
-63,21,test,15,I1,child,One that's pointing up to the sky,
-64,21,test,15,I1,parent,,parent
-79,21,test,21,I1,parent,"Man holding a tray, a man holding a tray",
-80,21,test,21,I1,child,,child
-121,21,test,39,I1,parent,Your turn,
-122,21,test,39,I1,child,The one that has a tray,
-123,21,test,39,I1,parent,,parent
-49,21,test,10,K1,child,"Uh, the one that's swimming",
-50,21,test,10,K1,parent,Running?,
-51,21,test,10,K1,child,swimming,
-52,21,test,10,K1,parent,,parent
-70,21,test,18,K1,parent,"Uh, the one who looks like they're bending over and leaning on something, not running",
-71,21,test,18,K1,child,,child
-72,21,test,18,K1,child,That looks like they're touching the sky,
-98,21,test,30,K1,parent,"A person who's, I mean the dog",
-99,21,test,30,K1,parent,,parent
-117,21,test,38,K1,parent,"The one who looks like, you call it a dog",
-118,21,test,38,K1,child,Yeah!,
-119,21,test,38,K1,parent,Go ahead,
-120,21,test,38,K1,child,,child
-16,21,test,,,parent,Your turn,
-20,21,test,,,parent,"So if you get something with a blue box around it, it means it's your turn to speak and tell me which one to pick. If you don't have a blue box, you're telling me what to do. If you have the blue box, you're the boss",
-21,21,test,,,child,Okay,
-22,21,test,,,parent,Or is your box blue or red?,
-23,21,test,,,child,Okay let's just do it,
-24,21,test,,,parent,"Okay I think, so can we start?",
-25,21,test,,,parent,"Hey are you ready, are you excited?",
-26,21,test,,,child,You go first,
-27,21,test,,,parent,Well we don't know who's first. Okay,
-77,21,test,,,parent,"Good job, time for next round. Does it say that on yours? Look at the top",
-78,21,test,,,parent,Okay here we go,
-100,21,test,,,parent,"Good job, time for next round. Can you see if it says that on yours?",
-101,21,test,,,parent,"Do you have a box, honey?",
+subid,type,trial,target,person,utterance,selection,correct
+21,practice,1,apple,parent,An apple,,Y
+21,practice,1,apple,parent,Okay tap on it! Go!,,Y
+21,practice,1,apple,child,,child,Y
+21,practice,4,apple,parent,I think it's your turn,,Y
+21,practice,4,apple,child,"Oh, the apple's in the blue box",,Y
+21,practice,4,apple,parent,,parent,Y
+21,practice,2,artichoke,child,A radish?,,N
+21,practice,2,artichoke,parent,What? A radish?,,N
+21,practice,2,artichoke,parent,,parent,N
+21,practice,2,artichoke,parent,I think it's an onion,,N
+21,practice,5,artichoke,parent,An artichoke!,,Y
+21,practice,5,artichoke,child,Press?,,Y
+21,practice,5,artichoke,parent,No you press it!,,Y
+21,practice,5,artichoke,child,,child,Y
+21,practice,3,onion,parent,"Um, uh, an onion",,Y
+21,practice,3,onion,child,,child,Y
+21,practice,6,onion,child,An artichoke,,N
+21,practice,6,onion,parent,Yes!,,N
+21,practice,6,onion,parent,,parent,N
+21,test,8,A1,child,"The person that is, like, it's running",,Y
+21,test,8,A1,parent,,parent,Y
+21,test,16,A1,parent,"Uh, the one who is running",,Y
+21,test,16,A1,child,,child,Y
+21,test,28,A1,child,A person holding a tray,,N
+21,test,28,A1,parent,,parent,N
+21,test,34,A1,parent,One who's running,,Y
+21,test,34,A1,child,,child,Y
+21,test,2,B1,child,A one that's bending over,,N
+21,test,2,B1,parent,,parent,N
+21,test,14,B1,parent,Person who is walking contemplatively,,Y
+21,test,14,B1,parent,thoughtfully,,Y
+21,test,14,B1,child,,child,Y
+21,test,22,B1,child,"Uh, person that's sadly walking",,Y
+21,test,22,B1,parent,,parent,Y
+21,test,22,B1,parent,Sadly walking,,Y
+21,test,32,B1,parent,The one who's walking slowly sadly,,Y
+21,test,32,B1,child,,child,Y
+21,test,6,C1,child,A person that's running,,N
+21,test,6,C1,parent,,parent,N
+21,test,20,C1,parent,The one who is bending over touching the ground,,Y
+21,test,20,C1,child,,child,Y
+21,test,26,C1,child,A person that's bending,,Y
+21,test,26,C1,parent,,parent,Y
+21,test,40,C1,parent,the one who is bent over,,Y
+21,test,40,C1,child,Both of them are bent over,,Y
+21,test,40,C1,parent,bent over on the ground,,Y
+21,test,40,C1,child,,child,Y
+21,test,5,D1,parent,A man- a person who's lying down and reading a book,,Y
+21,test,5,D1,child,,child,Y
+21,test,11,D1,parent,Do you have a box?,,N
+21,test,11,D1,child,"Um, the one that has a book is praying",,N
+21,test,11,D1,parent,,parent,N
+21,test,27,D1,parent,A person who is lying down and reading a book,,Y
+21,test,27,D1,child,,child,Y
+21,test,33,D1,child,The one that's running,,N
+21,test,33,D1,parent,,parent,N
+21,test,1,E1,parent,"Okay, the man that's looking like he's leaping in the air",,Y
+21,test,1,E1,child,,child,Y
+21,test,19,E1,child,"Okay, um, the one that's jumping up",,Y
+21,test,19,E1,parent,,parent,Y
+21,test,23,E1,parent,A person who's leaping into the air,,Y
+21,test,23,E1,child,,child,Y
+21,test,37,E1,child,The one that's running,,N
+21,test,37,E1,parent,,parent,N
+21,test,9,F1,parent,"A person who looks like their looking up, their pointing up to the sky",,Y
+21,test,9,F1,child,,child,Y
+21,test,17,F1,child,The one that looks like a dog,,N
+21,test,17,F1,child,With the arrow,,N
+21,test,17,F1,parent,,parent,N
+21,test,25,F1,parent,A person who's pointing up to the sky,,Y
+21,test,25,F1,child,,child,Y
+21,test,35,F1,child,The one that's leaping up into the sky,,Y
+21,test,35,F1,parent,,parent,Y
+21,test,4,G1,child,A one that's sitting down,,Y
+21,test,4,G1,parent,,parent,Y
+21,test,12,G1,parent,Person who's sitting down,,Y
+21,test,12,G1,child,,child,Y
+21,test,24,G1,child,Person that's sitting,,Y
+21,test,24,G1,parent,,parent,Y
+21,test,36,G1,parent,The one who is sitting,,Y
+21,test,36,G1,parent,Like looking down,,Y
+21,test,36,G1,child,,child,Y
+21,test,7,H1,parent,A person who is praying,,Y
+21,test,7,H1,parent,"Oh, um, praying like in a church, not at the mosque",,Y
+21,test,7,H1,child,Hmm,,Y
+21,test,7,H1,parent,A person who looks like they're holding a book,,Y
+21,test,7,H1,child,,child,Y
+21,test,13,H1,child,Person that's running,,N
+21,test,13,H1,parent,,parent,N
+21,test,29,H1,parent,A person who is holding a book,,Y
+21,test,29,H1,child,,child,Y
+21,test,31,H1,child,"Um, the one who's bending over",,N
+21,test,31,H1,parent,,parent,N
+21,test,3,I1,parent,A man who has a tray in his hand,,Y
+21,test,3,I1,child,,child,Y
+21,test,15,I1,child,One that's pointing up to the sky,,N
+21,test,15,I1,parent,,parent,N
+21,test,21,I1,parent,"Man holding a tray, a man holding a tray",,Y
+21,test,21,I1,child,,child,Y
+21,test,39,I1,parent,Your turn,,Y
+21,test,39,I1,child,The one that has a tray,,Y
+21,test,39,I1,parent,,parent,Y
+21,test,10,K1,child,"Uh, the one that's swimming",,N
+21,test,10,K1,parent,Running?,,N
+21,test,10,K1,child,swimming,,N
+21,test,10,K1,parent,,parent,N
+21,test,18,K1,parent,"Uh, the one who looks like they're bending over and leaning on something, not running",,N
+21,test,18,K1,child,,child,N
+21,test,18,K1,child,That looks like they're touching the sky,,N
+21,test,30,K1,parent,"A person who's, I mean the dog",,Y
+21,test,30,K1,parent,,parent,Y
+21,test,38,K1,parent,"The one who looks like, you call it a dog",,Y
+21,test,38,K1,child,Yeah!,,Y
+21,test,38,K1,parent,Go ahead,,Y
+21,test,38,K1,child,,child,Y

@@ -1,126 +1,111 @@
-Timeline.ordinal,subid,type,trial,target,person,utterance,selection
-0,35,practice,1,apple,parent,"inside my blue box i have an apple, can you press the apple?",
-1,35,practice,1,apple,child,,child
-10,35,practice,4,apple,child,in my blue box i have an apple,
-11,35,practice,4,apple,parent,okay,
-12,35,practice,4,apple,parent,,parent
-3,35,practice,2,artichoke,child,lettuce,
-4,35,practice,2,artichoke,parent,"lettuce? maybe an artichoke, it has a lot of leaves?",
-5,35,practice,2,artichoke,child,artichoke,
-6,35,practice,2,artichoke,parent,yeah,
-7,35,practice,2,artichoke,parent,,parent
-13,35,practice,5,artichoke,parent,in my blue box i have the artichoke,
-14,35,practice,5,artichoke,child,,child
-8,35,practice,3,onion,parent,inside my blue box i have an onion,
-9,35,practice,3,onion,child,,child
-15,35,practice,6,onion,child,in my blue box i have the onion,
-16,35,practice,6,onion,parent,,parent
-17,35,test,1,A1,child,,child
-18,35,test,1,A1,parent,in my blue box.. i had someone running,
-59,35,test,15,A1,child,i have a person who is walking,
-60,35,test,15,A1,parent,,parent
-95,35,test,29,A1,parent,in my blue box i have a person running,
-96,35,test,29,A1,child,,child
-117,35,test,37,A1,child,i have a person running,
-118,35,test,37,A1,parent,,parent
-34,35,test,6,B1,child,i have a tired person,
-35,35,test,6,B1,parent,a tired person,
-36,35,test,6,B1,parent,,parent
-57,35,test,14,B1,parent,i have a person who is walking,
-58,35,test,14,B1,child,,child
-93,35,test,28,B1,child,i have a tired person,
-94,35,test,28,B1,parent,,parent
-119,35,test,38,B1,parent,in my blue box i have a tired person walking,
-120,35,test,38,B1,child,,child
-42,35,test,9,C1,parent,in my blue box i have a sleeping person,
-43,35,test,9,C1,child,,child
-64,35,test,17,C1,child,a person crawling,
-65,35,test,17,C1,parent,,parent
-81,35,test,23,C1,parent,in my blue box i have a person lying down and sleeping,
-82,35,test,23,C1,child,,child
-113,35,test,35,C1,child,a person crawling,
-114,35,test,35,C1,parent,,parent
-20,35,test,2,D1,child,"um, this",
-21,35,test,2,D1,parent,does it look like something with..? one of mine looks a little like a dog and one looks kinda like an airplane,
-22,35,test,2,D1,child,a dog,
-23,35,test,2,D1,parent,a dog?,
-24,35,test,2,D1,child,an airplane,
-25,35,test,2,D1,parent,an airplane? it looks like someone flying an airplane?,
-26,35,test,2,D1,parent,,parent
-51,35,test,12,D1,parent,in my blue box i have a person flying an airplane,
-52,35,test,12,D1,child,,child
-97,35,test,30,D1,child,"um, a person that fell down",
-98,35,test,30,D1,parent,,parent
-99,35,test,30,D1,child,i have a person that fell down,
-104,35,test,32,D1,parent,in my blue box i have an airplane,
-105,35,test,32,D1,child,,child
-37,35,test,7,E1,parent,"in my blue box i have a person jumping up, they look really happy",
-38,35,test,7,E1,child,,child
-69,35,test,19,E1,child,a person falling,
-70,35,test,19,E1,parent,,parent
-74,35,test,21,E1,parent,in my blue box i have a person who looks like they are jumping and really happy,
-75,35,test,21,E1,child,,child
-76,35,test,21,E1,parent,but it doesn't look like they're running,
-121,35,test,39,E1,child,i have a person jumping up,
-122,35,test,39,E1,parent,,parent
-44,35,test,10,F1,child,i have a bird,
-45,35,test,10,F1,parent,you have a bird in your blue box?,
-46,35,test,10,F1,parent,,parent
-71,35,test,20,F1,parent,"in my blue box i have what looks to me like a bird, a bird running or something",
-72,35,test,20,F1,child,,child
-78,35,test,22,F1,child,a person that looks like a bird running or something,
-79,35,test,22,F1,parent,okay,
-80,35,test,22,F1,parent,,parent
-123,35,test,40,F1,parent,in my blue box i have a flying bird,
-124,35,test,40,F1,child,,child
-29,35,test,4,G1,child,in my blue box i have a pigeon standing up,
-30,35,test,4,G1,parent,a pigeon standing up? i see the pigeon standing up,
-31,35,test,4,G1,parent,,parent
-61,35,test,16,G1,parent,i have a pigeon,
-62,35,test,16,G1,child,,child
-84,35,test,24,G1,child,a pigeon,
-85,35,test,24,G1,parent,,parent
-108,35,test,34,G1,parent,i have a pigeon,
-109,35,test,34,G1,child,,child
-27,35,test,3,H1,parent,in my blue box i have someone standing up,
-28,35,test,3,H1,child,,child
-53,35,test,13,H1,child,a person pointing this way,
-54,35,test,13,H1,parent,are they pointing up or to the side?,
-55,35,test,13,H1,child,to the side,
-56,35,test,13,H1,parent,,parent
-86,35,test,25,H1,parent,in my blue box i have a person standing and holding a bowl,
-87,35,test,25,H1,child,,child
-102,35,test,31,H1,child,person reading a book,
-103,35,test,31,H1,parent,,parent
-32,35,test,5,I1,parent,"in my blue box i have what looks like a waiter holding a bowl, standing next to a table holding a bowl",
-33,35,test,5,I1,child,,child
-49,35,test,11,I1,child,"um, a person holding a bowl",
-50,35,test,11,I1,parent,,parent
-90,35,test,27,I1,parent,in my blue box i have a different person standing and holding a bowl,
-91,35,test,27,I1,child,,child
-106,35,test,33,I1,child,i have a person holding a bowl,
-107,35,test,33,I1,parent,,parent
-39,35,test,8,K1,child,in my blue box i have a puppy,
-40,35,test,8,K1,parent,a puppy,
-41,35,test,8,K1,parent,,parent
-66,35,test,18,K1,parent,in my blue box i have a puppy,
-67,35,test,18,K1,child,,child
-88,35,test,26,K1,child,i have a puppy,
-89,35,test,26,K1,parent,,parent
-115,35,test,36,K1,parent,in my blue box i have a puppy,
-116,35,test,36,K1,child,,child
-2,35,test,,,parent,what is in your blue box?,
-19,35,test,,,parent,what's in your blue box?,
-47,35,test,,,parent,good job! time for the next round,
-48,35,test,,,parent,what's in your blue box?,
-63,35,test,,,parent,what's in your blue box?,
-68,35,test,,,parent,what's in your blue box?,
-73,35,test,,,parent,"it says good job, time for the next round",
-77,35,test,,,parent,what's in your blue box?,
-83,35,test,,,parent,what's in your blue box?,
-92,35,test,,,parent,what's in your blue box?,
-100,35,test,,,parent,"good job, time for the next round",
-101,35,test,,,parent,what's in your blue box?,
-110,35,test,,,child,what do we do after this?,
-111,35,test,,,parent,after this we'll probably get some lunch,
-112,35,test,,,parent,what's in your blue box?,
+subid,type,trial,target,person,utterance,selection,correct
+35,practice,1,apple,parent,"inside my blue box i have an apple, can you press the apple?",,Y
+35,practice,1,apple,child,,child,Y
+35,practice,4,apple,child,in my blue box i have an apple,,Y
+35,practice,4,apple,parent,okay,,Y
+35,practice,4,apple,parent,,parent,Y
+35,practice,2,artichoke,child,lettuce,,Y
+35,practice,2,artichoke,parent,"lettuce? maybe an artichoke, it has a lot of leaves?",,Y
+35,practice,2,artichoke,child,artichoke,,Y
+35,practice,2,artichoke,parent,yeah,,Y
+35,practice,2,artichoke,parent,,parent,Y
+35,practice,5,artichoke,parent,in my blue box i have the artichoke,,Y
+35,practice,5,artichoke,child,,child,Y
+35,practice,3,onion,parent,inside my blue box i have an onion,,Y
+35,practice,3,onion,child,,child,Y
+35,practice,6,onion,child,in my blue box i have the onion,,Y
+35,practice,6,onion,parent,,parent,Y
+35,test,1,A1,child,,child,Y
+35,test,1,A1,parent,in my blue box.. i had someone running,,Y
+35,test,15,A1,child,i have a person who is walking,,Y
+35,test,15,A1,parent,,parent,Y
+35,test,29,A1,parent,in my blue box i have a person running,,Y
+35,test,29,A1,child,,child,Y
+35,test,37,A1,child,i have a person running,,Y
+35,test,37,A1,parent,,parent,Y
+35,test,6,B1,child,i have a tired person,,N
+35,test,6,B1,parent,a tired person,,N
+35,test,6,B1,parent,,parent,N
+35,test,14,B1,parent,i have a person who is walking,,Y
+35,test,14,B1,child,,child,Y
+35,test,28,B1,child,i have a tired person,,Y
+35,test,28,B1,parent,,parent,Y
+35,test,38,B1,parent,in my blue box i have a tired person walking,,Y
+35,test,38,B1,child,,child,Y
+35,test,9,C1,parent,in my blue box i have a sleeping person,,N
+35,test,9,C1,child,,child,N
+35,test,17,C1,child,a person crawling,,Y
+35,test,17,C1,parent,,parent,Y
+35,test,23,C1,parent,in my blue box i have a person lying down and sleeping,,N
+35,test,23,C1,child,,child,N
+35,test,35,C1,child,a person crawling,,Y
+35,test,35,C1,parent,,parent,Y
+35,test,2,D1,child,"um, this",,Y
+35,test,2,D1,parent,does it look like something with..? one of mine looks a little like a dog and one looks kinda like an airplane,,Y
+35,test,2,D1,child,a dog,,Y
+35,test,2,D1,parent,a dog?,,Y
+35,test,2,D1,child,an airplane,,Y
+35,test,2,D1,parent,an airplane? it looks like someone flying an airplane?,,Y
+35,test,2,D1,parent,,parent,Y
+35,test,12,D1,parent,in my blue box i have a person flying an airplane,,Y
+35,test,12,D1,child,,child,Y
+35,test,30,D1,child,"um, a person that fell down",,N
+35,test,30,D1,parent,,parent,N
+35,test,30,D1,child,i have a person that fell down,,N
+35,test,32,D1,parent,in my blue box i have an airplane,,Y
+35,test,32,D1,child,,child,Y
+35,test,7,E1,parent,"in my blue box i have a person jumping up, they look really happy",,Y
+35,test,7,E1,child,,child,Y
+35,test,19,E1,child,a person falling,,Y
+35,test,19,E1,parent,,parent,Y
+35,test,21,E1,parent,in my blue box i have a person who looks like they are jumping and really happy,,Y
+35,test,21,E1,child,,child,Y
+35,test,21,E1,parent,but it doesn't look like they're running,,Y
+35,test,39,E1,child,i have a person jumping up,,Y
+35,test,39,E1,parent,,parent,Y
+35,test,10,F1,child,i have a bird,,Y
+35,test,10,F1,parent,you have a bird in your blue box?,,Y
+35,test,10,F1,parent,,parent,Y
+35,test,20,F1,parent,"in my blue box i have what looks to me like a bird, a bird running or something",,Y
+35,test,20,F1,child,,child,Y
+35,test,22,F1,child,a person that looks like a bird running or something,,Y
+35,test,22,F1,parent,okay,,Y
+35,test,22,F1,parent,,parent,Y
+35,test,40,F1,parent,in my blue box i have a flying bird,,Y
+35,test,40,F1,child,,child,Y
+35,test,4,G1,child,in my blue box i have a pigeon standing up,,Y
+35,test,4,G1,parent,a pigeon standing up? i see the pigeon standing up,,Y
+35,test,4,G1,parent,,parent,Y
+35,test,16,G1,parent,i have a pigeon,,Y
+35,test,16,G1,child,,child,Y
+35,test,24,G1,child,a pigeon,,Y
+35,test,24,G1,parent,,parent,Y
+35,test,34,G1,parent,i have a pigeon,,Y
+35,test,34,G1,child,,child,Y
+35,test,3,H1,parent,in my blue box i have someone standing up,,Y
+35,test,3,H1,child,,child,Y
+35,test,13,H1,child,a person pointing this way,,Y
+35,test,13,H1,parent,are they pointing up or to the side?,,Y
+35,test,13,H1,child,to the side,,Y
+35,test,13,H1,parent,,parent,Y
+35,test,25,H1,parent,in my blue box i have a person standing and holding a bowl,,Y
+35,test,25,H1,child,,child,Y
+35,test,31,H1,child,person reading a book,,Y
+35,test,31,H1,parent,,parent,Y
+35,test,5,I1,parent,"in my blue box i have what looks like a waiter holding a bowl, standing next to a table holding a bowl",,Y
+35,test,5,I1,child,,child,Y
+35,test,11,I1,child,"um, a person holding a bowl",,Y
+35,test,11,I1,parent,,parent,Y
+35,test,27,I1,parent,in my blue box i have a different person standing and holding a bowl,,Y
+35,test,27,I1,child,,child,Y
+35,test,33,I1,child,i have a person holding a bowl,,Y
+35,test,33,I1,parent,,parent,Y
+35,test,8,K1,child,in my blue box i have a puppy,,Y
+35,test,8,K1,parent,a puppy,,Y
+35,test,8,K1,parent,,parent,Y
+35,test,18,K1,parent,in my blue box i have a puppy,,Y
+35,test,18,K1,child,,child,Y
+35,test,26,K1,child,i have a puppy,,Y
+35,test,26,K1,parent,,parent,Y
+35,test,36,K1,parent,in my blue box i have a puppy,,Y
+35,test,36,K1,child,,child,Y

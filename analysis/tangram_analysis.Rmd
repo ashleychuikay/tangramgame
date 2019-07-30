@@ -134,7 +134,7 @@ coding_data <- cdata %>%
 
 coding <- coding_data %>%
   arrange(subid, type, target, trial) %>%
-  select(Timeline.ordinal, subid, type, trial, target, person, utterance, selection)
+  select(subid, type, trial, target, person, utterance, selection, correct)
 
 #newcols <- c("final_initial", "self", "other", "accept")
 #coding[, newcols] <- NA

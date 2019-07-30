@@ -1,168 +1,123 @@
-Timeline.ordinal,subid,type,trial,target,person,utterance,selection
-0,20,practice,1,apple,parent,"this fruit can be red or green, and we sometimes pick it in Michigan",
-1,20,practice,1,apple,child,,child
-13,20,practice,4,apple,child,this... ah! this thing sometimes has leaves on top.,
-15,20,practice,4,apple,parent,,parent
-3,20,practice,2,artichoke,child,um this vegetable has a bunch of leaves on it,
-4,20,practice,2,artichoke,parent,,parent
-16,20,practice,5,artichoke,parent,alright. we don't eat this vegetable very much which is probably why you don't know what that is.,
-17,20,practice,5,artichoke,child,,child
-7,20,practice,3,onion,parent,"So this vegetable, sometimes when you cut it, it makes you cry",
-8,20,practice,3,onion,child,xxx,
-10,20,practice,3,onion,child,it's an onion.,
-11,20,practice,3,onion,child,,child
-20,20,practice,6,onion,child,"Um, this thing, this thing, it's fuzzy at one end.",
-21,20,practice,6,onion,parent,,parent
-22,20,practice,6,onion,parent,I think that was supposed to be an onion.,
-36,20,test,5,A1,parent,this looks like someone who is running,
-37,20,test,5,A1,child,,child
-74,20,test,15,A1,child,"this looks like someone with a weird, crooked leg",
-75,20,test,15,A1,parent,"are they lying down, or running?",
-76,20,test,15,A1,child,"Someone with a crooked leg, that's on the floor!",
-77,20,test,15,A1,parent,,parent
-116,20,test,25,A1,parent,um. running,
-117,20,test,25,A1,child,,child
-139,20,test,33,A1,child,run,
-140,20,test,33,A1,parent,,parent
-27,20,test,1,B1,parent,"alright, this is my turn to describe it. so this looks like an image of someone walking with their head tilted down.",
-28,20,test,1,B1,child,,child
-64,20,test,11,B1,child,someone walking somberly,
-65,20,test,11,B1,parent,someone walking somberly?,
-66,20,test,11,B1,parent,,parent
-67,20,test,11,B1,parent,sorrowfully,
-126,20,test,29,B1,parent,sad,
-127,20,test,29,B1,child,,child
-148,20,test,37,B1,child,sorrow,
-149,20,test,37,B1,parent,,parent
-29,20,test,2,C1,child,"Um, someone doing a crawl pose.",
-31,20,test,2,C1,parent,,parent
-68,20,test,12,C1,parent,"ok, this looks like someone who is doing childs' pose",
-69,20,test,12,C1,child,,child
-124,20,test,28,C1,child,childs',
-125,20,test,28,C1,parent,,parent
-165,20,test,40,C1,parent,"umm, yoga pose.",
-166,20,test,40,C1,child,,child
-32,20,test,3,D1,parent,this looks like someone who is lying on their stomach and reading a book,
-33,20,test,3,D1,child,,child
-88,20,test,19,D1,child,this looks like someone who is melting,
-89,20,test,19,D1,parent,melted onto the ground?,
-90,20,test,19,D1,child,melted. what happens when you get melted?,
-91,20,test,19,D1,parent,,parent
-92,20,test,19,D1,parent,"I don't know, I've never been melted!",
-99,20,test,21,D1,parent,this looks like someone who's lying down,
-100,20,test,21,D1,child,,child
-153,20,test,39,D1,child,melt,
-159,20,test,39,D1,parent,he looks like he's reading a book,
-160,20,test,39,D1,child,his book is xxx and he's trying to find it! look momma,
-163,20,test,39,D1,parent,,parent
-164,20,test,39,D1,child,it looked like they lost their book,
-34,20,test,4,E1,child,it looks like someone flying,
-35,20,test,4,E1,parent,,parent
-86,20,test,18,E1,parent,"this looks like someone who is jumping in the air, for joy",
-87,20,test,18,E1,child,,child
-118,20,test,26,E1,child,fly,
-119,20,test,26,E1,parent,,parent
-151,20,test,38,E1,parent,gleeful,
-152,20,test,38,E1,child,,child
-57,20,test,10,F1,child,this looks like someone doing the splits,
-58,20,test,10,F1,parent,can you give me more? descriptive?,
-59,20,test,10,F1,child,it looks like someone doing the splits! it has two little triangles for feet.,
-60,20,test,10,F1,parent,and what do they do with their arms?,
-61,20,test,10,F1,child,they're going like this (gestures arms outward),
-62,20,test,10,F1,parent,,parent
-72,20,test,14,F1,parent,this looks like someone who is doing a dance and throwing her arms up in the air and throwing her head back,
-73,20,test,14,F1,child,,child
-112,20,test,24,F1,child,fun,
-113,20,test,24,F1,parent,fun?,
-114,20,test,24,F1,parent,,parent
-115,20,test,24,F1,parent,good!,
-141,20,test,34,F1,parent,dance,
-142,20,test,34,F1,child,,child
-46,20,test,8,G1,child,this picture has a square for a head. it has a square on the bottom of the picture.,
-47,20,test,8,G1,parent,"alright, so the images i'm seeing, both of them have square heads",
-48,20,test,8,G1,child,heads. and there's a square kind of connecting to the triangle.,
-49,20,test,8,G1,parent,so what's on the xxx when you're looking at it?,
-50,20,test,8,G1,child,it has a square head and,
-51,20,test,8,G1,parent,what does it look like?,
-52,20,test,8,G1,child,it looks like they're sitting on a bench,
-53,20,test,8,G1,parent,,parent
-93,20,test,20,G1,parent,this looks like someone praying. kneeling down and praying.,
-94,20,test,20,G1,child,,child
-128,20,test,30,G1,child,"Oh, bench",
-129,20,test,30,G1,parent,,parent
-137,20,test,32,G1,parent,pray,
-138,20,test,32,G1,child,,child
-55,20,test,9,H1,parent,"this looks like someone standing still, holding out their arms, offering something",
-56,20,test,9,H1,child,,child
-70,20,test,13,H1,child,looks like someone preaching at church,
-71,20,test,13,H1,parent,,parent
-122,20,test,27,H1,parent,preaching,
-123,20,test,27,H1,child,,child
-135,20,test,31,H1,child,preach,
-136,20,test,31,H1,parent,,parent
-38,20,test,6,I1,child,this looks like someone holding a bowl,
-39,20,test,6,I1,parent,,parent
-79,20,test,16,I1,parent,"this looks like a man bending over, offering something",
-80,20,test,16,I1,child,,child
-102,20,test,22,I1,child,this looks like someone with a triangle bowl,
-103,20,test,22,I1,parent,,parent
-145,20,test,36,I1,parent,serve,
-146,20,test,36,I1,child,,child
-44,20,test,7,K1,parent,"alright, this looks like someone bending at their hips, offering something to someone",
-45,20,test,7,K1,child,,child
-81,20,test,17,K1,child,this looks like there's a triangle on the top of the picture,
-82,20,test,17,K1,parent,what else is the person doing?,
-83,20,test,17,K1,child,he has a big butt,
-84,20,test,17,K1,parent,,parent
-104,20,test,23,K1,parent,this looks like someone,
-107,20,test,23,K1,parent,this looks like someone who is subservient and has a pointy bottom,
-108,20,test,23,K1,child,,child
-109,20,test,23,K1,child,what do you mean by subservient?,
-110,20,test,23,K1,parent,"subservient means that he's serving someone, offering them something",
-143,20,test,35,K1,child,butt,
-144,20,test,35,K1,parent,,parent
-2,20,test,,,parent,"alright, your turn",
-5,20,test,,,parent,did I get it wrong?,
-6,20,test,,,child,"No, now you do it!",
-12,20,test,,,parent,"alright, your turn.",
-14,20,test,,,parent,ok,
-18,20,test,,,parent,"oh, you guessed just on that clue?",
-19,20,test,,,parent,your turn,
-23,20,test,,,parent,"Let the researcher know if you have questions.  If not, press the button to begin when you are ready.",
-24,20,test,,,child,Mine says Good Job!,
-25,20,test,,,parent,is that what yours said?,
-26,20,test,,,child,yeah!,
-30,20,test,,,parent,oh yeah.,
-40,20,test,,,child,"wait, we can't say it looks like, we have to describe it.",
-41,20,test,,,parent,i think it's ok.,
-42,20,test,,,child,it's your turn,
-43,20,test,,,parent,it's my turn,
-54,20,test,,,parent,oh my turn!,
-63,20,test,,,child,my turn! ok.,
-78,20,test,,,parent,okay,
-85,20,test,,,parent,okay,
-95,20,test,,,parent,good job! time for the next round,
-96,20,test,,,child,this is so long,
-97,20,test,,,parent,this is so long?,
-98,20,test,,,parent,not really!,
-101,20,test,,,parent,"ok, what about yours?",
-105,20,test,,,child,harder,
-106,20,test,,,parent,make it harder? ok,
-111,20,test,,,parent,"ok, what's yours?",
-120,20,test,,,child,I'm only going to say one word!,
-121,20,test,,,parent,"ok, let's see if I can do that",
-130,20,test,,,parent,Good job! time for the next round!,
-131,20,test,,,child,time for the next round,
-132,20,test,,,parent,"ok, it's your turn",
-133,20,test,,,child,i know it is,
-134,20,test,,,parent,ok!,
-147,20,test,,,parent,so try to come up with an adjective that we haven't used,
-150,20,test,,,parent,good job!,
-154,20,test,,,parent,"no, you already used that one before!",
-155,20,test,,,child,"ok, um",
-156,20,test,,,parent,what does that person look like they're doing?,
-157,20,test,,,child,xxx,
-158,20,test,,,parent,"no, that's not what he looks like",
-161,20,test,,,parent,"nope, you can't pick it up!",
-162,20,test,,,parent,alright,
-9,20,,,,parent,"what's up? or, uh, it could be a pomegranate.  It's either an onion or a pomegranate.",
+subid,type,trial,target,person,utterance,selection,correct
+20,practice,1,apple,parent,"this fruit can be red or green, and we sometimes pick it in Michigan",,Y
+20,practice,1,apple,child,,child,Y
+20,practice,4,apple,child,this... ah! this thing sometimes has leaves on top.,,Y
+20,practice,4,apple,parent,,parent,Y
+20,practice,2,artichoke,child,um this vegetable has a bunch of leaves on it,,Y
+20,practice,2,artichoke,parent,,parent,Y
+20,practice,5,artichoke,parent,alright. we don't eat this vegetable very much which is probably why you don't know what that is.,,Y
+20,practice,5,artichoke,child,,child,Y
+20,practice,3,onion,parent,"So this vegetable, sometimes when you cut it, it makes you cry",,Y
+20,practice,3,onion,child,xxx,,Y
+20,practice,3,onion,child,it's an onion.,,Y
+20,practice,3,onion,child,,child,Y
+20,practice,6,onion,child,"Um, this thing, this thing, it's fuzzy at one end.",,Y
+20,practice,6,onion,parent,,parent,Y
+20,practice,6,onion,parent,I think that was supposed to be an onion.,,Y
+20,test,5,A1,parent,this looks like someone who is running,,Y
+20,test,5,A1,child,,child,Y
+20,test,15,A1,child,"this looks like someone with a weird, crooked leg",,N
+20,test,15,A1,parent,"are they lying down, or running?",,N
+20,test,15,A1,child,"Someone with a crooked leg, that's on the floor!",,N
+20,test,15,A1,parent,,parent,N
+20,test,25,A1,parent,um. running,,Y
+20,test,25,A1,child,,child,Y
+20,test,33,A1,child,run,,Y
+20,test,33,A1,parent,,parent,Y
+20,test,1,B1,parent,"alright, this is my turn to describe it. so this looks like an image of someone walking with their head tilted down.",,Y
+20,test,1,B1,child,,child,Y
+20,test,11,B1,child,someone walking somberly,,Y
+20,test,11,B1,parent,someone walking somberly?,,Y
+20,test,11,B1,parent,,parent,Y
+20,test,11,B1,parent,sorrowfully,,Y
+20,test,29,B1,parent,sad,,Y
+20,test,29,B1,child,,child,Y
+20,test,37,B1,child,sorrow,,Y
+20,test,37,B1,parent,,parent,Y
+20,test,2,C1,child,"Um, someone doing a crawl pose.",,Y
+20,test,2,C1,parent,,parent,Y
+20,test,12,C1,parent,"ok, this looks like someone who is doing childs' pose",,Y
+20,test,12,C1,child,,child,Y
+20,test,28,C1,child,childs',,Y
+20,test,28,C1,parent,,parent,Y
+20,test,40,C1,parent,"umm, yoga pose.",,Y
+20,test,40,C1,child,,child,Y
+20,test,3,D1,parent,this looks like someone who is lying on their stomach and reading a book,,Y
+20,test,3,D1,child,,child,Y
+20,test,19,D1,child,this looks like someone who is melting,,Y
+20,test,19,D1,parent,melted onto the ground?,,Y
+20,test,19,D1,child,melted. what happens when you get melted?,,Y
+20,test,19,D1,parent,,parent,Y
+20,test,19,D1,parent,"I don't know, I've never been melted!",,Y
+20,test,21,D1,parent,this looks like someone who's lying down,,Y
+20,test,21,D1,child,,child,Y
+20,test,39,D1,child,melt,,Y
+20,test,39,D1,parent,he looks like he's reading a book,,Y
+20,test,39,D1,child,his book is xxx and he's trying to find it! look momma,,Y
+20,test,39,D1,parent,,parent,Y
+20,test,39,D1,child,it looked like they lost their book,,Y
+20,test,4,E1,child,it looks like someone flying,,Y
+20,test,4,E1,parent,,parent,Y
+20,test,18,E1,parent,"this looks like someone who is jumping in the air, for joy",,Y
+20,test,18,E1,child,,child,Y
+20,test,26,E1,child,fly,,Y
+20,test,26,E1,parent,,parent,Y
+20,test,38,E1,parent,gleeful,,Y
+20,test,38,E1,child,,child,Y
+20,test,10,F1,child,this looks like someone doing the splits,,Y
+20,test,10,F1,parent,can you give me more? descriptive?,,Y
+20,test,10,F1,child,it looks like someone doing the splits! it has two little triangles for feet.,,Y
+20,test,10,F1,parent,and what do they do with their arms?,,Y
+20,test,10,F1,child,they're going like this (gestures arms outward),,Y
+20,test,10,F1,parent,,parent,Y
+20,test,14,F1,parent,this looks like someone who is doing a dance and throwing her arms up in the air and throwing her head back,,Y
+20,test,14,F1,child,,child,Y
+20,test,24,F1,child,fun,,Y
+20,test,24,F1,parent,fun?,,Y
+20,test,24,F1,parent,,parent,Y
+20,test,24,F1,parent,good!,,Y
+20,test,34,F1,parent,dance,,Y
+20,test,34,F1,child,,child,Y
+20,test,8,G1,child,this picture has a square for a head. it has a square on the bottom of the picture.,,Y
+20,test,8,G1,parent,"alright, so the images i'm seeing, both of them have square heads",,Y
+20,test,8,G1,child,heads. and there's a square kind of connecting to the triangle.,,Y
+20,test,8,G1,parent,so what's on the xxx when you're looking at it?,,Y
+20,test,8,G1,child,it has a square head and,,Y
+20,test,8,G1,parent,what does it look like?,,Y
+20,test,8,G1,child,it looks like they're sitting on a bench,,Y
+20,test,8,G1,parent,,parent,Y
+20,test,20,G1,parent,this looks like someone praying. kneeling down and praying.,,Y
+20,test,20,G1,child,,child,Y
+20,test,30,G1,child,"Oh, bench",,Y
+20,test,30,G1,parent,,parent,Y
+20,test,32,G1,parent,pray,,Y
+20,test,32,G1,child,,child,Y
+20,test,9,H1,parent,"this looks like someone standing still, holding out their arms, offering something",,Y
+20,test,9,H1,child,,child,Y
+20,test,13,H1,child,looks like someone preaching at church,,Y
+20,test,13,H1,parent,,parent,Y
+20,test,27,H1,parent,preaching,,Y
+20,test,27,H1,child,,child,Y
+20,test,31,H1,child,preach,,Y
+20,test,31,H1,parent,,parent,Y
+20,test,6,I1,child,this looks like someone holding a bowl,,Y
+20,test,6,I1,parent,,parent,Y
+20,test,16,I1,parent,"this looks like a man bending over, offering something",,Y
+20,test,16,I1,child,,child,Y
+20,test,22,I1,child,this looks like someone with a triangle bowl,,Y
+20,test,22,I1,parent,,parent,Y
+20,test,36,I1,parent,serve,,Y
+20,test,36,I1,child,,child,Y
+20,test,7,K1,parent,"alright, this looks like someone bending at their hips, offering something to someone",,Y
+20,test,7,K1,child,,child,Y
+20,test,17,K1,child,this looks like there's a triangle on the top of the picture,,Y
+20,test,17,K1,parent,what else is the person doing?,,Y
+20,test,17,K1,child,he has a big butt,,Y
+20,test,17,K1,parent,,parent,Y
+20,test,23,K1,parent,this looks like someone,,Y
+20,test,23,K1,parent,this looks like someone who is subservient and has a pointy bottom,,Y
+20,test,23,K1,child,,child,Y
+20,test,23,K1,child,what do you mean by subservient?,,Y
+20,test,23,K1,parent,"subservient means that he's serving someone, offering them something",,Y
+20,test,35,K1,child,butt,,Y
+20,test,35,K1,parent,,parent,Y

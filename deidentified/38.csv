@@ -1,156 +1,138 @@
-Timeline.ordinal,subid,type,trial,target,person,utterance,selection
-0,38,practice,1,apple,child,,child
-11,38,practice,4,apple,child,"apple, and a banana",
-12,38,practice,4,apple,parent,"okay, which one is in the blue box?",
-13,38,practice,4,apple,child,"it's the one, the apple",
-14,38,practice,4,apple,parent,,parent
-4,38,practice,2,artichoke,child,"it's a xxx, a pineapple",
-5,38,practice,2,artichoke,parent,,parent
-15,38,practice,5,artichoke,parent,pineapple,
-16,38,practice,5,artichoke,child,,child
-6,38,practice,3,onion,parent,this is an onion,
-7,38,practice,3,onion,child,onion,
-8,38,practice,3,onion,parent,which one is the onion?,
-9,38,practice,3,onion,child,that one,
-10,38,practice,3,onion,child,,child
-18,38,practice,6,onion,child,the onion,
-19,38,practice,6,onion,parent,,parent
-41,38,test,7,A1,parent,"this one, it has a tail",
-42,38,test,7,A1,child,a tail?,
-43,38,test,7,A1,parent,"it's real tall, and it has a leg, one leg",
-44,38,test,7,A1,parent,you see the foot?,
-45,38,test,7,A1,child,,child
-88,38,test,19,A1,parent,"which one is it? is it the one with big arrow, or is the other one?",
-89,38,test,19,A1,child,the other one,
-90,38,test,19,A1,parent,,parent
-105,38,test,25,A1,parent,"this one is the one that has a diamond at the very- it's the tall one, has the diamond on the very top of it",
-106,38,test,25,A1,child,,child
-136,38,test,35,A1,parent,"which one is it? is it the big one with the big diamond, or the small diamond?",
-137,38,test,35,A1,child,the big one,
-138,38,test,35,A1,parent,,parent
-26,38,test,3,B1,parent,ok this one,
-27,38,test,3,B1,child,,child
-76,38,test,15,B1,parent,which one is it? is it the one that's kinda flat or the one that's tall?,
-77,38,test,15,B1,child,the one that's tall,
-78,38,test,15,B1,parent,,parent
-93,38,test,21,B1,parent,"this one is not the one with the big fat arrow, but it's the other one, the one with the small square on top of his head",
-94,38,test,21,B1,child,,child
-149,38,test,39,B1,child,"um, it's a square",
-150,38,test,39,B1,parent,"they both squares, is it the one laying flat? or the one standing up?",
-151,38,test,39,B1,child,the one standing up,
-152,38,test,39,B1,parent,,parent
-46,38,test,8,C1,parent,"which one is it? the one that's, the big square or the small square?",
-47,38,test,8,C1,child,the small square,
-48,38,test,8,C1,parent,,parent
-72,38,test,14,C1,parent,"okay this one is the one that's not the tall one, but the one that's small, the one that's kinda",
-73,38,test,14,C1,child,flat?,
-74,38,test,14,C1,parent,yeah,
-75,38,test,14,C1,child,,child
-119,38,test,30,C1,parent,which one is it? the one that's standing halfway or the one that's kinda laying down,
-120,38,test,30,C1,child,the kinda laying down,
-121,38,test,30,C1,parent,,parent
-125,38,test,32,C1,parent,"this is the one that's, the small one. not the one that's standing up",
-127,38,test,32,C1,child,,child
-20,38,test,1,D1,parent,"this one, is a , is a flat shape, do you see it? it's not the one standing up, it's the one laying down",
-21,38,test,1,D1,child,,child
-69,38,test,13,D1,parent,"okay, what do you have? is it the one that's flat, or the one that's kinda tall?",
-70,38,test,13,D1,child,the on that's kind of tall,
-71,38,test,13,D1,parent,,parent
-110,38,test,27,D1,parent,this one is the one that's laying down,
-111,38,test,27,D1,child,,child
-122,38,test,31,D1,parent,"which one? the one laying down, or the one, the big one?",
-123,38,test,31,D1,child,the big one,
-124,38,test,31,D1,parent,,parent
-55,38,test,10,E1,child,the square,
-56,38,test,10,E1,parent,"okay there's two squares, so is it the one that look like it got a leg",
-57,38,test,10,E1,child,a leg,
-58,38,test,10,E1,parent,or the one that look like it got two legs,
-59,38,test,10,E1,child,the one that look like two legs,
-60,38,test,10,E1,parent,the big one?,
-61,38,test,10,E1,child,yes,
-62,38,test,10,E1,parent,,parent
-86,38,test,18,E1,parent,"okay this one has the two legs too, the one you just said",
-87,38,test,18,E1,child,,child
-100,38,test,24,E1,parent,which one is it? is it the one with the two legs?,
-101,38,test,24,E1,child,the diamond,
-102,38,test,24,E1,parent,"they both diamond, so which one is it, the one with the diamond with the two legs, or the other one?",
-103,38,test,24,E1,child,the other one,
-104,38,test,24,E1,parent,,parent
-146,38,test,38,E1,parent,"okay this one has the one, it's real big and it has a big diamond",
-147,38,test,38,E1,child,,child
-24,38,test,2,F1,child,it's standing up,
-25,38,test,2,F1,parent,,parent
-67,38,test,12,F1,parent,"okay this one has, it's big and it has a square, and then it has two triang- well they both have, uh, what is that? a triangle, a half of a triangle at the bottom? not the one that look like it's walking, but the other one",
-68,38,test,12,F1,child,,child
-96,38,test,22,F1,child,flat,
-97,38,test,22,F1,parent,,parent
-131,38,test,34,F1,parent,"okay this one is the one that has a square, and it has two half triangles",
-133,38,test,34,F1,parent,which one has the square? and which has the two half triangles at the bottom,
-134,38,test,34,F1,child,,child
-49,38,test,9,G1,parent,"okay this one is standing up straight, it's not the one that's laying down, it's the one that's tall",
-50,38,test,9,G1,child,pick it?,
-51,38,test,9,G1,parent,mhm,
-52,38,test,9,G1,child,,child
-64,38,test,11,G1,parent,which one is it? is it the one that's tall or the one that's small?,
-65,38,test,11,G1,child,"the, the tall",
-66,38,test,11,G1,parent,,parent
-98,38,test,23,G1,parent,this one is the one with the square on top again,
-99,38,test,23,G1,child,,child
-128,38,test,33,G1,parent,which one is it? is it the one with the two little legs sticking out from the sides? or is it the other one?,
-129,38,test,33,G1,child,the other one,
-130,38,test,33,G1,parent,,parent
-32,38,test,5,H1,parent,"okay this one has a - a diamond at the top of it, you know how a diamond looks?",
-33,38,test,5,H1,child,,child
-34,38,test,5,H1,child,yep,
-83,38,test,17,H1,parent,"is it the one with two legs, sticking out on the side? or is it the other one?",
-84,38,test,17,H1,child,the two legs,
-85,38,test,17,H1,parent,,parent
-117,38,test,29,H1,parent,okay this one is the one with the big big diamond,
-118,38,test,29,H1,child,,child
-143,38,test,37,H1,parent,"which one is it, is it the big diamond, or the one that's laying down, kinda",
-144,38,test,37,H1,child,the one laying down,
-145,38,test,37,H1,parent,,parent
-36,38,test,6,I1,parent,"which one is it, does it have a diamond, does it have a- the little",
-37,38,test,6,I1,child,the square,
-38,38,test,6,I1,parent,"they both look like they square, so which one is it? is it the one that look like it got a tail? or the other one?",
-39,38,test,6,I1,child,"the, the other one",
-40,38,test,6,I1,parent,,parent
-79,38,test,16,I1,parent,okay this one is the one that has one big leg,
-80,38,test,16,I1,child,,child
-81,38,test,16,I1,parent,and it look like it's holding something,
-113,38,test,28,I1,child,"um, the flat one",
-114,38,test,28,I1,parent,"the one that's, not the one that's standing up?",
-115,38,test,28,I1,parent,,parent
-116,38,test,28,I1,child,nope,
-153,38,test,40,I1,parent,"okay this one is the one that is standing up and it has a big diamond at the top of its head, and a half triangle, that looks like it's his hand",
-154,38,test,40,I1,child,,child
-29,38,test,4,K1,parent,which one is it? is it the one laying down or standing up?,
-30,38,test,4,K1,child,standing up,
-31,38,test,4,K1,parent,,parent
-91,38,test,20,K1,parent,"this one is the one with the big fat arrow, with the tail",
-92,38,test,20,K1,child,,child
-107,38,test,26,K1,parent,which one is it? is it the one with the diamond or the one with the arrow?,
-108,38,test,26,K1,child,the one with the arrow,
-109,38,test,26,K1,parent,,parent
-139,38,test,36,K1,parent,okay this one has a big arrow,
-140,38,test,36,K1,child,the big one?,
-141,38,test,36,K1,parent,the big arrow with the tail,
-142,38,test,36,K1,child,,child
-1,38,test,,,parent,"uh oh, what happened?",
-2,38,test,,,parent,your turn,
-17,38,test,,,parent,which one is it?,
-22,38,test,,,parent,your turn,
-23,38,test,,,parent,which one is in the box? how does it look?,
-28,38,test,,,parent,"no, it wasn't your turn, it's your turn now",
-35,38,test,,,parent,your turn,
-53,38,test,,,parent,your turn,
-54,38,test,,,parent,which one is it?,
-63,38,test,,,parent,your turn,
-82,38,test,,,parent,well which one is it?,
-95,38,test,,,parent,which one is it?,
-112,38,test,,,parent,which one?,
-126,38,test,,,child,okay,
-132,38,test,,,parent,you're not looking at the thing,
-135,38,test,,,parent,your turn,
-148,38,test,,,parent,which one is in the box?,
-3,38,,,,parent,what is it?,
+subid,type,trial,target,person,utterance,selection,correct
+38,practice,1,apple,child,,child,Y
+38,practice,4,apple,child,"apple, and a banana",,Y
+38,practice,4,apple,parent,"okay, which one is in the blue box?",,Y
+38,practice,4,apple,child,"it's the one, the apple",,Y
+38,practice,4,apple,parent,,parent,Y
+38,practice,2,artichoke,child,"it's a xxx, a pineapple",,N
+38,practice,2,artichoke,parent,,parent,N
+38,practice,5,artichoke,parent,pineapple,,Y
+38,practice,5,artichoke,child,,child,Y
+38,practice,3,onion,parent,this is an onion,,Y
+38,practice,3,onion,child,onion,,Y
+38,practice,3,onion,parent,which one is the onion?,,Y
+38,practice,3,onion,child,that one,,Y
+38,practice,3,onion,child,,child,Y
+38,practice,6,onion,child,the onion,,Y
+38,practice,6,onion,parent,,parent,Y
+38,test,7,A1,parent,"this one, it has a tail",,N
+38,test,7,A1,child,a tail?,,N
+38,test,7,A1,parent,"it's real tall, and it has a leg, one leg",,N
+38,test,7,A1,parent,you see the foot?,,N
+38,test,7,A1,child,,child,N
+38,test,19,A1,parent,"which one is it? is it the one with big arrow, or is the other one?",,Y
+38,test,19,A1,child,the other one,,Y
+38,test,19,A1,parent,,parent,Y
+38,test,25,A1,parent,"this one is the one that has a diamond at the very- it's the tall one, has the diamond on the very top of it",,Y
+38,test,25,A1,child,,child,Y
+38,test,35,A1,parent,"which one is it? is it the big one with the big diamond, or the small diamond?",,N
+38,test,35,A1,child,the big one,,N
+38,test,35,A1,parent,,parent,N
+38,test,3,B1,parent,ok this one,,N
+38,test,3,B1,child,,child,N
+38,test,15,B1,parent,which one is it? is it the one that's kinda flat or the one that's tall?,,Y
+38,test,15,B1,child,the one that's tall,,Y
+38,test,15,B1,parent,,parent,Y
+38,test,21,B1,parent,"this one is not the one with the big fat arrow, but it's the other one, the one with the small square on top of his head",,Y
+38,test,21,B1,child,,child,Y
+38,test,39,B1,child,"um, it's a square",,Y
+38,test,39,B1,parent,"they both squares, is it the one laying flat? or the one standing up?",,Y
+38,test,39,B1,child,the one standing up,,Y
+38,test,39,B1,parent,,parent,Y
+38,test,8,C1,parent,"which one is it? the one that's, the big square or the small square?",,Y
+38,test,8,C1,child,the small square,,Y
+38,test,8,C1,parent,,parent,Y
+38,test,14,C1,parent,"okay this one is the one that's not the tall one, but the one that's small, the one that's kinda",,Y
+38,test,14,C1,child,flat?,,Y
+38,test,14,C1,parent,yeah,,Y
+38,test,14,C1,child,,child,Y
+38,test,30,C1,parent,which one is it? the one that's standing halfway or the one that's kinda laying down,,Y
+38,test,30,C1,child,the kinda laying down,,Y
+38,test,30,C1,parent,,parent,Y
+38,test,32,C1,parent,"this is the one that's, the small one. not the one that's standing up",,Y
+38,test,32,C1,child,,child,Y
+38,test,1,D1,parent,"this one, is a , is a flat shape, do you see it? it's not the one standing up, it's the one laying down",,Y
+38,test,1,D1,child,,child,Y
+38,test,13,D1,parent,"okay, what do you have? is it the one that's flat, or the one that's kinda tall?",,N
+38,test,13,D1,child,the on that's kind of tall,,N
+38,test,13,D1,parent,,parent,N
+38,test,27,D1,parent,this one is the one that's laying down,,Y
+38,test,27,D1,child,,child,Y
+38,test,31,D1,parent,"which one? the one laying down, or the one, the big one?",,N
+38,test,31,D1,child,the big one,,N
+38,test,31,D1,parent,,parent,N
+38,test,10,E1,child,the square,,Y
+38,test,10,E1,parent,"okay there's two squares, so is it the one that look like it got a leg",,Y
+38,test,10,E1,child,a leg,,Y
+38,test,10,E1,parent,or the one that look like it got two legs,,Y
+38,test,10,E1,child,the one that look like two legs,,Y
+38,test,10,E1,parent,the big one?,,Y
+38,test,10,E1,child,yes,,Y
+38,test,10,E1,parent,,parent,Y
+38,test,18,E1,parent,"okay this one has the two legs too, the one you just said",,Y
+38,test,18,E1,child,,child,Y
+38,test,24,E1,parent,which one is it? is it the one with the two legs?,,N
+38,test,24,E1,child,the diamond,,N
+38,test,24,E1,parent,"they both diamond, so which one is it, the one with the diamond with the two legs, or the other one?",,N
+38,test,24,E1,child,the other one,,N
+38,test,24,E1,parent,,parent,N
+38,test,38,E1,parent,"okay this one has the one, it's real big and it has a big diamond",,Y
+38,test,38,E1,child,,child,Y
+38,test,2,F1,child,it's standing up,,N
+38,test,2,F1,parent,,parent,N
+38,test,12,F1,parent,"okay this one has, it's big and it has a square, and then it has two triang- well they both have, uh, what is that? a triangle, a half of a triangle at the bottom? not the one that look like it's walking, but the other one",,Y
+38,test,12,F1,child,,child,Y
+38,test,22,F1,child,flat,,N
+38,test,22,F1,parent,,parent,N
+38,test,34,F1,parent,"okay this one is the one that has a square, and it has two half triangles",,Y
+38,test,34,F1,parent,which one has the square? and which has the two half triangles at the bottom,,Y
+38,test,34,F1,child,,child,Y
+38,test,9,G1,parent,"okay this one is standing up straight, it's not the one that's laying down, it's the one that's tall",,Y
+38,test,9,G1,child,pick it?,,Y
+38,test,9,G1,parent,mhm,,Y
+38,test,9,G1,child,,child,Y
+38,test,11,G1,parent,which one is it? is it the one that's tall or the one that's small?,,Y
+38,test,11,G1,child,"the, the tall",,Y
+38,test,11,G1,parent,,parent,Y
+38,test,23,G1,parent,this one is the one with the square on top again,,N
+38,test,23,G1,child,,child,N
+38,test,33,G1,parent,which one is it? is it the one with the two little legs sticking out from the sides? or is it the other one?,,Y
+38,test,33,G1,child,the other one,,Y
+38,test,33,G1,parent,,parent,Y
+38,test,5,H1,parent,"okay this one has a - a diamond at the top of it, you know how a diamond looks?",,Y
+38,test,5,H1,child,,child,Y
+38,test,5,H1,child,yep,,Y
+38,test,17,H1,parent,"is it the one with two legs, sticking out on the side? or is it the other one?",,N
+38,test,17,H1,child,the two legs,,N
+38,test,17,H1,parent,,parent,N
+38,test,29,H1,parent,okay this one is the one with the big big diamond,,Y
+38,test,29,H1,child,,child,Y
+38,test,37,H1,parent,"which one is it, is it the big diamond, or the one that's laying down, kinda",,N
+38,test,37,H1,child,the one laying down,,N
+38,test,37,H1,parent,,parent,N
+38,test,6,I1,parent,"which one is it, does it have a diamond, does it have a- the little",,Y
+38,test,6,I1,child,the square,,Y
+38,test,6,I1,parent,"they both look like they square, so which one is it? is it the one that look like it got a tail? or the other one?",,Y
+38,test,6,I1,child,"the, the other one",,Y
+38,test,6,I1,parent,,parent,Y
+38,test,16,I1,parent,okay this one is the one that has one big leg,,Y
+38,test,16,I1,child,,child,Y
+38,test,16,I1,parent,and it look like it's holding something,,Y
+38,test,28,I1,child,"um, the flat one",,N
+38,test,28,I1,parent,"the one that's, not the one that's standing up?",,N
+38,test,28,I1,parent,,parent,N
+38,test,28,I1,child,nope,,N
+38,test,40,I1,parent,"okay this one is the one that is standing up and it has a big diamond at the top of its head, and a half triangle, that looks like it's his hand",,Y
+38,test,40,I1,child,,child,Y
+38,test,4,K1,parent,which one is it? is it the one laying down or standing up?,,Y
+38,test,4,K1,child,standing up,,Y
+38,test,4,K1,parent,,parent,Y
+38,test,20,K1,parent,"this one is the one with the big fat arrow, with the tail",,Y
+38,test,20,K1,child,,child,Y
+38,test,26,K1,parent,which one is it? is it the one with the diamond or the one with the arrow?,,Y
+38,test,26,K1,child,the one with the arrow,,Y
+38,test,26,K1,parent,,parent,Y
+38,test,36,K1,parent,okay this one has a big arrow,,Y
+38,test,36,K1,child,the big one?,,Y
+38,test,36,K1,parent,the big arrow with the tail,,Y
+38,test,36,K1,child,,child,Y

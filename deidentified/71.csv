@@ -1,139 +1,118 @@
-Timeline.ordinal,subid,type,trial,target,person,utterance,selection
-0,71,practice,1,apple,parent,"okay, an apple",
-1,71,practice,1,apple,child,"uhh okay, so",
-2,71,practice,1,apple,parent,you press on the apple,
-3,71,practice,1,apple,child,,child
-11,71,practice,4,apple,child,"um it's red, it has a stem",
-12,71,practice,4,apple,parent,,parent
-5,71,practice,2,artichoke,child,umm,
-7,71,practice,2,artichoke,child,artichoke,
-8,71,practice,2,artichoke,parent,,parent
-13,71,practice,5,artichoke,parent,artichoke,
-14,71,practice,5,artichoke,child,,child
-9,71,practice,3,onion,parent,onion,
-10,71,practice,3,onion,child,,child
-15,71,practice,6,onion,child,it makes your eyes water,
-16,71,practice,6,onion,parent,ahh,
-17,71,practice,6,onion,parent,,parent
-32,71,test,5,A1,parent,this looks like uh someone is ice skating and also it's a square head at the top xxx arms behind him,
-33,71,test,5,A1,child,,child
-55,71,test,13,A1,child,it looks like somebody running,
-56,71,test,13,A1,parent,,parent
-99,71,test,29,A1,parent,um this looks like someone running very fast--,
-100,71,test,29,A1,child,,child
-101,71,test,29,A1,parent,kay,
-119,71,test,35,A1,child,someone running with his hands behind his back,
-120,71,test,35,A1,parent,,parent
-45,71,test,10,B1,child,it looks like somebody walking and looking down,
-46,71,test,10,B1,parent,,parent
-57,71,test,14,B1,parent,this looks like someone walking leaning forward,
-58,71,test,14,B1,child,,child
-96,71,test,28,B1,child,"it looks like somebody standing with their back foot, with their toes, to the ground and looking down",
-97,71,test,28,B1,parent,,parent
-98,71,test,28,B1,parent,okay,
-128,71,test,38,B1,parent,"uhh let's see here what does that look like-- I think that looks like um a uhh a rocket ship that is uh-that is losing it's uhh square command module from it's nose, cause it's leaning over to one side",
-129,71,test,38,B1,child,hmm,
-130,71,test,38,B1,child,,child
-34,71,test,6,C1,child,"someone l... going, someone laying down but in, like, a ball",
-35,71,test,6,C1,parent,okay,
-36,71,test,6,C1,parent,,parent
-64,71,test,16,C1,parent,uh this looks like someone kneeling down,
-65,71,test,16,C1,child,,child
-66,71,test,16,C1,parent,okay,
-102,71,test,30,C1,child,it looks like somebody has his hands on the ground and his head is not attached to his body,
-103,71,test,30,C1,parent,,parent
-116,71,test,34,C1,parent,um this is someone doing some yoga--,
-117,71,test,34,C1,child,,child
-118,71,test,34,C1,parent,"um balancing on their forearms, okay",
-41,71,test,9,D1,parent,um this looks like someone lying on the ground--,
-42,71,test,9,D1,child,,child
-43,71,test,9,D1,parent,with one foot in the air,
-72,71,test,19,D1,child,it looks like somebody is laying down,
-73,71,test,19,D1,parent,,parent
-89,71,test,25,D1,parent,this looks like someone lying on the ground with their foot in the air,
-90,71,test,25,D1,child,,child
-106,71,test,31,D1,child,uh somebody laying down with a tail and one foot in the air,
-107,71,test,31,D1,parent,,parent
-23,71,test,1,E1,parent,"okay it looks like a square-shaped man jumping up, his legs to one side",
-24,71,test,1,E1,child,,child
-59,71,test,15,E1,child,it looks like somebody jumping and they have a square head and their feet are this way,
-60,71,test,15,E1,parent,which way?,
-61,71,test,15,E1,child,to the left,
-62,71,test,15,E1,parent,okay,
-63,71,test,15,E1,parent,,parent
-79,71,test,21,E1,parent,this one looks like someone jumping up in the air with their arms--,
-80,71,test,21,E1,child,,child
-81,71,test,21,E1,parent,"up, okay",
-131,71,test,39,E1,child,someone who has a dip in their body and has a diamond-shaped head,
-132,71,test,39,E1,parent,diamond-shaped head?,
-133,71,test,39,E1,parent,,parent
-134,71,test,39,E1,parent,that one?,
-27,71,test,3,F1,parent,"uhh this looks like someone with his arms running very fast, uhh one foot in the front, one foot in the back, with his arms stretched up",
-28,71,test,3,F1,child,,child
-50,71,test,11,F1,child,it looks like somebody running with a triangle uhh very high,
-51,71,test,11,F1,parent,,parent
-84,71,test,23,F1,parent,um this looks like someone running very fast and--,
-85,71,test,23,F1,child,,child
-86,71,test,23,F1,parent,"arms pointing in the air, okay",
-125,71,test,37,F1,child,"someone pointing up in the air and has a, two triangle feet",
-126,71,test,37,F1,parent,okay,
-127,71,test,37,F1,parent,,parent
-29,71,test,4,G1,child,"umm it looks like a triangle sitting down with a point sticking up, going like this with a angle and a square",
-30,71,test,4,G1,parent,okay,
-31,71,test,4,G1,parent,,parent
-74,71,test,20,G1,parent,"oh it looks like I gotta describe it, so this looks like a, um, seal ballancing a ball on the top of it's head",
-75,71,test,20,G1,child,,child
-76,71,test,20,G1,parent,okay,
-87,71,test,24,G1,child,it looks like a seal bouncing a square,
-88,71,test,24,G1,parent,,parent
-108,71,test,32,G1,parent,"umm let's see, um this looks like a uhh a jet fighter--",
-109,71,test,32,G1,child,,child
-110,71,test,32,G1,parent,"going straight up into the air, no, okay",
-25,71,test,2,H1,child,umm it is someone pointing with a diamond head,
-26,71,test,2,H1,parent,,parent
-70,71,test,18,H1,parent,"oh uhh this likes--looks like someone with a square head,um maybe pointing at something with one side",
-71,71,test,18,H1,child,,child
-82,71,test,22,H1,child,uh it looks like somebody pointing,
-83,71,test,22,H1,parent,,parent
-135,71,test,40,H1,parent,umm this is a um is graduate uh,
-136,71,test,40,H1,child,,child
-37,71,test,7,I1,parent,this looks like a waiter serving something,
-38,71,test,7,I1,child,,child
-67,71,test,17,I1,child,it looks like a waiter,
-68,71,test,17,I1,parent,kay,
-69,71,test,17,I1,parent,,parent
-93,71,test,27,I1,parent,"this looks like a, um, someone presenting a bowl of soup",
-94,71,test,27,I1,child,,child
-111,71,test,33,I1,child,"it looks like somebody is learning forward, has a triangle foot and has the head w- on a point, on the point of the head and giving somebody...",
-112,71,test,33,I1,parent,okay don't get too creative here,
-113,71,test,33,I1,parent,,parent
-114,71,test,33,I1,child,..triangles,
-39,71,test,8,K1,child,"um he has his arms out and his head is an arrow, and he has a pointy foot, and he is leaning forward",
-40,71,test,8,K1,parent,,parent
-52,71,test,12,K1,parent,kay this one looks like someone leaning forward and has a tail xxx tail,
-53,71,test,12,K1,child,,child
-91,71,test,26,K1,parent,it looks like someone has a tail and their head is an arrow,
-92,71,test,26,K1,parent,,parent
-123,71,test,36,K1,parent,um this is a dog who's learning to do a trick by standing on his hind legs,
-124,71,test,36,K1,child,,child
-4,71,test,,,parent,now you're the leader,
-6,71,test,,,parent,and describe what has a blue square around it,
-18,71,test,,,parent,"okay, we're good.",
-19,71,test,,,child,okay,
-20,71,test,,,parent,"oh okay we have more questions so we'll begin, so this is the uh, this is the actual test now okay you ready?",
-21,71,test,,,child,"I'm xxx, yeah",
-22,71,test,,,parent,"okay, I'll begin",
-44,71,test,,,parent,oh xxx that was quick,
-47,71,test,,,parent,"good job, time for next round, okay",
-48,71,test,,,parent,"now you might be the beginner this time, let's see",
-49,71,test,,,child,yup,
-54,71,test,,,parent,it looks--aw nevermind go ahead,
-77,71,test,,,parent,"kay, new round",
-78,71,test,,,parent,do you start this one too? oh no I do,
-95,71,test,,,parent,xxx,
-104,71,test,,,parent,"uh okay another round, let's hope that they change the pictures a little bit, it's getting boring",
-105,71,test,,,parent,go ahead,
-115,71,test,,,parent,aw it's me again,
-121,71,test,,,parent,why do you think it's a 'he'?,
-122,71,test,,,child,or she,
-137,71,test,,,parent,"end of the study, well that was that",
+subid,type,trial,target,person,utterance,selection,correct
+71,practice,1,apple,parent,"okay, an apple",,Y
+71,practice,1,apple,child,"uhh okay, so",,Y
+71,practice,1,apple,parent,you press on the apple,,Y
+71,practice,1,apple,child,,child,Y
+71,practice,4,apple,child,"um it's red, it has a stem",,Y
+71,practice,4,apple,parent,,parent,Y
+71,practice,2,artichoke,child,umm,,Y
+71,practice,2,artichoke,child,artichoke,,Y
+71,practice,2,artichoke,parent,,parent,Y
+71,practice,5,artichoke,parent,artichoke,,Y
+71,practice,5,artichoke,child,,child,Y
+71,practice,3,onion,parent,onion,,Y
+71,practice,3,onion,child,,child,Y
+71,practice,6,onion,child,it makes your eyes water,,Y
+71,practice,6,onion,parent,ahh,,Y
+71,practice,6,onion,parent,,parent,Y
+71,test,5,A1,parent,this looks like uh someone is ice skating and also it's a square head at the top xxx arms behind him,,Y
+71,test,5,A1,child,,child,Y
+71,test,13,A1,child,it looks like somebody running,,Y
+71,test,13,A1,parent,,parent,Y
+71,test,29,A1,parent,um this looks like someone running very fast--,,Y
+71,test,29,A1,child,,child,Y
+71,test,29,A1,parent,kay,,Y
+71,test,35,A1,child,someone running with his hands behind his back,,Y
+71,test,35,A1,parent,,parent,Y
+71,test,10,B1,child,it looks like somebody walking and looking down,,Y
+71,test,10,B1,parent,,parent,Y
+71,test,14,B1,parent,this looks like someone walking leaning forward,,Y
+71,test,14,B1,child,,child,Y
+71,test,28,B1,child,"it looks like somebody standing with their back foot, with their toes, to the ground and looking down",,Y
+71,test,28,B1,parent,,parent,Y
+71,test,28,B1,parent,okay,,Y
+71,test,38,B1,parent,"uhh let's see here what does that look like-- I think that looks like um a uhh a rocket ship that is uh-that is losing it's uhh square command module from it's nose, cause it's leaning over to one side",,N
+71,test,38,B1,child,hmm,,N
+71,test,38,B1,child,,child,N
+71,test,6,C1,child,"someone l... going, someone laying down but in, like, a ball",,Y
+71,test,6,C1,parent,okay,,Y
+71,test,6,C1,parent,,parent,Y
+71,test,16,C1,parent,uh this looks like someone kneeling down,,Y
+71,test,16,C1,child,,child,Y
+71,test,16,C1,parent,okay,,Y
+71,test,30,C1,child,it looks like somebody has his hands on the ground and his head is not attached to his body,,Y
+71,test,30,C1,parent,,parent,Y
+71,test,34,C1,parent,um this is someone doing some yoga--,,Y
+71,test,34,C1,child,,child,Y
+71,test,34,C1,parent,"um balancing on their forearms, okay",,Y
+71,test,9,D1,parent,um this looks like someone lying on the ground--,,Y
+71,test,9,D1,child,,child,Y
+71,test,9,D1,parent,with one foot in the air,,Y
+71,test,19,D1,child,it looks like somebody is laying down,,Y
+71,test,19,D1,parent,,parent,Y
+71,test,25,D1,parent,this looks like someone lying on the ground with their foot in the air,,Y
+71,test,25,D1,child,,child,Y
+71,test,31,D1,child,uh somebody laying down with a tail and one foot in the air,,Y
+71,test,31,D1,parent,,parent,Y
+71,test,1,E1,parent,"okay it looks like a square-shaped man jumping up, his legs to one side",,Y
+71,test,1,E1,child,,child,Y
+71,test,15,E1,child,it looks like somebody jumping and they have a square head and their feet are this way,,Y
+71,test,15,E1,parent,which way?,,Y
+71,test,15,E1,child,to the left,,Y
+71,test,15,E1,parent,okay,,Y
+71,test,15,E1,parent,,parent,Y
+71,test,21,E1,parent,this one looks like someone jumping up in the air with their arms--,,Y
+71,test,21,E1,child,,child,Y
+71,test,21,E1,parent,"up, okay",,Y
+71,test,39,E1,child,someone who has a dip in their body and has a diamond-shaped head,,N
+71,test,39,E1,parent,diamond-shaped head?,,N
+71,test,39,E1,parent,,parent,N
+71,test,39,E1,parent,that one?,,N
+71,test,3,F1,parent,"uhh this looks like someone with his arms running very fast, uhh one foot in the front, one foot in the back, with his arms stretched up",,Y
+71,test,3,F1,child,,child,Y
+71,test,11,F1,child,it looks like somebody running with a triangle uhh very high,,Y
+71,test,11,F1,parent,,parent,Y
+71,test,23,F1,parent,um this looks like someone running very fast and--,,Y
+71,test,23,F1,child,,child,Y
+71,test,23,F1,parent,"arms pointing in the air, okay",,Y
+71,test,37,F1,child,"someone pointing up in the air and has a, two triangle feet",,Y
+71,test,37,F1,parent,okay,,Y
+71,test,37,F1,parent,,parent,Y
+71,test,4,G1,child,"umm it looks like a triangle sitting down with a point sticking up, going like this with a angle and a square",,Y
+71,test,4,G1,parent,okay,,Y
+71,test,4,G1,parent,,parent,Y
+71,test,20,G1,parent,"oh it looks like I gotta describe it, so this looks like a, um, seal ballancing a ball on the top of it's head",,Y
+71,test,20,G1,child,,child,Y
+71,test,20,G1,parent,okay,,Y
+71,test,24,G1,child,it looks like a seal bouncing a square,,Y
+71,test,24,G1,parent,,parent,Y
+71,test,32,G1,parent,"umm let's see, um this looks like a uhh a jet fighter--",,Y
+71,test,32,G1,child,,child,Y
+71,test,32,G1,parent,"going straight up into the air, no, okay",,Y
+71,test,2,H1,child,umm it is someone pointing with a diamond head,,Y
+71,test,2,H1,parent,,parent,Y
+71,test,18,H1,parent,"oh uhh this likes--looks like someone with a square head,um maybe pointing at something with one side",,Y
+71,test,18,H1,child,,child,Y
+71,test,22,H1,child,uh it looks like somebody pointing,,Y
+71,test,22,H1,parent,,parent,Y
+71,test,40,H1,parent,umm this is a um is graduate uh,,Y
+71,test,40,H1,child,,child,Y
+71,test,7,I1,parent,this looks like a waiter serving something,,Y
+71,test,7,I1,child,,child,Y
+71,test,17,I1,child,it looks like a waiter,,Y
+71,test,17,I1,parent,kay,,Y
+71,test,17,I1,parent,,parent,Y
+71,test,27,I1,parent,"this looks like a, um, someone presenting a bowl of soup",,Y
+71,test,27,I1,child,,child,Y
+71,test,33,I1,child,"it looks like somebody is learning forward, has a triangle foot and has the head w- on a point, on the point of the head and giving somebody...",,N
+71,test,33,I1,parent,okay don't get too creative here,,N
+71,test,33,I1,parent,,parent,N
+71,test,33,I1,child,..triangles,,N
+71,test,8,K1,child,"um he has his arms out and his head is an arrow, and he has a pointy foot, and he is leaning forward",,Y
+71,test,8,K1,parent,,parent,Y
+71,test,12,K1,parent,kay this one looks like someone leaning forward and has a tail xxx tail,,Y
+71,test,12,K1,child,,child,Y
+71,test,26,K1,parent,it looks like someone has a tail and their head is an arrow,,Y
+71,test,26,K1,parent,,parent,Y
+71,test,36,K1,parent,um this is a dog who's learning to do a trick by standing on his hind legs,,Y
+71,test,36,K1,child,,child,Y

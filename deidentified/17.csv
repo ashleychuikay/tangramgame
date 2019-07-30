@@ -1,132 +1,128 @@
-Timeline.ordinal,subid,type,trial,target,person,utterance,selection
-0,17,practice,1,apple,parent,"you eat it, it's shiny, it's a fruit",
-1,17,practice,1,apple,child,apple,
-2,17,practice,1,apple,parent,"Okay, push it",
-3,17,practice,1,apple,child,,child
-12,17,practice,4,apple,child,it's healthy and shiny and very.. and it's a fruit,
-13,17,practice,4,apple,parent,"Okay, sounds familiar",
-14,17,practice,4,apple,child,"and, it has a stem on it",
-15,17,practice,4,apple,parent,,parent
-5,17,practice,2,artichoke,child,"it's, um healthy, it looks like you can chew",
-6,17,practice,2,artichoke,parent,"okay, what is it?",
-7,17,practice,2,artichoke,child,"hmmm, it's a vegetable",
-8,17,practice,2,artichoke,parent,,parent
-16,17,practice,5,artichoke,child,"I know what this one is, it's broccoli",
-17,17,practice,5,artichoke,parent,you don't know that yet,
-18,17,practice,5,artichoke,child,"yes I do! because it's what back and forth, back and forth, back and forth",
-19,17,practice,5,artichoke,parent,"if you think you know, do you want me to describe it first?",
-20,17,practice,5,artichoke,child,,child
-9,17,practice,3,onion,parent,"It's a vegetable, it sometimes make your breath stinky, you eat it on burgers",
-10,17,practice,3,onion,child,I know what it is--onion!,
-11,17,practice,3,onion,child,,child
-21,17,practice,6,onion,child,"It's a part of a hamburger, very stinky, and it comes from, it comes from trees",
-22,17,practice,6,onion,parent,Does it?,
-23,17,practice,6,onion,parent,,parent
-46,17,test,7,A1,parent,okay this person is like running or skipping,
-47,17,test,7,A1,child,,child
-69,17,test,15,A1,child,it's the person who's skipping,
-70,17,test,15,A1,parent,,parent
-98,17,test,27,A1,parent,this person is running,
-99,17,test,27,A1,child,,child
-127,17,test,39,A1,child,this person is laying down,
-128,17,test,39,A1,parent,,parent
-27,17,test,2,B1,child,"it's a person and he's sad, he's walking like this",
-28,17,test,2,B1,parent,,parent
-60,17,test,12,B1,parent,okay this person is like walking sad with their head down,
-61,17,test,12,B1,child,,child
-108,17,test,30,B1,child,this person is walking down sadly,
-109,17,test,30,B1,parent,,parent
-116,17,test,34,B1,parent,this person just lost his dog,
-117,17,test,34,B1,child,,child
-38,17,test,5,C1,parent,this person looks like he's bending down looking for something,
-39,17,test,5,C1,child,,child
-58,17,test,11,C1,child,it's a person looking for something,
-59,17,test,11,C1,parent,,parent
-93,17,test,25,C1,parent,this person lost their fortnight card,
-94,17,test,25,C1,child,,child
-95,17,test,25,C1,child,no I didn't!,
-123,17,test,37,C1,child,"this person is saying, ""more tea, sir?""",
-124,17,test,37,C1,parent,,parent
-56,17,test,10,D1,child,it's a person laying down,
-57,17,test,10,D1,parent,,parent
-76,17,test,18,D1,parent,okay this person is laying down with his book,
-77,17,test,18,D1,child,,child
-96,17,test,26,D1,child,it's the person laying down,
-97,17,test,26,D1,parent,,parent
-120,17,test,36,D1,parent,this person is scrolling on,
-121,17,test,36,D1,child,,child
-122,17,test,36,D1,parent,social media,
-30,17,test,3,E1,parent,"it's a person, he could be sitting down, it looks like he's weeping with his head in his chest",
-31,17,test,3,E1,child,,child
-62,17,test,13,E1,child,"this person is ""whoo"", like this, it's the person with a triangle head, I mean, square, triangle,  I don't know what it's called but he jumping",
-63,17,test,13,E1,parent,,parent
-64,17,test,13,E1,parent,He's emotional?,
-65,17,test,13,E1,child,He's kinda emotional,
-83,17,test,21,E1,parent,"this person is like, flying in the sky",
-84,17,test,21,E1,child,,child
-85,17,test,21,E1,parent,jumping high,
-114,17,test,33,E1,child,this is the person who's walking down sadly,
-115,17,test,33,E1,parent,,parent
-25,17,test,1,F1,parent,"it's like a bird, it flies maybe",
-26,17,test,1,F1,child,,child
-78,17,test,19,F1,child,this person is strong and kept doing this,
-79,17,test,19,F1,parent,,parent
-106,17,test,29,F1,parent,this person looks like they're doing orange justice,
-107,17,test,29,F1,child,,child
-110,17,test,31,F1,child,this is the person who's...,
-111,17,test,31,F1,parent,,parent
-48,17,test,8,G1,child,it's a sad lady with black hair,
-49,17,test,8,G1,parent,what is she doing?,
-50,17,test,8,G1,child,sitting down outside,
-51,17,test,8,G1,parent,"okay, I need more, I need more information",
-52,17,test,8,G1,child,and she's sitting on this- it's not the person who's on the ground,
-53,17,test,8,G1,parent,,parent
-71,17,test,16,G1,parent,this person is sitting at a stoop,
-72,17,test,16,G1,child,,child
-73,17,test,16,G1,child,yeah that's what I was talking about,
-91,17,test,24,G1,child,it's um  the person um..,
-92,17,test,24,G1,parent,,parent
-125,17,test,38,G1,parent,this person may be using the bathroom,
-126,17,test,38,G1,child,,child
-32,17,test,4,H1,child,"it's a person with triangle head, he's doing this",
-33,17,test,4,H1,parent,what else?,
-34,17,test,4,H1,child,"I think it's, bringing xxx or something",
-35,17,test,4,H1,parent,,parent
-36,17,test,4,H1,parent,"Oh, like a servant",
-80,17,test,20,H1,parent,this person is just standing still,
-81,17,test,20,H1,child,,child
-82,17,test,20,H1,parent,like he's talking to some people,
-100,17,test,28,H1,child,it's the person laying down on the floor,
-101,17,test,28,H1,parent,is it?,
-102,17,test,28,H1,child,"I think, but it has a blue square on the other one",
-103,17,test,28,H1,parent,"A what? no, describe it",
-104,17,test,28,H1,child,the person who’s on their knees,
-105,17,test,28,H1,parent,,parent
-112,17,test,32,H1,parent,this person is standing up in front of people,
-113,17,test,32,H1,child,,child
-40,17,test,6,I1,child,"it's the same person again, the one like this!",
-41,17,test,6,I1,parent,"tell me more! no, tell me more",
-42,17,test,6,I1,child,he just bending down like this,
-43,17,test,6,I1,parent,"Oh my gosh, this is tricky! Would you tell me more description?",
-44,17,test,6,I1,child,"he likes to this, he's like this",
-45,17,test,6,I1,parent,,parent
-66,17,test,14,I1,parent,this is the new butler,
-67,17,test,14,I1,child,,child
-68,17,test,14,I1,parent,Can I give you some more tea?,
-86,17,test,22,I1,child,it's the same person again,
-87,17,test,22,I1,parent,,parent
-129,17,test,40,I1,parent,this person,
-130,17,test,40,I1,child,,child
-54,17,test,9,K1,parent,"this person looks like a begger, saying give me some more",
-55,17,test,9,K1,child,,child
-74,17,test,17,K1,child,"this person is um, separate like that",
-75,17,test,17,K1,parent,,parent
-88,17,test,23,K1,parent,"this person is walking around, would you like some more tea?",
-89,17,test,23,K1,child,,child
-90,17,test,23,K1,child,"Sir, would you like some more tea, sir?",
-118,17,test,35,K1,child,this person is skipping,
-119,17,test,35,K1,parent,,parent
-4,17,test,,,parent,"Alright, now you tell me",
-24,17,test,,,parent,"Ready to start? This is the real game, you're ready?",
-29,17,test,,,parent,"Not like the practice, huh?",
-37,17,test,,,child,We got most of them right,
+subid,type,trial,target,person,utterance,selection,correct
+17,practice,1,apple,parent,"you eat it, it's shiny, it's a fruit",,Y
+17,practice,1,apple,child,apple,,Y
+17,practice,1,apple,parent,"Okay, push it",,Y
+17,practice,1,apple,child,,child,Y
+17,practice,4,apple,child,it's healthy and shiny and very.. and it's a fruit,,Y
+17,practice,4,apple,parent,"Okay, sounds familiar",,Y
+17,practice,4,apple,child,"and, it has a stem on it",,Y
+17,practice,4,apple,parent,,parent,Y
+17,practice,2,artichoke,child,"it's, um healthy, it looks like you can chew",,Y
+17,practice,2,artichoke,parent,"okay, what is it?",,Y
+17,practice,2,artichoke,child,"hmmm, it's a vegetable",,Y
+17,practice,2,artichoke,parent,,parent,Y
+17,practice,5,artichoke,child,"I know what this one is, it's broccoli",,Y
+17,practice,5,artichoke,parent,you don't know that yet,,Y
+17,practice,5,artichoke,child,"yes I do! because it's what back and forth, back and forth, back and forth",,Y
+17,practice,5,artichoke,parent,"if you think you know, do you want me to describe it first?",,Y
+17,practice,5,artichoke,child,,child,Y
+17,practice,3,onion,parent,"It's a vegetable, it sometimes make your breath stinky, you eat it on burgers",,Y
+17,practice,3,onion,child,I know what it is--onion!,,Y
+17,practice,3,onion,child,,child,Y
+17,practice,6,onion,child,"It's a part of a hamburger, very stinky, and it comes from, it comes from trees",,Y
+17,practice,6,onion,parent,Does it?,,Y
+17,practice,6,onion,parent,,parent,Y
+17,test,7,A1,parent,okay this person is like running or skipping,,Y
+17,test,7,A1,child,,child,Y
+17,test,15,A1,child,it's the person who's skipping,,Y
+17,test,15,A1,parent,,parent,Y
+17,test,27,A1,parent,this person is running,,Y
+17,test,27,A1,child,,child,Y
+17,test,39,A1,child,this person is laying down,,N
+17,test,39,A1,parent,,parent,N
+17,test,2,B1,child,"it's a person and he's sad, he's walking like this",,Y
+17,test,2,B1,parent,,parent,Y
+17,test,12,B1,parent,okay this person is like walking sad with their head down,,Y
+17,test,12,B1,child,,child,Y
+17,test,30,B1,child,this person is walking down sadly,,Y
+17,test,30,B1,parent,,parent,Y
+17,test,34,B1,parent,this person just lost his dog,,Y
+17,test,34,B1,child,,child,Y
+17,test,5,C1,parent,this person looks like he's bending down looking for something,,Y
+17,test,5,C1,child,,child,Y
+17,test,11,C1,child,it's a person looking for something,,Y
+17,test,11,C1,parent,,parent,Y
+17,test,25,C1,parent,this person lost their fortnight card,,Y
+17,test,25,C1,child,,child,Y
+17,test,25,C1,child,no I didn't!,,Y
+17,test,37,C1,child,"this person is saying, ""more tea, sir?""",,N
+17,test,37,C1,parent,,parent,N
+17,test,10,D1,child,it's a person laying down,,Y
+17,test,10,D1,parent,,parent,Y
+17,test,18,D1,parent,okay this person is laying down with his book,,Y
+17,test,18,D1,child,,child,Y
+17,test,26,D1,child,it's the person laying down,,Y
+17,test,26,D1,parent,,parent,Y
+17,test,36,D1,parent,this person is scrolling on,,Y
+17,test,36,D1,child,,child,Y
+17,test,36,D1,parent,social media,,Y
+17,test,3,E1,parent,"it's a person, he could be sitting down, it looks like he's weeping with his head in his chest",,N
+17,test,3,E1,child,,child,N
+17,test,13,E1,child,"this person is ""whoo"", like this, it's the person with a triangle head, I mean, square, triangle,  I don't know what it's called but he jumping",,Y
+17,test,13,E1,parent,,parent,Y
+17,test,13,E1,parent,He's emotional?,,Y
+17,test,13,E1,child,He's kinda emotional,,Y
+17,test,21,E1,parent,"this person is like, flying in the sky",,Y
+17,test,21,E1,child,,child,Y
+17,test,21,E1,parent,jumping high,,Y
+17,test,33,E1,child,this is the person who's walking down sadly,,N
+17,test,33,E1,parent,,parent,N
+17,test,1,F1,parent,"it's like a bird, it flies maybe",,Y
+17,test,1,F1,child,,child,Y
+17,test,19,F1,child,this person is strong and kept doing this,,Y
+17,test,19,F1,parent,,parent,Y
+17,test,29,F1,parent,this person looks like they're doing orange justice,,N
+17,test,29,F1,child,,child,N
+17,test,31,F1,child,this is the person who's...,,N
+17,test,31,F1,parent,,parent,N
+17,test,8,G1,child,it's a sad lady with black hair,,Y
+17,test,8,G1,parent,what is she doing?,,Y
+17,test,8,G1,child,sitting down outside,,Y
+17,test,8,G1,parent,"okay, I need more, I need more information",,Y
+17,test,8,G1,child,and she's sitting on this- it's not the person who's on the ground,,Y
+17,test,8,G1,parent,,parent,Y
+17,test,16,G1,parent,this person is sitting at a stoop,,Y
+17,test,16,G1,child,,child,Y
+17,test,16,G1,child,yeah that's what I was talking about,,Y
+17,test,24,G1,child,it's um  the person um..,,Y
+17,test,24,G1,parent,,parent,Y
+17,test,38,G1,parent,this person may be using the bathroom,,Y
+17,test,38,G1,child,,child,Y
+17,test,4,H1,child,"it's a person with triangle head, he's doing this",,Y
+17,test,4,H1,parent,what else?,,Y
+17,test,4,H1,child,"I think it's, bringing xxx or something",,Y
+17,test,4,H1,parent,,parent,Y
+17,test,4,H1,parent,"Oh, like a servant",,Y
+17,test,20,H1,parent,this person is just standing still,,Y
+17,test,20,H1,child,,child,Y
+17,test,20,H1,parent,like he's talking to some people,,Y
+17,test,28,H1,child,it's the person laying down on the floor,,N
+17,test,28,H1,parent,is it?,,N
+17,test,28,H1,child,"I think, but it has a blue square on the other one",,N
+17,test,28,H1,parent,"A what? no, describe it",,N
+17,test,28,H1,child,the person who’s on their knees,,N
+17,test,28,H1,parent,,parent,N
+17,test,32,H1,parent,this person is standing up in front of people,,Y
+17,test,32,H1,child,,child,Y
+17,test,6,I1,child,"it's the same person again, the one like this!",,Y
+17,test,6,I1,parent,"tell me more! no, tell me more",,Y
+17,test,6,I1,child,he just bending down like this,,Y
+17,test,6,I1,parent,"Oh my gosh, this is tricky! Would you tell me more description?",,Y
+17,test,6,I1,child,"he likes to this, he's like this",,Y
+17,test,6,I1,parent,,parent,Y
+17,test,14,I1,parent,this is the new butler,,Y
+17,test,14,I1,child,,child,Y
+17,test,14,I1,parent,Can I give you some more tea?,,Y
+17,test,22,I1,child,it's the same person again,,Y
+17,test,22,I1,parent,,parent,Y
+17,test,40,I1,parent,this person,,Y
+17,test,40,I1,child,,child,Y
+17,test,9,K1,parent,"this person looks like a begger, saying give me some more",,Y
+17,test,9,K1,child,,child,Y
+17,test,17,K1,child,"this person is um, separate like that",,Y
+17,test,17,K1,parent,,parent,Y
+17,test,23,K1,parent,"this person is walking around, would you like some more tea?",,Y
+17,test,23,K1,child,,child,Y
+17,test,23,K1,child,"Sir, would you like some more tea, sir?",,Y
+17,test,35,K1,child,this person is skipping,,N
+17,test,35,K1,parent,,parent,N
