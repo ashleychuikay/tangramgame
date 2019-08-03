@@ -1,0 +1,44 @@
+---
+title: "Language use in tangrams"
+author: "Robert Hawkins, Ashley Leung, and Dan Yurovsky"
+date: '`r Sys.Date()`'
+output: 
+  html_document:
+    toc: false
+    number_sections: false
+    theme: lumen
+    toc_float: false
+    code_folding: hide
+---
+
+```{r, message=FALSE, warning=FALSE, show = F}
+library(tidyverse)
+library(tidyboot)
+library(janitor)
+library(lme4)
+library(lmerTest)
+library(broom)
+
+opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, 
+               error = FALSE, cache = TRUE, tidy = FALSE)
+
+theme_set(theme_classic(base_size = 18))
+```
+
+Aggregate csv files
+
+```{r}
+# get all files with participant data (this excludes meta.csv for now)
+raw_csv_names <- dir(path = '../deidentified/', pattern = "*[0-9].csv", full.names = T)
+meta <- read_csv('../deidentified/meta.csv')
+
+data <- raw_csv_names %>%
+  map(read_csv) %>%              # read all csvs and combine into single data frame
+  reduce(rbind) %>% 
+  filter(type != 'practice') %>% # remove practice trials
+  filter(!is.na(utterance)) %>%  # remove 'selection' events (for now)
+  select(-selection) %>%
+  left_join(meta)                # combine with meta-data
+
+write_csv(data, 'combined.csv')
+```
