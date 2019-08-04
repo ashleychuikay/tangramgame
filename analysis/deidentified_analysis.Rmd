@@ -32,13 +32,37 @@ Aggregate csv files
 raw_csv_names <- dir(path = '../deidentified/', pattern = "*[0-9].csv", full.names = T)
 meta <- read_csv('../deidentified/meta.csv')
 
-data <- raw_csv_names %>%
+raw_data <- raw_csv_names %>%
   map(read_csv) %>%              # read all csvs and combine into single data frame
   reduce(rbind) %>% 
   filter(type != 'practice') %>% # remove practice trials
-  filter(!is.na(utterance)) %>%  # remove 'selection' events (for now)
-  select(-selection) %>%
-  left_join(meta)                # combine with meta-data
+  group_by(subid, trial) %>%
+  mutate(utt_number = row_number()) %>%
+  group_by(subid, target) %>%
+  mutate(rep_num = as.numeric(factor(trial))) %>%
+  ungroup() %>%
+  arrange(subid, trial) 
 
-write_csv(data, 'combined.csv')
+roles <- raw_data %>% filter(!is.na(selection)) %>% mutate(role = 'matcher') %>% 
+  select(-type, -utterance, -correct, -selection, -target) %>% 
+  rename(number_at_selection = utt_number) %>%
+  complete(trial, nesting(subid, person)) %>%
+  arrange(subid, trial) %>%
+  mutate(role = ifelse(is.na(role), 'director', 'matcher')) %>%
+  group_by(subid, trial) %>%
+  mutate(number_at_selection = ifelse(is.na(first(number_at_selection)), 
+                                      last(number_at_selection), 
+                                      first(number_at_selection))) %>%
+  mutate(rep_num = ifelse(is.na(first(rep_num)), last(rep_num), first(rep_num))) %>%
+  ungroup()
+
+
+data <- raw_data %>% 
+  left_join(meta) %>%                          # combine with meta-data about age
+  left_join(roles) %>%                         # combine with info about who had which role on each trial
+  filter(utt_number < number_at_selection) %>% # remove utterances after selection was made
+  group_by(subid, trial, person, role, target, rep_num) %>%
+  summarize(utterance = paste0(utterance, collapse = ' '))
+
+write_csv(data, '../deidentified/combined.csv')
 ```
