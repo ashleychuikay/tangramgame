@@ -11,6 +11,8 @@ output:
     code_folding: hide
 ---
 
+## Imports 
+
 ```{r, message=FALSE, warning=FALSE, show = F}
 library(tidyverse)
 library(tidyboot)
@@ -19,13 +21,10 @@ library(lme4)
 library(lmerTest)
 library(broom)
 
-opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, 
-               error = FALSE, cache = TRUE, tidy = FALSE)
-
 theme_set(theme_classic(base_size = 18))
 ```
 
-Aggregate csv files
+## Aggregate csv files
 
 ```{r}
 # get all files with participant data (this excludes meta.csv for now)
@@ -33,9 +32,9 @@ raw_csv_names <- dir(path = '../deidentified/', pattern = "*[0-9].csv", full.nam
 meta <- read_csv('../deidentified/meta.csv')
 
 raw_data <- raw_csv_names %>%
-  map(read_csv) %>%              # read all csvs and combine into single data frame
-  reduce(rbind) %>% 
-  filter(type != 'practice') %>% # remove practice trials
+  map(read_csv) %>%             
+  reduce(rbind) %>%                # read all csvs and combine into single data frame
+  filter(type != 'practice') %>%   # remove practice trials
   group_by(subid, trial) %>%
   mutate(utt_number = row_number()) %>%
   group_by(subid, target) %>%
@@ -43,6 +42,7 @@ raw_data <- raw_csv_names %>%
   ungroup() %>%
   arrange(subid, trial) 
 
+# Go through a lot of work just to get role mappings (ie. who is matcher, who is director?)
 roles <- raw_data %>% filter(!is.na(selection)) %>% mutate(role = 'matcher') %>% 
   select(-type, -utterance, -correct, -selection, -target) %>% 
   rename(number_at_selection = utt_number) %>%
@@ -64,5 +64,21 @@ data <- raw_data %>%
   group_by(subid, trial, person, role, target, rep_num) %>%
   summarize(utterance = paste0(utterance, collapse = ' '))
 
+```
+
+Write out combined data to import into python for nlp
+
+```{r}
 write_csv(data, '../deidentified/combined.csv')
+```
+
+## Sanity checks
+
+check for coding errors
+
+```{r}
+raw_data %>% 
+  group_by(subid, trial) %>% tally() %>% filter(n == 1) %>% select(-n) %>% # get trial #s with 1 event
+  left_join(raw_data) %>%
+  group_by(person) %>% tally()
 ```
