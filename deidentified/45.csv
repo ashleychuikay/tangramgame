@@ -1,47 +1,128 @@
 subid,type,trial,target,person,utterance,selection,correct
+45,practice,1,apple,parent,OK it's a fruit sometimes it's red sometime's yellow we eat them at home dad buys them a lot,,Y
+45,practice,1,apple,parent,Uh it's crunchy when you bite it it's a fruit,,Y
+45,practice,1,apple,parent,You can make a pie out of it,,Y
+45,practice,1,apple,parent,OK so I'm describing one of them so it has a leaf and it's a crunchy fruit,,Y
+45,practice,1,apple,child,Apple,,Y
+45,practice,1,apple,parent,Yeah apple,,Y
 45,practice,1,apple,child,,child,Y
+45,practice,4,apple,child,It can be lots of different colors it can be yellow green maybe even red,,Y
+45,practice,4,apple,parent,Oh it's gotta be an apple,,Y
+45,practice,4,apple,child,Yes,,Y
 45,practice,4,apple,parent,,parent,Y
+45,practice,2,artichoke,child,It's green and you could sometimes buy it at Mariano's,,Y
+45,practice,2,artichoke,parent,Is it an onion,,Y
+45,practice,2,artichoke,child,No,,Y
+45,practice,2,artichoke,parent,It is an artichoke,,Y
 45,practice,2,artichoke,parent,,parent,Y
+45,practice,5,artichoke,parent,It has lots of little leaves on it and it's kind of round with a stem,,Y
+45,practice,5,artichoke,child,Artichoke,,Y
+45,practice,5,artichoke,parent,Yeah you do it,,Y
 45,practice,5,artichoke,child,,child,Y
+45,practice,3,onion,parent,OK um this one,,Y
+45,practice,3,onion,parent,Is round and,,Y
+45,practice,3,onion,child,I eat it,,Y
+45,practice,3,onion,parent,Yes,,Y
 45,practice,3,onion,child,,child,Y
+45,practice,6,onion,child,It's round-ish and it has a stem,,N
 45,practice,6,onion,parent,,parent,N
+45,practice,6,onion,parent,Artichoke,,N
+45,practice,6,onion,child,Yes,,N
+45,test,4,A1,child,He's running,,Y
 45,test,4,A1,parent,,parent,Y
+45,test,18,A1,parent,This is this one has a square at the top,,Y
 45,test,18,A1,child,,child,Y
+45,test,22,A1,child,Uh this one looks like he's jogging and he has a square on its corner at the top,,Y
 45,test,22,A1,parent,,parent,Y
+45,test,38,A1,parent,This is a person running,,Y
 45,test,38,A1,child,,child,Y
+45,test,1,B1,parent,There this one looks like a person standing up,,Y
+45,test,1,B1,child,The guy who's walking,,Y
 45,test,1,B1,child,,child,Y
+45,test,11,B1,child,Uh it looks like he's walking with his hands in his pockets,,Y
 45,test,11,B1,parent,,parent,Y
+45,test,25,B1,parent,This person is walking and looks sad,,Y
 45,test,25,B1,child,,child,Y
+45,test,37,B1,child,This is a person walking,,Y
+45,test,37,B1,parent,Are they holding anything,,Y
+45,test,37,B1,child,No,,Y
 45,test,37,B1,parent,,parent,Y
+45,test,2,C1,child,He's kneeling down and it's like he's looking at,,Y
 45,test,2,C1,parent,,parent,Y
+45,test,2,C1,child,a zzz really close,,Y
+45,test,14,C1,parent,This one looks like a baby crawling,,Y
 45,test,14,C1,child,,child,Y
+45,test,24,C1,child,This guy is on his hands and knees,,Y
+45,test,24,C1,child,Eh on the ground,,Y
 45,test,24,C1,parent,,parent,Y
+45,test,40,C1,parent,This looks like someone crawling,,Y
 45,test,40,C1,child,,child,Y
+45,test,3,D1,parent,This one looks like somebody laying on the floor,,Y
+45,test,3,D1,child,Does it the guy who's kicking his legs up and down,,Y
 45,test,3,D1,child,,child,Y
+45,test,19,D1,child,Uh it looks like a guy crawling but his legs are kicking up in the air,,Y
+45,test,19,D1,parent,Mmm kinda looks like someone uh slip n slide,,Y
 45,test,19,D1,parent,,parent,Y
+45,test,29,D1,parent,Oh this one is somebody laying down,,Y
 45,test,29,D1,child,,child,Y
+45,test,35,D1,child,Uh this one looks like a person laying kicking his legs up and down,,Y
 45,test,35,D1,parent,,parent,Y
+45,test,6,E1,child,Uh he's he's jumping up with his legs kicked backwards,,Y
 45,test,6,E1,parent,,parent,Y
+45,test,16,E1,parent,This looks like a person jumping,,Y
 45,test,16,E1,child,,child,Y
+45,test,26,E1,child,This person is jumping up in the air,,Y
 45,test,26,E1,parent,,parent,Y
+45,test,32,E1,parent,This one looks like someone jumping for joy,,Y
 45,test,32,E1,child,,child,Y
+45,test,7,F1,parent,Mmm this one it is not the one that looks like somebody crawling,,Y
+45,test,7,F1,parent,It's not the one,,Y
 45,test,7,F1,child,,child,Y
+45,test,17,F1,child,Uh it looks like a person running but with its arms out but they're to the top,,Y
 45,test,17,F1,parent,,parent,Y
 45,test,21,F1,child,,child,Y
+45,test,39,F1,child,This is a person that kinda looks like a duck,,Y
+45,test,39,F1,parent,What are the feet like,,Y
+45,test,39,F1,child,Triangles,,Y
+45,test,39,F1,parent,How many,,Y
+45,test,39,F1,child,Two,,Y
+45,test,39,F1,parent,Got it,,Y
 45,test,39,F1,parent,,parent,Y
+45,test,9,G1,parent,Um OK this one at the very top it's a square that's tilted a little bit,,Y
 45,test,9,G1,child,,child,Y
+45,test,15,G1,child,Uh it looks like a tree and it has a triangle sticking out,,Y
 45,test,15,G1,parent,,parent,Y
+45,test,27,G1,parent,This one is not jumping up in the air,,Y
 45,test,27,G1,child,,child,Y
+45,test,33,G1,child,This is it kinda looks like a tree,,Y
+45,test,33,G1,child,And it has and it has a triangle sticking out and a square tilted at the top,,Y
+45,test,33,G1,parent,Mhm is it going up and down or is it across,,Y
+45,test,33,G1,child,It goes up and down,,Y
 45,test,33,G1,parent,,parent,Y
+45,test,8,H1,child,It kinda looks like he's holding a towel,,Y
 45,test,8,H1,parent,,parent,Y
+45,test,20,H1,parent,This one is thicker than the other one,,Y
 45,test,20,H1,child,,child,Y
+45,test,30,H1,child,This person looks like a waiter holding a towel,,Y
 45,test,30,H1,parent,,parent,Y
+45,test,36,H1,parent,OK this is a person standing up,,Y
 45,test,36,H1,child,,child,Y
+45,test,10,I1,child,OK it looks like a guy holding a a tea pot,,Y
 45,test,10,I1,parent,,parent,Y
+45,test,12,I1,parent,It looks like a waiter holding a tray,,Y
 45,test,12,I1,child,,child,Y
+45,test,12,I1,child,That's zzz it looks like a person holding a towel,,Y
+45,test,12,I1,parent,zzz,,Y
+45,test,28,I1,child,This one looks like uh a person holding a tea pot,,Y
 45,test,28,I1,parent,,parent,Y
+45,test,34,I1,parent,This one looks like a waiter holding a tea pot,,Y
 45,test,34,I1,child,,child,Y
+45,test,5,K1,parent,Now it looks like an arrow pointing up at the very top of it,,Y
 45,test,5,K1,child,,child,Y
+45,test,13,K1,child,Uh it's a it's a person that kinda looks like a squirrel with a hat,,N
+45,test,13,K1,child,And and and and he's standing on two feet,,N
 45,test,13,K1,parent,,parent,N
+45,test,23,K1,parent,This one has an arrow pointing up and to the side,,Y
 45,test,23,K1,child,,child,Y
+45,test,31,K1,child,It's a person with a triangle on the top like a hat and it kinda has a tail and its arms are sticking out,,Y
 45,test,31,K1,parent,,parent,Y
