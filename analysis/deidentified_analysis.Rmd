@@ -61,15 +61,70 @@ data <- raw_data %>%
   left_join(meta) %>%                          # combine with meta-data about age
   left_join(roles) %>%                         # combine with info about who had which role on each trial
   filter(utt_number < number_at_selection) %>% # remove utterances after selection was made
-  group_by(subid, trial, person, role, target, rep_num) %>%
-  summarize(utterance = paste0(utterance, collapse = ' '))
-
+  group_by(subid, trial, person, role, target, rep_num, age) %>%
+  summarize(utterance = paste0(utterance, collapse = ' ')) 
 ```
 
 Write out combined data to import into python for nlp
 
 ```{r}
 write_csv(data, '../deidentified/combined.csv')
+```
+
+
+## Origin of final descriptions
+
+For each (contentful & lemmatized) word in the final utterance, we can look at which earlier rounds, if any, it appeared in.
+
+```{r}
+read_csv('../deidentified/word_matches.csv') %>%
+  gather(round, match, `1_match`, `2_match`, `3_match`) %>%
+  separate(round, into = c('round', 'garbage'), sep = '_') %>%
+  group_by(subid, age, final_round_person, round) %>%
+  summarize(match_rate = mean(match)) %>%
+  ungroup() %>%
+  mutate(match_target = ifelse(round == '2', 'same', 'diff'),
+         final_round_person = ifelse(final_round_person == 'child', 'child-last', 'parent-last')) %>%
+  group_by(final_round_person, age, round, match_target) %>%
+  tidyboot_mean(match_rate) %>%
+  ggplot(aes(x = round, y = empirical_stat)) +
+    geom_bar(stat = 'identity') +
+    facet_grid(final_round_person ~ age) +
+    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
+    theme_bw() +
+    ylab('% final-round words occurring on round')
+
+ggsave('appearance_on_earlier_rounds.pdf', width = 4, height = 3)
+```
+
+Look at *first* round final words appear
+
+```{r}
+read_csv('../deidentified/word_matches.csv') %>%  
+  mutate(first_appearance = case_when(`1_match` ~ '1', 
+                                      `2_match` ~ '2', 
+                                      `3_match` ~ '3', 
+                                      TRUE ~ 'never'),
+         total = length(first_appearance),
+         director = final_round_person,
+         matcher = ifelse(final_round_person == 'parent', 'child', 'parent')) %>%
+  filter(first_appearance != 'never') %>%
+  mutate(introduced_by = ifelse(first_appearance == '2', director, matcher),
+         introduced_by_parent = introduced_by == 'parent',
+         introduced_by_self = introduced_by == director) %>%
+  group_by(age, director) %>%
+  tidyboot_mean(introduced_by_self) %>%
+  ggplot(aes(x = as.character(age), y = empirical_stat, 
+             group = director, color = director)) +
+    geom_line() +
+    geom_hline(yintercept = .5) +
+    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
+    theme_bw() +
+    ylab('% final-round words introduced by self') +
+    xlab("child age group") +
+    theme(aspect.ratio = 1)
+
+ggsave('introduction.pdf', width = 3.2, height = 3.2)
 ```
 
 ## Sanity checks
