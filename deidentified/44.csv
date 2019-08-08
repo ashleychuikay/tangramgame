@@ -42,6 +42,7 @@ subid,type,trial,target,person,utterance,selection,correct
 44,test,25,C1,child,,child,Y
 44,test,31,C1,child,Ok it's a person crouching down zzz,,Y
 44,test,31,C1,parent,,parent,Y
+44,test,9,D1,parent,Alright uh this is the one the person's lying down,,Y
 44,test,9,D1,child,,child,Y
 44,test,15,D1,child,It's a person lying down with,,Y
 44,test,15,D1,parent,,parent,Y
@@ -93,6 +94,7 @@ subid,type,trial,target,person,utterance,selection,correct
 44,test,40,H1,parent,This is the person with a tray in his hand,,Y
 44,test,40,H1,child,,child,Y
 44,test,4,I1,child,Um it's a people standing with a uh um a a a different kind of shaped triangle um it's in its hand,,Y
+44,test,4,I1,parent,,parent,Y
 44,test,14,I1,parent,OK this is like a guy holding a triangle in his hand,,Y
 44,test,14,I1,parent,He he's leaning,,Y
 44,test,14,I1,child,,child,Y

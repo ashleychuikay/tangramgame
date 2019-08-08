@@ -80,6 +80,7 @@ subid,type,trial,target,person,utterance,selection,correct
 45,test,7,F1,child,,child,Y
 45,test,17,F1,child,Uh it looks like a person running but with its arms out but they're to the top,,Y
 45,test,17,F1,parent,,parent,Y
+45,test,21,F1,parent,OK this one has two feet that are triangles,,Y
 45,test,21,F1,child,,child,Y
 45,test,39,F1,child,This is a person that kinda looks like a duck,,Y
 45,test,39,F1,parent,What are the feet like,,Y
