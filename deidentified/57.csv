@@ -46,8 +46,8 @@ subid,type,trial,target,person,utterance,selection,correct
 57,test,23,D1,child,,child,Y
 57,test,31,D1,child,tap the one that looks like an airplane,,Y
 57,test,31,D1,parent,,parent,Y
-57,test,2,E1,child,"tap the one with the arms that’s a rectangle, that's a triangle",,Y
-57,test,2,E1,parent,the arms that's a triangle. does it look like it's holding something in it’s hand?,,Y
+57,test,2,E1,child,"tap the one with the arms that's a rectangle, that's a triangle",,Y
+57,test,2,E1,parent,the arms that's a triangle. does it look like it's holding something in its hand?,,Y
 57,test,2,E1,child,no,,Y
 57,test,2,E1,parent,,parent,Y
 57,test,18,E1,parent,tap the picture that looks like it's jumping with his waist side to side,,Y
