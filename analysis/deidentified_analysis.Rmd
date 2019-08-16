@@ -127,6 +127,31 @@ read_csv('../deidentified/word_matches.csv') %>%
 ggsave('introduction.pdf', width = 3.2, height = 3.2)
 ```
 
+## Look at informativity
+
+```{r}
+read_csv('../deidentified/informativity.csv') %>%
+  filter(tfidf != 0) %>%
+  mutate(num_tangrams_occurred_with =  round(1 / ((2^tfidf) /10))) 
+  gather(round, match, `1_match`, `2_match`, `3_match`) %>%
+  separate(round, into = c('round', 'garbage'), sep = '_') %>%
+  group_by(subid, age, final_round_person, round) %>%
+  summarize(match_rate = mean(match)) %>%
+  ungroup() %>%
+  mutate(match_target = ifelse(round == '2', 'same', 'diff'),
+         final_round_person = ifelse(final_round_person == 'child', 'child-last', 'parent-last')) %>%
+  group_by(final_round_person, age, round, match_target) %>%
+  tidyboot_mean(match_rate) %>%
+  ggplot(aes(x = round, y = empirical_stat)) +
+    geom_bar(stat = 'identity') +
+    facet_grid(final_round_person ~ age) +
+    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
+    theme_bw() +
+    ylab('% final-round words occurring on round')
+
+ggsave('appearance_on_earlier_rounds.pdf', width = 4, height = 3)
+```
+
 ## Sanity checks
 
 check for coding errors
