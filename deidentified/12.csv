@@ -87,6 +87,7 @@ subid,type,trial,target,person,utterance,selection,correct
 12,test,37,F1,child,Mhm,,Y
 12,test,37,F1,parent,,parent,Y
 12,test,2,G1,child,Um I have a man bending down,,N
+12,test,2,G1,parent,,parent,N
 12,test,16,G1,parent,Oh I I got a man sitting down,,Y
 12,test,16,G1,child,,child,Y
 12,test,26,G1,child,"I have a uh man, uh pointing, sitting down",,Y

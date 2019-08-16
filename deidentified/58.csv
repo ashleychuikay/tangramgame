@@ -3,6 +3,7 @@ subid,type,trial,target,person,utterance,selection,correct
 58,practice,1,apple,child,no,,Y
 58,practice,1,apple,parent,okay so my blue box there's something that's usually red and has a leaf on top of it,,Y
 58,practice,1,apple,child,an apple!,,Y
+58,practice,1,apple,child,,child,Y
 58,practice,4,apple,child,it is red and it has a stem,,Y
 58,practice,4,apple,parent,I think it's the apple,,Y
 58,practice,4,apple,parent,,parent,Y
@@ -63,7 +64,7 @@ subid,type,trial,target,person,utterance,selection,correct
 58,test,16,D1,parent,this looks like somebody flying an airplane,,Y
 58,test,16,D1,child,,child,Y
 58,test,22,D1,child,somebody driving an airplane,,Y
-58,test,22,D1,child,,child,Y
+58,test,22,D1,parent,,parent,Y
 58,test,32,D1,parent,that looks like somebody on a boat,,Y
 58,test,32,D1,child,,child,Y
 58,test,3,E1,parent,my box looks like somebody that has no arms that's jumping in the air,,Y
@@ -117,6 +118,7 @@ subid,type,trial,target,person,utterance,selection,correct
 58,test,6,K1,child,it's a thing that looks like it has a tail and a triangle on its head,,N
 58,test,6,K1,parent,,parent,N
 58,test,12,K1,parent,this box kind of looks like a dog on its hind legs,,Y
+58,test,12,K1,child,,child,Y
 58,test,24,K1,child,it looks like a dog,,Y
 58,test,24,K1,parent,,parent,Y
 58,test,36,K1,parent,this looks like a frankie with a tail in a party,,Y

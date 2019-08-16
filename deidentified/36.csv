@@ -41,6 +41,7 @@ subid,type,trial,target,person,utterance,selection,correct
 36,test,12,B1,child,,child,Y
 36,test,26,B1,parent,This one look this one looks like somebody walking lonely,,Y
 36,test,26,B1,parent,,parent,Y
+36,test,32,B1,parent,I'm so sad I'm walk,,Y
 36,test,32,B1,child,,child,Y
 36,test,10,C1,child,This one this one it look like two feet and then there there's one rock,,Y
 36,test,10,C1,parent,Two feet and one rock oh like someone's kicking a ball,,Y

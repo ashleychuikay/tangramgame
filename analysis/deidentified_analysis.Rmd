@@ -161,4 +161,9 @@ raw_data %>%
   group_by(subid, trial) %>% tally() %>% filter(n == 1) %>% select(-n) %>% # get trial #s with 1 event
   left_join(raw_data) %>%
   group_by(person) %>% tally()
+
+checking <- raw_data %>% 
+  group_by(subid, trial) %>% tally() %>% filter(n == 1) %>% select(-n) %>% # get trial #s with 1 event
+  left_join(raw_data) %>%
+  group_by(person)
 ```

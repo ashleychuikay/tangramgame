@@ -134,7 +134,8 @@ coding_data <- cdata %>%
 
 coding <- coding_data %>%
   arrange(subid, type, target, trial) %>%
-  select(subid, type, trial, target, person, utterance, selection, correct)
+  select(subid, type, trial, target, person, utterance, selection, correct) %>%
+  filter(subid == 12 | subid == 36 | subid == 44 | subid == 45 | subid == 46 | subid == 56 | subid == 58 | subid == 59)
 
 #newcols <- c("final_initial", "self", "other", "accept")
 #coding[, newcols] <- NA

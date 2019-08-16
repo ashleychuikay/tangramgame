@@ -1,46 +1,236 @@
 subid,type,trial,target,person,utterance,selection,correct
+55,practice,1,apple,parent,So yyy I'm seeing a blue box and it's around a fruit it's not it's an apple it's not a banana do you see the apple,,Y
 55,practice,1,apple,child,,child,Y
+55,practice,4,apple,parent,Alright so now it's my turn and oh and you know what I think it's the other one now I think it's  the onion do you know what an onion looks like,,Y
+55,practice,4,apple,child,What,,Y
+55,practice,4,apple,parent,Do you see two do you see two uh vegetables or fruits or whatever vegetables,,Y
+55,practice,4,apple,parent,What do you see on your screen,,Y
+55,practice,4,apple,parent,So I think it's the other one that we didn't have last time do you remember the one you had last time,,Y
+55,practice,4,apple,child,I have an onion and the one,,Y
+55,practice,4,apple,child,we did last time,,Y
+55,practice,4,apple,parent,OK pick the onion that's what I have surrounded with the circle,,Y
 55,practice,4,apple,child,,child,Y
+55,practice,2,artichoke,child,Um it's a circle and,,Y
+55,practice,2,artichoke,child,I don't know what that is,,Y
+55,practice,2,artichoke,parent,Is that kinda like an onion cause the other one has a bunch of lines on it does the one you're looking at have lines on it or no lines,,Y
+55,practice,2,artichoke,parent,Just like a few lines,,Y
+55,practice,2,artichoke,child,Yeah,,Y
+55,practice,2,artichoke,parent,Um so wait is it a OK so wait it's hard to tell the difference between these,,Y
+55,practice,2,artichoke,child,Pineapple maybe,,Y
+55,practice,2,artichoke,parent,Hm pineapple so are there a lot of lines in the middle or are there no lines in the middle,,Y
+55,practice,2,artichoke,child,Hm a lot,,Y
+55,practice,5,artichoke,child,Um I have an apple,,N
+55,practice,5,artichoke,parent,Oh so should I pick the apple,,N
+55,practice,5,artichoke,child,Yeah,,N
+55,practice,5,artichoke,parent,OK,,N
 55,practice,5,artichoke,parent,,parent,N
+55,practice,3,onion,parent,Oh there's a lot OK so I'm gonna pick this one alright um there,,Y
 55,practice,3,onion,parent,,parent,Y
+55,practice,6,onion,parent,Uh OK I'm the leader hey it's that thing again with all the little lines in the middle I don't even know what it is do you know what it's not the onion though it's the other one pick that one,,Y
 55,practice,6,onion,child,,child,Y
+55,practice,7,,child,Uh it's an onion,,
+55,practice,7,,parent,OK I'll pick the onion,,
 55,practice,7,,parent,,parent,
+55,test,5,A1,parent,OK the person in the box is the one that's running not the one that's lying down can you pick the one that's running,,Y
 55,test,5,A1,child,,child,Y
+55,test,15,A1,parent,Mine is somebody pointing but the one that is running is in the box,,Y
+55,test,15,A1,parent,Oh the one that's running is in the box so I should not pick the one that's pointing right,,Y
+55,test,15,A1,child,No,,Y
+55,test,15,A1,parent,Ok I'll pick the one running,,Y
 55,test,15,A1,parent,,parent,Y
+55,test,25,A1,parent,Alright yyy I've got the guy running but this time it's not the cat it's the guy running but this time his head is pointed up so it's almost like he's running happy can you pick the happy running guy,,Y
 55,test,25,A1,child,,child,Y
+55,test,39,A1,child,Mine is running in the box but not the one holding,,Y
+55,test,39,A1,parent,Oh I'll pick the running one,,Y
 55,test,39,A1,parent,,parent,Y
+55,test,39,A1,child,And he's happy,,Y
+55,test,2,B1,child,I have a people,,Y
+55,test,2,B1,parent,Uh huh,,Y
+55,test,2,B1,child,I have two peoples,,Y
+55,test,2,B1,parent,Oh OK is one person um,,Y
+55,test,2,B1,child,I have a person,,Y
+55,test,2,B1,parent,Uh huh,,Y
+55,test,2,B1,child,and a cat,,Y
+55,test,2,B1,parent,So which one should I pick,,Y
+55,test,2,B1,child,Um you should pick person because that's in the box,,Y
+55,test,2,B1,parent,OK so the person's in the box not the cat with the little tail right,,Y
+55,test,2,B1,child,Yeah,,Y
+55,test,2,B1,parent,OK I pick the person,,Y
 55,test,2,B1,parent,,parent,Y
+55,test,14,B1,parent,Alright yyy I've got that person that's looking sad while they're walking their head their head pointed down not the person that's like trying to hide pick the person that's walking that's sad,,Y
 55,test,14,B1,child,,child,Y
+55,test,30,B1,parent,Oh so you said the guy that's walking and he's sad is in the box,,Y
+55,test,30,B1,child,Yeah,,Y
 55,test,30,B1,parent,,parent,Y
+55,test,32,B1,parent,Alright yyy in my blue box is the  guy sad that's walking. can you pick him,,Y
 55,test,32,B1,child,,child,Y
+55,test,10,C1,child,I got somebody hiding down,,Y
+55,test,10,C1,parent,Yeah,,Y
+55,test,10,C1,child,and somebody holding something,,Y
+55,test,10,C1,parent,Which one has the box around it,,Y
+55,test,10,C1,child,Um the one with the one trying to hide,,Y
+55,test,10,C1,parent,Mhm yeah I'll pick the hiding one then,,Y
 55,test,10,C1,parent,,parent,Y
+55,test,20,C1,parent,Alright yyy I've got the guy hiding now in the box can you pick that not the guy pointing,,Y
 55,test,20,C1,child,,child,Y
+55,test,20,C1,child,Did the one hiding,,Y
+55,test,22,C1,child,Um I have somebody hiding in the box and the one running not in the box,,Y
+55,test,22,C1,parent,OK so I'll pick the guy hiding because,,Y
 55,test,22,C1,parent,,parent,Y
+55,test,40,C1,parent,Oh I got the one that's trying to hide not the superhero that's jumping up in the air pick the guy that's trying to hide,,Y
 55,test,40,C1,child,,child,Y
+55,test,8,D1,child,Um I have someone laying down inside the box,,Y
+55,test,8,D1,parent,OK I'll pick the one laying down,,Y
 55,test,8,D1,parent,,parent,Y
+55,test,12,D1,parent,OK so now I've got in the box the guy that's lying down not the superhero that's jumping can you pick the,,Y
+55,test,12,D1,parent,guy that's kind of lying down with his foot up in the air,,Y
+55,test,12,D1,child,Yeah,,Y
+55,test,12,D1,parent,OK,,Y
 55,test,12,D1,child,,child,Y
+55,test,12,D1,child,Well the superhero is up,,Y
+55,test,12,D1,child,It's not in the box,,Y
+55,test,12,D1,parent,OK,,Y
+55,test,24,D1,child,I have that guy laying down and the weird one,,Y
+55,test,24,D1,parent,OK so which one's in the box the guy laying down or the weird one,,Y
+55,test,24,D1,child,The guy laying down,,Y
+55,test,24,D1,parent,Ok I'll pick that one,,Y
+55,test,38,D1,parent,Alright yyy I've got in blue the guy that's laying down not the guy that's pointing so pick the guy that's laying down,,Y
 55,test,38,D1,child,,child,Y
+55,test,7,E1,child,I got,,Y
+55,test,7,E1,child,somebody,,Y
+55,test,7,E1,parent,Yeah,,Y
+55,test,7,E1,child,falling um a superhero chasing a bad guy,,Y
+55,test,7,E1,parent,Yeah that's kind of what I see you know what the so wait do you see one guy running and one guy that looks kind of like a superhero with a big cape,,Y
+55,test,7,E1,child,Yeah,,Y
+55,test,7,E1,parent,OK pick the guy with the cape,,Y
 55,test,7,E1,child,,child,Y
+55,test,11,E1,child,I have one um a superhero,,Y
+55,test,11,E1,parent,Uh huh,,Y
+55,test,11,E1,child,in the box and somebody pointing at him,,Y
+55,test,11,E1,parent,Oh OK so you have the superhero in the box I'll pick the superhero then,,Y
 55,test,11,E1,parent,,parent,Y
+55,test,23,E1,parent,he's in the box,,Y
+55,test,23,E1,parent,Alright yyy in the box I have that superhero jumping with a cape pick that,,Y
 55,test,23,E1,child,,child,Y
+55,test,23,E1,child,Not the judge,,Y
+55,test,23,E1,parent,Not the judge,,Y
+55,test,31,E1,child,I have a superhero in the box and the sad guy,,Y
+55,test,31,E1,parent,The sad guy walking is not in the box,,Y
+55,test,31,E1,child,No,,Y
+55,test,31,E1,parent,OK so I'll pick the superhero he is in the box right,,Y
+55,test,31,E1,child,Yup,,Y
 55,test,31,E1,parent,,parent,Y
+55,test,9,F1,parent,Ok I've got you know there's a person that's walking he looks kind of sad like he's looking down but don't pick that one pick the one that's like really weird with all those weird shapes,,Y
+55,test,9,F1,child,OK,,Y
 55,test,9,F1,child,,child,Y
+55,test,19,F1,child,I have that weird looking guy the guy that's trying to hide,,Y
+55,test,19,F1,parent,Yeah,,Y
+55,test,19,F1,child,The weird one,,Y
+55,test,19,F1,parent,Uh huh,,Y
+55,test,19,F1,child,is inside of the box,,Y
+55,test,19,F1,parent,So wait is the guy that's hiding in the box or the really weird one in the box,,Y
+55,test,19,F1,child,The really weird one,,Y
+55,test,19,F1,parent,Ok I'll pick the really weird one,,Y
 55,test,19,F1,parent,,parent,Y
+55,test,29,F1,parent,Alright yyy I've got the really weird one in the box not the cat so pick the really really really weird one,,Y
 55,test,29,F1,child,,child,Y
+55,test,29,F1,child,I have the guy walking sad and and he's in the box but the one laying down isn't,,Y
+55,test,35,F1,child,I have the very very weird one,,Y
+55,test,35,F1,child,and the other very very weird one,,Y
+55,test,35,F1,parent,Yeah so how are we gonna figure out which one this is,,Y
+55,test,35,F1,child,I have um the,,Y
+55,test,35,F1,parent,Does one of them have two feet,,Y
+55,test,35,F1,child,Um one of them has one feet,,Y
+55,test,35,F1,parent,OK which one's in the box,,Y
+55,test,35,F1,child,Um the really really weird one,,Y
+55,test,35,F1,parent,How many feet,,Y
+55,test,35,F1,child,Um two,,Y
+55,test,35,F1,parent,OK do you want me to pick the one with two feet in the blue box,,Y
+55,test,35,F1,child,Yeah,,Y
 55,test,35,F1,parent,,parent,Y
+55,test,1,G1,parent,Now I'm the leader now yyy I see something with lots of different shapes but on the very tippy top is a square do you see that one,,Y
+55,test,1,G1,child,Yeah I have,,Y
+55,test,1,G1,parent,Pick mhm what do you have,,Y
+55,test,1,G1,child,Um I don't I have some I have something I don't know what I have,,Y
+55,test,1,G1,parent,Yeah I don't know what these things are either we just have to kinda describe them and figure it out so one of them has the um square right on the tippy top and the other one has it kind of in the middle right,,Y
+55,test,1,G1,parent,Why don't you pick the one with the square that's at the very tippy top,,Y
+55,test,1,G1,child,OK,,Y
+55,test,1,G1,parent,OK,,Y
+55,test,1,G1,child,You mean the tallest,,Y
+55,test,1,G1,parent,Yes the tallest good one yyy yeah the tall one,,Y
+55,test,1,G1,child,I should push on this one,,Y
+55,test,1,G1,parent,Yeah push on the tall one,,Y
 55,test,1,G1,child,,child,Y
+55,test,13,G1,child,Um mine is big and there's a cat and the one that has it has this big square,,Y
+55,test,13,G1,parent,Uh has the big square at the top or the one that looks like a cat,,Y
+55,test,13,G1,child,Um does the one that doesn't look like a cat,,Y
+55,test,13,G1,parent,That one has a circle around it the square around it I mean,,Y
+55,test,13,G1,child,Yeah,,Y
 55,test,13,G1,parent,,parent,Y
+55,test,27,G1,parent,In my box is some sort of weird shape not the superhero with the cape the other one that's weird that I don't even know what it looks like but,,Y
+55,test,27,G1,child,I have the superhero,,Y
+55,test,27,G1,parent,Uh huh,,Y
+55,test,27,G1,child,and another weird one,,Y
+55,test,27,G1,parent,Yeah pick the other weird one not the superhero,,Y
 55,test,27,G1,child,,child,Y
+55,test,27,G1,child,Might be a building,,Y
+55,test,27,G1,parent,Coulda been a building you're right yyy now it's your turn yyy,,Y
+55,test,37,G1,child,Um I got the really weird one and the one hiding but the weird one's in the box,,Y
+55,test,37,G1,parent,OK I'll pick the weird one,,Y
 55,test,37,G1,parent,,parent,Y
+55,test,3,H1,parent,Alright in my box there's those weird shapes again I think one of them is just kinda like a person maybe standing and then the other looks like he's running right,,Y
+55,test,3,H1,child,Mine has the same thing,,Y
+55,test,3,H1,parent,Yeah pick the one that's just standing not running,,Y
 55,test,3,H1,child,,child,Y
+55,test,17,H1,child,Mine the one pointing is in the box but the one superhero,,Y
+55,test,17,H1,parent,Mhm,,Y
+55,test,17,H1,child,that's running running is not in the box,,Y
+55,test,17,H1,parent,Ok so I'll pick the guy that's pointing that's in your box,,Y
 55,test,17,H1,parent,,parent,Y
+55,test,21,H1,child,I have somebody pointing,,Y
+55,test,21,H1,parent,Oh,,Y
+55,test,21,H1,child,and,,Y
+55,test,21,H1,parent,Pick the guy pointing because that's who's in my blue box,,Y
+55,test,21,H1,child,and I have somebody trying to hide from him,,Y
 55,test,21,H1,child,,child,Y
+55,test,21,H1,parent,guy pick the pointing guy,,Y
+55,test,21,H1,child,I picked the pointing guy,,Y
+55,test,33,H1,child,I have the guy pointing and the one laying down but the one that's pointing is in the box,,Y
+55,test,33,H1,parent,OK I'll pick the one pointing who's in the box,,Y
 55,test,33,H1,parent,,parent,Y
+55,test,4,I1,child,Um I got somebody holding things,,Y
+55,test,4,I1,child,And somebody walking,,Y
+55,test,4,I1,parent,Yup that's what I got which one is the one with the square around it,,Y
+55,test,4,I1,child,Um the one on that the one that's leaving the box,,Y
+55,test,4,I1,parent,Uh huh,,Y
+55,test,4,I1,child,is the person handing some holding something,,Y
+55,test,4,I1,parent,Ok I'll pick that one,,Y
 55,test,4,I1,parent,,parent,Y
+55,test,16,I1,parent,OK so what I have is someone holding a triangle not the guy that's jumping like that looks like a superhero with a cape can you pick the guy,,Y
+55,test,16,I1,parent,Can you pick the guy holding a triangle,,Y
 55,test,16,I1,child,,child,Y
+55,test,26,I1,child,The judge is in the box but not the running one,,Y
+55,test,26,I1,parent,OK I'll pick the judge the guy that's holding a triangle right,,Y
 55,test,26,I1,parent,,parent,Y
+55,test,36,I1,parent,Alright yyy I've got in the blue box the judge holding that triangle not the guy,,Y
 55,test,36,I1,child,,child,Y
+55,test,36,I1,parent,who's hiding,,Y
+55,test,6,K1,child,Um I got a cat,,Y
+55,test,6,K1,parent,Mhm,,Y
+55,test,6,K1,child,and somebody running but the cat's in the box,,Y
+55,test,6,K1,parent,OK I'll pick the cat,,Y
 55,test,6,K1,parent,,parent,Y
+55,test,18,K1,parent,Alright yyy I've got I think it's that cat so it's the cat that's kinda got his he's on his back two legs and his other legs are up that's the one you should pick,,Y
+55,test,18,K1,child,I have somebody laying down,,Y
+55,test,18,K1,child,and the cat,,Y
+55,test,18,K1,parent,Yeah don't pick the one laying down pick the cat,,Y
 55,test,18,K1,child,,child,Y
+55,test,28,K1,child,Mine have a cat in inside the box,,Y
+55,test,28,K1,parent,Oh you have the cat in the box,,Y
+55,test,28,K1,child,Not the very very very very weird one,,Y
+55,test,28,K1,parent,OK I'll pick the cat since it's in the box,,Y
 55,test,28,K1,parent,,parent,Y
+55,test,34,K1,parent,Alright yyy in my blue box is the cat that's kinda on his hind legs,,Y
+55,test,34,K1,child,I have I have the cat and the sad one,,Y
+55,test,34,K1,parent,Uh pick the cat because that's what's in my blue box not the sad guy,,Y
 55,test,34,K1,child,,child,Y
