@@ -132,24 +132,78 @@ ggsave('introduction.pdf', width = 3.2, height = 3.2)
 ```{r}
 read_csv('../deidentified/informativity.csv') %>%
   filter(tfidf != 0) %>%
-  mutate(num_tangrams_occurred_with =  round(1 / ((2^tfidf) /10))) 
-  gather(round, match, `1_match`, `2_match`, `3_match`) %>%
-  separate(round, into = c('round', 'garbage'), sep = '_') %>%
-  group_by(subid, age, final_round_person, round) %>%
-  summarize(match_rate = mean(match)) %>%
+  mutate(num_tangrams_occurred_with =  round(1 / ((2^tfidf) /10))) %>%
+  filter(word != 'zzz') %>%
+  group_by(num_tangrams_occurred_with, initial_round_person) %>%
+  tidyboot_mean(final_match) %>%
+  rename(sample_size = n) %>%
+  ggplot(aes(x = as.integer(num_tangrams_occurred_with), y = empirical_stat)) +
+    geom_point(aes(size = sample_size), stat = 'identity') +
+    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0.1) +
+    geom_smooth(method = 'lm', formula = y ~ poly(x, 2), se = F) +
+    facet_wrap(~ initial_round_person) +
+    #ylim(0, .22) +
+    ylab('% appearing in final utterance') +
+    xlab('distinctiveness of word in initial utterance (# tangrams)') +
+    xlim(0,12) +
+    scale_x_continuous(breaks = c(1,3, 5,7,9,11))+
+    #theme_few() +
+    theme(aspect.ratio = 1)
+```
+
+
+```{r}
+read_csv('../deidentified/informativity.csv') %>%
+  filter(tfidf != 0) %>%
+  group_by(subid, age, word, person, rep_num) %>%
+  mutate(num_tangrams_occurred_with =  round(1 / ((2^tfidf) /10))) %>%
+  summarize(num_tangrams_occurred_with = mean(num_tangrams_occurred_with)) %>%
   ungroup() %>%
-  mutate(match_target = ifelse(round == '2', 'same', 'diff'),
-         final_round_person = ifelse(final_round_person == 'child', 'child-last', 'parent-last')) %>%
-  group_by(final_round_person, age, round, match_target) %>%
-  tidyboot_mean(match_rate) %>%
-  ggplot(aes(x = round, y = empirical_stat)) +
-    geom_bar(stat = 'identity') +
-    facet_grid(final_round_person ~ age) +
+  mutate(rep_num = paste0('repetition ', rep_num)) %>%
+  group_by(person, rep_num, age) %>%
+  tidyboot_mean(num_tangrams_occurred_with) %>%
+  ggplot(aes(x = age, y = empirical_stat, color = person)) +
+    geom_line(stat = 'identity') +
+    facet_grid(~ rep_num) +
     geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
     theme_bw() +
-    ylab('% final-round words occurring on round')
+    ylab('# tangrams words occur with') +
+    ylim(1, 2.5) +
+    theme(aspect.ratio = 1)
 
-ggsave('appearance_on_earlier_rounds.pdf', width = 4, height = 3)
+ggsave('informativity_mean.pdf', width = 8, height = 3)
+```
+
+```{r}
+summary(lmer(num_tangrams_occurred_with ~ person + rep_num + age + (1 | subid),
+     data = read_csv('../deidentified/informativity.csv') %>%
+  filter(tfidf != 0) %>%
+  group_by(subid, age, word, person, rep_num) %>%
+  mutate(num_tangrams_occurred_with =  round(1 / ((2^tfidf) /10))) %>%
+  summarize(num_tangrams_occurred_with = mean(num_tangrams_occurred_with))))
+```
+
+```{r}
+read_csv('../deidentified/informativity.csv') %>%
+  filter(tfidf != 0) %>%
+  group_by(subid, age, target, person, rep_num) %>%
+  mutate(num_tangrams_occurred_with =  round(1 / ((2^tfidf) /10))) %>%
+  summarize(num_tangrams_occurred_with = min(num_tangrams_occurred_with)) %>%
+  ungroup() %>%
+  mutate(rep_num = paste0('repetition ', rep_num)) %>%
+  group_by(person, rep_num, age) %>%
+  tidyboot_mean(num_tangrams_occurred_with) %>%
+  ggplot(aes(x = age, y = empirical_stat, color = person)) +
+    geom_line(stat = 'identity') +
+    facet_grid(~ rep_num) +
+    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
+    theme_bw() +
+    ylab('maximum informativity per message') +
+    ylim(1, 1.7) +
+    theme(aspect.ratio = 1)
+
+ggsave('min_per_message.pdf', width = 8, height = 3)
+
 ```
 
 ## Sanity checks
