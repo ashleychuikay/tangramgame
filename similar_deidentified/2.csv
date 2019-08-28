@@ -1,0 +1,128 @@
+subid,type,trial,target,person,utterance,selection,correct
+2,practice,1,apple,child,,child,Y
+2,practice,4,apple,child,it has a leaf on top and it's red,,Y
+2,practice,4,apple,parent,or?,,Y
+2,practice,4,apple,child,"or orange, or green",,Y
+2,practice,4,apple,parent,,parent,Y
+2,practice,2,artichoke,child,"I see something that's green and it has a black, um, it has a brown thing on top",,N
+2,practice,2,artichoke,parent,it has a brown thing on top?,,N
+2,practice,2,artichoke,child,mhm,,N
+2,practice,2,artichoke,parent,,parent,N
+2,practice,5,artichoke,parent,"this one's a circle, but it has a bunch of",,Y
+2,practice,5,artichoke,child,leaves?,,Y
+2,practice,5,artichoke,parent,leaves and diamonds,,Y
+2,practice,5,artichoke,child,,child,Y
+2,practice,5,artichoke,child,got it,,Y
+2,practice,3,onion,parent,"this one, i see something that's a circle, has little growth-y things coming out of the bottom",,Y
+2,practice,3,onion,child,,child,Y
+2,practice,6,onion,child,"this thing is, has some peel on it, and it's orange and white, and two stones",,Y
+2,practice,6,onion,parent,,parent,Y
+2,test,3,B2,parent,this one looks like he's wearing a hat. there's a triangle on the top,,Y
+2,test,3,B2,child,,child,Y
+2,test,13,B2,child,this one looks like the triangle hat and he looks like a beaver,,Y
+2,test,13,B2,parent,he looks like a beaver?,,Y
+2,test,13,B2,parent,,parent,Y
+2,test,23,B2,parent,this one has the triangle shaped head,,Y
+2,test,23,B2,child,,child,Y
+2,test,35,B2,child,this one looks like a beaver with a hat,,Y
+2,test,35,B2,parent,beaver with a hat?,,Y
+2,test,35,B2,parent,,parent,Y
+2,test,9,I1,parent,this one almost looks like a waiter who's serving you,,Y
+2,test,9,I1,child,,child,Y
+2,test,9,I1,parent,an upside down triangle,,Y
+2,test,17,I1,child,"this one has, looks like a waiter",,Y
+2,test,17,I1,parent,,parent,Y
+2,test,27,I1,parent,this is the diamond head with a,,N
+2,test,27,I1,child,,child,N
+2,test,27,I1,parent,triangle waiter,,N
+2,test,39,I1,child,this is like a waiter,,Y
+2,test,39,I1,parent,no hat?,,Y
+2,test,39,I1,child,yes,,Y
+2,test,39,I1,parent,,parent,Y
+2,test,6,J1,child,this one looks like someone swimming,,Y
+2,test,6,J1,parent,,parent,Y
+2,test,18,J1,parent,this one looks like it's a square head on top,,Y
+2,test,18,J1,child,,child,Y
+2,test,18,J1,parent,of a triangle and swimming,,Y
+2,test,24,J1,child,this one looks like it's going swimming,,Y
+2,test,24,J1,parent,,parent,Y
+2,test,32,J1,parent,this one looks like it's swimming with no hat on,,Y
+2,test,32,J1,child,,child,Y
+2,test,10,K1,child,"this one looks like it's waiting, like giving someone soup",,Y
+2,test,10,K1,parent,what does the head look like?,,Y
+2,test,10,K1,child,a hat and on his bottom he has this triangle,,Y
+2,test,10,K1,parent,,parent,Y
+2,test,14,K1,parent,"this one looks like he, he has a triangle hat",,Y
+2,test,14,K1,child,,child,Y
+2,test,14,K1,parent,looks like he has a big pointy,,Y
+2,test,22,K1,child,"this one looks like, like a waiter",,Y
+2,test,22,K1,parent,,parent,Y
+2,test,38,K1,parent,this is the pointy tail,,Y
+2,test,38,K1,child,,child,Y
+2,test,38,K1,parent,triangle hat,,Y
+2,test,8,L1,child,this one has a triangle and has his leg up and down,,Y
+2,test,8,L1,parent,,parent,Y
+2,test,12,L1,parent,this one looks like he's running and he has his triangle hat,,Y
+2,test,12,L1,child,,child,Y
+2,test,28,L1,child,"this one looks like he's, he has a hat and he's running and he looks like a dog",,Y
+2,test,28,L1,parent,,parent,Y
+2,test,40,L1,parent,this one has has the triangle hat and it looks like it's head's kinda tilted back like this,,Y
+2,test,40,L1,child,,child,Y
+2,test,5,N1,parent,this one almost looks like he's falling forward and this one leg is way back,,N
+2,test,5,N1,child,,child,N
+2,test,15,N1,child,"this one looks like a diamond and he's running. and it has a square, just a square on his head",,Y
+2,test,15,N1,parent,just a square on his head?,,Y
+2,test,15,N1,child,"mhm, he's like",,Y
+2,test,15,N1,parent,,parent,Y
+2,test,29,N1,parent,this one is the long,,Y
+2,test,29,N1,child,diamond?,,Y
+2,test,29,N1,parent,long diamond,,Y
+2,test,29,N1,child,,child,Y
+2,test,33,N1,child,"this one looks like the diamond, not a waiter",,Y
+2,test,33,N1,parent,,parent,Y
+2,test,1,O1,parent,"this one has a square on the top, and it has a rectangle going down the middle of it",,Y
+2,test,1,O1,child,,child,Y
+2,test,19,O1,child,"this one looks like he's running and jogging, and he has a square head",,N
+2,test,19,O1,parent,,parent,N
+2,test,25,O1,parent,this one has triangle feet and no hat,,Y
+2,test,25,O1,child,,child,Y
+2,test,31,O1,child,"i see, a man like this, and his feet are like, look at my feet down here. his feet are not like this, they are like this",,Y
+2,test,31,O1,parent,,parent,Y
+2,test,7,R1,parent,this one he is not wearing the triangle hat,,Y
+2,test,7,R1,child,,child,Y
+2,test,7,R1,parent,it's just a square on,,Y
+2,test,11,R1,child,a square and he's running and his bottom has a square and another square,,Y
+2,test,11,R1,parent,,parent,Y
+2,test,21,R1,parent,"this one has a square head and it looks like he's running and there is a triangle, and you can see his triangle knees pointing",,Y
+2,test,21,R1,child,hmm,,Y
+2,test,21,R1,parent,"and it looks like there's, he has a little tail, not the one that",,Y
+2,test,21,R1,child,is it the diamond one?,,Y
+2,test,21,R1,parent,it's a perfect square connected it's even with the triangle,,Y
+2,test,21,R1,child,,child,Y
+2,test,21,R1,parent,it's the perfect corner,,Y
+2,test,37,R1,child,"this one is not on his, it's running",,Y
+2,test,37,R1,parent,,parent,Y
+2,test,2,T1,child,"this one has a diamond on his top, and it has his arm like another diamond, and his feet, there, one looks, um, like a triangle, and the other one looks like a normal foot",,Y
+2,test,2,T1,parent,,parent,Y
+2,test,20,T1,parent,this one is the small triangle foot waiter with no hat or pointy tail,,Y
+2,test,20,T1,child,,child,Y
+2,test,26,T1,child,this one looks like he's running and he has his hand and he has a diamond head,,Y
+2,test,26,T1,parent,,parent,Y
+2,test,34,T1,parent,this one has,,Y
+2,test,34,T1,child,a waiter?,,Y
+2,test,34,T1,parent,not the waiter,,Y
+2,test,34,T1,child,,child,Y
+2,test,4,U1,child,"this one looks like a big diamond and it has a diamond on his head and then it has another, um, it has another. um, triangle, and it has another foot like a normal foot",,Y
+2,test,4,U1,parent,,parent,Y
+2,test,16,U1,parent,this one has small triangle feet,,Y
+2,test,16,U1,child,,child,Y
+2,test,16,U1,parent,but there's no hat on his head,,Y
+2,test,16,U1,child,got it,,Y
+2,test,30,U1,child,this one looks like a diamond and standing still,,Y
+2,test,30,U1,parent,does it have a hat?,,Y
+2,test,30,U1,child,no,,Y
+2,test,30,U1,parent,,parent,Y
+2,test,36,U1,parent,this one,,N
+2,test,36,U1,child,"has a diamond, a long diamond or a short diamond?",,N
+2,test,36,U1,parent,this one's the taller diamong,,N
+2,test,36,U1,child,,child,N
