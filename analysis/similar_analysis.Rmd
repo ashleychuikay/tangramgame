@@ -33,7 +33,7 @@ theme_set(theme_classic(base_size = 18))
 
 agedata <- read_csv(here("similardata/databaseid.csv")) %>%
   mutate(subid = as.character(subid)) %>%
-  mutate(database_id = as.numeric(database_id))
+  mutate(database_id = parse_number(database_id))
 
 gametrials <- read_csv(here("similardata/similartangramresults.csv")) %>%
   mutate(type = if_else(nchar(leftpic) > 2, "practice", "test")) %>%
@@ -91,7 +91,6 @@ coding_transcript <- function(file) {
   
   transcript <- read_csv(file) %>%
     remove_empty("cols") %>%
-    #mutate(row = 1:n()) %>% 
     mutate(database_id = parse_number(basename(file))) %>%
     mutate(type = if_else(str_detect(Timeline.trial, "p"), "practice", 
                           "test"),
