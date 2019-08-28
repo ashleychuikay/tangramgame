@@ -128,7 +128,7 @@ coding_data <- cdata %>%
 
 coding <- coding_data %>%
   arrange(subid, type, target, trial) %>%
-  select(subid, type, trial, target, person, utterance, selection, correct)
+  select(subid, type, trial, target, leftpic, rightpic, person, utterance, selection, correct)
 
 subids <- unique(coding$subid)
   
