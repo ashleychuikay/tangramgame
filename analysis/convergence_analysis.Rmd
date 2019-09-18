@@ -10,6 +10,7 @@ theme: lumen
 toc_float: false
 code_folding: hide
 ---
+
 ```{r, message=FALSE, warning=FALSE, show = F}
 library(here)
 library(tidyverse)
@@ -23,15 +24,30 @@ theme_set(theme_classic(base_size = 18))
 
 
 ```{r load_data}
-data <- read_csv(here("deidentified/convergence_codes.csv"))
+data <- read_csv(here("deidentified/convergence_codes.csv")) %>%
+  rowwise() %>%
+  mutate(pair = paste(sort(c(leftpic, rightpic)), collapse = " "))
 
-data %>%
+similarities <- read_csv(here("deidentified/similartangramsdata.csv")) %>%
+  group_by(pair) %>%
+  summarise(similarity = median(response))
+
+convergence <- data %>%
+  left_join(similarities, by = "pair") %>%
   gather(person, response, dan, ashley, alex) %>%
   mutate(response = if_else(response == "y", T, F)) %>%
   group_by(target, subject, person) %>%
-  summarise(response = mean(response)) %>%
-   summarise(response = mean(response)) %>%
-   summarise(response = mean(response)) %>%
-  arrange(response) %>%
-  kable()
+  summarise_at(vars(response, similarity), mean) %>%
+  summarise_at(vars(response, similarity), mean) %>%
+  summarise_at(vars(response, similarity), mean) %>%
+  arrange(response) 
+
+kable(convergence)
+```
+
+```{r, fig.width = 4, fig.height = 4}
+ggplot(convergence, aes(x = similarity, y = response)) + 
+  geom_point() + 
+  geom_smooth(method = "lm") +
+  scale_y_continuous(name = "convergence")
 ```
