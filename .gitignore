@@ -7,5 +7,5 @@ pacts/*
 original_images/*
 .Rproj.user
 .RHistory
-analysis/tangram_analysis_files/*
-analysis/tangram_analysis_cache/*
+*_cache*
+*_files*

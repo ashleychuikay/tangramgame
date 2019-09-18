@@ -1,0 +1,37 @@
+---
+title: "Tangram Convergence"
+author: "Ashley Leung, and Dan Yurovsky"
+date: '`r Sys.Date()`'
+output: 
+  html_document:
+  toc: false
+number_sections: false
+theme: lumen
+toc_float: false
+code_folding: hide
+---
+```{r, message=FALSE, warning=FALSE, show = F}
+library(here)
+library(tidyverse)
+library(knitr)
+
+opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, 
+               error = FALSE, cache = TRUE, tidy = FALSE)
+
+theme_set(theme_classic(base_size = 18))
+```
+
+
+```{r load_data}
+data <- read_csv(here("deidentified/convergence_codes.csv"))
+
+data %>%
+  gather(person, response, dan, ashley, alex) %>%
+  mutate(response = if_else(response == "y", T, F)) %>%
+  group_by(target, subject, person) %>%
+  summarise(response = mean(response)) %>%
+   summarise(response = mean(response)) %>%
+   summarise(response = mean(response)) %>%
+  arrange(response) %>%
+  kable()
+```
