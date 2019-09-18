@@ -4,25 +4,29 @@ author: "Ashley Leung, and Dan Yurovsky"
 date: '`r Sys.Date()`'
 output: 
   html_document:
-  toc: false
-number_sections: false
-theme: lumen
-toc_float: false
-code_folding: hide
+    toc: false
+    number_sections: false
+    theme: lumen
+    toc_float: false
+    code_folding: hide
 ---
 
-```{r, message=FALSE, warning=FALSE, show = F}
+```{r, message=FALSE, warning=FALSE, show = F, include = F}
 library(here)
 library(tidyverse)
 library(knitr)
+library(lmerTest)
+library(broom.mixed)
 
 opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, 
                error = FALSE, cache = TRUE, tidy = FALSE)
 
 theme_set(theme_classic(base_size = 18))
+
+options(digits=2)
 ```
 
-
+Load data 
 ```{r load_data}
 data <- read_csv(here("deidentified/convergence_codes.csv")) %>%
   rowwise() %>%
@@ -37,16 +41,36 @@ convergence <- data %>%
   gather(person, response, dan, ashley, alex) %>%
   mutate(response = if_else(response == "y", T, F)) %>%
   group_by(target, subject, person) %>%
-  summarise_at(vars(response, similarity), mean) %>%
+  summarise_at(vars(response, similarity), mean)
+```
+
+Fit a mixed-effects model to predict convergence from similarity
+
+```{r model}
+model <- glmer(response ~ similarity + (1|subject) + (1|target) + (1|person), 
+               data = convergence, family = "binomial")
+
+tidy(model) %>%
+  filter(effect == "fixed") %>%
+  select(-effect, -group, -std.error) %>%
+  kable()
+```
+
+Show mean convergence and similarity
+
+```{r means}
+mean_convergence <- convergence %>%
   summarise_at(vars(response, similarity), mean) %>%
   summarise_at(vars(response, similarity), mean) %>%
   arrange(response) 
 
-kable(convergence)
+kable(mean_convergence)
 ```
 
+Correlation: $r =$ `r cor(mean_convergence$response, mean_convergence$similarity)`
+
 ```{r, fig.width = 4, fig.height = 4}
-ggplot(convergence, aes(x = similarity, y = response)) + 
+ggplot(mean_convergence, aes(x = similarity, y = response)) + 
   geom_point() + 
   geom_smooth(method = "lm") +
   scale_y_continuous(name = "convergence")
