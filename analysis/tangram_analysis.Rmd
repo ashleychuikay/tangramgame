@@ -265,6 +265,8 @@ tidy(correct_lm) %>%
 ```{r conceptual_pacts-plots}         
 ## reduction in length
 
+# by age
+jpeg("reduction.jpeg", width = 8, height = 6, units = "in", res = 600)
 model_data %>%
   group_by(age, target_trial, subid) %>%
   summarise(length = mean(length)) %>%
@@ -273,15 +275,27 @@ model_data %>%
   facet_wrap(~ age) +
   geom_line() + 
   geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper))
+dev.off()
 
-## Plotting reduction in length (individual)
+# overall
+jpeg("overall_reduction.jpeg", width = 8, height = 6, units = "in", res = 600)
+model_data %>%
+  group_by(target_trial, subid) %>%
+  summarise(length = mean(length)) %>%
+  tidyboot_mean(length) %>%
+  ggplot(aes(x = target_trial, y = empirical_stat)) + 
+  geom_line() + 
+  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper))
+dev.off()
+
+## Plotting reduction in length
 
 tidy_data %>%
   filter(type == "test", pos < select_pos) %>%
   mutate(length = str_count(utterance, " ") +1) %>%
   group_by(subid, correct, target, trial, person) %>%
   filter(person != trial_selection) %>%
-  filter(person == "parent") %>%
+  #filter(person == "parent") %>%
   summarise(length = sum(length, na.rm = T),
             nturns = n()) %>%
   group_by(subid, target) %>%
@@ -313,10 +327,20 @@ tidy_data %>%
   geom_line() +
   geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper))
 
-## Plotting by age
+## Parent and child
 
-# parent and child
+#model_indiv_data %>%
+#  group_by(person, age, target_trial, subid) %>%
+#  summarise(length = mean(length)) %>%
+#  tidyboot_mean(length) %>%
+#  ggplot(aes(x = target_trial, y = empirical_stat, color = person)) + 
+#  facet_wrap(~ age) +
+#  geom_line() + 
+#  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper))
+#dev.off()
+  
 
+jpeg("parent_child.jpeg", width = 10, height = 6, units = "in", res = 600)
 tidy_data %>%
   filter(type == "test", pos < select_pos) %>%
   mutate(length = str_count(utterance, " ") +1) %>%
@@ -336,6 +360,7 @@ tidy_data %>%
   geom_line() +
   geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper)) +
   xlim("1", "2")
+dev.off()
 
 ```
 
