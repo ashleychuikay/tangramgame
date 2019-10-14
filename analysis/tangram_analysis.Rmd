@@ -275,10 +275,11 @@ model_data %>%
   tidyboot_mean(length) %>%
   ggplot(aes(x = target_trial, y = empirical_stat)) + 
   facet_wrap(~ age) +
+  #theme(panel.spacing.x = unit(1, "lines")) +
   theme(panel.border = element_rect(fill = NA, color = "black")) +
   geom_line() + 
   geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper)) +
-  labs(x = "round", y = "length of referring expression (words)")
+  labs(x = "Round", y = "Length of referring expression (words)")
 dev.off()
 
 # overall
@@ -348,6 +349,8 @@ jpeg("parent_child.jpeg", width = 10, height = 6, units = "in", res = 600)
 tidy_data %>%
   filter(type == "test", pos < select_pos) %>%
   mutate(length = str_count(utterance, " ") +1) %>%
+  ungroup %>%
+  mutate(age = factor(age, labels = c("4 Years", "6 Years", "8 Years"))) %>%
   group_by(subid, age, correct, person, target, trial) %>%
   filter(person != trial_selection) %>%
   summarise(length = sum(length, na.rm = T),
@@ -364,7 +367,8 @@ tidy_data %>%
   theme(panel.border = element_rect(fill = NA, colour = "black")) +
   geom_line() +
   geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper)) +
-  xlim("1", "2")
+  xlim("1", "2") +
+  labs(x = "Round", y = "Length of referring expression (words)")
 dev.off()
 
 ```
