@@ -268,6 +268,8 @@ tidy(correct_lm) %>%
 # by age
 jpeg("reduction.jpeg", width = 8, height = 6, units = "in", res = 600)
 model_data %>%
+  ungroup() %>%
+  mutate(age = factor(age, labels = c("4 Years", "6 Years", "8 Years"))) %>%
   group_by(age, target_trial, subid) %>%
   summarise(length = mean(length)) %>%
   tidyboot_mean(length) %>%
@@ -275,7 +277,8 @@ model_data %>%
   facet_wrap(~ age) +
   #theme(panel.border = element_rect(fill = NA, color = "black")) +
   geom_line() + 
-  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper))
+  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper)) +
+  labs(x = "round", y = "length of referring expression (words)")
 dev.off()
 
 # overall

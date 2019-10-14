@@ -4,9 +4,11 @@ subid,type,trial,target,person,utterance,selection,correct
 32,practice,4,apple,child,choose the apple,,Y
 32,practice,4,apple,parent,,parent,Y
 32,practice,2,artichoke,child,"daddy, choose this one, but not the onion",,Y
+32,practice,2,artichoke,parent,"ok, ok, ok",,Y
 32,practice,2,artichoke,parent,,parent,Y
 32,practice,5,artichoke,child,onion,,N
 32,practice,5,artichoke,child,,child,N
+32,practice,5,artichoke,parent,"no, no, yyy,",,N
 32,practice,3,onion,parent,choose the onion,,Y
 32,practice,3,onion,child,,child,Y
 32,practice,6,onion,parent,"it's your turn now, so what do you want me to choose?",,Y
@@ -15,13 +17,16 @@ subid,type,trial,target,person,utterance,selection,correct
 32,test,8,A1,child,choose the boy that has one foot up and one foot down,,Y
 32,test,8,A1,parent,okay,,Y
 32,test,8,A1,parent,,parent,Y
+32,test,14,A1,child,"it's your turn, daddy",,Y
 32,test,14,A1,parent,choose the girl that looks like she has one foot down and one foot up,,Y
 32,test,14,A1,child,,child,Y
 32,test,26,A1,child,choose the boy that has one leg down and one leg up,,Y
+32,test,26,A1,parent,okay,,Y
 32,test,26,A1,parent,,parent,Y
 32,test,34,A1,parent,choose the person that has one foot down and one foot up,,Y
 32,test,34,A1,child,,child,Y
 32,test,2,B1,child,the man that's walking,,Y
+32,test,2,B1,parent,ok,,Y
 32,test,2,B1,parent,,parent,Y
 32,test,20,B1,parent,choose the person that looks like it's walking by itself,,Y
 32,test,20,B1,child,,child,Y
@@ -92,6 +97,7 @@ subid,type,trial,target,person,utterance,selection,correct
 32,test,37,G1,child,mhm. with one.,,Y
 32,test,37,G1,parent,who has a sharp point on the right side?,,Y
 32,test,37,G1,child,mhm,,Y
+32,test,37,G1,parent,okay,,Y
 32,test,37,G1,parent,,parent,Y
 32,test,3,H1,parent,choose the person that looks like it's shaped like it's standing up,,Y
 32,test,3,H1,child,,child,Y
@@ -110,6 +116,7 @@ subid,type,trial,target,person,utterance,selection,correct
 32,test,1,I1,parent,"ok, choose the waiter. you know the waiter, it looks like a waiter when you go out to eat? and he comes with the plate in his hand?",,Y
 32,test,1,I1,child,,child,Y
 32,test,19,I1,child,look at that person with that cup in their hand that serves the food,,Y
+32,test,19,I1,parent,okay,,Y
 32,test,19,I1,parent,,parent,Y
 32,test,29,I1,parent,"choose the waiter, yyy",,Y
 32,test,29,I1,child,the waiter that what,,Y
@@ -124,6 +131,7 @@ subid,type,trial,target,person,utterance,selection,correct
 32,test,6,K1,child,it's a man....,,Y
 32,test,6,K1,parent,is he sitting or is he bending over?,,Y
 32,test,6,K1,child,he's bending over,,Y
+32,test,6,K1,parent,okay,,Y
 32,test,6,K1,parent,,parent,Y
 32,test,18,K1,parent,choose the person that looks like it's bending over and has its hand out,,Y
 32,test,18,K1,child,,child,Y

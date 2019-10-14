@@ -54,7 +54,7 @@ subid,type,trial,target,person,utterance,selection,correct
 26,test,17,C1,parent,okay,,Y
 26,test,21,C1,parent,"okay, now my picture is the one of the person that's on the ground, they look like they might be on their hands and knees",,Y
 26,test,21,C1,child,"oh, i just did that one",,Y
-26,test,21,C1,parent,do you have it? Ok pick that one,,Y
+26,test,21,C1,parent,do you have it?,,Y
 26,test,21,C1,child,yeah,,Y
 26,test,21,C1,child,,child,Y
 26,test,33,C1,child,someone leaping down,,Y
@@ -83,7 +83,7 @@ subid,type,trial,target,person,utterance,selection,correct
 26,test,20,E1,parent,"they look like they're jumping in the air and their feet are out, their arms out",,Y
 26,test,20,E1,child,i have that one,,Y
 26,test,20,E1,child,,child,Y
-26,test,24,E1,child,"uh, someone jumping up with the feet, and the feet is not on the ground, it's up there, and it looks like he's touching the box and the other hand is down a little bit",,Y
+26,test,24,E1,parent,"uh, someone jumping up with the feet, and the feet is not on the ground, it's up there, and it looks like he's touching the box and the other hand is down a little",,Y
 26,test,24,E1,parent,"okay, i have that picture",,Y
 26,test,24,E1,parent,,parent,Y
 26,test,38,E1,parent,mine is a person who looks like they're jumping up in the air and putting their arms up,,Y
@@ -114,10 +114,10 @@ subid,type,trial,target,person,utterance,selection,correct
 26,test,16,G1,parent,"now i have a picture of a person, and they're not jumping, they're just, they look like they're sitting on a block",,Y
 26,test,16,G1,child,oh yeah it does,,Y
 26,test,16,G1,child,,child,Y
-26,test,26,G1,child,"someone, that is is a girl that is sitting down on a square",,Y
+26,test,26,G1,child,"the one, that is is a girl that is sitting down on a square",,Y
 26,test,26,G1,parent,yeah i have that picture,,Y
 26,test,26,G1,parent,,parent,Y
-26,test,32,G1,parent,"mine is a person who's sitting on a box, like a block and looking down",,Y
+26,test,32,G1,parent,"mine is a person who's sitting on a box, like a block",,Y
 26,test,32,G1,child,oh i know that one,,Y
 26,test,32,G1,child,,child,Y
 26,test,10,H1,parent,do you see someone pointing at the other?,,Y
@@ -144,7 +144,6 @@ subid,type,trial,target,person,utterance,selection,correct
 26,test,18,I1,parent,"okay, now I have a picture of a person again who's standing but they might be leaning over a little bit and they're holding a triangle",,Y
 26,test,18,I1,child,"i did that one, it's like they're holding a bowl, a diamond, a half broken diamond",,Y
 26,test,18,I1,parent,i think that's it,,Y
-26,test,18,I1,parent,okay pick that picture,,Y
 26,test,18,I1,child,,child,Y
 26,test,30,I1,child,"uh, somebody holding a half broken diamond",,Y
 26,test,30,I1,parent,,parent,Y

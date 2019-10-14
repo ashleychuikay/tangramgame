@@ -6,11 +6,10 @@ subid,type,trial,target,person,utterance,selection,correct
 33,practice,2,artichoke,parent,Mango,,N
 33,practice,2,artichoke,child,Yeah,,N
 33,practice,2,artichoke,parent,,parent,N
-33,practice,5,artichoke,parent,I don't I think you don't know what this vegetable is it's called an artichoke it has a lot of leaves on it it almost,,Y
+33,practice,5,artichoke,child,I don't I think you don't know what this vegetable is it's called an artichoke it has a lot of leaves on it it almost,,Y
 33,practice,5,artichoke,parent,Looks like a pine cone,,Y
 33,practice,5,artichoke,child,,child,Y
 33,practice,3,onion,parent,OK so uh it's an onion do you know you know what an onion looks like,,Y
-33,practice,3,onion,child,Yeah,,Y
 33,practice,3,onion,child,,child,Y
 33,practice,6,onion,child,Onion,,Y
 33,practice,6,onion,parent,,parent,Y
@@ -28,7 +27,6 @@ subid,type,trial,target,person,utterance,selection,correct
 33,test,18,B1,parent,No this is a person walking,,Y
 33,test,18,B1,child,,child,Y
 33,test,28,B1,child,A person that looks like a old man walking,,Y
-33,test,28,B1,parent,OK,,Y
 33,test,28,B1,parent,,parent,Y
 33,test,36,B1,parent,Um a person walking like an old man,,Y
 33,test,36,B1,child,,child,Y
@@ -66,7 +64,7 @@ subid,type,trial,target,person,utterance,selection,correct
 33,test,15,F1,parent,,parent,Y
 33,test,27,F1,parent,Like a person taking a really big step like a person like like walking,,Y
 33,test,27,F1,child,,child,Y
-33,test,35,F1,child,A person run like this,,Y
+33,test,35,F1,child,A person zzz like this,,Y
 33,test,35,F1,parent,,parent,Y
 33,test,2,G1,child,A a tower,,Y
 33,test,2,G1,parent,,parent,Y
@@ -82,9 +80,7 @@ subid,type,trial,target,person,utterance,selection,correct
 33,test,19,H1,child,A person that looks like they're giving something,,Y
 33,test,19,H1,parent,,parent,Y
 33,test,29,H1,parent,OK a person holding a bowl maybe with a robe on,,Y
-33,test,29,H1,child,No that looks like no that looks like,,Y
 33,test,29,H1,child,,child,Y
-33,test,29,H1,child,I don't know,,Y
 33,test,33,H1,child,A person giving a bowl,,Y
 33,test,33,H1,parent,,parent,Y
 33,test,6,I1,child,Somebody giving something to something that looks like someboy stealing something,,Y

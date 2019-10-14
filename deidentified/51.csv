@@ -17,6 +17,7 @@ subid,type,trial,target,person,utterance,selection,correct
 51,practice,5,artichoke,child,,child,Y
 51,practice,3,onion,parent,ok now the blue box is on my side. This is likely an onion and it has smooth circle,,Y
 51,practice,3,onion,child,,child,Y
+51,practice,6,onion,child,oh great I have the blue box!,,Y
 51,practice,6,onion,parent,ok tell me whats in your blue box,,Y
 51,practice,6,onion,child,onion,,Y
 51,practice,6,onion,parent,,parent,Y
@@ -38,7 +39,7 @@ subid,type,trial,target,person,utterance,selection,correct
 51,test,21,B1,child,,child,Y
 51,test,35,B1,child,it's someone walking,,Y
 51,test,35,B1,parent,,parent,Y
-51,test,2,C1,child,it looks like it has.. it looks like a dog or something,,Y
+51,test,2,C1,child,it looks like it has.. it looks like a dog,,Y
 51,test,2,C1,parent,looks like a dog? what is the dog doing,,Y
 51,test,2,C1,child,i think it's a person bowing at a concert or something,,Y
 51,test,2,C1,parent,,parent,Y
@@ -46,11 +47,11 @@ subid,type,trial,target,person,utterance,selection,correct
 51,test,12,C1,child,,child,Y
 51,test,30,C1,child,this person is laying down like a dog,,Y
 51,test,30,C1,parent,,parent,Y
-51,test,32,C1,parent,"this is something or somebody kneeling, the square is not connected",,Y
+51,test,32,C1,parent,"this is somebody kneeling, the square is not connected",,Y
 51,test,32,C1,child,you mean the jumping for joy one?,,Y
 51,test,32,C1,parent,"no, the other one",,Y
 51,test,32,C1,child,,child,Y
-51,test,9,D1,parent,"right I have the blue box again. Okay so this has a triangle for a tail and the triangle tail, it's two triangles at the tail, almost looks like it's an airplane, and then I see a square at the front",,Y
+51,test,9,D1,parent,"right I have the blue box again. Okay so this has a triangle for a tail and the triangle tail almost looks like it's an airplane, and then I see a squareat the front",,Y
 51,test,9,D1,child,this may look like an airplane?,,Y
 51,test,9,D1,parent,I think it looks like an airplane,,Y
 51,test,9,D1,child,,child,Y
@@ -63,7 +64,7 @@ subid,type,trial,target,person,utterance,selection,correct
 51,test,39,D1,parent,,parent,Y
 51,test,3,E1,parent,ooh this looks like somebody is happy and jumping for joy! Yay! and it looks like it has both hands in the air and just jumping. It's like they are skipping or jumping up high,,Y
 51,test,3,E1,child,,child,Y
-51,test,15,E1,child,"so it's someone happy and xxx and it's really happy, and it has diamond face and it's really happy, it has a diamond face... And it's jumping for joy",,Y
+51,test,15,E1,child,"so it's someone happy and xxx and it's really happy, and it has diamond face and xxx. And it's jumping for joy",,Y
 51,test,15,E1,parent,,parent,Y
 51,test,29,E1,parent,this person is jumping for joy,,Y
 51,test,29,E1,child,,child,Y
@@ -89,9 +90,9 @@ subid,type,trial,target,person,utterance,selection,correct
 51,test,22,G1,parent,,parent,Y
 51,test,34,G1,parent,this is not the one jumping for joy,,Y
 51,test,34,G1,child,,child,Y
-51,test,7,H1,parent,"this has a square at the very top but it's like a diamond. It is touching another like large area.. Oooh no they both got diamonds at the top...This one looks like a rectangle, and it's the top of the triangle with a square at the top",,Y
+51,test,7,H1,parent,"this has a square at the very top but it's like a diamond. It is touching another like large area.. This one looks like a rectangle, and it's the top of the triangle with a square at the top",,Y
 51,test,7,H1,child,,child,Y
-51,test,13,H1,child,"it has a square face, and has a diamond face, and the diamond face is shaped like a diamond, and it's like has a food in its hands and its sitting down eating some food",,Y
+51,test,13,H1,child,"it has a square face, and has a diamond face, and the diamond face is shaped like a diamond, and it's like has a food in its hands and its xxx",,Y
 51,test,13,H1,parent,,parent,Y
 51,test,25,H1,parent,this is the one that is not the one looking like its skipping. Its the other one,,Y
 51,test,25,H1,child,,child,Y
@@ -111,7 +112,7 @@ subid,type,trial,target,person,utterance,selection,correct
 51,test,1,K1,child,,child,Y
 51,test,11,K1,child,its like a man that has a hat on and he has a like a thorn somewhere on his back,,Y
 51,test,11,K1,parent,he has a thorn on his back?,,Y
-51,test,11,K1,child,"yeah it's a prickle standing, its a pointy thing",,Y
+51,test,11,K1,child,"yeah as a xxx standing, its a pointy thing",,Y
 51,test,11,K1,parent,,parent,Y
 51,test,23,K1,parent,this is the one you said they had a thorn inside,,Y
 51,test,23,K1,child,,child,Y

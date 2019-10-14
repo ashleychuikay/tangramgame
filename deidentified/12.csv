@@ -12,9 +12,11 @@ subid,type,trial,target,person,utterance,selection,correct
 12,practice,2,artichoke,child,Mmm um the tree,,Y
 12,practice,2,artichoke,parent,The tree,,Y
 12,practice,2,artichoke,child,Mhm,,Y
+12,practice,2,artichoke,parent,OK,,Y
 12,practice,2,artichoke,parent,,parent,Y
 12,practice,5,artichoke,child,The the onion,,Y
 12,practice,5,artichoke,parent,,parent,Y
+12,practice,5,artichoke,parent,You know what onion is I didn't know you know what onion was,,Y
 12,practice,3,onion,parent,OK I have the the thing that does not look like a tree,,Y
 12,practice,3,onion,parent,You gotta pick thing that don't look like a tree,,Y
 12,practice,3,onion,child,,child,Y
@@ -27,6 +29,7 @@ subid,type,trial,target,person,utterance,selection,correct
 12,test,15,A1,child,This this way,,Y
 12,test,15,A1,parent,"Is he walking there, OK",,Y
 12,test,15,A1,parent,,parent,Y
+12,test,15,A1,parent,OK,,Y
 12,test,23,A1,parent,Yeah I got a man walking,,Y
 12,test,23,A1,child,,child,Y
 12,test,35,A1,child,I have a man um zzz,,N
@@ -70,7 +73,6 @@ subid,type,trial,target,person,utterance,selection,correct
 12,test,18,E1,parent,I got a man jumping in the air,,Y
 12,test,18,E1,child,,child,Y
 12,test,28,E1,child,I got a man,,Y
-12,test,28,E1,child,Um jumping,,Y
 12,test,28,E1,parent,Jumping zzz,,Y
 12,test,28,E1,parent,,parent,Y
 12,test,32,E1,parent,I have a man jumping in the air,,Y
@@ -87,9 +89,10 @@ subid,type,trial,target,person,utterance,selection,correct
 12,test,37,F1,child,Mhm,,Y
 12,test,37,F1,parent,,parent,Y
 12,test,2,G1,child,Um I have a man bending down,,N
-12,test,2,G1,parent,,parent,N
+12,test,2,G1,parent,OK,,N
 12,test,16,G1,parent,Oh I I got a man sitting down,,Y
 12,test,16,G1,child,,child,Y
+12,test,26,G1,child,Um I have a,,Y
 12,test,26,G1,child,"I have a uh man, uh pointing, sitting down",,Y
 12,test,26,G1,parent,He's sitting down,,Y
 12,test,26,G1,parent,,parent,Y

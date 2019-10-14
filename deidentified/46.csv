@@ -8,7 +8,10 @@ subid,type,trial,target,person,utterance,selection,correct
 46,practice,4,apple,parent,"yes, an apple is smooth",,Y
 46,practice,2,artichoke,parent,"ok, i have",,Y
 46,practice,2,artichoke,child,I have a square box,,Y
-46,practice,2,artichoke,child,it looks like broccoli,,Y
+46,practice,2,artichoke,parent,you do? describe to me what's in your blue square box.,,Y
+46,practice,2,artichoke,child,it's... i don't know,,Y
+46,practice,2,artichoke,parent,well what does it look like?,,Y
+46,practice,2,artichoke,child,it looks like brocoli,,Y
 46,practice,2,artichoke,parent,it looks like brocoli? does it have things kind of like flower petals on it?,,Y
 46,practice,2,artichoke,child,uh uh,,Y
 46,practice,2,artichoke,parent,no?,,Y
@@ -24,7 +27,7 @@ subid,type,trial,target,person,utterance,selection,correct
 46,practice,2,artichoke,child,mhm,,Y
 46,practice,2,artichoke,parent,"so the picture in your box is smooth, no petals",,Y
 46,practice,2,artichoke,child,you want me to press it?,,Y
-46,practice,2,artichoke,parent,"no, i want you to describe it to me. tell me about it, how it looks, the picture inside of your blue box. does it have petals? does it look like flower petals with a stem at the bottom?",,Y
+46,practice,2,artichoke,parent,"no, i want you to describe it to me. tell me about it, how it looks, what's inside of your blue box. does it have petals? does it look like flower petals with a stem at the bottom?",,Y
 46,practice,2,artichoke,child,yeah,,Y
 46,practice,2,artichoke,parent,inside your blue box?,,Y
 46,practice,2,artichoke,child,yes,,Y
@@ -46,7 +49,7 @@ subid,type,trial,target,person,utterance,selection,correct
 46,test,4,A1,parent,"ooh, like a person walking?",,Y
 46,test,4,A1,child,mhm,,Y
 46,test,4,A1,parent,,parent,Y
-46,test,12,A1,parent,"the one I'm looking at that you should select look like a person standing on one leg and the other leg is up in the air, like they're trying to walk away, or they're jumping on one leg",,Y
+46,test,12,A1,parent,"the one you should select look like a person standing on one leg and the other leg is up in the air, like they're trying to walk away, or they're jumping on one leg",,Y
 46,test,12,A1,child,,child,Y
 46,test,30,A1,parent,what's inside of your blue box?,,Y
 46,test,30,A1,child,a lady running,,Y
@@ -60,6 +63,9 @@ subid,type,trial,target,person,utterance,selection,correct
 46,test,10,B1,parent,,parent,Y
 46,test,16,B1,parent,inside of my blue box is something that look like the square head is facing the ground and the person is walking away,,Y
 46,test,16,B1,child,,child,Y
+46,test,26,B1,parent,"what's inside of your blue box, yyy?",,Y
+46,test,26,B1,child,xxx it's a secret,,Y
+46,test,26,B1,parent,it's a secret? so i have to guess which one it is? which one is in the blue box?,,Y
 46,test,26,B1,parent,"ok, so inside of your blue box it looks like it's a square trying to go inside of another shape, or it look like a person walking away. which one's inside of your blue box?",,Y
 46,test,26,B1,parent,"i see a person looking down at the ground, is that your shape in the box?",,Y
 46,test,26,B1,child,mhm,,Y
@@ -77,13 +83,15 @@ subid,type,trial,target,person,utterance,selection,correct
 46,test,24,C1,child,"my box has um, i don't know what it is",,N
 46,test,24,C1,parent,"does it look like the person's bending over down on the ground, with their face kissing the ground? or does it look like the person's jumping up, maybe a bird?",,N
 46,test,24,C1,child,a bird,,N
+46,test,24,C1,parent,okay,,N
 46,test,24,C1,parent,,parent,N
 46,test,32,C1,parent,"ok, so in my blue box, i see a square that is going inside an empty space. do you see that?",,N
 46,test,32,C1,child,mhm,,N
 46,test,32,C1,child,,child,N
 46,test,7,D1,parent,so inside of my blue box it look like a person is laying down straight with their legs in the air,,Y
 46,test,7,D1,child,,child,Y
-46,test,13,D1,child,mine box has peoples laying down,,Y
+46,test,13,D1,parent,what's in your blue box?,,Y
+46,test,13,D1,child,mine has peoples laying down,,Y
 46,test,13,D1,parent,in your box the person's laying down?,,Y
 46,test,13,D1,child,yeah,,Y
 46,test,13,D1,parent,,parent,Y
@@ -140,7 +148,7 @@ subid,type,trial,target,person,utterance,selection,correct
 46,test,6,G1,parent,,parent,Y
 46,test,20,G1,parent,"inside of my blue box it look like somebody is laying down or bending their knees. or, they could be sitting ontop of a box",,Y
 46,test,20,G1,child,,child,Y
-46,test,28,G1,parent,"do you see a... ooh, it kinda looks like a house. do you see the triangle on top of the square that look slike a house where the puppy is? or does it look like the lady with the square on top?",,N
+46,test,28,G1,parent,"ok, what's inside of your blue box.",,N
 46,test,28,G1,parent,which one's in your blue box? do you see the house?,,N
 46,test,28,G1,child,mhm,,N
 46,test,28,G1,parent,"so, the house is inside of your blue box?",,N
@@ -150,6 +158,7 @@ subid,type,trial,target,person,utterance,selection,correct
 46,test,34,G1,child,,child,Y
 46,test,1,H1,parent,"okay, inside of my blue box looks like a person that is standing straight up and it look like they're holding a box or some books. select that picture.",,N
 46,test,1,H1,child,,child,N
+46,test,11,H1,parent,"ok, what's inside of your blue box?",,Y
 46,test,11,H1,child,somebody handing some food,,Y
 46,test,11,H1,parent,does it look like a big black object or a bunch of tiny triangles and squares?,,Y
 46,test,11,H1,child,triangles and squares,,Y
@@ -157,7 +166,7 @@ subid,type,trial,target,person,utterance,selection,correct
 46,test,11,H1,child,yeah,,Y
 46,test,11,H1,parent,okay,,Y
 46,test,11,H1,parent,,parent,Y
-46,test,23,H1,parent,inside of my blue box it looks like it is a thick rectangle that's shaped like a person that's holding a tray with food,,Y
+46,test,23,H1,parent,inside of my blue box it looks like it is a big rectangle that's shaped like a person that's holding a tray with food,,Y
 46,test,23,H1,child,,child,Y
 46,test,37,H1,child,in my blue box,,Y
 46,test,37,H1,parent,what do you see?,,Y
@@ -168,8 +177,10 @@ subid,type,trial,target,person,utterance,selection,correct
 46,test,37,H1,parent,like a rocket ship with a diamond on top?,,Y
 46,test,37,H1,child,mhm,,Y
 46,test,37,H1,parent,,parent,Y
-46,test,5,I1,parent,They are handing some food? inside my blue box it look like a person who's holding a tray and about to hand you some food,,Y
+46,test,5,I1,parent,in my blue box it look like a person who's holding a tray and handing you some food,,Y
 46,test,5,I1,child,,child,Y
+46,test,19,I1,parent,what's inside of your blue box?,,Y
+46,test,19,I1,child,i don't want to tell you,,Y
 46,test,19,I1,parent,you don't want to tell me? can we guess? do you have the person that is doing downward dog and yoga or--,,Y
 46,test,19,I1,child,No!,,Y
 46,test,19,I1,parent,or the person holding the tray,,Y
@@ -177,8 +188,10 @@ subid,type,trial,target,person,utterance,selection,correct
 46,test,19,I1,parent,you have the person holding the tray with food in your blue box?,,Y
 46,test,19,I1,child,mhm,,Y
 46,test,19,I1,parent,,parent,Y
+46,test,27,I1,parent,"so, tell me what you see and i'll tell you what's inside of my blue box",,Y
+46,test,27,I1,parent,do you see---,,Y
 46,test,27,I1,child,,child,Y
-46,test,35,I1,child,my box has a man giving them some food,,Y
+46,test,35,I1,child,my box has a man giving some food,,Y
 46,test,35,I1,parent,that's inside of your blue box?,,Y
 46,test,35,I1,child,mhm,,Y
 46,test,35,I1,parent,and there's a square on top? and the food look like a triangle?,,Y
@@ -186,6 +199,20 @@ subid,type,trial,target,person,utterance,selection,correct
 46,test,35,I1,parent,,parent,Y
 46,test,3,K1,parent,"inside of my blue box it kinda look like a puppy standing up on two legs, or maybe a person washing their hands. do you see that? select that picture",,Y
 46,test,3,K1,child,,child,Y
+46,test,17,K1,parent,what's inside of you rblue box?,,Y
+46,test,17,K1,child,"mommy, you xxx of these",,Y
+46,test,17,K1,parent,what's in your blue box?,,Y
+46,test,17,K1,child,you already know them,,Y
+46,test,17,K1,parent,"yeah, but we're going to do them again",,Y
+46,test,17,K1,child,no,,Y
+46,test,17,K1,parent,let's see how quickly we can go,,Y
+46,test,17,K1,parent,what's inside of your blue box? fast fast fast as fast as you can go,,Y
+46,test,17,K1,child,no,,Y
+46,test,17,K1,parent,no? no thank you?,,Y
+46,test,17,K1,child,no no no,,Y
+46,test,17,K1,parent,"no thank you? ok, how about i describe it to you and you tell me which one to pick",,Y
+46,test,17,K1,child,i want my box,,Y
+46,test,17,K1,parent,"you have to tell me what's inside of your box, i don't know which picture to select",,Y
 46,test,17,K1,child,my box have a puppy,,Y
 46,test,17,K1,parent,your box have a puppy?,,Y
 46,test,17,K1,parent,,parent,Y

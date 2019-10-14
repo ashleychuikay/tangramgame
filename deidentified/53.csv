@@ -1,7 +1,7 @@
 subid,type,trial,target,person,utterance,selection,correct
 53,practice,1,apple,parent,"so the one that has a blue box is a fruit and it's round, so press which one?",,Y
 53,practice,1,apple,child,apple,,Y
-53,practice,1,apple,parent,"yep, it's the apple",,Y
+53,practice,1,apple,parent,"yep, pick the apple",,Y
 53,practice,1,apple,child,,child,Y
 53,practice,4,apple,parent,alright it's your turn,,Y
 53,practice,4,apple,child,this one is round and has a leaf on the stem,,Y
@@ -9,7 +9,7 @@ subid,type,trial,target,person,utterance,selection,correct
 53,practice,4,apple,child,yup,,Y
 53,practice,4,apple,parent,,parent,Y
 53,practice,2,artichoke,parent,now it's your turn to tell me about the fruit or the vegetable,,Y
-53,practice,2,artichoke,child,this one has a things poking out,,Y
+53,practice,2,artichoke,child,this one has things poking out,,Y
 53,practice,2,artichoke,parent,"it has things poking out of it, okay",,Y
 53,practice,2,artichoke,child,and a stem,,Y
 53,practice,2,artichoke,parent,"and a stem, okay, hmm is it the artichoke?",,Y
@@ -34,7 +34,7 @@ subid,type,trial,target,person,utterance,selection,correct
 53,test,26,A1,child,this one is someone uh running,,Y
 53,test,26,A1,parent,running?,,Y
 53,test,26,A1,parent,,parent,Y
-53,test,36,A1,parent,This is someone walking with their foot in the air,,Y
+53,test,36,A1,parent,This is someoen walking with their foot in the air,,Y
 53,test,36,A1,child,,child,Y
 53,test,4,B1,child,this is somebody walking with their head down,,Y
 53,test,4,B1,parent,,parent,Y
@@ -44,12 +44,12 @@ subid,type,trial,target,person,utterance,selection,correct
 53,test,28,B1,parent,,parent,Y
 53,test,34,B1,parent,This is someone walking with their head down,,Y
 53,test,34,B1,child,,child,Y
-53,test,9,C1,parent,this one looks like they're about to do a somersault or a headstand,,Y
+53,test,9,C1,parent,this one looks like they're about to do a summer sault or a headstand,,Y
 53,test,9,C1,child,,child,Y
-53,test,11,C1,child,this one looks like somebody's going to do a somersault or a headstand,,Y
+53,test,11,C1,child,this one looks like somebody's going to do a summer sault or a headstand,,Y
 53,test,11,C1,parent,"ooh, okay",,Y
 53,test,11,C1,parent,,parent,Y
-53,test,25,C1,parent,this is someone about to do a somersault or a headstand,,Y
+53,test,25,C1,parent,this is someone about to do a summer sault or a headstand,,Y
 53,test,25,C1,child,,child,Y
 53,test,31,C1,child,It's somebody is about to about to do something with a about to do a somersault,,Y
 53,test,31,C1,parent,,parent,Y
@@ -62,7 +62,8 @@ subid,type,trial,target,person,utterance,selection,correct
 53,test,27,D1,child,,child,Y
 53,test,37,D1,child,This is somebody laying down with their foot up in the air,,Y
 53,test,37,D1,parent,,parent,Y
-53,test,7,E1,parent,this one it looks like they're jumping in the air,,Y
+53,test,37,D1,child,This is someone laying down with their foot in the air,,Y
+53,test,7,E1,parent,this one it looks like theyre jumping in the air,,Y
 53,test,7,E1,child,,child,Y
 53,test,13,E1,child,this one looks like someone's jumping in the air,,Y
 53,test,13,E1,parent,,parent,Y
@@ -80,7 +81,7 @@ subid,type,trial,target,person,utterance,selection,correct
 53,test,22,F1,parent,,parent,Y
 53,test,40,F1,parent,This is someone that looks like they're walking with their hand in the air,,Y
 53,test,40,F1,child,,child,Y
-53,test,8,G1,child,this one it looks like they're sitting down,,Y
+53,test,8,G1,child,this one it looks like theyre sitting down,,Y
 53,test,8,G1,parent,oh,,Y
 53,test,8,G1,parent,,parent,Y
 53,test,20,G1,parent,this is someone who looks like they're sitting down with their head down,,Y
@@ -91,7 +92,7 @@ subid,type,trial,target,person,utterance,selection,correct
 53,test,38,G1,child,,child,Y
 53,test,5,H1,parent,this is someone just standing up and it looks like they're just holding something,,Y
 53,test,5,H1,child,,child,Y
-53,test,19,H1,child,this one is somebody with their hand out and some xxx on the sleeve,,Y
+53,test,19,H1,child,this one is somebody with their hand out and some xxx,,Y
 53,test,19,H1,parent,,parent,Y
 53,test,29,H1,parent,this is someone standing up and it looks like they're holding a tray,,N
 53,test,29,H1,child,,child,N

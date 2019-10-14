@@ -1,75 +1,60 @@
 subid,type,trial,target,person,utterance,selection,correct
-61,practice,1,apple,parent,"So I have a blue square around an apple, it's round it's got a leaf on it can you touch yours that's an apple?",,Y
+61,practice,1,apple,parent,So I have a blue square around an apple it's round it's got a leaf on it can you touch yours that's an apple,,Y
 61,practice,1,apple,child,,child,Y
 61,practice,4,apple,child,I have a apple,,Y
-61,practice,4,apple,parent,An apple?,,Y
+61,practice,4,apple,parent,An apple,,Y
 61,practice,4,apple,child,It has a green leaf,,Y
-61,practice,4,apple,parent,Ok,,Y
 61,practice,4,apple,parent,,parent,Y
 61,practice,2,artichoke,child,It looks like a flower,,Y
-61,practice,2,artichoke,parent,It looks like a flower-- does it have like a bunch of different leaves on it?,,Y
+61,practice,2,artichoke,parent,It looks like a flower does it have like a bunch of different leaves on it,,Y
 61,practice,2,artichoke,child,Yes,,Y
 61,practice,2,artichoke,parent,,parent,Y
-61,practice,5,artichoke,parent,Alright I have a blue sqaure around the thing that you said looked like a flower- it's got lots of leaves on it,,Y
+61,practice,5,artichoke,parent,Alright I have a blue sqaure around the thing that you said looked like a flower it's got lots of leaves on it,,Y
 61,practice,5,artichoke,child,,child,Y
 61,practice,5,artichoke,child,It's green,,Y
-61,practice,3,onion,parent,"Alright I have a blue square around an onion, do you know what an onion looks like?",,Y
+61,practice,3,onion,parent,Alright I have a blue square around an onion do you know what an onion looks like,,Y
 61,practice,3,onion,child,Yes,,Y
 61,practice,3,onion,child,,child,Y
 61,practice,6,onion,child,I have square around the onion,,Y
-61,practice,6,onion,parent,An onion okay,,Y
+61,practice,6,onion,parent,An onion OK,,Y
 61,practice,6,onion,parent,,parent,Y
 61,test,4,A1,child,Hm I have a human who looks like it's dancing,,Y
-61,test,4,A1,parent,Dancing? So it looks like it has two legs on the bottom,,Y
+61,test,4,A1,parent,Dancing so it looks like it has two legs on the bottom,,Y
 61,test,4,A1,child,Yes,,Y
-61,test,4,A1,parent,Ok,,Y
 61,test,4,A1,parent,,parent,Y
-61,test,18,A1,parent,"Uh this one looks like it's maybe running or dancing, not the one with the house on top, but the other one that looks like it has two legs",,Y
+61,test,18,A1,parent,Uh this one looks like it's maybe running or dancing not the one with the house on top but the other one that looks like it has two legs,,Y
 61,test,18,A1,child,,child,Y
-61,test,18,A1,child,Yup,,Y
 61,test,26,A1,child,This one looks like it's running and dancing,,Y
 61,test,26,A1,parent,,parent,Y
-61,test,26,A1,parent,Got it,,Y
-61,test,38,A1,parent,"Uh this one has like two separate legs, like it's running",,Y
-61,test,38,A1,child,Ok,,Y
+61,test,38,A1,parent,Uh this one has like two separate legs like it's running,,Y
 61,test,38,A1,child,,child,Y
-61,test,5,B1,parent,"This one kinda looks like it's walking, it's the one that does not have the triangle",,Y
+61,test,5,B1,parent,This one kinda looks like it's walking it's the one that does not have the triangle,,Y
 61,test,5,B1,child,,child,Y
 61,test,13,B1,child,This looks like it's sad,,N
-61,test,13,B1,parent,It's sad? Is the square to the side of it?,,N
-61,test,13,B1,child,To the side forwards,,N
+61,test,13,B1,parent,It's sad is the square to the side of it,,N
+61,test,13,B1,child,To the side zzz,,N
 61,test,13,B1,parent,,parent,N
-61,test,27,B1,parent,"This one looks like uh like he's kinda sad, not the one with the house on top but the one that looks kinda moopy",,Y
-61,test,27,B1,child,Yup,,Y
+61,test,27,B1,parent,This one looks like uh like he's kinda sad not the one with the house on top but the one that looks kinda moopy,,Y
 61,test,27,B1,child,,child,Y
-61,test,27,B1,child,I know which one it is,,Y
 61,test,33,B1,child,This one looks like it's sad and is walking slowly,,Y
 61,test,33,B1,parent,,parent,Y
 61,test,33,B1,child,Not the one that's laying down,,Y
-61,test,33,B1,parent,"I got it, thank you",,Y
-61,test,3,C1,parent,"So I have a blue square around one who looks like he may be diving, his, the thing that looks like his head is kinda to the side instead of on top of him",,Y
+61,test,3,C1,parent,So I have a blue square around one who looks like he may be diving his the thing that looks like his head is kinda to the side instead of on top of him,,Y
 61,test,3,C1,child,,child,Y
-61,test,19,C1,child,This one looks like its diving,,Y
-61,test,19,C1,parent,Oh yup I got it,,Y
+61,test,19,C1,parent,This one looks like its diving,,Y
 61,test,19,C1,parent,,parent,Y
 61,test,23,C1,parent,Uh it's the one that looks like it's diving,,Y
-61,test,23,C1,child,Ok,,Y
 61,test,23,C1,child,,child,Y
-61,test,37,C1,child,"This one looks like it's diving, not the crazy one",,Y
+61,test,37,C1,child,This one looks like it's diving not the crazy one,,Y
 61,test,37,C1,parent,,parent,Y
 61,test,7,D1,parent,This one looks like it's laying down,,Y
-61,test,7,D1,child,Hm I know which one it is,,Y
 61,test,7,D1,child,,child,Y
 61,test,15,D1,child,This one looks like it's laying down,,Y
 61,test,15,D1,parent,,parent,Y
-61,test,15,D1,parent,Ok got it,,Y
 61,test,25,D1,parent,Uh this one looks like it's laying down,,Y
-61,test,25,D1,child,Ok,,Y
 61,test,25,D1,child,,child,Y
 61,test,31,D1,child,This one looks like it's laying down,,Y
 61,test,31,D1,parent,,parent,Y
-61,test,31,D1,parent,Okie doke,,Y
-61,test,1,E1,parent,Oh boy I have-,,N
 61,test,1,E1,child,,child,N
 61,test,17,E1,child,This one looks like uh it's jumping,,Y
 61,test,17,E1,parent,Got it,,Y
@@ -77,82 +62,65 @@ subid,type,trial,target,person,utterance,selection,correct
 61,test,21,E1,parent,Alright it's the one that looks like its kinda jumping in the air with its arms wide open,,Y
 61,test,21,E1,child,,child,Y
 61,test,35,E1,child,This one looks like its jumping,,Y
-61,test,35,E1,parent,Yup,,Y
 61,test,35,E1,parent,,parent,Y
 61,test,35,E1,child,Not the one that looks sad,,Y
-61,test,35,E1,parent,Yup,,Y
 61,test,6,F1,child,Hm this one looks like it's running away from something,,Y
-61,test,6,F1,parent,"Ok, is the square on top or on the side?",,Y
+61,test,6,F1,parent,OK is the square on top or on the side,,Y
 61,test,6,F1,child,Um kind of leaning backwards,,Y
-61,test,6,F1,parent,But on- like above it leaning backwards?,,Y
+61,test,6,F1,parent,But on like above it leaning backwards,,Y
 61,test,6,F1,child,Mmm kind of,,Y
 61,test,6,F1,parent,,parent,Y
-61,test,16,F1,parent,"Oh boy this one's crazy looking. Uh this one- it's not the one that looks like it has that house at the top, it's the other one",,Y
+61,test,16,F1,parent,Oh boy this one's crazy looking uh this one it's not the one that looks like it has that house at the top it's the other one,,Y
 61,test,16,F1,child,,child,Y
 61,test,24,F1,child,It's the one that looks like it's running,,Y
 61,test,24,F1,parent,,parent,Y
-61,test,24,F1,parent,Got it,,Y
-61,test,34,F1,parent,"Uh this is the crazy looking one, not the sad one, but the one that looks like it has arms spread open",,Y
-61,test,34,F1,child,I know,,Y
+61,test,34,F1,parent,Uh this is the crazy looking one not the sad one but the one that looks like it has arms spread open,,Y
 61,test,34,F1,child,,child,Y
-61,test,8,G1,child,"This, this one looks like it's architecture",,Y
-61,test,8,G1,parent,"Uh, okay, does it look like it maybe has like a square and a triangle on the bottom?",,Y
-61,test,8,G1,child,"Well, yes",,Y
-61,test,8,G1,parent,Yes? Ok,,Y
+61,test,8,G1,child,This this one looks like it's architecture,,Y
+61,test,8,G1,parent,Uh OK does it look like it maybe has like a square and a triangle on the bottom,,Y
+61,test,8,G1,child,Yes,,Y
 61,test,8,G1,parent,,parent,Y
-61,test,20,G1,parent,"Uh not the one with the house on top, but the other one that looks like maybe it's kind of kneeling down",,Y
-61,test,20,G1,child,Ok,,Y
 61,test,20,G1,child,,child,Y
-61,test,30,G1,child,This one looks like it is architecture,,Y
-61,test,30,G1,parent,Mmm,,Y
+61,test,30,G1,child,This looks like it is architecture,,Y
 61,test,30,G1,child,Not the one laying down,,Y
-61,test,30,G1,parent,Ok,,Y
 61,test,30,G1,parent,,parent,Y
-61,test,32,G1,parent,"Uh not the one that's diving, but the one that looks like it's kneeling",,Y
-61,test,32,G1,child,Ok,,Y
+61,test,32,G1,parent,Uh not the one that's diving but the one that looks like it's kneeling,,Y
 61,test,32,G1,child,,child,Y
 61,test,10,H1,child,This one looks like it's in some sort of school,,Y
-61,test,10,H1,parent,Like it's sitting maybe?,,Y
+61,test,10,H1,parent,Like it's sitting maybe,,Y
 61,test,10,H1,child,Not sitting,,Y
-61,test,10,H1,parent,Is the square on top or to the side?,,Y
+61,test,10,H1,parent,Is the square on top or to the side,,Y
 61,test,10,H1,child,Um it's on the top,,Y
-61,test,10,H1,parent,Ok,,Y
 61,test,10,H1,parent,,parent,Y
 61,test,12,H1,parent,Uh this is the one you said looked like uh it was in a school,,Y
 61,test,12,H1,child,,child,Y
-61,test,22,H1,child,This one looks like it's at a school,,Y
-61,test,22,H1,parent,Ok,,Y
+61,test,22,H1,child,This one looks like it's a school,,Y
 61,test,22,H1,parent,,parent,Y
-61,test,36,H1,parent,"Uh this is the one, I think you said looks like its eating ice cream",,Y
-61,test,36,H1,child,Hmm no,,Y
-61,test,36,H1,parent,Not not two separate legs but the other one that has like-,,Y
-61,test,36,H1,child,No this is the one I thought is at a school,,Y
-61,test,36,H1,parent,"Oh, okay,  the school one then",,Y
+61,test,36,H1,parent,Uh this is the one I think you said looks like its eating ice cream,,Y
+61,test,36,H1,parent,Not not two separate legs but the other one that has like,,Y
+61,test,36,H1,child,No this is the one I thought is a school,,Y
+61,test,36,H1,parent,Oh OK the school one then,,Y
 61,test,36,H1,child,,child,Y
 61,test,2,I1,child,It looks like a human,,Y
-61,test,2,I1,parent,Ok what's the human doing is he standing upright or is he kind of leaning over?,,Y
+61,test,2,I1,parent,OK what's the human doing is he standing upright or is he kind of leaning over,,Y
 61,test,2,I1,child,he's kinda leaning over and he has a triangle in his hand,,Y
-61,test,2,I1,parent,Got it,,Y
 61,test,2,I1,parent,,parent,Y
-61,test,14,I1,parent,"Ok it's not the one that looks like it's jumping, it's the one that has a triangle to the side",,Y
-61,test,14,I1,child,Oh I know which one it is,,Y
+61,test,14,I1,parent,OK it's not the one that looks like it's jumping it's the one that has a triangle to the side,,Y
 61,test,14,I1,child,,child,Y
 61,test,28,I1,child,This one looks like it's eating ice cream,,Y
-61,test,28,I1,parent,"Oh, okay, so not the diving one",,Y
+61,test,28,I1,parent,Oh OK so not the diving one,,Y
 61,test,28,I1,child,No,,Y
 61,test,28,I1,parent,,parent,Y
-61,test,40,I1,parent,Uh this is this one you thought looked like it was eating ice cream?,,Y
+61,test,40,I1,parent,Uh this is this one you thought looked like it was eating ice cream,,Y
 61,test,40,I1,child,Yes,,Y
-61,test,40,I1,parent,Ok the ice cream one,,Y
+61,test,40,I1,parent,OK the ice cream one,,Y
 61,test,40,I1,child,,child,Y
-61,test,9,K1,parent,"Ok this one has a triangle at the very top, kinda looks like a house at the very top",,Y
+61,test,9,K1,parent,OK this one has a triangle at the very top kinda looks like a house at the very top,,Y
 61,test,9,K1,child,,child,Y
-61,test,11,K1,child,"Woah, this one looks like this one looks like a house on the top",,Y
+61,test,11,K1,child,woah this one looks like this one looks like a house on the top,,Y
 61,test,11,K1,parent,,parent,Y
 61,test,29,K1,parent,Uh this is the one with the the house on top that looks like it has a tail,,Y
-61,test,29,K1,child,Ok,,Y
 61,test,29,K1,child,,child,Y
 61,test,39,K1,child,This one looks like it has a house and tail,,Y
 61,test,39,K1,parent,,parent,Y
 61,test,39,K1,child,Not the one that's laying down,,Y
-61,test,39,K1,parent,Got it,,Y

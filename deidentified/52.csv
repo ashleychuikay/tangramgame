@@ -19,7 +19,7 @@ subid,type,trial,target,person,utterance,selection,correct
 52,test,20,A1,child,,child,Y
 52,test,30,A1,child,someone standing on one foot,,Y
 52,test,30,A1,parent,,parent,Y
-52,test,32,A1,parent,"someone with two feet spread out and a square on her head, with two feet",,Y
+52,test,32,A1,parent,someone with two feet spread out and a square on her head,,Y
 52,test,32,A1,child,,child,Y
 52,test,5,B1,parent,the person standing tall,,Y
 52,test,5,B1,child,,child,Y
@@ -38,7 +38,7 @@ subid,type,trial,target,person,utterance,selection,correct
 52,test,28,C1,parent,,parent,Y
 52,test,38,C1,parent,someone looks like they did a somersault,,Y
 52,test,38,C1,child,,child,Y
-52,test,1,D1,parent,can you press the shape that has... looks like an airplane I guess,,Y
+52,test,1,D1,parent,can you press the shape that looks like an airplane I guess,,Y
 52,test,1,D1,child,,child,Y
 52,test,1,D1,child,yes! gotcha,,Y
 52,test,11,D1,parent,can you tell me,,Y
@@ -56,7 +56,7 @@ subid,type,trial,target,person,utterance,selection,correct
 52,test,13,E1,parent,,parent,Y
 52,test,25,E1,parent,someone looks like they are jumping up with two legs,,Y
 52,test,25,E1,child,,child,Y
-52,test,31,E1,child,someone jumping up with two legs,,Y
+52,test,31,E1,child,someone jumping up,,Y
 52,test,31,E1,parent,,parent,Y
 52,test,9,F1,parent,someone that looks like they are doing the splits,,Y
 52,test,9,F1,child,easy,,Y

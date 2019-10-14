@@ -1,14 +1,14 @@
 subid,type,trial,target,person,utterance,selection,correct
 42,practice,1,apple,parent,It has an apple,,Y
 42,practice,1,apple,parent,It has an apple,,Y
-42,practice,1,apple,parent,Do you see an apple,,Y
-42,practice,1,apple,parent,Do you see an apple,,Y
 42,practice,1,apple,child,,child,Y
 42,practice,1,apple,child,,child,Y
 42,practice,4,apple,child,Apple,,Y
 42,practice,4,apple,child,Apple,,Y
 42,practice,4,apple,parent,,parent,Y
 42,practice,4,apple,parent,,parent,Y
+42,practice,2,artichoke,child,Uh what is it mom,,N
+42,practice,2,artichoke,child,Uh what is it mom,,Y
 42,practice,2,artichoke,parent,Is it like bumpy or,,N
 42,practice,2,artichoke,parent,Is it like bumpy or,,Y
 42,practice,2,artichoke,child,Bump,,N
@@ -35,14 +35,16 @@ subid,type,trial,target,person,utterance,selection,correct
 42,practice,3,onion,child,Yup,,Y
 42,practice,3,onion,child,,child,Y
 42,practice,3,onion,child,,child,Y
-42,practice,6,onion,child,A circle,,Y
-42,practice,6,onion,child,A circle,,Y
+42,practice,6,onion,child,A cricle,,Y
+42,practice,6,onion,child,A cricle,,Y
 42,practice,6,onion,child,Smooth,,Y
 42,practice,6,onion,child,Smooth,,Y
 42,practice,6,onion,parent,Smooth,,Y
 42,practice,6,onion,parent,Smooth,,Y
 42,practice,6,onion,parent,,parent,Y
 42,practice,6,onion,parent,,parent,Y
+42,practice,6,onion,child,Yup,,Y
+42,practice,6,onion,child,Yup,,Y
 42,test,9,A1,parent,OK I have a person that is standing on one leg and has one leg up behind him,,Y
 42,test,9,A1,parent,They're standing tall,,Y
 42,test,9,A1,child,,child,Y
@@ -164,15 +166,15 @@ subid,type,trial,target,person,utterance,selection,correct
 42,test,39,H1,child,A woman's reading,,Y
 42,test,39,H1,child,And he's like fat she's fat,,Y
 42,test,39,H1,parent,,parent,Y
-42,test,8,I1,child,He is a he has a icecream with no ice cream on top,,Y
+42,test,8,I1,child,He is a he has a icecream with no icecream on top,,Y
 42,test,8,I1,parent,He has an icecream,,Y
 42,test,8,I1,child,zzz cone with no with one leg,,Y
 42,test,8,I1,parent,One leg,,Y
 42,test,8,I1,parent,,parent,Y
 42,test,20,I1,parent,It is the guy with the ice cream cone but no ice cream just a big triangle and only one leg and a diamond head,,Y
 42,test,20,I1,child,,child,Y
-42,test,26,I1,child,I have a blue box that is a cone but no ice cream,,Y
-42,test,26,I1,child,Cone but no ice cream,,Y
+42,test,26,I1,parent,I have a blue box that is a cone but no ice cream,,Y
+42,test,26,I1,parent,Cone but no ice cream,,Y
 42,test,26,I1,parent,,parent,Y
 42,test,36,I1,parent,I have the blue box ice cream no cone,,Y
 42,test,36,I1,child,,child,Y

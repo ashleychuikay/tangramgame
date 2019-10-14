@@ -28,7 +28,7 @@ subid,type,trial,target,person,utterance,selection,correct
 10,test,19,B1,parent,,parent,Y
 10,test,27,B1,parent,Person who looks like they're walking away with their head down,,Y
 10,test,27,B1,child,,child,Y
-10,test,37,B1,child,Walking away,,Y
+10,test,27,B1,child,Walking away,,Y
 10,test,37,B1,parent,,parent,Y
 10,test,4,C1,child,Person who looks like they're um uh about to do a push-up,,Y
 10,test,4,C1,parent,,parent,Y

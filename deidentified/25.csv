@@ -33,7 +33,7 @@ subid,type,trial,target,person,utterance,selection,correct
 25,test,18,B1,parent,"to me this looks like a person standing and walking and a little bit sad, cause their head is down",,Y
 25,test,18,B1,child,,child,Y
 25,test,26,B1,child,"so someone walking xxx, and they have a body, and um",,Y
-25,test,26,B1,parent,can you say a little more about it?,,Y
+25,test,26,B1,parent,can you say a little more,,Y
 25,test,26,B1,child,and they have a xxx,,Y
 25,test,26,B1,parent,"i didn't quite hear what you said, can you say it louder?",,Y
 25,test,26,B1,child,"it's a diamond head and triangle feet, and xxx",,Y
