@@ -273,6 +273,7 @@ model_data %>%
   tidyboot_mean(length) %>%
   ggplot(aes(x = target_trial, y = empirical_stat)) + 
   facet_wrap(~ age) +
+  #theme(panel.border = element_rect(fill = NA, color = "black")) +
   geom_line() + 
   geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper))
 dev.off()
