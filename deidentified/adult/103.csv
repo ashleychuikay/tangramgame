@@ -1,0 +1,97 @@
+subid,type,trial,target,person,utterance,selection,correct
+103,practice,1,apple,right,click on the apple,,Y
+103,practice,1,apple,left,okay,,Y
+103,practice,1,apple,left,,left,Y
+103,practice,4,apple,left,apple,,Y
+103,practice,4,apple,right,,right,Y
+103,practice,2,artichoke,left,"um, artichoke",,Y
+103,practice,2,artichoke,right,,right,Y
+103,practice,5,artichoke,right,artichoke,,Y
+103,practice,5,artichoke,left,,left,Y
+103,practice,3,onion,right,the other one,,Y
+103,practice,3,onion,left,,left,Y
+103,practice,6,onion,left,"onion, the other one",,Y
+103,practice,6,onion,right,,right,Y
+103,test,10,A1,left,kicking,,Y
+103,test,10,A1,right,,right,Y
+103,test,14,A1,right,vertical,,Y
+103,test,14,A1,left,,left,Y
+103,test,30,A1,left,kicking,,Y
+103,test,30,A1,right,,right,Y
+103,test,40,A1,right,upright,,Y
+103,test,40,A1,left,,left,Y
+103,test,2,B1,left,"uh, walking",,Y
+103,test,2,B1,right,,right,Y
+103,test,12,B1,right,looking down,,Y
+103,test,12,B1,left,,left,Y
+103,test,22,B1,left,looking down,,Y
+103,test,22,B1,right,,right,Y
+103,test,36,B1,right,looking down,,Y
+103,test,36,B1,left,,left,Y
+103,test,1,C1,right,fetal position,,Y
+103,test,1,C1,left,,left,Y
+103,test,15,C1,left,"uh, like kneeling",,Y
+103,test,15,C1,right,,right,Y
+103,test,29,C1,right,falling,,Y
+103,test,29,C1,left,,left,Y
+103,test,31,C1,left,"uh, bending down",,Y
+103,test,31,C1,right,,right,Y
+103,test,4,D1,left,lying,,Y
+103,test,4,D1,right,,right,Y
+103,test,18,D1,right,car lock,,Y
+103,test,18,D1,left,,left,Y
+103,test,24,D1,left,"uh, lying down",,Y
+103,test,24,D1,right,,right,Y
+103,test,34,D1,right,horizontal,,Y
+103,test,34,D1,left,,left,Y
+103,test,9,E1,right,jumping,,Y
+103,test,9,E1,left,,left,Y
+103,test,13,E1,left,the leaping one,,Y
+103,test,13,E1,right,,right,Y
+103,test,21,E1,right,jumping,,Y
+103,test,21,E1,left,,left,Y
+103,test,35,E1,left,jumping,,Y
+103,test,35,E1,right,,right,Y
+103,test,5,F1,right,the one that's less vertical,,Y
+103,test,5,F1,left,,left,Y
+103,test,17,F1,left,"uh, less vertical",,Y
+103,test,17,F1,right,not sitting?,,Y
+103,test,17,F1,left,"yes, not sitting",,Y
+103,test,17,F1,right,ok,,Y
+103,test,17,F1,left,ok,,Y
+103,test,17,F1,right,,right,Y
+103,test,25,F1,right,"um, not horizontal",,Y
+103,test,25,F1,left,,left,Y
+103,test,39,F1,left,"uh, not looking down",,Y
+103,test,39,F1,right,,right,Y
+103,test,7,G1,right,vertical,,Y
+103,test,7,G1,left,,left,Y
+103,test,11,G1,left,"um, sitting",,Y
+103,test,11,G1,right,,right,Y
+103,test,27,G1,right,sitting,,Y
+103,test,27,G1,left,,left,Y
+103,test,37,G1,left,sitting,,Y
+103,test,37,G1,right,,right,Y
+103,test,8,H1,left,"um, serving",,Y
+103,test,8,H1,right,,right,Y
+103,test,16,H1,right,not jumping,,Y
+103,test,16,H1,left,,left,Y
+103,test,28,H1,left,serving,,Y
+103,test,28,H1,right,,right,Y
+103,test,38,H1,right,bigger,,Y
+103,test,38,H1,left,,left,Y
+103,test,3,I1,right,serving?,,Y
+103,test,3,I1,left,,left,Y
+103,test,19,I1,left,serving,,Y
+103,test,23,I1,right,serving,,Y
+103,test,23,I1,left,,left,Y
+103,test,33,I1,left,"uh, serving",,Y
+103,test,33,I1,right,,right,Y
+103,test,6,K1,left,"uh, the one that's looking up",,Y
+103,test,6,K1,right,,right,Y
+103,test,20,K1,right,serving,,Y
+103,test,20,K1,left,,left,Y
+103,test,26,K1,left,"um, serving",,Y
+103,test,26,K1,right,,right,Y
+103,test,32,K1,right,serving,,Y
+103,test,32,K1,left,,left,Y
