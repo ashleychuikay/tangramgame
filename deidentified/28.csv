@@ -3,7 +3,7 @@ subid,type,trial,target,person,utterance,selection,correct
 28,practice,1,apple,child,,child,Y
 28,practice,4,apple,child,Can you press the banana,,N
 28,practice,4,apple,parent,,parent,N
-28,practice,2,artichoke,child,A blue square! Can you press the onion,,N
+28,practice,2,artichoke,child,A blue square zzz onion,,N
 28,practice,2,artichoke,parent,,parent,N
 28,practice,5,artichoke,parent,Can you press the artichoke,,Y
 28,practice,5,artichoke,child,,child,Y
@@ -59,13 +59,9 @@ subid,type,trial,target,person,utterance,selection,correct
 28,test,39,E1,parent,,parent,N
 28,test,3,F1,parent,Can you press the person who is raising their arms in the air,,Y
 28,test,3,F1,child,,child,Y
-28,test,15,F1,child,Can you press the one who's who's in the blue square,,Y
-28,test,15,F1,parent,I can't see the blue square you have to tell me what the person looks like,,Y
 28,test,15,F1,parent,It looks like he's dropping with his arms out with a diamond as his head,,Y
 28,test,15,F1,parent,With a diamond as his head let's try this one,,Y
 28,test,15,F1,parent,,parent,Y
-28,test,15,F1,parent,Is that right,,Y
-28,test,15,F1,child,Yes,,Y
 28,test,21,F1,parent,Notice I I have the blue square right now can you touch the person um who's with their hands in the air,,Y
 28,test,21,F1,child,,child,Y
 28,test,35,F1,child,Can you press the person very still,,Y
@@ -95,7 +91,7 @@ subid,type,trial,target,person,utterance,selection,correct
 28,test,14,I1,child,,child,Y
 28,test,30,I1,child,Can you press the one who has a who is walking with one foot,,N
 28,test,30,I1,parent,,parent,N
-28,test,32,I1,parent,OK can you touch the person who's holding the triangle,,Y
+28,test,32,I1,parent,OK can yo utouch the person who's holding the triangle,,Y
 28,test,32,I1,child,,child,Y
 28,test,9,K1,parent,Can you press the person who is leaning over and they have their head they have a hat on they have a triangle hat,,Y
 28,test,9,K1,child,,child,Y

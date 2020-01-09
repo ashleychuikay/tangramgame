@@ -1,0 +1,100 @@
+---
+title: "Tangram Transcripts"
+author: "Ashley Leung, and Dan Yurovsky"
+date: '`r Sys.Date()`'
+output: 
+  html_document:
+    toc: false
+    number_sections: false
+    theme: lumen
+    toc_float: false
+    code_folding: hide
+---
+
+```{r, message=FALSE, warning=FALSE, show = F}
+library(tidyverse)
+library(here)
+library(tidyboot)
+library(knitr)
+library(ggplot2)
+library(janitor)
+library(lme4)
+library(lmerTest)
+library(broom.mixed)
+
+opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, 
+               error = FALSE, cache = TRUE, tidy = FALSE)
+
+theme_set(theme_classic(base_size = 18))
+```
+
+
+```{r read_data}
+
+gametrials <- read_csv(here("data/ug_tangramgameresults.csv")) %>%
+  mutate(type = if_else(nchar(leftpic) > 2, "practice", "test")) %>%
+  mutate(trial = as.numeric(trial)+1) %>%
+  mutate(subid = as.numeric(subid))
+
+## read transcripts and add col with database_id
+
+transcripts <- list.files(here("data/ugcoded"), "*.csv", full.names = T)
+
+read_transcript <- function(file) {
+  
+  transcript <- read_csv(file) %>%
+    remove_empty("cols") %>%
+    mutate(subid = parse_number(basename(file))) %>%
+    #mutate(row = 1:n()) %>%
+    filter(!is.na(Timeline.trial)) %>% 
+    mutate(type = if_else(str_detect(Timeline.trial, "p"), "practice", 
+                          "test"),
+           trial = as.numeric(gsub("[^0-9]", "", Timeline.trial)))
+}
+
+data <- map(transcripts, read_transcript) %>%
+  bind_rows
+```
+
+
+```{r munge_data}
+
+## for analysis
+
+tidy_data <- data %>%
+  left_join(gametrials, c("subid", "trial", "type")) %>%
+  gather(person, utterance, Timeline.leftspeech, Timeline.rightspeech) %>%
+  mutate(utterance = if_else(utterance %in% c("<leftspeech>", "<rightspeech>"),
+                             as.character(NA), utterance)) %>%
+  mutate(selection = if_else(Timeline.selection == "left", "left",
+                            if_else(Timeline.selection == "right",
+                                    "right", as.character(NA)))) %>%
+  filter(!is.na(selection) | !is.na(utterance)) %>%
+  filter(!is.na(trial)) %>%
+  mutate(person = if_else(str_detect(person, "left"), "left", "right")) %>%
+  filter(is.na(selection) | selection == person) %>%
+  group_by(subid, type, trial) %>%
+  arrange(Timeline.ordinal, .by_group = T) %>%
+  mutate(pos = 1:n(),
+         select_pos = which.max(!is.na(selection)),
+         trial_selection = last(unique(selection)))
+```
+
+
+
+```{r coding-pacts, eval = F, include = F}
+##output csv for conceptual pact coding
+
+coding <- tidy_data %>%
+  arrange(subid, type, target, trial) %>%
+  select(subid, type, trial, target, person, utterance, selection, correct)
+
+
+subids <- unique(coding$subid)
+  
+for (i in subids) {
+   codingfile <- filter(coding, subid == i)
+   name <- paste0(codingfile$subid[1], ".csv")
+   write_csv(codingfile, here(paste0("deidentified/adult/", name)), na="", append = FALSE)
+ }
+```

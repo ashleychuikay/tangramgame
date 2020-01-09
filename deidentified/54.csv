@@ -13,9 +13,9 @@ subid,type,trial,target,person,utterance,selection,correct
 54,practice,2,artichoke,child,yeah,,N
 54,practice,2,artichoke,parent,or is it more round with like little hairs on the bottom. which one is it?,,N
 54,practice,2,artichoke,child,it has like a square around it that is sticking out.,,N
-54,practice,2,artichoke,parent,"ok, but the picture inside the blue box, does it have scales ike a lizard or is it more smooth?",,N
+54,practice,2,artichoke,parent,"ok, but the picture inside the blue box, is it like a lizard or is it more smooth?",,N
 54,practice,2,artichoke,child,more smooth,,N
-54,practice,2,artichoke,parent,"it's not the one with the scales, it's the one that's more smooth that's got the little hairs at the bottom",,N
+54,practice,2,artichoke,parent,"it's not the one with the scales, it's the one that's more smooth with hairs at the bottom",,N
 54,practice,2,artichoke,child,yeah,,N
 54,practice,2,artichoke,parent,"ok, i'm going to pick the more round one",,N
 54,practice,2,artichoke,parent,,parent,N
@@ -45,7 +45,7 @@ subid,type,trial,target,person,utterance,selection,correct
 54,test,30,A1,child,it's the person running,,Y
 54,test,30,A1,parent,running?,,Y
 54,test,30,A1,parent,,parent,Y
-54,test,36,A1,parent,the one who's running,,Y
+54,test,36,A1,child,the one who's running,,Y
 54,test,36,A1,child,,child,Y
 54,test,6,B1,child,"mine looks like, now mine looks like it's the same but now it's walking",,Y
 54,test,6,B1,parent,"the person's walking now? ok, that's very good.",,Y
@@ -56,7 +56,7 @@ subid,type,trial,target,person,utterance,selection,correct
 54,test,14,B1,child,,child,Y
 54,test,28,B1,parent,"ok, which one",,Y
 54,test,28,B1,child,the people that's walking,,Y
-54,test,28,B1,parent,the person's walking? okay,,Y
+54,test,28,B1,parent,the person walking? okay,,Y
 54,test,28,B1,parent,,parent,Y
 54,test,32,B1,parent,ok. the one who's walking? pick that one please?,,Y
 54,test,32,B1,child,,child,Y
@@ -75,7 +75,7 @@ subid,type,trial,target,person,utterance,selection,correct
 54,test,33,C1,parent,kneeling down? okay,,Y
 54,test,33,C1,parent,,parent,Y
 54,test,10,D1,child,so i see triangle and triangle and a square on top and then another triangle and triangle and this that's not supposed to be there and i think that that person fell over and and and cut his head off and then broke,,Y
-54,test,10,D1,parent,"oh no, that's not good for that person!",,Y
+54,test,10,D1,parent,"oh my, that's not good for that person!",,Y
 54,test,10,D1,child,"i think that he falled down from all the way, he fell down from all the way seventeen",,Y
 54,test,10,D1,parent,that's such a far distance it's not good for someone to fall that far,,Y
 54,test,10,D1,child,yeah he actually did that,,Y
@@ -121,6 +121,7 @@ subid,type,trial,target,person,utterance,selection,correct
 54,test,5,F1,child,is it this one?,,Y
 54,test,5,F1,parent,i'm going to describe the two. one looks like a person who's running and one looks like a person who's on their hands and knees. so can you pick the one that looks like the person's running?,,Y
 54,test,5,F1,child,,child,Y
+54,test,13,F1,parent,"okay, good job",,Y
 54,test,13,F1,parent,so what do you have now?,,Y
 54,test,13,F1,child,it has a square and a triangle and a triangle and a triangle and a straight line and a traingle and a triangle and this big thing,,Y
 54,test,13,F1,parent,"ok, so what does it look like?",,Y
@@ -141,6 +142,10 @@ subid,type,trial,target,person,utterance,selection,correct
 54,test,1,G1,child,,child,Y
 54,test,1,G1,parent,"alright, good job!",,Y
 54,test,11,G1,parent,what do you have?,,Y
+54,test,11,G1,child,"no it was your turn, why did it do that? why is it my turn again?",,Y
+54,test,11,G1,parent,well do you have a blue box?,,Y
+54,test,11,G1,child,yeah,,Y
+54,test,11,G1,parent,well it's your turn again then!,,Y
 54,test,11,G1,child,there's a triangle and there's a square and this thing is up and theres a square and it looks like something is i think it looks like the person that fell down but i think he didn't die but because he doesn't have his legs anymore,,Y
 54,test,11,G1,parent,oh yeah?,,Y
 54,test,11,G1,child,he lost his legs on the side but now he has his head fixed,,Y
@@ -156,9 +161,9 @@ subid,type,trial,target,person,utterance,selection,correct
 54,test,25,G1,child,,child,Y
 54,test,31,G1,parent,"alright, which one do i pick?",,Y
 54,test,31,G1,child,the person that fell down now,,Y
-54,test,31,G1,parent,are they sitting on the box?,,Y
+54,test,31,G1,parent,sitting on the box?,,Y
 54,test,31,G1,child,yeah,,Y
-54,test,31,G1,parent,or kneeling down?,,Y
+54,test,31,G1,parent,or kneeling?,,Y
 54,test,31,G1,child,they're sitting on the box,,Y
 54,test,31,G1,parent,,parent,Y
 54,test,3,H1,parent,"ok, so my blue box. what i see is a square that looks like a diamond that's a person standing and the other looks like a plane. a jet",,Y
@@ -195,7 +200,7 @@ subid,type,trial,target,person,utterance,selection,correct
 54,test,21,I1,parent,"a square? no, i have the blue box. not the one who's walking, can you pick the one who's holding a triangle?",,Y
 54,test,21,I1,child,,child,Y
 54,test,37,I1,child,the one that's holding the triangle,,Y
-54,test,37,I1,parent,holding the triangle,,Y
+54,test,37,I1,parent,the triangle,,Y
 54,test,37,I1,parent,,parent,Y
 54,test,2,K1,parent,"alright, so, which one's the blue box for you? can you describe it?",,Y
 54,test,2,K1,child,"um, it has one straight line and another straight line but there's a little triangle right there that i usually get when I cut a paper off.",,Y
@@ -220,7 +225,7 @@ subid,type,trial,target,person,utterance,selection,correct
 54,test,2,K1,child,yes,,Y
 54,test,2,K1,parent,"ok, thank you",,Y
 54,test,2,K1,parent,,parent,Y
-54,test,2,K1,parent,I'll pick that one,,Y
+54,test,2,K1,parent,i picked that one,,Y
 54,test,12,K1,parent,"alright, so this one looks like. i've got two. one looks like someone fell down and lost their head. that's one picture",,Y
 54,test,12,K1,child,i see it right there! that's the one you said was looking like a jet,,Y
 54,test,12,K1,parent,"exactly, but my blue box is around the other one. so can you pick the other picture? don't pick the jet picture, the one who fell down. pick the other picture",,Y

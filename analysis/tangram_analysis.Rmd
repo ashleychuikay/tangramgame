@@ -134,8 +134,8 @@ coding_data <- cdata %>%
 
 coding <- coding_data %>%
   arrange(subid, type, target, trial) %>%
-  select(subid, type, trial, target, person, utterance, selection, correct) %>%
-  filter(subid == 12 | subid == 36 | subid == 44 | subid == 45 | subid == 46 | subid == 56 | subid == 58 | subid == 59)
+  select(subid, type, trial, target, person, utterance, selection, correct) #%>%
+  #filter(subid == 12 | subid == 36 | subid == 44 | subid == 45 | subid == 46 | subid == 56 | subid == 58 | subid == 59)
 
 #newcols <- c("final_initial", "self", "other", "accept")
 #coding[, newcols] <- NA
@@ -265,23 +265,42 @@ tidy(correct_lm) %>%
 ```{r conceptual_pacts-plots}         
 ## reduction in length
 
+# by age
+jpeg("reduction.jpeg", width = 8, height = 6, units = "in", res = 600)
 model_data %>%
+  ungroup() %>%
+  mutate(age = factor(age, labels = c("4 Years", "6 Years", "8 Years"))) %>%
   group_by(age, target_trial, subid) %>%
   summarise(length = mean(length)) %>%
   tidyboot_mean(length) %>%
   ggplot(aes(x = target_trial, y = empirical_stat)) + 
   facet_wrap(~ age) +
+  #theme(panel.spacing.x = unit(1, "lines")) +
+  theme(panel.border = element_rect(fill = NA, color = "black")) +
+  geom_line() + 
+  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper)) +
+  labs(x = "Round", y = "Length of referring expression (words)")
+dev.off()
+
+# overall
+jpeg("overall_reduction.jpeg", width = 8, height = 6, units = "in", res = 600)
+model_data %>%
+  group_by(target_trial, subid) %>%
+  summarise(length = mean(length)) %>%
+  tidyboot_mean(length) %>%
+  ggplot(aes(x = target_trial, y = empirical_stat)) + 
   geom_line() + 
   geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper))
+dev.off()
 
-## Plotting reduction in length (individual)
+## Plotting reduction in length
 
 tidy_data %>%
   filter(type == "test", pos < select_pos) %>%
   mutate(length = str_count(utterance, " ") +1) %>%
   group_by(subid, correct, target, trial, person) %>%
   filter(person != trial_selection) %>%
-  filter(person == "parent") %>%
+  #filter(person == "parent") %>%
   summarise(length = sum(length, na.rm = T),
             nturns = n()) %>%
   group_by(subid, target) %>%
@@ -313,13 +332,25 @@ tidy_data %>%
   geom_line() +
   geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper))
 
-## Plotting by age
+## Parent and child
 
-# parent and child
+#model_indiv_data %>%
+#  group_by(person, age, target_trial, subid) %>%
+#  summarise(length = mean(length)) %>%
+#  tidyboot_mean(length) %>%
+#  ggplot(aes(x = target_trial, y = empirical_stat, color = person)) + 
+#  facet_wrap(~ age) +
+#  geom_line() + 
+#  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper))
+#dev.off()
+  
 
+jpeg("parent_child.jpeg", width = 10, height = 6, units = "in", res = 600)
 tidy_data %>%
   filter(type == "test", pos < select_pos) %>%
   mutate(length = str_count(utterance, " ") +1) %>%
+  ungroup %>%
+  mutate(age = factor(age, labels = c("4 Years", "6 Years", "8 Years"))) %>%
   group_by(subid, age, correct, person, target, trial) %>%
   filter(person != trial_selection) %>%
   summarise(length = sum(length, na.rm = T),
@@ -333,9 +364,12 @@ tidy_data %>%
   tidyboot_mean(length) %>%
   ggplot(aes(x = trial, y = empirical_stat, color = person)) +
   facet_wrap(~ age) +
+  theme(panel.border = element_rect(fill = NA, colour = "black")) +
   geom_line() +
   geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper)) +
-  xlim("1", "2")
+  xlim("1", "2") +
+  labs(x = "Round", y = "Length of referring expression (words)")
+dev.off()
 
 ```
 

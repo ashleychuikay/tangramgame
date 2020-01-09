@@ -25,6 +25,7 @@ subid,type,trial,target,person,utterance,selection,correct
 5,practice,2,artichoke,parent,,parent,N
 5,practice,2,artichoke,child,Yeah,,N
 5,practice,2,artichoke,parent,OK,,N
+5,practice,2,artichoke,child,I see two circles,,N
 5,practice,5,artichoke,parent,OK what do you see,,Y
 5,practice,5,artichoke,child,I see a pineapple and a thing again,,Y
 5,practice,5,artichoke,parent,Are you sure that's a pineapple,,Y
@@ -40,7 +41,6 @@ subid,type,trial,target,person,utterance,selection,correct
 5,practice,3,onion,child,Yeah,,Y
 5,practice,3,onion,parent,OK um,,Y
 5,practice,3,onion,parent,Do you see a circle,,Y
-5,practice,3,onion,child,I see two circles,,Y
 5,practice,3,onion,parent,Do you see,,Y
 5,practice,3,onion,child,The pineapple has a circle and a and this thing has a circle,,Y
 5,practice,3,onion,parent,Click on the one that doesn't look like a pineapple,,Y
@@ -74,7 +74,7 @@ subid,type,trial,target,person,utterance,selection,correct
 5,test,5,A1,parent,What do you see two shapes together,,Y
 5,test,5,A1,child,zzz,,Y
 5,test,5,A1,parent,OK,,Y
-5,test,5,A1,child,OK wait I see a person a running zzz all going that way,,Y
+5,test,5,A1,child,OK wait I see a person a zzz all going that way,,Y
 5,test,5,A1,parent,Does it look like a person on one standing on one leg,,Y
 5,test,5,A1,child,Yeah he's standing on one leg,,Y
 5,test,5,A1,parent,Yeah that's what it look like right,,Y
@@ -156,7 +156,7 @@ subid,type,trial,target,person,utterance,selection,correct
 5,test,40,B1,parent,Which which one do you think you should pick,,Y
 5,test,40,B1,child,I'll pick the person again,,Y
 5,test,40,B1,parent,Why do you think that's a good choice,,Y
-5,test,40,B1,child,No what I'm not gonna pick it because that's why I'm picking the airplane,,Y
+5,test,40,B1,child,Know what I'm not gonna pick it because that's why I'm picking the airplane,,Y
 5,test,40,B1,parent,No I said why do you think the person is a good choice,,Y
 5,test,40,B1,child,Because uh it's,,Y
 5,test,40,B1,child,Because it's finna crash into that um person,,Y
@@ -298,6 +298,14 @@ subid,type,trial,target,person,utterance,selection,correct
 5,test,34,F1,child,Yeah,,Y
 5,test,34,F1,parent,And what else you see,,Y
 5,test,34,F1,child,I see um I see a guy again is and his hands over that way,,Y
+5,test,34,F1,parent,Mhm do you like the bird,,Y
+5,test,34,F1,child,yeah I like the birds and i like binoculars to look at bids,,Y
+5,test,34,F1,parent,You do,,Y
+5,test,34,F1,child,Mhm,,Y
+5,test,34,F1,parent,do you do that at school?,,Y
+5,test,34,F1,child,no I do that at home,,Y
+5,test,34,F1,parent,zzz,,Y
+5,test,34,F1,child,OK,,Y
 5,test,34,F1,child,,child,Y
 5,test,8,G1,child,Now I see someone crawling,,N
 5,test,8,G1,parent,Crawling and what else,,N
@@ -311,6 +319,7 @@ subid,type,trial,target,person,utterance,selection,correct
 5,test,8,G1,parent,The one that looks like he's crawling,,N
 5,test,8,G1,child,Yeah,,N
 5,test,8,G1,parent,,parent,N
+5,test,8,G1,child,OK,,N
 5,test,18,G1,parent,What do you see now,,N
 5,test,18,G1,child,I see a airplane coming in and toward this guy the person that's pointing that way,,N
 5,test,18,G1,parent,How many zzz do you see,,N
@@ -371,7 +380,7 @@ subid,type,trial,target,person,utterance,selection,correct
 5,test,14,H1,parent,What do you see with the person who has their hands facing that way like what shapes do you see,,Y
 5,test,14,H1,child,Like it's this one,,Y
 5,test,14,H1,parent,What shapes,,Y
-5,test,14,H1,child,Um it's a triangle facing down and and a square facing that way and that way up,,Y
+5,test,14,H1,child,Um it's a triangle facing down and and a facing that way and that way up,,Y
 5,test,14,H1,parent,I want you to pick that one,,Y
 5,test,14,H1,child,I want to pick this one,,Y
 5,test,14,H1,parent,The one which one,,Y
@@ -397,10 +406,9 @@ subid,type,trial,target,person,utterance,selection,correct
 5,test,38,H1,child,Yeah,,Y
 5,test,38,H1,parent,Um can you describe zzz with the person holding something,,Y
 5,test,38,H1,child,Yeah he's um holding something without crawling I'll pick it,,Y
-5,test,38,H1,parent,No zzz I said can you describe the one zzz where the person is holding something,,Y
+5,test,38,H1,parent,No zzz I said can you describethe one zzz where the person is holding something,,Y
 5,test,38,H1,child,OK I'll pick this one,,Y
 5,test,38,H1,parent,Can you describe it tell me what it looks like,,Y
-5,test,38,H1,child,No zzz I said can you describe the one zzz where the person is holding something,,Y
 5,test,38,H1,child,It looks like it has a a diamond on a head and it looks like it has a triangle facing that way on the right,,Y
 5,test,38,H1,parent,Do you think it's a good choice,,Y
 5,test,38,H1,child,Yeah,,Y

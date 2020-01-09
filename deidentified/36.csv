@@ -41,7 +41,6 @@ subid,type,trial,target,person,utterance,selection,correct
 36,test,12,B1,child,,child,Y
 36,test,26,B1,parent,This one look this one looks like somebody walking lonely,,Y
 36,test,26,B1,parent,,parent,Y
-36,test,32,B1,parent,I'm so sad I'm walk,,Y
 36,test,32,B1,child,,child,Y
 36,test,10,C1,child,This one this one it look like two feet and then there there's one rock,,Y
 36,test,10,C1,parent,Two feet and one rock oh like someone's kicking a ball,,Y
@@ -54,7 +53,6 @@ subid,type,trial,target,person,utterance,selection,correct
 36,test,34,C1,parent,Oh oh oh oh oh oh oh,,Y
 36,test,34,C1,child,,child,Y
 36,test,7,D1,parent,Ah I'm sleepy,,Y
-36,test,7,D1,child,Um,,Y
 36,test,7,D1,parent,The the one who looks sleepy,,Y
 36,test,7,D1,child,,child,Y
 36,test,15,D1,child,This one looks like someone sleeping,,Y
@@ -74,7 +72,7 @@ subid,type,trial,target,person,utterance,selection,correct
 36,test,35,E1,parent,,parent,Y
 36,test,3,F1,parent,This one looks like the one that's trying to catch a basketball that's in the air,,Y
 36,test,3,F1,child,,child,Y
-36,test,17,F1,child,This looks like someone try... running to catch a ball,,Y
+36,test,17,F1,child,This looks like someoen tr running to catch a ball,,Y
 36,test,17,F1,parent,,parent,Y
 36,test,21,F1,parent,This is what you do when you're at basketball class and the ball misses,,Y
 36,test,21,F1,child,,child,Y
@@ -82,7 +80,6 @@ subid,type,trial,target,person,utterance,selection,correct
 36,test,33,F1,parent,,parent,Y
 36,test,5,G1,parent,Oh this one looks like the person that's praying on their knees,,Y
 36,test,5,G1,child,,child,Y
-36,test,13,G1,child,This one is somebody on his on her on,,Y
 36,test,13,G1,child,This this picture is somebody on their knees playing,,Y
 36,test,13,G1,parent,,parent,Y
 36,test,29,G1,parent,Someone doing some squats,,N
@@ -97,9 +94,8 @@ subid,type,trial,target,person,utterance,selection,correct
 36,test,25,H1,child,,child,Y
 36,test,39,H1,child,Excuse me there you go,,Y
 36,test,39,H1,parent,,parent,Y
-36,test,4,I1,child,He this guy is is hold... thsi this person is holding a a bowl,,Y
+36,test,4,I1,child,He this guy is is hol thi this person is holding a a bowl,,Y
 36,test,4,I1,parent,,parent,Y
-36,test,16,I1,parent,This one looks like,,Y
 36,test,16,I1,parent,Uh someone,,Y
 36,test,16,I1,parent,Delivering a package,,Y
 36,test,16,I1,child,,child,Y
@@ -107,10 +103,7 @@ subid,type,trial,target,person,utterance,selection,correct
 36,test,28,I1,parent,,parent,Y
 36,test,36,I1,parent,Excuse me sir can I,,Y
 36,test,36,I1,child,,child,Y
-36,test,8,K1,child,The one who's like,,Y
-36,test,8,K1,child,The one,,Y
 36,test,8,K1,child,The one who's holding a some who's not holdi who's trying to catch something like this who,,Y
-36,test,8,K1,parent,OK,,Y
 36,test,8,K1,parent,,parent,Y
 36,test,18,K1,parent,This one looks like someone holding their arms out for something,,Y
 36,test,18,K1,child,,child,Y

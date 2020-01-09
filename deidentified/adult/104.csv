@@ -1,0 +1,137 @@
+subid,type,trial,target,person,utterance,selection,correct
+104,practice,1,apple,left,okay um it's an apple,,Y
+104,practice,1,apple,right,mm hm,,Y
+104,practice,1,apple,right,,right,Y
+104,practice,1,apple,left,nice,,Y
+104,practice,4,apple,right,the apple?,,Y
+104,practice,4,apple,left,okay good,,Y
+104,practice,4,apple,left,,left,Y
+104,practice,4,apple,left,cool,,Y
+104,practice,2,artichoke,right,"um, oh interesting, I think this is uhh asparagus, that's like",,Y
+104,practice,2,artichoke,left,oh okay,,Y
+104,practice,2,artichoke,left,,left,Y
+104,practice,2,artichoke,left,"yeah, I think it's asparagus",,Y
+104,practice,2,artichoke,left,"nice, I think it's an artichoke, maybe",,Y
+104,practice,2,artichoke,right,"oh maybe, maybe",,Y
+104,practice,5,artichoke,left,um it's the artichoke again?,,Y
+104,practice,5,artichoke,right,,right,Y
+104,practice,3,onion,left,"um, it's the onion",,Y
+104,practice,3,onion,right,yeah,,Y
+104,practice,3,onion,right,,right,Y
+104,practice,3,onion,left,nice,,Y
+104,practice,6,onion,right,it's the onion,,Y
+104,practice,6,onion,left,,left,Y
+104,test,4,A1,right,"um it's the one that's like, looks like it's like, like its like hands are, like, behind it it's like yeah",,Y
+104,test,4,A1,left,"the one with like two legs, or the one with the one leg?",,Y
+104,test,4,A1,right,the one with two legs,,Y
+104,test,4,A1,left,,left,Y
+104,test,4,A1,left,"okay, nice",,Y
+104,test,16,A1,left,um it's the one that's walking and does not have an arrow for a head,,Y
+104,test,16,A1,right,,right,Y
+104,test,30,A1,right,"it's the one with like, it's like the not hori--it's the vertical one",,Y
+104,test,30,A1,left,,left,Y
+104,test,38,A1,left,"uh it's the walking one, the one not, doesn't look like it's holding anything",,Y
+104,test,38,A1,right,,right,Y
+104,test,38,A1,left,nice,,Y
+104,test,10,B1,right,um vertical instead of horizontal,,Y
+104,test,10,B1,left,yeah,,Y
+104,test,10,B1,left,,left,Y
+104,test,12,B1,left,um it's the one that's walking,,Y
+104,test,12,B1,right,mm,,Y
+104,test,12,B1,right,,right,Y
+104,test,22,B1,right,it's the one that's walking with it's head down,,Y
+104,test,22,B1,left,,left,Y
+104,test,34,B1,left,it's the walking one,,Y
+104,test,34,B1,right,,right,Y
+104,test,3,C1,left,um it's the one that's bowing,,Y
+104,test,3,C1,left,so not the one that's jumping,,Y
+104,test,3,C1,right,yeah,,Y
+104,test,3,C1,right,,right,Y
+104,test,3,C1,left,"okay, cool",,Y
+104,test,19,C1,right,it's the one that's bowing,,Y
+104,test,19,C1,left,okay,,Y
+104,test,19,C1,left,,left,Y
+104,test,23,C1,left,um it's the bowing one,,Y
+104,test,23,C1,right,,right,Y
+104,test,33,C1,right,it's the one that's bowing,,Y
+104,test,33,C1,left,,left,Y
+104,test,9,D1,left,"um, it's the one that kinda looks like a car, it's like this, kinda like a car",left,Y
+104,test,9,D1,left,"like, the one that's not really thick and it's like horizontal instead of vertical",,Y
+104,test,9,D1,right,mm,,Y
+104,test,9,D1,right,,right,Y
+104,test,17,D1,right,it's the horizontal one,,Y
+104,test,17,D1,left,,left,Y
+104,test,25,D1,left,it's the horizontal one,,Y
+104,test,25,D1,right,,right,Y
+104,test,31,D1,right,it's the horizontal one,,Y
+104,test,31,D1,left,,left,Y
+104,test,1,E1,left,"oh no okay, um it kinda looks like a person , like, jumping",,Y
+104,test,1,E1,left,"There's like one that looks like they're running, but it's not that one, it's the one that's like jumping",,Y
+104,test,1,E1,right,yeah,,Y
+104,test,1,E1,right,,right,Y
+104,test,1,E1,left,"okay, nice",,Y
+104,test,13,E1,right,it's the one that like is like flailing,,Y
+104,test,13,E1,left,,left,Y
+104,test,21,E1,left,um it's the one that's jumping,,Y
+104,test,21,E1,right,,right,Y
+104,test,39,E1,right,it's the flailing one,,Y
+104,test,39,E1,left,,left,Y
+104,test,8,F1,right,"um this is the one that's not like bending, it's like I don't even know, it has a square for a head",,Y
+104,test,8,F1,left,"okay, nice",,Y
+104,test,20,F1,left,"uhh it's the one that's, like, thicker and the one triangle, it's almost disconnnected but xxx,",,Y
+104,test,20,F1,left,"uhh mmm it's the one that yeah it kinda looks like it's jumping instead of just kinda walking with its head down, it's the one that's like jumping or reaching or something",,Y
+104,test,20,F1,right,,right,Y
+104,test,20,F1,left,I don't know what it's doing but,,Y
+104,test,20,F1,right,mm hm,,Y
+104,test,26,F1,right,hmm it's the one with like a triangle for feet,,Y
+104,test,26,F1,left,okay,,Y
+104,test,26,F1,left,,left,Y
+104,test,40,F1,left,um it's the not bowing one,,Y
+104,test,40,F1,right,,right,Y
+104,test,6,G1,right,"um this is the one that's not bowing, I don't really know what's going on, but it's not bowing",,Y
+104,test,6,G1,left,"okay, great",,Y
+104,test,6,G1,left,,left,Y
+104,test,14,G1,left,"um it's the one that's sitting,yeah it's vertical",,Y
+104,test,14,G1,right,,right,Y
+104,test,14,G1,left,yes,,Y
+104,test,24,G1,right,"um, it's the one with the square for the head",,Y
+104,test,24,G1,left,okay,,Y
+104,test,24,G1,left,,left,Y
+104,test,32,G1,left,um it's the one that's sitting and not jumping,,Y
+104,test,32,G1,right,,right,Y
+104,test,7,H1,left,"um it's the really blo-, like the thick one",,Y
+104,test,7,H1,right,really thick,,Y
+104,test,7,H1,right,mm,,Y
+104,test,7,H1,right,,right,Y
+104,test,7,H1,left,yeah,,Y
+104,test,15,H1,right,"it's like, the hori--the vertical one",,Y
+104,test,15,H1,left,okay,,Y
+104,test,15,H1,left,,left,Y
+104,test,27,H1,left,um it's the not bowing one,,Y
+104,test,27,H1,right,,right,Y
+104,test,35,H1,right,"it's like, the waiter thing, like, that it's like a diamond for that, like a perfect diamond",,Y
+104,test,35,H1,left,okay,,Y
+104,test,35,H1,left,,left,Y
+104,test,5,I1,left,"um, its the one that kinda looks like a waiter",,Y
+104,test,5,I1,right,yeah,,Y
+104,test,5,I1,right,,right,Y
+104,test,5,I1,left,"yeah, like, yeah, okay cool",,Y
+104,test,11,I1,right,it's the waiter,,Y
+104,test,11,I1,left,yes,,Y
+104,test,11,I1,left,,left,Y
+104,test,29,I1,left,um it's the waiter guy,,Y
+104,test,29,I1,right,,right,Y
+104,test,37,I1,right,it's the waiter,,Y
+104,test,37,I1,left,,left,Y
+104,test,2,K1,right,"it's the one that seems like it's bending, um with like, its like tail out",,Y
+104,test,2,K1,left,"okay, does it have like an arrow for the head",,Y
+104,test,2,K1,right,"yeah, the head",,Y
+104,test,2,K1,left,"oh okay, great, nice",,Y
+104,test,2,K1,left,,left,Y
+104,test,18,K1,left,"um yeah it's not the horizontal one, the like the one with the arrow for the head is the one",,Y
+104,test,18,K1,right,,right,Y
+104,test,28,K1,right,it's the one with the arrow for the head,,Y
+104,test,28,K1,left,,left,Y
+104,test,28,K1,left,nice,,Y
+104,test,36,K1,left,um it's the arrowhead one,,Y
+104,test,36,K1,right,,right,Y

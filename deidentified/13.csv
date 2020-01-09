@@ -1,17 +1,24 @@
 subid,type,trial,target,person,utterance,selection,correct
 13,practice,1,apple,parent,"apple. with the leaf on the stem. do you have that on your screen? ok, I think you're supposed to press it. Did you press it?",,Y
+13,practice,1,apple,child,no,,Y
+13,practice,1,apple,parent,"ok, that's what you should do",,Y
 13,practice,1,apple,child,,child,Y
+13,practice,1,apple,parent,good job!,,Y
 13,practice,4,apple,child,I think that this is a... I see something that looks like a heart and it has a leaf and a stem. Do you have that?,,Y
+13,practice,4,apple,parent,yes,,Y
 13,practice,4,apple,parent,,parent,Y
 13,practice,2,artichoke,parent,"ok, let's wait a minute. do you have a blue box on your screen?",,Y
 13,practice,2,artichoke,child,"in my blue box, I have a... I think I have lettuce. It has a stem and leaves. Do you have that?",,Y
+13,practice,2,artichoke,parent,Yes,,Y
 13,practice,2,artichoke,parent,,parent,Y
 13,practice,5,artichoke,parent,"on my screen, I have a blue box that you would think is lettuce.",,Y
 13,practice,5,artichoke,child,,child,Y
 13,practice,5,artichoke,child,is that lettuce or not?,,Y
 13,practice,3,onion,parent,"on my screen, I have a blue box with the thing that's circular and it doesn't have leaves on it. it's a circle, it's a vegetable.",,Y
 13,practice,3,onion,child,it's an onion!,,Y
+13,practice,3,onion,parent,"ok, well if that's what you think it is, press it",,Y
 13,practice,3,onion,child,,child,Y
+13,practice,3,onion,child,yay!,,Y
 13,practice,6,onion,child,"in my blue box, I have something that's circular and doesn't have any leaves.",,Y
 13,practice,6,onion,parent,,parent,Y
 13,test,6,A1,child,"in my blue box, it looks like a person is running away",,Y
@@ -53,6 +60,7 @@ subid,type,trial,target,person,utterance,selection,correct
 13,test,29,E1,parent,in my blue box is a person jumping,,Y
 13,test,29,E1,child,,child,Y
 13,test,31,E1,child,in my blue box it looks like someone jumping up in the air,,Y
+13,test,31,E1,parent,can you give more description?,,Y
 13,test,31,E1,child,in my blue box it looks like someone pointing up to the air and jumping,,Y
 13,test,31,E1,parent,,parent,Y
 13,test,10,F1,child,"in my blue box, it looks like someone who's running like a bird",,Y
@@ -92,12 +100,16 @@ subid,type,trial,target,person,utterance,selection,correct
 13,test,40,I1,parent,"in my blue box somebody is standing up, bent over, with something in their hand.",,Y
 13,test,40,I1,child,,child,Y
 13,test,1,K1,parent,in my blue box it looks like a person is kind of bent over,,Y
+13,test,1,K1,child,"oh, I have that",,Y
 13,test,1,K1,child,,child,Y
 13,test,15,K1,child,in my blue box it looks like a person who's bending over. that's it,,N
+13,test,15,K1,parent,can you be more descriptive?,,N
 13,test,15,K1,child,in my blue box it looks like someone who's bending over like this.,,N
 13,test,15,K1,parent,do they have anything in their hands?,,N
 13,test,15,K1,child,no,,N
 13,test,15,K1,parent,,parent,N
+13,test,15,K1,child,oh wait I think you pressed the wrong one,,N
+13,test,15,K1,parent,"it's ok, we're just trying. we're just trying to use our words",,N
 13,test,21,K1,parent,it looks like a person standing up but they're bent over a little bit,,Y
 13,test,21,K1,child,,child,Y
 13,test,33,K1,child,in my blue box it's someone bending over reading a book,,Y

@@ -1,0 +1,139 @@
+subid,type,trial,target,leftpic,rightpic,person,utterance,selection,correct
+4,practice,1,apple,banana,apple,parent,"so it's red, and we eat a lot of them. what is it?",,Y
+4,practice,1,apple,banana,apple,child,apple?,,Y
+4,practice,1,apple,banana,apple,parent,yeah,,Y
+4,practice,1,apple,banana,apple,parent,do you want to hit it?,,Y
+4,practice,1,apple,banana,apple,child,,child,Y
+4,practice,4,apple,banana,apple,child,it's red and we eat them a lot,,Y
+4,practice,4,apple,banana,apple,parent,,parent,Y
+4,practice,2,artichoke,artichoke,onion,child,i'm not too sure what it is,,Y
+4,practice,2,artichoke,artichoke,onion,parent,"that's okay, why don't you start describing it",,Y
+4,practice,2,artichoke,artichoke,onion,child,i think that it's like green and that it has like leaves and a stalk,,Y
+4,practice,2,artichoke,artichoke,onion,parent,yeah,,Y
+4,practice,2,artichoke,artichoke,onion,parent,,parent,Y
+4,practice,2,artichoke,artichoke,onion,parent,"it's like, um, an artichoke. that's what that last thing was called",,Y
+4,practice,5,artichoke,onion,artichoke,parent,"alright, so, the artichoke? you make like dips and stuff out of it? and did you know you can bake it and pull the leaves off and eat it? it's actually really good. can you choose that?",,Y
+4,practice,5,artichoke,onion,artichoke,child,,child,Y
+4,practice,3,onion,artichoke,onion,parent,"ok when we're making like, tacos, or burritos",,Y
+4,practice,3,onion,artichoke,onion,child,i know what it is,,Y
+4,practice,3,onion,artichoke,onion,parent,what is it?,,Y
+4,practice,3,onion,artichoke,onion,child,onions,,Y
+4,practice,3,onion,artichoke,onion,parent,"alright, why don't you hit it",,Y
+4,practice,3,onion,artichoke,onion,child,,child,Y
+4,practice,6,onion,artichoke,onion,child,um it's like brown and you peel the skin off of it because you can't eat it and,,Y
+4,practice,6,onion,artichoke,onion,parent,what would it feel like to eat it? would it be like weird crunchy?,,Y
+4,practice,6,onion,artichoke,onion,child,"umm, kind of? it's going to be like, hot, and it would never cool down",,Y
+4,practice,6,onion,artichoke,onion,parent,,parent,Y
+4,test,3,B2,O1,B2,child,so this one is like they're standing more upright and there's like a long leg in the back and just like a regular leg in the front,,Y
+4,test,3,B2,O1,B2,child,is it wearing a hat?,,Y
+4,test,3,B2,O1,B2,parent,it is,,Y
+4,test,3,B2,O1,B2,child,,child,Y
+4,test,13,B2,B2,R1,child,um the slower runnign one,,Y
+4,test,13,B2,B2,R1,parent,the slower one?,,Y
+4,test,13,B2,B2,R1,parent,,parent,Y
+4,test,23,B2,L1,B2,parent,"alright the one that looks like theyre walking, not dancing",,N
+4,test,23,B2,L1,B2,child,,child,N
+4,test,31,B2,T1,B2,child,it's the guy with the hat on,,Y
+4,test,31,B2,T1,B2,parent,,parent,Y
+4,test,4,I1,T1,I1,child,um so it's a guy who's like bent and he's holding out a bowl,,Y
+4,test,4,I1,T1,I1,parent,what do you think would be in it?,,Y
+4,test,4,I1,T1,I1,child,soup maybe?,,Y
+4,test,4,I1,T1,I1,parent,,parent,Y
+4,test,12,I1,I1,J1,parent,holding soup,,Y
+4,test,12,I1,I1,J1,child,,child,Y
+4,test,24,I1,B2,I1,child,"um the one that's standing still, not moving, and holding soup",,Y
+4,test,24,I1,B2,I1,parent,not the one holding soup?,,Y
+4,test,24,I1,B2,I1,child,"no, the one holding soup",,Y
+4,test,24,I1,B2,I1,parent,,parent,Y
+4,test,32,I1,K1,I1,parent,holding soup,,Y
+4,test,32,I1,K1,I1,child,,child,Y
+4,test,8,J1,J1,I1,child,it kind of looks like the guy is flying,,Y
+4,test,8,J1,J1,I1,parent,flying?,,Y
+4,test,8,J1,J1,I1,child,yeah,,Y
+4,test,8,J1,J1,I1,parent,,parent,Y
+4,test,20,J1,J1,R1,parent,alright so this one looks like they are reading a book while running,,Y
+4,test,20,J1,J1,R1,child,,child,Y
+4,test,30,J1,K1,J1,child,the body is bigger than the other one and it looks like they are flying and reading a book,,Y
+4,test,30,J1,K1,J1,parent,so maybe like harry potter?,,Y
+4,test,30,J1,K1,J1,parent,,parent,Y
+4,test,38,J1,J1,T1,parent,flying and reading,,Y
+4,test,38,J1,J1,T1,child,,child,Y
+4,test,38,J1,J1,T1,child,harry potter!,,Y
+4,test,38,J1,J1,T1,parent,harry potter,,Y
+4,test,2,K1,L1,K1,child,um it's like a guy standing. his body is curved and it looks like he has a tail. his arm is stuck out like that,,Y
+4,test,2,K1,L1,K1,parent,like that?>,,Y
+4,test,2,K1,L1,K1,parent,,parent,Y
+4,test,2,K1,L1,K1,child,and he has a hat on,,Y
+4,test,16,K1,K1,I1,parent,so this one is like the arms are outstretched,,Y
+4,test,16,K1,K1,I1,child,,child,Y
+4,test,26,K1,T1,K1,child,"um this one is like standing still with his body bent. he has a hat on, hands outstretched, and he has a tail",,Y
+4,test,26,K1,T1,K1,parent,,parent,Y
+4,test,34,K1,K1,J1,parent,this one looks like they're about to serve you something,,Y
+4,test,34,K1,K1,J1,child,,child,Y
+4,test,7,L1,K1,L1,parent,so this one is the one that kinda looks like it's dancing,,Y
+4,test,7,L1,K1,L1,child,okay,,Y
+4,test,7,L1,K1,L1,parent,so the leg's up and back,,Y
+4,test,7,L1,K1,L1,child,i know,,Y
+4,test,7,L1,K1,L1,child,,child,Y
+4,test,19,L1,L1,B2,child,the one with its legs stretched out and bending back like it's dancing,,Y
+4,test,19,L1,L1,B2,parent,,parent,Y
+4,test,27,L1,U1,L1,parent,dancing,,Y
+4,test,27,L1,U1,L1,child,,child,Y
+4,test,35,L1,L1,N1,child,a guy that looks like he's running. i mean dancing. the dancing one.,,Y
+4,test,35,L1,L1,N1,parent,dancing?,,Y
+4,test,35,L1,L1,N1,parent,,parent,Y
+4,test,9,N1,I1,N1,parent,so this one like looks like they're running and the body is very elongated,,Y
+4,test,9,N1,I1,N1,child,,child,Y
+4,test,15,N1,N1,O1,child,"um, he's running really fast. a lot faster than the other one",,Y
+4,test,15,N1,N1,O1,parent,,parent,Y
+4,test,25,N1,N1,R1,parent,this one looks like they are running super fast and has the elongated body,,N
+4,test,25,N1,N1,R1,child,,child,N
+4,test,33,N1,U1,N1,child,running with its arms stretched out like that but with a bent knee in the back,,Y
+4,test,33,N1,U1,N1,parent,,parent,Y
+4,test,5,O1,O1,U1,parent,"alright, this one, the body is bigger than the one next to it and more running again. like that would be the shape, with like the arm in front and the arm in back",,Y
+4,test,5,O1,O1,U1,child,,child,Y
+4,test,11,O1,O1,L1,child,"um, it's like a guy running with his arm out",,Y
+4,test,11,O1,O1,L1,parent,,parent,Y
+4,test,21,O1,O1,R1,parent,slower jog,,Y
+4,test,21,O1,O1,R1,child,,child,Y
+4,test,37,O1,O1,N1,child,"um, the dog one",,Y
+4,test,37,O1,O1,N1,parent,,parent,Y
+4,test,1,R1,R1,O1,parent,"all right, so there looks like to me a guy running super fast, like faster than the other one",,Y
+4,test,1,R1,R1,O1,child,yeah,,Y
+4,test,1,R1,R1,O1,child,,child,Y
+4,test,17,R1,B2,R1,child,um he's running really fast,,Y
+4,test,17,R1,B2,R1,parent,,parent,Y
+4,test,29,R1,R1,N1,parent,"alright, this one is running and it has like a curve in the front knee. it looks like they are running fast and the body is smaller than the other",,Y
+4,test,29,R1,R1,N1,child,,child,Y
+4,test,39,R1,R1,J1,child,um running super fast,,Y
+4,test,39,R1,R1,J1,parent,,parent,Y
+4,test,6,T1,I1,T1,child,um so it's like a guy running with his arms that go like that,,Y
+4,test,6,T1,I1,T1,parent,not holding soup?,,Y
+4,test,6,T1,I1,T1,child,no it's just his arms go like that,,Y
+4,test,6,T1,I1,T1,parent,,parent,Y
+4,test,18,T1,T1,K1,parent,"um, the body is a little bit more narrow and the arms are outstretched, not wearing a hat",,Y
+4,test,18,T1,T1,K1,child,,child,Y
+4,test,22,T1,U1,T1,child,um the one that looks like he's going slower,,Y
+4,test,22,T1,U1,T1,parent,does he have arms or no arms?,,Y
+4,test,22,T1,U1,T1,child,arms,,Y
+4,test,22,T1,U1,T1,parent,,parent,Y
+4,test,40,T1,J1,T1,parent,alright this is the one that looks like they're serving,,Y
+4,test,40,T1,J1,T1,child,,child,Y
+4,test,40,T1,J1,T1,child,not harry potter,,Y
+4,test,10,U1,O1,U1,child,this one looks like it's running and it's body is very elongated. it has one leg in back that kind of looks like a triangle which is just it's foot and the other one in front is like a real leg,,Y
+4,test,10,U1,O1,U1,parent,so is the body like one bigger brick or is it like multiple?,,Y
+4,test,10,U1,O1,U1,child,i think it's multiple,,Y
+4,test,10,U1,O1,U1,parent,so is the head a bigger square or a smaller square?,,Y
+4,test,10,U1,O1,U1,child,the head's on a corner,,Y
+4,test,10,U1,O1,U1,parent,it's on a corner? is it like almost all the way turned or like partially turned?,,Y
+4,test,10,U1,O1,U1,child,it's like,,Y
+4,test,10,U1,O1,U1,parent,would you say it's like 45 or 15 degrees,,Y
+4,test,10,U1,O1,U1,child,45,,Y
+4,test,10,U1,O1,U1,parent,,parent,Y
+4,test,14,U1,N1,U1,parent,"uh, the head's, the leg's not as far out as the one next to it and it's one big body",,Y
+4,test,14,U1,N1,U1,child,,child,Y
+4,test,28,U1,L1,U1,child,"um, one that's running super fast",,Y
+4,test,28,U1,L1,U1,parent,,parent,Y
+4,test,36,U1,U1,B2,parent,so this one is like a very small waist,,Y
+4,test,36,U1,U1,B2,child,,child,Y
+4,test,36,U1,U1,B2,child,you could have just said the fast one,,Y

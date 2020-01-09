@@ -11,13 +11,15 @@ subid,type,trial,target,person,utterance,selection,correct
 9,practice,2,artichoke,child,It's like,,Y
 9,practice,2,artichoke,child,"it's like I think it's a it's like brown it's a, it can be brown and then it has zzz like",,Y
 9,practice,2,artichoke,parent,Well maybe you could describe like the shape of it,,Y
-9,practice,2,artichoke,child,Well the shape is like a circle and then it has it looks like a pinecone,,Y
+9,practice,2,artichoke,parent,Well the shape is like a circle and then it has it looks like a pinecone,,Y
 9,practice,2,artichoke,parent,,parent,Y
 9,practice,2,artichoke,parent,That was a great description!,,Y
 9,practice,5,artichoke,parent,OK this kinda looks like a pineapple,,Y
 9,practice,5,artichoke,child,,child,Y
 9,practice,5,artichoke,parent,"It's an artichoke, that's what it's called",,Y
 9,practice,3,onion,parent,An artichoke,,Y
+9,practice,3,onion,parent,Oh wait did you get new shapes on yours?,,Y
+9,practice,3,onion,parent,Does that mean we stop?,,Y
 9,practice,3,onion,parent,OK this one um is sticky if you cut it,,Y
 9,practice,3,onion,child,Oh,,Y
 9,practice,3,onion,child,,child,Y
@@ -45,6 +47,7 @@ subid,type,trial,target,person,utterance,selection,correct
 9,test,23,B1,child,,child,Y
 9,test,39,B1,child,It looks like someone had a sad day,,Y
 9,test,39,B1,parent,,parent,Y
+9,test,9,C1,parent,Oh is it my turn?,,Y
 9,test,9,C1,parent,Um it looks like someone who might be like kneeling and praying,,Y
 9,test,9,C1,child,Oh,,Y
 9,test,9,C1,child,,child,Y
@@ -67,7 +70,7 @@ subid,type,trial,target,person,utterance,selection,correct
 9,test,35,D1,child,It looks like someone like flying in a jet,,Y
 9,test,35,D1,parent,,parent,Y
 9,test,7,E1,parent,OK um it looks like this person just found some good news,,Y
-9,test,7,E1,child,Or he's like flying off a jet?,,Y
+9,test,7,E1,parent,Or he's like flying off a jet?,,Y
 9,test,7,E1,parent,"Or flying off a jet, yes",,Y
 9,test,7,E1,child,,child,Y
 9,test,7,E1,parent,That's a perfectly good description too,,Y
@@ -92,6 +95,7 @@ subid,type,trial,target,person,utterance,selection,correct
 9,test,11,F1,parent,Alright,,Y
 9,test,11,F1,child,Uh it looks like someone is like running away with his uh shark,,Y
 9,test,11,F1,parent,,parent,Y
+9,test,11,F1,parent,Ok,,Y
 9,test,27,F1,parent,Uh it looks like someone running away from a shark,,Y
 9,test,27,F1,child,,child,Y
 9,test,27,F1,child,Like jaws,,Y
@@ -125,11 +129,13 @@ subid,type,trial,target,person,utterance,selection,correct
 9,test,40,H1,child,I was ready to press the jet,,Y
 9,test,4,I1,child,It looks like someone is like offering you something like,,Y
 9,test,4,I1,parent,,parent,Y
+9,test,20,I1,parent,"Oh sorry, I'm just starting at it",,Y
 9,test,20,I1,parent,um somer--somebody offering you something on a tray kinda bent over,,Y
 9,test,20,I1,child,Ok,,Y
 9,test,20,I1,child,,child,Y
 9,test,20,I1,child,Like a triangle shape,,Y
-9,test,20,I1,parent,yes,,Y
+9,test,20,I1,child,Yes,,Y
+9,test,20,I1,child,Oh it says good job ready for the next round,,Y
 9,test,30,I1,child,This looks like someone offering you something,,Y
 9,test,30,I1,parent,,parent,Y
 9,test,36,I1,parent,It looks like someone offering you something,,Y
@@ -143,7 +149,9 @@ subid,type,trial,target,person,utterance,selection,correct
 9,test,16,K1,child,,child,Y
 9,test,28,K1,child,It looks like a dog that's like offering you something,,Y
 9,test,28,K1,parent,,parent,Y
-9,test,28,K1,child,With a hat on,,Y
+9,test,28,K1,parent,With a hat on,,Y
+9,test,28,K1,child,`,,Y
+9,test,32,K1,child,Your turn,,Y
 9,test,32,K1,parent,It looks like a dog with a tray offering you something,,Y
 9,test,32,K1,child,And a hat on,,Y
 9,test,32,K1,child,,child,Y
