@@ -1,0 +1,120 @@
+---
+title: "Similar Tangrams"
+author: "Dan Yurovsky"
+date: '`r Sys.Date()`'
+output:
+  html_document:
+    toc: false
+    number_sections: false
+    theme: lumen
+    toc_float: false
+    code_folding: hide
+---
+
+```{r, message=FALSE, warning=FALSE, show = F}
+library(here)
+library(knitr)
+library(tidytext)
+library(tidyboot)
+library(koRpus)
+#install.koRpus.lang("en")
+library(koRpus.lang.en)
+library(ggthemes)
+library(readxl)
+library(janitor)
+library(tidyverse)
+#devtools::install_github("mikabr/ggpirate")
+library(ggpirate)
+
+opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, 
+               error = FALSE, cache = TRUE, tidy = FALSE)
+
+theme_set(theme_classic(base_size = 14))
+```
+
+We compute some simple measures of linguistic complexity for each participant:
+
+1. MTLD - Measures of Textual Lexical Diversity (McCarthy, P. M. & Jarvis, S., 2010). A measure of lexical diversity that is more robust to some of the issues of corpus size than others like Type Token Ratio
+
+2. Types - Just a count of unique types. Has corpus size problems (must be non-decreasing), but less bad than TTR
+
+3. AoA - adult estimates of age of acquisition of each word from Kuperman et al. (2012). Higher average AoA could be a proxy for more sophisticated language
+
+4. Log Frequency - Log Frequency estimates of each word from the SUBTLEX-US corpus. less frequent words plausibly index more sophisticated language (Brysbaert, New, & Keuleers, 2012)
+
+```{r read_data}
+files <- list.files(path = here("deidentified/"), pattern = "*[0-9].csv", 
+                    full.names = TRUE)
+  
+ages <- read_csv(here("deidentified/meta.csv"))
+
+data <- map_dfr(files, read_csv) %>%
+  left_join(ages, by = c("subid"))
+
+kuperman_aoas <- read_excel(
+  here("corpus_data/AoA_ratings_Kuperman_et_al_BRM.xlsx")) %>%
+  clean_names() %>%
+  select(word, rating_mean, freq_pm) %>%
+  mutate_at(vars(rating_mean, freq_pm), as.numeric) %>%
+  mutate(log_freq = freq_pm) %>%
+  rename(aoa = rating_mean) %>%
+  select(-freq_pm)
+```
+
+```{r compute-measures}
+tokens <- data %>%
+  filter(!is.na(utterance), type != "practice") %>%
+  group_by(age, person, subid, trial) %>%
+  summarise(words = str_to_lower(paste(utterance, collapse = " "))) %>%
+  unnest_tokens(word, words) %>%
+  ungroup() %>%
+  mutate(word = str_to_lower(word))
+
+corpora <- tokens %>%
+  group_by(age, person, subid) %>%
+  summarise(corpus = paste(word, collapse = " ")) %>%
+  group_by(age, person, subid) %>%
+  nest() %>%
+  mutate(corpus = map(data, ~koRpus::tokenize(.x$corpus, format = "obj", 
+                                      lang = "en", tag = TRUE))) %>%
+  select(-data)
+
+mtlds <- corpora %>%
+  mutate(mtld = map(corpus, ~MTLD(.x, quiet = TRUE)@MTLD$MTLD)) %>%
+  select(-corpus) %>%
+  unnest(cols = c(mtld))
+
+types <- tokens %>%
+  group_by(age, person, subid) %>%
+  distinct(word) %>%
+  summarise(types = n())
+
+aoas <- tokens %>%
+  left_join(kuperman_aoas, by = "word") %>%
+  group_by(age, person, subid) %>%
+  summarise_at(vars(aoa, log_freq), ~mean(.x, na.rm = T))
+
+measures <- left_join(mtlds, types, by = c("age", "person", "subid")) %>%
+  left_join(aoas, by = c("age", "person", "subid")) %>%
+  pivot_longer(cols = c(mtld, types, aoa, log_freq), names_to = "measure", 
+               values_to = "score") %>%
+  ungroup() %>%
+  mutate(age = as.factor(age))
+
+```
+
+```{r descriptives, fig.width = 6, fig.height= 6}
+ggplot(measures, aes(x = age, y = score, 
+                  color = person, fill = person)) + 
+  facet_grid(measure ~ ., scales = "free") + 
+  geom_pirate(bars = FALSE, show.legend = TRUE) + 
+  scale_color_ptol() + 
+  scale_fill_ptol() + 
+  theme(legend.position = c(.2, 1), legend.title = element_blank(),
+        legend.direction = "horizontal")
+
+```
+
+```{r write_file}
+write_csv(measures, here("deidentified/lang_measures.csv"))
+```
