@@ -98,3 +98,51 @@ for (i in subids) {
    write_csv(codingfile, here(paste0("deidentified/adult/", name)), na="", append = FALSE)
  }
 ```
+
+```{r grand_models}
+model_data <- tidy_data %>%
+  filter(type == "test", pos < select_pos) %>%
+  mutate(length = str_count(utterance, " ") +1,
+         correct = correct == "Y") %>%
+  group_by(subid, correct, target, trial) %>%
+  summarise(length = sum(length, na.rm = T),
+            nturns = n()) %>%
+  group_by(subid, target) %>%
+  group_by(subid, target) %>%
+  arrange(target, trial, .by_group = T) %>%
+  mutate(target_trial = dense_rank(trial))
+
+model_checks <- model_data %>%
+  ungroup() %>%
+  select(length, nturns) %>%
+  gather(measure, original, length, nturns) %>%
+  mutate(log = log(original)) %>%
+  gather(type, value, original, log) %>%
+  mutate(type = factor(type, levels = c("original", "log")))
+  
+
+ggplot(model_checks, aes(x = value)) + 
+  geom_histogram() + 
+  facet_grid(measure ~ type, scales = "free")
+
+length_lm <- lmer(log(length) ~ age + target_trial + correct + trial +
+                   (correct + target_trial | subid) + (1| target), 
+                 control = lmerControl(optimizer = "bobyqa"),
+                 data = model_data)
+
+tidy(length_lm) %>%
+  filter(effect == "fixed") %>%
+  select(-group) %>%
+  kable()
+
+
+turns_lm <- lmer(log(nturns) ~ age + target_trial + correct + trial +
+                   (correct + target_trial| subid) + (1| target), 
+                 control = lmerControl(optimizer = "bobyqa"),
+                 data = model_data)
+
+tidy(turns_lm) %>%
+  filter(effect == "fixed") %>%
+  select(-group) %>%
+  kable()
+```
