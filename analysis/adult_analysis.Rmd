@@ -125,8 +125,8 @@ ggplot(model_checks, aes(x = value)) +
   geom_histogram() + 
   facet_grid(measure ~ type, scales = "free")
 
-length_lm <- lmer(log(length) ~ age + target_trial + correct + trial +
-                   (correct + target_trial | subid) + (1| target), 
+length_lm <- lmer(log(length) ~ target_trial + trial +
+                   (target_trial | subid) + (1| target), 
                  control = lmerControl(optimizer = "bobyqa"),
                  data = model_data)
 
@@ -136,8 +136,8 @@ tidy(length_lm) %>%
   kable()
 
 
-turns_lm <- lmer(log(nturns) ~ age + target_trial + correct + trial +
-                   (correct + target_trial| subid) + (1| target), 
+turns_lm <- lmer(log(nturns) ~ target_trial + trial +
+                   (target_trial| subid) + (1| target), 
                  control = lmerControl(optimizer = "bobyqa"),
                  data = model_data)
 
