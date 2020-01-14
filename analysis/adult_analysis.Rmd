@@ -146,3 +146,13 @@ tidy(turns_lm) %>%
   select(-group) %>%
   kable()
 ```
+
+```{r plots}
+model_data %>%
+  group_by(target_trial, subid) %>%
+  summarise(length = mean(length)) %>%
+  tidyboot_mean(length) %>%
+  ggplot(aes(x = target_trial, y = empirical_stat)) + 
+  geom_line() + 
+  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper))
+```
