@@ -1,743 +1,839 @@
-subid,trial,person,role,target,rep_num,age,utterance,correct
-4,1,child,matcher,K1,1,6,zzz,TRUE
-4,2,parent,matcher,C1,1,6,Oh I see,TRUE
-4,6,parent,matcher,B1,1,6,oh yeah!,TRUE
-4,10,parent,matcher,F1,1,6,Oh yeah they're like hold that bus,TRUE
-4,11,parent,matcher,H1,2,6,oh yeah!,TRUE
-4,13,parent,matcher,K1,2,6,"OK, got it",TRUE
-4,15,parent,matcher,I1,2,6,Oh yeah!,TRUE
-4,17,parent,matcher,G1,2,6,Oh yeah!,TRUE
-4,19,parent,matcher,D1,2,6,oh yeah!,TRUE
-4,22,parent,matcher,C1,3,6,"oh, good!",TRUE
-4,24,parent,matcher,A1,3,6,oh yeah,TRUE
-4,26,parent,matcher,F1,3,6,"oh no! Good, yeah",TRUE
-4,27,child,matcher,I1,3,6,What is your person,TRUE
-4,28,parent,matcher,B1,3,6,Oh maybe they're looking on the ground for another one maybe they're gonna see,TRUE
-4,30,parent,matcher,E1,3,6,Yeah!,TRUE
-4,31,parent,matcher,H1,4,6,oh,TRUE
-4,33,parent,matcher,G1,4,6,"My person is running down the street saying here I am, here I am, here I am!",TRUE
-4,35,parent,matcher,K1,4,6,"oh nice, yeah!",TRUE
-4,39,parent,matcher,I1,4,6,oh yeah!,TRUE
-5,2,parent,matcher,F1,1,4,OK no wait you have to describe to me what it looks like Does it look like a person What does it look like the person is doing It looks like a person walking? OK,FALSE
-5,3,child,matcher,K1,1,4,"Mhm Now I see I see the next shape with a triangle Up and down and I see a point up and now I I see another triangle hanging down I don't I'll pick I'll pick both I'll pick Yeah Oh, ok",TRUE
-5,4,parent,matcher,B1,1,4,Mhm What shapes do you see Mm so which one is in the blue box That's what it looks like,TRUE
-5,5,child,matcher,A1,1,4,But now Now Now zzz OK wait I see a person a zzz all going that way Yeah he's standing on one leg So I'll pick it,TRUE
-5,6,parent,matcher,H1,1,4,Now what do you see What else do you see So you see it in the blue box He's holding something That's what it looks like? OK,TRUE
-5,7,child,matcher,I1,1,4,Now I see a doggy and he he's holding on one leg Yeah and he's gonna fall down,TRUE
-5,8,parent,matcher,G1,1,4,Crawling and what else Which one do you see in the blue box Which one describe it to me Which one is what does it look like they're doing The one that looks like he's crawling,FALSE
-5,9,child,matcher,E1,1,4,Now now I see someone jumping and he's gonna fall down and I see someone um,FALSE
-5,10,parent,matcher,D1,1,4,Tell me what you see zzz,TRUE
-5,11,parent,matcher,C1,2,4,zzz zzz OK,TRUE
-5,12,child,matcher,D1,2,4,I see an airplane and someone jumping zzz zzz I didn't see you walking but he I didn't see him stop walking and I think he's holding his hands that way,TRUE
-5,13,parent,matcher,E1,2,4,What do you see now zzz blue box Ok which one was in the blue box OK,TRUE
-5,14,child,matcher,H1,2,4,Now I see someone running And someone with hands facing that way Like it's this one Um it's a triangle facing down and and a facing that way and that way up I want to pick this one This one I'll pick this guy He's holding his hands that way I'll pick him,TRUE
-5,15,parent,matcher,K1,2,4,What do you see Now which one is in the blue box OK,TRUE
-5,16,child,matcher,B1,2,4,I see a person um walking that way and I see a doggy um he's standing on his legs Um I see a diamond that is that is facing that way,TRUE
-5,17,parent,matcher,I1,2,4,Mhm And which one is in the blue box? Mhm,TRUE
-5,18,child,matcher,G1,2,4,I see a airplane coming in and toward this guy the person that's pointing that way I see um ok um a square on the top there um They on um This guy is on top of the triangle OK,FALSE
-5,19,parent,matcher,A1,2,4,That's what you see in the blue box,TRUE
-5,20,child,matcher,F1,2,4,Now I see now I see a thing climbing and I see someone crawling that way Yes it do Yes it does OK,TRUE
-5,21,child,matcher,I1,3,4,Now I see a triangle wait now I see a triangle and a person running and it looks and the face is looking like a diamond I see a triangle and a face that looks like a diamond zzz Um yeah Like someone running OK like the doggy OK,TRUE
-5,22,parent,matcher,G1,3,4,Mhm Which one is in the blue box The person,TRUE
-5,23,child,matcher,A1,3,4,I see two triangles that that's holding up Yeah The guy that's running,TRUE
-5,24,parent,matcher,D1,3,4,OK what do you see now Can you see the zzz the zzz other shapes do you see,TRUE
-5,25,child,matcher,K1,3,4,I see a square and I see a I see a triangle on a doggy head again I see a angle down and he's standing on Mhm I think I'll pick the um the doggy Wait I'll pick the bird again OK OK I'll pick the doggy,TRUE
-5,26,parent,matcher,B1,3,4,What do you see now What kind of shapes do you see Which one do you see in the blue box zzz There's two persons zzz right Well what are they doing On the blocks Is he walking,TRUE
-5,27,child,matcher,C1,3,4,Now I see a um triangle I see a zzz facing down and I see a a diamond and another diamond Um it's this one I see a diamond Down And I see and I see a triangle pointing and facing this way And zzz,TRUE
-5,28,parent,matcher,H1,3,4,OK what do you see now And which one is in the blue box Mhm you said the person is in the blue box You said the person is in the blue box,TRUE
-5,29,child,matcher,E1,3,4,Now I see a person walking slow and I see a person jumping I see a um triangle pointing um thing facing up and I see a pointing um,TRUE
-5,30,parent,matcher,F1,3,4,What do you see now Which one do you see in the blue box OK,TRUE
-5,31,parent,matcher,E1,4,4,Tell me what you see in the blue box,TRUE
-5,32,child,matcher,G1,4,4,I see um I see a guy that that that he's holding his hands on the um that way zzz this is the last one Like he's pointing um he's pointing his hands on the right I think he's like holding like a like he's holding like zzz like a gondora zzz holding the um he's holding the square going that way Like he's not like he's not holding it in his hands um like he's not holding anything like uh like he's not holding anything like zzz over there and he's not um zzz over there and like he's not doing that like he's um zzz over there Um it's this one I'll pick it It looks like a guy who has a square on his head and it looks like a square down pointing that way OK Yeah,TRUE
-5,33,parent,matcher,C1,4,4,And what do you see outside of the blue box Mhm what shapes do you see Mhm,TRUE
-5,34,child,matcher,F1,4,4,I see bird looking like he's gonna fly Yeah I see um I see a guy again is and his hands over that way yeah I like the birds and i like binoculars to look at bids Mhm no I do that at home OK,TRUE
-5,35,parent,matcher,K1,4,4,Mhm What else do you see Mhm and now zzz Mhm Which one is in the blue box OK,TRUE
-5,36,child,matcher,D1,4,4,"Now I see a airplane that has zzz triangle and I see a person like a bird going to fly, it's taking off zzz Um it's zzz Um one and two and three I'll pick the bird I'll pick OK I'll pick the rocket Wait it's a airplane first So I'll pick it",TRUE
-5,37,parent,matcher,A1,4,4,zzz What side zzz zzz Which one is in the blue box,TRUE
-5,38,child,matcher,H1,4,4,Now I see a person holding his triangle that way again and I see a guy that has a diamond head down and I see him facing that way and he's crawling that way Yeah Yeah he's um holding something without crawling I'll pick it OK I'll pick this one It looks like it has a a diamond on a head and it looks like it has a triangle facing that way on the right Yeah Pick it,TRUE
-5,39,parent,matcher,I1,4,4,Which one do you see in the blue box,TRUE
-5,40,child,matcher,B1,4,4,Now I see a airplane and OK and now I see and I see now um wait Now I see I see now um I see a person walking slow and a airplane running into him and and it's gonna crush into him Yeah into him OK uh he has a ankle down and he's like walking walking Um it um I'll pick three triangles it has three triangles I see a triangle on the person but it looks like he's zzz holding on the person and it and it it's not in a bowl because that's not it because that's where the airplane begins I'll pick the person again Know what I'm not gonna pick it because that's why I'm picking the airplane Because uh it's Because it's finna crash into that um person Yeah I think the person should go around and so the airplane can keep on going that way so it own't crash into him So I'll pick the person,TRUE
-7,2,parent,matcher,C1,1,6,lying down? on his knees? with his elbows on the ground?,TRUE
-7,4,parent,matcher,B1,1,6,Is he looking at the ground kinda?,TRUE
-7,6,parent,matcher,K1,1,6,is there a triangle on his tush?,TRUE
-7,8,child,matcher,A1,1,6,this one is the one that's running,TRUE
-7,11,parent,matcher,G1,2,6,sitting in a chair?,TRUE
-7,15,parent,matcher,F1,2,6,dabbing,TRUE
-7,27,parent,matcher,I1,3,6,"this one's when he's leaned over a little bit, holding that bowl",TRUE
-7,35,parent,matcher,F1,4,6,dabbing?,TRUE
-9,1,child,matcher,B1,1,6,Oh,TRUE
-9,3,child,matcher,F1,1,6,Like this?,TRUE
-9,6,parent,matcher,H1,1,6,Does it look like he's bending over kneeling? Or does it look like he's like got a tray of something,TRUE
-9,9,child,matcher,C1,1,6,Oh,TRUE
-9,10,parent,matcher,K1,1,6,Laying down or like leaning over?,TRUE
-9,11,parent,matcher,F1,2,6,OK good job it says time for the next round Do you have a blue square or do I have a blue square? Alright,TRUE
-9,12,child,matcher,H1,2,6,Oh,TRUE
-9,13,parent,matcher,D1,2,6,"Oh, like someone's flying in the jet",TRUE
-9,14,child,matcher,A1,2,6,Oh,TRUE
-9,20,child,matcher,I1,2,6,Ok,TRUE
-9,21,child,matcher,C1,3,6,Oh,TRUE
-9,29,child,matcher,E1,3,6,Or is skydiving or,TRUE
-9,32,child,matcher,K1,4,6,Your turn And a hat on,TRUE
-10,6,parent,matcher,I1,1,8,Like a triangle bowl,TRUE
-10,14,child,matcher,F1,2,8,like this? (gestures) yeah,TRUE
-10,15,parent,matcher,D1,2,8,Oh are they laying down on their tummy?,TRUE
-10,24,parent,matcher,C1,3,8,kneeling in prayer? like lying down? Like not even kneeling but like laying down in prayer?,TRUE
-10,28,parent,matcher,A1,3,8,"Okay, standing up running?",TRUE
-10,30,parent,matcher,I1,3,8,"mhm mhm, and they're holding a ball?",TRUE
-10,39,parent,matcher,K1,4,8,Sticking their butt out oh yeah,TRUE
-11,2,parent,matcher,E1,1,4,What does it look like A bird is it long and skinny or is it wider,TRUE
-11,4,parent,matcher,B1,1,4,The person walking Or the person bent over,TRUE
-11,5,child,matcher,G1,1,4,This one I don't know,TRUE
-11,6,parent,matcher,C1,1,4,Person crawling,TRUE
-11,8,parent,matcher,H1,1,4,Mmm they both look like they have kite heads do you have the one that it's straight up and down or the one that it's kind of sideways Do you have the person who is really wide or the person who's skinny and has less triangles,TRUE
-11,11,parent,matcher,D1,2,4,Is it Is it the flatter one I can't see it is it the one that's flat,TRUE
-11,13,parent,matcher,G1,2,4,On the top of it,TRUE
-11,19,parent,matcher,A1,2,4,There's lots of triangles And a diamond head,TRUE
-11,22,parent,matcher,I1,3,4,Is it the man holding something or is it the one who's jumping,TRUE
-11,26,parent,matcher,E1,3,4,The bird the one who's flying,TRUE
-11,29,child,matcher,F1,3,4,I got the one that's really wide and looks like someone who's running,TRUE
-11,36,child,matcher,I1,4,4,I've got the one where he's holding something,TRUE
-12,8,parent,matcher,K1,1,6,You got the man bending down OK,TRUE
-12,10,parent,matcher,E1,1,6,You got a man walking,FALSE
-12,11,parent,matcher,D1,2,6,You got the man laying down OK,TRUE
-12,13,parent,matcher,F1,2,6,You got the man walking OK,FALSE
-12,15,parent,matcher,A1,2,6,"Which way is he walking, this way or? Is he walking there, OK",TRUE
-12,17,parent,matcher,H1,2,6,Pointing,TRUE
-12,19,parent,matcher,C1,2,6,OK you know that could be a dog too,TRUE
-12,22,parent,matcher,K1,3,6,Laying down,FALSE
-12,24,parent,matcher,B1,3,6,A man with the triangle,FALSE
-12,26,parent,matcher,G1,3,6,He's sitting down,TRUE
-12,28,parent,matcher,E1,3,6,Jumping zzz,TRUE
-12,31,parent,matcher,C1,4,6,You got the dog OK,TRUE
-12,33,parent,matcher,H1,4,6,Is he laying down,TRUE
-12,35,parent,matcher,A1,4,6,Is it the big one or the little one,FALSE
-12,37,parent,matcher,F1,4,6,OK pointing to the sky,TRUE
-12,39,parent,matcher,D1,4,6,You got the man laying down,TRUE
-13,1,child,matcher,K1,1,6,"oh, I have that",TRUE
-13,15,parent,matcher,K1,2,6,can you be more descriptive? do they have anything in their hands?,FALSE
-13,16,child,matcher,F1,2,6,is it on your right or left.,TRUE
-13,31,parent,matcher,E1,4,6,can you give more description?,TRUE
-13,35,parent,matcher,H1,4,6,are they sitting down or zzz?,TRUE
-14,10,parent,matcher,F1,1,8,"the one that looks like someone's running, or kneeling?",TRUE
-14,11,parent,matcher,K1,2,8,"it's playing, or looks like a racecar? ok",TRUE
-14,39,parent,matcher,K1,4,8,can you tell me?,TRUE
-15,2,parent,matcher,A1,1,4,"Okay, you tell me, is it the one that's running, or the one that's standing still?",FALSE
-15,4,parent,matcher,K1,1,4,which one should I pick? the one that's walking or the one that's standing?,FALSE
-15,7,child,matcher,B1,1,4,walking,TRUE
-15,7,parent,matcher,B1,1,4,NA Pick the one that's walking,TRUE
-15,8,parent,matcher,F1,1,4,"the one that's kneeling down, or the one that's jumping up?",TRUE
-15,9,child,matcher,C1,1,4,"Okay, this one?",TRUE
-15,10,parent,matcher,D1,1,4,"Okay, the one lying down or the one jumping up? which one is in the square right. but I don't know which one it is, you have to tell me what's in the blue square",TRUE
-15,11,parent,matcher,B1,2,4,OK which one do I pick? Ok he's not walking,FALSE
-15,12,child,matcher,K1,2,4,this one?,TRUE
-15,13,parent,matcher,G1,2,4,which one do I pick? the one that has his arms out? or the onethat's kneeling In the square does it have a hat? is it the one with the hat or no?,TRUE
-15,15,parent,matcher,C1,2,4,should I pick the one that's walking or the one that's kneeling down?,TRUE
-15,17,parent,matcher,I1,2,4,Ok the one that's holding the triangle?,TRUE
-15,19,parent,matcher,H1,2,4,do I pick the one that's walking which one is in your screen? I can't see it is it walking? or is it standing still,TRUE
-15,21,child,matcher,G1,3,4,OK this one?,TRUE
-15,22,parent,matcher,K1,3,4,the one wearing the hat?,TRUE
-15,24,parent,matcher,E1,3,4,"okay, which one do I pick? the one that's jumping? or the one that's walking",TRUE
-15,25,child,matcher,H1,3,4,"but then this is standing still but then, the jumping is standing still I don't have a blue square",TRUE
-15,26,parent,matcher,A1,3,4,what do you want me to pick? what's in the blue square?,TRUE
-15,28,parent,matcher,F1,3,4,which one do I pick? the one that's walking with the arm? or the one that's kneeling,FALSE
-15,29,child,matcher,C1,3,4,head down?,TRUE
-15,30,parent,matcher,D1,3,4,"which one should I pick? the one that's laying down? or the one walking yeah, but it won't work, it only works if I push it.",TRUE
-15,31,parent,matcher,I1,4,4,the jumper? or the one that's holding the triangle,TRUE
-15,33,parent,matcher,H1,4,4,"which should I pick, who's in your blue square? you have to tell me, what's he doing? is he laying down, or is he holding and standing still",TRUE
-15,34,child,matcher,F1,4,4,this one? this one?,TRUE
-15,35,parent,matcher,B1,4,4,which one do I pick?,FALSE
-15,36,child,matcher,K1,4,4,why you wanna zzz now,TRUE
-15,37,parent,matcher,G1,4,4,now you tell me which one do I pick? which one's in the square? I don't know I can't see,FALSE
-15,38,child,matcher,D1,4,4,Okay,TRUE
-15,39,parent,matcher,C1,4,4,which one do I gotta pick,TRUE
-16,1,child,matcher,E1,1,4,Uh which one that is,TRUE
-16,2,parent,matcher,D1,1,4,I can't see your pictures can you tell me what it looks like A triangle top and a square top Are they together,FALSE
-16,4,parent,matcher,K1,1,4,Is it like the last one that you did No It's different zzz,FALSE
-16,5,child,matcher,F1,1,4,This one Yeah,TRUE
-16,8,parent,matcher,H1,1,4,A diamond head on top,TRUE
-16,10,parent,matcher,C1,1,4,Is it this isn't look like somebody kneeling on the ground like they're crawling on the ground or like they're jumping in the air OK,FALSE
-16,13,parent,matcher,F1,2,4,Holding his arm in the air,TRUE
-16,15,parent,matcher,E1,2,4,Do they have uh Triangle arms triangle feet A diamond head,FALSE
-16,16,child,matcher,C1,2,4,That look no with no a no more pause of a body,TRUE
-16,17,parent,matcher,G1,2,4,A square head and hat,TRUE
-16,19,parent,matcher,I1,2,4,Holding a triangle,TRUE
-16,26,parent,matcher,H1,3,4,Are they standing on both feet or just one foot,TRUE
-16,28,parent,matcher,C1,3,4,Are they on the ground,TRUE
-16,30,parent,matcher,D1,3,4,Crawling on the ground,TRUE
-16,36,child,matcher,C1,4,4,Um I don't know that No No I have somebody like with feet on legs and with a square and a diamond head And legs with a square,TRUE
-17,4,parent,matcher,H1,1,8,what else?,TRUE
-17,6,parent,matcher,I1,1,8,"tell me more! no, tell me more Oh my gosh, this is tricky! Would you tell me more description?",TRUE
-17,8,parent,matcher,G1,1,8,"what is she doing? okay, I need more, I need more information",TRUE
-17,28,parent,matcher,H1,3,8,"is it? A what? no, describe it",FALSE
-18,1,child,matcher,G1,1,4,this one?,FALSE
-18,12,child,matcher,I1,2,4,this one?,TRUE
-18,17,parent,matcher,F1,2,4,cool,TRUE
-18,25,child,matcher,F1,3,4,"this one, or this one?",TRUE
-18,26,parent,matcher,K1,3,4,standing and bending?,TRUE
-18,31,parent,matcher,E1,4,4,jumping?,TRUE
-18,37,parent,matcher,A1,4,4,running?,TRUE
-18,39,parent,matcher,G1,4,4,sitting?,TRUE
-20,2,parent,matcher,C1,1,8,oh yeah.,TRUE
-20,8,parent,matcher,G1,1,8,"alright, so the images i'm seeing, both of them have square heads so what's on the xxx when you're looking at it? what does it look like?",TRUE
-20,10,parent,matcher,F1,1,8,can you give me more? descriptive? and what do they do with their arms?,TRUE
-20,11,parent,matcher,B1,2,8,someone walking somberly?,TRUE
-20,15,parent,matcher,A1,2,8,"are they lying down, or running?",FALSE
-20,17,parent,matcher,K1,2,8,what else is the person doing?,TRUE
-20,19,parent,matcher,D1,2,8,melted onto the ground?,TRUE
-20,23,child,matcher,K1,3,8,harder,TRUE
-20,24,parent,matcher,F1,3,8,fun?,TRUE
-20,39,parent,matcher,D1,4,8,"no, you already used that one before! what does that person look like they're doing? no, that's not what he looks like he looks like he's reading a book nope, you can't pick it up! alright",TRUE
-21,7,child,matcher,H1,1,8,Hmm,TRUE
-21,10,parent,matcher,K1,1,8,Running?,FALSE
-21,11,parent,matcher,D1,2,8,Do you have a box?,FALSE
-21,30,parent,matcher,K1,3,8,"A person who's, I mean the dog",TRUE
-21,38,child,matcher,K1,4,8,Yeah!,TRUE
-21,39,parent,matcher,I1,4,8,Your turn,TRUE
-21,40,child,matcher,C1,4,8,Both of them are bent over,TRUE
-23,19,parent,matcher,K1,2,8,It does look like a tail,TRUE
-23,24,parent,matcher,F1,3,8,he's crazy,TRUE
-25,1,child,matcher,K1,1,4,it's got a triangle on its oh a dog? this one,TRUE
-25,2,parent,matcher,E1,1,4,Can you describe it a little more? it has a pointy thing on the side of it?,TRUE
-25,3,child,matcher,F1,1,4,"dancing i don't know okay, xxx okay, a box on its head?",TRUE
-25,4,parent,matcher,B1,1,4,someone's walking with their head down?,TRUE
-25,5,child,matcher,A1,1,4,okay,TRUE
-25,6,parent,matcher,C1,1,4,a cat?,TRUE
-25,7,child,matcher,D1,1,4,okay,TRUE
-25,10,parent,matcher,G1,1,4,can you use words?,TRUE
-25,13,parent,matcher,K1,2,4,can you use words instead of gestures?,TRUE
-25,14,child,matcher,G1,2,4,a girl?,TRUE
-25,21,child,matcher,A1,3,4,"i don't know, tell me more",TRUE
-25,23,child,matcher,I1,3,4,"the pasta like this, and going like this",TRUE
-25,26,parent,matcher,B1,3,4,"can you say a little more i didn't quite hear what you said, can you say it louder? okay",TRUE
-25,31,parent,matcher,F1,4,4,"i can't hear you, what?",TRUE
-25,40,child,matcher,E1,4,4,their arms up?,TRUE
-26,1,child,matcher,C1,1,4,yeah,TRUE
-26,2,parent,matcher,G1,1,4,and what are they doing? they're pointing? okay,FALSE
-26,3,child,matcher,F1,1,4,"is it this, is the arm is going up?",TRUE
-26,4,parent,matcher,I1,1,4,"okay, i think i know",TRUE
-26,5,child,matcher,B1,1,4,yeah,TRUE
-26,6,parent,matcher,E1,1,4,yes,TRUE
-26,7,child,matcher,D1,1,4,"oh, it's like someone driving",TRUE
-26,8,parent,matcher,K1,1,4,yes,TRUE
-26,10,parent,matcher,H1,1,4,do you see someone pointing at the other? what else are they doing? okay,TRUE
-26,11,parent,matcher,A1,2,4,okay,TRUE
-26,12,child,matcher,K1,2,4,"i got that one, i can see it",TRUE
-26,13,parent,matcher,B1,2,4,walking? ok,TRUE
-26,14,child,matcher,H1,2,4,jumping? oh i have that one,TRUE
-26,16,child,matcher,G1,2,4,oh yeah it does,TRUE
-26,18,child,matcher,I1,2,4,"i did that one, it's like they're holding a bowl, a diamond, a half broken diamond",TRUE
-26,20,child,matcher,E1,2,4,i have that one,TRUE
-26,21,child,matcher,C1,3,4,"oh, i just did that one yeah",TRUE
-26,23,child,matcher,F1,3,4,yeah,TRUE
-26,24,parent,matcher,E1,3,4,"uh, someone jumping up with the feet, and the feet is not on the ground, it's up there, and it looks like he's touching the box and the other hand is down a little okay, i have that picture",TRUE
-26,25,child,matcher,B1,3,4,oh i have that one,TRUE
-26,26,parent,matcher,G1,3,4,yeah i have that picture,TRUE
-26,27,child,matcher,D1,3,4,oh we already did that one,TRUE
-26,28,parent,matcher,H1,3,4,okay can you tell me anything else?,TRUE
-26,29,child,matcher,A1,3,4,we already did that one,TRUE
-26,32,child,matcher,G1,4,4,oh i know that one,TRUE
-26,33,parent,matcher,C1,4,4,someone leaping down? can you tell me anything else? it has a square head anything else?,TRUE
-26,35,parent,matcher,F1,4,4,can you tell me anything else? okay,TRUE
-26,38,child,matcher,E1,4,4,i know which one is that,TRUE
-26,40,child,matcher,K1,4,4,and a tail it's a toyhouse head it's a dog,TRUE
-27,2,parent,matcher,E1,1,4,"which one has the blue box? well I can't see it, so you have to tell me what it looks like like woosh",TRUE
-27,4,parent,matcher,K1,1,4,which one do you see? which one has the blue box? oh he's like this?>,TRUE
-27,6,parent,matcher,C1,1,4,which one has the blue box?,TRUE
-27,8,parent,matcher,A1,1,4,"trotting? so it looks like the one running, not the man who's serving like that?",TRUE
-27,10,parent,matcher,H1,1,4,what's in the blue box? is he like this?,TRUE
-27,11,parent,matcher,B1,2,4,"ok, which one?",TRUE
-27,13,parent,matcher,G1,2,4,which one's in the blue box?,TRUE
-27,15,parent,matcher,D1,2,4,which one? you need to tell me which one like with it's arms out maybe?,TRUE
-27,17,parent,matcher,F1,2,4,which one has the blue box? is it the flying man or the walking man? i can't see it so you have to tell me with words going like? that guy?,TRUE
-27,22,parent,matcher,K1,3,4,"um, the man who's serving",TRUE
-27,27,child,matcher,G1,3,4,the lady who's sitting,TRUE
-27,30,parent,matcher,A1,3,4,he's kinda running?,TRUE
-28,5,child,matcher,E1,1,4,That or this one,TRUE
-28,15,parent,matcher,F1,2,4,It looks like he's dropping with his arms out with a diamond as his head With a diamond as his head let's try this one,TRUE
-28,17,parent,matcher,K1,2,4,Jumping,FALSE
-28,19,parent,matcher,E1,2,4,Uh both does it have both feet back or just one foot,TRUE
-28,35,parent,matcher,F1,4,4,Very still hmm I'm not sure I know which one is very still,TRUE
-30,1,child,matcher,G1,1,8,"okay, so which one?",TRUE
-30,2,parent,matcher,H1,1,8,so which one am I supposed to pick?,TRUE
-30,3,child,matcher,E1,1,8,which one?,TRUE
-30,5,child,matcher,I1,1,8,yeah,TRUE
-30,6,parent,matcher,K1,1,8,mhmm,TRUE
-30,9,child,matcher,F1,1,8,like it's running like this? or-,FALSE
-30,10,parent,matcher,A1,1,8,"describe the picture more so it's like one foot's on the ground, and one's in the air?",TRUE
-30,11,parent,matcher,E1,2,8,is that the one i'm supposed to pick?,TRUE
-30,15,parent,matcher,D1,2,8,a circle or a square? mhmm,TRUE
-30,20,child,matcher,H1,2,8,"kneeling one, or the holding the like-",TRUE
-30,22,parent,matcher,A1,3,8,okay,TRUE
-31,6,parent,matcher,E1,1,6,"this one, this girl looks like she's jumping up",TRUE
-31,14,child,matcher,I1,2,6,or maybe some apple xxx,TRUE
-31,23,child,matcher,G1,3,6,"no, it really looks like a potty a square shaped potty",TRUE
-32,2,parent,matcher,B1,1,6,ok,TRUE
-32,5,child,matcher,G1,1,6,choose this girl that looks like it looks like a girl,TRUE
-32,6,parent,matcher,K1,1,6,"one hand? say it again, yyy? is he sitting or is he bending over? okay",TRUE
-32,8,parent,matcher,A1,1,6,okay,TRUE
-32,10,parent,matcher,F1,1,6,that's running? it looks like it's running?,TRUE
-32,14,child,matcher,A1,2,6,"it's your turn, daddy",TRUE
-32,15,parent,matcher,H1,2,6,the cup in her hand? does she have one foot up and one foot down?,TRUE
-32,17,parent,matcher,E1,2,6,does it look like he's jumping?,TRUE
-32,19,parent,matcher,I1,2,6,okay,TRUE
-32,21,child,matcher,C1,3,6,this one?,TRUE
-32,25,child,matcher,H1,3,6,this one?,TRUE
-32,26,parent,matcher,A1,3,6,okay,TRUE
-32,27,child,matcher,E1,3,6,you mean this one?,TRUE
-32,28,parent,matcher,K1,3,6,which one? is it laying down?,TRUE
-32,29,child,matcher,I1,3,6,the waiter that what,TRUE
-32,37,parent,matcher,G1,4,6,hmm? is it a long square? with a block? who has a sharp point on the right side? okay,TRUE
-33,17,parent,matcher,A1,2,8,Um a person running,TRUE
-33,18,child,matcher,B1,2,8,A person crawling,TRUE
-33,32,child,matcher,I1,4,8,A person crawling,TRUE
-33,37,parent,matcher,D1,4,8,Lying down,TRUE
-34,2,parent,matcher,E1,1,8,What size is it the biggest triangles or the smaller triangles,TRUE
-34,10,parent,matcher,K1,1,8,Mine has the arrow at the top,TRUE
-34,11,parent,matcher,F1,2,8,Like a sad person walking,TRUE
-34,13,parent,matcher,G1,2,8,Does it have a square on top,TRUE
-35,2,parent,matcher,D1,1,4,does it look like something with..? one of mine looks a little like a dog and one looks kinda like an airplane a dog? an airplane? it looks like someone flying an airplane?,TRUE
-35,4,parent,matcher,G1,1,4,a pigeon standing up? i see the pigeon standing up,TRUE
-35,6,parent,matcher,B1,1,4,a tired person,FALSE
-35,8,parent,matcher,K1,1,4,a puppy,TRUE
-35,10,parent,matcher,F1,1,4,you have a bird in your blue box?,TRUE
-35,13,parent,matcher,H1,2,4,are they pointing up or to the side?,TRUE
-35,22,parent,matcher,F1,3,4,okay,TRUE
-36,2,parent,matcher,B1,1,6,Look like he's sad Not the one that's holding a bowl right,TRUE
-36,6,parent,matcher,A1,1,6,Fast or slow,TRUE
-36,10,parent,matcher,C1,1,6,Two feet and one rock oh like someone's kicking a ball,TRUE
-36,26,parent,matcher,B1,3,6,This one look this one looks like somebody walking lonely,TRUE
-36,30,parent,matcher,K1,3,6,A pledge,TRUE
-36,40,child,matcher,K1,4,6,Yay hooray I'm gonna catch the ball,TRUE
-37,2,parent,matcher,C1,1,8,are they,TRUE
-37,4,parent,matcher,F1,1,8,does it look more like a bird?,TRUE
-37,6,parent,matcher,B1,1,8,with his head down?,TRUE
-37,10,parent,matcher,A1,1,8,kind of walking?,TRUE
-37,15,parent,matcher,G1,2,8,kind of like a seal with a ball on top?,TRUE
-38,4,parent,matcher,K1,1,4,which one is it? is it the one laying down or standing up?,TRUE
-38,6,parent,matcher,I1,1,4,"which one is it, does it have a diamond, does it have a- the little they both look like they square, so which one is it? is it the one that look like it got a tail? or the other one?",TRUE
-38,7,child,matcher,A1,1,4,a tail?,FALSE
-38,8,parent,matcher,C1,1,4,"which one is it? the one that's, the big square or the small square?",TRUE
-38,9,child,matcher,G1,1,4,pick it?,TRUE
-38,10,parent,matcher,E1,1,4,"okay there's two squares, so is it the one that look like it got a leg or the one that look like it got two legs the big one?",TRUE
-38,11,parent,matcher,G1,2,4,which one is it? is it the one that's tall or the one that's small?,TRUE
-38,13,parent,matcher,D1,2,4,"okay, what do you have? is it the one that's flat, or the one that's kinda tall?",FALSE
-38,14,child,matcher,C1,2,4,flat?,TRUE
-38,15,parent,matcher,B1,2,4,which one is it? is it the one that's kinda flat or the one that's tall?,TRUE
-38,17,parent,matcher,H1,2,4,"is it the one with two legs, sticking out on the side? or is it the other one?",FALSE
-38,19,parent,matcher,A1,2,4,"which one is it? is it the one with big arrow, or is the other one?",TRUE
-38,24,parent,matcher,E1,3,4,"which one is it? is it the one with the two legs? they both diamond, so which one is it, the one with the diamond with the two legs, or the other one?",FALSE
-38,26,parent,matcher,K1,3,4,which one is it? is it the one with the diamond or the one with the arrow?,TRUE
-38,28,parent,matcher,I1,3,4,"the one that's, not the one that's standing up?",FALSE
-38,30,parent,matcher,C1,3,4,which one is it? the one that's standing halfway or the one that's kinda laying down,TRUE
-38,31,parent,matcher,D1,4,4,"which one? the one laying down, or the one, the big one?",FALSE
-38,32,child,matcher,C1,4,4,okay,TRUE
-38,33,parent,matcher,G1,4,4,which one is it? is it the one with the two little legs sticking out from the sides? or is it the other one?,TRUE
-38,35,parent,matcher,A1,4,4,"which one is it? is it the big one with the big diamond, or the small diamond?",FALSE
-38,36,child,matcher,K1,4,4,the big one?,TRUE
-38,37,parent,matcher,H1,4,4,"which one is it, is it the big diamond, or the one that's laying down, kinda",FALSE
-38,39,parent,matcher,B1,4,4,"they both squares, is it the one laying flat? or the one standing up?",TRUE
-39,2,parent,matcher,G1,1,6,"ok, describe to me the one that's in the blue box for you now",TRUE
-39,6,parent,matcher,H1,1,6,"interesting. ok, does it look like he's standing or jumping?",TRUE
-39,8,parent,matcher,I1,1,6,"carrying a pitcher? hmm, okay",TRUE
-39,26,parent,matcher,G1,3,6,sitting down or laying down?,TRUE
-39,28,parent,matcher,H1,3,6,hmm. a priest walking or running or just standing?,TRUE
-40,2,parent,matcher,C1,1,8,Oh that's a good one,TRUE
-40,8,parent,matcher,G1,1,8,Mmm,TRUE
-40,10,parent,matcher,A1,1,8,Mmm,TRUE
-40,17,parent,matcher,I1,2,8,Ooh,TRUE
-40,19,parent,matcher,D1,2,8,This guy is reading something,TRUE
-40,27,child,matcher,D1,3,8,The reader,TRUE
-40,37,parent,matcher,H1,4,8,"The reader? Ahh, okay",TRUE
-42,1,child,matcher,G1,1,4,It's the big one bigger than the other one,TRUE
-42,2,parent,matcher,K1,1,4,It has a tail And a hat,TRUE
-42,4,parent,matcher,F1,1,4,He's doing the splits Feet are triangles,TRUE
-42,6,parent,matcher,D1,1,4,Is it a rocketship laying down Laying down,TRUE
-42,8,parent,matcher,I1,1,4,He has an icecream One leg,TRUE
-42,10,parent,matcher,E1,1,4,Oh jumping,TRUE
-42,13,parent,matcher,B1,2,4,A diamond head,TRUE
-42,14,child,matcher,E1,2,4,Yup,TRUE
-42,15,parent,matcher,A1,2,4,His leg is up With triangle feet And a diamond head,TRUE
-42,17,parent,matcher,H1,2,4,He's reading a book,TRUE
-42,18,child,matcher,K1,2,4,No legs no one leg,TRUE
-42,22,parent,matcher,F1,3,4,Running,TRUE
-42,25,child,matcher,H1,3,4,Yes that's like mine he's reading a book,TRUE
-42,26,parent,matcher,I1,3,4,I have a blue box that is a cone but no ice cream Cone but no ice cream,TRUE
-42,28,child,matcher,D1,3,4,And,TRUE
-42,29,child,matcher,B1,3,4,It looks like a square,TRUE
-42,32,child,matcher,K1,4,4,You can only see one leg and a tail and a triangle hat,TRUE
-42,33,parent,matcher,B1,4,4,No ice cream,TRUE
-42,39,parent,matcher,H1,4,4,He's reading,TRUE
-43,2,parent,matcher,K1,1,8,Praying,TRUE
-43,19,parent,matcher,H1,2,8,With,TRUE
-43,26,parent,matcher,I1,3,8,Holding a bowl,TRUE
-43,33,parent,matcher,A1,4,8,Running and playing,TRUE
-43,35,parent,matcher,H1,4,8,Jumping Just standing,TRUE
-44,2,parent,matcher,E1,1,4,Does it look like a shape of someoen running or someone jumping Do they have one foot on the ground or two feet on the ground On the ground Is one foot forward and one foot back,TRUE
-44,3,child,matcher,A1,1,4,OK it's a a person running with one foot,TRUE
-44,8,parent,matcher,B1,1,4,Is it wearing a hat No hat,TRUE
-44,10,parent,matcher,H1,1,4,Hm does it have one foot on the ground or one foot behind him,TRUE
-46,2,parent,matcher,E1,1,4,what's inside your box? inside of your blue box looks like a person that's flying?,TRUE
-46,4,parent,matcher,A1,1,4,"what's inside of your blue box? ooh, like a person walking?",TRUE
-46,6,parent,matcher,G1,1,4,"what's inside of your blue box? it has a square on its head? does the person look like they're bending over laying on the ground, or they're up straight on their knees so does it look like they're laying on their knees, or sitting up straight? so inside of your blue box is the person sitting up straight on their knees",TRUE
-46,8,parent,matcher,C1,1,4,"the person look like they're laying down? like they're laying on their knees, bent over? okay",TRUE
-46,9,child,matcher,F1,1,4,uh-huh,TRUE
-46,10,parent,matcher,B1,1,4,it looks like a person walking away? inside of your blue box?,TRUE
-46,11,parent,matcher,H1,2,4,"ok, what's inside of your blue box? does it look like a big black object or a bunch of tiny triangles and squares? is it like a thick square? like a rectangle? with a person standing up holding the tray? like a person with a thick rectangle holding the tray? okay",TRUE
-46,13,parent,matcher,D1,2,4,what's in your blue box? in your box the person's laying down?,TRUE
-46,15,parent,matcher,F1,2,4,what's inside of your blue box? the person's walking away? do you see that structure that looks like a puppy? or the one that's bending over? halfway over? that's not inside of your box? no? so the one that looks like the person walking away or possibly maybe looks like a bird?,TRUE
-46,17,parent,matcher,K1,2,4,"what's inside of you rblue box? what's in your blue box? yeah, but we're going to do them again let's see how quickly we can go what's inside of your blue box? fast fast fast as fast as you can go no? no thank you? no thank you? ok, how about i describe it to you and you tell me which one to pick you have to tell me what's inside of your box, i don't know which picture to select your box have a puppy?",TRUE
-46,19,parent,matcher,I1,2,4,what's inside of your blue box? you don't want to tell me? can we guess? do you have the person that is doing downward dog and yoga or-- or the person holding the tray you have the person holding the tray with food in your blue box?,TRUE
-46,22,parent,matcher,E1,3,4,inside your box is a bird flying? or like a person jumping up?,TRUE
-46,24,parent,matcher,C1,3,4,"does it look like the person's bending over down on the ground, with their face kissing the ground? or does it look like the person's jumping up, maybe a bird? okay",FALSE
-46,28,parent,matcher,G1,3,4,"ok, what's inside of your blue box. which one's in your blue box? do you see the house? so, the house is inside of your blue box?",FALSE
-46,30,parent,matcher,A1,3,4,what's inside of your blue box? a lady running is inside your blue box?,TRUE
-46,31,parent,matcher,D1,4,4,"can you tell me what you see on your screen? and is the boy laying down or jumping up? oh, those are the two triangles that you seee",TRUE
-46,32,child,matcher,C1,4,4,mhm,FALSE
-46,35,parent,matcher,I1,4,4,that's inside of your blue box? and there's a square on top? and the food look like a triangle?,TRUE
-46,37,parent,matcher,H1,4,4,what do you see? you see a mommy giving me food? with a square at the top kind of like a diamond? like a rocket ship with a diamond on top?,TRUE
-46,39,parent,matcher,F1,4,4,a kid running? and it kind of look like the kids arms are wings? with triangles sticking out? pointy triangles? and two triangles,TRUE
-47,3,child,matcher,E1,1,8,yes,FALSE
-47,6,parent,matcher,K1,1,8,mhm,TRUE
-47,14,child,matcher,B1,2,8,sad?,TRUE
-47,19,parent,matcher,A1,2,8,does it look like a person running? or maybe a person laying down,TRUE
-47,29,child,matcher,H1,3,8,and not walking,TRUE
-47,38,child,matcher,B1,4,8,the one with the head down?,TRUE
-48,1,child,matcher,F1,1,4,what do you want me to do?,TRUE
-48,2,parent,matcher,A1,1,4,a cocka-doodle-doo? you have to describe it for me. what does it look like? okay,TRUE
-48,3,child,matcher,C1,1,4,i do it?,TRUE
-48,4,parent,matcher,G1,1,4,okay. you have to describe it. what is that person doing sitting on his butt? okay,TRUE
-48,5,child,matcher,H1,1,4,i pick it?,FALSE
-48,6,parent,matcher,E1,1,4,okay,FALSE
-48,8,parent,matcher,B1,1,4,standing up? okay,TRUE
-48,10,parent,matcher,I1,1,4,okay,TRUE
-48,11,parent,matcher,H1,2,4,sitting down with his butt again?,TRUE
-48,13,parent,matcher,K1,2,4,good,TRUE
-49,2,parent,matcher,A1,1,8,"ok, but you have to describe it. does he look like he's at a drinking fountain, or the other one",TRUE
-49,4,parent,matcher,K1,1,8,kinda sticking his booty out?,TRUE
-49,6,parent,matcher,F1,1,8,okay,TRUE
-49,14,child,matcher,G1,2,8,the one that,TRUE
-49,19,parent,matcher,E1,2,8,the other one that looks like it's jumping in the air,TRUE
-49,26,parent,matcher,F1,3,8,like partay?,TRUE
-49,31,parent,matcher,D1,4,8,"alright, you're first",TRUE
-49,39,parent,matcher,B1,4,8,the walking sad man,TRUE
-50,1,child,matcher,K1,1,6,i don't have a blue box,TRUE
-50,4,parent,matcher,A1,1,6,"oh, i see",TRUE
-50,10,parent,matcher,D1,1,6,"oh on their belly, yes",TRUE
-50,17,parent,matcher,F1,2,6,oh,TRUE
-50,19,parent,matcher,I1,2,6,mhm,TRUE
-50,21,child,matcher,I1,3,6,what you got?,TRUE
-50,23,child,matcher,E1,3,6,what you got?,TRUE
-50,27,child,matcher,F1,3,6,his hands in the air?,TRUE
-51,2,parent,matcher,C1,1,4,looks like a dog? what is the dog doing,TRUE
-51,5,child,matcher,B1,1,4,"ooh, I got it",TRUE
-51,8,parent,matcher,I1,1,4,You think it's a man bending and giving a drink?,TRUE
-51,9,child,matcher,D1,1,4,this may look like an airplane?,TRUE
-51,10,parent,matcher,F1,1,4,it's trying to jump? ok,TRUE
-51,11,parent,matcher,K1,2,4,he has a thorn on his back?,TRUE
-51,17,parent,matcher,B1,2,4,they're walking with their hands in the pocket is that it?,TRUE
-51,19,parent,matcher,D1,2,4,ok laying down playing on a tablet?,TRUE
-51,32,child,matcher,C1,4,4,you mean the jumping for joy one?,TRUE
-52,2,parent,matcher,H1,1,6,can you tell me?,TRUE
-52,3,child,matcher,E1,1,6,the second one!,FALSE
-52,9,child,matcher,F1,1,6,easy,TRUE
-52,11,parent,matcher,D1,2,6,can you tell me,TRUE
-52,21,child,matcher,B1,3,6,okay,TRUE
-53,2,parent,matcher,F1,1,4,"okay, does it look like they have their hands in the air?",TRUE
-53,6,parent,matcher,K1,1,4,oh and it looks like they're standing up? okay,TRUE
-53,8,parent,matcher,G1,1,4,oh,TRUE
-53,10,parent,matcher,A1,1,4,they're running? does it look like one foot is up in the air? okay,TRUE
-53,11,parent,matcher,C1,2,4,"ooh, okay",TRUE
-53,15,parent,matcher,D1,2,4,"ooh, this one",TRUE
-53,26,parent,matcher,A1,3,4,running?,TRUE
-53,39,parent,matcher,H1,4,4,Putting out their arm standing up,TRUE
-54,1,child,matcher,G1,1,4,this one i think i think i think this one looks like it. the one with the square on top.,TRUE
-54,2,parent,matcher,K1,1,4,"alright, so, which one's the blue box for you? can you describe it? oh, when we're cutting paper with scissors? mhm, so which one. can you tell me what it looks like in the blue box? does it look like ok, does one look like a dog and does one look like a person? does it look like that at all? no. hmm, well, I have to choose, so does it look like a hat at the very top? no? is there a big square on one of them? so two triangles at the bottom that are connected, you're saying because that one with the triangles at the bottom doesn't have the blue lines? or the blue box? ok, so the triangles at the bottom doesn't have the blue box so I should choose the other one. ok, thank you",TRUE
-54,3,child,matcher,H1,1,4,yes sure,TRUE
-54,4,parent,matcher,A1,1,4,"alright, so which one has the blue box for you? ok, thank you! that's very descriptive, i'm going to pick the one that looks like the person running, okay? with two feet at the bottom, that looks like they're running, okay? thank you",TRUE
-54,5,child,matcher,F1,1,4,is it this one?,TRUE
-54,6,parent,matcher,B1,1,4,"the person's walking now? ok, that's very good. i'll pick that one",TRUE
-54,7,child,matcher,I1,1,4,it doesn't look like this one is jumping because it's going like (gestures with hand out) yeah. it's holding a triangle.,TRUE
-54,8,parent,matcher,E1,1,4,"ok, which blue box do you have? like he's jumping? so it's not the person walking, it's the person who looks like they're jumping yeah, i see that person too, but i'm going to pick the person who's jumping because that's the blue box you have, right?",TRUE
-54,10,parent,matcher,D1,1,4,"oh my, that's not good for that person! that's such a far distance it's not good for someone to fall that far okay he fell down and died, that's what it looks like? and lost their head? i don't know what side it's on, but i'm going to pick the one that's the person who fell down. alright, so the person who's lying down they fell down and lost their head",TRUE
-54,11,parent,matcher,G1,2,4,what do you have? well do you have a blue box? well it's your turn again then! oh yeah? so it looks like he's sitting on a big square then if he doesn't have legs? okay i'll choose that one,TRUE
-54,12,child,matcher,K1,2,4,i see it right there! that's the one you said was looking like a jet this one? so the one that's pointing this way,TRUE
-54,13,parent,matcher,F1,2,4,"okay, good job so what do you have now? ok, so what does it look like? three heads? wow ok, so not the person walking but the person who's running really fast",TRUE
-54,15,parent,matcher,C1,2,4,"the walking? ok, alright, they're kneeling",TRUE
-54,16,child,matcher,D1,2,4,no he's not a jet yeah but don't call him a jet,TRUE
-54,17,parent,matcher,H1,2,4,"ok, which one do you have? you only see one foot? so it's not the person who's jumping, it's the one who's walking with one foot ok, so i'm going to pick the one who's not jumping",TRUE
-54,18,child,matcher,A1,2,4,"no, running",TRUE
-54,19,parent,matcher,I1,2,4,"ok, so which one do you have now? are they holding something? are they holding something? a triangle? i should pick the one holding the triangle?",TRUE
-54,20,child,matcher,E1,2,4,you mean like this?,TRUE
-54,21,child,matcher,I1,3,4,"no, i don't have a square?",TRUE
-54,22,parent,matcher,K1,3,4,"ok, what should i pick? pick the one who's pointing? okay",TRUE
-54,24,parent,matcher,D1,3,4,the one who fell down? okay,TRUE
-54,25,child,matcher,G1,3,4,this one?,TRUE
-54,26,parent,matcher,E1,3,4,"ok, which one do i pick? it's jumping?",TRUE
-54,28,parent,matcher,B1,3,4,"ok, which one the person walking? okay",TRUE
-54,30,parent,matcher,A1,3,4,running?,TRUE
-54,31,parent,matcher,G1,4,4,"alright, which one do i pick? sitting on the box? or kneeling?",TRUE
-54,33,parent,matcher,C1,4,4,"ok, which one? kneeling down? okay",TRUE
-54,36,child,matcher,A1,4,4,the one who's running,TRUE
-54,37,parent,matcher,I1,4,4,the triangle,TRUE
-54,39,parent,matcher,H1,4,4,one foot,TRUE
-56,1,child,matcher,E1,1,4,yup,TRUE
-56,2,parent,matcher,D1,1,4,which one is your blue box around? the one that looks like an airplane? you got it.,TRUE
-56,4,parent,matcher,B1,1,4,"okay, which one do you have? which one is the blue box around? the person walking? okay",TRUE
-56,5,child,matcher,F1,1,4,i think it's a dog this one? it's a human? i'm going to pick this,FALSE
-56,6,parent,matcher,I1,1,4,which one do i have to pick? look at your screen and tell me where is the blue box around? what does the picture look like? does it look like somebody kissing the ground or a doggie on a couch? okay,TRUE
-56,7,child,matcher,K1,1,4,okay,TRUE
-56,8,parent,matcher,C1,1,4,"alright, which one do you think? your blue box is around what? okay",TRUE
-56,9,child,matcher,A1,1,4,yup,TRUE
-56,10,parent,matcher,H1,1,4,there's a person standing up or a person laying down. which one is it? okay,TRUE
-56,11,parent,matcher,K1,2,4,is that what the blue box is around? i think it looks like a doggie too,TRUE
-56,13,parent,matcher,F1,2,4,what's your picture of?,TRUE
-56,14,child,matcher,D1,2,4,it is! i have the airplane too!,TRUE
-56,15,parent,matcher,E1,2,4,okay,TRUE
-56,17,parent,matcher,A1,2,4,can you show me which one the picture is around? tell me with your words? what does it look like?,TRUE
-56,18,child,matcher,I1,2,4,yeah okay,FALSE
-56,19,parent,matcher,G1,2,4,this one's a doggie too? does it have a blue box around it? okay,TRUE
-56,20,child,matcher,B1,2,4,yup,TRUE
-56,21,child,matcher,F1,3,4,yeah,TRUE
-56,22,parent,matcher,I1,3,4,"which one do you want me to pick? and they have the blue square around them? ok, good job",FALSE
-56,23,child,matcher,G1,3,4,its when a person's in an airplane flying to florida,FALSE
-56,24,parent,matcher,H1,3,4,"which one should i pick? which one has a blue box around it? what does it look like? it does? what is the human doing? sitting in a wheelchair, huh? no don't press it, it's my turn are they standing up or are they laying down?",TRUE
-56,25,child,matcher,K1,3,4,yeah,TRUE
-56,26,parent,matcher,B1,3,4,good job! which one do you have? the blue square is around what?,TRUE
-56,28,parent,matcher,D1,3,4,"it's running ok, which one do you have? in an airplane, huh?",TRUE
-56,30,parent,matcher,C1,3,4,which one do you have? what does it look like?,FALSE
-56,31,parent,matcher,E1,4,4,"ok, which one do you have a blue square around? yay that's so fun!",TRUE
-56,32,child,matcher,D1,4,4,i don't have no blue square,TRUE
-56,33,parent,matcher,G1,4,4,"do you have a blue square? no, put it down sweetie. tell me what it's around they're falling or they're sitting down? they're falling",FALSE
-56,34,child,matcher,I1,4,4,"i don't have a blue square, i have a person",TRUE
-56,35,parent,matcher,K1,4,4,"ok, which one do you have?",TRUE
-56,36,child,matcher,B1,4,4,i have it,TRUE
-56,37,parent,matcher,A1,4,4,alright,TRUE
-56,38,child,matcher,H1,4,4,i'm xxx,FALSE
-56,39,parent,matcher,F1,4,4,okay,TRUE
-56,40,child,matcher,C1,4,4,i don't have it,TRUE
-57,2,parent,matcher,E1,1,8,the arms that's a triangle. does it look like it's holding something in it’s hand?,TRUE
-57,4,parent,matcher,G1,1,8,like it's sitting on a box?,TRUE
-58,1,child,matcher,I1,1,6,"it's easy, a guy holding a triangle",TRUE
-58,2,parent,matcher,F1,1,6,i think it's this one,FALSE
-58,3,child,matcher,E1,1,6,i know what that it,TRUE
-58,5,child,matcher,C1,1,6,he's like bowing,TRUE
-58,9,child,matcher,B1,1,6,that's so easy,TRUE
-58,19,parent,matcher,B1,2,6,that sounds exactly like what I said,TRUE
-58,20,child,matcher,F1,2,6,that's not on here,FALSE
-58,22,child,matcher,D1,3,6,somebody driving an airplane,TRUE
-58,30,parent,matcher,F1,3,6,ooh I like that!,TRUE
-58,31,parent,matcher,B1,4,6,is it the opposite of the butler holding something?,TRUE
-59,10,parent,matcher,F1,1,6,There is a square on top?,TRUE
-59,11,parent,matcher,B1,2,6,"It's okay, tell me what you see.",TRUE
-59,13,parent,matcher,D1,2,6,I don't have a blue box either. You don't have a blue box? Are you tricking me?,TRUE
-59,18,child,matcher,F1,2,6,It's a duck. Nevermind.,TRUE
-59,27,child,matcher,D1,3,6,Where's yyy?,TRUE
-59,29,child,matcher,I1,3,6,Mommy!,TRUE
-59,32,child,matcher,K1,4,6,this one has a xxx,TRUE
-59,33,parent,matcher,B1,4,6,What does it decribe so I can pick it?,TRUE
-60,2,parent,matcher,F1,1,4,can you describe it? is it somebody... does it look like someone kneeling down or someone holding up their hands?,TRUE
-60,4,parent,matcher,K1,1,4,looks like a dog? Okay,TRUE
-60,6,parent,matcher,B1,1,4,"now which one should I click on? Which one has what does the one in the blue square look like? does it look like someone walking I can't look at yours, you need to describe it to me. Does it look like someone walking looking at the ground or okay",TRUE
-60,8,parent,matcher,H1,1,4,NA NA hmm hmm,FALSE
-60,11,parent,matcher,A1,2,4,"what does the one in your blue square look like? cool, thank you",TRUE
-60,13,parent,matcher,I1,2,4,"okay, what does the one on the blue square look like?",TRUE
-60,19,parent,matcher,C1,2,4,Now can you describe the picture in the blue square? hmm,TRUE
-60,22,parent,matcher,F1,3,4,"what's- what does the guy, what does it looks like? okay",TRUE
-60,24,parent,matcher,G1,3,4,"what does he look like? Well I don't have a blue square so you have to describe it to me so I know which one to click okay, hmm-hmm.",TRUE
-60,26,parent,matcher,K1,3,4,"can you describe yours, describe maybe the shape of his head? What does the one in the blue square look like?",TRUE
-60,28,parent,matcher,H1,3,4,what does the one in the blue square look like?,TRUE
-60,29,child,matcher,C1,3,4,now which one do I tap?,TRUE
-60,34,child,matcher,K1,4,4,uh huh,TRUE
-60,39,parent,matcher,D1,4,4,what does the one in the blue square look like? well can you describe the one that's inside the blue square?,TRUE
-60,40,child,matcher,H1,4,4,"well what is it? Oh yeah, this one.",TRUE
-61,2,parent,matcher,I1,1,4,OK what's the human doing is he standing upright or is he kind of leaning over,TRUE
-61,4,parent,matcher,A1,1,4,Dancing so it looks like it has two legs on the bottom,TRUE
-61,6,parent,matcher,F1,1,4,OK is the square on top or on the side But on like above it leaning backwards,TRUE
-61,8,parent,matcher,G1,1,4,Uh OK does it look like it maybe has like a square and a triangle on the bottom,TRUE
-61,10,parent,matcher,H1,1,4,Like it's sitting maybe Is the square on top or to the side,TRUE
-61,13,parent,matcher,B1,2,4,It's sad is the square to the side of it,FALSE
-61,17,parent,matcher,E1,2,4,Got it,TRUE
-61,19,parent,matcher,C1,2,4,This one looks like its diving,TRUE
-61,28,parent,matcher,I1,3,4,Oh OK so not the diving one,TRUE
-61,36,child,matcher,H1,4,4,No this is the one I thought is a school,TRUE
-61,40,child,matcher,I1,4,4,Yes,TRUE
-62,8,parent,matcher,F1,1,8,Like a dog,TRUE
-62,16,child,matcher,E1,2,8,Jumping up in the air,TRUE
-62,28,parent,matcher,G1,3,8,The person with the dress sitting on the stairs,TRUE
-62,31,child,matcher,A1,4,8,Someone running,TRUE
-62,37,parent,matcher,D1,4,8,The hover the guy in the hover craft,TRUE
-64,1,child,matcher,F1,1,4,okay,TRUE
-64,2,parent,matcher,E1,1,4,"I don't know, tell me which one to touch",FALSE
-64,3,child,matcher,C1,1,4,"um, so, okay",TRUE
-64,4,parent,matcher,B1,1,4,ok,TRUE
-64,6,parent,matcher,G1,1,4,lying down?,FALSE
-64,7,child,matcher,K1,1,4,"and, and xxx it's okay but okay but I know, but okay but he's",TRUE
-64,8,parent,matcher,I1,1,4,the one who's holding a bowl and sticking his butt out? okay,TRUE
-64,9,child,matcher,H1,1,4,a ball,TRUE
-64,10,parent,matcher,A1,1,4,okay,TRUE
-64,11,parent,matcher,D1,2,4,okay you tell me ok,TRUE
-64,13,parent,matcher,K1,2,4,"they both kinda look like they are sticking their butt, the one with the arms out with the arrow head? okay",TRUE
-64,14,child,matcher,B1,2,4,who's not walking? who's walking or not walking?,TRUE
-64,15,parent,matcher,H1,2,4,okay,TRUE
-64,17,parent,matcher,C1,2,4,"they both have square heads. Is the jumping one, or the, with the head stand one I can't see it, tell me, is it the one that looks like it's jumping or the one that looks like it's doing a head stand okay",TRUE
-64,19,parent,matcher,F1,2,4,with no arms? that's the one that's not in the blue box? okay,TRUE
-64,20,child,matcher,I1,2,4,fine,TRUE
-64,22,parent,matcher,E1,3,4,okay is that the one in the blue box?,TRUE
-64,24,parent,matcher,A1,3,4,is that the one in the blue box? okay,TRUE
-64,26,parent,matcher,G1,3,4,is that the blue box?,TRUE
-64,28,parent,matcher,I1,3,4,is that blue box?,TRUE
-64,29,child,matcher,F1,3,4,"which happy dance? so like this one? is it ok, is that the one",TRUE
-64,31,parent,matcher,C1,4,4,"okay, so the person doing a head stand is in the blue box?",TRUE
-64,33,parent,matcher,F1,4,4,"they both have square heads, happy dance or head stand happy dance is in the blue box?",TRUE
-64,35,parent,matcher,K1,4,4,is it in the blue box,TRUE
-64,36,child,matcher,B1,4,4,"okay, is it the one holding the bowl? okay",TRUE
-64,37,parent,matcher,D1,4,4,is that the blue box?,TRUE
-64,39,parent,matcher,H1,4,4,holding the bowl,TRUE
-65,2,parent,matcher,D1,1,4,which one? you have to describe it to me is it the one standing up or the one lying down?,TRUE
-65,4,parent,matcher,E1,1,4,"okay, which one do I pick? okay",TRUE
-65,6,parent,matcher,G1,1,4,which one do I pick?,TRUE
-65,8,parent,matcher,A1,1,4,which one do I pick?,TRUE
-65,10,parent,matcher,K1,1,4,which one do I pick? A one thats standing like,TRUE
-65,11,parent,matcher,F1,2,4,which one do I pick?,TRUE
-65,13,parent,matcher,I1,2,4,which one do I pick? okay,TRUE
-65,15,parent,matcher,H1,2,4,which one do I get? okay,FALSE
-65,17,parent,matcher,B1,2,4,which one do I pick? okay,FALSE
-65,19,parent,matcher,C1,2,4,okay which one do I get? okay,TRUE
-65,22,parent,matcher,E1,3,4,"which one? um, it's, he's jumping wait which one? on his knees or the one jumping?",TRUE
-65,24,parent,matcher,A1,3,4,"okay, which one?",TRUE
-65,25,child,matcher,H1,3,4,is it this guy?,TRUE
-65,26,parent,matcher,K1,3,4,"okay, which one?",TRUE
-65,28,parent,matcher,G1,3,4,"which one do I do? Okay, so, which one do I pick? okay",TRUE
-65,30,parent,matcher,D1,3,4,So which one am I supposed to pick? Okay,TRUE
-65,33,parent,matcher,H1,4,4,"which one? which one I can' see it, which one? The one lying down or the one on his knees?",TRUE
-65,35,parent,matcher,F1,4,4,so which one do I want? the one that's skipping? okay,TRUE
-65,37,parent,matcher,B1,4,4,which one?,TRUE
-65,38,child,matcher,E1,4,4,I know that guy already,TRUE
-65,39,parent,matcher,C1,4,4,which one do I do? okay,TRUE
-66,1,child,matcher,F1,1,6,is it,TRUE
-66,2,parent,matcher,K1,1,6,"mhm that's very helpful, thank you, i think i know which one",TRUE
-66,4,parent,matcher,G1,1,6,mmm mhm ok,TRUE
-66,6,parent,matcher,I1,1,6,"hmm oh yeah that's a really helpful clue, thank you",TRUE
-66,7,child,matcher,D1,1,6,"oh that one is super easy because I see the one on its tummy, that's super easy",TRUE
-66,8,parent,matcher,A1,1,6,"ok yes, I think I know which one that is",TRUE
-66,10,parent,matcher,C1,1,6,ok let's see if I got the right one,TRUE
-66,11,parent,matcher,H1,2,6,"mhm like an emperor? okay, I think I know which one you mean",TRUE
-66,12,child,matcher,I1,2,6,"yeah that soo, but, I already said that so I know",TRUE
-66,13,parent,matcher,E1,2,6,"mhm I think I know which one yes, there we go.",TRUE
-66,15,parent,matcher,F1,2,6,"oh, human head, bird body and bird feet. I think I know which one.",TRUE
-66,16,child,matcher,G1,2,6,no she's like looking up at the sky like this,TRUE
-66,17,parent,matcher,D1,2,6,ahh okay,TRUE
-66,18,child,matcher,C1,2,6,"that, I already I really know that one xxx because I already described it and looked at the picture",TRUE
-66,19,parent,matcher,B1,2,6,"mhm so walking, not crawling? okay I think I know which one",TRUE
-66,20,child,matcher,K1,2,6,"I think so, it had a human head, a we-- a pointy hat, dog tail, and like uh like a um dog body, dog um paws on front and leg xxx yeah",TRUE
-66,22,parent,matcher,C1,3,6,okay,TRUE
-66,23,child,matcher,E1,3,6,"I kn- I know because and I made a good description about this no I said hands up in the air, not just a hand up, in the air, both hands",TRUE
-66,24,parent,matcher,K1,3,6,"oh this guy I know so well, so it has, so should I say the, should I say the same thing with the, xxx pointy hat mhm yeah, say those things cause that definitely tells me that I know who it is",TRUE
-66,26,parent,matcher,A1,3,6,"ohh I like that description, I'm gonna guess it's this one",TRUE
-66,28,parent,matcher,G1,3,6,"okay, got that one",TRUE
-66,30,parent,matcher,I1,3,6,okay,TRUE
-66,31,parent,matcher,B1,4,6,"mhm okay, I think I know which one it is",TRUE
-66,32,child,matcher,I1,4,6,"it's a waiter's holding the bow, bowl",TRUE
-66,33,parent,matcher,H1,4,6,emperor you said? I know emperor,TRUE
-66,34,child,matcher,G1,4,6,got it,TRUE
-66,36,child,matcher,A1,4,6,I got it,TRUE
-66,37,parent,matcher,D1,4,6,you on your tummy reading,TRUE
-66,38,child,matcher,K1,4,6,"the doggy, I got it",TRUE
-66,39,parent,matcher,F1,4,6,"alright, bird wings",TRUE
-66,40,child,matcher,C1,4,6,I won it,TRUE
-67,2,parent,matcher,D1,1,8,okay,TRUE
-67,4,parent,matcher,H1,1,8,alright,TRUE
-67,6,parent,matcher,E1,1,8,okay,TRUE
-67,10,parent,matcher,B1,1,8,okay,TRUE
-67,13,parent,matcher,K1,2,8,mhm,TRUE
-67,15,parent,matcher,I1,2,8,okay,TRUE
-67,19,parent,matcher,G1,2,8,hmm not a human,TRUE
-67,30,parent,matcher,F1,3,8,"running, okay",TRUE
-68,4,parent,matcher,I1,1,6,ah,FALSE
-68,6,parent,matcher,B1,1,6,oh okay,TRUE
-68,11,parent,matcher,H1,2,6,oh kay,FALSE
-68,13,parent,matcher,F1,2,6,yayy,TRUE
-68,15,parent,matcher,G1,2,6,kind of a house?,TRUE
-68,20,child,matcher,I1,2,6,that's what I did last time,TRUE
-68,24,parent,matcher,K1,3,6,please give me this food I don't know which one it is,TRUE
-68,28,parent,matcher,D1,3,6,sleeping,TRUE
-68,34,child,matcher,K1,4,6,ouu are you-,TRUE
-68,35,parent,matcher,F1,4,6,triangle feet,TRUE
-69,1,child,matcher,E1,1,6,Yeah,TRUE
-69,8,parent,matcher,F1,1,6,"He's running around screaming? Okay, I got it",TRUE
-69,10,parent,matcher,I1,1,6,"He's holding a tray, very good",TRUE
-69,13,parent,matcher,K1,2,6,Okay,TRUE
-69,17,parent,matcher,H1,2,6,Ooh okay,TRUE
-69,19,parent,matcher,E1,2,6,Wow,TRUE
-69,30,parent,matcher,D1,3,6,Taking a nap?,TRUE
-69,35,parent,matcher,C1,4,6,He's like um-,TRUE
-70,1,child,matcher,I1,1,6,and I look like--,TRUE
-70,5,child,matcher,A1,1,6,umm okay,TRUE
-70,6,parent,matcher,D1,1,6,it look like what?,TRUE
-70,8,parent,matcher,H1,1,6,you don't see no legs?,TRUE
-70,12,child,matcher,E1,2,6,"I agree, I saw that one when I was running xxx",TRUE
-70,13,parent,matcher,B1,2,6,sad?,TRUE
-70,14,child,matcher,C1,2,6,you got the one that was up?,TRUE
-70,15,parent,matcher,F1,2,6,jumping and doing the split? okay,TRUE
-70,16,child,matcher,G1,2,6,hm? that's what I said,TRUE
-70,20,child,matcher,H1,2,6,it look like to me too,TRUE
-70,21,child,matcher,I1,3,6,"mmm left, I mean right",TRUE
-70,27,child,matcher,A1,3,6,"lee, left",TRUE
-70,28,parent,matcher,C1,3,6,what? how somebody look crawling down to the basement? who you say crawling in the basement?,TRUE
-71,4,parent,matcher,G1,1,8,okay,TRUE
-71,6,parent,matcher,C1,1,8,okay,TRUE
-71,15,parent,matcher,E1,2,8,which way? okay,TRUE
-71,17,parent,matcher,I1,2,8,kay,TRUE
-71,26,parent,matcher,K1,3,8,it looks like someone has a tail and their head is an arrow,TRUE
-71,33,parent,matcher,I1,4,8,okay don't get too creative here,FALSE
-71,37,parent,matcher,F1,4,8,okay,TRUE
-71,38,child,matcher,B1,4,8,hmm,FALSE
-71,39,parent,matcher,E1,4,8,diamond-shaped head?,FALSE
-72,1,child,matcher,G1,1,8,yeah,FALSE
-72,2,parent,matcher,K1,1,8,there is a square under the point thing? okay so it's that one,TRUE
-72,3,child,matcher,F1,1,8,oh yeah,TRUE
-72,5,child,matcher,A1,1,8,oh,TRUE
-72,6,parent,matcher,I1,1,8,a triangle hand? okay,TRUE
-72,8,parent,matcher,C1,1,8,"it's head is floating, ok",TRUE
-73,1,child,matcher,K1,1,6,I think something is.. it's two a dog?,TRUE
-73,2,parent,matcher,E1,1,6,"um, somebody that's holding something that's, I guess a person holding something?",FALSE
-73,3,child,matcher,B1,1,6,oh a people?,TRUE
-73,4,parent,matcher,C1,1,6,"oh it is okay, uh I see yeah, um yeah we're gonna say this somebody uh doing the tornado drill",TRUE
-73,5,child,matcher,F1,1,6,uh a xxx big bird? a a puppy? it's a human? it kind of- it might be a alien,FALSE
-73,6,parent,matcher,D1,1,6,is it a airplane?,TRUE
-73,7,child,matcher,A1,1,6,okay,TRUE
-73,8,parent,matcher,I1,1,6,okay,TRUE
-73,9,child,matcher,G1,1,6,"or pr-- is it like, is it the president? yeah, yup",TRUE
-73,10,parent,matcher,H1,1,6,"say that again sit down, sit down mmm does it look like it, does does it look like the shapes are somebody-- you said somebody lying? are they, is it like, look like it's standing still, like they're holding something?",TRUE
-73,11,parent,matcher,G1,2,6,okay,TRUE
-73,12,child,matcher,D1,2,6,okay is the book is like-,FALSE
-73,13,parent,matcher,K1,2,6,is it like a triangle is like a tail? mm,TRUE
-73,14,child,matcher,H1,2,6,"is it a, is it  a people who's running a airplane? oh uh, they're in a airplane? are they i , in a airplane?",FALSE
-73,15,parent,matcher,B1,2,6,somebody's walking and feeling sad,TRUE
-73,16,child,matcher,I1,2,6,uhh uh giving people some food?,TRUE
-73,17,parent,matcher,F1,2,6,okay,TRUE
-73,18,child,matcher,C1,2,6,"like doing the- the- or doin, doing the drills",TRUE
-73,20,child,matcher,E1,2,6,no I think,FALSE
-73,21,child,matcher,K1,3,6,"uh yeah, I think",TRUE
-73,22,parent,matcher,I1,3,6,okay,TRUE
-73,23,child,matcher,G1,3,6,or riding a airplane I think,FALSE
-73,25,child,matcher,F1,3,6,uh somebody's trying to catch something?,TRUE
-73,29,child,matcher,A1,3,6,uhh okay,TRUE
-73,31,parent,matcher,K1,4,6,mhm,TRUE
-73,32,child,matcher,C1,4,6,"um, there's somebody doing the tornado drill",TRUE
-73,34,child,matcher,D1,4,6,somebody's riding a airplane because beca- because he's holdi- because he's had like a xxx ride a airplane like that one,TRUE
-73,38,child,matcher,E1,4,6,or jumping for joys,TRUE
-73,39,parent,matcher,G1,4,6,"I can't hear you honey are you looking at it? okay, say it again there's somebody who's telling somebody not to to do something bad again? oh you mean somebody is sitting down scolding them? oh",TRUE
-73,40,child,matcher,H1,4,6,"no it's like, it's people is pointing at people",TRUE
-74,2,parent,matcher,G1,1,6,it's- okay,TRUE
-74,22,parent,matcher,G1,3,6,okay what's the statue doing oh,TRUE
-74,28,parent,matcher,C1,3,6,okay,TRUE
-74,37,parent,matcher,A1,4,6,running?,TRUE
-75,4,parent,matcher,K1,1,8,a cliff with an edge on the bottom?,TRUE
-75,6,parent,matcher,E1,1,8,like a flying squirrel,TRUE
-75,12,child,matcher,C1,2,8,that's the one whose kneel-,TRUE
-75,14,child,matcher,K1,2,8,"yeah now it does to me doesn't look like a cliff anymore,  wait a minute, that's not the cliff, that's not the cliff, though, that's something different yeah me too, but the cliff has a jagged",TRUE
-75,17,parent,matcher,G1,2,8,mmm,TRUE
-75,18,child,matcher,I1,2,8,hmmm,TRUE
-75,20,child,matcher,B1,2,8,is this the sad lonely person walking?,TRUE
-75,37,parent,matcher,G1,4,8,hmm,TRUE
+subid,trial,person,role,target,rep_num,age,utterance,correct,experiment
+4,1,child,matcher,K1,1,6,zzz,TRUE,adult-child
+4,2,parent,matcher,C1,1,6,Oh I see,TRUE,adult-child
+4,6,parent,matcher,B1,1,6,oh yeah!,TRUE,adult-child
+4,10,parent,matcher,F1,1,6,Oh yeah they're like hold that bus,TRUE,adult-child
+4,11,parent,matcher,H1,2,6,oh yeah!,TRUE,adult-child
+4,13,parent,matcher,K1,2,6,"OK, got it",TRUE,adult-child
+4,15,parent,matcher,I1,2,6,Oh yeah!,TRUE,adult-child
+4,17,parent,matcher,G1,2,6,Oh yeah!,TRUE,adult-child
+4,19,parent,matcher,D1,2,6,oh yeah!,TRUE,adult-child
+4,22,parent,matcher,C1,3,6,"oh, good!",TRUE,adult-child
+4,24,parent,matcher,A1,3,6,oh yeah,TRUE,adult-child
+4,26,parent,matcher,F1,3,6,"oh no! Good, yeah",TRUE,adult-child
+4,27,child,matcher,I1,3,6,What is your person,TRUE,adult-child
+4,28,parent,matcher,B1,3,6,Oh maybe they're looking on the ground for another one maybe they're gonna see,TRUE,adult-child
+4,30,parent,matcher,E1,3,6,Yeah!,TRUE,adult-child
+4,31,parent,matcher,H1,4,6,oh,TRUE,adult-child
+4,33,parent,matcher,G1,4,6,"My person is running down the street saying here I am, here I am, here I am!",TRUE,adult-child
+4,35,parent,matcher,K1,4,6,"oh nice, yeah!",TRUE,adult-child
+4,39,parent,matcher,I1,4,6,oh yeah!,TRUE,adult-child
+5,2,parent,matcher,F1,1,4,OK no wait you have to describe to me what it looks like Does it look like a person What does it look like the person is doing It looks like a person walking? OK,FALSE,adult-child
+5,3,child,matcher,K1,1,4,"Mhm Now I see I see the next shape with a triangle Up and down and I see a point up and now I I see another triangle hanging down I don't I'll pick I'll pick both I'll pick Yeah Oh, ok",TRUE,adult-child
+5,4,parent,matcher,B1,1,4,Mhm What shapes do you see Mm so which one is in the blue box That's what it looks like,TRUE,adult-child
+5,5,child,matcher,A1,1,4,But now Now Now zzz OK wait I see a person a zzz all going that way Yeah he's standing on one leg So I'll pick it,TRUE,adult-child
+5,6,parent,matcher,H1,1,4,Now what do you see What else do you see So you see it in the blue box He's holding something That's what it looks like? OK,TRUE,adult-child
+5,7,child,matcher,I1,1,4,Now I see a doggy and he he's holding on one leg Yeah and he's gonna fall down,TRUE,adult-child
+5,8,parent,matcher,G1,1,4,Crawling and what else Which one do you see in the blue box Which one describe it to me Which one is what does it look like they're doing The one that looks like he's crawling,FALSE,adult-child
+5,9,child,matcher,E1,1,4,Now now I see someone jumping and he's gonna fall down and I see someone um,FALSE,adult-child
+5,10,parent,matcher,D1,1,4,Tell me what you see zzz,TRUE,adult-child
+5,11,parent,matcher,C1,2,4,zzz zzz OK,TRUE,adult-child
+5,12,child,matcher,D1,2,4,I see an airplane and someone jumping zzz zzz I didn't see you walking but he I didn't see him stop walking and I think he's holding his hands that way,TRUE,adult-child
+5,13,parent,matcher,E1,2,4,What do you see now zzz blue box Ok which one was in the blue box OK,TRUE,adult-child
+5,14,child,matcher,H1,2,4,Now I see someone running And someone with hands facing that way Like it's this one Um it's a triangle facing down and and a facing that way and that way up I want to pick this one This one I'll pick this guy He's holding his hands that way I'll pick him,TRUE,adult-child
+5,15,parent,matcher,K1,2,4,What do you see Now which one is in the blue box OK,TRUE,adult-child
+5,16,child,matcher,B1,2,4,I see a person um walking that way and I see a doggy um he's standing on his legs Um I see a diamond that is that is facing that way,TRUE,adult-child
+5,17,parent,matcher,I1,2,4,Mhm And which one is in the blue box? Mhm,TRUE,adult-child
+5,18,child,matcher,G1,2,4,I see a airplane coming in and toward this guy the person that's pointing that way I see um ok um a square on the top there um They on um This guy is on top of the triangle OK,FALSE,adult-child
+5,19,parent,matcher,A1,2,4,That's what you see in the blue box,TRUE,adult-child
+5,20,child,matcher,F1,2,4,Now I see now I see a thing climbing and I see someone crawling that way Yes it do Yes it does OK,TRUE,adult-child
+5,21,child,matcher,I1,3,4,Now I see a triangle wait now I see a triangle and a person running and it looks and the face is looking like a diamond I see a triangle and a face that looks like a diamond zzz Um yeah Like someone running OK like the doggy OK,TRUE,adult-child
+5,22,parent,matcher,G1,3,4,Mhm Which one is in the blue box The person,TRUE,adult-child
+5,23,child,matcher,A1,3,4,I see two triangles that that's holding up Yeah The guy that's running,TRUE,adult-child
+5,24,parent,matcher,D1,3,4,OK what do you see now Can you see the zzz the zzz other shapes do you see,TRUE,adult-child
+5,25,child,matcher,K1,3,4,I see a square and I see a I see a triangle on a doggy head again I see a angle down and he's standing on Mhm I think I'll pick the um the doggy Wait I'll pick the bird again OK OK I'll pick the doggy,TRUE,adult-child
+5,26,parent,matcher,B1,3,4,What do you see now What kind of shapes do you see Which one do you see in the blue box zzz There's two persons zzz right Well what are they doing On the blocks Is he walking,TRUE,adult-child
+5,27,child,matcher,C1,3,4,Now I see a um triangle I see a zzz facing down and I see a a diamond and another diamond Um it's this one I see a diamond Down And I see and I see a triangle pointing and facing this way And zzz,TRUE,adult-child
+5,28,parent,matcher,H1,3,4,OK what do you see now And which one is in the blue box Mhm you said the person is in the blue box You said the person is in the blue box,TRUE,adult-child
+5,29,child,matcher,E1,3,4,Now I see a person walking slow and I see a person jumping I see a um triangle pointing um thing facing up and I see a pointing um,TRUE,adult-child
+5,30,parent,matcher,F1,3,4,What do you see now Which one do you see in the blue box OK,TRUE,adult-child
+5,31,parent,matcher,E1,4,4,Tell me what you see in the blue box,TRUE,adult-child
+5,32,child,matcher,G1,4,4,I see um I see a guy that that that he's holding his hands on the um that way zzz this is the last one Like he's pointing um he's pointing his hands on the right I think he's like holding like a like he's holding like zzz like a gondora zzz holding the um he's holding the square going that way Like he's not like he's not holding it in his hands um like he's not holding anything like uh like he's not holding anything like zzz over there and he's not um zzz over there and like he's not doing that like he's um zzz over there Um it's this one I'll pick it It looks like a guy who has a square on his head and it looks like a square down pointing that way OK Yeah,TRUE,adult-child
+5,33,parent,matcher,C1,4,4,And what do you see outside of the blue box Mhm what shapes do you see Mhm,TRUE,adult-child
+5,34,child,matcher,F1,4,4,I see bird looking like he's gonna fly Yeah I see um I see a guy again is and his hands over that way yeah I like the birds and i like binoculars to look at bids Mhm no I do that at home OK,TRUE,adult-child
+5,35,parent,matcher,K1,4,4,Mhm What else do you see Mhm and now zzz Mhm Which one is in the blue box OK,TRUE,adult-child
+5,36,child,matcher,D1,4,4,"Now I see a airplane that has zzz triangle and I see a person like a bird going to fly, it's taking off zzz Um it's zzz Um one and two and three I'll pick the bird I'll pick OK I'll pick the rocket Wait it's a airplane first So I'll pick it",TRUE,adult-child
+5,37,parent,matcher,A1,4,4,zzz What side zzz zzz Which one is in the blue box,TRUE,adult-child
+5,38,child,matcher,H1,4,4,Now I see a person holding his triangle that way again and I see a guy that has a diamond head down and I see him facing that way and he's crawling that way Yeah Yeah he's um holding something without crawling I'll pick it OK I'll pick this one It looks like it has a a diamond on a head and it looks like it has a triangle facing that way on the right Yeah Pick it,TRUE,adult-child
+5,39,parent,matcher,I1,4,4,Which one do you see in the blue box,TRUE,adult-child
+5,40,child,matcher,B1,4,4,Now I see a airplane and OK and now I see and I see now um wait Now I see I see now um I see a person walking slow and a airplane running into him and and it's gonna crush into him Yeah into him OK uh he has a ankle down and he's like walking walking Um it um I'll pick three triangles it has three triangles I see a triangle on the person but it looks like he's zzz holding on the person and it and it it's not in a bowl because that's not it because that's where the airplane begins I'll pick the person again Know what I'm not gonna pick it because that's why I'm picking the airplane Because uh it's Because it's finna crash into that um person Yeah I think the person should go around and so the airplane can keep on going that way so it own't crash into him So I'll pick the person,TRUE,adult-child
+7,2,parent,matcher,C1,1,6,lying down? on his knees? with his elbows on the ground?,TRUE,adult-child
+7,4,parent,matcher,B1,1,6,Is he looking at the ground kinda?,TRUE,adult-child
+7,6,parent,matcher,K1,1,6,is there a triangle on his tush?,TRUE,adult-child
+7,8,child,matcher,A1,1,6,this one is the one that's running,TRUE,adult-child
+7,11,parent,matcher,G1,2,6,sitting in a chair?,TRUE,adult-child
+7,15,parent,matcher,F1,2,6,dabbing,TRUE,adult-child
+7,27,parent,matcher,I1,3,6,"this one's when he's leaned over a little bit, holding that bowl",TRUE,adult-child
+7,35,parent,matcher,F1,4,6,dabbing?,TRUE,adult-child
+9,1,child,matcher,B1,1,6,Oh,TRUE,adult-child
+9,3,child,matcher,F1,1,6,Like this?,TRUE,adult-child
+9,6,parent,matcher,H1,1,6,Does it look like he's bending over kneeling? Or does it look like he's like got a tray of something,TRUE,adult-child
+9,9,child,matcher,C1,1,6,Oh,TRUE,adult-child
+9,10,parent,matcher,K1,1,6,Laying down or like leaning over?,TRUE,adult-child
+9,11,parent,matcher,F1,2,6,OK good job it says time for the next round Do you have a blue square or do I have a blue square? Alright,TRUE,adult-child
+9,12,child,matcher,H1,2,6,Oh,TRUE,adult-child
+9,13,parent,matcher,D1,2,6,"Oh, like someone's flying in the jet",TRUE,adult-child
+9,14,child,matcher,A1,2,6,Oh,TRUE,adult-child
+9,20,child,matcher,I1,2,6,Ok,TRUE,adult-child
+9,21,child,matcher,C1,3,6,Oh,TRUE,adult-child
+9,29,child,matcher,E1,3,6,Or is skydiving or,TRUE,adult-child
+9,32,child,matcher,K1,4,6,Your turn And a hat on,TRUE,adult-child
+10,6,parent,matcher,I1,1,8,Like a triangle bowl,TRUE,adult-child
+10,14,child,matcher,F1,2,8,like this? (gestures) yeah,TRUE,adult-child
+10,15,parent,matcher,D1,2,8,Oh are they laying down on their tummy?,TRUE,adult-child
+10,24,parent,matcher,C1,3,8,kneeling in prayer? like lying down? Like not even kneeling but like laying down in prayer?,TRUE,adult-child
+10,28,parent,matcher,A1,3,8,"Okay, standing up running?",TRUE,adult-child
+10,30,parent,matcher,I1,3,8,"mhm mhm, and they're holding a ball?",TRUE,adult-child
+10,39,parent,matcher,K1,4,8,Sticking their butt out oh yeah,TRUE,adult-child
+11,2,parent,matcher,E1,1,4,What does it look like A bird is it long and skinny or is it wider,TRUE,adult-child
+11,4,parent,matcher,B1,1,4,The person walking Or the person bent over,TRUE,adult-child
+11,5,child,matcher,G1,1,4,This one I don't know,TRUE,adult-child
+11,6,parent,matcher,C1,1,4,Person crawling,TRUE,adult-child
+11,8,parent,matcher,H1,1,4,Mmm they both look like they have kite heads do you have the one that it's straight up and down or the one that it's kind of sideways Do you have the person who is really wide or the person who's skinny and has less triangles,TRUE,adult-child
+11,11,parent,matcher,D1,2,4,Is it Is it the flatter one I can't see it is it the one that's flat,TRUE,adult-child
+11,13,parent,matcher,G1,2,4,On the top of it,TRUE,adult-child
+11,19,parent,matcher,A1,2,4,There's lots of triangles And a diamond head,TRUE,adult-child
+11,22,parent,matcher,I1,3,4,Is it the man holding something or is it the one who's jumping,TRUE,adult-child
+11,26,parent,matcher,E1,3,4,The bird the one who's flying,TRUE,adult-child
+11,29,child,matcher,F1,3,4,I got the one that's really wide and looks like someone who's running,TRUE,adult-child
+11,36,child,matcher,I1,4,4,I've got the one where he's holding something,TRUE,adult-child
+12,8,parent,matcher,K1,1,6,You got the man bending down OK,TRUE,adult-child
+12,10,parent,matcher,E1,1,6,You got a man walking,FALSE,adult-child
+12,11,parent,matcher,D1,2,6,You got the man laying down OK,TRUE,adult-child
+12,13,parent,matcher,F1,2,6,You got the man walking OK,FALSE,adult-child
+12,15,parent,matcher,A1,2,6,"Which way is he walking, this way or? Is he walking there, OK",TRUE,adult-child
+12,17,parent,matcher,H1,2,6,Pointing,TRUE,adult-child
+12,19,parent,matcher,C1,2,6,OK you know that could be a dog too,TRUE,adult-child
+12,22,parent,matcher,K1,3,6,Laying down,FALSE,adult-child
+12,24,parent,matcher,B1,3,6,A man with the triangle,FALSE,adult-child
+12,26,parent,matcher,G1,3,6,He's sitting down,TRUE,adult-child
+12,28,parent,matcher,E1,3,6,Jumping zzz,TRUE,adult-child
+12,31,parent,matcher,C1,4,6,You got the dog OK,TRUE,adult-child
+12,33,parent,matcher,H1,4,6,Is he laying down,TRUE,adult-child
+12,35,parent,matcher,A1,4,6,Is it the big one or the little one,FALSE,adult-child
+12,37,parent,matcher,F1,4,6,OK pointing to the sky,TRUE,adult-child
+12,39,parent,matcher,D1,4,6,You got the man laying down,TRUE,adult-child
+13,1,child,matcher,K1,1,6,"oh, I have that",TRUE,adult-child
+13,15,parent,matcher,K1,2,6,can you be more descriptive? do they have anything in their hands?,FALSE,adult-child
+13,16,child,matcher,F1,2,6,is it on your right or left.,TRUE,adult-child
+13,31,parent,matcher,E1,4,6,can you give more description?,TRUE,adult-child
+13,35,parent,matcher,H1,4,6,are they sitting down or zzz?,TRUE,adult-child
+14,10,parent,matcher,F1,1,8,"the one that looks like someone's running, or kneeling?",TRUE,adult-child
+14,11,parent,matcher,K1,2,8,"it's playing, or looks like a racecar? ok",TRUE,adult-child
+14,39,parent,matcher,K1,4,8,can you tell me?,TRUE,adult-child
+15,2,parent,matcher,A1,1,4,"Okay, you tell me, is it the one that's running, or the one that's standing still?",FALSE,adult-child
+15,4,parent,matcher,K1,1,4,which one should I pick? the one that's walking or the one that's standing?,FALSE,adult-child
+15,7,child,matcher,B1,1,4,walking,TRUE,adult-child
+15,7,parent,matcher,B1,1,4,NA Pick the one that's walking,TRUE,adult-child
+15,8,parent,matcher,F1,1,4,"the one that's kneeling down, or the one that's jumping up?",TRUE,adult-child
+15,9,child,matcher,C1,1,4,"Okay, this one?",TRUE,adult-child
+15,10,parent,matcher,D1,1,4,"Okay, the one lying down or the one jumping up? which one is in the square right. but I don't know which one it is, you have to tell me what's in the blue square",TRUE,adult-child
+15,11,parent,matcher,B1,2,4,OK which one do I pick? Ok he's not walking,FALSE,adult-child
+15,12,child,matcher,K1,2,4,this one?,TRUE,adult-child
+15,13,parent,matcher,G1,2,4,which one do I pick? the one that has his arms out? or the onethat's kneeling In the square does it have a hat? is it the one with the hat or no?,TRUE,adult-child
+15,15,parent,matcher,C1,2,4,should I pick the one that's walking or the one that's kneeling down?,TRUE,adult-child
+15,17,parent,matcher,I1,2,4,Ok the one that's holding the triangle?,TRUE,adult-child
+15,19,parent,matcher,H1,2,4,do I pick the one that's walking which one is in your screen? I can't see it is it walking? or is it standing still,TRUE,adult-child
+15,21,child,matcher,G1,3,4,OK this one?,TRUE,adult-child
+15,22,parent,matcher,K1,3,4,the one wearing the hat?,TRUE,adult-child
+15,24,parent,matcher,E1,3,4,"okay, which one do I pick? the one that's jumping? or the one that's walking",TRUE,adult-child
+15,25,child,matcher,H1,3,4,"but then this is standing still but then, the jumping is standing still I don't have a blue square",TRUE,adult-child
+15,26,parent,matcher,A1,3,4,what do you want me to pick? what's in the blue square?,TRUE,adult-child
+15,28,parent,matcher,F1,3,4,which one do I pick? the one that's walking with the arm? or the one that's kneeling,FALSE,adult-child
+15,29,child,matcher,C1,3,4,head down?,TRUE,adult-child
+15,30,parent,matcher,D1,3,4,"which one should I pick? the one that's laying down? or the one walking yeah, but it won't work, it only works if I push it.",TRUE,adult-child
+15,31,parent,matcher,I1,4,4,the jumper? or the one that's holding the triangle,TRUE,adult-child
+15,33,parent,matcher,H1,4,4,"which should I pick, who's in your blue square? you have to tell me, what's he doing? is he laying down, or is he holding and standing still",TRUE,adult-child
+15,34,child,matcher,F1,4,4,this one? this one?,TRUE,adult-child
+15,35,parent,matcher,B1,4,4,which one do I pick?,FALSE,adult-child
+15,36,child,matcher,K1,4,4,why you wanna zzz now,TRUE,adult-child
+15,37,parent,matcher,G1,4,4,now you tell me which one do I pick? which one's in the square? I don't know I can't see,FALSE,adult-child
+15,38,child,matcher,D1,4,4,Okay,TRUE,adult-child
+15,39,parent,matcher,C1,4,4,which one do I gotta pick,TRUE,adult-child
+16,1,child,matcher,E1,1,4,Uh which one that is,TRUE,adult-child
+16,2,parent,matcher,D1,1,4,I can't see your pictures can you tell me what it looks like A triangle top and a square top Are they together,FALSE,adult-child
+16,4,parent,matcher,K1,1,4,Is it like the last one that you did No It's different zzz,FALSE,adult-child
+16,5,child,matcher,F1,1,4,This one Yeah,TRUE,adult-child
+16,8,parent,matcher,H1,1,4,A diamond head on top,TRUE,adult-child
+16,10,parent,matcher,C1,1,4,Is it this isn't look like somebody kneeling on the ground like they're crawling on the ground or like they're jumping in the air OK,FALSE,adult-child
+16,13,parent,matcher,F1,2,4,Holding his arm in the air,TRUE,adult-child
+16,15,parent,matcher,E1,2,4,Do they have uh Triangle arms triangle feet A diamond head,FALSE,adult-child
+16,16,child,matcher,C1,2,4,That look no with no a no more pause of a body,TRUE,adult-child
+16,17,parent,matcher,G1,2,4,A square head and hat,TRUE,adult-child
+16,19,parent,matcher,I1,2,4,Holding a triangle,TRUE,adult-child
+16,26,parent,matcher,H1,3,4,Are they standing on both feet or just one foot,TRUE,adult-child
+16,28,parent,matcher,C1,3,4,Are they on the ground,TRUE,adult-child
+16,30,parent,matcher,D1,3,4,Crawling on the ground,TRUE,adult-child
+16,36,child,matcher,C1,4,4,Um I don't know that No No I have somebody like with feet on legs and with a square and a diamond head And legs with a square,TRUE,adult-child
+17,4,parent,matcher,H1,1,8,what else?,TRUE,adult-child
+17,6,parent,matcher,I1,1,8,"tell me more! no, tell me more Oh my gosh, this is tricky! Would you tell me more description?",TRUE,adult-child
+17,8,parent,matcher,G1,1,8,"what is she doing? okay, I need more, I need more information",TRUE,adult-child
+17,28,parent,matcher,H1,3,8,"is it? A what? no, describe it",FALSE,adult-child
+18,1,child,matcher,G1,1,4,this one?,FALSE,adult-child
+18,12,child,matcher,I1,2,4,this one?,TRUE,adult-child
+18,17,parent,matcher,F1,2,4,cool,TRUE,adult-child
+18,25,child,matcher,F1,3,4,"this one, or this one?",TRUE,adult-child
+18,26,parent,matcher,K1,3,4,standing and bending?,TRUE,adult-child
+18,31,parent,matcher,E1,4,4,jumping?,TRUE,adult-child
+18,37,parent,matcher,A1,4,4,running?,TRUE,adult-child
+18,39,parent,matcher,G1,4,4,sitting?,TRUE,adult-child
+20,2,parent,matcher,C1,1,8,oh yeah.,TRUE,adult-child
+20,8,parent,matcher,G1,1,8,"alright, so the images i'm seeing, both of them have square heads so what's on the xxx when you're looking at it? what does it look like?",TRUE,adult-child
+20,10,parent,matcher,F1,1,8,can you give me more? descriptive? and what do they do with their arms?,TRUE,adult-child
+20,11,parent,matcher,B1,2,8,someone walking somberly?,TRUE,adult-child
+20,15,parent,matcher,A1,2,8,"are they lying down, or running?",FALSE,adult-child
+20,17,parent,matcher,K1,2,8,what else is the person doing?,TRUE,adult-child
+20,19,parent,matcher,D1,2,8,melted onto the ground?,TRUE,adult-child
+20,23,child,matcher,K1,3,8,harder,TRUE,adult-child
+20,24,parent,matcher,F1,3,8,fun?,TRUE,adult-child
+20,39,parent,matcher,D1,4,8,"no, you already used that one before! what does that person look like they're doing? no, that's not what he looks like he looks like he's reading a book nope, you can't pick it up! alright",TRUE,adult-child
+21,7,child,matcher,H1,1,8,Hmm,TRUE,adult-child
+21,10,parent,matcher,K1,1,8,Running?,FALSE,adult-child
+21,11,parent,matcher,D1,2,8,Do you have a box?,FALSE,adult-child
+21,30,parent,matcher,K1,3,8,"A person who's, I mean the dog",TRUE,adult-child
+21,38,child,matcher,K1,4,8,Yeah!,TRUE,adult-child
+21,39,parent,matcher,I1,4,8,Your turn,TRUE,adult-child
+21,40,child,matcher,C1,4,8,Both of them are bent over,TRUE,adult-child
+23,19,parent,matcher,K1,2,8,It does look like a tail,TRUE,adult-child
+23,24,parent,matcher,F1,3,8,he's crazy,TRUE,adult-child
+25,1,child,matcher,K1,1,4,it's got a triangle on its oh a dog? this one,TRUE,adult-child
+25,2,parent,matcher,E1,1,4,Can you describe it a little more? it has a pointy thing on the side of it?,TRUE,adult-child
+25,3,child,matcher,F1,1,4,"dancing i don't know okay, xxx okay, a box on its head?",TRUE,adult-child
+25,4,parent,matcher,B1,1,4,someone's walking with their head down?,TRUE,adult-child
+25,5,child,matcher,A1,1,4,okay,TRUE,adult-child
+25,6,parent,matcher,C1,1,4,a cat?,TRUE,adult-child
+25,7,child,matcher,D1,1,4,okay,TRUE,adult-child
+25,10,parent,matcher,G1,1,4,can you use words?,TRUE,adult-child
+25,13,parent,matcher,K1,2,4,can you use words instead of gestures?,TRUE,adult-child
+25,14,child,matcher,G1,2,4,a girl?,TRUE,adult-child
+25,21,child,matcher,A1,3,4,"i don't know, tell me more",TRUE,adult-child
+25,23,child,matcher,I1,3,4,"the pasta like this, and going like this",TRUE,adult-child
+25,26,parent,matcher,B1,3,4,"can you say a little more i didn't quite hear what you said, can you say it louder? okay",TRUE,adult-child
+25,31,parent,matcher,F1,4,4,"i can't hear you, what?",TRUE,adult-child
+25,40,child,matcher,E1,4,4,their arms up?,TRUE,adult-child
+26,1,child,matcher,C1,1,4,yeah,TRUE,adult-child
+26,2,parent,matcher,G1,1,4,and what are they doing? they're pointing? okay,FALSE,adult-child
+26,3,child,matcher,F1,1,4,"is it this, is the arm is going up?",TRUE,adult-child
+26,4,parent,matcher,I1,1,4,"okay, i think i know",TRUE,adult-child
+26,5,child,matcher,B1,1,4,yeah,TRUE,adult-child
+26,6,parent,matcher,E1,1,4,yes,TRUE,adult-child
+26,7,child,matcher,D1,1,4,"oh, it's like someone driving",TRUE,adult-child
+26,8,parent,matcher,K1,1,4,yes,TRUE,adult-child
+26,10,parent,matcher,H1,1,4,do you see someone pointing at the other? what else are they doing? okay,TRUE,adult-child
+26,11,parent,matcher,A1,2,4,okay,TRUE,adult-child
+26,12,child,matcher,K1,2,4,"i got that one, i can see it",TRUE,adult-child
+26,13,parent,matcher,B1,2,4,walking? ok,TRUE,adult-child
+26,14,child,matcher,H1,2,4,jumping? oh i have that one,TRUE,adult-child
+26,16,child,matcher,G1,2,4,oh yeah it does,TRUE,adult-child
+26,18,child,matcher,I1,2,4,"i did that one, it's like they're holding a bowl, a diamond, a half broken diamond",TRUE,adult-child
+26,20,child,matcher,E1,2,4,i have that one,TRUE,adult-child
+26,21,child,matcher,C1,3,4,"oh, i just did that one yeah",TRUE,adult-child
+26,23,child,matcher,F1,3,4,yeah,TRUE,adult-child
+26,24,parent,matcher,E1,3,4,"uh, someone jumping up with the feet, and the feet is not on the ground, it's up there, and it looks like he's touching the box and the other hand is down a little okay, i have that picture",TRUE,adult-child
+26,25,child,matcher,B1,3,4,oh i have that one,TRUE,adult-child
+26,26,parent,matcher,G1,3,4,yeah i have that picture,TRUE,adult-child
+26,27,child,matcher,D1,3,4,oh we already did that one,TRUE,adult-child
+26,28,parent,matcher,H1,3,4,okay can you tell me anything else?,TRUE,adult-child
+26,29,child,matcher,A1,3,4,we already did that one,TRUE,adult-child
+26,32,child,matcher,G1,4,4,oh i know that one,TRUE,adult-child
+26,33,parent,matcher,C1,4,4,someone leaping down? can you tell me anything else? it has a square head anything else?,TRUE,adult-child
+26,35,parent,matcher,F1,4,4,can you tell me anything else? okay,TRUE,adult-child
+26,38,child,matcher,E1,4,4,i know which one is that,TRUE,adult-child
+26,40,child,matcher,K1,4,4,and a tail it's a toyhouse head it's a dog,TRUE,adult-child
+27,2,parent,matcher,E1,1,4,"which one has the blue box? well I can't see it, so you have to tell me what it looks like like woosh",TRUE,adult-child
+27,4,parent,matcher,K1,1,4,which one do you see? which one has the blue box? oh he's like this?>,TRUE,adult-child
+27,6,parent,matcher,C1,1,4,which one has the blue box?,TRUE,adult-child
+27,8,parent,matcher,A1,1,4,"trotting? so it looks like the one running, not the man who's serving like that?",TRUE,adult-child
+27,10,parent,matcher,H1,1,4,what's in the blue box? is he like this?,TRUE,adult-child
+27,11,parent,matcher,B1,2,4,"ok, which one?",TRUE,adult-child
+27,13,parent,matcher,G1,2,4,which one's in the blue box?,TRUE,adult-child
+27,15,parent,matcher,D1,2,4,which one? you need to tell me which one like with it's arms out maybe?,TRUE,adult-child
+27,17,parent,matcher,F1,2,4,which one has the blue box? is it the flying man or the walking man? i can't see it so you have to tell me with words going like? that guy?,TRUE,adult-child
+27,22,parent,matcher,K1,3,4,"um, the man who's serving",TRUE,adult-child
+27,27,child,matcher,G1,3,4,the lady who's sitting,TRUE,adult-child
+27,30,parent,matcher,A1,3,4,he's kinda running?,TRUE,adult-child
+28,5,child,matcher,E1,1,4,That or this one,TRUE,adult-child
+28,15,parent,matcher,F1,2,4,It looks like he's dropping with his arms out with a diamond as his head With a diamond as his head let's try this one,TRUE,adult-child
+28,17,parent,matcher,K1,2,4,Jumping,FALSE,adult-child
+28,19,parent,matcher,E1,2,4,Uh both does it have both feet back or just one foot,TRUE,adult-child
+28,35,parent,matcher,F1,4,4,Very still hmm I'm not sure I know which one is very still,TRUE,adult-child
+30,1,child,matcher,G1,1,8,"okay, so which one?",TRUE,adult-child
+30,2,parent,matcher,H1,1,8,so which one am I supposed to pick?,TRUE,adult-child
+30,3,child,matcher,E1,1,8,which one?,TRUE,adult-child
+30,5,child,matcher,I1,1,8,yeah,TRUE,adult-child
+30,6,parent,matcher,K1,1,8,mhmm,TRUE,adult-child
+30,9,child,matcher,F1,1,8,like it's running like this? or-,FALSE,adult-child
+30,10,parent,matcher,A1,1,8,"describe the picture more so it's like one foot's on the ground, and one's in the air?",TRUE,adult-child
+30,11,parent,matcher,E1,2,8,is that the one i'm supposed to pick?,TRUE,adult-child
+30,15,parent,matcher,D1,2,8,a circle or a square? mhmm,TRUE,adult-child
+30,20,child,matcher,H1,2,8,"kneeling one, or the holding the like-",TRUE,adult-child
+30,22,parent,matcher,A1,3,8,okay,TRUE,adult-child
+31,6,parent,matcher,E1,1,6,"this one, this girl looks like she's jumping up",TRUE,adult-child
+31,14,child,matcher,I1,2,6,or maybe some apple xxx,TRUE,adult-child
+31,23,child,matcher,G1,3,6,"no, it really looks like a potty a square shaped potty",TRUE,adult-child
+32,2,parent,matcher,B1,1,6,ok,TRUE,adult-child
+32,5,child,matcher,G1,1,6,choose this girl that looks like it looks like a girl,TRUE,adult-child
+32,6,parent,matcher,K1,1,6,"one hand? say it again, yyy? is he sitting or is he bending over? okay",TRUE,adult-child
+32,8,parent,matcher,A1,1,6,okay,TRUE,adult-child
+32,10,parent,matcher,F1,1,6,that's running? it looks like it's running?,TRUE,adult-child
+32,14,child,matcher,A1,2,6,"it's your turn, daddy",TRUE,adult-child
+32,15,parent,matcher,H1,2,6,the cup in her hand? does she have one foot up and one foot down?,TRUE,adult-child
+32,17,parent,matcher,E1,2,6,does it look like he's jumping?,TRUE,adult-child
+32,19,parent,matcher,I1,2,6,okay,TRUE,adult-child
+32,21,child,matcher,C1,3,6,this one?,TRUE,adult-child
+32,25,child,matcher,H1,3,6,this one?,TRUE,adult-child
+32,26,parent,matcher,A1,3,6,okay,TRUE,adult-child
+32,27,child,matcher,E1,3,6,you mean this one?,TRUE,adult-child
+32,28,parent,matcher,K1,3,6,which one? is it laying down?,TRUE,adult-child
+32,29,child,matcher,I1,3,6,the waiter that what,TRUE,adult-child
+32,37,parent,matcher,G1,4,6,hmm? is it a long square? with a block? who has a sharp point on the right side? okay,TRUE,adult-child
+33,17,parent,matcher,A1,2,8,Um a person running,TRUE,adult-child
+33,18,child,matcher,B1,2,8,A person crawling,TRUE,adult-child
+33,32,child,matcher,I1,4,8,A person crawling,TRUE,adult-child
+33,37,parent,matcher,D1,4,8,Lying down,TRUE,adult-child
+34,2,parent,matcher,E1,1,8,What size is it the biggest triangles or the smaller triangles,TRUE,adult-child
+34,10,parent,matcher,K1,1,8,Mine has the arrow at the top,TRUE,adult-child
+34,11,parent,matcher,F1,2,8,Like a sad person walking,TRUE,adult-child
+34,13,parent,matcher,G1,2,8,Does it have a square on top,TRUE,adult-child
+35,2,parent,matcher,D1,1,4,does it look like something with..? one of mine looks a little like a dog and one looks kinda like an airplane a dog? an airplane? it looks like someone flying an airplane?,TRUE,adult-child
+35,4,parent,matcher,G1,1,4,a pigeon standing up? i see the pigeon standing up,TRUE,adult-child
+35,6,parent,matcher,B1,1,4,a tired person,FALSE,adult-child
+35,8,parent,matcher,K1,1,4,a puppy,TRUE,adult-child
+35,10,parent,matcher,F1,1,4,you have a bird in your blue box?,TRUE,adult-child
+35,13,parent,matcher,H1,2,4,are they pointing up or to the side?,TRUE,adult-child
+35,22,parent,matcher,F1,3,4,okay,TRUE,adult-child
+36,2,parent,matcher,B1,1,6,Look like he's sad Not the one that's holding a bowl right,TRUE,adult-child
+36,6,parent,matcher,A1,1,6,Fast or slow,TRUE,adult-child
+36,10,parent,matcher,C1,1,6,Two feet and one rock oh like someone's kicking a ball,TRUE,adult-child
+36,26,parent,matcher,B1,3,6,This one look this one looks like somebody walking lonely,TRUE,adult-child
+36,30,parent,matcher,K1,3,6,A pledge,TRUE,adult-child
+36,40,child,matcher,K1,4,6,Yay hooray I'm gonna catch the ball,TRUE,adult-child
+37,2,parent,matcher,C1,1,8,are they,TRUE,adult-child
+37,4,parent,matcher,F1,1,8,does it look more like a bird?,TRUE,adult-child
+37,6,parent,matcher,B1,1,8,with his head down?,TRUE,adult-child
+37,10,parent,matcher,A1,1,8,kind of walking?,TRUE,adult-child
+37,15,parent,matcher,G1,2,8,kind of like a seal with a ball on top?,TRUE,adult-child
+38,4,parent,matcher,K1,1,4,which one is it? is it the one laying down or standing up?,TRUE,adult-child
+38,6,parent,matcher,I1,1,4,"which one is it, does it have a diamond, does it have a- the little they both look like they square, so which one is it? is it the one that look like it got a tail? or the other one?",TRUE,adult-child
+38,7,child,matcher,A1,1,4,a tail?,FALSE,adult-child
+38,8,parent,matcher,C1,1,4,"which one is it? the one that's, the big square or the small square?",TRUE,adult-child
+38,9,child,matcher,G1,1,4,pick it?,TRUE,adult-child
+38,10,parent,matcher,E1,1,4,"okay there's two squares, so is it the one that look like it got a leg or the one that look like it got two legs the big one?",TRUE,adult-child
+38,11,parent,matcher,G1,2,4,which one is it? is it the one that's tall or the one that's small?,TRUE,adult-child
+38,13,parent,matcher,D1,2,4,"okay, what do you have? is it the one that's flat, or the one that's kinda tall?",FALSE,adult-child
+38,14,child,matcher,C1,2,4,flat?,TRUE,adult-child
+38,15,parent,matcher,B1,2,4,which one is it? is it the one that's kinda flat or the one that's tall?,TRUE,adult-child
+38,17,parent,matcher,H1,2,4,"is it the one with two legs, sticking out on the side? or is it the other one?",FALSE,adult-child
+38,19,parent,matcher,A1,2,4,"which one is it? is it the one with big arrow, or is the other one?",TRUE,adult-child
+38,24,parent,matcher,E1,3,4,"which one is it? is it the one with the two legs? they both diamond, so which one is it, the one with the diamond with the two legs, or the other one?",FALSE,adult-child
+38,26,parent,matcher,K1,3,4,which one is it? is it the one with the diamond or the one with the arrow?,TRUE,adult-child
+38,28,parent,matcher,I1,3,4,"the one that's, not the one that's standing up?",FALSE,adult-child
+38,30,parent,matcher,C1,3,4,which one is it? the one that's standing halfway or the one that's kinda laying down,TRUE,adult-child
+38,31,parent,matcher,D1,4,4,"which one? the one laying down, or the one, the big one?",FALSE,adult-child
+38,32,child,matcher,C1,4,4,okay,TRUE,adult-child
+38,33,parent,matcher,G1,4,4,which one is it? is it the one with the two little legs sticking out from the sides? or is it the other one?,TRUE,adult-child
+38,35,parent,matcher,A1,4,4,"which one is it? is it the big one with the big diamond, or the small diamond?",FALSE,adult-child
+38,36,child,matcher,K1,4,4,the big one?,TRUE,adult-child
+38,37,parent,matcher,H1,4,4,"which one is it, is it the big diamond, or the one that's laying down, kinda",FALSE,adult-child
+38,39,parent,matcher,B1,4,4,"they both squares, is it the one laying flat? or the one standing up?",TRUE,adult-child
+39,2,parent,matcher,G1,1,6,"ok, describe to me the one that's in the blue box for you now",TRUE,adult-child
+39,6,parent,matcher,H1,1,6,"interesting. ok, does it look like he's standing or jumping?",TRUE,adult-child
+39,8,parent,matcher,I1,1,6,"carrying a pitcher? hmm, okay",TRUE,adult-child
+39,26,parent,matcher,G1,3,6,sitting down or laying down?,TRUE,adult-child
+39,28,parent,matcher,H1,3,6,hmm. a priest walking or running or just standing?,TRUE,adult-child
+40,2,parent,matcher,C1,1,8,Oh that's a good one,TRUE,adult-child
+40,8,parent,matcher,G1,1,8,Mmm,TRUE,adult-child
+40,10,parent,matcher,A1,1,8,Mmm,TRUE,adult-child
+40,17,parent,matcher,I1,2,8,Ooh,TRUE,adult-child
+40,19,parent,matcher,D1,2,8,This guy is reading something,TRUE,adult-child
+40,27,child,matcher,D1,3,8,The reader,TRUE,adult-child
+40,37,parent,matcher,H1,4,8,"The reader? Ahh, okay",TRUE,adult-child
+42,1,child,matcher,G1,1,4,It's the big one bigger than the other one,TRUE,adult-child
+42,2,parent,matcher,K1,1,4,It has a tail And a hat,TRUE,adult-child
+42,4,parent,matcher,F1,1,4,He's doing the splits Feet are triangles,TRUE,adult-child
+42,6,parent,matcher,D1,1,4,Is it a rocketship laying down Laying down,TRUE,adult-child
+42,8,parent,matcher,I1,1,4,He has an icecream One leg,TRUE,adult-child
+42,10,parent,matcher,E1,1,4,Oh jumping,TRUE,adult-child
+42,13,parent,matcher,B1,2,4,A diamond head,TRUE,adult-child
+42,14,child,matcher,E1,2,4,Yup,TRUE,adult-child
+42,15,parent,matcher,A1,2,4,His leg is up With triangle feet And a diamond head,TRUE,adult-child
+42,17,parent,matcher,H1,2,4,He's reading a book,TRUE,adult-child
+42,18,child,matcher,K1,2,4,No legs no one leg,TRUE,adult-child
+42,22,parent,matcher,F1,3,4,Running,TRUE,adult-child
+42,25,child,matcher,H1,3,4,Yes that's like mine he's reading a book,TRUE,adult-child
+42,26,parent,matcher,I1,3,4,I have a blue box that is a cone but no ice cream Cone but no ice cream,TRUE,adult-child
+42,28,child,matcher,D1,3,4,And,TRUE,adult-child
+42,29,child,matcher,B1,3,4,It looks like a square,TRUE,adult-child
+42,32,child,matcher,K1,4,4,You can only see one leg and a tail and a triangle hat,TRUE,adult-child
+42,33,parent,matcher,B1,4,4,No ice cream,TRUE,adult-child
+42,39,parent,matcher,H1,4,4,He's reading,TRUE,adult-child
+43,2,parent,matcher,K1,1,8,Praying,TRUE,adult-child
+43,19,parent,matcher,H1,2,8,With,TRUE,adult-child
+43,26,parent,matcher,I1,3,8,Holding a bowl,TRUE,adult-child
+43,33,parent,matcher,A1,4,8,Running and playing,TRUE,adult-child
+43,35,parent,matcher,H1,4,8,Jumping Just standing,TRUE,adult-child
+44,2,parent,matcher,E1,1,4,Does it look like a shape of someoen running or someone jumping Do they have one foot on the ground or two feet on the ground On the ground Is one foot forward and one foot back,TRUE,adult-child
+44,3,child,matcher,A1,1,4,OK it's a a person running with one foot,TRUE,adult-child
+44,8,parent,matcher,B1,1,4,Is it wearing a hat No hat,TRUE,adult-child
+44,10,parent,matcher,H1,1,4,Hm does it have one foot on the ground or one foot behind him,TRUE,adult-child
+46,2,parent,matcher,E1,1,4,what's inside your box? inside of your blue box looks like a person that's flying?,TRUE,adult-child
+46,4,parent,matcher,A1,1,4,"what's inside of your blue box? ooh, like a person walking?",TRUE,adult-child
+46,6,parent,matcher,G1,1,4,"what's inside of your blue box? it has a square on its head? does the person look like they're bending over laying on the ground, or they're up straight on their knees so does it look like they're laying on their knees, or sitting up straight? so inside of your blue box is the person sitting up straight on their knees",TRUE,adult-child
+46,8,parent,matcher,C1,1,4,"the person look like they're laying down? like they're laying on their knees, bent over? okay",TRUE,adult-child
+46,9,child,matcher,F1,1,4,uh-huh,TRUE,adult-child
+46,10,parent,matcher,B1,1,4,it looks like a person walking away? inside of your blue box?,TRUE,adult-child
+46,11,parent,matcher,H1,2,4,"ok, what's inside of your blue box? does it look like a big black object or a bunch of tiny triangles and squares? is it like a thick square? like a rectangle? with a person standing up holding the tray? like a person with a thick rectangle holding the tray? okay",TRUE,adult-child
+46,13,parent,matcher,D1,2,4,what's in your blue box? in your box the person's laying down?,TRUE,adult-child
+46,15,parent,matcher,F1,2,4,what's inside of your blue box? the person's walking away? do you see that structure that looks like a puppy? or the one that's bending over? halfway over? that's not inside of your box? no? so the one that looks like the person walking away or possibly maybe looks like a bird?,TRUE,adult-child
+46,17,parent,matcher,K1,2,4,"what's inside of you rblue box? what's in your blue box? yeah, but we're going to do them again let's see how quickly we can go what's inside of your blue box? fast fast fast as fast as you can go no? no thank you? no thank you? ok, how about i describe it to you and you tell me which one to pick you have to tell me what's inside of your box, i don't know which picture to select your box have a puppy?",TRUE,adult-child
+46,19,parent,matcher,I1,2,4,what's inside of your blue box? you don't want to tell me? can we guess? do you have the person that is doing downward dog and yoga or-- or the person holding the tray you have the person holding the tray with food in your blue box?,TRUE,adult-child
+46,22,parent,matcher,E1,3,4,inside your box is a bird flying? or like a person jumping up?,TRUE,adult-child
+46,24,parent,matcher,C1,3,4,"does it look like the person's bending over down on the ground, with their face kissing the ground? or does it look like the person's jumping up, maybe a bird? okay",FALSE,adult-child
+46,28,parent,matcher,G1,3,4,"ok, what's inside of your blue box. which one's in your blue box? do you see the house? so, the house is inside of your blue box?",FALSE,adult-child
+46,30,parent,matcher,A1,3,4,what's inside of your blue box? a lady running is inside your blue box?,TRUE,adult-child
+46,31,parent,matcher,D1,4,4,"can you tell me what you see on your screen? and is the boy laying down or jumping up? oh, those are the two triangles that you seee",TRUE,adult-child
+46,32,child,matcher,C1,4,4,mhm,FALSE,adult-child
+46,35,parent,matcher,I1,4,4,that's inside of your blue box? and there's a square on top? and the food look like a triangle?,TRUE,adult-child
+46,37,parent,matcher,H1,4,4,what do you see? you see a mommy giving me food? with a square at the top kind of like a diamond? like a rocket ship with a diamond on top?,TRUE,adult-child
+46,39,parent,matcher,F1,4,4,a kid running? and it kind of look like the kids arms are wings? with triangles sticking out? pointy triangles? and two triangles,TRUE,adult-child
+47,3,child,matcher,E1,1,8,yes,FALSE,adult-child
+47,6,parent,matcher,K1,1,8,mhm,TRUE,adult-child
+47,14,child,matcher,B1,2,8,sad?,TRUE,adult-child
+47,19,parent,matcher,A1,2,8,does it look like a person running? or maybe a person laying down,TRUE,adult-child
+47,29,child,matcher,H1,3,8,and not walking,TRUE,adult-child
+47,38,child,matcher,B1,4,8,the one with the head down?,TRUE,adult-child
+48,1,child,matcher,F1,1,4,what do you want me to do?,TRUE,adult-child
+48,2,parent,matcher,A1,1,4,a cocka-doodle-doo? you have to describe it for me. what does it look like? okay,TRUE,adult-child
+48,3,child,matcher,C1,1,4,i do it?,TRUE,adult-child
+48,4,parent,matcher,G1,1,4,okay. you have to describe it. what is that person doing sitting on his butt? okay,TRUE,adult-child
+48,5,child,matcher,H1,1,4,i pick it?,FALSE,adult-child
+48,6,parent,matcher,E1,1,4,okay,FALSE,adult-child
+48,8,parent,matcher,B1,1,4,standing up? okay,TRUE,adult-child
+48,10,parent,matcher,I1,1,4,okay,TRUE,adult-child
+48,11,parent,matcher,H1,2,4,sitting down with his butt again?,TRUE,adult-child
+48,13,parent,matcher,K1,2,4,good,TRUE,adult-child
+49,2,parent,matcher,A1,1,8,"ok, but you have to describe it. does he look like he's at a drinking fountain, or the other one",TRUE,adult-child
+49,4,parent,matcher,K1,1,8,kinda sticking his booty out?,TRUE,adult-child
+49,6,parent,matcher,F1,1,8,okay,TRUE,adult-child
+49,14,child,matcher,G1,2,8,the one that,TRUE,adult-child
+49,19,parent,matcher,E1,2,8,the other one that looks like it's jumping in the air,TRUE,adult-child
+49,26,parent,matcher,F1,3,8,like partay?,TRUE,adult-child
+49,31,parent,matcher,D1,4,8,"alright, you're first",TRUE,adult-child
+49,39,parent,matcher,B1,4,8,the walking sad man,TRUE,adult-child
+50,1,child,matcher,K1,1,6,i don't have a blue box,TRUE,adult-child
+50,4,parent,matcher,A1,1,6,"oh, i see",TRUE,adult-child
+50,10,parent,matcher,D1,1,6,"oh on their belly, yes",TRUE,adult-child
+50,17,parent,matcher,F1,2,6,oh,TRUE,adult-child
+50,19,parent,matcher,I1,2,6,mhm,TRUE,adult-child
+50,21,child,matcher,I1,3,6,what you got?,TRUE,adult-child
+50,23,child,matcher,E1,3,6,what you got?,TRUE,adult-child
+50,27,child,matcher,F1,3,6,his hands in the air?,TRUE,adult-child
+51,2,parent,matcher,C1,1,4,looks like a dog? what is the dog doing,TRUE,adult-child
+51,5,child,matcher,B1,1,4,"ooh, I got it",TRUE,adult-child
+51,8,parent,matcher,I1,1,4,You think it's a man bending and giving a drink?,TRUE,adult-child
+51,9,child,matcher,D1,1,4,this may look like an airplane?,TRUE,adult-child
+51,10,parent,matcher,F1,1,4,it's trying to jump? ok,TRUE,adult-child
+51,11,parent,matcher,K1,2,4,he has a thorn on his back?,TRUE,adult-child
+51,17,parent,matcher,B1,2,4,they're walking with their hands in the pocket is that it?,TRUE,adult-child
+51,19,parent,matcher,D1,2,4,ok laying down playing on a tablet?,TRUE,adult-child
+51,32,child,matcher,C1,4,4,you mean the jumping for joy one?,TRUE,adult-child
+52,2,parent,matcher,H1,1,6,can you tell me?,TRUE,adult-child
+52,3,child,matcher,E1,1,6,the second one!,FALSE,adult-child
+52,9,child,matcher,F1,1,6,easy,TRUE,adult-child
+52,11,parent,matcher,D1,2,6,can you tell me,TRUE,adult-child
+52,21,child,matcher,B1,3,6,okay,TRUE,adult-child
+53,2,parent,matcher,F1,1,4,"okay, does it look like they have their hands in the air?",TRUE,adult-child
+53,6,parent,matcher,K1,1,4,oh and it looks like they're standing up? okay,TRUE,adult-child
+53,8,parent,matcher,G1,1,4,oh,TRUE,adult-child
+53,10,parent,matcher,A1,1,4,they're running? does it look like one foot is up in the air? okay,TRUE,adult-child
+53,11,parent,matcher,C1,2,4,"ooh, okay",TRUE,adult-child
+53,15,parent,matcher,D1,2,4,"ooh, this one",TRUE,adult-child
+53,26,parent,matcher,A1,3,4,running?,TRUE,adult-child
+53,39,parent,matcher,H1,4,4,Putting out their arm standing up,TRUE,adult-child
+54,1,child,matcher,G1,1,4,this one i think i think i think this one looks like it. the one with the square on top.,TRUE,adult-child
+54,2,parent,matcher,K1,1,4,"alright, so, which one's the blue box for you? can you describe it? oh, when we're cutting paper with scissors? mhm, so which one. can you tell me what it looks like in the blue box? does it look like ok, does one look like a dog and does one look like a person? does it look like that at all? no. hmm, well, I have to choose, so does it look like a hat at the very top? no? is there a big square on one of them? so two triangles at the bottom that are connected, you're saying because that one with the triangles at the bottom doesn't have the blue lines? or the blue box? ok, so the triangles at the bottom doesn't have the blue box so I should choose the other one. ok, thank you",TRUE,adult-child
+54,3,child,matcher,H1,1,4,yes sure,TRUE,adult-child
+54,4,parent,matcher,A1,1,4,"alright, so which one has the blue box for you? ok, thank you! that's very descriptive, i'm going to pick the one that looks like the person running, okay? with two feet at the bottom, that looks like they're running, okay? thank you",TRUE,adult-child
+54,5,child,matcher,F1,1,4,is it this one?,TRUE,adult-child
+54,6,parent,matcher,B1,1,4,"the person's walking now? ok, that's very good. i'll pick that one",TRUE,adult-child
+54,7,child,matcher,I1,1,4,it doesn't look like this one is jumping because it's going like (gestures with hand out) yeah. it's holding a triangle.,TRUE,adult-child
+54,8,parent,matcher,E1,1,4,"ok, which blue box do you have? like he's jumping? so it's not the person walking, it's the person who looks like they're jumping yeah, i see that person too, but i'm going to pick the person who's jumping because that's the blue box you have, right?",TRUE,adult-child
+54,10,parent,matcher,D1,1,4,"oh my, that's not good for that person! that's such a far distance it's not good for someone to fall that far okay he fell down and died, that's what it looks like? and lost their head? i don't know what side it's on, but i'm going to pick the one that's the person who fell down. alright, so the person who's lying down they fell down and lost their head",TRUE,adult-child
+54,11,parent,matcher,G1,2,4,what do you have? well do you have a blue box? well it's your turn again then! oh yeah? so it looks like he's sitting on a big square then if he doesn't have legs? okay i'll choose that one,TRUE,adult-child
+54,12,child,matcher,K1,2,4,i see it right there! that's the one you said was looking like a jet this one? so the one that's pointing this way,TRUE,adult-child
+54,13,parent,matcher,F1,2,4,"okay, good job so what do you have now? ok, so what does it look like? three heads? wow ok, so not the person walking but the person who's running really fast",TRUE,adult-child
+54,15,parent,matcher,C1,2,4,"the walking? ok, alright, they're kneeling",TRUE,adult-child
+54,16,child,matcher,D1,2,4,no he's not a jet yeah but don't call him a jet,TRUE,adult-child
+54,17,parent,matcher,H1,2,4,"ok, which one do you have? you only see one foot? so it's not the person who's jumping, it's the one who's walking with one foot ok, so i'm going to pick the one who's not jumping",TRUE,adult-child
+54,18,child,matcher,A1,2,4,"no, running",TRUE,adult-child
+54,19,parent,matcher,I1,2,4,"ok, so which one do you have now? are they holding something? are they holding something? a triangle? i should pick the one holding the triangle?",TRUE,adult-child
+54,20,child,matcher,E1,2,4,you mean like this?,TRUE,adult-child
+54,21,child,matcher,I1,3,4,"no, i don't have a square?",TRUE,adult-child
+54,22,parent,matcher,K1,3,4,"ok, what should i pick? pick the one who's pointing? okay",TRUE,adult-child
+54,24,parent,matcher,D1,3,4,the one who fell down? okay,TRUE,adult-child
+54,25,child,matcher,G1,3,4,this one?,TRUE,adult-child
+54,26,parent,matcher,E1,3,4,"ok, which one do i pick? it's jumping?",TRUE,adult-child
+54,28,parent,matcher,B1,3,4,"ok, which one the person walking? okay",TRUE,adult-child
+54,30,parent,matcher,A1,3,4,running?,TRUE,adult-child
+54,31,parent,matcher,G1,4,4,"alright, which one do i pick? sitting on the box? or kneeling?",TRUE,adult-child
+54,33,parent,matcher,C1,4,4,"ok, which one? kneeling down? okay",TRUE,adult-child
+54,36,child,matcher,A1,4,4,the one who's running,TRUE,adult-child
+54,37,parent,matcher,I1,4,4,the triangle,TRUE,adult-child
+54,39,parent,matcher,H1,4,4,one foot,TRUE,adult-child
+56,1,child,matcher,E1,1,4,yup,TRUE,adult-child
+56,2,parent,matcher,D1,1,4,which one is your blue box around? the one that looks like an airplane? you got it.,TRUE,adult-child
+56,4,parent,matcher,B1,1,4,"okay, which one do you have? which one is the blue box around? the person walking? okay",TRUE,adult-child
+56,5,child,matcher,F1,1,4,i think it's a dog this one? it's a human? i'm going to pick this,FALSE,adult-child
+56,6,parent,matcher,I1,1,4,which one do i have to pick? look at your screen and tell me where is the blue box around? what does the picture look like? does it look like somebody kissing the ground or a doggie on a couch? okay,TRUE,adult-child
+56,7,child,matcher,K1,1,4,okay,TRUE,adult-child
+56,8,parent,matcher,C1,1,4,"alright, which one do you think? your blue box is around what? okay",TRUE,adult-child
+56,9,child,matcher,A1,1,4,yup,TRUE,adult-child
+56,10,parent,matcher,H1,1,4,there's a person standing up or a person laying down. which one is it? okay,TRUE,adult-child
+56,11,parent,matcher,K1,2,4,is that what the blue box is around? i think it looks like a doggie too,TRUE,adult-child
+56,13,parent,matcher,F1,2,4,what's your picture of?,TRUE,adult-child
+56,14,child,matcher,D1,2,4,it is! i have the airplane too!,TRUE,adult-child
+56,15,parent,matcher,E1,2,4,okay,TRUE,adult-child
+56,17,parent,matcher,A1,2,4,can you show me which one the picture is around? tell me with your words? what does it look like?,TRUE,adult-child
+56,18,child,matcher,I1,2,4,yeah okay,FALSE,adult-child
+56,19,parent,matcher,G1,2,4,this one's a doggie too? does it have a blue box around it? okay,TRUE,adult-child
+56,20,child,matcher,B1,2,4,yup,TRUE,adult-child
+56,21,child,matcher,F1,3,4,yeah,TRUE,adult-child
+56,22,parent,matcher,I1,3,4,"which one do you want me to pick? and they have the blue square around them? ok, good job",FALSE,adult-child
+56,23,child,matcher,G1,3,4,its when a person's in an airplane flying to florida,FALSE,adult-child
+56,24,parent,matcher,H1,3,4,"which one should i pick? which one has a blue box around it? what does it look like? it does? what is the human doing? sitting in a wheelchair, huh? no don't press it, it's my turn are they standing up or are they laying down?",TRUE,adult-child
+56,25,child,matcher,K1,3,4,yeah,TRUE,adult-child
+56,26,parent,matcher,B1,3,4,good job! which one do you have? the blue square is around what?,TRUE,adult-child
+56,28,parent,matcher,D1,3,4,"it's running ok, which one do you have? in an airplane, huh?",TRUE,adult-child
+56,30,parent,matcher,C1,3,4,which one do you have? what does it look like?,FALSE,adult-child
+56,31,parent,matcher,E1,4,4,"ok, which one do you have a blue square around? yay that's so fun!",TRUE,adult-child
+56,32,child,matcher,D1,4,4,i don't have no blue square,TRUE,adult-child
+56,33,parent,matcher,G1,4,4,"do you have a blue square? no, put it down sweetie. tell me what it's around they're falling or they're sitting down? they're falling",FALSE,adult-child
+56,34,child,matcher,I1,4,4,"i don't have a blue square, i have a person",TRUE,adult-child
+56,35,parent,matcher,K1,4,4,"ok, which one do you have?",TRUE,adult-child
+56,36,child,matcher,B1,4,4,i have it,TRUE,adult-child
+56,37,parent,matcher,A1,4,4,alright,TRUE,adult-child
+56,38,child,matcher,H1,4,4,i'm xxx,FALSE,adult-child
+56,39,parent,matcher,F1,4,4,okay,TRUE,adult-child
+56,40,child,matcher,C1,4,4,i don't have it,TRUE,adult-child
+57,2,parent,matcher,E1,1,8,the arms that's a triangle. does it look like it's holding something in it’s hand?,TRUE,adult-child
+57,4,parent,matcher,G1,1,8,like it's sitting on a box?,TRUE,adult-child
+58,1,child,matcher,I1,1,6,"it's easy, a guy holding a triangle",TRUE,adult-child
+58,2,parent,matcher,F1,1,6,i think it's this one,FALSE,adult-child
+58,3,child,matcher,E1,1,6,i know what that it,TRUE,adult-child
+58,5,child,matcher,C1,1,6,he's like bowing,TRUE,adult-child
+58,9,child,matcher,B1,1,6,that's so easy,TRUE,adult-child
+58,19,parent,matcher,B1,2,6,that sounds exactly like what I said,TRUE,adult-child
+58,20,child,matcher,F1,2,6,that's not on here,FALSE,adult-child
+58,22,child,matcher,D1,3,6,somebody driving an airplane,TRUE,adult-child
+58,30,parent,matcher,F1,3,6,ooh I like that!,TRUE,adult-child
+58,31,parent,matcher,B1,4,6,is it the opposite of the butler holding something?,TRUE,adult-child
+59,10,parent,matcher,F1,1,6,There is a square on top?,TRUE,adult-child
+59,11,parent,matcher,B1,2,6,"It's okay, tell me what you see.",TRUE,adult-child
+59,13,parent,matcher,D1,2,6,I don't have a blue box either. You don't have a blue box? Are you tricking me?,TRUE,adult-child
+59,18,child,matcher,F1,2,6,It's a duck. Nevermind.,TRUE,adult-child
+59,27,child,matcher,D1,3,6,Where's yyy?,TRUE,adult-child
+59,29,child,matcher,I1,3,6,Mommy!,TRUE,adult-child
+59,32,child,matcher,K1,4,6,this one has a xxx,TRUE,adult-child
+59,33,parent,matcher,B1,4,6,What does it decribe so I can pick it?,TRUE,adult-child
+60,2,parent,matcher,F1,1,4,can you describe it? is it somebody... does it look like someone kneeling down or someone holding up their hands?,TRUE,adult-child
+60,4,parent,matcher,K1,1,4,looks like a dog? Okay,TRUE,adult-child
+60,6,parent,matcher,B1,1,4,"now which one should I click on? Which one has what does the one in the blue square look like? does it look like someone walking I can't look at yours, you need to describe it to me. Does it look like someone walking looking at the ground or okay",TRUE,adult-child
+60,8,parent,matcher,H1,1,4,NA NA hmm hmm,FALSE,adult-child
+60,11,parent,matcher,A1,2,4,"what does the one in your blue square look like? cool, thank you",TRUE,adult-child
+60,13,parent,matcher,I1,2,4,"okay, what does the one on the blue square look like?",TRUE,adult-child
+60,19,parent,matcher,C1,2,4,Now can you describe the picture in the blue square? hmm,TRUE,adult-child
+60,22,parent,matcher,F1,3,4,"what's- what does the guy, what does it looks like? okay",TRUE,adult-child
+60,24,parent,matcher,G1,3,4,"what does he look like? Well I don't have a blue square so you have to describe it to me so I know which one to click okay, hmm-hmm.",TRUE,adult-child
+60,26,parent,matcher,K1,3,4,"can you describe yours, describe maybe the shape of his head? What does the one in the blue square look like?",TRUE,adult-child
+60,28,parent,matcher,H1,3,4,what does the one in the blue square look like?,TRUE,adult-child
+60,29,child,matcher,C1,3,4,now which one do I tap?,TRUE,adult-child
+60,34,child,matcher,K1,4,4,uh huh,TRUE,adult-child
+60,39,parent,matcher,D1,4,4,what does the one in the blue square look like? well can you describe the one that's inside the blue square?,TRUE,adult-child
+60,40,child,matcher,H1,4,4,"well what is it? Oh yeah, this one.",TRUE,adult-child
+61,2,parent,matcher,I1,1,4,OK what's the human doing is he standing upright or is he kind of leaning over,TRUE,adult-child
+61,4,parent,matcher,A1,1,4,Dancing so it looks like it has two legs on the bottom,TRUE,adult-child
+61,6,parent,matcher,F1,1,4,OK is the square on top or on the side But on like above it leaning backwards,TRUE,adult-child
+61,8,parent,matcher,G1,1,4,Uh OK does it look like it maybe has like a square and a triangle on the bottom,TRUE,adult-child
+61,10,parent,matcher,H1,1,4,Like it's sitting maybe Is the square on top or to the side,TRUE,adult-child
+61,13,parent,matcher,B1,2,4,It's sad is the square to the side of it,FALSE,adult-child
+61,17,parent,matcher,E1,2,4,Got it,TRUE,adult-child
+61,19,parent,matcher,C1,2,4,This one looks like its diving,TRUE,adult-child
+61,28,parent,matcher,I1,3,4,Oh OK so not the diving one,TRUE,adult-child
+61,36,child,matcher,H1,4,4,No this is the one I thought is a school,TRUE,adult-child
+61,40,child,matcher,I1,4,4,Yes,TRUE,adult-child
+62,8,parent,matcher,F1,1,8,Like a dog,TRUE,adult-child
+62,16,child,matcher,E1,2,8,Jumping up in the air,TRUE,adult-child
+62,28,parent,matcher,G1,3,8,The person with the dress sitting on the stairs,TRUE,adult-child
+62,31,child,matcher,A1,4,8,Someone running,TRUE,adult-child
+62,37,parent,matcher,D1,4,8,The hover the guy in the hover craft,TRUE,adult-child
+64,1,child,matcher,F1,1,4,okay,TRUE,adult-child
+64,2,parent,matcher,E1,1,4,"I don't know, tell me which one to touch",FALSE,adult-child
+64,3,child,matcher,C1,1,4,"um, so, okay",TRUE,adult-child
+64,4,parent,matcher,B1,1,4,ok,TRUE,adult-child
+64,6,parent,matcher,G1,1,4,lying down?,FALSE,adult-child
+64,7,child,matcher,K1,1,4,"and, and xxx it's okay but okay but I know, but okay but he's",TRUE,adult-child
+64,8,parent,matcher,I1,1,4,the one who's holding a bowl and sticking his butt out? okay,TRUE,adult-child
+64,9,child,matcher,H1,1,4,a ball,TRUE,adult-child
+64,10,parent,matcher,A1,1,4,okay,TRUE,adult-child
+64,11,parent,matcher,D1,2,4,okay you tell me ok,TRUE,adult-child
+64,13,parent,matcher,K1,2,4,"they both kinda look like they are sticking their butt, the one with the arms out with the arrow head? okay",TRUE,adult-child
+64,14,child,matcher,B1,2,4,who's not walking? who's walking or not walking?,TRUE,adult-child
+64,15,parent,matcher,H1,2,4,okay,TRUE,adult-child
+64,17,parent,matcher,C1,2,4,"they both have square heads. Is the jumping one, or the, with the head stand one I can't see it, tell me, is it the one that looks like it's jumping or the one that looks like it's doing a head stand okay",TRUE,adult-child
+64,19,parent,matcher,F1,2,4,with no arms? that's the one that's not in the blue box? okay,TRUE,adult-child
+64,20,child,matcher,I1,2,4,fine,TRUE,adult-child
+64,22,parent,matcher,E1,3,4,okay is that the one in the blue box?,TRUE,adult-child
+64,24,parent,matcher,A1,3,4,is that the one in the blue box? okay,TRUE,adult-child
+64,26,parent,matcher,G1,3,4,is that the blue box?,TRUE,adult-child
+64,28,parent,matcher,I1,3,4,is that blue box?,TRUE,adult-child
+64,29,child,matcher,F1,3,4,"which happy dance? so like this one? is it ok, is that the one",TRUE,adult-child
+64,31,parent,matcher,C1,4,4,"okay, so the person doing a head stand is in the blue box?",TRUE,adult-child
+64,33,parent,matcher,F1,4,4,"they both have square heads, happy dance or head stand happy dance is in the blue box?",TRUE,adult-child
+64,35,parent,matcher,K1,4,4,is it in the blue box,TRUE,adult-child
+64,36,child,matcher,B1,4,4,"okay, is it the one holding the bowl? okay",TRUE,adult-child
+64,37,parent,matcher,D1,4,4,is that the blue box?,TRUE,adult-child
+64,39,parent,matcher,H1,4,4,holding the bowl,TRUE,adult-child
+65,2,parent,matcher,D1,1,4,which one? you have to describe it to me is it the one standing up or the one lying down?,TRUE,adult-child
+65,4,parent,matcher,E1,1,4,"okay, which one do I pick? okay",TRUE,adult-child
+65,6,parent,matcher,G1,1,4,which one do I pick?,TRUE,adult-child
+65,8,parent,matcher,A1,1,4,which one do I pick?,TRUE,adult-child
+65,10,parent,matcher,K1,1,4,which one do I pick? A one thats standing like,TRUE,adult-child
+65,11,parent,matcher,F1,2,4,which one do I pick?,TRUE,adult-child
+65,13,parent,matcher,I1,2,4,which one do I pick? okay,TRUE,adult-child
+65,15,parent,matcher,H1,2,4,which one do I get? okay,FALSE,adult-child
+65,17,parent,matcher,B1,2,4,which one do I pick? okay,FALSE,adult-child
+65,19,parent,matcher,C1,2,4,okay which one do I get? okay,TRUE,adult-child
+65,22,parent,matcher,E1,3,4,"which one? um, it's, he's jumping wait which one? on his knees or the one jumping?",TRUE,adult-child
+65,24,parent,matcher,A1,3,4,"okay, which one?",TRUE,adult-child
+65,25,child,matcher,H1,3,4,is it this guy?,TRUE,adult-child
+65,26,parent,matcher,K1,3,4,"okay, which one?",TRUE,adult-child
+65,28,parent,matcher,G1,3,4,"which one do I do? Okay, so, which one do I pick? okay",TRUE,adult-child
+65,30,parent,matcher,D1,3,4,So which one am I supposed to pick? Okay,TRUE,adult-child
+65,33,parent,matcher,H1,4,4,"which one? which one I can' see it, which one? The one lying down or the one on his knees?",TRUE,adult-child
+65,35,parent,matcher,F1,4,4,so which one do I want? the one that's skipping? okay,TRUE,adult-child
+65,37,parent,matcher,B1,4,4,which one?,TRUE,adult-child
+65,38,child,matcher,E1,4,4,I know that guy already,TRUE,adult-child
+65,39,parent,matcher,C1,4,4,which one do I do? okay,TRUE,adult-child
+66,1,child,matcher,F1,1,6,is it,TRUE,adult-child
+66,2,parent,matcher,K1,1,6,"mhm that's very helpful, thank you, i think i know which one",TRUE,adult-child
+66,4,parent,matcher,G1,1,6,mmm mhm ok,TRUE,adult-child
+66,6,parent,matcher,I1,1,6,"hmm oh yeah that's a really helpful clue, thank you",TRUE,adult-child
+66,7,child,matcher,D1,1,6,"oh that one is super easy because I see the one on its tummy, that's super easy",TRUE,adult-child
+66,8,parent,matcher,A1,1,6,"ok yes, I think I know which one that is",TRUE,adult-child
+66,10,parent,matcher,C1,1,6,ok let's see if I got the right one,TRUE,adult-child
+66,11,parent,matcher,H1,2,6,"mhm like an emperor? okay, I think I know which one you mean",TRUE,adult-child
+66,12,child,matcher,I1,2,6,"yeah that soo, but, I already said that so I know",TRUE,adult-child
+66,13,parent,matcher,E1,2,6,"mhm I think I know which one yes, there we go.",TRUE,adult-child
+66,15,parent,matcher,F1,2,6,"oh, human head, bird body and bird feet. I think I know which one.",TRUE,adult-child
+66,16,child,matcher,G1,2,6,no she's like looking up at the sky like this,TRUE,adult-child
+66,17,parent,matcher,D1,2,6,ahh okay,TRUE,adult-child
+66,18,child,matcher,C1,2,6,"that, I already I really know that one xxx because I already described it and looked at the picture",TRUE,adult-child
+66,19,parent,matcher,B1,2,6,"mhm so walking, not crawling? okay I think I know which one",TRUE,adult-child
+66,20,child,matcher,K1,2,6,"I think so, it had a human head, a we-- a pointy hat, dog tail, and like uh like a um dog body, dog um paws on front and leg xxx yeah",TRUE,adult-child
+66,22,parent,matcher,C1,3,6,okay,TRUE,adult-child
+66,23,child,matcher,E1,3,6,"I kn- I know because and I made a good description about this no I said hands up in the air, not just a hand up, in the air, both hands",TRUE,adult-child
+66,24,parent,matcher,K1,3,6,"oh this guy I know so well, so it has, so should I say the, should I say the same thing with the, xxx pointy hat mhm yeah, say those things cause that definitely tells me that I know who it is",TRUE,adult-child
+66,26,parent,matcher,A1,3,6,"ohh I like that description, I'm gonna guess it's this one",TRUE,adult-child
+66,28,parent,matcher,G1,3,6,"okay, got that one",TRUE,adult-child
+66,30,parent,matcher,I1,3,6,okay,TRUE,adult-child
+66,31,parent,matcher,B1,4,6,"mhm okay, I think I know which one it is",TRUE,adult-child
+66,32,child,matcher,I1,4,6,"it's a waiter's holding the bow, bowl",TRUE,adult-child
+66,33,parent,matcher,H1,4,6,emperor you said? I know emperor,TRUE,adult-child
+66,34,child,matcher,G1,4,6,got it,TRUE,adult-child
+66,36,child,matcher,A1,4,6,I got it,TRUE,adult-child
+66,37,parent,matcher,D1,4,6,you on your tummy reading,TRUE,adult-child
+66,38,child,matcher,K1,4,6,"the doggy, I got it",TRUE,adult-child
+66,39,parent,matcher,F1,4,6,"alright, bird wings",TRUE,adult-child
+66,40,child,matcher,C1,4,6,I won it,TRUE,adult-child
+67,2,parent,matcher,D1,1,8,okay,TRUE,adult-child
+67,4,parent,matcher,H1,1,8,alright,TRUE,adult-child
+67,6,parent,matcher,E1,1,8,okay,TRUE,adult-child
+67,10,parent,matcher,B1,1,8,okay,TRUE,adult-child
+67,13,parent,matcher,K1,2,8,mhm,TRUE,adult-child
+67,15,parent,matcher,I1,2,8,okay,TRUE,adult-child
+67,19,parent,matcher,G1,2,8,hmm not a human,TRUE,adult-child
+67,30,parent,matcher,F1,3,8,"running, okay",TRUE,adult-child
+68,4,parent,matcher,I1,1,6,ah,FALSE,adult-child
+68,6,parent,matcher,B1,1,6,oh okay,TRUE,adult-child
+68,11,parent,matcher,H1,2,6,oh kay,FALSE,adult-child
+68,13,parent,matcher,F1,2,6,yayy,TRUE,adult-child
+68,15,parent,matcher,G1,2,6,kind of a house?,TRUE,adult-child
+68,20,child,matcher,I1,2,6,that's what I did last time,TRUE,adult-child
+68,24,parent,matcher,K1,3,6,please give me this food I don't know which one it is,TRUE,adult-child
+68,28,parent,matcher,D1,3,6,sleeping,TRUE,adult-child
+68,34,child,matcher,K1,4,6,ouu are you-,TRUE,adult-child
+68,35,parent,matcher,F1,4,6,triangle feet,TRUE,adult-child
+69,1,child,matcher,E1,1,6,Yeah,TRUE,adult-child
+69,8,parent,matcher,F1,1,6,"He's running around screaming? Okay, I got it",TRUE,adult-child
+69,10,parent,matcher,I1,1,6,"He's holding a tray, very good",TRUE,adult-child
+69,13,parent,matcher,K1,2,6,Okay,TRUE,adult-child
+69,17,parent,matcher,H1,2,6,Ooh okay,TRUE,adult-child
+69,19,parent,matcher,E1,2,6,Wow,TRUE,adult-child
+69,30,parent,matcher,D1,3,6,Taking a nap?,TRUE,adult-child
+69,35,parent,matcher,C1,4,6,He's like um-,TRUE,adult-child
+70,1,child,matcher,I1,1,6,and I look like--,TRUE,adult-child
+70,5,child,matcher,A1,1,6,umm okay,TRUE,adult-child
+70,6,parent,matcher,D1,1,6,it look like what?,TRUE,adult-child
+70,8,parent,matcher,H1,1,6,you don't see no legs?,TRUE,adult-child
+70,12,child,matcher,E1,2,6,"I agree, I saw that one when I was running xxx",TRUE,adult-child
+70,13,parent,matcher,B1,2,6,sad?,TRUE,adult-child
+70,14,child,matcher,C1,2,6,you got the one that was up?,TRUE,adult-child
+70,15,parent,matcher,F1,2,6,jumping and doing the split? okay,TRUE,adult-child
+70,16,child,matcher,G1,2,6,hm? that's what I said,TRUE,adult-child
+70,20,child,matcher,H1,2,6,it look like to me too,TRUE,adult-child
+70,21,child,matcher,I1,3,6,"mmm left, I mean right",TRUE,adult-child
+70,27,child,matcher,A1,3,6,"lee, left",TRUE,adult-child
+70,28,parent,matcher,C1,3,6,what? how somebody look crawling down to the basement? who you say crawling in the basement?,TRUE,adult-child
+71,4,parent,matcher,G1,1,8,okay,TRUE,adult-child
+71,6,parent,matcher,C1,1,8,okay,TRUE,adult-child
+71,15,parent,matcher,E1,2,8,which way? okay,TRUE,adult-child
+71,17,parent,matcher,I1,2,8,kay,TRUE,adult-child
+71,26,parent,matcher,K1,3,8,it looks like someone has a tail and their head is an arrow,TRUE,adult-child
+71,33,parent,matcher,I1,4,8,okay don't get too creative here,FALSE,adult-child
+71,37,parent,matcher,F1,4,8,okay,TRUE,adult-child
+71,38,child,matcher,B1,4,8,hmm,FALSE,adult-child
+71,39,parent,matcher,E1,4,8,diamond-shaped head?,FALSE,adult-child
+72,1,child,matcher,G1,1,8,yeah,FALSE,adult-child
+72,2,parent,matcher,K1,1,8,there is a square under the point thing? okay so it's that one,TRUE,adult-child
+72,3,child,matcher,F1,1,8,oh yeah,TRUE,adult-child
+72,5,child,matcher,A1,1,8,oh,TRUE,adult-child
+72,6,parent,matcher,I1,1,8,a triangle hand? okay,TRUE,adult-child
+72,8,parent,matcher,C1,1,8,"it's head is floating, ok",TRUE,adult-child
+73,1,child,matcher,K1,1,6,I think something is.. it's two a dog?,TRUE,adult-child
+73,2,parent,matcher,E1,1,6,"um, somebody that's holding something that's, I guess a person holding something?",FALSE,adult-child
+73,3,child,matcher,B1,1,6,oh a people?,TRUE,adult-child
+73,4,parent,matcher,C1,1,6,"oh it is okay, uh I see yeah, um yeah we're gonna say this somebody uh doing the tornado drill",TRUE,adult-child
+73,5,child,matcher,F1,1,6,uh a xxx big bird? a a puppy? it's a human? it kind of- it might be a alien,FALSE,adult-child
+73,6,parent,matcher,D1,1,6,is it a airplane?,TRUE,adult-child
+73,7,child,matcher,A1,1,6,okay,TRUE,adult-child
+73,8,parent,matcher,I1,1,6,okay,TRUE,adult-child
+73,9,child,matcher,G1,1,6,"or pr-- is it like, is it the president? yeah, yup",TRUE,adult-child
+73,10,parent,matcher,H1,1,6,"say that again sit down, sit down mmm does it look like it, does does it look like the shapes are somebody-- you said somebody lying? are they, is it like, look like it's standing still, like they're holding something?",TRUE,adult-child
+73,11,parent,matcher,G1,2,6,okay,TRUE,adult-child
+73,12,child,matcher,D1,2,6,okay is the book is like-,FALSE,adult-child
+73,13,parent,matcher,K1,2,6,is it like a triangle is like a tail? mm,TRUE,adult-child
+73,14,child,matcher,H1,2,6,"is it a, is it  a people who's running a airplane? oh uh, they're in a airplane? are they i , in a airplane?",FALSE,adult-child
+73,15,parent,matcher,B1,2,6,somebody's walking and feeling sad,TRUE,adult-child
+73,16,child,matcher,I1,2,6,uhh uh giving people some food?,TRUE,adult-child
+73,17,parent,matcher,F1,2,6,okay,TRUE,adult-child
+73,18,child,matcher,C1,2,6,"like doing the- the- or doin, doing the drills",TRUE,adult-child
+73,20,child,matcher,E1,2,6,no I think,FALSE,adult-child
+73,21,child,matcher,K1,3,6,"uh yeah, I think",TRUE,adult-child
+73,22,parent,matcher,I1,3,6,okay,TRUE,adult-child
+73,23,child,matcher,G1,3,6,or riding a airplane I think,FALSE,adult-child
+73,25,child,matcher,F1,3,6,uh somebody's trying to catch something?,TRUE,adult-child
+73,29,child,matcher,A1,3,6,uhh okay,TRUE,adult-child
+73,31,parent,matcher,K1,4,6,mhm,TRUE,adult-child
+73,32,child,matcher,C1,4,6,"um, there's somebody doing the tornado drill",TRUE,adult-child
+73,34,child,matcher,D1,4,6,somebody's riding a airplane because beca- because he's holdi- because he's had like a xxx ride a airplane like that one,TRUE,adult-child
+73,38,child,matcher,E1,4,6,or jumping for joys,TRUE,adult-child
+73,39,parent,matcher,G1,4,6,"I can't hear you honey are you looking at it? okay, say it again there's somebody who's telling somebody not to to do something bad again? oh you mean somebody is sitting down scolding them? oh",TRUE,adult-child
+73,40,child,matcher,H1,4,6,"no it's like, it's people is pointing at people",TRUE,adult-child
+74,2,parent,matcher,G1,1,6,it's- okay,TRUE,adult-child
+74,22,parent,matcher,G1,3,6,okay what's the statue doing oh,TRUE,adult-child
+74,28,parent,matcher,C1,3,6,okay,TRUE,adult-child
+74,37,parent,matcher,A1,4,6,running?,TRUE,adult-child
+75,4,parent,matcher,K1,1,8,a cliff with an edge on the bottom?,TRUE,adult-child
+75,6,parent,matcher,E1,1,8,like a flying squirrel,TRUE,adult-child
+75,12,child,matcher,C1,2,8,that's the one whose kneel-,TRUE,adult-child
+75,14,child,matcher,K1,2,8,"yeah now it does to me doesn't look like a cliff anymore,  wait a minute, that's not the cliff, that's not the cliff, though, that's something different yeah me too, but the cliff has a jagged",TRUE,adult-child
+75,17,parent,matcher,G1,2,8,mmm,TRUE,adult-child
+75,18,child,matcher,I1,2,8,hmmm,TRUE,adult-child
+75,20,child,matcher,B1,2,8,is this the sad lonely person walking?,TRUE,adult-child
+75,37,parent,matcher,G1,4,8,hmm,TRUE,adult-child
+101,2,right,matcher,F1,1,NA,okay yup,TRUE,adult-adult
+101,12,left,matcher,E1,2,NA,okay,TRUE,adult-adult
+101,14,left,matcher,I1,2,NA,mhm,TRUE,adult-adult
+101,17,right,matcher,G1,2,NA,mm,TRUE,adult-adult
+101,26,right,matcher,F1,3,NA,mm,TRUE,adult-adult
+102,1,right,matcher,E1,1,NA,mhm,TRUE,adult-adult
+102,4,left,matcher,B1,1,NA,are they like walking? or just standing?,TRUE,adult-adult
+102,5,right,matcher,H1,1,NA,holding something?,TRUE,adult-adult
+102,6,left,matcher,F1,1,NA,mhm,TRUE,adult-adult
+102,7,right,matcher,D1,1,NA,laying down,TRUE,adult-adult
+102,12,right,matcher,A1,2,NA,mhm,TRUE,adult-adult
+102,18,right,matcher,C1,2,NA,mmm,TRUE,adult-adult
+102,20,right,matcher,G1,2,NA,mm hm,TRUE,adult-adult
+102,21,right,matcher,I1,3,NA,mm hm,TRUE,adult-adult
+102,25,right,matcher,K1,3,NA,okay,TRUE,adult-adult
+103,17,right,matcher,F1,2,NA,not sitting? ok,TRUE,adult-adult
+104,1,right,matcher,E1,1,NA,yeah,TRUE,adult-adult
+104,2,left,matcher,K1,1,NA,"okay, does it have like an arrow for the head oh okay, great, nice",TRUE,adult-adult
+104,3,right,matcher,C1,1,NA,yeah,TRUE,adult-adult
+104,4,left,matcher,A1,1,NA,"the one with like two legs, or the one with the one leg?",TRUE,adult-adult
+104,5,right,matcher,I1,1,NA,yeah,TRUE,adult-adult
+104,6,left,matcher,G1,1,NA,"okay, great",TRUE,adult-adult
+104,7,right,matcher,H1,1,NA,really thick mm,TRUE,adult-adult
+104,10,left,matcher,B1,1,NA,yeah,TRUE,adult-adult
+104,11,left,matcher,I1,2,NA,yes,TRUE,adult-adult
+104,12,right,matcher,B1,2,NA,mm,TRUE,adult-adult
+104,15,left,matcher,H1,2,NA,okay,TRUE,adult-adult
+104,19,left,matcher,C1,2,NA,okay,TRUE,adult-adult
+104,24,left,matcher,G1,3,NA,okay,TRUE,adult-adult
+104,26,left,matcher,F1,3,NA,okay,TRUE,adult-adult
+104,35,left,matcher,H1,4,NA,okay,TRUE,adult-adult
+105,10,right,matcher,F1,1,NA,"maybe, can't really tell,",TRUE,adult-adult
+106,3,right,matcher,G1,1,NA,the person that looks like you,TRUE,adult-adult
+106,10,left,matcher,C1,1,NA,"the one, like, kneeling down? okay the one that, like, we haven't seen before",TRUE,adult-adult
+106,17,left,matcher,H1,2,NA,"it's the chunky one, right? okay",TRUE,adult-adult
+107,2,left,matcher,H1,1,NA,okay,TRUE,adult-adult
+107,4,left,matcher,F1,1,NA,umm okay the righ- the right triangle on the right side of the square? alright,TRUE,adult-adult
+107,5,right,matcher,B1,1,NA,oh okay so it's not the one where it sorta looks like uh someone holding the triangle okay,TRUE,adult-adult
+107,6,left,matcher,I1,1,NA,"uh the one ho- the one holding the triangle, not the kneeling one?",TRUE,adult-adult
+107,8,left,matcher,G1,1,NA,uh looks kinda like the big triangle at the bottom?,TRUE,adult-adult
+107,10,left,matcher,E1,1,NA,"the one that- yeah, the one that's not holding the triangle",TRUE,adult-adult
+107,11,left,matcher,A1,2,NA,okay no house?,TRUE,adult-adult
+107,15,right,matcher,K1,2,NA,um it's the one that's got kind of a house on the top,TRUE,adult-adult
+107,16,left,matcher,H1,2,NA,"oh okay, not- no house?",TRUE,adult-adult
+107,18,left,matcher,G1,2,NA,gotch,TRUE,adult-adult
+107,20,right,matcher,F1,2,NA,are there like two triangles at the bottom?,TRUE,adult-adult
+107,21,left,matcher,K1,3,NA,uh it's the one with the house on top,TRUE,adult-adult
+107,21,right,matcher,K1,3,NA,NA uh it's the one that kinda looks like a person jumping,TRUE,adult-adult
+107,26,left,matcher,G1,3,NA,"uh not kneeling, right?",TRUE,adult-adult
+108,31,left,matcher,H1,4,NA,um kneeling offering,TRUE,adult-adult
+109,1,right,matcher,F1,1,NA,okay,TRUE,adult-adult
+109,2,left,matcher,H1,1,NA,"yeah the, the big one? the really thick one?",TRUE,adult-adult
+109,4,left,matcher,D1,1,NA,kinda looks like a guy swimming?,TRUE,adult-adult
+109,8,left,matcher,C1,1,NA,oh yes,TRUE,adult-adult
+109,17,left,matcher,F1,2,NA,"is, is the one that says like, I really I'm gonna put my hand, a really prominent based two triangles okay",TRUE,adult-adult
+111,1,left,matcher,K1,1,NA,"okay, so it's the arrow at the end?",TRUE,adult-adult
+111,2,right,matcher,F1,1,NA,ok,TRUE,adult-adult
+111,3,left,matcher,D1,1,NA,ok,TRUE,adult-adult
+111,5,left,matcher,C1,1,NA,"is there, is that the one where the head's lower than the hips ok, cause they kinda both look like a person bending over",TRUE,adult-adult
+111,6,right,matcher,E1,1,NA,ok,TRUE,adult-adult
+111,8,right,matcher,G1,1,NA,"oh, on the square? oh, ok perfect",TRUE,adult-adult
+111,9,left,matcher,I1,1,NA,holding like a triangle? gotcha,TRUE,adult-adult
+111,11,right,matcher,D1,2,NA,"oh, ok, so not the person from the ok",TRUE,adult-adult
+111,15,right,matcher,A1,2,NA,ok,TRUE,adult-adult
+111,18,left,matcher,F1,2,NA,ok,TRUE,adult-adult
+111,19,right,matcher,C1,2,NA,like kneeling down?,TRUE,adult-adult
+111,20,left,matcher,E1,2,NA,ok,TRUE,adult-adult
+111,29,left,matcher,D1,3,NA,ok,TRUE,adult-adult
+111,32,left,matcher,F1,4,NA,ok,TRUE,adult-adult
+111,34,left,matcher,E1,4,NA,ok,TRUE,adult-adult
+112,2,right,matcher,E1,1,NA,"leaping, ok yeah",TRUE,adult-adult
+112,4,right,matcher,H1,1,NA,ok,TRUE,adult-adult
+112,5,left,matcher,B1,1,NA,ok,TRUE,adult-adult
+112,6,right,matcher,K1,1,NA,yeah,TRUE,adult-adult
+112,7,left,matcher,G1,1,NA,ok,TRUE,adult-adult
+112,9,left,matcher,F1,1,NA,ok,TRUE,adult-adult
+112,13,right,matcher,F1,2,NA,not bent over? ok,TRUE,adult-adult
+113,30,right,matcher,F1,3,NA,wings?,TRUE,adult-adult
+113,31,right,matcher,E1,4,NA,it looks like it's leaping,TRUE,adult-adult
+114,1,left,matcher,A1,1,NA,"running towards the left, okay just one square is the head? ah, okay",TRUE,adult-adult
+114,3,left,matcher,D1,1,NA,"ok, i see it",TRUE,adult-adult
+114,7,left,matcher,G1,1,NA,ok,TRUE,adult-adult
+114,10,right,matcher,K1,1,NA,"like the arrow-y head, pointing?",TRUE,adult-adult
+114,12,left,matcher,I1,2,NA,gotcha,TRUE,adult-adult
+114,14,left,matcher,C1,2,NA,ok,TRUE,adult-adult
+114,26,right,matcher,K1,3,NA,mhm,TRUE,adult-adult
+115,2,right,matcher,G1,1,NA,ok,TRUE,adult-adult
+115,4,right,matcher,B1,1,NA,ok,TRUE,adult-adult
+115,5,left,matcher,I1,1,NA,ok,TRUE,adult-adult
+115,8,right,matcher,H1,1,NA,yeah that's what i was going to say,TRUE,adult-adult
+115,10,right,matcher,F1,1,NA,ok so that one,TRUE,adult-adult
+115,11,right,matcher,E1,2,NA,ok,TRUE,adult-adult
+115,15,right,matcher,A1,2,NA,ok,TRUE,adult-adult
+115,19,right,matcher,K1,2,NA,ok,TRUE,adult-adult
+115,22,right,matcher,F1,3,NA,"yeah, ok",TRUE,adult-adult
+115,30,right,matcher,G1,3,NA,"ok, so the bowing one? ok",TRUE,adult-adult
