@@ -32,6 +32,10 @@ theme_set(theme_classic(base_size = 18))
 agedata <- read_csv(here("data/databaseid.csv")) %>%
   mutate(subid = as.character(subid))
 
+demodata <- read_csv(here("data/tangramdemo.csv")) %>%
+  select(-database_id) %>%
+  remove_empty("cols")
+
 gametrials <- read_csv(here("data/tangramgameresults.csv")) %>%
   mutate(type = if_else(nchar(leftpic) > 2, "practice", "test")) %>%
   mutate(trial = as.numeric(trial)+1)
