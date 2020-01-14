@@ -1,0 +1,136 @@
+subid,type,trial,target,person,utterance,selection,correct
+111,practice,1,apple,right,it's the one with the apple,,Y
+111,practice,1,apple,left,,left,Y
+111,practice,4,apple,left,the apple,,Y
+111,practice,4,apple,right,,right,Y
+111,practice,2,artichoke,left,"um, the brussel sprout",,Y
+111,practice,2,artichoke,right,,right,Y
+111,practice,5,artichoke,right,the brussel sprout,,Y
+111,practice,5,artichoke,left,,left,Y
+111,practice,3,onion,right,"um, the onion",,Y
+111,practice,3,onion,left,,left,Y
+111,practice,6,onion,left,the onion,,Y
+111,practice,6,onion,right,,right,Y
+111,test,7,A1,right,"the one that looks like a prancing person, so not the one with the arrow",,Y
+111,test,7,A1,right,ok,,Y
+111,test,7,A1,left,,left,Y
+111,test,15,A1,left,"um, the person running",,Y
+111,test,15,A1,right,ok,,Y
+111,test,15,A1,right,,right,Y
+111,test,27,A1,right,"uh, the one who's running",,Y
+111,test,27,A1,left,,left,Y
+111,test,31,A1,left,the running person,,Y
+111,test,31,A1,right,,right,Y
+111,test,4,B1,left,the person,,Y
+111,test,4,B1,right,,right,Y
+111,test,4,B1,right,ok,,Y
+111,test,12,B1,right,"uh, the walking person",,Y
+111,test,12,B1,left,,left,Y
+111,test,30,B1,left,"uh, walking person",,Y
+111,test,30,B1,right,,right,Y
+111,test,38,B1,right,the one walking,,Y
+111,test,38,B1,left,,left,Y
+111,test,5,C1,right,"um, it's the one that looks like a person, like bending down",,Y
+111,test,5,C1,right,"if that makes sense, like kneeling down",,Y
+111,test,5,C1,left,"is there, is that the one where the head's lower than the hips",,Y
+111,test,5,C1,right,yeah,,Y
+111,test,5,C1,left,"ok, cause they kinda both look like a person bending over",,Y
+111,test,5,C1,left,,left,Y
+111,test,5,C1,right,yeah,,Y
+111,test,19,C1,left,"um, yeah, the guy crouching, almost like",,Y
+111,test,19,C1,right,like kneeling down?,,Y
+111,test,19,C1,left,yeah kneeling,,Y
+111,test,19,C1,right,,right,Y
+111,test,19,C1,left,and bowing i guess,,Y
+111,test,19,C1,right,bowing,,Y
+111,test,25,C1,right,the one like bowing down,,Y
+111,test,25,C1,left,,left,Y
+111,test,39,C1,left,"uh, kneeling",,Y
+111,test,39,C1,right,,right,Y
+111,test,39,C1,left,"uh, bowing",,Y
+111,test,3,D1,right,"um, it's like the more horizontal one, so like the long thing at the bottom, and then a square and then the triangle",,Y
+111,test,3,D1,left,ok,,Y
+111,test,3,D1,left,,left,Y
+111,test,11,D1,left,"um, kinda looks like a plane",,Y
+111,test,11,D1,right,"oh, ok, so not the person from the",,Y
+111,test,11,D1,left,"yeah, not the person holding something",,Y
+111,test,11,D1,right,ok,,Y
+111,test,11,D1,right,,right,Y
+111,test,11,D1,left,"it looks like an airplane, almost",,Y
+111,test,29,D1,right,the one that does not have an arrow,,Y
+111,test,29,D1,left,ok,,Y
+111,test,29,D1,left,,left,Y
+111,test,33,D1,left,"um, the one that looks like a plane, like i don't really",,Y
+111,test,33,D1,right,,right,Y
+111,test,6,E1,left,"um, the one that does not look like the person walking",,Y
+111,test,6,E1,right,ok,,Y
+111,test,6,E1,right,,right,Y
+111,test,20,E1,right,"um, the one that's not running, the other one",,Y
+111,test,20,E1,left,ok,,Y
+111,test,20,E1,left,,left,Y
+111,test,24,E1,left,"um, not the one with the tray, it looks like someone jumping, kind of",,Y
+111,test,24,E1,right,,right,Y
+111,test,34,E1,right,the one that is not serving something,,Y
+111,test,34,E1,left,ok,,Y
+111,test,34,E1,left,,left,Y
+111,test,2,F1,left,"um, the one without the arrow, the one with the square",,Y
+111,test,2,F1,right,ok,,Y
+111,test,2,F1,right,,right,Y
+111,test,18,F1,right,"ooh, uh, okay, so the one that doesn't have the square at the end?",,Y
+111,test,18,F1,right,so the one that doesn't look like a person sitting on a block,,Y
+111,test,18,F1,left,ok,,Y
+111,test,18,F1,left,,left,Y
+111,test,18,F1,left,"i don't know what that one looks like, but, yeah",,Y
+111,test,26,F1,left,"um, the one that doesn't look like a person",,Y
+111,test,26,F1,right,,right,Y
+111,test,26,F1,right,"ok, got it",,Y
+111,test,32,F1,right,"the one that is not the person who is like bowing down, the other one",,Y
+111,test,32,F1,left,ok,,Y
+111,test,32,F1,left,,left,Y
+111,test,32,F1,left,the weird looking one,,Y
+111,test,32,F1,right,yeah,,Y
+111,test,8,G1,left,"um, they both, I was gonna say it looks like someone sitting down, but it looks like someone sitting on the",,Y
+111,test,8,G1,right,"oh, on the square?",,Y
+111,test,8,G1,left,"the square, yeah, the block",,Y
+111,test,8,G1,right,"oh, ok perfect",,Y
+111,test,8,G1,right,,right,Y
+111,test,14,G1,right,"oh, um, the one that looks like a person sitting on a block",,Y
+111,test,14,G1,left,,left,Y
+111,test,14,G1,left,cool,,Y
+111,test,28,G1,left,"um, sitting on the block",,Y
+111,test,28,G1,right,,right,Y
+111,test,40,G1,right,sitting on a block,,Y
+111,test,40,G1,left,,left,Y
+111,test,10,H1,left,"um, again, holding the tray",,Y
+111,test,10,H1,right,,right,Y
+111,test,10,H1,right,"okay, i got it",,Y
+111,test,16,H1,right,"um, the person who is not running",,Y
+111,test,16,H1,right,ok,,Y
+111,test,16,H1,left,,left,Y
+111,test,16,H1,left,"holding something, cool",,Y
+111,test,22,H1,left,"uh, the one with the tray, almost",,Y
+111,test,22,H1,right,,right,Y
+111,test,36,H1,right,the one serving something,,Y
+111,test,36,H1,left,,left,Y
+111,test,9,I1,right,"um, it's the one which kinda, not the one who's walking, the other one",,Y
+111,test,9,I1,left,holding like a triangle?,,Y
+111,test,9,I1,right,"holding like a tray kinda thing, yeah",,Y
+111,test,9,I1,left,gotcha,,Y
+111,test,9,I1,left,,left,Y
+111,test,17,I1,left,"uh, yeah, the guy with the tray",,Y
+111,test,17,I1,right,,right,Y
+111,test,23,I1,right,the one with the tray,,Y
+111,test,23,I1,left,,left,Y
+111,test,23,I1,left,cool,,Y
+111,test,37,I1,left,"uh, the one with the tray",,Y
+111,test,37,I1,right,,right,Y
+111,test,1,K1,right,"okay, um, it's the one that's like, it's not the one that looks like a person walking",,Y
+111,test,1,K1,left,"okay, so it's the arrow at the end?",,Y
+111,test,1,K1,right,"yeah, it's the arrow at the end",,Y
+111,test,1,K1,left,,left,Y
+111,test,13,K1,left,"uh, the one with the arrow at the end",,Y
+111,test,13,K1,right,,right,Y
+111,test,21,K1,right,"um, the one with the arrow at the end",,Y
+111,test,21,K1,left,,left,Y
+111,test,35,K1,left,"uh, the one with the arrow at the end",,Y
+111,test,35,K1,right,,right,Y

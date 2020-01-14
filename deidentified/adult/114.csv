@@ -1,0 +1,108 @@
+subid,type,trial,target,person,utterance,selection,correct
+114,practice,1,apple,right,"ok, so it's an apple in the blue square",,Y
+114,practice,1,apple,left,,left,Y
+114,practice,4,apple,left,an apple,,Y
+114,practice,4,apple,right,,right,Y
+114,practice,2,artichoke,left,"uh, it's an artichoke",,Y
+114,practice,2,artichoke,right,,right,Y
+114,practice,5,artichoke,right,it's an artichoke again,,Y
+114,practice,5,artichoke,left,,left,Y
+114,practice,3,onion,right,"ok it's a, onion",,Y
+114,practice,3,onion,left,,left,Y
+114,practice,6,onion,left,it's an onion,,Y
+114,practice,6,onion,right,,right,Y
+114,test,1,A1,right,"um, it's like a, one with the square as the head kinda like  aperson running towards the left",,Y
+114,test,1,A1,left,"running towards the left, okay",,Y
+114,test,1,A1,right,"yeah it's like, there's a square at the top that is like",,Y
+114,test,1,A1,left,just one square is the head?,,Y
+114,test,1,A1,right,yeah,,Y
+114,test,1,A1,left,"ah, okay",,Y
+114,test,1,A1,left,,left,Y
+114,test,19,A1,left,"hm, sort of looks like this figure is running with one left behind",,Y
+114,test,19,A1,right,,right,Y
+114,test,21,A1,right,um this is the one that looks like it's running forward with it's leg behind it,,Y
+114,test,21,A1,left,,left,Y
+114,test,39,A1,left,uh this figure looks to be running,,Y
+114,test,39,A1,right,,right,Y
+114,test,39,A1,left,"one foot back, one foot forward",,Y
+114,test,5,B1,right,"um, this looks like the one that's standing up",,Y
+114,test,5,B1,left,,left,Y
+114,test,17,B1,left,"um, this is a figure who looks like their, their weight is on their front foot, they're leaning onto that front foot",,Y
+114,test,17,B1,right,,right,Y
+114,test,25,B1,right,um this one looks like it's walking forward with like its head tilted down,,Y
+114,test,25,B1,left,,left,Y
+114,test,35,B1,left,"uh this figure is standing leaning onto the front leg, looking down",,Y
+114,test,35,B1,right,,right,Y
+114,test,4,C1,left,"uh so there's one figure that looks like it's jumping, and there's one figure that looks like it's crouching, and it's the figure crouching",,Y
+114,test,4,C1,right,,right,Y
+114,test,14,C1,right,"um, this kinda looks like he's kneeling down on his hands and knees, like",,Y
+114,test,14,C1,left,ok,,Y
+114,test,14,C1,right,his head is pointing down,,Y
+114,test,14,C1,left,,left,Y
+114,test,28,C1,left,"this is again the figure crouching on knees and hands, it looks like?",,Y
+114,test,28,C1,right,,right,Y
+114,test,38,C1,right,"um this one is, uh, looks like it's kinda doing a handstand and is towards the ground",,Y
+114,test,38,C1,left,,left,Y
+114,test,3,D1,right,"so, um, this one is more like, lying down, um, there is, it's not the one that has two triangles looking like feet at the bottom",,Y
+114,test,3,D1,left,"ok, i see it",,Y
+114,test,3,D1,left,,left,Y
+114,test,15,D1,left,"uh this figure looks like, uh,  they're just sprawling out, uh, as they read a book",,Y
+114,test,15,D1,right,,right,Y
+114,test,23,D1,right,um this one looks like it's laying down horizontally,,Y
+114,test,23,D1,left,,left,Y
+114,test,37,D1,left,this figure is lying down with one foot in the air,,Y
+114,test,37,D1,right,,right,Y
+114,test,9,E1,right,"this the jumping figure, with like it's feet out behind it, its little triangle feet",,Y
+114,test,9,E1,left,,left,Y
+114,test,13,E1,left,this is the figure with the heel-click jump,,Y
+114,test,13,E1,right,,right,Y
+114,test,29,E1,right,"um this has like two triangle feet that are parallel to each other, looks like it's jumping in the air with arms up",,Y
+114,test,29,E1,left,,left,Y
+114,test,31,E1,left,"uh this figure looks to be jumping in the air, again those triangular feet",,Y
+114,test,31,E1,right,,right,Y
+114,test,2,F1,left,"um, there's a per- it looks like a person with, it's almost like on one heel they're back, the other foot is far out in front of them, and something like arms are up in the air",,Y
+114,test,2,F1,right,,right,Y
+114,test,18,F1,right,"um, this one has like two triangle feet, um facing different directions, and like the head leaning back",,Y
+114,test,18,F1,left,,left,Y
+114,test,22,F1,left,"um this is the figure with the two triangle feet far apart, and something like arms raised, and head on a tilt",,Y
+114,test,22,F1,right,,right,Y
+114,test,32,F1,right,um this one also has triangular feet and a head that's tilted back,,Y
+114,test,32,F1,left,,left,Y
+114,test,7,G1,right,"um, ok so it's like more of a sitting down type figure that has like a solid base at the bottom",,Y
+114,test,7,G1,left,ok,,Y
+114,test,7,G1,left,,left,Y
+114,test,11,G1,left,"um so this is again the figure who looks like they might be wearing a dress, on a solid base",,Y
+114,test,11,G1,right,,right,Y
+114,test,27,G1,right,um this is like the one with the solid square base,,Y
+114,test,27,G1,left,,left,Y
+114,test,33,G1,left,"uh this is again the figure with the triangular dress type thing, on the square base",,Y
+114,test,33,G1,right,,right,Y
+114,test,6,H1,left,"um it looks like there's a figure who's jumping in the air, clicking their heels, almost. and then another figure...",,N
+114,test,6,H1,right,,right,N
+114,test,6,H1,right,got it,,N
+114,test,16,H1,right,"um so it's like the standing up kind of one, with it's, um, vertical",,Y
+114,test,16,H1,left,,left,Y
+114,test,24,H1,left,uh this figure is standing straight and looks to be holding something up,,Y
+114,test,24,H1,right,,right,Y
+114,test,36,H1,right,"um, this one is like handing a triangle out but it's closer to its body",,Y
+114,test,36,H1,left,,left,Y
+114,test,8,I1,left,"um, so not the jumping figure, but the figure that looks like they're holding, uh she's holding something",,Y
+114,test,8,I1,right,,right,Y
+114,test,12,I1,right,"um this is the one that looks like it's handing a triangle, um, out",,Y
+114,test,12,I1,left,gotcha,,Y
+114,test,12,I1,left,,left,Y
+114,test,30,I1,left,um this figure is standing leaning forward a bit and holding a triangular vessel or shape,,Y
+114,test,30,I1,right,,right,Y
+114,test,34,I1,right,um this one looks like it's handing a triangle out,,Y
+114,test,34,I1,left,,left,Y
+114,test,10,K1,left,"um this is a figure with a straight back at an angle and sort of a triangle popping out where the bum might be, almost like...",,Y
+114,test,10,K1,right,"like the arrow-y head, pointing?",,Y
+114,test,10,K1,left,yeah,,Y
+114,test,10,K1,right,,right,Y
+114,test,20,K1,right,"um this one looks like it has like a tail behind it, and it's leaning forward, and has an arrow head",,Y
+114,test,20,K1,left,,left,Y
+114,test,26,K1,left,"uh this figure is sort of leaning forward with like, the tail, sort of protruding",,Y
+114,test,26,K1,right,mhm,,Y
+114,test,26,K1,right,,right,Y
+114,test,40,K1,right,um this one looks like it's leaning forward and has an arrow as a head,,Y
+114,test,40,K1,left,,left,Y
