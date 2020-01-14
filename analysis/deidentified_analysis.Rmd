@@ -24,11 +24,12 @@ library(broom)
 theme_set(theme_classic(base_size = 18))
 ```
 
-## Aggregate csv files
+## Aggregate csv files (1a)
 
 ```{r}
 # get all files with participant data (this excludes meta.csv for now)
-raw_csv_names <- dir(path = '../deidentified/', pattern = "*[0-9].csv", full.names = T)
+raw_csv_names <- c(dir(path = '../deidentified/', pattern = "*[0-9].csv", full.names = T),
+                   dir(path = '../deidentified/adult/', pattern = "*[0-9].csv", full.names = T))
 meta <- read_csv('../deidentified/meta.csv')
 
 raw_data <- raw_csv_names %>%
@@ -38,13 +39,14 @@ raw_data <- raw_csv_names %>%
   group_by(subid, trial) %>%
   mutate(utt_number = row_number()) %>%
   group_by(subid, target) %>%
-  mutate(rep_num = as.numeric(factor(trial))) %>%
+  mutate(rep_num = as.numeric(factor(trial)),
+         correct = correct == 'Y') %>%
   ungroup() %>%
   arrange(subid, trial) 
 
 # Go through a lot of work just to get role mappings (ie. who is matcher, who is director?)
 roles <- raw_data %>% filter(!is.na(selection)) %>% mutate(role = 'matcher') %>% 
-  select(-type, -utterance, -correct, -selection, -target) %>% 
+  select(-type, -utterance, -selection, -target) %>% 
   rename(number_at_selection = utt_number) %>%
   complete(trial, nesting(subid, person)) %>%
   arrange(subid, trial) %>%
@@ -59,10 +61,11 @@ roles <- raw_data %>% filter(!is.na(selection)) %>% mutate(role = 'matcher') %>%
 
 data <- raw_data %>% 
   left_join(meta) %>%                          # combine with meta-data about age
-  left_join(roles) %>%                         # combine with info about who had which role on each trial
+  left_join(roles, by = c('subid', 'trial', 'person')) %>% # combine with info about who had which role on each trial
   filter(utt_number < number_at_selection) %>% # remove utterances after selection was made
   group_by(subid, trial, person, role, target, rep_num, age) %>%
-  summarize(utterance = paste0(utterance, collapse = ' ')) 
+  summarize(utterance = paste0(utterance, collapse = ' '), correct = any(correct)) %>%
+  mutate(experiment = ifelse(subid >= 100, 'adult-adult', 'adult-child'))
 ```
 
 Write out combined data to import into python for nlp
@@ -70,6 +73,9 @@ Write out combined data to import into python for nlp
 ```{r}
 write_csv(data, '../deidentified/combined.csv')
 ```
+
+
+## Aggregate adult files
 
 
 ## Origin of final descriptions
@@ -97,10 +103,10 @@ read_csv('../deidentified/word_matches.csv') %>%
 ggsave('appearance_on_earlier_rounds.pdf', width = 4, height = 3)
 ```
 
-Look at *first* round final words appear
-
+Are kids more likely to not re-use words (e.g. on final round using words never used before?)
 ```{r}
 read_csv('../deidentified/word_matches.csv') %>%  
+  group_by(age, final_round_person) %>%
   mutate(first_appearance = case_when(`1_match` ~ '1', 
                                       `2_match` ~ '2', 
                                       `3_match` ~ '3', 
@@ -108,8 +114,30 @@ read_csv('../deidentified/word_matches.csv') %>%
          total = length(first_appearance),
          director = final_round_person,
          matcher = ifelse(final_round_person == 'parent', 'child', 'parent')) %>%
-  filter(first_appearance != 'never') %>%
-  mutate(introduced_by = ifelse(first_appearance == '2', director, matcher),
+  group_by(age, director) %>%
+  summarize(no_reuse = mean(first_appearance == 'never')) %>%
+    ggplot(aes(x = as.factor(age), y = no_reuse, fill = director)) +
+    geom_bar(stat = 'identity', position = 'dodge') +
+    #facet_grid(age ~ director) +
+    theme_bw() +
+    ylab('% final-round words occurring on round')
+
+
+```
+
+Look at *first* round final words appear
+
+```{r}
+read_csv('../deidentified/word_matches.csv') %>%  
+  mutate(first_appearance = case_when(`1_match` ~ '1', 
+                                      `2_match` ~ '2', 
+                                      `3_match` ~ '3', 
+                                      TRUE ~ '4'),
+         total = length(first_appearance),
+         director = final_round_person,
+         matcher = ifelse(final_round_person == 'parent', 'child', 'parent')) %>%
+  #filter(first_appearance != 'never') %>%
+  mutate(introduced_by = ifelse(first_appearance %in% c('2', '4'), director, matcher),
          introduced_by_parent = introduced_by == 'parent',
          introduced_by_self = introduced_by == director) %>%
   group_by(age, director) %>%
@@ -121,6 +149,34 @@ read_csv('../deidentified/word_matches.csv') %>%
     geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
     theme_bw() +
     ylab('% final-round words introduced by self') +
+    xlab("child age group") +
+    theme(aspect.ratio = 1)
+
+ggsave('introduction.pdf', width = 3.2, height = 3.2)
+```
+
+## Look at inverse
+
+
+```{r}
+read_csv('../deidentified/inverse_word_matches.csv') %>%  
+  group_by(subid, target, age, person, rep_num) %>%
+  summarize(any_match = any(final_match)) %>%
+  # mutate(final_agent = ifelse(first_appearance %in% c('2', '4'), director, matcher),
+  #        introduced_by_parent = introduced_by == 'parent',
+  #        introduced_by_self = introduced_by == director) %>%
+  filter(rep_num < 4) %>%
+  group_by(age, person) %>%
+  tidyboot_mean(col  = any_match) %>%
+  rename(introduced_by = person) %>%
+  ggplot(aes(x = as.character(age), y = empirical_stat, 
+             group = introduced_by, color = introduced_by)) +
+    geom_line() +
+    geom_hline(yintercept = .5) +
+    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
+   #facet_wrap(~ age) +
+    theme_bw() +
+    ylab('Probability of any words going on to end') +
     xlab("child age group") +
     theme(aspect.ratio = 1)
 
