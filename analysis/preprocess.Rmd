@@ -1,0 +1,58 @@
+## Import
+
+```{r}
+library(tidyverse)
+```
+
+## Aggregate csv files (1a)
+
+```{r}
+# get all files with participant data (this excludes meta.csv for now)
+raw_csv_names <- c(dir(path = '../deidentified/', pattern = "*[0-9].csv", full.names = T),
+                   dir(path = '../deidentified/adult/', pattern = "*[0-9].csv", full.names = T))
+meta <- read_csv('../deidentified/meta.csv')
+ raw_csv_names %>%
+  map(read_csv) %>%             
+  reduce(rbind) %>%                # read all csvs and combine into single data frame
+  filter(type != 'practice')
+raw_data <- raw_csv_names %>%
+  map(read_csv) %>%             
+  reduce(rbind) %>%                # read all csvs and combine into single data frame
+  filter(type != 'practice') %>%   # remove practice trials
+  group_by(subid, trial) %>%
+  mutate(utt_number = row_number()) %>%
+  group_by(subid, target) %>%
+  mutate(rep_num = as.numeric(factor(trial)),
+         correct = correct == 'Y') %>%
+  ungroup() %>%
+  arrange(subid, trial) 
+
+# Go through a lot of work just to get role mappings (ie. who is matcher, who is director?)
+roles <- raw_data %>% filter(!is.na(selection)) %>% mutate(role = 'matcher') %>% 
+  select(-type, -utterance, -correct, -selection, -target) %>% 
+  rename(number_at_selection = utt_number) %>%
+  complete(trial, nesting(subid, person)) %>%
+  arrange(subid, trial) %>%
+  mutate(role = ifelse(is.na(role), 'director', 'matcher')) %>%
+  group_by(subid, trial) %>%
+  mutate(number_at_selection = ifelse(is.na(first(number_at_selection)), 
+                                      last(number_at_selection), 
+                                      first(number_at_selection))) %>%
+  mutate(rep_num = ifelse(is.na(first(rep_num)), last(rep_num), first(rep_num))) %>%
+  ungroup()
+
+
+data <- raw_data %>% 
+  left_join(meta) %>%                          # combine with meta-data about age
+  left_join(roles, by = c('subid', 'trial', 'person', 'rep_num')) %>% # combine with info about who had which role on each trial
+  filter(utt_number < number_at_selection) %>% # remove utterances after selection was made
+  group_by(subid, trial, person, role, target, rep_num, age) %>%
+  summarize(utterance = paste0(utterance, collapse = ' '), correct = any(correct)) %>%
+  mutate(experiment = ifelse(subid >= 100, 'adult-adult', 'adult-child'))
+```
+
+Write out combined data to import into python for nlp
+
+```{r}
+write_csv(data, '../deidentified/combined.csv')
+```
