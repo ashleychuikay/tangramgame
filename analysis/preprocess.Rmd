@@ -11,10 +11,7 @@ library(tidyverse)
 raw_csv_names <- c(dir(path = '../deidentified/', pattern = "*[0-9].csv", full.names = T),
                    dir(path = '../deidentified/adult/', pattern = "*[0-9].csv", full.names = T))
 meta <- read_csv('../deidentified/meta.csv')
- raw_csv_names %>%
-  map(read_csv) %>%             
-  reduce(rbind) %>%                # read all csvs and combine into single data frame
-  filter(type != 'practice')
+
 raw_data <- raw_csv_names %>%
   map(read_csv) %>%             
   reduce(rbind) %>%                # read all csvs and combine into single data frame
@@ -55,4 +52,59 @@ Write out combined data to import into python for nlp
 
 ```{r}
 write_csv(data, '../deidentified/combined.csv')
+```
+
+## Sanity checks
+
+check for coding errors
+
+```{r}
+library(ggthemes)
+accuracies <- raw_data %>% 
+  left_join(meta) %>%                          # combine with meta-data about age
+  left_join(roles, by = c('subid', 'trial', 'person', 'rep_num')) %>%
+  filter(role == 'director') %>%
+  filter(subid < 100) %>%
+  group_by(subid, trial, person, correct,age) %>%
+  tally() %>%
+  group_by(subid, person,age) %>%
+  summarize(m = mean(correct)) #%>%
+  
+badgames <- accuracies %>%
+  filter(m <= 0.8) %>%
+  pull(subid)
+
+accuracies %>%
+  spread(person, m) %>%
+  ggplot(aes(x = child, y = parent, color = age)) +
+    geom_jitter(width = 0.025, height = 0.025) +
+    theme_few() +
+    theme(aspect.ratio = 1) +
+    ylim(0.4, 1.1) +
+    xlim(0.4, 1.1) +
+    xlab("accuracy when child is director") +
+    ylab("accuracy when parent is director") +
+    scale_color_gradient2()
+ggsave('accuracy.pdf', height = 5, width = 5)
+```
+
+```{r}
+not_correct_number_of_selections <- raw_data %>% 
+  filter(selection != '') %>%
+  group_by(subid, trial) %>% tally() %>% 
+  ungroup() %>%
+  complete(subid, trial, fill = list(n = 0)) %>%
+  rowwise() %>%
+  filter(n != 1) %>%
+  unite(id, subid, trial) %>%
+  pull(id)
+
+raw_data %>% 
+  group_by(subid, trial) %>% tally() %>% 
+  filter(n == 1) %>% select(-n) %>% # get trial #s with 1 event
+  unite(id, subid, trial) %>%
+  rowwise() %>%
+  filter(!(id %in% not_correct_number_of_selections)) %>%
+  separate(id, into = c('subid', 'trial')) %>%
+  knitr::kable('markdown')
 ```
