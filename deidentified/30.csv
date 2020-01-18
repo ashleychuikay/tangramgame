@@ -107,7 +107,7 @@ subid,type,trial,target,person,utterance,selection,correct
 30,test,20,H1,parent,"yeah, the one that looks like it's holding a diploma, it looks like a cap and gown",,Y
 30,test,20,H1,child,,child,Y
 30,test,28,H1,child,the church person,,Y
-30,test,28,H1,child,"cloak, not the one that looks like it's running, but the-",,Y
+30,test,28,H1,child,"cloak, not the one that looks like it's running, but that's like-",,Y
 30,test,28,H1,parent,,parent,Y
 30,test,28,H1,child,wearing like a cloak,,Y
 30,test,34,H1,parent,this looks like it's in a cap and gown,,Y

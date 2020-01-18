@@ -105,4 +105,5 @@ subid,type,trial,target,person,utterance,selection,correct
 43,test,18,K1,child,,child,Y
 43,test,28,K1,child,Looks like it has a tail,,Y
 43,test,28,K1,parent,,parent,Y
+43,test,38,K1,parent,Standing with the tail,,Y
 43,test,38,K1,child,,child,Y

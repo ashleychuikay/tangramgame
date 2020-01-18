@@ -50,9 +50,8 @@ subid,type,trial,target,person,utterance,selection,correct
 38,test,30,C1,child,the kinda laying down,,Y
 38,test,30,C1,parent,,parent,Y
 38,test,32,C1,parent,"this is the one that's, the small one. not the one that's standing up",,Y
-38,test,32,C1,child,okay,,Y
 38,test,32,C1,child,,child,Y
-38,test,1,D1,parent,"this one, is a , is a flat shape, do you see it? it's not the one standingup, it's the one laying down",,Y
+38,test,1,D1,parent,"this one, is a , is a flat shape, do you see it? it's not the one standing up, it's the one laying down",,Y
 38,test,1,D1,child,,child,Y
 38,test,13,D1,parent,"okay, what do you have? is it the one that's flat, or the one that's kinda tall?",,N
 38,test,13,D1,child,the on that's kind of tall,,N

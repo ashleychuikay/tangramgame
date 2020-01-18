@@ -1,16 +1,12 @@
 subid,type,trial,target,person,utterance,selection,correct
 20,practice,1,apple,parent,"this fruit can be red or green, and we sometimes pick it in Michigan",,Y
 20,practice,1,apple,child,,child,Y
-20,practice,4,apple,parent,"alright, your turn.",,Y
 20,practice,4,apple,child,this... ah! this thing sometimes has leaves on top.,,Y
-20,practice,4,apple,parent,ok,,Y
 20,practice,4,apple,parent,,parent,Y
 20,practice,2,artichoke,child,um this vegetable has a bunch of leaves on it,,Y
 20,practice,2,artichoke,parent,,parent,Y
-20,practice,2,artichoke,parent,did I get it wrong?,,Y
 20,practice,5,artichoke,parent,alright. we don't eat this vegetable very much which is probably why you don't know what that is.,,Y
 20,practice,5,artichoke,child,,child,Y
-20,practice,5,artichoke,parent,"oh, you guessed just on that clue?",,Y
 20,practice,3,onion,parent,"So this vegetable, sometimes when you cut it, it makes you cry",,Y
 20,practice,3,onion,child,xxx,,Y
 20,practice,3,onion,child,it's an onion.,,Y
@@ -38,9 +34,7 @@ subid,type,trial,target,person,utterance,selection,correct
 20,test,29,B1,child,,child,Y
 20,test,37,B1,child,sorrow,,Y
 20,test,37,B1,parent,,parent,Y
-20,test,37,B1,parent,good job!,,Y
 20,test,2,C1,child,"Um, someone doing a crawl pose.",,Y
-20,test,2,C1,parent,oh yeah.,,Y
 20,test,2,C1,parent,,parent,Y
 20,test,12,C1,parent,"ok, this looks like someone who is doing childs' pose",,Y
 20,test,12,C1,child,,child,Y
@@ -58,15 +52,8 @@ subid,type,trial,target,person,utterance,selection,correct
 20,test,21,D1,parent,this looks like someone who's lying down,,Y
 20,test,21,D1,child,,child,Y
 20,test,39,D1,child,melt,,Y
-20,test,39,D1,parent,"no, you already used that one before!",,Y
-20,test,39,D1,child,"ok, um",,Y
-20,test,39,D1,parent,what does that person look like they're doing?,,Y
-20,test,39,D1,child,xxx,,Y
-20,test,39,D1,parent,"no, that's not what he looks like",,Y
 20,test,39,D1,parent,he looks like he's reading a book,,Y
 20,test,39,D1,child,his book is xxx and he's trying to find it! look momma,,Y
-20,test,39,D1,parent,"nope, you can't pick it up!",,Y
-20,test,39,D1,parent,alright,,Y
 20,test,39,D1,parent,,parent,Y
 20,test,39,D1,child,it looked like they lost their book,,Y
 20,test,4,E1,child,it looks like someone flying,,Y
@@ -128,8 +115,6 @@ subid,type,trial,target,person,utterance,selection,correct
 20,test,17,K1,child,he has a big butt,,Y
 20,test,17,K1,parent,,parent,Y
 20,test,23,K1,parent,this looks like someone,,Y
-20,test,23,K1,child,harder,,Y
-20,test,23,K1,parent,make it harder? ok,,Y
 20,test,23,K1,parent,this looks like someone who is subservient and has a pointy bottom,,Y
 20,test,23,K1,child,,child,Y
 20,test,23,K1,child,what do you mean by subservient?,,Y

@@ -69,7 +69,7 @@ subid,type,trial,target,person,utterance,selection,correct
 27,test,2,E1,child,it looks like flying,,Y
 27,test,2,E1,parent,like woosh,,Y
 27,test,2,E1,parent,,parent,Y
-27,test,20,E1,parent,it's the man who's going phew *gester*,,Y
+27,test,20,E1,parent,it's the man who's going phew *gesture*,,Y
 27,test,20,E1,child,,child,Y
 27,test,24,E1,child,the man who's jumping,,Y
 27,test,24,E1,parent,,parent,Y
@@ -119,12 +119,12 @@ subid,type,trial,target,person,utterance,selection,correct
 27,test,37,I1,child,a man who's serving,,Y
 27,test,37,I1,parent,,parent,Y
 27,test,4,K1,parent,which one do you see? which one has the blue box?,,Y
-27,test,4,K1,child,"the one that looks like, like…",,Y
-27,test,4,K1,parent,oh he's like this?>,,Y
+27,test,4,K1,child,"the one that looks like, like",,Y
+27,test,4,K1,parent,oh he's like this?,,Y
 27,test,4,K1,parent,,parent,Y
 27,test,14,K1,parent,the man who's serving,,Y
 27,test,14,K1,child,,child,Y
-27,test,22,K1,parent,"um, the man who's serving",,Y
+27,test,22,K1,child,"um, the man who's serving",,Y
 27,test,22,K1,parent,,parent,Y
 27,test,40,K1,parent,a man who's serving,,Y
 27,test,40,K1,child,,child,Y
