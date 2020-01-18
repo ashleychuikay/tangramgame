@@ -27,10 +27,14 @@ knitr::opts_chunk$set(fig.width=3, fig.height=3, fig.crop = F,
 ```
 
 ```{r, libraries}
+library(tidyverse)
+library(broom.mixed)
+library(tidyboot)
 library(png)
 library(grid)
-library(ggplot2)
 library(xtable)
+library(ggthemes)
+library(lme4)
 ```
 
 # Introduction
@@ -45,7 +49,8 @@ Referential communication patterns in adults have been widely studied, mostly us
 
 Conceptual pacts are partner-specific, but malleable, and facilitates cooperation between conversational partners. The formation of conceptual pacts is collaborative and partner-specific, such that interlocuters mutually come to agreement (whether explicitly or implicitly) about these pacts, and continue to reuse them with one another, but not necessarily with new partners (@Brennan1996Conceptual; @Clark1989Contributing). At the same time, the mutual knowledge between partners is temporary and fluid—it can be changed even within the span of a single conversation, based on shifting goals or informational needs (@Ibarra2016flexibility). Conceptual pact formation is not only a natural process that occurs in conversation, it is also beneficial for partners completing cooperative tasks (Fusaroli et al., 2012). These studies, along with many others in the field, show that adults readily form conceptual pacts with one another in conversation, and that these pacts can facilitate cooperation.
 
-\todo[inline]{TODO: In introduction of classic explanations for failures in kid-kid dialogue, briefly mention Asher \& Oden, 1976? (which showed kids couldn't even make good messages for *themselves*, suggesting it's probably not just egocentricity), the Beal \& Flavell 1982, or Robinson \& Robinson, 1977/1982 (which argued kids are bad at realizing messages can be ambiguous, and therefore cannot judge what will be an appropriately informative messages), Roberts \& Patterson (1983) which correlated quality of referring expressions with perspective-taking skills...}
+\todo[inline]{TODO: mention Glucksberg, Krauss, and Weisberg, 1966, which showed that kids fail with one another (Exp. 1) but succeed when as listeners when the (adult) experimenter is the speaker (Exp. 2), even when the experimenter gradually reduces utterances. In addition, they succeed when the experimenter initially elicits each kid's *own* preferred description and then feeds it back to them (Exp. 3)}
+\todo[inline]{TODO: In introduction of classic explanations for failures in kid-kid dialogue, briefly mention Asher \& Oden, 1976? (which, contrary to Glucksberg, showed kids *couldn't* make good messages for *themselves* in the future, arguing it's probably not just egocentricity), the Beal \& Flavell 1982, or Robinson \& Robinson, 1977/1982 (which argued kids are bad at realizing messages can be ambiguous, and therefore cannot judge what will be an appropriately informative messages), Roberts \& Patterson (1983) which correlated quality of referring expressions with perspective-taking skills...}
 \todo[inline]{TODO: mention Deutsch \& Pechmann, 1982? (which showed young kids *can* communicate with each other with a little initial prompting by adult experimenter, suggesting that adults may 'seed' conventions)}
 \todo[inline]{TODO: mention Garrod \& Clark, 1993 or Anderson, Clark \& Mullin (1994). (which suggest the problem lies not in message formulation but in their failure to manage interactional stuff like giving feedback to their partner when they don't understand and explicitly asking for clarification.)}
 
@@ -110,26 +115,121 @@ Experiment 1b used the same design as Experiment 1a, such that parents and child
 
 ## Results
 
-### Reduction in length of referring expression
+\todo[inline]{We should combine these basic measures into a single 2-col figure.}
+### Performance accuracy
 
-```{r reduction, fig.env = "figure", fig.pos = "b", fig.width=4, fig.height=2, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Reduction in mean length of referring expressions across four rounds."}
-img <- png::readPNG("figs/reduction_placeholder.png")
-grid::grid.raster(img)
+```{r accuracy, cache=T, fig.env = "figure", fig.pos = "h", fig.width=4, fig.height=2, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Accuracy"}
+d.accuracy.raw <- read_csv('../../deidentified/combined.csv') %>%
+  mutate(age = ifelse(is.na(age), 'adult', age)) %>%
+  group_by(subid, trial, age, target, rep_num) %>%
+  summarize(correct = mean(correct)) %>% 
+  ungroup()
+
+# Bootstrap error bars and render plot
+d.accuracy.raw %>%
+  group_by(age, rep_num) %>%
+  tidyboot_mean(correct) %>%
+  ggplot(aes(x = rep_num, y = empirical_stat * 100, color = age, group = age)) +
+    geom_line() +
+    geom_errorbar(aes(ymin = ci_lower * 100, ymax = ci_upper * 100), width = 0.05) +
+    ylab("% accuracy") +
+    xlab("repetition #") +
+    ylim(78, 100) +
+    theme_few() +
+    theme(aspect.ratio = 1) +
+    scale_color_colorblind()
+
+lmer.accuracy <- tidy(glmer(correct ~ age + rep_num + (1 + rep_num | subid) + (1 | target), 
+                            family = 'binomial',
+                            data = d.accuracy.raw %>% filter(age != 'adult') %>% mutate(age = as.numeric(age))))
+age_effect_acc = lmer.accuracy %>% filter(term == 'age')
+rep_effect_acc = lmer.accuracy %>% filter(term == 'rep_num')
 ```
+
+Were children able to succeed at the reference game, in collaboration with their parents? 
+We begin by examining accuracy across age groups.
+While accuracy was initially well above chance at all age groups, we found a significant main effect of age ($b$ = `r round(age_effect_acc$estimate, 2)`, $t$ = `r round(age_effect_acc$statistic, 2)`; $p = 0.001$).
+Pairs with 4-year-olds performed significantly more poorly than pairs with older children.
+Critically, however, accuracy improved significantly over the four repetition blocks for all groups ($b$ = `r round(rep_effect_acc$estimate, 2)`, $t$ = `r round(rep_effect_acc$statistic, 2)`; $p = 0.001$).
+Such improvement for 4-year-olds contrasts with early results of communication between age-matched children [@GlucksbergKraussWeisberg66_DevoRefGames,@KraussGlucksberg69_DevoReferenceGames], which found no improvement in accuracy with kingergardeners (age 5). 
+\todo[inline]{TODO: describe mixed-effect structure. Also, note that big dip in 8-year-olds looks like driven by subid 17 who got every trial in last block incorrect.}
+
+### Interactive dialogue exchanges
+
+```{r exchanges, cache=T, fig.env = "figure", fig.pos = "h", fig.width=4, fig.height=2, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Number of dialogue exchanges."}
+# count number of back-and-forth exchanges
+d.exchanges.raw <- read_csv('../../deidentified/exchanges.csv') %>%
+  mutate(age = ifelse(is.na(age), 'adult', age)) %>%
+  group_by(subid, trial, age, target, rep_num) %>%
+  summarize(num_exchanges = n()) %>% 
+  ungroup()
+
+# Bootstrap error bars and render plot
+d.exchanges.raw %>%
+  group_by(age, rep_num) %>%
+  tidyboot_mean(num_exchanges) %>%
+  ggplot(aes(x = rep_num, y = empirical_stat, color = age, group = age)) +
+    geom_line() +
+    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
+    ylab("# exchanges per round") +
+    xlab("repetition #") +
+    theme_few() +
+    theme(aspect.ratio = 1) +
+    scale_color_colorblind()
+
+# Bootstrap error bars and plot
+lmer.exchanges <- tidy(lmer(num_exchanges ~ age + rep_num + (1 + rep_num | subid) + (1 | target), 
+                            data = d.exchanges.raw %>% filter(age != 'adult') %>% mutate(age = as.numeric(age))))
+age_effect = lmer.exchanges %>% filter(term == 'age')
+rep_effect = lmer.exchanges %>% filter(term == 'rep_num')
+```
+
+If the ability of children to successfully establish reference in both director and matcher roles depends on scaffolding provided by their parents, we would expect additional dialogue turns for younger children. 
+We counted the total number of exchanges on each trial, defined as the 
+Consistent with previous work in adults [@Clark1986Referring], we found a significant main effect of repetition ($b$ = `r round(rep_effect$estimate, 2)`, $t$ = `r round(rep_effect$statistic, 2)`; $p < 0.001$).
+Fewer dialogue turns were required on later trials.
+However, we also found a significant main effect of the child's age ($b$ = `r round(age_effect$estimate, 2)`, $t$ = `r round(age_effect$statistic, 2)`; $p < 0.001$).
+Pairs with 4-year-old children took roughly one additional turn at each point in the experiment than pairs with older children, who more closely resembled adults.
+This increased level of interactivity between parents and younger children provides an interesting contrast with previous studies showing decreased interactivity in pairs of younger children [@GarrodClark93_DialogueCoordination, @anderson_interactive_1994].
+These lengthier exchanges may reflect efforts by parents to provide and elicit additional clarification or confirmation, or may simply reflect attentional difficulties. 
+\todo[inline]{TODO: Can we follow-up by analyzing how many of these were questions vs. confirmation vs. purely keeping kids on task? Also: describe mixed-effect structure.}
+
+### Reduction in length of referring expression
 
 ```{r development, fig.env = "figure", fig.pos = "h", fig.width=4, fig.height=2, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Change in length of referring expressions, split by age groups."}
 img <- png::readPNG("figs/developmental_change_placeholder.png")
 grid::grid.raster(img)
 ```
 
-We began our analyses by calculating mean length of referring expressions for each target, and examining change in length across rounds. Only the directors’ speech was included in this calculation. Collapsing across parents and children, and all age groups, the length of referring expressions decreased somewhat linearly from Round 1 to Round 4 (Figure 2). When splitting by age group, analyses revealed that dyads with older children used shorter referring expressions overall, while the main effect of length reduction held across groups (Figure 3). The difference in length of referring expressions was particularly clear between 4-year-olds and 8-year-olds, with 6-year-olds falling somewhat in between the two groups.
+\todo[inline]{TODO: Control for # of exchanges? (obviously if younger pairs are taking extra turns they are producing more words overall)}
+\todo[inline]{TODO: Look at interactions? we see older pairs use more words overall (main effect) but do they *reduce* more?}
+A key signature of successful communication among adults is an increase in efficiency over repeated reference [@KraussWeinheimer64_ReferencePhrases,@Clark1986Referring]. 
+As pairs form conceptual pacts, they are able to communicate the same meaning using fewer words. 
+We asked whether children spontaneously adapt their referring expressions in the same way.
+We operationalize efficiency as the number of words in the director's referring expressions for each trial.
+Because participants in a pair alternated roles, each participant served as the director twice for each tangram. 
+We can therefore compare their first referring expression against the one they produced two repetition blocks later. 
 
-We then analyzed parents and children’s referring expressions separately. When splitting parents and children, and plotting by age groups, we still found an overall reduction in length of referring expression (Figure 4). However, when looking only at children’s referring expressions, the three groups did not appear to differ. On the other hand, the three groups of parents differed in their length of referring expressions. Specifically, parents of 4-year-olds used longer referring expressions throughout the game. Note that only 2 rounds are plotted in this figure, because each partner is the director twice for each target tangram.
+Using a mixed-effects model, we predicted utterance length including fixed effects of child age, repetition block (first vs. last), and speaker identity (parent vs. child) and random intercepts at the dyad- and tangram-levels.
+First, we found a significant main effect of repetition block (b = X, t = X, p = X), with all participants producing relatively more efficient utterances over time.
+Second, we found a significant main effect of age (b = X, t = X, p = X).
+Dyads with older children used shorter referring expressions overall.
+
+Third, we were interested in whether these age effects were driven by parents or children.
+That is, do younger children produce longer utterances than older children, or do *parents* of younger children expect that longer utterances will be required?
+When looking only at children’s referring expressions, the three groups did not appear to differ. 
+On the other hand, the three groups of parents differed in their length of referring expressions. 
+Specifically, parents of 4-year-olds used longer referring expressions throughout the game. 
 
 ### Reaction Time
 
+\todo[inline]{Take these results out? (seems redundant with length of referring expression and number of exchanges?)}
 We analyzed reaction time for each trial. Reaction time was stored automatically by the game’s computer code, and can be understood as time taken to complete the trial (rather than reaction time to a stimulus per se). Reaction times longer than 20000ms (2 minutes) were discarded. Since the game did not have an option for pausing, trials had abnormally long reaction times when dyads needed to take a break from the game (e.g. children needing to use the bathroom). Similar to length of referring expressions, reaction time decreased from Round 1 to Round 4 for pairs in all age groups (Figure 5). When split by age group, reaction times showed similar patterns to length of referring expression, such that dyads with older children were faster overall (Figure 6). 
 
+# Where do pacts come from?
+
+Our results suggest that pairs of parents and children are able to become increasingly accurate and efficient as they accumulate shared history. 
+This raises an important question: 
 
 # Discussion
 
