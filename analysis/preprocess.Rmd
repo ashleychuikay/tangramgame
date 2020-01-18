@@ -38,21 +38,26 @@ roles <- raw_data %>% filter(!is.na(selection)) %>% mutate(role = 'matcher') %>%
   mutate(rep_num = ifelse(is.na(first(rep_num)), last(rep_num), first(rep_num))) %>%
   ungroup()
 
-
-data <- raw_data %>% 
+exchanges <- raw_data %>% 
+  mutate(experiment = ifelse(subid >= 100, 'adult-adult', 'adult-child')) %>%
   left_join(meta) %>%                          # combine with meta-data about age
-  left_join(roles, by = c('subid', 'trial', 'person', 'rep_num')) %>% # combine with info about who had which role on each trial
+  left_join(roles, by = c('subid', 'trial', 'person', 'rep_num')) %>% 
+  filter(!is.na(utterance)) %>%
+  mutate(selection = ifelse(is.na(selection), 'none', selection))
+
+combined_data <- exchanges %>% # combine with info about who had which role on each trial
   filter(utt_number < number_at_selection) %>% # remove utterances after selection was made
   group_by(subid, trial, person, role, target, rep_num, age) %>%
   summarize(utterance = paste0(utterance, collapse = ' '), correct = any(correct)) %>%
-  mutate(experiment = ifelse(subid >= 100, 'adult-adult', 'adult-child'))
 ```
 
 Write out combined data to import into python for nlp
 
 ```{r}
+write_csv(exchanges, '../deidentified/exchanges.csv')
 write_csv(data, '../deidentified/combined.csv')
 ```
+
 
 ## Sanity checks
 
