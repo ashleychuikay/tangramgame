@@ -86,7 +86,7 @@ tidy_data <- data %>%
 ##output csv for conceptual pact coding
 
 coding <- tidy_data %>%
-  arrange(subid, type, target, trial) %>%
+  arrange(subid, type, target, trial, Timeline.ordinal) %>%
   select(subid, type, trial, target, person, utterance, selection, correct)
 
 
