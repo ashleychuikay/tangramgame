@@ -16,6 +16,7 @@ output:
 ```{r, message=FALSE, warning=FALSE, show = F}
 library(tidyverse)
 library(tidyboot)
+library(ggthemes)
 library(janitor)
 library(lme4)
 library(lmerTest)
@@ -24,61 +25,42 @@ library(broom)
 theme_set(theme_classic(base_size = 18))
 ```
 
+## Number of exchanges 
+
+```{r}
+d.exchanges.raw <- read_csv('../deidentified/exchanges.csv') %>%
+  mutate(age = ifelse(is.na(age), 'adult', age)) %>%
+  group_by(subid, trial, age, rep_num) %>%
+  summarize(num_exchanges = n()) 
+
+d.exchanges.boot <- d.exchanges.raw %>%
+  group_by(age, rep_num) %>%
+  tidyboot_mean(num_exchanges) %>%
+  ungroup()
+  
+d.exchanges.boot %>% 
+  mutate(age = factor(age)) %>%
+  ggplot(aes(x = rep_num, y = empirical_stat, color = age, group = age)) +
+    geom_line() +
+    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
+    ylab("# exchanges per round") +
+    xlab("repetition #") +
+    theme_few()
+
+summary(lmer(num_exchanges ~ age + rep_num + (1 + rep_num | subid) + (1 | target), data = d.exchanges.raw))
+```
+
 ## Origin of final descriptions
-
-For each (contentful & lemmatized) word in the final utterance, we can look at which earlier rounds, if any, it appeared in.
-
-```{r}
-# read_csv('../deidentified/word_matches.csv') %>%
-#   gather(round, match, `1_match`, `2_match`, `3_match`) %>%
-#   separate(round, into = c('round', 'garbage'), sep = '_') %>%
-#   group_by(subid, age, final_round_person, round) %>%
-#   summarize(match_rate = mean(match)) %>%
-#   ungroup() %>%
-#   mutate(match_target = ifelse(round == '2', 'same', 'diff'),
-#          final_round_person = ifelse(final_round_person == 'child', 'child-last', 'parent-last')) %>%
-#   group_by(final_round_person, age, round, match_target) %>%
-#   tidyboot_mean(match_rate) %>%
-#   ggplot(aes(x = round, y = empirical_stat)) +
-#     geom_bar(stat = 'identity') +
-#     facet_grid(final_round_person ~ age) +
-#     geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
-#     theme_bw() +
-#     ylab('% final-round words occurring on round')
-# 
-# ggsave('appearance_on_earlier_rounds.pdf', width = 4, height = 3)
-```
-
-Are kids more likely to not re-use words (e.g. on final round using words never used before?)
-
-```{r}
-read_csv('../deidentified/word_matches.csv') %>%  
-  group_by(age, final_round_person, experiment) %>%
-  mutate(first_appearance = case_when(`1_match` ~ '1', 
-                                      `2_match` ~ '2', 
-                                      `3_match` ~ '3', 
-                                      TRUE ~ 'never'),
-         total = length(first_appearance),
-         director = final_round_person,
-         matcher = ifelse(final_round_person == 'parent', 'child', 'parent')) %>%
-  group_by(age, director, experiment) %>%
-  summarize(no_reuse = mean(first_appearance == 'never')) %>%
-    ggplot(aes(x = as.factor(age), y = no_reuse, fill = director)) +
-    geom_bar(stat = 'identity', position = 'dodge') +
-    #facet_grid(age ~ director) +
-    theme_bw() +
-    ylab('% final-round words occurring on round')
-
-
-```
 
 Look at *first* round final words appear.
 
 ```{r}
-matches <- read_csv('../deidentified/word_matches.csv') %>%  
-  mutate(first_appearance = case_when(`1_match` ~ '1', 
-                                      `2_match` ~ '2', 
-                                      `3_match` ~ '3', 
+matches <- read_csv('../deidentified/word_matches.csv') %>% 
+  filter(later_rep == 4) %>%
+  spread(earlier_rep, match) %>%
+  mutate(first_appearance = case_when(`1` ~ '1', 
+                                      `2` ~ '2', 
+                                      `3` ~ '3', 
                                       TRUE ~ 'never'),
          total = length(first_appearance),
          director = final_round_person,
@@ -118,7 +100,7 @@ ggsave('introduction.pdf', width = 5, height = 5)
 ```
 
 ```{r}
-summary(glmer(introduced_by_other ~ age * director + (1 | target) +  (1 | subid), 
+summary(glmer(introduced_by_other ~ age * director + (1 +director| target) +  (1 | subid), 
               data = matches %>% 
                 filter(experiment == 'adult-child') %>% 
                 mutate(age = as.numeric(age)), 
@@ -127,9 +109,75 @@ summary(glmer(introduced_by_other ~ age * director + (1 | target) +  (1 | subid)
 
 ## Look at local 'stickiness'
 
+Full heat map:
 
+```{r}
+local2 <- read_csv('../deidentified/word_matches.csv') %>% 
+  mutate(person = ifelse(final_round_person %in% c('left', 'right'), 'adult', final_round_person)) %>%
+  group_by(earlier_rep, later_rep, age, person) %>%
+  tidyboot_mean(match) 
+
+ggplot(local2 %>% filter(!is.na(age)), aes(x = earlier_rep, y = later_rep, fill = empirical_stat)) +
+  geom_tile() +
+  facet_grid(age ~ person) +
+  scale_fill_gradient2_tableau(limits=c(.15, .5)) +
+  guides(fill=guide_colorbar(title="P(\n used in earlier round | \n used in later\n)")) +
+  xlab("earlier round") +
+  ylab("later round") +
+  theme(aspect.ratio = 1)
+
+ggsave('kids.pdf')
+```
+
+Just look at diagonals
+
+```{r}
+local <- read_csv('../deidentified/word_matches.csv') %>% 
+#  filter(subid > 99) %>%
+  filter(later_rep == earlier_rep + 1) %>%
+  unite(later_rep, earlier_rep, later_rep) %>%
+  group_by(later_rep, age, final_round_person) %>%
+  tidyboot_mean(match)
+
+
+ggplot(local, aes(x = as.character(later_rep), y = empirical_stat, 
+             group = final_round_person, color = final_round_person)) +
+    geom_line() +
+    geom_point() +
+    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
+    facet_wrap(~ age) +
+    ggtitle('adjacent repetitions only') +
+    theme(aspect.ratio = 1)
+
+ggsave('collapsed.pdf')
+```
 
 # Supplementary 
+
+Instead of where it *first* appeared, let's look at all previous rounds where it appeared:
+
+For each (contentful & lemmatized) word in the final utterance, we can look at which earlier rounds, if any, it appeared in.
+
+Are kids more likely to not re-use words (e.g. on final round using words never used before?)
+
+```{r}
+read_csv('../deidentified/word_matches.csv') %>%
+  gather(round, match, `1_match`, `2_match`, `3_match`) %>%
+  separate(round, into = c('round', 'garbage'), sep = '_') %>%
+  group_by(subid, age, final_round_person, round) %>%
+  summarize(match_rate = mean(match)) %>%
+  ungroup() %>%
+  mutate(match_target = ifelse(round == '2', 'same', 'diff'),
+         final_round_person = ifelse(final_round_person == 'child', 'child-last', 'parent-last')) %>%
+  group_by(final_round_person, age, round, match_target) %>%
+  tidyboot_mean(match_rate) %>%
+  ggplot(aes(x = round, y = empirical_stat)) +
+    geom_bar(stat = 'identity') +
+    facet_grid(final_round_person ~ age) +
+    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
+    theme_bw() +
+    ylab('% final-round words occurring on round')
+```
 
 ## Look at inverse
 
@@ -244,18 +292,3 @@ ggsave('min_per_message.pdf', width = 8, height = 3)
 
 ```
 
-## Sanity checks
-
-check for coding errors
-
-```{r}
-raw_data %>% 
-  group_by(subid, trial) %>% tally() %>% filter(n == 1) %>% select(-n) %>% # get trial #s with 1 event
-  left_join(raw_data) %>%
-  group_by(person) %>% tally()
-
-checking <- raw_data %>% 
-  group_by(subid, trial) %>% tally() %>% filter(n == 1) %>% select(-n) %>% # get trial #s with 1 event
-  left_join(raw_data) %>%
-  group_by(person)
-```
