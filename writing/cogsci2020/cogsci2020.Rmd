@@ -228,8 +228,18 @@ We analyzed reaction time for each trial. Reaction time was stored automatically
 
 # Where do pacts come from?
 
-Our results suggest that pairs of parents and children are able to become increasingly accurate and efficient as they accumulate shared history. 
-This raises an important question: 
+Pairs of age-matched children are notoriously poor at repeated referential communication [@GlucksbergKraussWeisberg66_DevoRefGames], failing to coordinate on mutually comprehensible referring expressions.  
+Our results demonstrate that when children perform the same task with their parents, this coordination problem can be solved: they converge on increasingly accurate and efficient pacts, as adults do. 
+What, then, allows children to coordinate with their parents but not with their peers? 
+
+One possibility is that children lack the ability to *adapt* to their partner: they have a strong preference for a particular idiosyncratic description and are not sensitive to the possibility that their partner may not understand it. 
+Under this hypothesis, children fail with other children because they each continue to use mutually incomprehensible expressions, and only succeed with their parent as a result of the parent's flexibility.  
+An alternative possibility is that young children are able to adapt but are uncertain about what an appropriate label would be in the first place.
+They fail with other children because neither can generate an understandable enough initial label to start the pact-formation process, but will quickly pick up on a good label supplied by their parent. 
+
+These accounts make different predictions about who is adapting to who: do pacts originate with children, or with adults?
+We test this prediction by quantitatively analyzing the natural-language transcripts. 
+
 
 # Discussion
 
