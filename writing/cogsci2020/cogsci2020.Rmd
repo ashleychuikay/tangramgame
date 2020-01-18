@@ -201,7 +201,7 @@ img <- png::readPNG("figs/developmental_change_placeholder.png")
 grid::grid.raster(img)
 ```
 
-\todo[inline]{TODO: Control for # of exchanges? (obviously if younger pairs are taking extra turns they are producing more words overall)}
+\todo[inline]{TODO: Control for \# of exchanges? (obviously if younger pairs are taking extra turns they are producing more words overall)}
 \todo[inline]{TODO: Look at interactions? we see older pairs use more words overall (main effect) but do they *reduce* more?}
 A key signature of successful communication among adults is an increase in efficiency over repeated reference [@KraussWeinheimer64_ReferencePhrases,@Clark1986Referring]. 
 As pairs form conceptual pacts, they are able to communicate the same meaning using fewer words. 
@@ -223,8 +223,11 @@ Specifically, parents of 4-year-olds used longer referring expressions throughou
 
 ### Reaction Time
 
-\todo[inline]{Take these results out? (seems redundant with length of referring expression and number of exchanges?)}
+
 We analyzed reaction time for each trial. Reaction time was stored automatically by the game’s computer code, and can be understood as time taken to complete the trial (rather than reaction time to a stimulus per se). Reaction times longer than 20000ms (2 minutes) were discarded. Since the game did not have an option for pausing, trials had abnormally long reaction times when dyads needed to take a break from the game (e.g. children needing to use the bathroom). Similar to length of referring expressions, reaction time decreased from Round 1 to Round 4 for pairs in all age groups (Figure 5). When split by age group, reaction times showed similar patterns to length of referring expression, such that dyads with older children were faster overall (Figure 6). 
+
+\todo[inline]{Take these results out? (seems redundant with length of referring expression and number of exchanges?)}
+
 
 # Where do pacts come from?
 
