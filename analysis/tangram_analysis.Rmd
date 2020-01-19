@@ -138,7 +138,8 @@ coding_data <- cdata %>%
 
 coding <- coding_data %>%
   arrange(subid, type, target, trial, Timeline.ordinal) %>%
-  select(subid, type, trial, target, person, utterance, selection, correct)
+  select(subid, type, trial, target, person, utterance, selection, correct) #%>%
+  filter(subid==58)
 
 #newcols <- c("final_initial", "self", "other", "accept")
 #coding[, newcols] <- NA

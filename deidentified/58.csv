@@ -102,7 +102,7 @@ subid,type,trial,target,person,utterance,selection,correct
 58,test,4,H1,parent,,parent,Y
 58,test,18,H1,parent,this looks like somebody holding..,,Y
 58,test,18,H1,child,,child,Y
-58,test,26,H1,child,it's a guy moving something,,Y
+58,test,26,H1,child,it's a guy holding something,,Y
 58,test,26,H1,parent,,parent,Y
 58,test,38,H1,parent,this looks like somebody holding a tray,,Y
 58,test,38,H1,child,,child,Y
