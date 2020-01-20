@@ -35,11 +35,17 @@ library(grid)
 library(xtable)
 library(ggthemes)
 library(lme4)
+
+combined <- read_csv('../../deidentified/combined.csv') %>%
+  filter(subid != 17)
+
+exchanges <- read_csv('../../deidentified/exchanges.csv') %>%
+  filter(subid != 17)
 ```
 
 # Introduction
 
-\todo[inline]{OUTLINE: 1. The basis of successful communication is common ground. Adults are good at forming common ground and referential pacts with conversational partners; young kids are not that great at it. 2. We know from various lines of work that parents adapt their language use sensitively to their children's age, knowledge, etc. We think this also happens in referential communication. 3. Studies show that children have greater referential success with adult experimenters (e.g. Glucksberg & Krauss) and after training (e.g. Matthews et al.). We want to look at the role of adult input in a more naturalistic way. Hence, parent-child ref. comm study. 4. We expect parent language to change with age of child. Parents may adapt to young children by taking up children's referent names; OR parents may adapt by providing more scaffolding / information, etc.}
+\todo[inline]{OUTLINE: 1. The basis of successful communication is common ground. Adults are good at forming common ground and referential pacts with conversational partners; young kids are not that great at it. 2. We know from various lines of work that parents adapt their language use sensitively to their children's age, knowledge, etc. We think this also happens in referential communication. 3. Studies show that children have greater referential success with adult experimenters (e.g. Glucksberg \& Krauss) and after training (e.g. Matthews et al.). We want to look at the role of adult input in a more naturalistic way. Hence, parent-child ref. comm study. 4. We expect parent language to change with age of child. Parents may adapt to young children by taking up children's referent names; OR parents may adapt by providing more scaffolding / information, etc.}
 
 As social beings, humans communicate with each other constantly. The basis of successful communication is mutual understanding, or common ground. One way to establish common ground is through the mutual construction of referential pacts, which are temporary agreements on referent names. Pact formation occurs naturally in conversation, and facilitates cooperation between partners [@Fusaroli2012Coming]. While research shows that adults readily form referential pacts with one another [@Brennan1996Conceptual; @Clark1986Referring], studies with children have yielded mixed results [@Branigan2016Do; @Glucksberg1967What]. Children eventually become skilled conversationalists, but little is known about how they acquire and refine their communicative skills. The present study focuses on referential communication between children and caregivers, to further understand how children develop communicative abilities, and the role that parents play in scaffolding this development. 
 
@@ -119,9 +125,10 @@ Experiment 1b used the same design as Experiment 1a, such that parents and child
 ### Performance accuracy
 
 ```{r accuracy, cache=T, fig.env = "figure", fig.pos = "h", fig.width=4, fig.height=2, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Accuracy"}
-d.accuracy.raw <- read_csv('../../deidentified/combined.csv') %>%
+d.accuracy.raw <- combined %>%
   mutate(age = ifelse(is.na(age), 'adult', age)) %>%
-  group_by(subid, trial, age, target, rep_num) %>%
+  mutate(person = ifelse(person %in% c('left', 'right', 'parent'), 'adult', person)) %>%
+  group_by(subid, trial, role, age, target, rep_num) %>%
   summarize(correct = mean(correct)) %>% 
   ungroup()
 
@@ -129,7 +136,7 @@ d.accuracy.raw <- read_csv('../../deidentified/combined.csv') %>%
 d.accuracy.raw %>%
   group_by(age, rep_num) %>%
   tidyboot_mean(correct) %>%
-  ggplot(aes(x = rep_num, y = empirical_stat * 100, color = age, group = age)) +
+  ggplot(aes(x = rep_num, y = empirical_stat * 100,  group = age, color = age)) +
     geom_line() +
     geom_errorbar(aes(ymin = ci_lower * 100, ymax = ci_upper * 100), width = 0.05) +
     ylab("% accuracy") +
@@ -158,7 +165,7 @@ Such improvement for 4-year-olds contrasts with early results of communication b
 
 ```{r exchanges, cache=T, fig.env = "figure", fig.pos = "h", fig.width=4, fig.height=2, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Number of dialogue exchanges."}
 # count number of back-and-forth exchanges
-d.exchanges.raw <- read_csv('../../deidentified/exchanges.csv') %>%
+d.exchanges.raw <- exchanges %>%
   mutate(age = ifelse(is.na(age), 'adult', age)) %>%
   group_by(subid, trial, age, target, rep_num) %>%
   summarize(num_exchanges = n()) %>% 
@@ -196,9 +203,23 @@ These lengthier exchanges may reflect efforts by parents to provide and elicit a
 
 ### Reduction in length of referring expression
 
-```{r development, fig.env = "figure", fig.pos = "h", fig.width=4, fig.height=2, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Change in length of referring expressions, split by age groups."}
-img <- png::readPNG("figs/developmental_change_placeholder.png")
-grid::grid.raster(img)
+```{r development, fig.env = "figure", fig.pos = "h", fig.width=8, fig.height=6, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Change in length of referring expressions, split by age groups."}
+d.reduction.raw <- combined %>%
+  mutate(age = ifelse(is.na(age), 'adult', age),
+         num_words =  str_count(utterance, " ") +1) %>%
+  filter(role == 'director') %>%
+  mutate(person = ifelse(person %in% c('left', 'right', 'parent'), 'adult', person)) %>%
+  group_by(age, rep_num, person) %>%
+  tidyboot_mean(num_words)
+
+ggplot(d.reduction.raw, aes(x = rep_num, y = empirical_stat, group = person, color = person)) +
+    geom_line() +
+    facet_grid(~ age) + 
+    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
+    theme_few() +
+    theme(aspect.ratio = 1) +
+    ylab("# words") +
+    scale_color_colorblind()
 ```
 
 \todo[inline]{TODO: Control for \# of exchanges? (obviously if younger pairs are taking extra turns they are producing more words overall)}
@@ -246,7 +267,7 @@ We test this prediction by quantitatively analyzing the natural-language transcr
 
 # Discussion
 
-Our main effect of reduction in length of referring expression replicates the effect found in Clark and Wilkes-Gibbs (1986), suggesting that parents and children were forming conceptual pacts with one another as the game progressed (Figure 2). This effect was found across all three age groups, and patterns were largely similar across groups. Our results show that children as young as 4 are able to cooperate with a more linguistically capable partner to form conceptual pacts in conversation. Taken together with prior research suggesting that 4-year-olds are not yet able to form conceptual pacts with their peers (Glucksberg & Krauss, 1967), our findings indicate that adults could scaffold younger children’s conversational abilities to facilitate effective referential communication. 
+Our main effect of reduction in length of referring expression replicates the effect found in Clark and Wilkes-Gibbs (1986), suggesting that parents and children were forming conceptual pacts with one another as the game progressed (Figure 2). This effect was found across all three age groups, and patterns were largely similar across groups. Our results show that children as young as 4 are able to cooperate with a more linguistically capable partner to form conceptual pacts in conversation. Taken together with prior research suggesting that 4-year-olds are not yet able to form conceptual pacts with their peers (Glucksberg \& Krauss, 1967), our findings indicate that adults could scaffold younger children’s conversational abilities to facilitate effective referential communication. 
 
 Older children and their parents used shorter referring expressions overall (Figure 3). This finding may reflect older children’s more advanced linguistic skills compared to their younger counterparts, such that they produce more succinct (and perhaps more efficient) referring expressions. Older children may also require less descriptive information about the target tangram in order to identify it. These explanations are not mutually exclusive, but further analysis suggests that the latter may reflect our data more accurately.
 
