@@ -35,6 +35,12 @@ library(grid)
 library(xtable)
 library(ggthemes)
 library(lme4)
+
+combined <- read_csv('../../deidentified/combined.csv') %>%
+  filter(subid != 17)
+
+exchanges <- read_csv('../../deidentified/exchanges.csv') %>%
+  filter(subid != 17)
 ```
 
 # Introduction
@@ -121,9 +127,10 @@ Experiment 1b used the same design as Experiment 1a, such that parents and child
 ### Performance accuracy
 
 ```{r accuracy, cache=T, fig.env = "figure", fig.pos = "h", fig.width=4, fig.height=2, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Accuracy"}
-d.accuracy.raw <- read_csv('../../deidentified/combined.csv') %>%
+d.accuracy.raw <- combined %>%
   mutate(age = ifelse(is.na(age), 'adult', age)) %>%
-  group_by(subid, trial, age, target, rep_num) %>%
+  mutate(person = ifelse(person %in% c('left', 'right', 'parent'), 'adult', person)) %>%
+  group_by(subid, trial, role, age, target, rep_num) %>%
   summarize(correct = mean(correct)) %>% 
   ungroup()
 
@@ -131,7 +138,7 @@ d.accuracy.raw <- read_csv('../../deidentified/combined.csv') %>%
 d.accuracy.raw %>%
   group_by(age, rep_num) %>%
   tidyboot_mean(correct) %>%
-  ggplot(aes(x = rep_num, y = empirical_stat * 100, color = age, group = age)) +
+  ggplot(aes(x = rep_num, y = empirical_stat * 100,  group = age, color = age)) +
     geom_line() +
     geom_errorbar(aes(ymin = ci_lower * 100, ymax = ci_upper * 100), width = 0.05) +
     ylab("% accuracy") +
@@ -160,7 +167,7 @@ Such improvement for 4-year-olds contrasts with early results of communication b
 
 ```{r exchanges, cache=T, fig.env = "figure", fig.pos = "h", fig.width=4, fig.height=2, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Number of dialogue exchanges."}
 # count number of back-and-forth exchanges
-d.exchanges.raw <- read_csv('../../deidentified/exchanges.csv') %>%
+d.exchanges.raw <- exchanges %>%
   mutate(age = ifelse(is.na(age), 'adult', age)) %>%
   group_by(subid, trial, age, target, rep_num) %>%
   summarize(num_exchanges = n()) %>% 
@@ -198,9 +205,23 @@ These lengthier exchanges may reflect efforts by parents to provide and elicit a
 
 ### Reduction in length of referring expression
 
-```{r development, fig.env = "figure", fig.pos = "h", fig.width=4, fig.height=2, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Change in length of referring expressions, split by age groups."}
-img <- png::readPNG("figs/developmental_change_placeholder.png")
-grid::grid.raster(img)
+```{r development, fig.env = "figure", fig.pos = "h", fig.width=8, fig.height=6, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Change in length of referring expressions, split by age groups."}
+d.reduction.raw <- combined %>%
+  mutate(age = ifelse(is.na(age), 'adult', age),
+         num_words =  str_count(utterance, " ") +1) %>%
+  filter(role == 'director') %>%
+  mutate(person = ifelse(person %in% c('left', 'right', 'parent'), 'adult', person)) %>%
+  group_by(age, rep_num, person) %>%
+  tidyboot_mean(num_words)
+
+ggplot(d.reduction.raw, aes(x = rep_num, y = empirical_stat, group = person, color = person)) +
+    geom_line() +
+    facet_grid(~ age) + 
+    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
+    theme_few() +
+    theme(aspect.ratio = 1) +
+    ylab("# words") +
+    scale_color_colorblind()
 ```
 
 \todo[inline]{TODO: Control for \# of exchanges? (obviously if younger pairs are taking extra turns they are producing more words overall)}
@@ -248,7 +269,7 @@ We test this prediction by quantitatively analyzing the natural-language transcr
 
 # Discussion
 
-Our main effect of reduction in length of referring expression replicates the effect found in Clark and Wilkes-Gibbs (1986), suggesting that parents and children were forming conceptual pacts with one another as the game progressed (Figure 2). This effect was found across all three age groups, and patterns were largely similar across groups. Our results show that children as young as 4 are able to cooperate with a more linguistically capable partner to form conceptual pacts in conversation. Taken together with prior research suggesting that 4-year-olds are not yet able to form conceptual pacts with their peers (Glucksberg & Krauss, 1967), our findings indicate that adults could scaffold younger children’s conversational abilities to facilitate effective referential communication. 
+Our main effect of reduction in length of referring expression replicates the effect found in Clark and Wilkes-Gibbs (1986), suggesting that parents and children were forming conceptual pacts with one another as the game progressed (Figure 2). This effect was found across all three age groups, and patterns were largely similar across groups. Our results show that children as young as 4 are able to cooperate with a more linguistically capable partner to form conceptual pacts in conversation. Taken together with prior research suggesting that 4-year-olds are not yet able to form conceptual pacts with their peers (Glucksberg \& Krauss, 1967), our findings indicate that adults could scaffold younger children’s conversational abilities to facilitate effective referential communication. 
 
 Older children and their parents used shorter referring expressions overall (Figure 3). This finding may reflect older children’s more advanced linguistic skills compared to their younger counterparts, such that they produce more succinct (and perhaps more efficient) referring expressions. Older children may also require less descriptive information about the target tangram in order to identify it. These explanations are not mutually exclusive, but further analysis suggests that the latter may reflect our data more accurately.
 
