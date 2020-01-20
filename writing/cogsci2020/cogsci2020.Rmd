@@ -27,7 +27,6 @@ knitr::opts_chunk$set(fig.width=3, fig.height=3, fig.crop = F,
 ```
 
 ```{r, libraries}
-library(tidyverse)
 library(broom.mixed)
 library(tidyboot)
 library(png)
@@ -35,23 +34,31 @@ library(grid)
 library(xtable)
 library(ggthemes)
 library(lme4)
+library(here)
+library(tm)
+library(tidytext)
+library(tidyverse)
 
-combined <- read_csv('../../deidentified/combined.csv') %>%
-  filter(subid != 17)
-
-exchanges <- read_csv('../../deidentified/exchanges.csv') %>%
-  filter(subid != 17)
+theme_set(theme_few(base_size = 12))
 ```
 
-# Introduction
+```{r load-data}
+kuperman_aoas <- read_csv(here("corpus_data/kuperman_aoas.csv"))
+combined_data <- read_csv(here("deidentified/combined.csv")) 
+exchanges_data <- read_csv(here("deidentified/exchanges.csv")) 
+```
+
 
 \todo[inline]{OUTLINE: 1. The basis of successful communication is common ground. Adults are good at forming common ground and referential pacts with conversational partners; young kids are not that great at it. 2. We know from various lines of work that parents adapt their language use sensitively to their children's age, knowledge, etc. We think this also happens in referential communication. 3. Studies show that children have greater referential success with adult experimenters (e.g. Glucksberg \& Krauss) and after training (e.g. Matthews et al.). We want to look at the role of adult input in a more naturalistic way. Hence, parent-child ref. comm study. 4. We expect parent language to change with age of child. Parents may adapt to young children by taking up children's referent names; OR parents may adapt by providing more scaffolding / information, etc.}
 
-As social beings, humans communicate with each other constantly. The basis of successful communication is mutual understanding, or common ground. One way to establish common ground is through the mutual construction of referential pacts, which are temporary agreements on referent names. Pact formation occurs naturally in conversation, and facilitates cooperation between partners [@Fusaroli2012Coming]. While research shows that adults readily form referential pacts with one another [@Brennan1996Conceptual; @Clark1986Referring], studies with children have yielded mixed results [@Branigan2016Do; @Glucksberg1967What]. Children eventually become skilled conversationalists, but little is known about how they acquire and refine their communicative skills. The present study focuses on referential communication between children and caregivers, to further understand how children develop communicative abilities, and the role that parents play in scaffolding this development. 
+As social beings, humans communicate with each other constantly. The basis of successful communication is mutual understanding, or common ground. One way to establish common ground is through the mutual construction of referential pacts, which are temporary agreements on referent names. Pact formation occurs naturally in conversation, and facilitates cooperation between partners [@fusaroli2012]. While research shows that adults readily form referential pacts with one another [@@brennan1996; @clark1986], studies with children have yielded mixed results [@branigan2016; @glucksberg1967]. Children eventually become skilled conversationalists, but little is known about how they acquire and refine their communicative skills. The present study focuses on referential communication between children and caregivers, to further understand how children develop communicative abilities, and the role that parents play in scaffolding this development. 
 
-Referential pacts, or conceptual pacts, are temporary agreements on referent names between interlocutors. These pacts are constructed collaboratively during conversation, are partner-specific, and are dynamic and malleable [@Brennan1996Conceptual; @Clark1989Contributing; @Ibarra2016flexibility]. The phenomenon of pact formation in adult conversation has been widely studied using matcher-director paradigms, where interlocutors refer to novel objects to one another [e.g. @Clark1986Referring]. Researchers have found that conversational partners use shorter, more efficient references over time, and converge upon referent names for each novel objects. Importantly, these referent names differ across conversational pairs, but can also change within conversational partners based on shifting goals or informational needs [@Clark1986Referring; @Ibarra2016flexibility]. Thus, common ground is more than common sense—it is mutual knowledge that is built between partners within a conversation to achieve communicative success. 
+Referential pacts, or conceptual pacts, are temporary agreements on referent names between interlocutors. These pacts are constructed collaboratively during conversation, are partner-specific, and are dynamic and malleable [@brennan1996; @clark1989; @ibarra2016]. The phenomenon of pact formation in adult conversation has been widely studied using matcher-director paradigms, where interlocutors refer to novel objects to one another [e.g. @clark1986]. Researchers have found that conversational partners use shorter, more efficient references over time, and converge upon referent names for each novel objects. Importantly, these referent names differ across conversational pairs, but can also change within conversational partners based on shifting goals or informational needs [@clark1986; @ibarra2016]. Thus, common ground is more than common sense—it is mutual knowledge that is built between partners within a conversation to achieve communicative success. 
 
 How do children communicate with one another? Matcher-director studies have been conducted in children, but have yielded mixed results. Some studies have shown that children are able to form referential pacts with peers by the age of 6, and by age 10, are sensitive to multiple partners’ knowledge states [@Branigan2016Do; @Köymen2014Young]. However, other studies have shown that 5-year-olds are unable to form common ground with peers in a matcher-director task using novel objects, though they can complete the same task using familiar pictures [@Glucksberg1967What]. Taken together, these studies suggest that children’s ability to reliably form conceptual pacts with one another emerge in early childhood, and continue to develop through middle childhood.
+
+What are some reasons young children fail to form referential pacts with others? One possible reason is that young children cannot take into account a partner’s perspective, and generates expressions that are only informative for themselves. Indeed, there is evidence showing that young children who fail at referential tasks with peers can succeed on the same task when experimenters use referent names that were generated by children themselves [@GlucksbergKraussWeisberg66_DevoRefGames]. An opposing account of children's failure to form referential pacts is that children are not sensitive to message informativity, and thus cannot produce appropriately informative references. This account is support by studies which have found that children are unable to accurately judge the informativeness of messages, and that those who are poor communicators could not identify the correct referent from their own expressions after a two-week delay [@Robinson1977Childrens; @Asher1976ChildrensFailure].
+
 
 \todo[inline]{TODO: mention Glucksberg, Krauss, and Weisberg, 1966, which showed that kids fail with one another (Exp. 1) but succeed when as listeners when the (adult) experimenter is the speaker (Exp. 2), even when the experimenter gradually reduces utterances. In addition, they succeed when the experimenter initially elicits each kid's *own* preferred description and then feeds it back to them (Exp. 3)}
 \todo[inline]{TODO: In introduction of classic explanations for failures in kid-kid dialogue, briefly mention Asher \& Oden, 1976? (which, contrary to Glucksberg, showed kids *couldn't* make good messages for *themselves* in the future, arguing it's probably not just egocentricity), the Beal \& Flavell 1982, or Robinson \& Robinson, 1977/1982 (which argued kids are bad at realizing messages can be ambiguous, and therefore cannot judge what will be an appropriately informative messages), Roberts \& Patterson (1983) which correlated quality of referring expressions with perspective-taking skills...}
@@ -59,28 +66,29 @@ How do children communicate with one another? Matcher-director studies have been
 \todo[inline]{TODO: mention Garrod \& Clark, 1993 or Anderson, Clark \& Mullin (1994). (which suggest the problem lies not in message formulation but in their failure to manage interactional stuff like giving feedback to their partner when they don't understand and explicitly asking for clarification.)}
 
 
-
 Thus far, research on children’s communicative development have largely focused on peer interactions. While these studies allow us to see how children’s referential abilities differ at various ages, they may not capture the full picture. Children do not only interact with each other. Indeed, much of young children’s daily interactions involve adults such as caregivers and teachers. To better understand how children become skilled conversationalists, we must explore the role that adults play in children’s communicative development.
 
 ## Parent-Child Interaction
 
-Young children interact with their caregivers on a daily basis. Research in the field of language development has found that linguistic input from parents and caregivers are predictive of children’s language learning outcomes (Weisleder & Fernald, 2013). While many studies have examined how parental speech influences children’s acquisition of vocabulary and grammar, less research has been done on how parents scaffold children’s communicative development more broadly. Language learning does not occur in isolation, and a broader understanding of language development requires that we study that communicative contexts in which language is used.
-Parents and caregivers are sensitive to their children’s needs, and are able to adapt their language accordingly. When interacting with young children, parents modify their sentence structure and content based on their children’s vocabulary knowledge (Leung, Tunkel, & Yurovsky, in press; Masur, 1997). In an observational study by Masur (1997), parents and children played with toy animals. The author found that parents used different sentence structures when referring to animals, depending on whether their children were familiar with the animal’s canonical label. In a more recent study, Leung et al. (in press) examined parents’ speech in a communicative game, where parents guided children to select animals on an iPad screen. Results showed that parents used longer sentences with more adjectives when referring to animals that they believe their children do not know. Taken together, these studies show that parents are able to sensitively adapt their language based on their children’s developmental level. 
-How might conversing with more linguistically-advanced interlocuters influence children’s communicative development? There is some evidence that adults can scaffold children’s referential communication (Glucksberg & Krauss, 1967; Matthews, Lieven, & Tomasello, 2010). As mentioned above, preschoolers were unable to complete the matcher-director task with peers in Glucksberg & Krauss’ (1967) study. However, in a follow up study, experimenters asked preschoolers to name the abstract objects prior to playing the game. When an adult experimenter used the preschoolers’ preferred referent names, children were able to complete the task. This finding suggests that children’s failure to complete the referential communication task may lie in their inability to negotiate conceptual pacts with one another, rather than an inability to map a referent name onto a referent. 
+Young children interact with their caregivers on a daily basis. Research in the field of language development has found that linguistic input from parents and caregivers are predictive of children’s language learning outcomes [@weisleder2013]. While many studies have examined how parental speech influences children’s acquisition of vocabulary and grammar, less research has been done on how parents scaffold children’s communicative development more broadly. Language learning does not occur in isolation, and a broader understanding of language development requires that we study that communicative contexts in which language is used.
+Parents and caregivers are sensitive to their children’s needs, and are able to adapt their language accordingly. When interacting with young children, parents modify their sentence structure and content based on their children’s vocabulary knowledge (Leung, Tunkel, \& Yurovsky, in press; Masur, 1997). In an observational study by Masur (1997), parents and children played with toy animals. The author found that parents used different sentence structures when referring to animals, depending on whether their children were familiar with the animal’s canonical label. In a more recent study, Leung et al. (in press) examined parents’ speech in a communicative game, where parents guided children to select animals on an iPad screen. Results showed that parents used longer sentences with more adjectives when referring to animals that they believe their children do not know. Taken together, these studies show that parents are able to sensitively adapt their language based on their children’s developmental level. 
+How might conversing with more linguistically-advanced interlocuters influence children’s communicative development? There is some evidence that adults can scaffold children’s referential communication (Glucksberg \& Krauss, 1967; Matthews, Lieven, \& Tomasello, 2010). As mentioned above, preschoolers were unable to complete the matcher-director task with peers in Glucksberg & Krauss’ (1967) study. However, in a follow up study, experimenters asked preschoolers to name the abstract objects prior to playing the game. When an adult experimenter used the preschoolers’ preferred referent names, children were able to complete the task. This finding suggests that children’s failure to complete the referential communication task may lie in their inability to negotiate conceptual pacts with one another, rather than an inability to map a referent name onto a referent. 
 
 Explicit feedback may also influence children’s referential communication abilities. Matthews et al. (2010) conducted a training study, in which young children received explicit feedback from adult experimenters in a referential communication setting. Participants who underwent training were more likely to spontaneously produce unambiguous referential expressions at test, indicating that feedback can support the development of communicative abilities. However, both studies discussed here examine adult-child interaction in a highly constrained setting: the adults are experimenters with a clear script of how to speak to the child participants. To better understand how adults may scaffold children’s communicative development, we must study adult-child interactions in a more naturalistic setting.
 
-The present study aims to explore how parents and children interact to form referential pacts in conversation. Based on prior developmental research showing that sensitivity to conceptual pacts emerge in early childhood, and referential abilities gradually develop through middle childhood (Branigan et al., 2016; Graham et al., 2014; Köymen et al., 2014), we opted to study 4-8 year-old children. The main goal of this is to understand whether and how parents scaffold children’s communicative development, by comparing parent-child referential communication across ages. 
+The present study aims to explore how parents and children interact to form referential pacts in conversation. Based on prior developmental research showing that sensitivity to conceptual pacts emerge in early childhood, and referential abilities gradually develop through middle childhood [@branigan2016; @graham2016; @graham2014; @koymen2014], we opted to study 4-8 year-old children. The main goal of this is to understand whether and how parents scaffold children’s communicative development, by comparing parent-child referential communication across ages. 
 
 Based on previous work on adult-child referential communication, there are two possible accounts of parent adaptation in referential pact formation. 1) Parents of younger children would take up more of their children's referent names in order to boost referential success, in line with Glucksberg and Krauss' (1967) finding that children had high receptive referential success when experimenters used names generated by the child. 2) Parents of younger children provide more higher-level feedback and scaffolding throughout the game, such as through rephrasing children's referential expressions or asking for clarifying information, in line with Matthews et al.'s (2010) training study.
 
-# Experiment 1a: Referential Communication in Adults
+# Experiment: Referential Communication in Adult-Adult Pairs and Parent-Child Pairs
 
 ## Methods
 
 ### Participants
 
-Participants were recruited from the University of Chicago's online subject pool, to achieve a planned sample of 20 pairs. At the time of analysis, data from 17 dyads were included.
+Adult participants were recruited from the University of Chicago's online subject pool, to achieve a planned sample of 20 pairs. At the time of analysis, data from 17 dyads were included.
+
+Children (ages 4, 6, and 8) and their parents were recruited from a database of families in the local community, to achieve a planned sample of 60 parent-child pairs. A total of 75 children and their parents participated, but data from 12 pairs were dropped due to experimental error or failure to complete the study. The remaining sample of 63 parent-child dyads were included in analysis.
 
 ### Stimuli 
 
@@ -88,36 +96,17 @@ Twelve solid black images of tangrams, and colored versions of the same tangrams
 
 ### Procedure
 
-Each dyad played a cooperative game with iPads. Pairs sat at a table with a divider in the middle, which prevented participants from looking at each other’s iPad screens during the game. The game was a simplified version of the matcher-director task used in Clark & Wilkes-Gibbs (1986). Participants were told that they would take turns being the director and matcher. They were told that the director should describe the image inside the blue square, and the matcher should select an image based on the director’s description. After instruction, the practice and experimental trials began. On each experimental trial, two solid black tangrams appeared on the iPad screens. The same images appeared on each screen, but their positions were randomized. On the director’s screen, one image appeared inside a blue square, while the images on the matcher’s screen simply appeared on a white background (Figure 1). Upon selection of an image on the matcher’s screen, the selected image became colorful, and a sound is played (independent of accuracy). After each trial, the roles were switched. Practice trials followed the same structure as experimental trials, but images of fruits and vegetables were used during this round. All sessions were videotaped, and the videos were transcribed using an Open-Source coding software, Datavyu (2014).
+Each dyad played a cooperative game with iPads. Pairs sat at a table with a divider in the middle, which prevented participants from looking at each other’s iPad screens during the game. The game was a simplified version of the matcher-director task used in @clark1986. Participants were told that they would take turns being the director and matcher. They were told that the director should describe the image inside the blue square, and the matcher should select an image based on the director’s description. After instruction, the practice and experimental trials began. On each experimental trial, two solid black tangrams appeared on the iPad screens. The same images appeared on each screen, but their positions were randomized. On the director’s screen, one image appeared inside a blue square, while the images on the matcher’s screen simply appeared on a white background (Figure 1). Upon selection of an image on the matcher’s screen, the selected image became colorful, and a sound is played (independent of accuracy). After each trial, the roles were switched. Practice trials followed the same structure as experimental trials, but images of fruits and vegetables were used during this round. All sessions were videotaped, and the videos were transcribed using DAtavyu--an Open-Source coding software [@datavyu-team2014] 
 
 ### Design
 
-There were 4 blocks of 10 trials. Each tangram appeared as the target once during each block, such that each tangram was the target four times during the game. Trials within blocks were randomized. The 10 tangrams were shuffled and randomly assigned to either participants at the beginning of the game. The assignment dictates who would be the director for a particular target in Round 1. Thus, each participant played the role of director two times for each of the 10 tangrams. In each round, the targets appeared with different foils. The trials were constructed such that the most similar tangrams (based on mTurk worker judgments) did not appear together.
+There were 4 blocks of 10 trials. Each tangram appeared as the target once during each block, such that each tangram was the target four times during the game. Trials within blocks were randomized. The 10 tangrams were shuffled and randomly assigned to either participants at the beginning of the game. The assignment dictates who would be the director for a particular target in Round 1. Thus, each participant played the role of director two times for each of the 10 tangrams. In each round, the targets appeared with different foils. To ensure that the game would not be too difficult for young children, trials were constructed such that the most similar tangrams (based on mTurk worker judgments) did not appear together.
 
-# Experiment 1b: Parent-Child Interaction
-
-## Methods 
 
 ```{r 2-col-image, fig.env = "figure*", fig.pos = "h", fig.width=4, fig.height=2, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Example of iPad screens for the director (left) and matcher (right) during the game."}
 img <- png::readPNG("figs/display.png")
 grid::grid.raster(img)
 ```
-
-### Participants
-
-Children (ages 4, 6, and 8) and their parents were recruited from a database of families in the local community, to achieve a planned sample of 60 parent-child pairs. A total of 75 children and their parents participated, but data from 12 pairs were dropped due to experimental error or failure to complete the study. The remaining sample of 63 parent-child dyads were included in analysis.
-
-### Stimuli 
-
-The same images from Experiment 1a were used in the parent-child version of the experiment. 
-
-### Procedure
-
-Each parent-child pair played the game described in Experiment 1a. Pairs sat at a table with a divider in the middle, and were told that they would take turns being the director and matcher. Parent-child pairs completed the same number of practice and test trials as the participants in Experiment 1a. All sessions were videotaped, and videos were transcribed using an Open-Source coding software, Datavyu (2014).
-
-### Design
-
-Experiment 1b used the same design as Experiment 1a, such that parents and children each played the role of director two times for each of the 10 tangrams. To ensure that the task would not be too difficult for young children, the trials were constructed such that the most similar tangrams (based on mTurk worker judgments) did not appear together.
 
 ## Results
 
@@ -125,9 +114,12 @@ Experiment 1b used the same design as Experiment 1a, such that parents and child
 ### Performance accuracy
 
 ```{r accuracy, cache=T, fig.env = "figure", fig.pos = "h", fig.width=4, fig.height=2, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Accuracy"}
-d.accuracy.raw <- combined %>%
-  mutate(age = ifelse(is.na(age), 'adult', age)) %>%
-  mutate(person = ifelse(person %in% c('left', 'right', 'parent'), 'adult', person)) %>%
+
+d.accuracy.raw <- combined_data %>%
+  mutate(age = as.character(age),
+         age = if_else(is.na(age), 'adult', age)) %>%
+  mutate(person = ifelse(person %in% c('left', 'right', 'parent'), 
+                         'adult', person)) %>%
   group_by(subid, trial, role, age, target, rep_num) %>%
   summarize(correct = mean(correct)) %>% 
   ungroup()
@@ -138,17 +130,22 @@ d.accuracy.raw %>%
   tidyboot_mean(correct) %>%
   ggplot(aes(x = rep_num, y = empirical_stat * 100,  group = age, color = age)) +
     geom_line() +
-    geom_errorbar(aes(ymin = ci_lower * 100, ymax = ci_upper * 100), width = 0.05) +
+    geom_errorbar(aes(ymin = ci_lower * 100, ymax = ci_upper * 100),
+                  width = 0.05) +
     ylab("% accuracy") +
     xlab("repetition #") +
     ylim(78, 100) +
-    theme_few() +
     theme(aspect.ratio = 1) +
     scale_color_colorblind()
 
-lmer.accuracy <- tidy(glmer(correct ~ age + rep_num + (1 + rep_num | subid) + (1 | target), 
-                            family = 'binomial',
-                            data = d.accuracy.raw %>% filter(age != 'adult') %>% mutate(age = as.numeric(age))))
+
+lmer.accuracy <- d.accuracy.raw %>%
+  filter(age != "adult") %>%
+  mutate(age == as.numeric(age)) %>%
+  glmer(correct ~ age + rep_num + (rep_num | subid) + (1 | target), 
+                            family = 'binomial', data = .) %>%
+  tidy()
+
 age_effect_acc = lmer.accuracy %>% filter(term == 'age')
 rep_effect_acc = lmer.accuracy %>% filter(term == 'rep_num')
 ```
@@ -165,8 +162,10 @@ Such improvement for 4-year-olds contrasts with early results of communication b
 
 ```{r exchanges, cache=T, fig.env = "figure", fig.pos = "h", fig.width=4, fig.height=2, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Number of dialogue exchanges."}
 # count number of back-and-forth exchanges
-d.exchanges.raw <- exchanges %>%
-  mutate(age = ifelse(is.na(age), 'adult', age)) %>%
+
+d.exchanges.raw <- exchanges_data %>%
+  mutate(age = as.character(age)) %>%
+  mutate(age = if_else(is.na(age), 'adult', age)) %>%
   group_by(subid, trial, age, target, rep_num) %>%
   summarize(num_exchanges = n()) %>% 
   ungroup()
@@ -180,7 +179,6 @@ d.exchanges.raw %>%
     geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
     ylab("# exchanges per round") +
     xlab("repetition #") +
-    theme_few() +
     theme(aspect.ratio = 1) +
     scale_color_colorblind()
 
@@ -206,8 +204,8 @@ These lengthier exchanges may reflect efforts by parents to provide and elicit a
 
 ### Reduction in length of referring expression
 
-```{r development, fig.env = "figure*", fig.pos = "h", fig.width=8, fig.height=3, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Change in length of referring expressions, split by age groups."}
-d.reduction.raw <- combined %>%
+```{r development, fig.env = "figure", fig.pos = "h", fig.width=8, fig.height=6, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Change in length of referring expressions, split by age groups."}
+d.reduction.raw <- combined_data %>%
   mutate(age = ifelse(is.na(age), 'adult', age),
          num_words =  str_count(utterance, " ") +1) %>%
   filter(role == 'director') %>%
@@ -267,11 +265,9 @@ Specifically, parents of 4-year-olds used longer referring expressions throughou
 
 ### Reaction Time
 
-
 We analyzed reaction time for each trial. Reaction time was stored automatically by the game’s computer code, and can be understood as time taken to complete the trial (rather than reaction time to a stimulus per se). Reaction times longer than 20000ms (2 minutes) were discarded. Since the game did not have an option for pausing, trials had abnormally long reaction times when dyads needed to take a break from the game (e.g. children needing to use the bathroom). Similar to length of referring expressions, reaction time decreased from Round 1 to Round 4 for pairs in all age groups (Figure 5). When split by age group, reaction times showed similar patterns to length of referring expression, such that dyads with older children were faster overall (Figure 6). 
 
 \todo[inline]{Take these results out? (seems redundant with length of referring expression and number of exchanges?)}
-
 
 # Where do pacts come from?
 
@@ -287,7 +283,46 @@ They fail with other children because neither can generate an understandable eno
 These accounts make different predictions about who is adapting to who: do pacts originate with children, or with adults?
 We test this prediction by quantitatively analyzing the natural-language transcripts. 
 
+# What predicts success?
 
+In order to estimate the complexity of language used by participants, we used self-reported age of acquisition estimates collected by @kuperman2012. These researchers asked almost 2000 Mechanical Turkers to judge the age at which they first acquired each of a large set of words on a 7 point Likert scale. Although one might be suspicious that adults have little access to this kind of information, these judgments are highly correlated with parents' estimates of the age at which their children learn corresponding words, and are better than a variety of other measures (e.g. frequency, concreteness, word length) in predicting lexical decision times [@kuperman2012].
+
+For each participant, on each trial, we estimated the linguistic complexity of their contribution by averaging the estimated age of acquisition for each word in their utterance^[We first removed any words in a list of `r stopwords() %>% length()` stopwords like "at" and "me" from the \texttt{tm} package [@feinerer2008]`.  
+
+```{r}
+tokens <- combined_data %>%
+  filter(role == "director") %>%
+  group_by(age, person, subid, target, rep_num) %>%
+  summarise(words = str_to_lower(utterance)) %>%
+  unnest_tokens(word, words) %>%
+  ungroup() %>%
+  mutate(word = str_to_lower(word))
+
+aoas <- tokens %>%
+  left_join(kuperman_aoas, by = "word") %>%
+  filter(!word %in% tm::stopwords()) %>%
+  group_by(age, person, target, rep_num, subid) %>%
+  summarise(aoa = mean(aoa, na.rm = T)) %>%
+  group_by(age, person, target, subid) %>%
+  ungroup() %>%
+  mutate(person = case_when(person == "left" ~ "adult",
+                            person == "right" ~ "adult",
+                            T ~ person))
+
+mean_aoas <- aoas %>%
+  group_by(age, person, rep_num, subid) %>%
+  summarise(aoa = mean(aoa, na.rm = T)) %>%
+  tidyboot_mean(aoa, na.rm = T)
+
+ggplot(mean_aoas, aes(x = rep_num, y = empirical_stat, color = as.factor(age))) +
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
+                  position = position_dodge(.25)) + 
+  facet_wrap(~ person) + 
+  geom_line() + 
+  theme(aspect.ratio = 1, legend.position = "none") +
+  scale_color_colorblind() + 
+  labs(x = "rep #", y = "AoA (average)")
+```
 # Discussion
 
 Our main effect of reduction in length of referring expression replicates the effect found in Clark and Wilkes-Gibbs (1986), suggesting that parents and children were forming conceptual pacts with one another as the game progressed (Figure 2). This effect was found across all three age groups, and patterns were largely similar across groups. Our results show that children as young as 4 are able to cooperate with a more linguistically capable partner to form conceptual pacts in conversation. Taken together with prior research suggesting that 4-year-olds are not yet able to form conceptual pacts with their peers (Glucksberg \& Krauss, 1967), our findings indicate that adults could scaffold younger children’s conversational abilities to facilitate effective referential communication. 
@@ -314,6 +349,7 @@ the end of the paper.
 # References 
 
 ```{r}
+
 # References will be generated automatically by Pandoc and included here.
 # The following code is some latex to format the bibliography. Do not remove it.
 ```
