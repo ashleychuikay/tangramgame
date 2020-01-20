@@ -48,14 +48,14 @@ exchanges <- raw_data %>%
 combined_data <- exchanges %>% # combine with info about who had which role on each trial
   filter(utt_number < number_at_selection) %>% # remove utterances after selection was made
   group_by(subid, trial, person, role, target, rep_num, age) %>%
-  summarize(utterance = paste0(utterance, collapse = ' '), correct = any(correct)) %>%
+  summarize(utterance = paste0(utterance, collapse = ' '), correct = any(correct))
 ```
 
 Write out combined data to import into python for nlp
 
 ```{r}
 write_csv(exchanges, '../deidentified/exchanges.csv')
-write_csv(data, '../deidentified/combined.csv')
+write_csv(combined_data, '../deidentified/combined.csv')
 ```
 
 
