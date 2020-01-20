@@ -201,25 +201,48 @@ This increased level of interactivity between parents and younger children provi
 These lengthier exchanges may reflect efforts by parents to provide and elicit additional clarification or confirmation, or may simply reflect attentional difficulties. 
 \todo[inline]{TODO: Can we follow-up by analyzing how many of these were questions vs. confirmation vs. purely keeping kids on task? Also: describe mixed-effect structure.}
 
+
+\todo[inline]{TODO: follow-up analysis only looking at first utterance produced by director (i.e. controlling for number of exchanges)}
+
 ### Reduction in length of referring expression
 
-```{r development, fig.env = "figure", fig.pos = "h", fig.width=8, fig.height=6, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Change in length of referring expressions, split by age groups."}
+```{r development, fig.env = "figure*", fig.pos = "h", fig.width=8, fig.height=3, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Change in length of referring expressions, split by age groups."}
 d.reduction.raw <- combined %>%
   mutate(age = ifelse(is.na(age), 'adult', age),
          num_words =  str_count(utterance, " ") +1) %>%
   filter(role == 'director') %>%
-  mutate(person = ifelse(person %in% c('left', 'right', 'parent'), 'adult', person)) %>%
-  group_by(age, rep_num, person) %>%
-  tidyboot_mean(num_words)
+  mutate(person = ifelse(person %in% c('left', 'right', 'parent'), 'adult', person)) 
 
-ggplot(d.reduction.raw, aes(x = rep_num, y = empirical_stat, group = person, color = person)) +
+d.reduction.raw %>% 
+  group_by(age, rep_num, person) %>%
+  tidyboot_mean(num_words) %>%
+  ggplot(aes(x = rep_num, y = empirical_stat, group = person, color = person)) +
     geom_line() +
     facet_grid(~ age) + 
     geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
     theme_few() +
     theme(aspect.ratio = 1) +
     ylab("# words") +
+    xlab("rep #") +
     scale_color_colorblind()
+  
+lmer.reduction <- tidy(lmer(log(num_words) ~ person + age + rep_num + rep_num:person + person:age  + (1 + rep_num | subid) + (1 | target), 
+                            data = d.reduction.raw %>% filter(age != 'adult') %>% mutate(age = as.numeric(age)),
+                            control=lmerControl('bobyqa'))) %>%
+  filter(effect == 'fixed') #%>%
+  #filter(p.value < 0.05)
+lmer.reduction
+age_effect = lmer.exchanges %>% filter(term == 'age')
+rep_effect = lmer.exchanges %>% filter(term == 'rep_num')
+
+lmer.reduction.exchange.control <- tidy(
+    lmer(log(normalized_num_words) ~ person + age + rep_num + rep_num:person + person:age + (1 + rep_num | subid) + (1 | target), 
+    data = d.reduction.raw %>% filter(age != 'adult') %>% mutate(age = as.numeric(age), normalized_num_words),
+    control=lmerControl('bobyqa'))
+  ) %>%
+  filter(effect == 'fixed') #%>%
+  #filter(p.value < 0.05)
+
 ```
 
 \todo[inline]{TODO: Control for \# of exchanges? (obviously if younger pairs are taking extra turns they are producing more words overall)}
