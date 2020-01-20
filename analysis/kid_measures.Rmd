@@ -22,9 +22,13 @@ library(koRpus.lang.en)
 library(ggthemes)
 library(readxl)
 library(janitor)
+library(forcats)
 library(tidyverse)
 #devtools::install_github("mikabr/ggpirate")
 library(ggpirate)
+library(widyr)
+library(tm)
+library(lme4)
 
 opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, 
                error = FALSE, cache = TRUE, tidy = FALSE)
@@ -42,15 +46,31 @@ We compute some simple measures of linguistic complexity for each participant:
 
 4. Log Frequency - Log Frequency estimates of each word from the SUBTLEX-US corpus. less frequent words plausibly index more sophisticated language (Brysbaert, New, & Keuleers, 2012)
 
-```{r read_data}
-files <- list.files(path = here("deidentified/"), pattern = "*[0-9].csv", 
+```{r read-subj-data, include = F, eval = F}
+kid_files <- list.files(path = here("deidentified/"), pattern = "*[0-9].csv", 
                     full.names = TRUE)
-  
-ages <- read_csv(here("deidentified/meta.csv"))
+adult_files <- list.files(path = here("deidentified/adult/"), pattern = "*[0-9].csv", 
+                    full.names = TRUE)
 
-data <- map_dfr(files, read_csv) %>%
+  
+ages <- read_csv(here("deidentified/meta.csv")) %>%
+  mutate(age = as.character(age))
+
+kid_data <- map_dfr(kid_files, read_csv) %>%
   left_join(ages, by = c("subid"))
 
+adult_data <- map_dfr(adult_files, read_csv) %>%
+  mutate(age = "adult")
+
+data <- bind_rows(kid_data, adult_data)
+```
+
+```{r read-all-data}
+combined_data <- read_csv(here("deidentified/combined.csv"))
+exchanges_data <- read_csv(here("deidentified/combined.csv")) 
+```
+
+```{r read-corpus-data}
 kuperman_aoas <- read_excel(
   here("corpus_data/AoA_ratings_Kuperman_et_al_BRM.xlsx")) %>%
   clean_names() %>%
@@ -61,15 +81,59 @@ kuperman_aoas <- read_excel(
   select(-freq_pm)
 ```
 
-```{r compute-measures}
-tokens <- data %>%
-  filter(!is.na(utterance), type != "practice") %>%
-  group_by(age, person, subid, trial) %>%
-  summarise(words = str_to_lower(paste(utterance, collapse = " "))) %>%
+```{r compute-lang-measures}
+tokens <- combined_data %>%
+  filter(role == "director") %>%
+  group_by(age, person, subid, target, rep_num) %>%
+  summarise(words = str_to_lower(utterance)) %>%
   unnest_tokens(word, words) %>%
   ungroup() %>%
   mutate(word = str_to_lower(word))
 
+tokens <- exchanges_data %>%
+  filter(role == "director") %>%
+  group_by(age, person, subid, target, rep_num) %>%
+  slice(1) %>%
+  summarise(words = str_to_lower(utterance)) %>%
+  unnest_tokens(word, words) %>%
+  ungroup() %>%
+  mutate(word = str_to_lower(word))
+
+
+aoas <- tokens %>%
+  left_join(kuperman_aoas, by = "word") %>%
+  filter(!word %in% tm::stopwords()) %>%
+  group_by(age, person, target, rep_num, subid) %>%
+  summarise_at(vars(aoa, log_freq), ~mean(.x, na.rm = T)) %>%
+  group_by(age, person, target, subid) %>%
+  ungroup() %>%
+  mutate(person = case_when(person == "left" ~ "adult",
+                            person == "right" ~ "adult",
+                            T ~ person))
+
+mean_aoas <- aoas %>%
+  group_by(age, person, rep_num, subid) %>%
+  summarise_at(vars(aoa, log_freq), ~mean(.x, na.rm = T)) %>%
+  tidyboot_mean(aoa, na.rm = T)
+
+ggplot(mean_aoas, aes(x = rep_num, y = empirical_stat, color = as.factor(age))) +
+  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper), 
+                  position = position_dodge(.25)) + 
+  facet_wrap(~ person) + 
+  geom_line()
+  
+aoa_lm <- aoas %>%
+  filter(person  == "parent") %>%
+  lmer(aoa ~ age * rep_num + (rep_num | subid) + (1|target),
+       control = lmerControl(optimizer = "bobyqa"),
+       data = .)
+
+aoa_lm %>%
+  tidy() %>%
+  filter(effect == "fixed")
+```
+
+```{r unused-measures, eval = F, include = F}
 corpora <- tokens %>%
   group_by(age, person, subid) %>%
   summarise(corpus = paste(word, collapse = " ")) %>%
@@ -89,21 +153,69 @@ types <- tokens %>%
   distinct(word) %>%
   summarise(types = n())
 
-aoas <- tokens %>%
-  left_join(kuperman_aoas, by = "word") %>%
-  group_by(age, person, subid) %>%
-  summarise_at(vars(aoa, log_freq), ~mean(.x, na.rm = T))
-
 measures <- left_join(mtlds, types, by = c("age", "person", "subid")) %>%
   left_join(aoas, by = c("age", "person", "subid")) %>%
   pivot_longer(cols = c(mtld, types, aoa, log_freq), names_to = "measure", 
                values_to = "score") %>%
   ungroup() %>%
-  mutate(age = as.factor(age))
+  mutate(age = as_factor(age),
+         person = as_factor(person))
 
 ```
 
-```{r descriptives, fig.width = 6, fig.height= 6}
+```{r compute-game-measures, eval = F, include = F}
+game_data <- data %>%
+  group_by(age, person, subid, trial) %>%
+  distinct(correct)
+
+acc_data <- game_data %>%
+  summarise(correct = mean(correct)) %>%
+  summarise(correct = mean(correct)) %>%
+  mutate(type = "self")
+
+other_acc_data <- acc_data %>%
+  ungroup() %>%
+  mutate(person = case_when(person == "child" ~ "parent",
+                            person == "parent" ~ "child",
+                            person == "left" ~ "right",
+                            person == "right" ~ "left", 
+                            T ~ as.character(NA))) %>%
+  mutate(type = "other")
+
+reduction_data <- data %>%
+  filter(role == "director") %>%
+  group_by(age, subid, person, trial, target) %>%
+  summarise(utterance = str_to_lower(utterance)) %>%
+  unnest_tokens(word, utterance) %>%
+  group_by(age, subid, person, target, trial) %>%
+  summarise(words = n()) %>%
+  summarise(reduction = log(last(words)/first(words))) %>%
+  group_by(age, subid, person) %>%
+  summarise(reduction = mean(reduction)) %>%
+  mutate(type = "self")
+
+other_reduction_data <- reduction_data %>%
+  ungroup() %>%
+  mutate(person = case_when(person == "child" ~ "parent",
+                            person == "parent" ~ "child",
+                            person == "left" ~ "right",
+                            person == "right" ~ "left", 
+                            T ~ as.character(NA))) %>%
+  mutate(type = "other")
+
+game_measures <- left_join(acc_data, reduction_data) %>%
+  pivot_longer(cols = c(correct, reduction), 
+               names_to = "game_measure", values_to = "value") %>%
+  bind_rows(left_join(other_acc_data, other_reduction_data) %>%
+              pivot_longer(cols = c(correct, reduction), 
+                           names_to = "game_measure", values_to = "value")) %>%
+  ungroup() %>%
+  mutate(age = factor(age))
+
+
+```
+
+```{r descriptives, fig.width = 6, fig.height= 6, eval = F, include = F}
 ggplot(measures, aes(x = age, y = score, 
                   color = person, fill = person)) + 
   facet_grid(measure ~ ., scales = "free") + 
@@ -115,6 +227,41 @@ ggplot(measures, aes(x = age, y = score,
 
 ```
 
-```{r write_file}
+```{r write_file, eval = F, include = F}
 write_csv(measures, here("deidentified/lang_measures.csv"))
+```
+
+```{r eval = F, include = F}
+comparison_data <- left_join(measures, game_measures)
+
+correlations <- comparison_data %>%
+#  mutate(person = if_else(person %in% c("left", "right"), "adult", person)) %>%
+  group_by(age, person, type, measure, game_measure) %>%
+  nest() %>%
+  mutate(cortest = map(data, ~cor.test(.x$score, .x$value)),
+         cor = map(cortest, ~.x$estimate),
+         ci = map(cortest, ~.x$conf.int),
+         ci_lower = map(ci, ~.x[1]),
+         ci_upper = map(ci, ~.x[2])) %>%
+  select(-data, -cortest, -ci) %>%
+  unnest(cols = c(cor, ci_lower, ci_upper))
+
+correlations %>%
+  filter(game_measure == "correct") %>%
+  ggplot(aes(x = age, y = cor, color = person)) + 
+  facet_grid(type ~ measure) + 
+  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper),
+                      position = position_dodge(.25)) + 
+  scale_color_ptol() + 
+  geom_hline(aes(yintercept = 0), linetype = "dashed")
+
+correlations %>%
+  filter(game_measure == "reduction") %>%
+  ggplot(aes(x = age, y = cor, color = person)) + 
+  facet_grid(type ~ measure) + 
+  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper),
+                      position = position_dodge(.25)) + 
+  scale_color_ptol() + 
+  geom_hline(aes(yintercept = 0), linetype = "dashed")
+  
 ```
