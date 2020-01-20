@@ -10,7 +10,7 @@ subid,type,trial,target,person,utterance,selection,correct
 16,practice,2,artichoke,parent,Kinda like a pineapple,,Y
 16,practice,2,artichoke,parent,,parent,Y
 16,practice,2,artichoke,parent,It's an artichoke,,Y
-16,practice,2,artichoke,parent,By the way or a or a brussel sprout maybe no actually,,Y
+16,practice,2,artichoke,parent,"By the way or a or a brussel sprout maybe no, artichoke",,Y
 16,practice,5,artichoke,child,Um artichoke,,Y
 16,practice,5,artichoke,child,,child,Y
 16,practice,3,onion,parent,Um onion,,Y
@@ -18,6 +18,7 @@ subid,type,trial,target,person,utterance,selection,correct
 16,practice,6,onion,child,Onion,,Y
 16,practice,6,onion,parent,,parent,Y
 16,test,6,A1,child,It looks like a person dancing,,Y
+16,test,6,A1,parent,Oh,,Y
 16,test,6,A1,parent,,parent,Y
 16,test,6,A1,child,With a diamond on its head,,Y
 16,test,20,A1,parent,This looks like a person running with a diamond head,,Y
@@ -35,7 +36,6 @@ subid,type,trial,target,person,utterance,selection,correct
 16,test,11,B1,parent,,parent,Y
 16,test,29,B1,parent,This one looks like a person with a square head looking at the ground standing,,Y
 16,test,29,B1,child,,child,Y
-16,test,39,B1,child,This makes,,Y
 16,test,39,B1,child,This,,Y
 16,test,39,B1,child,This is the one guy looking at the ground sadly,,Y
 16,test,39,B1,parent,,parent,Y
@@ -59,6 +59,8 @@ subid,type,trial,target,person,utterance,selection,correct
 16,test,36,C1,child,No,,Y
 16,test,36,C1,parent,Does he have a square head,,Y
 16,test,36,C1,child,No,,Y
+16,test,36,C1,parent,Mmm,,Y
+16,test,36,C1,parent,What do you have,,Y
 16,test,36,C1,child,I have somebody like with feet on legs and with a square and a diamond head,,Y
 16,test,36,C1,parent,OK so you have somebody with a diamond head and then somebody with feet,,Y
 16,test,36,C1,child,And legs with a square,,Y
@@ -124,7 +126,6 @@ subid,type,trial,target,person,utterance,selection,correct
 16,test,17,G1,parent,,parent,Y
 16,test,25,G1,parent,This is like a rocketship touching a square,,Y
 16,test,25,G1,child,,child,Y
-16,test,25,G1,child,That makes them powerful,,Y
 16,test,35,G1,child,This looks like some a rocketship touching a square,,Y
 16,test,35,G1,parent,,parent,Y
 16,test,8,H1,child,This looks like somebody,,Y
@@ -135,12 +136,12 @@ subid,type,trial,target,person,utterance,selection,correct
 16,test,12,H1,parent,This looks like a man with a diamond head,,N
 16,test,12,H1,child,,child,N
 16,test,26,H1,child,This looks like somebody standing on the foots with a diamond head,,Y
+16,test,26,H1,parent,Mmm,,Y
 16,test,26,H1,parent,Are they standing on both feet or just one foot,,Y
 16,test,26,H1,child,Both feet,,Y
 16,test,26,H1,parent,,parent,Y
 16,test,38,H1,parent,This looks like a person with a diamond head,,Y
 16,test,38,H1,child,,child,Y
-16,test,38,H1,child,That that makes them powerful,,Y
 16,test,7,I1,parent,This looks like somebody holding a triangle,,Y
 16,test,7,I1,child,,child,Y
 16,test,19,I1,child,zzz it's this person somebody holding a triangle,,Y

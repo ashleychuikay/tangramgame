@@ -1,8 +1,9 @@
 subid,type,trial,target,person,utterance,selection,correct
 58,practice,1,apple,parent,I have the blue box. Do you have a blue box?,,Y
 58,practice,1,apple,child,no,,Y
-58,practice,1,apple,parent,okay so my blue box there's something that's usually red and has a xxx on top of it,,Y
+58,practice,1,apple,parent,okay so my blue box there's something that's usually red and has a leaf on top of it,,Y
 58,practice,1,apple,child,an apple!,,Y
+58,practice,1,apple,child,,child,Y
 58,practice,4,apple,child,it is red and it has a stem,,Y
 58,practice,4,apple,parent,I think it's the apple,,Y
 58,practice,4,apple,parent,,parent,Y
@@ -16,16 +17,16 @@ subid,type,trial,target,person,utterance,selection,correct
 58,practice,2,artichoke,parent,okay I'm thinking it's the artichoke,,Y
 58,practice,2,artichoke,parent,,parent,Y
 58,practice,5,artichoke,parent,"so my box has it's kind of a circle, but it looks like it has leaves on it",,Y
-58,practice,5,artichoke,child,apple?,,Y
+58,practice,5,artichoke,child,apple? We all have the same picture?,,Y
 58,practice,5,artichoke,parent,which one looks like it kind of has leaves on it,,Y
 58,practice,5,artichoke,child,,child,Y
 58,practice,5,artichoke,child,artichoke!,,Y
-58,practice,3,onion,parent,my blue box is circle with a top and a bottom piece coming out of it,,Y
-58,practice,3,onion,child,I don't know it's name,,Y
+58,practice,3,onion,parent,"my blue box is circle with a top and a bottom piece coming out of it, and it's pink in the bottom",,Y
+58,practice,3,onion,child,I know what is is but I don't know the name,,Y
 58,practice,3,onion,parent,it's okay you can touch it,,Y
 58,practice,3,onion,child,,child,Y
 58,practice,3,onion,parent,it's an onion,,Y
-58,practice,6,onion,child,it's something round and it looks like it has a paint xx on it,,Y
+58,practice,6,onion,child,it's something round and it looks like it has a paint brush,,Y
 58,practice,6,onion,parent,,parent,Y
 58,practice,6,onion,parent,it's an onion,,Y
 58,test,8,A1,child,it looks like a guy that's running and he has his foot up,,Y
@@ -34,7 +35,7 @@ subid,type,trial,target,person,utterance,selection,correct
 58,test,14,A1,child,,child,Y
 58,test,28,A1,child,it looks like a guy jogging,,Y
 58,test,28,A1,parent,,parent,Y
-58,test,40,A1,parent,this looks like somebody walking down the street,,Y
+58,test,40,A1,parent,this looks like somebody walking down the street snapping their fingers,,Y
 58,test,40,A1,child,,child,Y
 58,test,9,B1,parent,my box looks like a person that's walking with their hands in the pockets with their head down,,Y
 58,test,9,B1,child,that's so easy,,Y
@@ -54,7 +55,7 @@ subid,type,trial,target,person,utterance,selection,correct
 58,test,5,C1,child,,child,Y
 58,test,11,C1,child,it looks like a guy kneeling down and bowing,,Y
 58,test,11,C1,parent,,parent,Y
-58,test,25,C1,parent,looks like somebody bowing,,Y
+58,test,25,C1,parent,looks like somebody bowing..on the ground,,Y
 58,test,25,C1,child,,child,Y
 58,test,35,C1,child,looks like a guy with his head down on the ground,,Y
 58,test,35,C1,parent,,parent,Y
@@ -63,7 +64,7 @@ subid,type,trial,target,person,utterance,selection,correct
 58,test,16,D1,parent,this looks like somebody flying an airplane,,Y
 58,test,16,D1,child,,child,Y
 58,test,22,D1,child,somebody driving an airplane,,Y
-58,test,22,D1,child,,child,Y
+58,test,22,D1,parent,,parent,Y
 58,test,32,D1,parent,that looks like somebody on a boat,,Y
 58,test,32,D1,child,,child,Y
 58,test,3,E1,parent,my box looks like somebody that has no arms that's jumping in the air,,Y
@@ -78,7 +79,7 @@ subid,type,trial,target,person,utterance,selection,correct
 58,test,2,F1,child,it's a guy looks like a square sticking out of his head,,N
 58,test,2,F1,parent,i think it's this one,,N
 58,test,2,F1,parent,,parent,N
-58,test,20,F1,parent,this box lookg like somebody... it looks like an old woman on a dress jumping,,N
+58,test,20,F1,parent,"this box looks like...somebody... I don't know…somebody like, it looks like an old woman in a dress jumping",,N
 58,test,20,F1,child,that's not on here,,N
 58,test,20,F1,parent,it's on your screen I don't know how to describe it,,N
 58,test,20,F1,child,,child,N
@@ -95,7 +96,7 @@ subid,type,trial,target,person,utterance,selection,correct
 58,test,13,G1,parent,,parent,Y
 58,test,23,G1,parent,someone kneeling on a box,,Y
 58,test,23,G1,child,,child,Y
-58,test,37,G1,child,it looks like a guy that's playing on their phone or something,,Y
+58,test,37,G1,child,it looks like a guy like playing on their phone or something,,Y
 58,test,37,G1,parent,,parent,Y
 58,test,4,H1,child,mine looks like somebody holding.. it looks like a square and kind of a triangle shape mixed with a rectangle,,Y
 58,test,4,H1,parent,,parent,Y
@@ -116,7 +117,8 @@ subid,type,trial,target,person,utterance,selection,correct
 58,test,39,I1,parent,,parent,Y
 58,test,6,K1,child,it's a thing that looks like it has a tail and a triangle on its head,,N
 58,test,6,K1,parent,,parent,N
-58,test,12,K1,parent,this box kind of looks like a dog and its hind legs,,Y
+58,test,12,K1,parent,this box kind of looks like a dog on its hind legs,,Y
+58,test,12,K1,child,,child,Y
 58,test,24,K1,child,it looks like a dog,,Y
 58,test,24,K1,parent,,parent,Y
 58,test,36,K1,parent,this looks like a frankie with a tail in a party,,Y

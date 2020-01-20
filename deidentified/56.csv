@@ -8,7 +8,7 @@ subid,type,trial,target,person,utterance,selection,correct
 56,practice,4,apple,child,banana,,N
 56,practice,4,apple,parent,"banana? okay, got it.",,N
 56,practice,4,apple,parent,,parent,N
-56,practice,2,artichoke,child,which one should i choose?,,Y
+56,practice,2,artichoke,parent,which one should i choose?,,Y
 56,practice,2,artichoke,child,"um, broccoli",,Y
 56,practice,2,artichoke,parent,i think you think this one's broccoli,,Y
 56,practice,2,artichoke,parent,,parent,Y
@@ -67,9 +67,9 @@ subid,type,trial,target,person,utterance,selection,correct
 56,test,8,C1,child,"this, it's a human sitting. i mean sleeping in the morning",,Y
 56,test,8,C1,parent,okay,,Y
 56,test,8,C1,parent,,parent,Y
-56,test,12,C1,parent,this one is the picture of the person that looks like they're kissing the ground or kneeling,,Y
+56,test,12,C1,parent,"this one is the picture of the person that looks like they're kissing the ground., they are kneeling",,Y
 56,test,12,C1,child,,child,Y
-56,test,30,C1,parent,which one do you have?,,N
+56,test,30,C1,parent,which one do you have with a blue square around?,,N
 56,test,30,C1,child,this one,,N
 56,test,30,C1,parent,what does it look like?,,N
 56,test,30,C1,child,it looks like a doggie,,N
@@ -136,7 +136,7 @@ subid,type,trial,target,person,utterance,selection,correct
 56,test,3,G1,child,,child,N
 56,test,3,G1,child,i picked it!,,N
 56,test,19,G1,child,this is a doggie,,Y
-56,test,19,G1,parent,this one's a doggie too?,,Y
+56,test,19,G1,parent,you got a doggie too?,,Y
 56,test,19,G1,parent,does it have a blue box around it?,,Y
 56,test,19,G1,child,nope,,Y
 56,test,19,G1,parent,okay,,Y
@@ -149,7 +149,7 @@ subid,type,trial,target,person,utterance,selection,correct
 56,test,33,G1,parent,"do you have a blue square? no, put it down sweetie.",,N
 56,test,33,G1,child,yes,,N
 56,test,33,G1,parent,tell me what it's around,,N
-56,test,33,G1,child,it's around the people xxx-ing,,N
+56,test,33,G1,child,it's around the people falling,,N
 56,test,33,G1,parent,they're falling or they're sitting down?,,N
 56,test,33,G1,child,falling,,N
 56,test,33,G1,parent,they're falling,,N
@@ -169,8 +169,6 @@ subid,type,trial,target,person,utterance,selection,correct
 56,test,24,H1,parent,it does? what is the human doing?,,Y
 56,test,24,H1,child,sitting in a wheelchair,,Y
 56,test,24,H1,parent,"sitting in a wheelchair, huh?",,Y
-56,test,24,H1,child,imma press it,,Y
-56,test,24,H1,parent,"no don't press it, it's my turn",,Y
 56,test,24,H1,parent,are they standing up or are they laying down?,,Y
 56,test,24,H1,child,they sitting up,,Y
 56,test,24,H1,parent,,parent,Y

@@ -15,12 +15,10 @@ subid,type,trial,target,person,utterance,selection,correct
 59,practice,6,onion,child,This is.. uh.. I forgot.,,Y
 59,practice,6,onion,parent,"You can tell me. Is it big, is it little?",,Y
 59,practice,6,onion,child,It is little and has these sticky...,,Y
-59,practice,6,onion,parent,Ahh.,parent,Y
+59,practice,6,onion,parent,,parent,Y
 59,practice,6,onion,child,What is it?,,Y
 59,test,4,A1,child,This is a person that's running and is on the left side,,Y
 59,test,4,A1,parent,,parent,Y
-59,test,4,A1,parent,ha ha,,Y
-59,test,4,A1,child,what?,,Y
 59,test,14,A1,parent,"Okay, this one looks like Mariah when she is running her race and she is running super super fast. So which",,Y
 59,test,14,A1,child,,child,Y
 59,test,26,A1,child,"Okay, yes. This one is like a girl serving a thing",,N
@@ -28,9 +26,7 @@ subid,type,trial,target,person,utterance,selection,correct
 59,test,38,A1,child,,child,N
 59,test,7,B1,parent,This one looks like a person walking with his head down like he is sad,,Y
 59,test,7,B1,child,,child,Y
-59,test,7,B1,child,what?,,Y
 59,test,11,B1,child,"okay, uhmm.. this is the same thing.",,Y
-59,test,11,B1,parent,"It's okay, tell me what you see.",,Y
 59,test,11,B1,child,Is it girl that have a head down or boy that had a..,,Y
 59,test,11,B1,parent,,parent,Y
 59,test,25,B1,child,,child,Y
@@ -48,15 +44,10 @@ subid,type,trial,target,person,utterance,selection,correct
 59,test,37,C1,parent,,parent,Y
 59,test,9,D1,parent,This one looks like Mariah when she is in her room reading on the floor.,,N
 59,test,9,D1,child,,child,N
-59,test,13,D1,child,"This one.. oh wait, I don't have a blue box.",,Y
-59,test,13,D1,parent,I don't have a blue box either. You don't have a blue box? Are you tricking me?,,Y
 59,test,13,D1,child,This is like I'm in a cardboard box reading my book in outer space.,,Y
-59,test,13,D1,parent,ha.,parent,Y
+59,test,13,D1,parent,,parent,Y
 59,test,27,D1,parent,Okay. This looks like when you and yyy are laying down the floor watching tv.,,Y
-59,test,27,D1,child,Where's yyy?,,Y
-59,test,27,D1,parent,Which one is it?,,Y
 59,test,27,D1,child,,child,Y
-59,test,27,D1,child,Where is Yyyh though?,,Y
 59,test,39,D1,child,This one... i'm thinking... this one's when I'm reading my book with my mom,,Y
 59,test,39,D1,parent,,parent,Y
 59,test,2,E1,child,This one has a diamod on the top,,N
@@ -73,7 +64,6 @@ subid,type,trial,target,person,utterance,selection,correct
 59,test,10,F1,parent,,parent,Y
 59,test,18,F1,parent,This one looks like a giant bird.,,Y
 59,test,18,F1,child,It's a duck. Nevermind.,,Y
-59,test,18,F1,parent,Did you pick it?,,Y
 59,test,18,F1,child,,child,Y
 59,test,30,F1,child,This one looks like I'm doing ballet in the middle of a night,,Y
 59,test,30,F1,parent,,parent,Y
@@ -86,7 +76,6 @@ subid,type,trial,target,person,utterance,selection,correct
 59,test,16,G1,child,,child,Y
 59,test,28,G1,child,"Okay, so this one have a lady that looking down and reading like a book or waiting for a bus or train or",,Y
 59,test,28,G1,parent,,parent,Y
-59,test,28,G1,parent,Thank you.,,Y
 59,test,36,G1,parent,This one looks like when we are sitting on our chair eating dinner.,,Y
 59,test,36,G1,child,,child,Y
 59,test,1,H1,parent,This has a square at the top,,N
@@ -101,19 +90,17 @@ subid,type,trial,target,person,utterance,selection,correct
 59,test,15,I1,child,This one is like a waitress that is serving spagetti and meatballs or a shrimp.,,Y
 59,test,15,I1,parent,,parent,Y
 59,test,29,I1,parent,This one is when you and Papa are playing restaurant,,Y
-59,test,29,I1,child,Mommy!,,Y
 59,test,29,I1,parent,It's my turn. This one's like when you and Papa are playing restaurant and you're bringing him food.,,Y
 59,test,29,I1,child,,child,Y
+59,test,31,I1,child,This one has a,,Y
 59,test,31,I1,child,This one has a  nice food.,,Y
 59,test,31,I1,parent,,parent,Y
 59,test,6,K1,child,This one is like Apollo hugging my mommy or my daddy,,Y
 59,test,6,K1,parent,,parent,Y
-59,test,6,K1,parent,Haaa.,,Y
 59,test,20,K1,parent,Okay. This looks like a dog begging for food like Apollo when you guys were eating dinner and Apollo is begging for food.,,Y
 59,test,20,K1,child,,child,Y
 59,test,22,K1,child,This one is like a dog when we are walking Apollo it's like jumping on a person making it,,Y
 59,test,22,K1,parent,,parent,Y
 59,test,32,K1,child,this one has,,Y
 59,test,32,K1,parent,This is my turn,,Y
-59,test,32,K1,child,a xxx,,Y
 59,test,32,K1,child,,child,Y

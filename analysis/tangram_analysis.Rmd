@@ -137,9 +137,9 @@ coding_data <- cdata %>%
 ##output csv for conceptual pact coding
 
 coding <- coding_data %>%
-  arrange(subid, type, target, trial) %>%
+  arrange(subid, type, target, trial, Timeline.ordinal) %>%
   select(subid, type, trial, target, person, utterance, selection, correct) #%>%
-  #filter(subid == 12 | subid == 36 | subid == 44 | subid == 45 | subid == 46 | subid == 56 | subid == 58 | subid == 59)
+  filter(subid==58)
 
 #newcols <- c("final_initial", "self", "other", "accept")
 #coding[, newcols] <- NA

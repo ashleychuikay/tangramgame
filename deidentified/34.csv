@@ -63,7 +63,7 @@ subid,type,trial,target,person,utterance,selection,correct
 34,test,11,F1,parent,Like a sad person walking,,Y
 34,test,11,F1,child,No the one the one with the one with bigger shapes,,Y
 34,test,11,F1,parent,,parent,Y
-34,test,27,F1,parent,This the one that doesn't look like a person kneeling,,Y
+34,test,27,F1,parent,This is the one that doesn't look like a person kneeling,,Y
 34,test,27,F1,parent,With the triangles,,Y
 34,test,27,F1,child,,child,Y
 34,test,27,F1,parent,at the bottom,,Y
@@ -95,7 +95,7 @@ subid,type,trial,target,person,utterance,selection,correct
 34,test,30,I1,parent,,parent,Y
 34,test,36,I1,parent,Now it looks like someone holding a bowl,,Y
 34,test,36,I1,child,,child,Y
-34,test,10,K1,parent,Mine has the arrow at the top,,Y
+34,test,10,K1,child,Mine has the arrow at the top,,Y
 34,test,10,K1,parent,,parent,Y
 34,test,14,K1,parent,Mine looks like like a dog with a zzz at the top,,Y
 34,test,14,K1,child,,child,Y

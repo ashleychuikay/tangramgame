@@ -5,7 +5,6 @@ subid,type,trial,target,person,utterance,selection,correct
 48,practice,1,apple,child,,child,Y
 48,practice,4,apple,child,apple,,Y
 48,practice,4,apple,parent,,parent,Y
-48,practice,2,artichoke,parent,you have to tell me which one has a blue box around it,,Y
 48,practice,2,artichoke,child,pineapple,,Y
 48,practice,2,artichoke,parent,,parent,Y
 48,practice,5,artichoke,child,onion again?,,Y
@@ -119,7 +118,6 @@ subid,type,trial,target,person,utterance,selection,correct
 48,test,9,K1,parent,this looks like a person standing up but bending over trying to give you something,,Y
 48,test,9,K1,child,,child,Y
 48,test,13,K1,child,the one who's giving you something,,Y
-48,test,13,K1,parent,good,,Y
 48,test,13,K1,parent,,parent,Y
 48,test,29,K1,parent,"this person is standing up, and looks like he is giving you something",,Y
 48,test,29,K1,child,,child,Y

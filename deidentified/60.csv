@@ -84,6 +84,7 @@ subid,type,trial,target,person,utterance,selection,correct
 60,test,2,F1,parent,is it somebody... does it look like someone kneeling down or someone holding up their hands?,,Y
 60,test,2,F1,child,someone jumping and holding up their hands,,Y
 60,test,2,F1,parent,,parent,Y
+60,test,2,F1,child,someone,,Y
 60,test,14,F1,parent,I'd like you tap on the one that looks like somebody is running with both arms up in the air in the same direction.,,Y
 60,test,14,F1,child,,child,Y
 60,test,22,F1,child,tap on the guy that's in the blue square.,,Y
