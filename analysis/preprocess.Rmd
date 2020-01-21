@@ -4,7 +4,7 @@
 library(tidyverse)
 ```
 
-## Aggregate csv files (1a)
+## Aggregate csv files 
 
 ```{r}
 # get all files with participant data (this excludes meta.csv for now)
@@ -12,10 +12,11 @@ raw_csv_names <- c(dir(path = '../deidentified/', pattern = "*[0-9].csv", full.n
                    dir(path = '../deidentified/adult/', pattern = "*[0-9].csv", full.names = T))
 meta <- read_csv('../deidentified/meta.csv')
 
-raw_data <- raw_csv_names %>%
+raw_data <- raw_csv_names %>%      # read all csvs and combine into single data frame
   map(read_csv) %>%             
-  reduce(rbind) %>%                # read all csvs and combine into single data frame
+  reduce(rbind) %>%                
   filter(type != 'practice') %>%   # remove practice trials
+  filter(subid != 17) %>%          # we decided to remove this kid who systematically described the opposite tangram
   group_by(subid, trial) %>%
   mutate(utt_number = row_number()) %>%
   group_by(subid, target) %>%
@@ -23,8 +24,11 @@ raw_data <- raw_csv_names %>%
          correct = correct == 'Y') %>%
   ungroup() %>%
   arrange(subid, trial) 
+```
 
-# Go through a lot of work just to get role mappings (ie. who is matcher, who is director?)
+Go through a lot of work just to get role mappings (ie. who is matcher, who is director?)
+
+```{r}
 roles <- raw_data %>% filter(!is.na(selection)) %>% mutate(role = 'matcher') %>% 
   select(-type, -utterance, -correct, -selection, -target) %>% 
   rename(number_at_selection = utt_number) %>%
@@ -37,7 +41,11 @@ roles <- raw_data %>% filter(!is.na(selection)) %>% mutate(role = 'matcher') %>%
                                       first(number_at_selection))) %>%
   mutate(rep_num = ifelse(is.na(first(rep_num)), last(rep_num), first(rep_num))) %>%
   ungroup()
+```
 
+Make two versions: one preserving back-and-forth, the other concatenating all words produced by participant on a trial into one row
+
+```{r}
 exchanges <- raw_data %>% 
   mutate(experiment = ifelse(subid >= 100, 'adult-adult', 'adult-child')) %>%
   left_join(meta) %>%                          # combine with meta-data about age
@@ -59,9 +67,9 @@ write_csv(combined_data, '../deidentified/combined.csv')
 ```
 
 
-## Sanity checks
+## Accuracies
 
-check for coding errors
+Check accuracies while data is still fully intact (i.e. before we omit any 'empty' rounds where someone mistakenly picked on without anyone saying anything)
 
 ```{r}
 library(ggthemes)
@@ -92,6 +100,10 @@ accuracies %>%
     scale_color_gradient2()
 ggsave('accuracy.pdf', height = 5, width = 5)
 ```
+
+## Sanity checks
+
+Look for some fishy patterns, like trials where two responses were made (or no responses). Or, trials with a response but no utterances.
 
 ```{r}
 not_correct_number_of_selections <- raw_data %>% 
