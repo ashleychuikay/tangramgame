@@ -105,13 +105,15 @@ Each dyad played a cooperative game with iPads. Pairs sat at a table with a divi
 
 There were 4 blocks of 10 trials. Each tangram appeared as the target once during each block, such that each tangram was the target four times during the game. Trials within blocks were randomized. The 10 tangrams were shuffled and randomly assigned to either participants at the beginning of the game. The assignment dictates who would be the director for a particular target in Round 1. Thus, each participant played the role of director two times for each of the 10 tangrams. In each round, the targets appeared with different foils. To ensure that the game would not be too difficult for young children, trials were constructed such that the most similar tangrams (based on mTurk worker judgments) did not appear together.
 
+### Pre-processing
 
+.\todo[inline]{Describe data pre-processing pipeline here.}
 
 ## Results
 
 ### Performance accuracy
 
-```{r accuracy, cache=T, fig.env = "figure", fig.pos = "h", fig.width=4, fig.height=2, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Accuracy \\todo[inline]{TODO: We should combine these basic measures into a single 2-col figure.}"}
+```{r accuracy, cache=T, fig.env = "figure", fig.pos = "h", fig.width=4, fig.height=2, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Accuracy improves over time. Error bars are 95\\% CIs. \\todo[inline]{TODO: We should combine this into single 2-col figure with num exchanges.}"}
 
 d.accuracy.raw <- combined_data %>%
   mutate(age = as.character(age),
@@ -154,7 +156,7 @@ While accuracy was initially well above chance at all age groups, we found a sig
 Pairs with 4-year-olds performed significantly more poorly than pairs with older children.
 Critically, however, accuracy improved significantly over the four repetition blocks for all groups ($b$ = `r round(rep_effect_acc$estimate, 2)`, $t$ = `r round(rep_effect_acc$statistic, 2)`; $p = 0.001$).
 Such improvement for 4-year-olds contrasts with early results of communication between age-matched children [@GlucksbergKraussWeisberg66_DevoRefGames,@KraussGlucksberg69_DevoReferenceGames], which found no improvement in accuracy with kingergardeners (age 5). 
-\todo[inline]{TODO: describe mixed-effect structure. Also, note that big dip in 8-year-olds looks like driven by subid 17 who got every trial in last block incorrect.}
+\todo[inline]{TODO: describe mixed-effect structure. Note that dip in 8-year-olds likely driven by small group getting bored.}
 
 ### Interactive dialogue exchanges
 
@@ -295,7 +297,7 @@ Because parents of different age groups display similar slopes of reduction, thi
 We found that this interaction was not significant ($t=$ `r round(person_age_rep_interaction_reduction$statistic, 2)`, $p = $ `r person_age_rep_interaction_reduction_pvalue`), although our sample was likely underpowered to detect a higher-order interaction. 
 
 \todo[inline]{TODO: include control analysis using normalized metric. Consider using this analysis as primary, i.e. switching over \texttt{lmer.reduction} to `\texttt{lmer.reduction.control} in the block and motivating this}.
-Because the total number of words produced on a trial is correlated with the number of dialogue exchanges examined above ($r=$`r word_exchange_cor`), we next conducted a supplementary analysis to control for dialogue.
+Because the total number of words produced on a trial is correlated with the number of dialogue exchanges examined above ($r=$ `r word_exchange_cor`), we next conducted a supplementary analysis to control for dialogue.
 Specifically, we divided the total number of words by the number of exchanges and used this normalized measure as the dependent variable...
 
 # Analyzing the content of pacts
