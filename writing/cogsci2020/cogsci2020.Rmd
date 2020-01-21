@@ -34,6 +34,7 @@ library(grid)
 library(xtable)
 library(ggthemes)
 library(lme4)
+library(lmerTest)
 library(here)
 library(tm)
 library(tidytext)
@@ -84,6 +85,11 @@ Based on previous work on adult-child referential communication, there are two p
 
 ## Methods
 
+```{r 2-col-image, fig.env = "figure", fig.pos = "t", fig.width=3.5, fig.height=2, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Example of iPad screens for the director (left) and matcher (right) during the game."}
+img <- png::readPNG("figs/display.png")
+grid::grid.raster(img)
+```
+
 ### Participants
 
 Adult participants were recruited from the University of Chicago's online subject pool, to achieve a planned sample of 20 pairs. At the time of analysis, data from 17 dyads were included.
@@ -103,25 +109,20 @@ Each dyad played a cooperative game with iPads. Pairs sat at a table with a divi
 There were 4 blocks of 10 trials. Each tangram appeared as the target once during each block, such that each tangram was the target four times during the game. Trials within blocks were randomized. The 10 tangrams were shuffled and randomly assigned to either participants at the beginning of the game. The assignment dictates who would be the director for a particular target in Round 1. Thus, each participant played the role of director two times for each of the 10 tangrams. In each round, the targets appeared with different foils. To ensure that the game would not be too difficult for young children, trials were constructed such that the most similar tangrams (based on mTurk worker judgments) did not appear together.
 
 
-```{r 2-col-image, fig.env = "figure*", fig.pos = "h", fig.width=4, fig.height=2, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Example of iPad screens for the director (left) and matcher (right) during the game."}
-img <- png::readPNG("figs/display.png")
-grid::grid.raster(img)
-```
 
 ## Results
 
-\todo[inline]{We should combine these basic measures into a single 2-col figure.}
 ### Performance accuracy
 
-```{r accuracy, cache=T, fig.env = "figure", fig.pos = "h", fig.width=4, fig.height=2, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Accuracy"}
+```{r accuracy, cache=T, fig.env = "figure", fig.pos = "h", fig.width=4, fig.height=2, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Accuracy \\todo[inline]{TODO: We should combine these basic measures into a single 2-col figure.}"}
 
 d.accuracy.raw <- combined_data %>%
   mutate(age = as.character(age),
          age = if_else(is.na(age), 'adult', age)) %>%
   mutate(person = ifelse(person %in% c('left', 'right', 'parent'), 
                          'adult', person)) %>%
-  group_by(subid, trial, role, age, target, rep_num) %>%
-  summarize(correct = mean(correct)) %>% 
+  group_by(subid, trial, age, target, rep_num) %>%
+  summarize(correct = mean(correct)) %>% # make sure each trial is only counted once
   ungroup()
 
 # Bootstrap error bars and render plot
@@ -141,7 +142,7 @@ d.accuracy.raw %>%
 
 lmer.accuracy <- d.accuracy.raw %>%
   filter(age != "adult") %>%
-  mutate(age == as.numeric(age)) %>%
+  mutate(age = as.numeric(age)) %>%
   glmer(correct ~ age + rep_num + (rep_num | subid) + (1 | target), 
                             family = 'binomial', data = .) %>%
   tidy()
@@ -161,8 +162,9 @@ Such improvement for 4-year-olds contrasts with early results of communication b
 ### Interactive dialogue exchanges
 
 ```{r exchanges, cache=T, fig.env = "figure", fig.pos = "h", fig.width=4, fig.height=2, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Number of dialogue exchanges."}
-# count number of back-and-forth exchanges
+# TODO: double-check these are actually all swapping turns, not just the same person recorded as saying things on multiple lines in a row
 
+# count number of back-and-forth exchanges
 d.exchanges.raw <- exchanges_data %>%
   mutate(age = as.character(age)) %>%
   mutate(age = if_else(is.na(age), 'adult', age)) %>%
@@ -199,77 +201,108 @@ This increased level of interactivity between parents and younger children provi
 These lengthier exchanges may reflect efforts by parents to provide and elicit additional clarification or confirmation, or may simply reflect attentional difficulties. 
 \todo[inline]{TODO: Can we follow-up by analyzing how many of these were questions vs. confirmation vs. purely keeping kids on task? Also: describe mixed-effect structure.}
 
-
-\todo[inline]{TODO: follow-up analysis only looking at first utterance produced by director (i.e. controlling for number of exchanges)}
-
 ### Reduction in length of referring expression
 
-```{r development, fig.env = "figure", fig.pos = "h", fig.width=8, fig.height=6, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Change in length of referring expressions, split by age groups."}
-d.reduction.raw <- combined_data %>%
+```{r development, cache=T, fig.env = "figure*", fig.pos = "h", fig.width=7, fig.height=6, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "\\label{fig:reduction}Total number of words in referring expressions produced by children and parents over the course of interaction."}
+d.reduction.raw <- exchanges_data %>%
   mutate(age = ifelse(is.na(age), 'adult', age),
          num_words =  str_count(utterance, " ") +1) %>%
   filter(role == 'director') %>%
-  mutate(person = ifelse(person %in% c('left', 'right', 'parent'), 'adult', person)) 
+  mutate(person = ifelse(person %in% c('left', 'right', 'parent'), 'adult', person)) %>%
+  group_by(age, rep_num, person, target, subid, trial) %>%
+  summarize(numExchanges = n(),
+            num_words = sum(num_words)) %>%
+  mutate(normalized_num_words = num_words / numExchanges) %>%
+  ungroup() 
 
 d.reduction.raw %>% 
   group_by(age, rep_num, person) %>%
-  tidyboot_mean(num_words) %>%
+  tidyboot_mean(normalized_num_words) %>%
   ggplot(aes(x = rep_num, y = empirical_stat, group = person, color = person)) +
     geom_line() +
     facet_grid(~ age) + 
     geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
     theme_few() +
     theme(aspect.ratio = 1) +
-    ylab("# words") +
+    ylab("# words per exchange") +
     xlab("rep #") +
     scale_color_colorblind()
   
-lmer.reduction <- tidy(lmer(log(num_words) ~ person + age + rep_num + rep_num:person + person:age  + (1 + rep_num | subid) + (1 | target), 
-                            data = d.reduction.raw %>% filter(age != 'adult') %>% mutate(age = as.numeric(age)),
-                            control=lmerControl('bobyqa'))) %>%
-  filter(effect == 'fixed') #%>%
-  #filter(p.value < 0.05)
-lmer.reduction
-age_effect = lmer.exchanges %>% filter(term == 'age')
-rep_effect = lmer.exchanges %>% filter(term == 'rep_num')
-
-lmer.reduction.exchange.control <- tidy(
-    lmer(log(normalized_num_words) ~ person + age + rep_num + rep_num:person + person:age + (1 + rep_num | subid) + (1 | target), 
-    data = d.reduction.raw %>% filter(age != 'adult') %>% mutate(age = as.numeric(age), normalized_num_words),
-    control=lmerControl('bobyqa'))
-  ) %>%
-  filter(effect == 'fixed') #%>%
-  #filter(p.value < 0.05)
-
+lmer.reduction <- d.reduction.raw %>%
+  filter(age != 'adult') %>% 
+  mutate(age = as.numeric(age) - 6,   # center age & rep_num to make main effect more interpretable
+         rep_num = as.numeric(rep_num) - 2.5,
+         ordinal_rep = ifelse(rep_num == first(rep_num), 'first', 'second')) %>%
+  lmer(log(num_words) ~ person * age * rep_num   + (1 + rep_num + person | subid) + (1 | target), 
+       control=lmerControl('bobyqa'),
+       contrasts = list(person = contr.sum),
+       data = .) %>%
+  tidy() %>%
+  filter(effect == 'fixed') 
 ```
 
-\todo[inline]{TODO: Control for \# of exchanges? (obviously if younger pairs are taking extra turns they are producing more words overall)}
-\todo[inline]{TODO: Look at interactions? we see older pairs use more words overall (main effect) but do they *reduce* more?}
+```{r}
+word_exchange_cor = round(cor(d.reduction.raw$numExchanges, d.reduction.raw$num_words),2)
+lmer.reduction.controlled <- d.reduction.raw %>% 
+  filter(age != 'adult') %>% 
+  group_by(subid, person) %>%
+  mutate(age = as.numeric(age) - 6,  
+         rep_num = as.numeric(rep_num) - 2.5,
+         ordinal_rep = ifelse(rep_num == first(rep_num), 'first', 'second')) %>%  
+  ungroup() %>%
+  lmer(log(normalized_num_words) ~ person * age * rep_num + (1 + rep_num * person | subid) + (1 + rep_num | target), 
+       data = .,
+       contrasts = list(person = contr.sum),
+       control=lmerControl('bobyqa')) %>%
+  tidy() %>%
+  filter(effect == 'fixed')
+```
+
+```{r}
+age_effect_reduction = lmer.reduction %>% filter(term == 'age')
+rep_effect_reduction = lmer.reduction %>% filter(term == 'rep_num')
+person_effect_reduction = lmer.reduction %>% filter(term == 'person1')
+person_age_interaction_reduction = lmer.reduction %>% filter(term == 'person1:age')
+person_age_interaction_reduction_pvalue <- round(person_age_interaction_reduction$p.value, 3)
+
+person_rep_interaction_reduction = lmer.reduction %>% filter(term == 'person1:rep_num')
+person_rep_interaction_reduction_pvalue <- round(person_rep_interaction_reduction$p.value, 3)
+
+age_rep_interaction_reduction = lmer.reduction %>% filter(term == 'age:rep_num')
+age_rep_interaction_reduction_pvalue = round(age_rep_interaction_reduction$p.value, 3)
+
+person_age_rep_interaction_reduction = lmer.reduction %>% filter(term == 'person1:age:rep_num')
+person_age_rep_interaction_reduction_pvalue = round(person_age_rep_interaction_reduction$p.value, 3)
+```
+
 A key signature of successful communication among adults is an increase in efficiency over repeated reference [@KraussWeinheimer64_ReferencePhrases,@Clark1986Referring]. 
 As pairs form conceptual pacts, they are able to communicate the same meaning using fewer words. 
-We asked whether children spontaneously adapt their referring expressions in the same way.
-We operationalize efficiency as the number of words in the director's referring expressions for each trial.
+We asked whether parents and children of different ages spontaneously reduce their referring expressions in the same way.
+We operationalize efficiency as the total number of words produced by the *director* on each trial. 
 Because participants in a pair alternated roles, each participant served as the director twice for each tangram. 
-We can therefore compare their first referring expression against the one they produced two repetition blocks later. 
+This structure allows us to examine how each participant changed their language when they were the director (Fig. \ref{fig:reduction}). 
 
-Using a mixed-effects model, we predicted utterance length including fixed effects of child age, repetition block (first vs. last), and speaker identity (parent vs. child) and random intercepts at the dyad- and tangram-levels.
-First, we found a significant main effect of repetition block (b = X, t = X, p = X), with all participants producing relatively more efficient utterances over time.
-Second, we found a significant main effect of age (b = X, t = X, p = X).
-Dyads with older children used shorter referring expressions overall.
+Using a mixed-effects model, we predicted the (log) number of words on each trial, including fixed effects of child age group, repetition block, and speaker identity (parent vs. child) as well as all of their interactions.
+We also included random intercepts at the tangram-level and maximal random structure at the dyad level (i.e. intercept, slopes for repetition block and speaker identity, and their interaction).
+All variables were centered to allow interpretation of particular lower-order terms as effects at the average level of the other terms. 
+We found significant main effects of repetition block ($t =$ `r round(rep_effect_reduction$statistic,2)`, $p < 0.001$), speaker identity ($t =$ `r round(person_effect_reduction$statistic,2)`, $p < 0.001$), and age (t = `r round(age_effect_reduction$statistic,2)`, $p < 0.001$).
+All else being equal, directors use fewer words over subsequent repetitions, children use fewer words than their parents, and pairs with older children use fewer words than pairs with younger children.
 
-Third, we were interested in whether these age effects were driven by parents or children.
-That is, do younger children produce longer utterances than older children, or do *parents* of younger children expect that longer utterances will be required?
-When looking only at children’s referring expressions, the three groups did not appear to differ. 
-On the other hand, the three groups of parents differed in their length of referring expressions. 
-Specifically, parents of 4-year-olds used longer referring expressions throughout the game. 
+However, these main effects were clarified by several interactions of interest.
+First, while parents on average used more words as director than their children did, we found a significant interaction with the child's age group ($t = $ `r round(person_age_interaction_reduction$statistic,2)`, $p = $ `r  person_age_interaction_reduction_pvalue`).
+This gap between parent and child utterance length is largest at 4 years but nearly dissappeared by 8 years. 
+Second, we find that parents reduced their utterance length over time more strongly than children did, holding age group constant ($t = $ `r round(person_rep_interaction_reduction$statistic,2)`, $p = $ `r person_rep_interaction_reduction_pvalue`).
+Third, having older children in a pair supported stronger reduction overall, ($t = $ `r round(age_rep_interaction_reduction$statistic,2)`, $p = $ `r age_rep_interaction_reduction_pvalue`). 
+Finally, an intriguing developmental question is whether reduction changes over the course of development: are 4-year-olds able to become more efficient as common ground is built in the same way 8-year-olds do?
+Because parents of different age groups display similar slopes of reduction, this question is addressed by a 3-way interaction. 
+We found that this interaction was not significant ($t=$ `r round(person_age_rep_interaction_reduction$statistic, 2)`, $p = $ `r person_age_rep_interaction_reduction_pvalue`), although our sample was likely underpowered to detect a higher-order interaction. 
 
-### Reaction Time
+\todo[inline]{TODO: include control analysis using normalized metric. Consider using this analysis as primary, i.e. switching over \texttt{lmer.reduction} to `\texttt{lmer.reduction.control} in the block and motivating this}.
+Because the total number of words produced on a trial is correlated with the number of dialogue exchanges examined above ($r=$`r word_exchange_cor`), we next conducted a supplementary analysis to control for dialogue.
+Specifically, we divided the total number of words by the number of exchanges and used this normalized measure as the dependent variable...
 
-We analyzed reaction time for each trial. Reaction time was stored automatically by the game’s computer code, and can be understood as time taken to complete the trial (rather than reaction time to a stimulus per se). Reaction times longer than 20000ms (2 minutes) were discarded. Since the game did not have an option for pausing, trials had abnormally long reaction times when dyads needed to take a break from the game (e.g. children needing to use the bathroom). Similar to length of referring expressions, reaction time decreased from Round 1 to Round 4 for pairs in all age groups (Figure 5). When split by age group, reaction times showed similar patterns to length of referring expression, such that dyads with older children were faster overall (Figure 6). 
-
-\todo[inline]{Take these results out? (seems redundant with length of referring expression and number of exchanges?)}
-
-# Where do pacts come from?
+# Analyzing the content of pacts
+## Where do pacts come from?
 
 Pairs of age-matched children are notoriously poor at repeated referential communication [@GlucksbergKraussWeisberg66_DevoRefGames], failing to coordinate on mutually comprehensible referring expressions.  
 Our results demonstrate that when children perform the same task with their parents, this coordination problem can be solved: they converge on increasingly accurate and efficient pacts, as adults do. 
@@ -283,7 +316,7 @@ They fail with other children because neither can generate an understandable eno
 These accounts make different predictions about who is adapting to who: do pacts originate with children, or with adults?
 We test this prediction by quantitatively analyzing the natural-language transcripts. 
 
-# What predicts success?
+## What predicts success?
 
 In order to estimate the complexity of language used by participants, we used self-reported age of acquisition estimates collected by @kuperman2012. These researchers asked almost 2000 Mechanical Turkers to judge the age at which they first acquired each of a large set of words on a 7 point Likert scale. Although one might be suspicious that adults have little access to this kind of information, these judgments are highly correlated with parents' estimates of the age at which their children learn corresponding words, and are better than a variety of other measures (e.g. frequency, concreteness, word length) in predicting lexical decision times [@kuperman2012].
 
