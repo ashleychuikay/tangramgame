@@ -289,17 +289,17 @@ person_age_interaction_reduction_pvalue <- ifelse(person_age_interaction_reducti
 person_rep_interaction_reduction = lmer.reduction.controlled %>% filter(term == 'person1:rep_num')
 person_rep_interaction_reduction_pvalue <- round(person_rep_interaction_reduction$p.value, 3)
 person_rep_interaction_reduction_pvalue <- ifelse(person_rep_interaction_reduction_pvalue < 0.001, 
-                                                  '< 0.001', paste0(c('= ', person_rep_interaction_reduction_pvalue)))
+                                                  '< 0.001', paste0(c('= ', person_rep_interaction_reduction_pvalue), collapse = ' '))
 
 age_rep_interaction_reduction = lmer.reduction.controlled %>% filter(term == 'age:rep_num')
 age_rep_interaction_reduction_pvalue = round(age_rep_interaction_reduction$p.value, 3)
 age_rep_interaction_reduction_pvalue <- ifelse(age_rep_interaction_reduction_pvalue < 0.001, 
-                                                  '< 0.001', paste0(c('= ', age_rep_interaction_reduction_pvalue)))
+                                                  '< 0.001', paste0(c('= ', age_rep_interaction_reduction_pvalue), collapse = ' '))
 
 person_age_rep_interaction_reduction = lmer.reduction.controlled %>% filter(term == 'person1:age:rep_num')
 person_age_rep_interaction_reduction_pvalue = round(person_age_rep_interaction_reduction$p.value, 3)
 person_age_rep_interaction_reduction_pvalue <- ifelse(person_age_rep_interaction_reduction_pvalue < 0.001, 
-                                                  '< 0.001', paste0(c('= ', person_age_rep_interaction_reduction_pvalue)))
+                                                  '< 0.001', paste0(c('= ', person_age_rep_interaction_reduction_pvalue), collapse = ' '))
 ```
 
 A key signature of successful communication among adults is an increase in efficiency over repeated reference [@krauss1964;@clark1986]. 
@@ -387,6 +387,8 @@ We distinguish these accounts by quantitatively analyzing the natural-language t
 For each word in the final description of a tangram, we checked whether it had appeared in an earlier referring expression for that tangram in the same pair. 
 We noted the first trial where it appeared, and who was director when it was produced^[To match across different word forms (e.g. "jumping" vs. "jumped") we first lemmatized each word. We also filtered out stop words ("the", "with"), as well as common words that weren't part of the pacts ("person", "box").].
 The proportion of words originating with the child and parent is shown in Fig. \ref{fig:origins}.
+
+We found that 
 
 ## How do pacts differ across ages?
 
