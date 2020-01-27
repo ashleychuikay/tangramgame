@@ -9,7 +9,7 @@ author-information: >
     \AND {\large \bf Sharon J.~Derry (SDJ@Macc.Wisc.Edu)} \\ Department of Educational Psychology, 1025 W. Johnson Street \\ Madison, WI 53706 USA}
 
 abstract: >
-    Referential communication is ubiquitous in human interaction. Past work has shown that adults readily form referential pacts, or temporary agreements on referent names, with each other in conversation [e.g. @clark1986]. Young children do so less reliably with peers, but some evidence suggests that explicit feedback from adults may be helpful [@matthews2007]. How might children learn from the adults they interact with in daily life? The present study seeks to understand the role that parents play in scaffolding children's referential pact formation in communicative settings. In our experiment, we replicate Clark and Wilkes-Gibbs's -@clark1986 findings with adult-adult and parent-child participant pairs using a modified matcher-director task. Our results show that parents and children (ages 4, 6, 8) can converge on more efficient reference over the course of the task. Parents of younger children, but not younger children themselves, produce longer referential expressions during the game, suggesting that parents sensitively adapt their language to their children's developmental level in referential communication settings.
+    Referential communication is ubiquitous in human interaction. Past work has shown that adults readily form referential pacts, or temporary agreements on referent names, with each other in conversation [e.g. @clark1986]. Young children do so less reliably with peers, but some evidence suggests that explicit feedback from adults may be helpful [@matthews2007]. How might children learn from the adults they interact with in daily life? The present study seeks to understand the role that parents play in scaffolding children's referential pact formation in communicative settings. In our experiment, we replicate -@clark1986's findings with adult-adult and parent-child participant pairs using a modified matcher-director task. Our results show that parents and children (ages 4, 6, 8) can converge on more efficient reference over the course of the task. Parents of younger children, but not younger children themselves, produce longer referential expressions during the game, suggesting that parents sensitively adapt their language to their children's developmental level in referential communication settings.
     
 keywords: >
     referential pacts; parent-child communication
@@ -104,6 +104,7 @@ All sessions were videotaped, and the videos were transcribed using Datavyu--an 
 
 ```{r cache=T}
 d.accuracy.raw <- combined_data %>%
+  ungroup() %>%
   mutate(age = as.character(age),
          age = if_else(is.na(age), 'adult', age)) %>%
   mutate(person = ifelse(person %in% c('left', 'right', 'parent'), 
@@ -131,7 +132,7 @@ plt.results.acc <- d.accuracy.raw %>%
 lmer.accuracy <- d.accuracy.raw %>%
   filter(age != "adult") %>%
   mutate(age = as.numeric(age)) %>%
-  glmer(correct ~ age + rep_num + (rep_num | subid) + (1 | target), 
+  glmer(correct ~ age + rep_num + (1 + rep_num | subid) + (1 | target), 
                             family = 'binomial', data = .) %>%
   tidy()
 
@@ -139,13 +140,13 @@ age_effect_acc = lmer.accuracy %>% filter(term == 'age')
 rep_effect_acc = lmer.accuracy %>% filter(term == 'rep_num')
 ```
 
-Were children able to succeed at the reference game when collaborating with their parents? 
-We begin by examining accuracy across age groups.
-While accuracy was initially well above chance at all age groups, we found a significant main effect of age ($b$ = `r round(age_effect_acc$estimate, 2)`, $t$ = `r round(age_effect_acc$statistic, 2)`; $p = 0.001$).
-Pairs with 4-year-olds performed significantly more poorly than pairs with older children.
-Critically, however, accuracy improved significantly over the four repetition blocks for all groups ($b$ = `r round(rep_effect_acc$estimate, 2)`, $t$ = `r round(rep_effect_acc$statistic, 2)`, $p = 0.001$; see Fig. \ref{fig:acc_exchanges}A).
-Such improvement for 4-year-olds contrasts with early results of communication between age-matched children [@glucksberg1966,@krauss1969], which found no improvement in accuracy with kingergardeners (age 5). 
-\todo[inline]{TODO: describe mixed-effect structure. Note that dip in 8-year-olds likely driven by small group getting bored.}
+Were children able to succeed at the reference game in collaboration with their parents? 
+We began by examining accuracy across age groups.
+We constructed a mixed-effects logistic regression model predicting trial-level errors, including fixed effects of age group and repetition block, random intercepts for each tangram and pair of participants, and random effects of repetition block for each pair of participants. 
+While accuracy was initially well above chance at all age groups, we found a significant main effect of age ($b$ = `r round(age_effect_acc$estimate, 2)`, $t$ = `r round(age_effect_acc$statistic, 2)`; $p = 0.003$).
+Pairs containing 4-year-olds performed significantly more poorly than pairs containing older children.
+Critically, however, accuracy improved significantly over the four repetition blocks for all groups ($b$ = `r round(rep_effect_acc$estimate, 2)`, $t$ = `r round(rep_effect_acc$statistic, 2)`, $p < 0.001$; see Fig. \ref{fig:acc_exchanges}A)^[The drop in accuracy for 8-year-olds is likely an artifact of a small set of children losing interest in the task.].
+Such improvement for 4-year-olds contrasts with early results of communication between age-matched children [@glucksberg1966;@krauss1969], which found no improvement in accuracy with kingergardeners (age 5). 
 
 ### Interactive dialogue exchanges
 
@@ -187,17 +188,19 @@ gridExtra::grid.arrange(plt.results.acc, plt.results.exchanges, ncol = 2)
 
 If the ability of children to successfully establish reference in both director and matcher roles depends on scaffolding provided by their parents, we would expect additional dialogue turns for younger children. 
 We counted the total number of exchanges on each trial, defined as the number of distinct turns of continuous speech. 
+We then constructed a mixed-effects regression model predicting the continuous number of exchanges with the same effect structure as reported in the previous section.
 Consistent with previous work in adults [@clark1986], we found a significant main effect of repetition ($b$ = `r round(rep_effect$estimate, 2)`, $t$ = `r round(rep_effect$statistic, 2)`; $p < 0.001$).
 Fewer dialogue turns were required on later trials.
+
 However, we also found a significant main effect of the child's age ($b$ = `r round(age_effect$estimate, 2)`, $t$ = `r round(age_effect$statistic, 2)`; $p < 0.001$).
-Pairs with 4-year-old children took roughly one additional turn at each point in the experiment than pairs with older children, who more closely resembled adults (see Fig. \ref{fig:acc_exchanges}B).
-This increased level of interactivity between parents and younger children provides an interesting contrast with previous studies showing decreased interactivity in pairs of younger children [@garrod1993, @anderson1994].
+Pairs with 4-year-old children took roughly one additional turn at each point in the experiment than pairs with older children, who more closely resembled pairs of adults (see Fig. \ref{fig:acc_exchanges}B).
+This increased level of interactivity between parents and younger children provides an interesting contrast with previous studies showing decreased interactivity in pairs of younger children [@garrod1993; @anderson1994].
 These lengthier exchanges may reflect efforts by parents to provide and elicit additional clarification or confirmation, or may simply reflect attentional difficulties. 
-\todo[inline]{TODO: Can we follow-up by analyzing how many of these were questions vs. confirmation vs. purely keeping kids on task? Also: describe mixed-effect structure.}
+\todo[inline]{TODO: Can we follow-up with a sentence reporting roughly how many of these were questions?}
 
 ### Reduction in length of referring expression
 
-```{r reduction, cache=T, fig.env = "figure*", fig.pos = "h", fig.width=7, fig.height=6, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "\\label{fig:reduction}Total number of words in referring expressions produced by children and parents over the course of interaction."}
+```{r reduction, cache=T, fig.env = "figure*", fig.pos = "h", fig.width=7, fig.height=3, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "\\label{fig:reduction}Total number of words in referring expressions produced by children and parents over the course of interaction."}
 d.reduction.raw <- exchanges_data %>%
   mutate(age = ifelse(is.na(age), 'adult', age),
          num_words =  str_count(utterance, " ") +1) %>%
@@ -253,26 +256,46 @@ lmer.reduction.controlled <- d.reduction.raw %>%
 ```
 
 ```{r}
-age_effect_reduction = lmer.reduction %>% filter(term == 'age')
-rep_effect_reduction = lmer.reduction %>% filter(term == 'rep_num')
-person_effect_reduction = lmer.reduction %>% filter(term == 'person1')
-person_age_interaction_reduction = lmer.reduction %>% filter(term == 'person1:age')
+age_effect_reduction = lmer.reduction.controlled %>% filter(term == 'age')
+age_effect_reduction_pvalue <- round(age_effect_reduction$p.value, 3)
+age_effect_reduction_pvalue <- ifelse(age_effect_reduction_pvalue < 0.001, 
+                               '< 0.001', paste0(c('=', age_effect_reduction_pvalue), collapse = ' '))
+
+rep_effect_reduction = lmer.reduction.controlled %>% filter(term == 'rep_num')
+rep_effect_reduction_pvalue <- round(rep_effect_reduction$p.value, 3)
+rep_effect_reduction_pvalue <- ifelse(rep_effect_reduction_pvalue < 0.001, 
+                               '< 0.001', paste0(c('=', rep_effect_reduction_pvalue), collapse = ' '))
+
+person_effect_reduction = lmer.reduction.controlled %>% filter(term == 'person1')
+person_effect_reduction_pvalue <- round(person_effect_reduction$p.value, 3)
+person_effect_reduction_pvalue <- ifelse(person_effect_reduction_pvalue < 0.001, 
+                               '< 0.001', paste0(c('=', person_effect_reduction_pvalue), collapse = ' '))
+
+person_age_interaction_reduction = lmer.reduction.controlled %>% filter(term == 'person1:age')
 person_age_interaction_reduction_pvalue <- round(person_age_interaction_reduction$p.value, 3)
+person_age_interaction_reduction_pvalue <- ifelse(person_age_interaction_reduction_pvalue < 0.001, 
+                               '< 0.001', paste0(c('=', person_age_interaction_reduction_pvalue), collapse = ' '))
 
-person_rep_interaction_reduction = lmer.reduction %>% filter(term == 'person1:rep_num')
+person_rep_interaction_reduction = lmer.reduction.controlled %>% filter(term == 'person1:rep_num')
 person_rep_interaction_reduction_pvalue <- round(person_rep_interaction_reduction$p.value, 3)
+person_rep_interaction_reduction_pvalue <- ifelse(person_rep_interaction_reduction_pvalue < 0.001, 
+                                                  '< 0.001', paste0(c('= ', person_rep_interaction_reduction_pvalue), collapse = ' '))
 
-age_rep_interaction_reduction = lmer.reduction %>% filter(term == 'age:rep_num')
+age_rep_interaction_reduction = lmer.reduction.controlled %>% filter(term == 'age:rep_num')
 age_rep_interaction_reduction_pvalue = round(age_rep_interaction_reduction$p.value, 3)
+age_rep_interaction_reduction_pvalue <- ifelse(age_rep_interaction_reduction_pvalue < 0.001, 
+                                                  '< 0.001', paste0(c('= ', age_rep_interaction_reduction_pvalue), collapse = ' '))
 
-person_age_rep_interaction_reduction = lmer.reduction %>% filter(term == 'person1:age:rep_num')
+person_age_rep_interaction_reduction = lmer.reduction.controlled %>% filter(term == 'person1:age:rep_num')
 person_age_rep_interaction_reduction_pvalue = round(person_age_rep_interaction_reduction$p.value, 3)
+person_age_rep_interaction_reduction_pvalue <- ifelse(person_age_rep_interaction_reduction_pvalue < 0.001, 
+                                                  '< 0.001', paste0(c('= ', person_age_rep_interaction_reduction_pvalue), collapse = ' '))
 ```
 
-A key signature of successful communication among adults is an increase in efficiency over repeated reference [@krauss1964,@clark1986]. 
+A key signature of successful communication among adults is an increase in efficiency over repeated reference [@krauss1964;@clark1986]. 
 As pairs form conceptual pacts, they are able to communicate the same meaning using fewer words. 
 We asked whether parents and children of different ages spontaneously reduce their referring expressions in the same way.
-Because the total number of words produced on a trial is correlated with the number of dialogue exchanges examined above ($r=$ `r word_exchange_cor`), we constructed a an efficiency measure that controls for additional turns.
+Because the total number of words produced on a trial is correlated with the number of dialogue exchanges examined above ($r=$ `r word_exchange_cor`), we constructed a a normalized efficiency measure that controls for additional turns.
 Specifically, we defined efficiency as the total number of words produced by the *director* divided by the number of dialogue exchanges on that trial. 
 
 Because participants in a pair alternated roles, each participant served as the director twice for each tangram. 
@@ -280,19 +303,17 @@ This structure allowed us to examine how each participant changed their language
 Using a mixed-effects model, we predicted the (log) number of words per exchange on each trial, including fixed effects of child age group, repetition block, and speaker identity (parent vs. child) as well as all of their interactions.
 We also included random intercepts at the tangram-level and maximal random structure at the dyad level (i.e. intercept, slopes for repetition block and speaker identity, and their interaction).
 All variables were centered to allow interpretation of lower-order terms as effects at the average level of the other terms. 
-We found significant main effects of repetition block ($t =$ `r round(rep_effect_reduction$statistic,2)`, $p < 0.001$), speaker identity ($t =$ `r round(person_effect_reduction$statistic,2)`, $p < 0.001$), and age (t = `r round(age_effect_reduction$statistic,2)`, $p < 0.001$).
+We found significant main effects of repetition block ($t =$ `r round(rep_effect_reduction$statistic,2)`, $p$`r age_rep_interaction_reduction_pvalue`), speaker identity ($t =$ `r round(person_effect_reduction$statistic,2)`, $p$ `r person_effect_reduction_pvalue`), and age ($t =$ `r round(age_effect_reduction$statistic,2)`, $p$ `r age_effect_reduction_pvalue`).
 All else being equal, directors use fewer words over subsequent repetitions, children use fewer words than their parents, and pairs with older children use fewer words than pairs with younger children.
 
 However, these main effects were clarified by several interactions of interest.
-First, while parents on average used more words as director than their children did, we found a significant interaction with the child's age group ($t =$ `r round(person_age_interaction_reduction$statistic,2)`, $p =$ `r  person_age_interaction_reduction_pvalue`).
+First, while parents on average used more words as director than their children did, we found a significant interaction with the child's age group ($t =$ `r round(person_age_interaction_reduction$statistic,2)`, $p$ `r  person_age_interaction_reduction_pvalue`).
 This gap between parent and child utterance length is largest at 4 years but nearly dissappeared by 8 years. 
-Second, we find that parents reduced their utterance length over time more strongly than children did, holding age group constant ($t =$ `r round(person_rep_interaction_reduction$statistic,2)`, $p =$ `r person_rep_interaction_reduction_pvalue`).
-Third, having older children in a pair supported stronger reduction overall, ($t =$ `r round(age_rep_interaction_reduction$statistic,2)`, $p =$ `r age_rep_interaction_reduction_pvalue`). 
+Second, we find that parents reduced their utterance length over time more strongly than children did, holding age group constant ($t =$ `r round(person_rep_interaction_reduction$statistic,2)`, $p$ `r person_rep_interaction_reduction_pvalue`).
+Third, having older children in a pair supported stronger reduction overall, ($t =$ `r round(age_rep_interaction_reduction$statistic,2)`, $p$ `r age_rep_interaction_reduction_pvalue`). 
 Finally, an intriguing developmental question is whether reduction changes over the course of development: are 4-year-olds able to become more efficient as common ground is built in the same way 8-year-olds do?
 Because parents of different age groups display similar slopes of reduction, this question is addressed by a 3-way interaction. 
-We found that this interaction was not significant ($t=$ `r round(person_age_rep_interaction_reduction$statistic, 2)`, $p =$ `r person_age_rep_interaction_reduction_pvalue`), although our sample was likely underpowered to detect a higher-order interaction. 
-
-\todo[inline]{TODO: include control analysis using normalized metric. Consider using this analysis as primary, i.e. switching over \texttt{lmer.reduction} to \texttt{lmer.reduction.control} in the block and motivating this}.
+We found that this interaction was not significant ($t=$ `r round(person_age_rep_interaction_reduction$statistic, 2)`, $p$ `r person_age_rep_interaction_reduction_pvalue`), although our sample was likely underpowered to detect this higher-order interaction. 
 
 # Analyzing the content of pacts
 
@@ -353,7 +374,11 @@ They fail with other children because neither can generate an understandable eno
 
 These accounts make different predictions about who is adapting to who: do pacts originate with children, or with adults?
 We distinguish these accounts by quantitatively analyzing the natural-language transcripts. 
+For each word in the final description of a tangram, we checked whether it had appeared in an earlier referring expression for that tangram in the same pair. 
+We noted the first trial where it appeared, and who was director when it was produced^[To match across different word forms (e.g. "jumping" vs. "jumped") we first lemmatized each word. We also filtered out stop words ("the", "with"), as well as common words that weren't part of the pacts ("person", "box").].
+The proportion of words originating with the child and parent is shown in Fig. \ref{fig:origins}.
 
+We found that 
 
 ## How do pacts differ across ages?
 
@@ -404,21 +429,16 @@ ggplot(mean_aoas, aes(x = rep_num, y = empirical_stat, color = as.factor(age))) 
 
 # Discussion
 
-Our main effect of reduction in length of referring expression replicates the effect found in Clark and Wilkes-Gibbs -@clark1986, suggesting that parents and children were forming conceptual pacts with one another as the game progressed (Figure 2). This effect was found across all three age groups, and patterns were largely similar across groups. Our results show that children as young as 4 are able to cooperate with a more linguistically capable partner to form conceptual pacts in conversation. Taken together with prior research suggesting that 4-year-olds are not yet able to form conceptual pacts with their peers [@glucksberg1967], our findings indicate that adults could scaffold younger children's conversational abilities to facilitate effective referential communication. 
+We found reduction in length of referring expressions in both adult and parent-child participant pairs (Fig. 3), replicating @clark1986's results. While the main effect of reduction was present across all age groups, we found developmental changes in the number of conversational turns. Specifically, four-year-olds and their parents had significantly more dialogue exchanges throughout the game. Finally, we found that children were more likely to use labels generated by their parents, and not vice versa, suggesting that parents were not simply accepting their children's labels in order to achieve communicative success.
 
-Older children and their parents used shorter referring expressions overall (Figure 3). This finding may reflect older children's more advanced linguistic skills compared to their younger counterparts, such that they produce more succinct (and perhaps more efficient) referring expressions. Older children may also require less descriptive information about the target tangram in order to identify it. These explanations are not mutually exclusive, but further analysis suggests that the latter may reflect our data more accurately.
+Our results show that children as young as 4 are able to cooperate with a more linguistically capable partner to form conceptual pacts in conversation, in line with @glucksberg1967's research showing communicative success in experimenter-child interactions. Importantly, our study extends previous work to show that even without scripts or pre-written prompts, parents can provide helpful feedback naturally to scaffold referential success with their young children.
 
-When analyzing length of referring expression separately for parents and children, we found that the age difference was largely driven by parents (Figure 4). While children's length of referring expression did decrease across rounds, patterns did not seem to differ across age groups. On the other hand, parents of 4-year-olds used longer referring expressions than parents of older children. One potential reason for why parents used longer referring expressions with younger children could be that these children required more scaffolding. Younger children may have difficulty focusing on relevant dimensions of the target tangram, such that parents need to provide more information in order for their children to select the correct tangram. Qualitative analysis is currently underway, and will be helpful for understanding the reason parents use varying lengths of referring expressions with their children. Our analyses thus far suggest that parents may be adapting their speech for effective communication, using longer, more informative sentences with younger children, and shorter ones with older children.
+What are some ways parents may be providing feedback? While all pairs were able to converge on more efficient reference over time, 4-year-olds and their parents took significantly more conversational turns on each trial. 
+\todo[inline]{TODO: Did parents take more turns when they were matcher? If they did, we can infer that parents were asking questions, repeating what their children said, etc., as a way of providing feedback to their child}
+Parents produced longer referring expressions than children overall, suggesting that parents may be providing more information to ensure communicative success. Furthermore, parents of 4-year-olds produced more speech than parents in other age groups. This indicates that parents not only provide more information for their children in general, but that they are sensitive to *how much* information to give based on their children's developmental level.
 
-Reaction times decreased across rounds for all parent-child pairs (Figure 6). Our reaction time analyses showed patterns similar to that of length of referring expressions. While dyads across age groups showed the same pattern of decreasing reaction time, older children and their parents were faster overall. These results show that parents and children are calibrated to each other during the game. If reaction times did not match length of referring expressions, that could indicate that parents and children were providing too little or too much information to each other, such that the two measures would be mismatched. Thus, the intuitive finding that reaction times matched referring expression lengths serves to strengthen the argument that parents calibrate to their children in communicative settings.
+Finally, we asked *who* initiated the referential pacts, to further understand how parents may be scaffolding communicative success with young children. In our predictions, we suggested two possible accounts of parent adaptation: 1) parents would adapt to young children by adopting more of their children's labels; 2) parents would provide higher-level feedback in order to scaffold referential success. Our analyses show that the labels children use are more likely to have originated from their parents, providing support for the latter account. That is, parent-child pairs are not achieving success due to parents accepting all labels provided by young children. Instead, our evidence points to parents offering feedback and perhaps suggesting more informative labels as factors leading to communicative success. It is entirely possible that the former account would also lead to communicative success, but our results indicate that parents do not naturalistic adopt that strategy, and instead opt to scaffold their young children's communicative skills. 
 
-Thus far, our analyses show that children can cooperate with their parents to form conceptual pacts about novel referents. Given that children as young as 4 years old were successful in forming referential pacts with others, our results suggest that parents, who are more linguistically-advanced, can scaffold children's communicative abilities. Qualitative analysis is currently ongoing, and will be helpful for answering the following questions: How do parents and children each drive the referential pact formation process? How do these roles change across development? A deeper understanding of the characteristics of parent-child referential communication across development will shed light onto the how children develop their conversational skills, and how parents may scaffold the process.
-
-## Future Directions
-
-We are currently conducting a follow-up study where similar tangrams are paired together on each trial. Currently, tangrams that are most dissimilar to each other are paired, as a way to ensure that the game would not be too difficult for young children. Anecdotally, however, the researchers have noticed that older children occasionally comment on the game being too easy. Other than increasing the difficulty of the game, pairing similar tangrams also has the important benefit of allowing us to understand how different pressures influencing referential communication and conceptual pact formation. The follow-up study could be directly compared to the current study, and would allow us to further explore how parents calibrate to their children in referential communication settings.
-
-We are also conducting a comprehension task, using expressions produced by parent-child pairs during the game. Children and adults will hear an audio recording of a referential expression and see the pair of tangrams that occured on the trial where the expression was produced. This study allows us to examine whether first and last round utterances differ qualitatively in informativeness, and whether speech generated by parents and children are tailored for each other, such that new interlocuters would not be able to identify the relevant tangram. 
 
 # Acknowledgements
 
