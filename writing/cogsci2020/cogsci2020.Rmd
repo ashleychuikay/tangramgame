@@ -198,13 +198,14 @@ gridExtra::grid.arrange(plt.results.acc, plt.results.exchanges, ncol = 2)
 
 If the ability of children to successfully establish reference in both director and matcher roles depends on scaffolding provided by their parents, we would expect additional dialogue turns for younger children. 
 We counted the total number of exchanges on each trial, defined as the number of distinct turns of continuous speech. 
+We then constructed a mixed-effects regression model predicting the continuous number of exchanges with the same effect structure as reported in the previous section.
 Consistent with previous work in adults [@clark1986], we found a significant main effect of repetition ($b$ = `r round(rep_effect$estimate, 2)`, $t$ = `r round(rep_effect$statistic, 2)`; $p < 0.001$).
 Fewer dialogue turns were required on later trials.
 However, we also found a significant main effect of the child's age ($b$ = `r round(age_effect$estimate, 2)`, $t$ = `r round(age_effect$statistic, 2)`; $p < 0.001$).
-Pairs with 4-year-old children took roughly one additional turn at each point in the experiment than pairs with older children, who more closely resembled adults (see Fig. \ref{fig:acc_exchanges}B).
+Pairs with 4-year-old children took roughly one additional turn at each point in the experiment than pairs with older children, who more closely resembled pairs of adults (see Fig. \ref{fig:acc_exchanges}B).
 This increased level of interactivity between parents and younger children provides an interesting contrast with previous studies showing decreased interactivity in pairs of younger children [@garrod1993, @anderson1994].
 These lengthier exchanges may reflect efforts by parents to provide and elicit additional clarification or confirmation, or may simply reflect attentional difficulties. 
-\todo[inline]{TODO: Can we follow-up by analyzing how many of these were questions vs. confirmation vs. purely keeping kids on task? Also: describe mixed-effect structure.}
+\todo[inline]{TODO: Can we follow-up with a sentence reporting roughly how many of these were questions?}
 
 ### Reduction in length of referring expression
 
