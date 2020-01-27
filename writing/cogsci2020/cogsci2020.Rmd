@@ -199,7 +199,7 @@ These lengthier exchanges may reflect efforts by parents to provide and elicit a
 
 ### Reduction in length of referring expression
 
-```{r development, cache=T, fig.env = "figure*", fig.pos = "h", fig.width=7, fig.height=6, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "\\label{fig:reduction}Total number of words in referring expressions produced by children and parents over the course of interaction."}
+```{r reduction, cache=T, fig.env = "figure*", fig.pos = "h", fig.width=7, fig.height=6, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "\\label{fig:reduction}Total number of words in referring expressions produced by children and parents over the course of interaction."}
 d.reduction.raw <- exchanges_data %>%
   mutate(age = ifelse(is.na(age), 'adult', age),
          num_words =  str_count(utterance, " ") +1) %>%
@@ -300,8 +300,8 @@ We found that this interaction was not significant ($t=$ `r round(person_age_rep
 
 ## Where do pacts come from?
 
-```{r}
-matches <- read_csv('../deidentified/word_matches.csv') %>% 
+```{r origins, cache=T, fig.env = "figure", fig.pos = "t", fig.width=3, fig.height=2, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "\\label{fig:origins}Probability of words used on final round first occuring with child or parent. Error bars are 95\\% CI."}
+matches <- read_csv('../../deidentified/word_matches.csv') %>% 
   filter(later_rep == 4) %>%
   spread(earlier_rep, match) %>%
   mutate(first_appearance = case_when(`1` ~ '1', 
@@ -353,7 +353,8 @@ An alternative possibility is that young children are able to adapt but are unce
 They fail with other children because neither can generate an understandable enough initial label to start the pact-formation process, but will quickly pick up on a good label supplied by their parent. 
 
 These accounts make different predictions about who is adapting to who: do pacts originate with children, or with adults?
-We distinguish by quantitatively analyzing the natural-language transcripts. 
+We distinguish these accounts by quantitatively analyzing the natural-language transcripts. 
+
 
 ## How do pacts differ across ages?
 
