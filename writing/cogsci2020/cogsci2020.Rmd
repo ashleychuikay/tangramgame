@@ -146,7 +146,7 @@ We constructed a mixed-effects logistic regression model predicting trial-level 
 While accuracy was initially well above chance at all age groups, we found a significant main effect of age ($b$ = `r round(age_effect_acc$estimate, 2)`, $t$ = `r round(age_effect_acc$statistic, 2)`; $p = 0.003$).
 Pairs containing 4-year-olds performed significantly more poorly than pairs containing older children.
 Critically, however, accuracy improved significantly over the four repetition blocks for all groups ($b$ = `r round(rep_effect_acc$estimate, 2)`, $t$ = `r round(rep_effect_acc$statistic, 2)`, $p < 0.001$; see Fig. \ref{fig:acc_exchanges}A)^[The drop in accuracy for 8-year-olds is likely an artifact of a small set of children losing interest in the task.].
-Such improvement for 4-year-olds contrasts with early results of communication between age-matched children [@glucksberg1966;@krauss1969], which found no improvement in accuracy with kingergardeners (age 5). 
+Such improvement for 4-year-olds contrasts with early results of communication between age-matched children [@glucksberg1966;@krauss1969], which found no improvement in accuracy with kindergardeners (age 5). 
 
 ### Interactive dialogue exchanges
 
@@ -301,14 +301,14 @@ Specifically, we defined efficiency as the total number of words produced by the
 Because participants in a pair alternated roles, each participant served as the director twice for each tangram. 
 This structure allowed us to examine how each participant changed their language when they were the director (Fig. \ref{fig:reduction}). 
 Using a mixed-effects model, we predicted the (log) number of words per exchange on each trial, including fixed effects of child age group, repetition block, and speaker identity (parent vs. child) as well as all of their interactions.
-We also included random intercepts at the tangram-level and maximal random structure at the dyad level (i.e. intercept, slopes for repetition block and speaker identity, and their interaction).
+We also included random intercepts at the tangram-level and maximal random structure at the dyad level [i.e. intercept, slopes for repetition block and speaker identity, and their interaction; @BarrLevyScheepersTily13_KeepItMaximal].
 All variables were centered to allow interpretation of lower-order terms as effects at the average level of the other terms. 
 We found significant main effects of repetition block ($t =$ `r round(rep_effect_reduction$statistic,2)`, $p$`r age_rep_interaction_reduction_pvalue`), speaker identity ($t =$ `r round(person_effect_reduction$statistic,2)`, $p$ `r person_effect_reduction_pvalue`), and age ($t =$ `r round(age_effect_reduction$statistic,2)`, $p$ `r age_effect_reduction_pvalue`).
 All else being equal, directors use fewer words over subsequent repetitions, children use fewer words than their parents, and pairs with older children use fewer words than pairs with younger children.
 
 However, these main effects were clarified by several interactions of interest.
 First, while parents on average used more words as director than their children did, we found a significant interaction with the child's age group ($t =$ `r round(person_age_interaction_reduction$statistic,2)`, $p$ `r  person_age_interaction_reduction_pvalue`).
-This gap between parent and child utterance length is largest at 4 years but nearly dissappeared by 8 years. 
+This gap between parent and child utterance length is largest at 4 years but nearly disappeared by 8 years. 
 Second, we find that parents reduced their utterance length over time more strongly than children did, holding age group constant ($t =$ `r round(person_rep_interaction_reduction$statistic,2)`, $p$ `r person_rep_interaction_reduction_pvalue`).
 Third, having older children in a pair supported stronger reduction overall, ($t =$ `r round(age_rep_interaction_reduction$statistic,2)`, $p$ `r age_rep_interaction_reduction_pvalue`). 
 Finally, an intriguing developmental question is whether reduction changes over the course of development: are 4-year-olds able to become more efficient as common ground is built in the same way 8-year-olds do?
@@ -319,7 +319,7 @@ We found that this interaction was not significant ($t=$ `r round(person_age_rep
 
 ## Where do pacts come from?
 
-```{r origins, cache=T, fig.env = "figure", fig.pos = "t", fig.width=3.5, fig.height=3.5, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "\\label{fig:origins}Probability of words used on final round first occuring with child or parent. Error bars are 95\\% CI."}
+```{r}
 matches <- read_csv('../../deidentified/word_matches.csv') %>% 
   filter(later_rep == 4) %>%
   spread(earlier_rep, match) %>%
@@ -344,7 +344,7 @@ matches <- read_csv('../../deidentified/word_matches.csv') %>%
          age = ifelse(is.na(age), 'adult-adult', age)
          )
 
-matches %>%
+origins.plt1 <- matches %>%
   group_by(age, director) %>%
   tidyboot_mean(introduced_by_other) %>%
   #tally() %>%
@@ -356,11 +356,12 @@ matches %>%
     geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
     theme_few() +
     theme(legend.position="top") +
-    ylab('% final-round words introduced by other') +
+    ylab('% words introduced by partner') +
     xlab("child age group") +
     theme(aspect.ratio = 1) +
     guides(color=guide_legend(title="Director")) +
-    scale_color_colorblind(breaks=c("child", "parent")) 
+    scale_color_colorblind(breaks=c("child", "parent")) +
+    labs(tag = 'A')
 ```
 
 Pairs of age-matched children are notoriously poor at repeated referential communication [@glucksberg1966], failing to coordinate on mutually comprehensible referring expressions.
@@ -391,6 +392,7 @@ These researchers asked almost 2000 Mechanical Turkers to judge the age at which
 Although one might be suspicious that adults have little access to this kind of information, these judgments are highly correlated with parents' estimates of the age at which their children learn corresponding words, and are better than a variety of other measures (e.g. frequency, concreteness, word length) in predicting lexical decision times [@kuperman2012].
 
 For each participant, on each trial, we estimated the linguistic complexity of their contribution by averaging the estimated age of acquisition for each word in their utterance^[We first removed any words in a list of `r stopwords() %>% length()` stopwords like "at" and "me" from the \texttt{tm} package [@feinerer2008]`.  
+These effects are shown in Fig. \ref{fig:origins}B.
 
 ```{r}
 tokens <- combined_data %>%
@@ -417,14 +419,17 @@ mean_aoas <- aoas %>%
   summarise(aoa = mean(aoa, na.rm = T)) %>%
   tidyboot_mean(aoa, na.rm = T)
 
-ggplot(mean_aoas, aes(x = rep_num, y = empirical_stat, color = as.factor(age))) +
-  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
-                  position = position_dodge(.25)) + 
+origins.plt2 <- ggplot(mean_aoas %>% filter(person != "adult"), aes(x = rep_num, y = empirical_stat, color = as.factor(age))) +
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper)) + 
   facet_wrap(~ person) + 
   geom_line() + 
   theme(aspect.ratio = 1, legend.position = "none") +
   scale_color_colorblind() + 
-  labs(x = "rep #", y = "AoA (average)")
+  labs(x = "rep #", y = "AoA (average)", tag = "B")
+```
+
+```{r origins, fig.env = "figure*", fig.pos = "t!", fig.width=7, fig.height=4, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "\\label{fig:origins}(A) Probability of words used on final round first occuring with child or parent. (B) Complexity of language used by different age groups. Error bars are 95\\% CI."}
+cowplot::plot_grid(origins.plt1, origins.plt2, ncol = 2, rel_widths =  c(1/3, 2/3))
 ```
 
 # Discussion
