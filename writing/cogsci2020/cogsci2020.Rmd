@@ -300,7 +300,7 @@ We found that this interaction was not significant ($t=$ `r round(person_age_rep
 
 ## Where do pacts come from?
 
-```{r origins, cache=T, fig.env = "figure", fig.pos = "t", fig.width=3, fig.height=2, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "\\label{fig:origins}Probability of words used on final round first occuring with child or parent. Error bars are 95\\% CI."}
+```{r origins, cache=T, fig.env = "figure", fig.pos = "t", fig.width=3.5, fig.height=3.5, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "\\label{fig:origins}Probability of words used on final round first occuring with child or parent. Error bars are 95\\% CI."}
 matches <- read_csv('../../deidentified/word_matches.csv') %>% 
   filter(later_rep == 4) %>%
   spread(earlier_rep, match) %>%
@@ -336,19 +336,20 @@ matches %>%
     geom_hline(yintercept = .5) +
     geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
     theme_few() +
+    theme(legend.position="top") +
     ylab('% final-round words introduced by other') +
     xlab("child age group") +
     theme(aspect.ratio = 1) +
-    guides(color=guide_legend(title="Director on final round")) +
+    guides(color=guide_legend(title="Director")) +
     scale_color_colorblind(breaks=c("child", "parent")) 
 ```
 
-Pairs of age-matched children are notoriously poor at repeated referential communication [@glucksberg1966], failing to coordinate on mutually comprehensible referring expressions.  
+Pairs of age-matched children are notoriously poor at repeated referential communication [@glucksberg1966], failing to coordinate on mutually comprehensible referring expressions.
 Our results demonstrate that when children perform the same task with their parents, this coordination problem can be solved: they converge on increasingly accurate and efficient pacts, as adults do. 
 What, then, allows children to coordinate with their parents but not with their peers? 
 
 One possibility is that children lack the ability to *adapt* to their partner: they have a strong preference for a particular idiosyncratic description and are not sensitive to the possibility that their partner may not understand it. 
-Under this hypothesis, children fail with other children because they each continue to use mutually incomprehensible expressions, and only succeed with their parent as a result of the parent's flexibility.  
+Under this hypothesis, children fail with other children because they each continue to use mutually incomprehensible expressions, and only succeed with their parent as a result of the parent's flexibility.
 An alternative possibility is that young children are able to adapt but are uncertain about what an appropriate label would be in the first place.
 They fail with other children because neither can generate an understandable enough initial label to start the pact-formation process, but will quickly pick up on a good label supplied by their parent. 
 
@@ -361,6 +362,7 @@ We distinguish these accounts by quantitatively analyzing the natural-language t
 Given that the labels used by younger children tend to originate with their parents, it is tempting to conclude that adaptation for these pairs is entirely one-sided.
 It is possible, however, that the resulting pacts are nonetheless shaped by children.
 In particular, we suggest that even though young children may not be able to *supply* good initial labels, they may serve as "regularizers" or "filters" that constrain the complexity of the resulting pact, since it must pass through their comprehension and production system.
+
 In order to estimate the complexity of language used by participants, we used self-reported age of acquisition estimates collected by @kuperman2012. 
 These researchers asked almost 2000 Mechanical Turkers to judge the age at which they first acquired each of a large set of words on a 7 point Likert scale. 
 Although one might be suspicious that adults have little access to this kind of information, these judgments are highly correlated with parents' estimates of the age at which their children learn corresponding words, and are better than a variety of other measures (e.g. frequency, concreteness, word length) in predicting lexical decision times [@kuperman2012].
