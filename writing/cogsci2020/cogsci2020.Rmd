@@ -201,6 +201,7 @@ We counted the total number of exchanges on each trial, defined as the number of
 We then constructed a mixed-effects regression model predicting the continuous number of exchanges with the same effect structure as reported in the previous section.
 Consistent with previous work in adults [@clark1986], we found a significant main effect of repetition ($b$ = `r round(rep_effect$estimate, 2)`, $t$ = `r round(rep_effect$statistic, 2)`; $p < 0.001$).
 Fewer dialogue turns were required on later trials.
+
 However, we also found a significant main effect of the child's age ($b$ = `r round(age_effect$estimate, 2)`, $t$ = `r round(age_effect$statistic, 2)`; $p < 0.001$).
 Pairs with 4-year-old children took roughly one additional turn at each point in the experiment than pairs with older children, who more closely resembled pairs of adults (see Fig. \ref{fig:acc_exchanges}B).
 This increased level of interactivity between parents and younger children provides an interesting contrast with previous studies showing decreased interactivity in pairs of younger children [@garrod1993; @anderson1994].
@@ -266,25 +267,45 @@ lmer.reduction.controlled <- d.reduction.raw %>%
 
 ```{r}
 age_effect_reduction = lmer.reduction.controlled %>% filter(term == 'age')
+age_effect_reduction_pvalue <- round(age_effect_reduction$p.value, 3)
+age_effect_reduction_pvalue <- ifelse(age_effect_reduction_pvalue < 0.001, 
+                               '< 0.001', paste0(c('=', age_effect_reduction_pvalue), collapse = ' '))
+
 rep_effect_reduction = lmer.reduction.controlled %>% filter(term == 'rep_num')
+rep_effect_reduction_pvalue <- round(rep_effect_reduction$p.value, 3)
+rep_effect_reduction_pvalue <- ifelse(rep_effect_reduction_pvalue < 0.001, 
+                               '< 0.001', paste0(c('=', rep_effect_reduction_pvalue), collapse = ' '))
+
 person_effect_reduction = lmer.reduction.controlled %>% filter(term == 'person1')
+person_effect_reduction_pvalue <- round(person_effect_reduction$p.value, 3)
+person_effect_reduction_pvalue <- ifelse(person_effect_reduction_pvalue < 0.001, 
+                               '< 0.001', paste0(c('=', person_effect_reduction_pvalue), collapse = ' '))
+
 person_age_interaction_reduction = lmer.reduction.controlled %>% filter(term == 'person1:age')
 person_age_interaction_reduction_pvalue <- round(person_age_interaction_reduction$p.value, 3)
+person_age_interaction_reduction_pvalue <- ifelse(person_age_interaction_reduction_pvalue < 0.001, 
+                               '< 0.001', paste0(c('=', person_age_interaction_reduction_pvalue), collapse = ' '))
 
 person_rep_interaction_reduction = lmer.reduction.controlled %>% filter(term == 'person1:rep_num')
 person_rep_interaction_reduction_pvalue <- round(person_rep_interaction_reduction$p.value, 3)
+person_rep_interaction_reduction_pvalue <- ifelse(person_rep_interaction_reduction_pvalue < 0.001, 
+                                                  '< 0.001', paste0(c('= ', person_rep_interaction_reduction_pvalue)))
 
 age_rep_interaction_reduction = lmer.reduction.controlled %>% filter(term == 'age:rep_num')
 age_rep_interaction_reduction_pvalue = round(age_rep_interaction_reduction$p.value, 3)
+age_rep_interaction_reduction_pvalue <- ifelse(age_rep_interaction_reduction_pvalue < 0.001, 
+                                                  '< 0.001', paste0(c('= ', age_rep_interaction_reduction_pvalue)))
 
 person_age_rep_interaction_reduction = lmer.reduction.controlled %>% filter(term == 'person1:age:rep_num')
 person_age_rep_interaction_reduction_pvalue = round(person_age_rep_interaction_reduction$p.value, 3)
+person_age_rep_interaction_reduction_pvalue <- ifelse(person_age_rep_interaction_reduction_pvalue < 0.001, 
+                                                  '< 0.001', paste0(c('= ', person_age_rep_interaction_reduction_pvalue)))
 ```
 
 A key signature of successful communication among adults is an increase in efficiency over repeated reference [@krauss1964;@clark1986]. 
 As pairs form conceptual pacts, they are able to communicate the same meaning using fewer words. 
 We asked whether parents and children of different ages spontaneously reduce their referring expressions in the same way.
-Because the total number of words produced on a trial is correlated with the number of dialogue exchanges examined above ($r=$ `r word_exchange_cor`), we constructed a an efficiency measure that controls for additional turns.
+Because the total number of words produced on a trial is correlated with the number of dialogue exchanges examined above ($r=$ `r word_exchange_cor`), we constructed a a normalized efficiency measure that controls for additional turns.
 Specifically, we defined efficiency as the total number of words produced by the *director* divided by the number of dialogue exchanges on that trial. 
 
 Because participants in a pair alternated roles, each participant served as the director twice for each tangram. 
@@ -292,19 +313,17 @@ This structure allowed us to examine how each participant changed their language
 Using a mixed-effects model, we predicted the (log) number of words per exchange on each trial, including fixed effects of child age group, repetition block, and speaker identity (parent vs. child) as well as all of their interactions.
 We also included random intercepts at the tangram-level and maximal random structure at the dyad level (i.e. intercept, slopes for repetition block and speaker identity, and their interaction).
 All variables were centered to allow interpretation of lower-order terms as effects at the average level of the other terms. 
-We found significant main effects of repetition block ($t =$ `r round(rep_effect_reduction$statistic,2)`, $p < 0.001$), speaker identity ($t =$ `r round(person_effect_reduction$statistic,2)`, $p < 0.001$), and age (t = `r round(age_effect_reduction$statistic,2)`, $p < 0.001$).
+We found significant main effects of repetition block ($t =$ `r round(rep_effect_reduction$statistic,2)`, $p$`r age_rep_interaction_reduction_pvalue`), speaker identity ($t =$ `r round(person_effect_reduction$statistic,2)`, $p$ `r person_effect_reduction_pvalue`), and age ($t =$ `r round(age_effect_reduction$statistic,2)`, $p$ `r age_effect_reduction_pvalue`).
 All else being equal, directors use fewer words over subsequent repetitions, children use fewer words than their parents, and pairs with older children use fewer words than pairs with younger children.
 
 However, these main effects were clarified by several interactions of interest.
-First, while parents on average used more words as director than their children did, we found a significant interaction with the child's age group ($t =$ `r round(person_age_interaction_reduction$statistic,2)`, $p =$ `r  person_age_interaction_reduction_pvalue`).
+First, while parents on average used more words as director than their children did, we found a significant interaction with the child's age group ($t =$ `r round(person_age_interaction_reduction$statistic,2)`, $p$ `r  person_age_interaction_reduction_pvalue`).
 This gap between parent and child utterance length is largest at 4 years but nearly dissappeared by 8 years. 
-Second, we find that parents reduced their utterance length over time more strongly than children did, holding age group constant ($t =$ `r round(person_rep_interaction_reduction$statistic,2)`, $p =$ `r person_rep_interaction_reduction_pvalue`).
-Third, having older children in a pair supported stronger reduction overall, ($t =$ `r round(age_rep_interaction_reduction$statistic,2)`, $p =$ `r age_rep_interaction_reduction_pvalue`). 
+Second, we find that parents reduced their utterance length over time more strongly than children did, holding age group constant ($t =$ `r round(person_rep_interaction_reduction$statistic,2)`, $p$ `r person_rep_interaction_reduction_pvalue`).
+Third, having older children in a pair supported stronger reduction overall, ($t =$ `r round(age_rep_interaction_reduction$statistic,2)`, $p$ `r age_rep_interaction_reduction_pvalue`). 
 Finally, an intriguing developmental question is whether reduction changes over the course of development: are 4-year-olds able to become more efficient as common ground is built in the same way 8-year-olds do?
 Because parents of different age groups display similar slopes of reduction, this question is addressed by a 3-way interaction. 
-We found that this interaction was not significant ($t=$ `r round(person_age_rep_interaction_reduction$statistic, 2)`, $p =$ `r person_age_rep_interaction_reduction_pvalue`), although our sample was likely underpowered to detect a higher-order interaction. 
-
-\todo[inline]{TODO: include control analysis using normalized metric. Consider using this analysis as primary, i.e. switching over \texttt{lmer.reduction} to \texttt{lmer.reduction.control} in the block and motivating this}.
+We found that this interaction was not significant ($t=$ `r round(person_age_rep_interaction_reduction$statistic, 2)`, $p$ `r person_age_rep_interaction_reduction_pvalue`), although our sample was likely underpowered to detect this higher-order interaction. 
 
 # Analyzing the content of pacts
 
