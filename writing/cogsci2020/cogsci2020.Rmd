@@ -98,15 +98,13 @@ There were 4 blocks of 10 trials. Each tangram appeared as the target once durin
 
 ### Pre-processing
 
-.\todo[inline]{Describe data pre-processing pipeline here.}
 All sessions were videotaped, and the videos were transcribed using Datavyu--an Open-Source coding software [@datavyu-team2014]. Research assistants used videos not included in analysis (e.g. when participants did not complete the session) for training and practice. Each video was transcribed and checked by two different research assistants. To ensure anonymity of participants, names were not transcribed when used. Each utterance was coded manually as either being part of a trial, or being unrelated to the game. The exported files were then processed in R to remove unrelated utterances (e.g. parents requesting children to sit down, talking about where they plan to go after the study session, etc.) before analysis.
 
 ## Results
 
 ### Performance accuracy
 
-```{r accuracy, cache=T, fig.env = "figure", fig.pos = "h", fig.width=4, fig.height=2, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Accuracy improves over time. Error bars are 95\\% CIs. \\todo[inline]{TODO: We should combine this into single 2-col figure with num exchanges.}"}
-
+```{r cache=T}
 d.accuracy.raw <- combined_data %>%
   mutate(age = as.character(age),
          age = if_else(is.na(age), 'adult', age)) %>%
@@ -117,7 +115,7 @@ d.accuracy.raw <- combined_data %>%
   ungroup()
 
 # Bootstrap error bars and render plot
-d.accuracy.raw %>%
+plt.results.acc <- d.accuracy.raw %>%
   group_by(age, rep_num) %>%
   tidyboot_mean(correct) %>%
   ggplot(aes(x = rep_num, y = empirical_stat * 100,  group = age, color = age)) +
@@ -128,7 +126,8 @@ d.accuracy.raw %>%
     xlab("repetition #") +
     ylim(78, 100) +
     theme(aspect.ratio = 1) +
-    scale_color_colorblind()
+    scale_color_colorblind() +
+    labs(tag = 'A')
 
 
 lmer.accuracy <- d.accuracy.raw %>%
@@ -146,13 +145,13 @@ Were children able to succeed at the reference game, in collaboration with their
 We begin by examining accuracy across age groups.
 While accuracy was initially well above chance at all age groups, we found a significant main effect of age ($b$ = `r round(age_effect_acc$estimate, 2)`, $t$ = `r round(age_effect_acc$statistic, 2)`; $p = 0.001$).
 Pairs with 4-year-olds performed significantly more poorly than pairs with older children.
-Critically, however, accuracy improved significantly over the four repetition blocks for all groups ($b$ = `r round(rep_effect_acc$estimate, 2)`, $t$ = `r round(rep_effect_acc$statistic, 2)`; $p = 0.001$).
+Critically, however, accuracy improved significantly over the four repetition blocks for all groups ($b$ = `r round(rep_effect_acc$estimate, 2)`, $t$ = `r round(rep_effect_acc$statistic, 2)`, $p = 0.001$; see Fig. \ref{fig:acc_exchanges}A).
 Such improvement for 4-year-olds contrasts with early results of communication between age-matched children [@glucksberg1966,@krauss1969], which found no improvement in accuracy with kingergardeners (age 5). 
 \todo[inline]{TODO: describe mixed-effect structure. Note that dip in 8-year-olds likely driven by small group getting bored.}
 
 ### Interactive dialogue exchanges
 
-```{r exchanges, cache=T, fig.env = "figure", fig.pos = "h", fig.width=4, fig.height=2, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Number of dialogue exchanges."}
+```{r cache=T}
 # TODO: double-check these are actually all swapping turns, not just the same person recorded as saying things on multiple lines in a row
 
 # count number of back-and-forth exchanges
@@ -164,7 +163,7 @@ d.exchanges.raw <- exchanges_data %>%
   ungroup()
 
 # Bootstrap error bars and render plot
-d.exchanges.raw %>%
+plt.results.exchanges <- d.exchanges.raw %>%
   group_by(age, rep_num) %>%
   tidyboot_mean(num_exchanges) %>%
   ggplot(aes(x = rep_num, y = empirical_stat, color = age, group = age)) +
@@ -173,7 +172,8 @@ d.exchanges.raw %>%
     ylab("# exchanges per round") +
     xlab("repetition #") +
     theme(aspect.ratio = 1) +
-    scale_color_colorblind()
+    scale_color_colorblind() +
+    labs(tag = 'B')
 
 # Bootstrap error bars and plot
 lmer.exchanges <- tidy(lmer(num_exchanges ~ age + rep_num + (1 + rep_num | subid) + (1 | target), 
@@ -182,12 +182,17 @@ age_effect = lmer.exchanges %>% filter(term == 'age')
 rep_effect = lmer.exchanges %>% filter(term == 'rep_num')
 ```
 
+
+```{r acc_exchanges, cache=T, fig.env = "figure*", fig.pos = "t!", fig.width=7, fig.height=3, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "\\label{fig:acc_exchanges}\\todo[inline]{TODO:remap colors so adult is black and other lines are a gradient of blue, getting darker with older ages.}(A) Accuracy improves over time for all groups. (B) Number of dialogue exchanges is higher for younger children. Error bars are 95\\% CIs."}
+gridExtra::grid.arrange(plt.results.acc, plt.results.exchanges, ncol = 2)
+```
+
 If the ability of children to successfully establish reference in both director and matcher roles depends on scaffolding provided by their parents, we would expect additional dialogue turns for younger children. 
-We counted the total number of exchanges on each trial, defined as the 
+We counted the total number of exchanges on each trial, defined as the number of distinct turns of continuous speech. 
 Consistent with previous work in adults [@clark1986], we found a significant main effect of repetition ($b$ = `r round(rep_effect$estimate, 2)`, $t$ = `r round(rep_effect$statistic, 2)`; $p < 0.001$).
 Fewer dialogue turns were required on later trials.
 However, we also found a significant main effect of the child's age ($b$ = `r round(age_effect$estimate, 2)`, $t$ = `r round(age_effect$statistic, 2)`; $p < 0.001$).
-Pairs with 4-year-old children took roughly one additional turn at each point in the experiment than pairs with older children, who more closely resembled adults.
+Pairs with 4-year-old children took roughly one additional turn at each point in the experiment than pairs with older children, who more closely resembled adults (see Fig. \ref{fig:acc_exchanges}B).
 This increased level of interactivity between parents and younger children provides an interesting contrast with previous studies showing decreased interactivity in pairs of younger children [@garrod1993, @anderson1994].
 These lengthier exchanges may reflect efforts by parents to provide and elicit additional clarification or confirmation, or may simply reflect attentional difficulties. 
 \todo[inline]{TODO: Can we follow-up by analyzing how many of these were questions vs. confirmation vs. purely keeping kids on task? Also: describe mixed-effect structure.}
@@ -280,15 +285,15 @@ We found significant main effects of repetition block ($t =$ `r round(rep_effect
 All else being equal, directors use fewer words over subsequent repetitions, children use fewer words than their parents, and pairs with older children use fewer words than pairs with younger children.
 
 However, these main effects were clarified by several interactions of interest.
-First, while parents on average used more words as director than their children did, we found a significant interaction with the child's age group ($t = $ `r round(person_age_interaction_reduction$statistic,2)`, $p = $ `r  person_age_interaction_reduction_pvalue`).
+First, while parents on average used more words as director than their children did, we found a significant interaction with the child's age group ($t =$ `r round(person_age_interaction_reduction$statistic,2)`, $p =$ `r  person_age_interaction_reduction_pvalue`).
 This gap between parent and child utterance length is largest at 4 years but nearly dissappeared by 8 years. 
-Second, we find that parents reduced their utterance length over time more strongly than children did, holding age group constant ($t = $ `r round(person_rep_interaction_reduction$statistic,2)`, $p = $ `r person_rep_interaction_reduction_pvalue`).
-Third, having older children in a pair supported stronger reduction overall, ($t = $ `r round(age_rep_interaction_reduction$statistic,2)`, $p = $ `r age_rep_interaction_reduction_pvalue`). 
+Second, we find that parents reduced their utterance length over time more strongly than children did, holding age group constant ($t =$ `r round(person_rep_interaction_reduction$statistic,2)`, $p =$ `r person_rep_interaction_reduction_pvalue`).
+Third, having older children in a pair supported stronger reduction overall, ($t =$ `r round(age_rep_interaction_reduction$statistic,2)`, $p =$ `r age_rep_interaction_reduction_pvalue`). 
 Finally, an intriguing developmental question is whether reduction changes over the course of development: are 4-year-olds able to become more efficient as common ground is built in the same way 8-year-olds do?
 Because parents of different age groups display similar slopes of reduction, this question is addressed by a 3-way interaction. 
-We found that this interaction was not significant ($t=$ `r round(person_age_rep_interaction_reduction$statistic, 2)`, $p = $ `r person_age_rep_interaction_reduction_pvalue`), although our sample was likely underpowered to detect a higher-order interaction. 
+We found that this interaction was not significant ($t=$ `r round(person_age_rep_interaction_reduction$statistic, 2)`, $p =$ `r person_age_rep_interaction_reduction_pvalue`), although our sample was likely underpowered to detect a higher-order interaction. 
 
-\todo[inline]{TODO: include control analysis using normalized metric. Consider using this analysis as primary, i.e. switching over \texttt{lmer.reduction} to `\texttt{lmer.reduction.control} in the block and motivating this}.
+\todo[inline]{TODO: include control analysis using normalized metric. Consider using this analysis as primary, i.e. switching over \texttt{lmer.reduction} to \texttt{lmer.reduction.control} in the block and motivating this}.
 Because the total number of words produced on a trial is correlated with the number of dialogue exchanges examined above ($r=$ `r word_exchange_cor`), we next conducted a supplementary analysis to control for dialogue.
 Specifically, we divided the total number of words by the number of exchanges and used this normalized measure as the dependent variable...
 
