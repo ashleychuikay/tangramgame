@@ -156,7 +156,7 @@ We constructed a mixed-effects logistic regression model predicting trial-level 
 While accuracy was initially well above chance at all age groups, we found a significant main effect of age ($b$ = `r round(age_effect_acc$estimate, 2)`, $t$ = `r round(age_effect_acc$statistic, 2)`; $p = 0.003$).
 Pairs containing 4-year-olds performed significantly more poorly than pairs containing older children.
 Critically, however, accuracy improved significantly over the four repetition blocks for all groups ($b$ = `r round(rep_effect_acc$estimate, 2)`, $t$ = `r round(rep_effect_acc$statistic, 2)`, $p < 0.001$; see Fig. \ref{fig:acc_exchanges}A)^[The drop in accuracy for 8-year-olds is likely an artifact of a small set of children losing interest in the task.].
-Such improvement for 4-year-olds contrasts with early results of communication between age-matched children [@glucksberg1966,@krauss1969], which found no improvement in accuracy with kingergardeners (age 5). 
+Such improvement for 4-year-olds contrasts with early results of communication between age-matched children [@glucksberg1966;@krauss1969], which found no improvement in accuracy with kingergardeners (age 5). 
 
 ### Interactive dialogue exchanges
 
@@ -203,7 +203,7 @@ Consistent with previous work in adults [@clark1986], we found a significant mai
 Fewer dialogue turns were required on later trials.
 However, we also found a significant main effect of the child's age ($b$ = `r round(age_effect$estimate, 2)`, $t$ = `r round(age_effect$statistic, 2)`; $p < 0.001$).
 Pairs with 4-year-old children took roughly one additional turn at each point in the experiment than pairs with older children, who more closely resembled pairs of adults (see Fig. \ref{fig:acc_exchanges}B).
-This increased level of interactivity between parents and younger children provides an interesting contrast with previous studies showing decreased interactivity in pairs of younger children [@garrod1993, @anderson1994].
+This increased level of interactivity between parents and younger children provides an interesting contrast with previous studies showing decreased interactivity in pairs of younger children [@garrod1993; @anderson1994].
 These lengthier exchanges may reflect efforts by parents to provide and elicit additional clarification or confirmation, or may simply reflect attentional difficulties. 
 \todo[inline]{TODO: Can we follow-up with a sentence reporting roughly how many of these were questions?}
 
@@ -265,23 +265,23 @@ lmer.reduction.controlled <- d.reduction.raw %>%
 ```
 
 ```{r}
-age_effect_reduction = lmer.reduction %>% filter(term == 'age')
-rep_effect_reduction = lmer.reduction %>% filter(term == 'rep_num')
-person_effect_reduction = lmer.reduction %>% filter(term == 'person1')
-person_age_interaction_reduction = lmer.reduction %>% filter(term == 'person1:age')
+age_effect_reduction = lmer.reduction.controlled %>% filter(term == 'age')
+rep_effect_reduction = lmer.reduction.controlled %>% filter(term == 'rep_num')
+person_effect_reduction = lmer.reduction.controlled %>% filter(term == 'person1')
+person_age_interaction_reduction = lmer.reduction.controlled %>% filter(term == 'person1:age')
 person_age_interaction_reduction_pvalue <- round(person_age_interaction_reduction$p.value, 3)
 
-person_rep_interaction_reduction = lmer.reduction %>% filter(term == 'person1:rep_num')
+person_rep_interaction_reduction = lmer.reduction.controlled %>% filter(term == 'person1:rep_num')
 person_rep_interaction_reduction_pvalue <- round(person_rep_interaction_reduction$p.value, 3)
 
-age_rep_interaction_reduction = lmer.reduction %>% filter(term == 'age:rep_num')
+age_rep_interaction_reduction = lmer.reduction.controlled %>% filter(term == 'age:rep_num')
 age_rep_interaction_reduction_pvalue = round(age_rep_interaction_reduction$p.value, 3)
 
-person_age_rep_interaction_reduction = lmer.reduction %>% filter(term == 'person1:age:rep_num')
+person_age_rep_interaction_reduction = lmer.reduction.controlled %>% filter(term == 'person1:age:rep_num')
 person_age_rep_interaction_reduction_pvalue = round(person_age_rep_interaction_reduction$p.value, 3)
 ```
 
-A key signature of successful communication among adults is an increase in efficiency over repeated reference [@krauss1964,@clark1986]. 
+A key signature of successful communication among adults is an increase in efficiency over repeated reference [@krauss1964;@clark1986]. 
 As pairs form conceptual pacts, they are able to communicate the same meaning using fewer words. 
 We asked whether parents and children of different ages spontaneously reduce their referring expressions in the same way.
 Because the total number of words produced on a trial is correlated with the number of dialogue exchanges examined above ($r=$ `r word_exchange_cor`), we constructed a an efficiency measure that controls for additional turns.
