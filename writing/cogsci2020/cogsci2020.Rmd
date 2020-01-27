@@ -114,6 +114,7 @@ All sessions were videotaped, and the videos were transcribed using Datavyu--an 
 
 ```{r cache=T}
 d.accuracy.raw <- combined_data %>%
+  ungroup() %>%
   mutate(age = as.character(age),
          age = if_else(is.na(age), 'adult', age)) %>%
   mutate(person = ifelse(person %in% c('left', 'right', 'parent'), 
@@ -141,7 +142,7 @@ plt.results.acc <- d.accuracy.raw %>%
 lmer.accuracy <- d.accuracy.raw %>%
   filter(age != "adult") %>%
   mutate(age = as.numeric(age)) %>%
-  glmer(correct ~ age + rep_num + (rep_num | subid) + (1 | target), 
+  glmer(correct ~ age + rep_num + (1 + rep_num | subid) + (1 | target), 
                             family = 'binomial', data = .) %>%
   tidy()
 
@@ -149,13 +150,13 @@ age_effect_acc = lmer.accuracy %>% filter(term == 'age')
 rep_effect_acc = lmer.accuracy %>% filter(term == 'rep_num')
 ```
 
-Were children able to succeed at the reference game when collaborating with their parents? 
-We begin by examining accuracy across age groups.
-While accuracy was initially well above chance at all age groups, we found a significant main effect of age ($b$ = `r round(age_effect_acc$estimate, 2)`, $t$ = `r round(age_effect_acc$statistic, 2)`; $p = 0.001$).
-Pairs with 4-year-olds performed significantly more poorly than pairs with older children.
-Critically, however, accuracy improved significantly over the four repetition blocks for all groups ($b$ = `r round(rep_effect_acc$estimate, 2)`, $t$ = `r round(rep_effect_acc$statistic, 2)`, $p = 0.001$; see Fig. \ref{fig:acc_exchanges}A).
+Were children able to succeed at the reference game in collaboration with their parents? 
+We began by examining accuracy across age groups.
+We constructed a mixed-effects logistic regression model predicting trial-level errors, including fixed effects of age group and repetition block, random intercepts for each tangram and pair of participants, and random effects of repetition block for each pair of participants. 
+While accuracy was initially well above chance at all age groups, we found a significant main effect of age ($b$ = `r round(age_effect_acc$estimate, 2)`, $t$ = `r round(age_effect_acc$statistic, 2)`; $p = 0.003$).
+Pairs containing 4-year-olds performed significantly more poorly than pairs containing older children.
+Critically, however, accuracy improved significantly over the four repetition blocks for all groups ($b$ = `r round(rep_effect_acc$estimate, 2)`, $t$ = `r round(rep_effect_acc$statistic, 2)`, $p < 0.001$; see Fig. \ref{fig:acc_exchanges}A)^[The drop in accuracy for 8-year-olds is likely an artifact of a small set of children losing interest in the task.].
 Such improvement for 4-year-olds contrasts with early results of communication between age-matched children [@glucksberg1966,@krauss1969], which found no improvement in accuracy with kingergardeners (age 5). 
-\todo[inline]{TODO: describe mixed-effect structure. Note that dip in 8-year-olds likely driven by small group getting bored.}
 
 ### Interactive dialogue exchanges
 
