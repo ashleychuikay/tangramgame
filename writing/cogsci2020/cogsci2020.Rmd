@@ -288,12 +288,19 @@ questionMarks <- exchanges_data %>%
   tally() %>% 
   group_by(age) %>%
   mutate(proportion = n / sum(n)) %>%
-  ungroup() %>%
+  ungroup()
+
+questionMarkProportions <- questionMarks %>%
   filter(containQ) %>%
   select(age, proportion) %>%
   pivot_wider(names_from = age, values_from = proportion)
 
-questionMarks$age4
+chisq.out <- questionMarks %>% 
+  select(age, containQ,n) %>%
+  spread(containQ,n) %>% 
+  select(-age) %>%
+  chisq.test() %>%
+  tidy()
 ```
 
 If the ability of children of different ages to successfully establish reference in both director and matcher roles depends on scaffolding provided by their parents, we would expect additional dialogue turns for younger children. 
@@ -308,7 +315,7 @@ This increased level of interactivity between parents and younger children provi
 
 These lengthier exchanges may reflect efforts by parents to provide and elicit additional clarification or confirmation, or may simply reflect attentional difficulties. 
 As a rough estimate of the content of parents' dialogue responses when their child was the director, we counted the number of question marks in the transcript^[Because questions were not always annotated with a question mark, this represents a lower bound on the true estimate of questions.].
-We found `r round(questionMarks$age4, 2) * 100`% of responses to 4-year-olds contained question marks, compared to `r round(questionMarks$age6, 2) * 100`% and `r round(questionMarks$age8, 2) * 100`% to 6 and 8-year-olds, respectively.
+We found `r round(questionMarkProportions$age4, 2) * 100`% of responses to 4-year-olds contained question marks, compared to `r round(questionMarkProportions$age6, 2) * 100`% and `r round(questionMarkProportions$age8, 2) * 100`% to 6 and 8-year-olds, respectively ($\chi^2(2)=$ `r round(chisq.out$statistic,2)`, $p < 0.001$).
 
 ### Reduction in length of referring expression
 
