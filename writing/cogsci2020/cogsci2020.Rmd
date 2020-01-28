@@ -173,7 +173,7 @@ There were 4 blocks of 10 trials. Each tangram appeared as the target once durin
 ### Pre-processing
 
 \todo[inline]{Can we explain what xxx and yyy mean in the transcripts? How did they deal with 'indecipherable' words?}
-All sessions were videotaped, and the videos were transcribed using Datavyu--an Open-Source coding software [@datavyu-team2014]. Research assistants used videos of excluded pairs for training and practice. Each video was transcribed and checked by two different research assistants. To ensure anonymity of participants, names were not transcribed when used. Each utterance was coded manually as either being part of a trial, or being unrelated to the game (e.g. parents requesting children to sit down, talking about where they plan to go after the study session, etc.) with unrelated utterances removed before analysis.
+All sessions were videotaped, and the videos were transcribed using Datavyu--an Open-Source coding software [@datavyu-team2014]. Research assistants used videos of excluded pairs for training and practice. Each video was transcribed and checked by two different research assistants. To ensure anonymity of participants, names were transcribed as "yyy". Inaudible words were transcirbed as "xxx". Each utterance was coded manually as either being part of a trial, or being unrelated to the game (e.g. parents requesting children to sit down, talking about where they plan to go after the study session, etc.), with unrelated utterances removed before analysis.
 
 ## Results
 
