@@ -76,6 +76,17 @@ img <- png::readPNG("figs/display.png")
 grid::grid.raster(img)
 ```
 
+### Design
+
+There were 4 blocks of 10 trials. Each tangram appeared as the target once during each block, such that each tangram was the target four times during the game. Trials within blocks were randomized. The 10 tangrams were shuffled and randomly assigned to either participants at the beginning of the game. The assignment dictates who would be the director for a particular target in Round 1. Thus, each participant played the role of director two times for each of the 10 tangrams. In each round, the targets appeared with different foils. To ensure that the game would not be too difficult for young children, trials were constructed such that the most similar tangrams (based on mTurk worker judgments) did not appear together.
+
+### Pre-processing
+
+All sessions were videotaped, and the videos were transcribed using Datavyu--an Open-Source coding software [@datavyu-team2014]. Research assistants used videos not included in analysis (e.g. when participants did not complete the session) for training and practice. Each video was transcribed and checked by two different research assistants. To ensure anonymity of participants, names were not transcribed when used. Each utterance was coded manually as either being part of a trial, or being unrelated to the game. The exported files were then processed in R to remove unrelated utterances (e.g. parents requesting children to sit down, talking about where they plan to go after the study session, etc.) before analysis.
+
+## Results
+
+### Performance accuracy
 
 ```{r acc_exchanges, cache=T, fig.env = "figure*", fig.pos = "t!", fig.width=7, fig.height=3, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "\\label{fig:acc_exchanges}(A) Accuracy improves over time for all groups. (B) Number of dialogue exchanges is higher for younger children. Error bars are 95\\% CIs."}
 d.accuracy.raw <- combined_data %>%
@@ -88,10 +99,13 @@ d.accuracy.raw <- combined_data %>%
   summarize(correct = mean(correct)) %>% # make sure each trial is only counted once
   ungroup()
 
-# Bootstrap error bars and render plot
-plt.results.acc <- d.accuracy.raw %>%
+# Bootstrap error bars 
+result.acc.means <-  d.accuracy.raw %>%
   group_by(age, rep_num) %>%
-  tidyboot_mean(correct) %>%
+  tidyboot_mean(correct)
+
+# render plot
+plt.results.acc <- result.acc.means %>%   
   ggplot(aes(x = rep_num, y = empirical_stat * 100,  group = age, color = age)) +
     geom_line() +
     geom_errorbar(aes(ymin = ci_lower * 100, ymax = ci_upper * 100),
@@ -103,17 +117,25 @@ plt.results.acc <- d.accuracy.raw %>%
     scale_color_manual(values = SCALE) +
     labs(tag = 'A')
 
-
 lmer.accuracy <- d.accuracy.raw %>%
   filter(age != "adult") %>%
   mutate(age = as.numeric(age)) %>%
-  glmer(correct ~ age + rep_num + (1 + rep_num | subid) + (1 | target), 
+  glmer(correct ~ age + rep_num + (rep_num | subid) + (1 | target), 
                             family = 'binomial', data = .) %>%
   tidy()
 
 age_effect_acc = lmer.accuracy %>% filter(term == 'age')
 rep_effect_acc = lmer.accuracy %>% filter(term == 'rep_num')
+```
 
+Were children able to succeed at the reference game in collaboration with their parents? 
+We began by examining accuracy across age groups.
+We constructed a mixed-effects logistic regression model predicting trial-level errors, including fixed effects of age group and repetition block, random intercepts for each tangram and pair of participants, and random effects of repetition block for each pair of participants. 
+While accuracy was initially well above chance at all age groups, we found a significant main effect of age ($b$ = `r round(age_effect_acc$estimate, 2)`, $t$ = `r round(age_effect_acc$statistic, 2)`; $p = 0.003$): Pairs containing younger children performed significantly more poorly than pairs containing older children. Critically, however, accuracy improved significantly over the four repetition blocks for all groups ($b$ = `r round(rep_effect_acc$estimate, 2)`, $t$ = `r round(rep_effect_acc$statistic, 2)`, $p < 0.001$; see Fig. \ref{fig:acc_exchanges}A)^[The drop in accuracy for 8-year-olds is likely an artifact of a small set of children losing interest in the task.]. Such improvement for 4-year-olds contrasts with early results of communication between age-matched children [@glucksberg1966;@krauss1969], which found no improvement in accuracy with kingergardeners (age 5). 
+
+### Interactive dialogue exchanges
+
+```{r cache=T}
 # TODO: double-check these are actually all swapping turns, not just the same person recorded as saying things on multiple lines in a row?
 
 # count number of back-and-forth exchanges
@@ -124,10 +146,12 @@ d.exchanges.raw <- exchanges_data %>%
   summarize(num_exchanges = n()) %>% 
   ungroup()
 
-# Bootstrap error bars and render plot
-plt.results.exchanges <- d.exchanges.raw %>%
+d.exchanges.mean <- d.exchanges.raw %>%
   group_by(age, rep_num) %>%
-  tidyboot_mean(num_exchanges, nboot = 10) %>%
+  tidyboot_mean(num_exchanges)
+
+# Bootstrap error bars and render plot
+plt.results.exchanges <-  d.exchanges.mean %>%
   ggplot(aes(x = rep_num, y = empirical_stat, color = age, group = age)) +
     geom_line() +
     geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
@@ -138,11 +162,18 @@ plt.results.exchanges <- d.exchanges.raw %>%
     labs(tag = 'B')
 
 # Bootstrap error bars and plot
-lmer.exchanges <- tidy(lmer(num_exchanges ~ age + rep_num + (1 + rep_num | subid) + (1 | target), 
-                            data = d.exchanges.raw %>% filter(age != 'adult') %>% mutate(age = as.numeric(age))))
+lmer.exchanges <- d.exchanges.raw %>% 
+  filter(age != 'adult') %>%
+  mutate(age = as.numeric(age)) %>%
+  lmer(num_exchanges ~ age + rep_num +  (rep_num | subid) + (1 | target), 
+       control = lmerControl(optimizer = "bobyqa"), data = .) %>%
+  tidy()
+
 age_effect = lmer.exchanges %>% filter(term == 'age')
 rep_effect = lmer.exchanges %>% filter(term == 'rep_num')
+```
 
+```{r acc_exchanges, cache=T, fig.env = "figure*", fig.pos = "t!", fig.width=7, fig.height=3, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "\\label{fig:acc_exchanges}(A) Accuracy improves over time for all groups. (B) Number of dialogue exchanges is higher for younger children. Error bars are 95\\% CIs."}
 gridExtra::grid.arrange(plt.results.acc, plt.results.exchanges, ncol = 2)
 ```
 
@@ -336,7 +367,11 @@ All else being equal, directors use fewer words over subsequent repetitions, chi
 
 However, these main effects were clarified by several interactions of interest.
 First, while parents on average used more words as director than their children did, we found a significant interaction with the child's age group ($t =$ `r round(person_age_interaction_reduction$statistic,2)`, $p$ `r  person_age_interaction_reduction_pvalue`).
+<<<<<<< HEAD
+This gap between parent and child utterance length was largest at 4 years but nearly dissappeared by 8 years. 
+=======
 This gap between parent and child utterance length is largest at 4 years but nearly disappeared by 8 years. 
+>>>>>>> 89ea0812edfd9f5c7bee6cfa7ce3875ddc030359
 Second, we find that parents reduced their utterance length over time more strongly than children did, holding age group constant ($t =$ `r round(person_rep_interaction_reduction$statistic,2)`, $p$ `r person_rep_interaction_reduction_pvalue`).
 Third, having older children in a pair supported stronger reduction overall, ($t =$ `r round(age_rep_interaction_reduction$statistic,2)`, $p$ `r age_rep_interaction_reduction_pvalue`). 
 Finally, an intriguing developmental question is whether reduction changes over the course of development: are 4-year-olds able to become more efficient as common ground is built in the same way 8-year-olds do?
