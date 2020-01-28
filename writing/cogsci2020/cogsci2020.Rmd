@@ -51,7 +51,7 @@ combined_data <- read_csv(here("deidentified/combined.csv"))
 exchanges_data <- read_csv(here("deidentified/exchanges.csv")) 
 ```
 
-A foundational requirement for successful communication is shared common ground: Interlocutors must both understand each-other and know that they understand each-other [@clark1986; @bruner1985]. As a consequence, even simple referential expressions are constructed by both conversational partners collaboratively. For instance, listeners will provide a backchanel like "uh huh" to signal their understanding of a speaker's meaning. When the  meaning of an utterance is unclear, interlocutors will engage in a negotion, arriving at a *conversational pact* about how to think and talk about the intended referent [@clark1986]. 
+A foundational requirement for successful communication is shared common ground: Interlocutors must both understand each-other and know that they understand each-other [@clark1986; @bruner1985]. As a consequence, even simple referential expressions are constructed by both conversational partners collaboratively. For instance, listeners will provide a backchanel like "uh huh" to signal their understanding of a speaker's meaning. When the  meaning of an utterance is unclear, interlocutors will engage in a negotiaton, arriving at a *conversational pact* about how to think and talk about the intended referent [@clark1986]. 
 
 Adults form, revise, and track the formation of pacts fluently. For instance, @brennan1996 showed that adults will use the right level of specificity for a referent (e.g. "loafer" rather than "shoe"), carry this forward into a new dialogue withe same conversational partner even when the initial competitor is gone, but use "shoe" in the same new situation with a novel conversational partner with whom the original pact was not shared. 
 
@@ -76,20 +76,6 @@ img <- png::readPNG("figs/display.png")
 grid::grid.raster(img)
 ```
 
-### Participants
-
-Adult participants were recruited from the University of Chicago's online subject pool, to achieve a planned sample of 20 pairs. At the time of analysis, data from 17 dyads were included.
-
-Children (ages 4, 6, and 8) and their parents were recruited from a database of families in the local community, to achieve a planned sample of 60 parent-child pairs. A total of 75 children and their parents participated, but data from 12 pairs were dropped due to experimental error or failure to complete the study. The remaining sample of 63 parent-child dyads were included in analysis.
-
-### Stimuli 
-
-Twelve solid black images of tangrams, and colored versions of the same tangrams, were selected from a database of Public Domain images. The tangram images were normed on Amazon Mechanical Turk (mTurk) for pairwise similarity. Two images were excluded from the set based on similarity judgments, forming the final set of 10 images used for the study.
-
-### Procedure
-
-Each dyad played a cooperative game with iPads. Pairs sat at a table with a divider in the middle, which prevented participants from looking at each other's iPad screens during the game. The game was a simplified version of the matcher-director task used in @clark1986. Participants were told that they would take turns being the director and matcher. They were told that the director should describe the image inside the blue square, and the matcher should select an image based on the director's description. After instruction, the practice and experimental trials began. On each experimental trial, two solid black tangrams appeared on the iPad screens. The same images appeared on each screen, but their positions were randomized. On the director's screen, one image appeared inside a blue square, while the images on the matcher's screen simply appeared on a white background (Figure 1). Upon selection of an image on the matcher's screen, the selected image became colorful, and a sound is played (independent of accuracy). After each trial, the roles were switched. Practice trials followed the same structure as experimental trials, but images of fruits and vegetables were used during this round. 
-
 ### Design
 
 There were 4 blocks of 10 trials. Each tangram appeared as the target once during each block, such that each tangram was the target four times during the game. Trials within blocks were randomized. The 10 tangrams were shuffled and randomly assigned to either participants at the beginning of the game. The assignment dictates who would be the director for a particular target in Round 1. Thus, each participant played the role of director two times for each of the 10 tangrams. In each round, the targets appeared with different foils. To ensure that the game would not be too difficult for young children, trials were constructed such that the most similar tangrams (based on mTurk worker judgments) did not appear together.
@@ -102,7 +88,7 @@ All sessions were videotaped, and the videos were transcribed using Datavyu--an 
 
 ### Performance accuracy
 
-```{r accuracu, cache = T}
+```{r acc_exchanges, cache=T, fig.env = "figure*", fig.pos = "t!", fig.width=7, fig.height=3, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "\\label{fig:acc_exchanges}(A) Accuracy improves over time for all groups. (B) Number of dialogue exchanges is higher for younger children. Error bars are 95\\% CIs."}
 d.accuracy.raw <- combined_data %>%
   ungroup() %>%
   mutate(age = as.character(age),
@@ -169,7 +155,7 @@ plt.results.exchanges <-  d.exchanges.mean %>%
   ggplot(aes(x = rep_num, y = empirical_stat, color = age, group = age)) +
     geom_line() +
     geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
-    ylab("# exchanges per round") +
+    ylab("# exchanges per trial") +
     xlab("repetition #") +
     theme(aspect.ratio = 1) +
     scale_color_manual(values = SCALE) +
@@ -187,26 +173,35 @@ age_effect = lmer.exchanges %>% filter(term == 'age')
 rep_effect = lmer.exchanges %>% filter(term == 'rep_num')
 ```
 
-
 ```{r acc_exchanges, cache=T, fig.env = "figure*", fig.pos = "t!", fig.width=7, fig.height=3, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "\\label{fig:acc_exchanges}(A) Accuracy improves over time for all groups. (B) Number of dialogue exchanges is higher for younger children. Error bars are 95\\% CIs."}
 gridExtra::grid.arrange(plt.results.acc, plt.results.exchanges, ncol = 2)
 ```
 
-If the ability of children to successfully establish reference in both director and matcher roles depends on scaffolding provided by their parents, we would expect additional dialogue turns for younger children. 
-We counted the total number of exchanges on each trial, defined as the number of distinct turns of continuous speech. 
-We then constructed a mixed-effects regression model predicting the continuous number of exchanges with the same effect structure as reported in the previous section.
-Consistent with previous work in adults [@clark1986], we found a significant main effect of repetition ($b$ = `r round(rep_effect$estimate, 2)`, $t$ = `r round(rep_effect$statistic, 2)`; $p < 0.001$).
-Fewer dialogue turns were required on later trials.
+### Participants
 
-However, we also found a significant main effect of the child's age ($b$ = `r round(age_effect$estimate, 2)`, $t$ = `r round(age_effect$statistic, 2)`; $p < 0.001$).
-Pairs with 4-year-old children took roughly one additional turn at each point in the experiment than pairs with older children, who more closely resembled pairs of adults (see Fig. \ref{fig:acc_exchanges}B).
-This increased level of interactivity between parents and younger children provides an interesting contrast with previous studies showing decreased interactivity in pairs of younger children [@garrod1993; @anderson1994].
-These lengthier exchanges may reflect efforts by parents to provide and elicit additional clarification or confirmation, or may simply reflect attentional difficulties. 
-\todo[inline]{TODO: Can we follow-up with a sentence reporting roughly how many of these were questions?}
+Adult participants were recruited from the University of Chicago's online subject pool, to achieve a planned sample of 20 pairs. At the time of analysis, data from 17 dyads were included.
 
-### Reduction in length of referring expression
+Children (ages 4, 6, and 8) and their parents were recruited from a database of families in the local community, to achieve a planned sample of 60 parent-child pairs. A total of 75 children and their parents participated, but data from 12 pairs were dropped due to experimental error or failure to complete the study. The remaining sample of 63 parent-child dyads were included in analysis.
 
-```{r reduction, cache=T, fig.env = "figure*", fig.pos = "h", fig.width=7, fig.height=3, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "\\label{fig:reduction}Total number of words in referring expressions produced by children and parents over the course of interaction."}
+### Stimuli 
+
+Twelve solid black images of tangrams, and colored versions of the same tangrams, were selected from a database of Public Domain images. The tangram images were normed on Amazon Mechanical Turk (mTurk) for pairwise similarity. Two images were excluded from the set based on similarity judgments, forming the final set of 10 images used for the study.
+
+### Procedure
+
+Each dyad played a cooperative game with iPads. Pairs sat at a table with a divider in the middle, which prevented participants from looking at each other's iPad screens during the game. The game was a simplified version of the matcher-director task used in @clark1986. Participants were told that they would take turns being the director and matcher. They were told that the director should describe the image inside the blue square, and the matcher should select an image based on the director's description. After instruction, the practice and experimental trials began. On each experimental trial, two solid black tangrams appeared on the iPad screens. The same images appeared on each screen, but their positions were randomized. On the director's screen, one image appeared inside a blue square, while the images on the matcher's screen simply appeared on a white background (Figure 1). Upon selection of an image on the matcher's screen, the selected image became colorful, and a sound is played (independent of accuracy). After each trial, the roles were switched. Practice trials followed the same structure as experimental trials, but images of fruits and vegetables were used during this round. 
+
+### Design
+
+There were 4 blocks of 10 trials. Each tangram appeared as the target once during each block, such that each tangram was the target four times during the game. Trials within blocks were randomized. The 10 tangrams were shuffled and randomly assigned to either participants at the beginning of the game. The assignment dictates who would be the director for a particular target in Round 1. Thus, each participant played the role of director two times for each of the 10 tangrams. In each round, the targets appeared with different foils. To ensure that the game would not be too difficult for young children, trials were constructed such that the most similar tangrams (based on mTurk worker judgments) did not appear together.
+
+### Pre-processing
+
+All sessions were videotaped, and the videos were transcribed using Datavyu--an Open-Source coding software [@datavyu-team2014]. Research assistants used videos not included in analysis (e.g. when participants did not complete the session) for training and practice. Each video was transcribed and checked by two different research assistants. To ensure anonymity of participants, names were not transcribed when used. Each utterance was coded manually as either being part of a trial, or being unrelated to the game. The exported files were then processed in R to remove unrelated utterances (e.g. parents requesting children to sit down, talking about where they plan to go after the study session, etc.) before analysis.
+
+## Results
+
+```{r reduction, cache=T, fig.env = "figure*", fig.pos = "t!", fig.width=7, fig.height=3, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "\\label{fig:reduction}Total number of words in referring expressions produced by children and parents over the course of interaction."}
 d.reduction.raw <- exchanges_data %>%
   mutate(age = ifelse(is.na(age), 'adult', age),
          num_words =  str_count(utterance, " ") +1) %>%
@@ -298,6 +293,63 @@ person_age_rep_interaction_reduction_pvalue <- ifelse(person_age_rep_interaction
                                                   '< 0.001', paste0(c('= ', person_age_rep_interaction_reduction_pvalue), collapse = ' '))
 ```
 
+We characterized developmental differences using three measures of communicative behavior.
+First, we examined accuracy to evaluate whether children were able to succeed at the reference game in collaboration with their parents. 
+Second, we examined conversational turn-taking behavior to evaluate how interactive dialogue may contribute to success. 
+Third, we examined the number of words produced by each partner on each turn to evaluate the contributions of children of different ages to the development of efficient pacts.
+
+### Performance accuracy
+
+We began by analyzing task performance across age groups.
+We constructed a mixed-effects logistic regression model predicting trial-level errors, including fixed effects of age group and repetition block, random intercepts for each tangram and pair of participants, and random effects of repetition block for each pair of participants. 
+While accuracy was initially well above chance at all age groups, we found a significant main effect of age ($b$ = `r round(age_effect_acc$estimate, 2)`, $t$ = `r round(age_effect_acc$statistic, 2)`; $p = 0.003$).
+Pairs containing 4-year-olds performed significantly more poorly than pairs containing older children.
+Critically, however, accuracy improved significantly over the four repetition blocks for all groups ($b$ = `r round(rep_effect_acc$estimate, 2)`, $t$ = `r round(rep_effect_acc$statistic, 2)`, $p < 0.001$; see Fig. \ref{fig:acc_exchanges}A)^[The drop in accuracy for 8-year-olds is likely an artifact of a small set of children losing interest in the task.].
+Such improvement for 4-year-olds contrasts with early results of communication between age-matched children [@glucksberg1966;@krauss1969], which found no improvement in accuracy with kindergardeners (age 5). 
+
+### Interactive dialogue exchanges
+
+```{r}
+questionMarks <- exchanges_data %>% 
+  filter(person == 'parent', role == 'matcher') %>% 
+  mutate(containQ = str_detect(utterance, "\\?")) %>% 
+  rowwise() %>%
+  mutate(age = paste0(c('age', age), collapse = "")) %>%
+  group_by(age, containQ) %>% 
+  tally() %>% 
+  group_by(age) %>%
+  mutate(proportion = n / sum(n)) %>%
+  ungroup()
+
+questionMarkProportions <- questionMarks %>%
+  filter(containQ) %>%
+  select(age, proportion) %>%
+  pivot_wider(names_from = age, values_from = proportion)
+
+chisq.out <- questionMarks %>% 
+  select(age, containQ,n) %>%
+  spread(containQ,n) %>% 
+  select(-age) %>%
+  chisq.test() %>%
+  tidy()
+```
+
+If the ability of children of different ages to successfully establish reference in both director and matcher roles depends on scaffolding provided by their parents, we would expect additional dialogue turns for younger children. 
+We counted the total number of exchanges on each trial, defined as the number of distinct turns of continuous speech. 
+We then constructed a mixed-effects regression model predicting the continuous number of exchanges with the same effect structure as reported in the previous section.
+Consistent with previous work in adults [@clark1986], we found a significant main effect of repetition ($b$ = `r round(rep_effect$estimate, 2)`, $t$ = `r round(rep_effect$statistic, 2)`; $p < 0.001$).
+Fewer dialogue turns were required on later trials.
+
+However, we also found a significant main effect of the child's age ($b$ = `r round(age_effect$estimate, 2)`, $t$ = `r round(age_effect$statistic, 2)`; $p < 0.001$).
+Pairs with 4-year-old children took roughly one additional turn at each point in the experiment than pairs with older children, who more closely resembled pairs of adults (see Fig. \ref{fig:acc_exchanges}B).
+This increased level of interactivity between parents and younger children provides an interesting contrast with previous studies showing decreased interactivity in pairs of younger children [@garrod1993; @anderson1994].
+
+These lengthier exchanges may reflect efforts by parents to provide and elicit additional clarification or confirmation, or may simply reflect attentional difficulties. 
+As a rough estimate of the content of parents' dialogue responses when their child was the director, we counted the number of question marks in the transcript^[Because questions were not always annotated with a question mark, this represents a lower bound on the true estimate of questions.].
+We found `r round(questionMarkProportions$age4, 2) * 100`% of responses to 4-year-olds contained question marks, compared to `r round(questionMarkProportions$age6, 2) * 100`% and `r round(questionMarkProportions$age8, 2) * 100`% to 6 and 8-year-olds, respectively ($\chi^2(2)=$ `r round(chisq.out$statistic,2)`, $p < 0.001$).
+
+### Reduction in length of referring expression
+
 A key signature of successful communication among adults is an increase in efficiency over repeated reference [@krauss1964;@clark1986]. 
 As pairs form conceptual pacts, they are able to communicate the same meaning using fewer words. 
 We asked whether parents and children of different ages spontaneously reduce their referring expressions in the same way.
@@ -307,25 +359,30 @@ Specifically, we defined efficiency as the total number of words produced by the
 Because participants in a pair alternated roles, each participant served as the director twice for each tangram. 
 This structure allowed us to examine how each participant changed their language when they were the director (Fig. \ref{fig:reduction}). 
 Using a mixed-effects model, we predicted the (log) number of words per exchange on each trial, including fixed effects of child age group, repetition block, and speaker identity (parent vs. child) as well as all of their interactions.
-We also included random intercepts at the tangram-level and maximal random structure at the dyad level (i.e. intercept, slopes for repetition block and speaker identity, and their interaction).
+We also included random intercepts at the tangram-level and maximal random structure at the dyad level [i.e. intercept, slopes for repetition block and speaker identity, and their interaction; @BarrLevyScheepersTily13_KeepItMaximal].
 All variables were centered to allow interpretation of lower-order terms as effects at the average level of the other terms. 
 We found significant main effects of repetition block ($t =$ `r round(rep_effect_reduction$statistic,2)`, $p$`r age_rep_interaction_reduction_pvalue`), speaker identity ($t =$ `r round(person_effect_reduction$statistic,2)`, $p$ `r person_effect_reduction_pvalue`), and age ($t =$ `r round(age_effect_reduction$statistic,2)`, $p$ `r age_effect_reduction_pvalue`).
 All else being equal, directors use fewer words over subsequent repetitions, children use fewer words than their parents, and pairs with older children use fewer words than pairs with younger children.
 
 However, these main effects were clarified by several interactions of interest.
 First, while parents on average used more words as director than their children did, we found a significant interaction with the child's age group ($t =$ `r round(person_age_interaction_reduction$statistic,2)`, $p$ `r  person_age_interaction_reduction_pvalue`).
+<<<<<<< HEAD
 This gap between parent and child utterance length was largest at 4 years but nearly dissappeared by 8 years. 
+=======
+This gap between parent and child utterance length is largest at 4 years but nearly disappeared by 8 years. 
+>>>>>>> 89ea0812edfd9f5c7bee6cfa7ce3875ddc030359
 Second, we find that parents reduced their utterance length over time more strongly than children did, holding age group constant ($t =$ `r round(person_rep_interaction_reduction$statistic,2)`, $p$ `r person_rep_interaction_reduction_pvalue`).
 Third, having older children in a pair supported stronger reduction overall, ($t =$ `r round(age_rep_interaction_reduction$statistic,2)`, $p$ `r age_rep_interaction_reduction_pvalue`). 
 Finally, an intriguing developmental question is whether reduction changes over the course of development: are 4-year-olds able to become more efficient as common ground is built in the same way 8-year-olds do?
 Because parents of different age groups display similar slopes of reduction, this question is addressed by a 3-way interaction. 
 We found that this interaction was not significant ($t=$ `r round(person_age_rep_interaction_reduction$statistic, 2)`, $p$ `r person_age_rep_interaction_reduction_pvalue`), although our sample was likely underpowered to detect this higher-order interaction. 
 
+
 # Analyzing the content of pacts
 
 ## Where do pacts come from?
 
-```{r origins, cache=T, fig.env = "figure", fig.pos = "t", fig.width=3.5, fig.height=3.5, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "\\label{fig:origins}Probability of words used on final round first occuring with child or parent. Error bars are 95\\% CI."}
+```{r}
 matches <- read_csv('../../deidentified/word_matches.csv') %>% 
   filter(later_rep == 4) %>%
   spread(earlier_rep, match) %>%
@@ -350,7 +407,7 @@ matches <- read_csv('../../deidentified/word_matches.csv') %>%
          age = ifelse(is.na(age), 'adult-adult', age)
          )
 
-matches %>%
+origins.plt1 <- matches %>%
   group_by(age, director) %>%
   tidyboot_mean(introduced_by_other) %>%
   #tally() %>%
@@ -362,11 +419,12 @@ matches %>%
     geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
     theme_few() +
     theme(legend.position="top") +
-    ylab('% final-round words introduced by other') +
+    ylab('% words introduced by partner') +
     xlab("child age group") +
     theme(aspect.ratio = 1) +
     guides(color=guide_legend(title="Director")) +
-    scale_color_colorblind(breaks=c("child", "parent")) 
+    scale_color_colorblind(breaks=c("child", "parent")) +
+    labs(tag = 'A')
 ```
 
 Pairs of age-matched children are notoriously poor at repeated referential communication [@glucksberg1966], failing to coordinate on mutually comprehensible referring expressions.
@@ -397,6 +455,7 @@ These researchers asked almost 2000 Mechanical Turkers to judge the age at which
 Although one might be suspicious that adults have little access to this kind of information, these judgments are highly correlated with parents' estimates of the age at which their children learn corresponding words, and are better than a variety of other measures (e.g. frequency, concreteness, word length) in predicting lexical decision times [@kuperman2012].
 
 For each participant, on each trial, we estimated the linguistic complexity of their contribution by averaging the estimated age of acquisition for each word in their utterance^[We first removed any words in a list of `r stopwords() %>% length()` stopwords like "at" and "me" from the \texttt{tm} package [@feinerer2008]`.  
+These effects are shown in Fig. \ref{fig:origins}B.
 
 ```{r}
 tokens <- combined_data %>%
@@ -423,14 +482,17 @@ mean_aoas <- aoas %>%
   summarise(aoa = mean(aoa, na.rm = T)) %>%
   tidyboot_mean(aoa, na.rm = T)
 
-ggplot(mean_aoas, aes(x = rep_num, y = empirical_stat, color = as.factor(age))) +
-  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper), 
-                  position = position_dodge(.25)) + 
+origins.plt2 <- ggplot(mean_aoas %>% filter(person != "adult"), aes(x = rep_num, y = empirical_stat, color = as.factor(age))) +
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper)) + 
   facet_wrap(~ person) + 
   geom_line() + 
   theme(aspect.ratio = 1, legend.position = "none") +
   scale_color_colorblind() + 
-  labs(x = "rep #", y = "AoA (average)")
+  labs(x = "rep #", y = "AoA (average)", tag = "B")
+```
+
+```{r origins, cache=T, fig.env = "figure*", fig.pos = "t!", fig.width=7, fig.height=4, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "\\label{fig:origins}(A) Probability of words used on final round first occuring with child or parent. (B) Complexity of language used by different age groups. Error bars are 95\\% CI."}
+cowplot::plot_grid(origins.plt1, origins.plt2, ncol = 2, rel_widths =  c(1/3, 2/3))
 ```
 
 # Discussion
