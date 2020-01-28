@@ -76,18 +76,6 @@ img <- png::readPNG("figs/display.png")
 grid::grid.raster(img)
 ```
 
-### Design
-
-There were 4 blocks of 10 trials. Each tangram appeared as the target once during each block, such that each tangram was the target four times during the game. Trials within blocks were randomized. The 10 tangrams were shuffled and randomly assigned to either participants at the beginning of the game. The assignment dictates who would be the director for a particular target in Round 1. Thus, each participant played the role of director two times for each of the 10 tangrams. In each round, the targets appeared with different foils. To ensure that the game would not be too difficult for young children, trials were constructed such that the most similar tangrams (based on mTurk worker judgments) did not appear together.
-
-### Pre-processing
-
-All sessions were videotaped, and the videos were transcribed using Datavyu--an Open-Source coding software [@datavyu-team2014]. Research assistants used videos not included in analysis (e.g. when participants did not complete the session) for training and practice. Each video was transcribed and checked by two different research assistants. To ensure anonymity of participants, names were not transcribed when used. Each utterance was coded manually as either being part of a trial, or being unrelated to the game. The exported files were then processed in R to remove unrelated utterances (e.g. parents requesting children to sit down, talking about where they plan to go after the study session, etc.) before analysis.
-
-## Results
-
-### Performance accuracy
-
 ```{r acc_exchanges, cache=T, fig.env = "figure*", fig.pos = "t!", fig.width=7, fig.height=3, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "\\label{fig:acc_exchanges}(A) Accuracy improves over time for all groups. (B) Number of dialogue exchanges is higher for younger children. Error bars are 95\\% CIs."}
 d.accuracy.raw <- combined_data %>%
   ungroup() %>%
@@ -126,19 +114,7 @@ lmer.accuracy <- d.accuracy.raw %>%
 
 age_effect_acc = lmer.accuracy %>% filter(term == 'age')
 rep_effect_acc = lmer.accuracy %>% filter(term == 'rep_num')
-```
 
-Were children able to succeed at the reference game in collaboration with their parents? 
-We began by examining accuracy across age groups.
-We constructed a mixed-effects logistic regression model predicting trial-level errors, including fixed effects of age group and repetition block, random intercepts for each tangram and pair of participants, and random effects of repetition block for each pair of participants. 
-While accuracy was initially well above chance at all age groups, we found a significant main effect of age ($b$ = `r round(age_effect_acc$estimate, 2)`, $t$ = `r round(age_effect_acc$statistic, 2)`; $p = 0.003$): Pairs containing younger children performed significantly more poorly than pairs containing older children. Critically, however, accuracy improved significantly over the four repetition blocks for all groups ($b$ = `r round(rep_effect_acc$estimate, 2)`, $t$ = `r round(rep_effect_acc$statistic, 2)`, $p < 0.001$; see Fig. \ref{fig:acc_exchanges}A)^[The drop in accuracy for 8-year-olds is likely an artifact of a small set of children losing interest in the task.]. Such improvement for 4-year-olds contrasts with early results of communication between age-matched children [@glucksberg1966;@krauss1969], which found no improvement in accuracy with kingergardeners (age 5). 
-
-### Interactive dialogue exchanges
-
-```{r cache=T}
-# TODO: double-check these are actually all swapping turns, not just the same person recorded as saying things on multiple lines in a row?
-
-# count number of back-and-forth exchanges
 d.exchanges.raw <- exchanges_data %>%
   mutate(age = as.character(age)) %>%
   mutate(age = if_else(is.na(age), 'adult', age)) %>%
@@ -155,7 +131,7 @@ plt.results.exchanges <-  d.exchanges.mean %>%
   ggplot(aes(x = rep_num, y = empirical_stat, color = age, group = age)) +
     geom_line() +
     geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
-    ylab("# exchanges per trial") +
+    ylab("# exchanges per round") +
     xlab("repetition #") +
     theme(aspect.ratio = 1) +
     scale_color_manual(values = SCALE) +
@@ -169,11 +145,9 @@ lmer.exchanges <- d.exchanges.raw %>%
        control = lmerControl(optimizer = "bobyqa"), data = .) %>%
   tidy()
 
-age_effect = lmer.exchanges %>% filter(term == 'age')
-rep_effect = lmer.exchanges %>% filter(term == 'rep_num')
-```
+age_effect_exchanges = lmer.exchanges %>% filter(term == 'age')
+rep_effect_exchanges = lmer.exchanges %>% filter(term == 'rep_num')
 
-```{r acc_exchanges, cache=T, fig.env = "figure*", fig.pos = "t!", fig.width=7, fig.height=3, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "\\label{fig:acc_exchanges}(A) Accuracy improves over time for all groups. (B) Number of dialogue exchanges is higher for younger children. Error bars are 95\\% CIs."}
 gridExtra::grid.arrange(plt.results.acc, plt.results.exchanges, ncol = 2)
 ```
 
@@ -225,18 +199,6 @@ d.reduction.raw %>%
     ylab("# words per exchange") +
     xlab("rep #") +
     scale_color_colorblind()
-  
-lmer.reduction <- d.reduction.raw %>%
-  filter(age != 'adult') %>% 
-  mutate(age = as.numeric(age) - 6,   # center age & rep_num to make main effect more interpretable
-         rep_num = as.numeric(rep_num) - 2.5,
-         ordinal_rep = ifelse(rep_num == first(rep_num), 'first', 'second')) %>%
-  lmer(log(num_words) ~ person * age * rep_num   + (1 + rep_num + person | subid) + (1 | target), 
-       control=lmerControl('bobyqa'),
-       contrasts = list(person = contr.sum),
-       data = .) %>%
-  tidy() %>%
-  filter(effect == 'fixed') 
 ```
 
 ```{r}
@@ -337,10 +299,10 @@ chisq.out <- questionMarks %>%
 If the ability of children of different ages to successfully establish reference in both director and matcher roles depends on scaffolding provided by their parents, we would expect additional dialogue turns for younger children. 
 We counted the total number of exchanges on each trial, defined as the number of distinct turns of continuous speech. 
 We then constructed a mixed-effects regression model predicting the continuous number of exchanges with the same effect structure as reported in the previous section.
-Consistent with previous work in adults [@clark1986], we found a significant main effect of repetition ($b$ = `r round(rep_effect$estimate, 2)`, $t$ = `r round(rep_effect$statistic, 2)`; $p < 0.001$).
+Consistent with previous work in adults [@clark1986], we found a significant main effect of repetition ($b$ = `r round(rep_effect_exchanges$estimate, 2)`, $t$ = `r round(rep_effect_exchanges$statistic, 2)`; $p < 0.001$).
 Fewer dialogue turns were required on later trials.
 
-However, we also found a significant main effect of the child's age ($b$ = `r round(age_effect$estimate, 2)`, $t$ = `r round(age_effect$statistic, 2)`; $p < 0.001$).
+However, we also found a significant main effect of the child's age ($b$ = `r round(age_effect_exchanges$estimate, 2)`, $t$ = `r round(age_effect_exchanges$statistic, 2)`; $p < 0.001$).
 Pairs with 4-year-old children took roughly one additional turn at each point in the experiment than pairs with older children, who more closely resembled pairs of adults (see Fig. \ref{fig:acc_exchanges}B).
 This increased level of interactivity between parents and younger children provides an interesting contrast with previous studies showing decreased interactivity in pairs of younger children [@garrod1993; @anderson1994].
 
@@ -367,11 +329,7 @@ All else being equal, directors use fewer words over subsequent repetitions, chi
 
 However, these main effects were clarified by several interactions of interest.
 First, while parents on average used more words as director than their children did, we found a significant interaction with the child's age group ($t =$ `r round(person_age_interaction_reduction$statistic,2)`, $p$ `r  person_age_interaction_reduction_pvalue`).
-<<<<<<< HEAD
-This gap between parent and child utterance length was largest at 4 years but nearly dissappeared by 8 years. 
-=======
 This gap between parent and child utterance length is largest at 4 years but nearly disappeared by 8 years. 
->>>>>>> 89ea0812edfd9f5c7bee6cfa7ce3875ddc030359
 Second, we find that parents reduced their utterance length over time more strongly than children did, holding age group constant ($t =$ `r round(person_rep_interaction_reduction$statistic,2)`, $p$ `r person_rep_interaction_reduction_pvalue`).
 Third, having older children in a pair supported stronger reduction overall, ($t =$ `r round(age_rep_interaction_reduction$statistic,2)`, $p$ `r age_rep_interaction_reduction_pvalue`). 
 Finally, an intriguing developmental question is whether reduction changes over the course of development: are 4-year-olds able to become more efficient as common ground is built in the same way 8-year-olds do?
@@ -475,23 +433,30 @@ We distinguish these accounts by quantitatively analyzing the natural-language t
 ## Where do pacts come from?
 
 ```{r}
-summary(glmer(introduced_by_other ~ age * director + (1 | target) +  (1 | subid), 
-              data = matches %>% 
-                filter(experiment == 'adult-child') %>% 
-                mutate(age = as.numeric(age) - 6), 
-              contrasts = list(director = contr.sum),
-              control=glmerControl('bobyqa'),
-              family = 'binomial'))
+match.model <- matches %>% 
+  filter(experiment == 'adult-child') %>% 
+  mutate(age = as.numeric(age) - 6) %>%
+  glmer(introduced_by_other ~ age * director + (1 | target) +  (1 | subid), 
+        contrasts = list(director = contr.sum),
+        data = .,
+        control=glmerControl('bobyqa'),
+        family = 'binomial') %>%
+  tidy()
+
+speaker_effect <- match.model %>% filter(term == 'director1')
+match.interaction_effect <- match.model %>% filter(term == 'age:director1')
 ```
 
 For each word in the final description of a tangram, we checked whether it had appeared in an earlier referring expression for that tangram in the same pair. 
 We noted the first trial where it appeared, and who was director when it was produced^[To match across different word forms (e.g. "jumping" vs. "jumped") we first lemmatized each word. We also filtered out stop words ("the", "with"), as well as common words that weren't part of the pacts ("person", "box"), and excluded words that were appearing for the first time on the final repetition.].
 The proportion of words originating with the child and parent is shown in Fig. \ref{fig:origins}.
 We observed an asymmetry: the words used by children on the final repetition block are more likely to have originated with their parents than the words used by parents were to originate with their children.
-In particular, this gap appeared to close with older groups, with parents more likely to adopt words introduced by older children.
+In addition, this gap appeared to close with older groups, with parents more likely to adopt words introduced by older children.
 
 We tested this hypothesized interaction using a mixed-effects logistic model predicting whether each word appearing in the final repetition block was introduced by the current director or by their partner.
-We included fixed effects of age group and the identity of the current director (parent or child), as well as random intercepts for each pair of participants and each tangram.
+We included fixed effects of age group and the speaker identity (parent or child), as well as random intercepts for each pair of participants and each tangram.
+We found a significant main effect of speaker identity, with the words used by children more likely to originate with their partner than the words used by parents, $t=$ `r round(speaker_effect$statistic, 2)`, $p < 0.001$.
+Additionally, we found a weak but significant interaction, $t=$ `r round(match.interaction_effect$statistic, 2)` $p=$ `r round(match.interaction_effect$p.value,2)`.
 
 ## How do pacts differ across ages?
 
@@ -505,8 +470,6 @@ Although one might be suspicious that adults have little access to this kind of 
 
 For each participant, on each trial, we estimated the linguistic complexity of their contribution by averaging the estimated age of acquisition for each word in their utterance^[We first removed any words in a list of `r stopwords() %>% length()` stopwords like "at" and "me" from the \texttt{tm} package [@feinerer2008]`.  
 These effects are shown in Fig. \ref{fig:origins}B.
-
-
 
 # Discussion
 
