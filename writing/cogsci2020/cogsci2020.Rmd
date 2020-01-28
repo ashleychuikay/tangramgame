@@ -102,7 +102,7 @@ All sessions were videotaped, and the videos were transcribed using Datavyu--an 
 
 ### Performance accuracy
 
-```{r cache=T}
+```{r accuracu, cache = T}
 d.accuracy.raw <- combined_data %>%
   ungroup() %>%
   mutate(age = as.character(age),
@@ -113,10 +113,13 @@ d.accuracy.raw <- combined_data %>%
   summarize(correct = mean(correct)) %>% # make sure each trial is only counted once
   ungroup()
 
-# Bootstrap error bars and render plot
-plt.results.acc <- d.accuracy.raw %>%
+# Bootstrap error bars 
+result.acc.means <-  d.accuracy.raw %>%
   group_by(age, rep_num) %>%
-  tidyboot_mean(correct) %>%
+  tidyboot_mean(correct)
+
+# render plot
+plt.results.acc <- result.acc.means %>%   
   ggplot(aes(x = rep_num, y = empirical_stat * 100,  group = age, color = age)) +
     geom_line() +
     geom_errorbar(aes(ymin = ci_lower * 100, ymax = ci_upper * 100),
@@ -125,14 +128,13 @@ plt.results.acc <- d.accuracy.raw %>%
     xlab("repetition #") +
     ylim(78, 100) +
     theme(aspect.ratio = 1) +
-    scale_color_colorblind() +
+    scale_color_manual(values = SCALE) +
     labs(tag = 'A')
-
 
 lmer.accuracy <- d.accuracy.raw %>%
   filter(age != "adult") %>%
   mutate(age = as.numeric(age)) %>%
-  glmer(correct ~ age + rep_num + (1 + rep_num | subid) + (1 | target), 
+  glmer(correct ~ age + rep_num + (rep_num | subid) + (1 | target), 
                             family = 'binomial', data = .) %>%
   tidy()
 
@@ -143,10 +145,7 @@ rep_effect_acc = lmer.accuracy %>% filter(term == 'rep_num')
 Were children able to succeed at the reference game in collaboration with their parents? 
 We began by examining accuracy across age groups.
 We constructed a mixed-effects logistic regression model predicting trial-level errors, including fixed effects of age group and repetition block, random intercepts for each tangram and pair of participants, and random effects of repetition block for each pair of participants. 
-While accuracy was initially well above chance at all age groups, we found a significant main effect of age ($b$ = `r round(age_effect_acc$estimate, 2)`, $t$ = `r round(age_effect_acc$statistic, 2)`; $p = 0.003$).
-Pairs containing 4-year-olds performed significantly more poorly than pairs containing older children.
-Critically, however, accuracy improved significantly over the four repetition blocks for all groups ($b$ = `r round(rep_effect_acc$estimate, 2)`, $t$ = `r round(rep_effect_acc$statistic, 2)`, $p < 0.001$; see Fig. \ref{fig:acc_exchanges}A)^[The drop in accuracy for 8-year-olds is likely an artifact of a small set of children losing interest in the task.].
-Such improvement for 4-year-olds contrasts with early results of communication between age-matched children [@glucksberg1966;@krauss1969], which found no improvement in accuracy with kingergardeners (age 5). 
+While accuracy was initially well above chance at all age groups, we found a significant main effect of age ($b$ = `r round(age_effect_acc$estimate, 2)`, $t$ = `r round(age_effect_acc$statistic, 2)`; $p = 0.003$): Pairs containing younger children performed significantly more poorly than pairs containing older children. Critically, however, accuracy improved significantly over the four repetition blocks for all groups ($b$ = `r round(rep_effect_acc$estimate, 2)`, $t$ = `r round(rep_effect_acc$statistic, 2)`, $p < 0.001$; see Fig. \ref{fig:acc_exchanges}A)^[The drop in accuracy for 8-year-olds is likely an artifact of a small set of children losing interest in the task.]. Such improvement for 4-year-olds contrasts with early results of communication between age-matched children [@glucksberg1966;@krauss1969], which found no improvement in accuracy with kingergardeners (age 5). 
 
 ### Interactive dialogue exchanges
 
@@ -161,10 +160,12 @@ d.exchanges.raw <- exchanges_data %>%
   summarize(num_exchanges = n()) %>% 
   ungroup()
 
-# Bootstrap error bars and render plot
-plt.results.exchanges <- d.exchanges.raw %>%
+d.exchanges.mean <- d.exchanges.raw %>%
   group_by(age, rep_num) %>%
-  tidyboot_mean(num_exchanges, nboot = 10) %>%
+  tidyboot_mean(num_exchanges)
+
+# Bootstrap error bars and render plot
+plt.results.exchanges <-  d.exchanges.mean %>%
   ggplot(aes(x = rep_num, y = empirical_stat, color = age, group = age)) +
     geom_line() +
     geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
@@ -175,14 +176,19 @@ plt.results.exchanges <- d.exchanges.raw %>%
     labs(tag = 'B')
 
 # Bootstrap error bars and plot
-lmer.exchanges <- tidy(lmer(num_exchanges ~ age + rep_num + (1 + rep_num | subid) + (1 | target), 
-                            data = d.exchanges.raw %>% filter(age != 'adult') %>% mutate(age = as.numeric(age))))
+lmer.exchanges <- d.exchanges.raw %>% 
+  filter(age != 'adult') %>%
+  mutate(age = as.numeric(age)) %>%
+  lmer(num_exchanges ~ age + rep_num +  (rep_num | subid) + (1 | target), 
+       control = lmerControl(optimizer = "bobyqa"), data = .) %>%
+  tidy()
+
 age_effect = lmer.exchanges %>% filter(term == 'age')
 rep_effect = lmer.exchanges %>% filter(term == 'rep_num')
 ```
 
 
-```{r acc_exchanges, cache=T, fig.env = "figure*", fig.pos = "t!", fig.width=7, fig.height=3, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "\\label{fig:acc_exchanges}\\todo[inline]{TODO:remap colors so adult is black and other lines are a gradient of blue, getting darker with older ages.}(A) Accuracy improves over time for all groups. (B) Number of dialogue exchanges is higher for younger children. Error bars are 95\\% CIs."}
+```{r acc_exchanges, cache=T, fig.env = "figure*", fig.pos = "t!", fig.width=7, fig.height=3, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "\\label{fig:acc_exchanges}(A) Accuracy improves over time for all groups. (B) Number of dialogue exchanges is higher for younger children. Error bars are 95\\% CIs."}
 gridExtra::grid.arrange(plt.results.acc, plt.results.exchanges, ncol = 2)
 ```
 
@@ -308,7 +314,7 @@ All else being equal, directors use fewer words over subsequent repetitions, chi
 
 However, these main effects were clarified by several interactions of interest.
 First, while parents on average used more words as director than their children did, we found a significant interaction with the child's age group ($t =$ `r round(person_age_interaction_reduction$statistic,2)`, $p$ `r  person_age_interaction_reduction_pvalue`).
-This gap between parent and child utterance length is largest at 4 years but nearly dissappeared by 8 years. 
+This gap between parent and child utterance length was largest at 4 years but nearly dissappeared by 8 years. 
 Second, we find that parents reduced their utterance length over time more strongly than children did, holding age group constant ($t =$ `r round(person_rep_interaction_reduction$statistic,2)`, $p$ `r person_rep_interaction_reduction_pvalue`).
 Third, having older children in a pair supported stronger reduction overall, ($t =$ `r round(age_rep_interaction_reduction$statistic,2)`, $p$ `r age_rep_interaction_reduction_pvalue`). 
 Finally, an intriguing developmental question is whether reduction changes over the course of development: are 4-year-olds able to become more efficient as common ground is built in the same way 8-year-olds do?
