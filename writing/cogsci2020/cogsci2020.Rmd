@@ -76,7 +76,7 @@ img <- png::readPNG("figs/display.png")
 grid::grid.raster(img)
 ```
 
-```{r acc_exchanges, cache=T, fig.env = "figure*", fig.pos = "t!", fig.width=7, fig.height=3, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "\\label{fig:acc_exchanges}(A) Accuracy improves over time for all groups. (B) Number of dialogue exchanges is higher for younger children. Error bars are 95\\% CIs."}
+```{r acc_exchanges, cache=T, fig.env = "figure*", fig.pos = "t!", fig.width=7, fig.height=3, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "\\label{fig:acc_exchanges}(A) Accuracy improves over time for all groups. (B) Number of dialogue exchanges is higher for younger children. Error bars are 95\\% CIs. The drop in accuracy for 8-year-olds is likely an artifact of a small set of children losing interest in the task."}
 # Note: this is moved up here to get the fig to appear on the right page... i know it's annoying.
 d.accuracy.raw <- combined_data %>%
   ungroup() %>%
@@ -189,33 +189,46 @@ d.reduction.raw <- exchanges_data %>%
   mutate(normalized_num_words = num_words / numExchanges) %>%
   ungroup() 
 
-d.reduction.raw %>% 
+d.reduction.means <- d.reduction.raw %>% 
   group_by(age, rep_num, person) %>%
   tidyboot_mean(normalized_num_words) %>%
-  ggplot(aes(x = rep_num, y = empirical_stat, group = person, color = person)) +
-    geom_line() +
-    facet_grid(~ age) + 
-    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
-    theme_few() +
-    theme(aspect.ratio = 1) +
-    ylab("# words per exchange") +
-    xlab("rep #") +
-    scale_color_colorblind()
+  mutate(plot_person = if_else(person == "adult", "adult", age))
+
+reduction_labels = tibble(rep_num = c(3.5, 3.5), empirical_stat = c(14, 6), 
+                          person = c("adult", "child"), 
+                          plot_person = c("adult", "4"),
+                          age = c("4", "4"))
+
+d.reduction.means %>%
+  ggplot(aes(x = rep_num, y = empirical_stat, 
+             group = person, color = plot_person, label = person)) +
+  geom_line() +
+  facet_grid(. ~ age) + 
+  geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
+  geom_text(data = reduction_labels)+
+  theme_few() +
+  theme(aspect.ratio = 1, legend.position = "none") +
+  ylab("# words per exchange") +
+  xlab("rep #") +
+  scale_color_manual(values = SCALE)
 ```
 
 ```{r}
 word_exchange_cor = round(cor(d.reduction.raw$numExchanges, d.reduction.raw$num_words),2)
-lmer.reduction.controlled <- d.reduction.raw %>% 
+
+d.reduction.centered <- d.reduction.raw %>% 
   filter(age != 'adult') %>% 
   group_by(subid, person) %>%
   mutate(age = as.numeric(age) - 6,  
          rep_num = as.numeric(rep_num) - 2.5,
-         ordinal_rep = ifelse(rep_num == first(rep_num), 'first', 'second')) %>%  
-  ungroup() %>%
-  lmer(log(normalized_num_words) ~ person * age * rep_num + (1 + rep_num * person | subid) + (1 + rep_num | target), 
-       data = .,
-       contrasts = list(person = contr.sum),
-       control=lmerControl('bobyqa')) %>%
+         ordinal_rep = if_else(rep_num == first(rep_num), 
+                               'first', 'second'))
+
+lmer.reduction.controlled <-  d.reduction.centered %>%  
+  lmer(log(normalized_num_words) ~ person * age * rep_num + 
+         (1 + rep_num * person | subid) + (1 + rep_num | target), 
+       data = ., contrasts = list(person = contr.sum), 
+       control = lmerControl('bobyqa')) %>%
   tidy() %>%
   filter(effect == 'fixed')
 ```
@@ -258,18 +271,13 @@ person_age_rep_interaction_reduction_pvalue <- ifelse(person_age_rep_interaction
 ```
 
 We characterized developmental differences using three measures of communicative behavior.
-First, we examined accuracy to evaluate whether children were able to succeed at the reference game in collaboration with their parents. 
-Second, we examined conversational turn-taking behavior to evaluate how interactive dialogue may contribute to success. 
-Third, we examined the number of words produced by each partner on each turn to evaluate the contributions of children of different ages to the development of efficient pacts.
+First, we examined accuracy to evaluate whether children were able to succeed at the reference game in collaboration with their parents. Second, we examined conversational turn-taking behavior to evaluate how interactive dialogue may contribute to success. Third, we examined the number of words produced by each partner on each turn to evaluate the contributions of children of different ages to the development of efficient pacts.
 
 ### Performance accuracy
 
-We began by analyzing task performance across age groups.
-We constructed a mixed-effects logistic regression model predicting trial-level errors, including fixed effects of age group and repetition block, random intercepts for each tangram and pair of participants, and random effects of repetition block for each pair of participants. 
-While accuracy was initially well above chance at all age groups, we found a significant main effect of age ($b$ = `r round(age_effect_acc$estimate, 2)`, $t$ = `r round(age_effect_acc$statistic, 2)`; $p = 0.003$).
-Pairs containing 4-year-olds performed significantly more poorly than pairs containing older children.
-Critically, however, accuracy improved significantly over the four repetition blocks for all groups ($b$ = `r round(rep_effect_acc$estimate, 2)`, $t$ = `r round(rep_effect_acc$statistic, 2)`, $p < 0.001$; see Fig. \ref{fig:acc_exchanges}A)^[The drop in accuracy for 8-year-olds is likely an artifact of a small set of children losing interest in the task.].
-Such improvement for 4-year-olds contrasts with early results of communication between age-matched children [@glucksberg1966;@krauss1969], which found no improvement in accuracy with kindergardeners (age 5). 
+We began by analyzing task performance across age groups.We constructed a mixed-effects logistic regression model predicting whether the matcher successfully chose the correct referent on each trial. The model included fixed effects of age and repetition block, random intercepts for each tangram and pair of participants, and random effects of repetition block for each pair of participants (\texttt{correct $\sim$ age + rep + (rep | subj) + (1 | tangram)}). 
+
+While accuracy was initially well above chance at all age groups, we found a significant main effect of age ($b$ = `r round(age_effect_acc$estimate, 2)`, $t$ = `r round(age_effect_acc$statistic, 2)`; $p = 0.003$):  Pairs containing younger children performed significantly more poorly than pairs containing older children. Critically, however, accuracy improved significantly over the four repetition blocks for all groups ($b$ = `r round(rep_effect_acc$estimate, 2)`, $t$ = `r round(rep_effect_acc$statistic, 2)`, $p < 0.001$; see Fig. \ref{fig:acc_exchanges}A). Such improvement for 4-year-olds contrasts with early results of communication between age-matched children, which found no improvement in accuracy with kindergardeners [age 5, @glucksberg1966;@krauss1969]. 
 
 ### Interactive dialogue exchanges
 
@@ -298,18 +306,12 @@ chisq.out <- questionMarks %>%
   tidy()
 ```
 
-If the ability of children of different ages to successfully establish reference in both director and matcher roles depends on scaffolding provided by their parents, we would expect additional dialogue turns for younger children. 
-We counted the total number of exchanges on each trial, defined as the number of distinct turns of continuous speech. 
-We then constructed a mixed-effects regression model predicting the continuous number of exchanges with the same effect structure as reported in the previous section.
-Consistent with previous work in adults [@clark1986], we found a significant main effect of repetition ($b$ = `r round(rep_effect_exchanges$estimate, 2)`, $t$ = `r round(rep_effect_exchanges$statistic, 2)`; $p < 0.001$).
+If the ability of children of different ages to successfully establish reference in both director and matcher roles depends on scaffolding provided by their parents, we would expect additional dialogue turns for younger children. We counted the total number of exchanges on each trial, defined as the number of distinct turns of continuous speech. We then constructed a mixed-effects regression model predicting the continuous number of exchanges with the same effect structure as reported in the previous section.Consistent with previous work in adults [@clark1986], we found a significant main effect of repetition ($b$ = `r round(rep_effect_exchanges$estimate, 2)`, $t$ = `r round(rep_effect_exchanges$statistic, 2)`; $p < 0.001$).
 Fewer dialogue turns were required on later trials.
 
-However, we also found a significant main effect of the child's age ($b$ = `r round(age_effect_exchanges$estimate, 2)`, $t$ = `r round(age_effect_exchanges$statistic, 2)`; $p < 0.001$).
-Pairs with 4-year-old children took roughly one additional turn at each point in the experiment than pairs with older children, who more closely resembled pairs of adults (see Fig. \ref{fig:acc_exchanges}B).
-This increased level of interactivity between parents and younger children provides an interesting contrast with previous studies showing decreased interactivity in pairs of younger children [@garrod1993; @anderson1994].
+However, we also found a significant main effect of the child's age ($b$ = `r round(age_effect_exchanges$estimate, 2)`, $t$ = `r round(age_effect_exchanges$statistic, 2)`; $p < 0.001$). Pairs with 4-year-old children took roughly one additional turn at each point in the experiment than pairs with older children, who more closely resembled pairs of adults (see Fig. \ref{fig:acc_exchanges}B). This increased level of interactivity between parents and younger children provides an interesting contrast with previous studies showing decreased interactivity in pairs of younger children [@garrod1993; @anderson1994].
 
-These lengthier exchanges may reflect efforts by parents to provide and elicit additional clarification or confirmation, or may simply reflect attentional difficulties. 
-As a rough estimate of the content of parents' dialogue responses when their child was the director, we counted the number of question marks in the transcript^[Because questions were not always annotated with a question mark, this represents a lower bound on the true estimate of questions.].
+These lengthier exchanges may reflect efforts by parents to provide and elicit additional clarification or confirmation, or may simply reflect attentional difficulties. As a rough estimate of the content of parents' dialogue responses when their child was the director, we counted the number of question marks in the transcript^[Because questions were not always annotated with a question mark, this represents a lower bound on the true estimate of questions.].
 We found `r round(questionMarkProportions$age4, 2) * 100`% of responses to 4-year-olds contained question marks, compared to `r round(questionMarkProportions$age6, 2) * 100`% and `r round(questionMarkProportions$age8, 2) * 100`% to 6 and 8-year-olds, respectively ($\chi^2(2)=$ `r round(chisq.out$statistic,2)
 `, $p < 0.001$).
 
