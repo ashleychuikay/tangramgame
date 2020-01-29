@@ -159,7 +159,7 @@ At the time of analysis, data from 15 pairs was included.
 
 ### Stimuli 
 
-Twelve solid black images of tangrams, and colored versions of the same tangrams, were selected from a database of Public Domain images. The tangram images were normed on Amazon Mechanical Turk (mTurk) for pairwise similarity. In order to construct a set that allowed for dissimilar tangrams to be paired together, two images were excluded based on similarity judgments, forming the final set of 10 images used for the study. The colored versions of the tangrams were not used for norming, but were used during the communicative game.
+Twelve solid black images of tangrams were selected from a database of Public Domain images. The tangram images were normed on Amazon Mechanical Turk (mTurk) for pairwise similarity. In order to construct a set that allowed for dissimilar tangrams to be paired together, two images were excluded based on similarity judgments, forming the final set of 10 images used for the study.
 
 ### Design and procedure
 
