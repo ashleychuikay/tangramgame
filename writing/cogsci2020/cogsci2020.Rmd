@@ -473,7 +473,7 @@ origins.plt1 <- mean_matches %>%
     theme(legend.position="top") +
     ylab('% words introduced by partner') +
     scale_x_continuous(name = "age group", limits = c(.25, 4.25),
-                       breaks = 1:4, labels = c("1", "2", "3", "adult")) +
+                       breaks = 1:4, labels = c("4", "6", "8", "adult")) +
     theme(aspect.ratio = 1, legend.position = "none") +
     guides(color=guide_legend(title="Director")) +
     scale_color_manual(values = c(ADULTS, CHILD_SCALE[2], PARENTS)) +
