@@ -464,7 +464,7 @@ person_age_rep_interaction_origin_pvalue <- ifelse(person_age_rep_interaction_or
                                                   '< 0.001', paste0(c('= ', person_age_rep_interaction_origin_pvalue), collapse = ' '))
 ```
 
-```{r origins, cache=T, fig.env = "figure*", fig.pos = "tb", fig.width=7, fig.height=3.5, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "(A) Probability of words used on final round first occuring with child or parent. (B) Complexity of language used by different age groups. Error bars are 95\\% CI."}
+```{r origins,  fig.env = "figure*", fig.pos = "tb", fig.width=6, fig.height=3.5, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "(A) Probability of words used on final round first occuring with child or parent. (B) Complexity of language used by different age groups. Error bars are 95\\% CI."}
 
 origins.plt1 <- mean_matches %>%
   #tally() %>%
@@ -503,7 +503,7 @@ origins.plt2 <- ggplot(mean_aoas, aes(x = rep_num, y = empirical_stat,
   scale_color_manual(values = c(CHILD_SCALE, ADULTS, PARENTS)) +
   geom_text(aes(label = plot_age), data = aoa_labels)
 
-cowplot::plot_grid(origins.plt1, origins.plt2, ncol = 2, rel_widths =  c(2/5, 3/5))
+cowplot::plot_grid(origins.plt1, origins.plt2, axis = 'b', ncol = 2, rel_widths = c(0.52, 0.48))
 ```
 
 Pairs of age-matched children are notoriously poor at repeated referential communication, failing to coordinate on mutually comprehensible referring expressions [@glucksberg1966]. Our results demonstrate that children and their parents can solve this coordination problem, converging on increasingly accurate and efficient pacts like pairs of adults. What allows children to coordinate with their parents but not with their peers? 
@@ -544,17 +544,16 @@ We confirm this observation with a mixed-effects model including all possible in
 
 # Discussion
 
-Prior work has shown that many children struggle to form referential pacts with age-matched peers, but can do so with explicit feedback from experimenters [@deutsch1982]. Our study shows that even young children can successfully form referential pacts with their parents: Accuracy increases, fewer turns are taken, and utterances become shorter. These results suggest that parents may naturally scaffold their children's referential pact formation.
+The ability to interactively collaborate with conversational partners on intended meaning is crucial for successful communication. 
+It may be especially important to achieve successful communication with *children*, who regularly encounter novel objects and situations they do not yet have precise words for.
+In this study, we used a classic repeated reference game to investigate the collaborative processes at play in interactions between parents and their children.
+While children notoriously struggle to succeed in such games with their peers, we found that even young children are able to successfully form referential pacts with their parents: Accuracy increases, fewer turns are taken, and utterances gradually become shorter over the course of interaction. 
+Furthermore, our results exposed key differences in parental behavior across ages: parents of younger children engaged in more conversational turns, produced longer referring expressions expressions per turn, and adopted less complex labels. 
+These findings indicate that parents may spontaneously adopt some of the strategies used by experimenters in training studies [e.g. @matthews2007] to scaffold pact formation with their children.
 
-What is the nature of this scaffolding? While all pairs were able to converge on more efficient reference over time, 4-year-olds and their parents took significantly more conversational turns on each trial. Responses to 4-year-olds were more likely to be questions, suggesting that parents could be asking for clarification in those conversational turns. This finding indicates that parents may use some of the strategies seen in training studies [e.g. @matthews2007] when engaging in referential communication with their young children.
+Our results also contribute to the debate over why children may struggle to form referential pacts with each other. One family of explanations has suggested that children simply cannot take their partner's perspective into account and produce references only they understand [@glucksberg1966], or cannot judge which expressions are more informative in the first place, even for themselves [@beal1982; @robinson1977; @asher1976]. An alternative account is that errors may partly arise from children's difficulty in the role of matcher: They may struggle to provide sufficient feedback to their partner or ask for clarification when it is necessary [@anderson1994]. 
 
-Why do children struggle to form referential pacts? One possibility is that children cannot take their partner's perspective into account, and produce references only they understand [@glucksberg1966]. Alternatively, children may fail to form referential pacts because they are insensitive to informativity in general [@beal1982]. Several studies have shown that children cannot judge which of two references is more informative [@robinson1977; @asher1976]. Finally, the difficulty may partly arise from children's difficulty in the role of matcher: They may struggle to provide sufficient feedback to their partner or ask for clarification when it is necessary [@anderson1994; @garrod1993].
-
-Parents also produced longer referring expressions than children overall, suggesting that parents may be providing more information to ensure communicative success. Furthermore, parents of 4-year-olds produced more speech than parents in other age groups. This indicates that parents not only provide more information for their children in general, but that they are sensitive to *how much* information to give based on their children's developmental level.
-
-Finally, we asked *who* initiated the referential pacts, to further understand how parents may be scaffolding communicative success with young children. Communicative success could be explained by two possible accounts: 1) parents would adapt to young children by adopting more of their children's labels; 2) young children, who may not be proficient at generating informative labels, would accept more of their parents' labels. Our analyses show that the labels children use are more likely to have originated from their parents, providing support for the latter account. That is, parent-child pairs are not achieving success due to parents accepting all labels provided by young children. Further, our evidence points to parents offering feedback and perhaps suggesting more informative labels as factors leading to communicative success. While the former account could also lead to communicative success, our results indicate that parents in our sample do not naturally adopt that strategy, and instead opt to scaffold their young children's communicative skills. 
-
-While children eventually become skilled conversationlists, little work has been done to understand *how* they acquire their communicative skills. Our study shows that children as young as four, who fail to reliably form conversational pacts with peers, can do so with a caregiver. Parents appear to naturally scaffold children's conversational pact formation, potentially supporting their communicative development.
+While we find some support for each of these accounts in our data, our analysis of the asymmetry in the introduction of pacts suggests an additional possibility: young children may simply be unable to supply a good enough label on their own, given their limited vocabulary, especially for these novel objects. Once presented with an appropriate label from a parent, however, they will readily adopt and use it. In this way, the processes underlying the mutual 'learning' of referential pacts, in the service of coordinating on meaning with a specific partner, may be a microcosm of those underlying language acquisition. Thus the everyday interaction of parents and children trying to understand one another may not only scaffold local pact formation, but support communicative development more broadly.
 
 # References 
 
