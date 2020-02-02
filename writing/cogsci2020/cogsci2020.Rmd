@@ -64,7 +64,7 @@ Why do children struggle to form referential pacts? One possibility is that chil
 
 Although children struggled as directors in Krauss and Glucksberg's [-@krauss1977] studies, their performance improved significantly when an adult offered them explicit guidance on whether their referential expressions were ambiguous or otherwise insufficiently informative. In addition, @deutsch1982 showed that clarification questions could be used by adults to eventually elicit unambiguous descriptions from 6- and 9-year-olds and, to a lesser extent, from 3-year-olds. A recent training study by @matthews2007 replicated this finding in 2- to 4-year-olds, and further showed transfer to a different communication task. While these studies show how adult input may help children form informative referential expressions, we do not know whether these kinds of feedback happen in natural adult-child conversations.
 
-```{r ipads, fig.env = "figure*", fig.pos = "!ht", out.width = "500px", fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Example of iPad screens for the director (left) and matcher (right) during the game."}
+```{r ipads, fig.env = "figure*", fig.pos = "!ht", out.width = "500px", fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "(A) Tangram figures used as referential targets, (B) director and matcher displays, (C) trial sequence."}
 # Note: this is moved up here to get the fig to appear on the right page... i know it's annoying.
 knitr::include_graphics("figs/design.pdf")
 ```
