@@ -64,18 +64,16 @@ Why do children struggle to form referential pacts? One possibility is that chil
 
 Although children struggled as directors in Krauss and Glucksberg's [-@krauss1977] studies, their performance improved significantly when an adult offered them explicit guidance on whether their referential expressions were ambiguous or otherwise insufficiently informative. In addition, @deutsch1982 showed that clarification questions could be used by adults to eventually elicit unambiguous descriptions from 6- and 9-year-olds and, to a lesser extent, from 3-year-olds. A recent training study by @matthews2007 replicated this finding in 2- to 4-year-olds, and further showed transfer to a different communication task. While these studies show how adult input may help children form informative referential expressions, we do not know whether these kinds of feedback happen in natural adult-child conversations.
 
+```{r ipads, fig.env = "figure*", fig.pos = "!ht", out.width = "500px", fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Example of iPad screens for the director (left) and matcher (right) during the game."}
+# Note: this is moved up here to get the fig to appear on the right page... i know it's annoying.
+knitr::include_graphics("figs/design.pdf")
+```
+
 Children engage in conversation with their caregivers from their second year of life [@bruner1985],and their language development is predicted most strongly not by the amount of language they hear, but rather by the amount of conversation they engage in [@romeo2018; @weisleder2013]. Given that young children struggle with informativity and perspective-taking, how do conversations with caregivers succeed? One possiblity is that parents naturally adopt some of the strategies used by experimenters in training studies of conversational pact formation: Pointing out when references are ambiguous, clarifying when children have produced insufficient information, and/or helping children to conceptualize their referential targets in better ways. Indeed, parents' contingent responses to children's incorrect or incomplete utterances have been implicated in children's language learning [@clark1997; @chouinard2003]. 
 
 Parents spend a tremendous amount of time with children, and thus often have quite accurate models of their children's lexical and conceptual knowledge [@fenson2007]. Prior work has shown that parents leverage their knowledge of their children's vocabularies to calibrate the informativeness of their referring expressions [@leung2019]. Do they also leverage this knowledge to scaffold the formation of conversational pacts with children? We asked parents and their 4-, 6-, and 8-year-old children as well as a group of adults to play an adapted version of Krauss and Glucksberg's [-@krauss1969] matcher-director game. We then analyzed their interactions to ask (1) Whether parents' contributions support the formation of conversational pacts, (2) What strategies parents use to support the formation of these pacts, and (3) Whether parents' contributions are tuned to their children's lexical development, changing from 4 to 8 years of age.
 
 # Referential Communication Experiment
-
-## Method
-
-```{r ipads, fig.env = "figure", fig.pos = "tb", fig.width=3.5, fig.height=2, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Example of iPad screens for the director (left) and matcher (right) during the game."}
-img <- png::readPNG("figs/display.png")
-grid::grid.raster(img)
-```
 
 ```{r acc_exchange_setup, cache = T}
 # Note: this is moved up here to get the fig to appear on the right page... i know it's annoying.
@@ -168,21 +166,25 @@ gridExtra::grid.arrange(plt.results.acc, plt.results.exchanges, ncol = 2)
 
 ### Participants
 
-Children (ages 4, 6, and 8) and their parents were recruited from a database of families in the local community to achieve a planned sample of 60 parent-child pairs. A total of 75 children and their parents participated, but data from 12 pairs were dropped due to experimental error or failure to complete the study, leaving a final sample of 63 pairs. For comparison, a group of adult participants were also recruited from a Psychology Department subject pool to achieve a planned sample of 20 adult-adult pairs. At the time of analysis, only 15 pairs have completed the experiment and had their data transcribed.
+Children (ages 4, 6, and 8) and their parents were recruited from a database of families in the local community to achieve a planned sample of 60 parent-child pairs. A total of 75 children and their parents participated, but data from 12 pairs were dropped due to experimental error or failure to complete the study, leaving a final sample of 63 pairs. For comparison, adult participants were also recruited from a Psychology Department subject pool to achieve a planned control sample of 20 adult-adult pairs. At the time of analysis, only 15 of these pairs had completed the experiment and had their data transcribed.
 
 ### Stimuli 
 
-Twelve solid black images of tangrams were selected from a database of Public Domain images. These tangram images were normed on Amazon Mechanical Turk (mTurk) for pairwise similarity in prior study. Ten tangrams were selected based on these similarity judgments in order to construct trials in which tangrams were maximally dissimilar.
+Twelve solid black images of tangrams were normed on Amazon Mechanical Turk for pairwise similarity. Based on these judgments, the ten maximally dissimilar tangrams were selected for use as stimuli (Fig. \ref{fig:ipads}A). 
 
 ### Design and procedure
 
-Pairs of participants played a cooperative game with iPads adpted from matcher-director games used in previous studies [e.g. @krauss1969]. They sat at a table with a divider in the middle, preventing them from looking at each other's screens during the game.
+Pairs of participants were brought into the lab to play a cooperative director-matcher game. They were seated in front of iPads at opposite ends of a table, with a divider preventing them from seeing each other's screens. Participants were told that they would take turns playing *director* and *matcher* roles. The director's task was to describe the *target* image, privately indicated by a blue border, and the matcher's task was to select one of the images on their screen based on the director's description (Fig. \ref{fig:ipads}B). Before beginning the experiment, participants played two practice trials with images of common fruits and vegetables. 
 
-Participants were told that they would take turns being the director and matcher. The director would describe the image inside the blue square, and the matcher should select an image based on the director's description. After instruction, the practice and experimental trials began. 
+The experiment consisted of four repetition blocks of ten trials each (Fig. \ref{fig:ipads}C). Each tangram was the target once per block. We constructed the trial sequence to ensure that participants both alternated roles from trial to trial and also alternated roles for each *tangram* from block to block. To achieve this structure, we first randomly divided the ten tangrams into two sets of five: the adult was assigned one set to describe on the first block, and the child was assigned the other set. These sets were interleaved on the first block, such that players alternated roles. On each subsequent block, these sets were swapped such that each tangram was described by each participant exactly twice over the course of the experiment. 
 
-On each experimental trial, two black tangrams appeared on the iPad screens. Identical images appeared on each participant's screen, but their positions were randomized. On the director's screen, one image appeared inside a blue square, while the images on the matcher's screen simply appeared on a white background (Fig. \ref{fig:ipads}). When the matcher selected an image, it would become colorful and a pleasant sound played (whether the selection correct or not). After each trial, the matcher and director switched roles. The two practice trials were identical except that the images were of known fruits and vegetables in order to orient participants to the game. 
+On each trial, the target tangram appeared with a foil selected from the set of nine other tangrams.
+Targets appeared with different foils on different repetition blocks.
+To ensure that the game would not be too difficult for young children, we ensured that the most similar tangrams (based on pairwise similarity norms) did not appear as foils.
+To discourage participants from using spatial language (e.g. "the one on the left"), the target and foil were shown in randomized order across the two iPads.
+When the matcher selected an image, it became colorful and a pleasant sound played.
+Importantly, matchers were not given feedback about the true target, and directors were not given feedback about the matcher's response: the same sound played whether the selection was correct or not.
 
-There game consisted of four blocks of ten trials each. Each tangram appeared as the target once during each block, and so was the target four total times. Trials within blocks were randomized. The ten tangrams were randomly divided into two groups of five. Each player began the first round as the director for one group of five, and the other play the other group of five. Each player swapped roles for each tangram each round, being the director twice and the matcher twice. In each round, the target tangram appeared with different foils. To ensure that the game would not be too difficult for young children, trials were constructed such that the most similar tangrams (based on mTurk worker judgments) did not appear together.
 
 ### Pre-processing
 
