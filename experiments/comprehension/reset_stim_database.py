@@ -26,7 +26,7 @@ if stim_coll.count() != 0 :
     stim_coll.drop()
 
 # Loop through evidence and insert into collection
-trial_sets = pd.read_csv('../output/random_stims.csv')
+trial_sets = pd.read_csv('../../data/random_stims.csv')
 
 for group_name, group in trial_sets.groupby('subject') :
     trials = []
