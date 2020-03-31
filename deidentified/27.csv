@@ -69,7 +69,7 @@ subid,type,trial,target,person,utterance,selection,correct
 27,test,2,E1,child,it looks like flying,,Y
 27,test,2,E1,parent,like woosh,,Y
 27,test,2,E1,parent,,parent,Y
-27,test,20,E1,parent,it's the man who's going phew *gesture*,,Y
+27,test,20,E1,parent,it's the man who's going phew,,Y
 27,test,20,E1,child,,child,Y
 27,test,24,E1,child,the man who's jumping,,Y
 27,test,24,E1,parent,,parent,Y
