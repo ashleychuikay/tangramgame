@@ -19,7 +19,7 @@ window.onload = function(event) {
   });
 
   experiment = new Experiment();
-  showSlide("instructions");
+  showSlide("consent");
 };
 
 // disables all scrolling functionality to fix a slide in place on the ipad
@@ -51,6 +51,32 @@ function shuffle (o) { //v1.0
   for (var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
   return o;
 }
+
+function enable(id){
+  if(form_ok()) {
+    document.getElementById(id).disabled = '';
+  }
+}
+
+//get radiobutton values for consent
+const getCheckedRadioValue = (name) => {
+  const radios = document.getElementsByName(name);
+  try {
+    // calling .value without a "checked" property with throw an exception.
+    return Array.from(radios).find((r, i) => radios[i].checked).value
+  } catch(e) { }
+}
+
+function form_ok() {
+  return (getCheckedRadioValue('age') == "eighteen" &&
+	  getCheckedRadioValue('understand') == "understood" &&
+	  getCheckedRadioValue('give_consent') == "consent");
+}
+
+function disable(id){
+  document.getElementById(id).disabled = 'disabled';
+}
+
 
 function getCurrentDate () {
   var currentDate = new Date();
@@ -150,6 +176,8 @@ class Experiment {
     ]);
 
     // send to server and save locally to submit to mturk
+    console.log('data is')
+    console.log(jsonForRound);
     this.socket.emit('currentData', jsonForRound);
     this.data.push(jsonForRound);
   };
