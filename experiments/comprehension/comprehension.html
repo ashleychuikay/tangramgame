@@ -12,7 +12,15 @@
 
      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, height=device-height" />
 
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+     <meta name="apple-mobile-web-app-capable" content="yes" />
+
+     
+     <script src="/static/webAudio.js"></script>
+     <script src="/static/comprehension.js"></script>
+     <script src="/static/mmturkey-nosocket.js"></script>
+     <script type="text/javascript">
+       var audiocheck = new WebAudioAPISound('/static/audio/audiocheck');
+     </script>
   </head>
   <body>
 
@@ -73,13 +81,35 @@
 
       <p class="block-text">Welcome to the study!</p> 
 
-      <p class="block-text">In this study, you will be choosing pictures based on audio that you hear. On each trial, you will see two pictures, and a "play" button. Click the "Play" button to hear an audio recording describing one of the pictures. Click the picture that you think the recording is describing. Please listen to the entire recording before clicking a picture. The picture that you click will change color, regardless of accuracy. Then a new trial will begin.</p>
+      <p class="block-text">In this study, you will be choosing
+      pictures based on audio that you hear. On each trial, you will
+      see two pictures, and a "play" button. Click the "Play" button
+      to hear an audio recording describing one of the pictures. Click
+      the picture that you think the recording is describing. Please
+      listen to the entire recording before clicking a picture. The
+      picture that you click will change color, regardless of
+      accuracy. Then a new trial will begin.</p>
 
-      <p class="block-text">Before beginning the study, please make sure that your device audio is on. To test your audio, please click the "Play" button below, and follow the instructions you hear. Then, press "Continue" to start the study.</p>
+      <p class="block-text">Before beginning the study, please make
+      sure that your device audio is on. To test your audio, please
+      click the "Play" button below, and follow the instructions you
+      hear. Then, press "Continue" to start the study.</p>
 
-      <button type="button" id="beforeStudy" onClick="this.blur(); experiment.start()">Continue</button>
+      <button type="button" id="audioCheckButton"
+	      onClick="audiocheck.play()">
+	Check audio
+      </button>
+      <form id="audioCheckForm">
+	<input type="text" id="audioCheckTextbox">
+	<input type="submit">
+      </form>
+      
+      <button type="button" id="beforeStudy" style="display:none"
+	      onClick="this.blur(); experiment.start()">
+	Begin study
+      </button>
 
-      <div id="checkMessage"> </div> <!--dynamically built in javascript-->
+      <div id="checkMessage"> </div> 
     </div>
 
     <div class="slide" id="blank">
@@ -97,10 +127,6 @@
       <p>This is the end of the study.</p>
       <p>Thank you so much for participating!</p>
     </div>
-
-    <script src="/static/webAudio.js"></script>
-    <script src="/static/comprehension.js"></script>
-    <script src="/static/mmturkey-nosocket.js"></script>
 
   </body>
 </html>
