@@ -1,8 +1,26 @@
 // Tangram comprehension task
 
 // to start at beginning
-showSlide("instructions");
+var experiment;
+window.onload = function(event) {
+  $('#audioCheckForm').on('submit', function (e) {
+    var val = document.getElementById("audioCheckTextbox").value.replace(/\s/g,'');
+    if(val == '86') {
+      $("#audioCheckButton").fadeOut(500);
+      $("#audioCheckForm").fadeOut(500);
+      setTimeout(function() {
+	$('#checkMessage').html("<p>Thanks! Ready to begin?</p>");      
+	$('#beforeStudy').fadeIn(500);
+      }, 500);
+    } else {
+      $('#checkMessage').html('<p>Make sure your audio is on and listen again</p>');
+    }
+    return false;
+  });
 
+  experiment = new Experiment();
+  showSlide("instructions");
+};
 
 // disables all scrolling functionality to fix a slide in place on the ipad
 document.ontouchmove = function(event){
@@ -84,6 +102,7 @@ class Experiment {
     this.reactiontime = 0;
     this.data = [];
 
+    // Set up callback for button
     $('#audioPlayButton').on('click', this.playAudio.bind(this));
   }
 
@@ -178,7 +197,8 @@ class Experiment {
   playAudio(event) {
     // Play audio
     var audio = this.preloadedAudio[this.trialnum];
-
+    console.log('here');
+    console.log(audio);
     // after audio finishes, allow to click tangram and start clock
     audio.play(function(){
       this.clickDisabled = false;
@@ -240,4 +260,3 @@ class Experiment {
   }
 }
 
-var experiment = new Experiment();
