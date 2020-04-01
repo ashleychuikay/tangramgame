@@ -169,10 +169,9 @@ class Experiment {
   playAudio(event) {
     // Play audio
     var audio = this.preloadedAudio[this.trialnum];
-    audio.play();
 
     // Only allow to click tangram after audio 
-    this.clickDisabled = false;
+    audio.play(function(){this.clickDisabled = false;}.bind(this));
   }
 
   handleClick(event) {
