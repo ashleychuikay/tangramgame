@@ -101,6 +101,11 @@ This stuff will vary by experiment.
   text-align: center;
 }
 
+#consent {
+  text-align: center;
+}
+
+
 #break {
 	text-align: center;
 }
@@ -110,7 +115,7 @@ This stuff will vary by experiment.
 }
 
 .block-text {
-  width: 500px;
+  width: 600px;
   text-align: justify;
   margin: 0 auto;
   margin-bottom: 1em;
