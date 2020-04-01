@@ -1,0 +1,137 @@
+subid,type,trial,target,person,utterance,selection,correct
+32,practice,1,apple,parent,apple,,Y
+32,practice,1,apple,child,,child,Y
+32,practice,4,apple,child,choose the apple,,Y
+32,practice,4,apple,parent,,parent,Y
+32,practice,2,artichoke,child,"daddy, choose this one, but not the onion",,Y
+32,practice,2,artichoke,parent,,parent,Y
+32,practice,5,artichoke,child,onion,,N
+32,practice,5,artichoke,child,,child,N
+32,practice,3,onion,parent,choose the onion,,Y
+32,practice,3,onion,child,,child,Y
+32,practice,6,onion,parent,"it's your turn now, so what do you want me to choose?",,Y
+32,practice,6,onion,child,the onion,,Y
+32,practice,6,onion,parent,,parent,Y
+32,test,8,A1,child,choose the boy that has one foot up and one foot down,,Y
+32,test,8,A1,parent,okay,,Y
+32,test,8,A1,parent,,parent,Y
+32,test,14,A1,parent,choose the girl that looks like she has one foot down and one foot up,,Y
+32,test,14,A1,child,,child,Y
+32,test,26,A1,child,choose the boy that has one leg down and one leg up,,Y
+32,test,26,A1,parent,,parent,Y
+32,test,34,A1,parent,choose the person that has one foot down and one foot up,,Y
+32,test,34,A1,child,,child,Y
+32,test,2,B1,child,the man that's walking,,Y
+32,test,2,B1,parent,,parent,Y
+32,test,20,B1,parent,choose the person that looks like it's walking by itself,,Y
+32,test,20,B1,child,,child,Y
+32,test,30,B1,child,it's my turn? choose the man that's walking,,Y
+32,test,30,B1,parent,,parent,Y
+32,test,32,B1,parent,choose the person that looks like it's walking,,Y
+32,test,32,B1,child,,child,Y
+32,test,9,C1,parent,"choose the person that looks like it's crawling, yes",,Y
+32,test,9,C1,child,,child,Y
+32,test,11,C1,child,can you choose the man that's bending down,,N
+32,test,11,C1,parent,,parent,N
+32,test,21,C1,parent,choose the person that looks like it's ... don't choose the man that looks like it's... choose the persont hat looks like it's jumping. it's the person that looks like it's bending over.,,Y
+32,test,21,C1,child,this one?,,Y
+32,test,21,C1,parent,"the one that's bending over, yyy",,Y
+32,test,21,C1,child,,child,Y
+32,test,31,C1,child,choose the man that's bending down,,Y
+32,test,31,C1,parent,,parent,Y
+32,test,4,D1,child,choose the man that's on the floor,,Y
+32,test,4,D1,parent,,parent,Y
+32,test,16,D1,parent,"choose the person, yyy, that looks like it's laying down flat",,Y
+32,test,16,D1,child,,child,Y
+32,test,22,D1,child,choose the boy that's flat,,Y
+32,test,22,D1,parent,,parent,Y
+32,test,38,D1,parent,"choose the person that's laying flat, not the person that looks like it's jumping, the one that's laying flat on the ground",,Y
+32,test,38,D1,child,,child,Y
+32,test,7,E1,parent,choose the man that looks like it's jumping,,Y
+32,test,7,E1,child,,child,Y
+32,test,17,E1,child,choose that man that's up on the sky,,Y
+32,test,17,E1,parent,does it look like he's jumping?,,Y
+32,test,17,E1,child,yeah,,Y
+32,test,17,E1,parent,,parent,Y
+32,test,27,E1,parent,choose the person that looks like it's jumping in the air,,Y
+32,test,27,E1,child,you mean this one?,,Y
+32,test,27,E1,parent,"not the waiter, the opposite",,Y
+32,test,27,E1,child,,child,Y
+32,test,33,E1,child,choose the boy that's like flying up,,Y
+32,test,33,E1,parent,,parent,Y
+32,test,10,F1,child,choose that girl that's running,,Y
+32,test,10,F1,parent,that's running?,,Y
+32,test,10,F1,child,yeah,,Y
+32,test,10,F1,parent,it looks like it's running?,,Y
+32,test,10,F1,child,yeah,,Y
+32,test,10,F1,parent,,parent,Y
+32,test,12,F1,parent,"um... don't choose the man that's walking, choose the other man",,Y
+32,test,12,F1,child,,child,Y
+32,test,24,F1,child,"is it my turn? oh. choose this one that uh, is putting his hands over and he's got one leg down and one leg is upside down",,Y
+32,test,24,F1,parent,,parent,Y
+32,test,40,F1,parent,"choose the person that's, that has the... choose the opposite the person that's not... choose the opposite of the person that's laying, that's bending over",,N
+32,test,40,F1,child,,child,N
+32,test,5,G1,child,choose this girl,,Y
+32,test,5,G1,parent,"no, it's my turn, because i have the blue",,Y
+32,test,5,G1,parent,choose the man who's standing up,,Y
+32,test,5,G1,child,that looks like,,Y
+32,test,5,G1,parent,"that looks like he's standing up. not the one that's laying down, but the one that's standing up",,Y
+32,test,5,G1,child,it looks like a girl,,Y
+32,test,5,G1,parent,"but it's the one that's standing up, standing tall",,Y
+32,test,5,G1,child,,child,Y
+32,test,13,G1,child,"don't choose the man that's doing this *gesture*, choose that girl",,Y
+32,test,13,G1,parent,,parent,Y
+32,test,23,G1,parent,"don't choose the person that looks like it's jumping in the air, choose the opposite",,Y
+32,test,23,G1,child,,child,Y
+32,test,37,G1,child,choose the man. that girl that has that poor xxx,,Y
+32,test,37,G1,parent,hmm?,,Y
+32,test,37,G1,child,"choose the girl that has the -- the one that has the leggo, like a big square and the girl",,Y
+32,test,37,G1,parent,is it a long square?,,Y
+32,test,37,G1,child,mhm,,Y
+32,test,37,G1,parent,with a block?,,Y
+32,test,37,G1,child,mhm. with one.,,Y
+32,test,37,G1,parent,who has a sharp point on the right side?,,Y
+32,test,37,G1,child,mhm,,Y
+32,test,37,G1,parent,,parent,Y
+32,test,3,H1,parent,choose the person that looks like it's shaped like it's standing up,,Y
+32,test,3,H1,child,,child,Y
+32,test,15,H1,child,choose that girl that has the cup in her hand,,Y
+32,test,15,H1,parent,the cup in her hand?,,Y
+32,test,15,H1,child,"yeah, that girl",,Y
+32,test,15,H1,parent,does she have one foot up and one foot down?,,Y
+32,test,15,H1,child,"no, this one *attempts to show ipad*",,Y
+32,test,15,H1,parent,,parent,Y
+32,test,25,H1,parent,choose the waiter that has his hand out,,Y
+32,test,25,H1,child,this one?,,Y
+32,test,25,H1,parent,not the one that's laying down,,Y
+32,test,25,H1,child,,child,Y
+32,test,35,H1,child,choose the boy that has the cup in his hand,,Y
+32,test,35,H1,parent,,parent,Y
+32,test,1,I1,parent,"ok, choose the waiter. you know the waiter, it looks like a waiter when you go out to eat? and he comes with the plate in his hand?",,Y
+32,test,1,I1,child,,child,Y
+32,test,19,I1,child,look at that person with that cup in their hand that serves the food,,Y
+32,test,19,I1,parent,,parent,Y
+32,test,29,I1,parent,"choose the waiter, yyy",,Y
+32,test,29,I1,child,the waiter that what,,Y
+32,test,29,I1,parent,the waiter that has the plate in it's hand,,Y
+32,test,29,I1,child,,child,Y
+32,test,39,I1,child,choose the boy that has the cup in it's hand,,Y
+32,test,39,I1,parent,,parent,Y
+32,test,6,K1,child,choose that man that's with one hand,,Y
+32,test,6,K1,parent,one hand?,,Y
+32,test,6,K1,child,with the one feet and that's on the blue shape,,Y
+32,test,6,K1,parent,"say it again, yyy?",,Y
+32,test,6,K1,child,it's a man....,,Y
+32,test,6,K1,parent,is he sitting or is he bending over?,,Y
+32,test,6,K1,child,he's bending over,,Y
+32,test,6,K1,parent,,parent,Y
+32,test,18,K1,parent,choose the person that looks like it's bending over and has its hand out,,Y
+32,test,18,K1,child,,child,Y
+32,test,28,K1,child,is it my turn? choose the one that is going like this with one up...,,Y
+32,test,28,K1,parent,which one?,,Y
+32,test,28,K1,child,choose the one that's like one up hand and one,,Y
+32,test,28,K1,parent,is it laying down?,,Y
+32,test,28,K1,child,"mmm mm *""no"" sound*",,Y
+32,test,28,K1,parent,,parent,Y
+32,test,36,K1,parent,"choose the person that doesn't have one foot down and one foot up, the opposite",,Y
+32,test,36,K1,child,,child,Y

@@ -1,0 +1,158 @@
+subid,type,trial,target,person,utterance,selection,correct
+65,practice,1,apple,parent,"so, you see an apple?",,Y
+65,practice,1,apple,child,yes,,Y
+65,practice,1,apple,child,,child,Y
+65,practice,4,apple,parent,which one do I press? Which has the blue box around it?,,Y
+65,practice,4,apple,child,Apple,,Y
+65,practice,4,apple,parent,okay,,Y
+65,practice,4,apple,parent,,parent,Y
+65,practice,2,artichoke,child,the one with,,Y
+65,practice,2,artichoke,parent,which one has a blue box?,,Y
+65,practice,2,artichoke,child,it's like a pineapple or something,,Y
+65,practice,2,artichoke,parent,ok,,Y
+65,practice,2,artichoke,parent,,parent,Y
+65,practice,5,artichoke,parent,"Okay this is called an artichoke, it has lots of different pieces on it",,Y
+65,practice,5,artichoke,child,,child,Y
+65,practice,3,onion,parent,"ok. alright, so this one it's an onion",,Y
+65,practice,3,onion,parent,so it doesn't look like the pineapple,,Y
+65,practice,3,onion,parent,it's the one that's smooth on the outside,,Y
+65,practice,3,onion,child,what's this?,,Y
+65,practice,3,onion,parent,"it has, it's smooth",,Y
+65,practice,3,onion,child,"i know, i know",,Y
+65,practice,3,onion,child,,child,Y
+65,practice,6,onion,parent,which one do I press?,,Y
+65,practice,6,onion,child,the plum,,Y
+65,practice,6,onion,parent,ready to go on?,parent,Y
+65,test,8,A1,parent,which one do I pick?,,Y
+65,test,8,A1,child,it's the one that's standing on one foot,,Y
+65,test,8,A1,parent,,parent,Y
+65,test,14,A1,parent,"okay, this is the person with her foot up in the air",,Y
+65,test,14,A1,child,,child,Y
+65,test,24,A1,parent,"okay, which one?",,Y
+65,test,24,A1,child,one foot,,Y
+65,test,24,A1,parent,,parent,Y
+65,test,24,A1,child,the girl that's on one foot,,Y
+65,test,24,A1,parent,okay,,Y
+65,test,34,A1,parent,"okay, this is the woman walking backwards",,Y
+65,test,34,A1,child,,child,Y
+65,test,34,A1,child,but I don't see her walking backwards,,Y
+65,test,3,B1,parent,"okay, this one looks like the person walking away",,Y
+65,test,3,B1,child,,child,Y
+65,test,17,B1,parent,which one do I pick?,,N
+65,test,17,B1,child,the one that's doing this,,N
+65,test,17,B1,parent,okay,,N
+65,test,17,B1,parent,,parent,N
+65,test,27,B1,parent,"uh, this is not the person lying down, it's the person walking back",,Y
+65,test,27,B1,child,,child,Y
+65,test,37,B1,parent,which one?,,Y
+65,test,37,B1,child,the one that's walking away,,Y
+65,test,37,B1,parent,,parent,Y
+65,test,37,B1,child,and the otherguy that's holding a bowl,,Y
+65,test,9,C1,parent,"okay, uh, this one the person's got his head down on the ground",,Y
+65,test,9,C1,child,,child,Y
+65,test,19,C1,parent,okay which one do I get?,,Y
+65,test,19,C1,child,the one that's laying down,,Y
+65,test,19,C1,parent,okay,,Y
+65,test,19,C1,parent,,parent,Y
+65,test,29,C1,parent,"okay, the one with his head down",,Y
+65,test,29,C1,child,,child,Y
+65,test,39,C1,parent,which one do I do?,,Y
+65,test,39,C1,child,the one that's laying down,,Y
+65,test,39,C1,parent,okay,,Y
+65,test,39,C1,parent,,parent,Y
+65,test,2,D1,parent,which one? you have to describe it to me,,Y
+65,test,2,D1,child,I dont know how to describe it,,Y
+65,test,2,D1,parent,is it the one standing up or the one lying down?,,Y
+65,test,2,D1,child,lying down,,Y
+65,test,2,D1,parent,,parent,Y
+65,test,18,D1,parent,"okay, this is the person that is lying down",,Y
+65,test,18,D1,child,,child,Y
+65,test,30,D1,parent,So which one am I supposed to pick?,,Y
+65,test,30,D1,child,the one thst's laying down,,Y
+65,test,30,D1,parent,Okay,,Y
+65,test,30,D1,parent,,parent,Y
+65,test,40,D1,parent,"So, this is the one lying down",,Y
+65,test,40,D1,child,,child,Y
+65,test,4,E1,parent,"okay, which one do I pick?",,Y
+65,test,4,E1,child,the one that's jumping,,Y
+65,test,4,E1,parent,okay,,Y
+65,test,4,E1,parent,,parent,Y
+65,test,16,E1,parent,"Okay, this is the person jumping",,Y
+65,test,16,E1,parent,she want's to fly,,Y
+65,test,16,E1,child,,child,Y
+65,test,22,E1,parent,which one?,,Y
+65,test,22,E1,parent,"um, it's, he's jumping",,Y
+65,test,22,E1,parent,wait which one? on his knees or the one jumping?,,Y
+65,test,22,E1,child,jumping,,Y
+65,test,22,E1,parent,,parent,Y
+65,test,38,E1,parent,"okay, this is the one that's jumping",,Y
+65,test,38,E1,child,I know that guy already,,Y
+65,test,38,E1,parent,okay,,Y
+65,test,38,E1,child,,child,Y
+65,test,5,F1,parent,"this one, uh, looks like the person's dancing",,Y
+65,test,5,F1,child,,child,Y
+65,test,11,F1,parent,which one do I pick?,,Y
+65,test,11,F1,child,the one that's like,,Y
+65,test,11,F1,parent,,parent,Y
+65,test,23,F1,parent,"this is the person who look's like he's running, singing, jumping",,Y
+65,test,23,F1,child,,child,Y
+65,test,35,F1,parent,so which one do I want?,,Y
+65,test,35,F1,child,"you get, um, you get, the one that's skipping",,Y
+65,test,35,F1,parent,the one that's skipping?,,Y
+65,test,35,F1,child,yeah,,Y
+65,test,35,F1,parent,okay,,Y
+65,test,35,F1,parent,,parent,Y
+65,test,6,G1,parent,which one do I pick?,,Y
+65,test,6,G1,child,the one that's standing up,,Y
+65,test,6,G1,parent,,parent,Y
+65,test,20,G1,parent,this is the person on her knees,,N
+65,test,20,G1,child,,child,N
+65,test,20,G1,parent,Not the person sleeping. umhm,,N
+65,test,28,G1,parent,which one do I do?,,Y
+65,test,28,G1,parent,"Okay, so, which one do I pick?",,Y
+65,test,28,G1,child,"the one, that's the one where, not the one that's bending. The one that's standing",,Y
+65,test,28,G1,parent,okay,,Y
+65,test,28,G1,parent,,parent,Y
+65,test,32,G1,parent,"uh, the one on her knees",,Y
+65,test,32,G1,child,,child,Y
+65,test,7,H1,parent,"um, this one looks like the person's on his knees",,N
+65,test,7,H1,child,,child,N
+65,test,15,H1,parent,which one do I get?,,N
+65,test,15,H1,child,"um, the one that's doing this",,N
+65,test,15,H1,parent,okay,,N
+65,test,15,H1,parent,,parent,N
+65,test,25,H1,parent,the person on his knees,,Y
+65,test,25,H1,child,is it this guy?,,Y
+65,test,25,H1,child,,child,Y
+65,test,25,H1,parent,not the person on one foot-- uh okay,,Y
+65,test,33,H1,parent,which one?,,Y
+65,test,33,H1,child,"the, this one, this one",,Y
+65,test,33,H1,parent,which one,,Y
+65,test,33,H1,child,this one,,Y
+65,test,33,H1,parent,"I can' see it, which one?",,Y
+65,test,33,H1,child,It's a ghost guy,,Y
+65,test,33,H1,parent,The one lying down or the one on his knees?,,Y
+65,test,33,H1,child,on his knees,,Y
+65,test,33,H1,parent,,parent,Y
+65,test,1,I1,parent,You want to press the one that has a person that looks like hes holding a bowl,,Y
+65,test,1,I1,child,,child,Y
+65,test,13,I1,parent,which one do I pick?,,Y
+65,test,13,I1,child,"it's the one thats holding the bowl, uh bowl",,Y
+65,test,13,I1,parent,okay,,Y
+65,test,13,I1,parent,,parent,Y
+65,test,21,I1,parent,"okay, this is the person holding the bowl",,Y
+65,test,21,I1,child,,child,Y
+65,test,31,I1,child,"um, the one that's holding the ball",,Y
+65,test,31,I1,parent,,parent,Y
+65,test,10,K1,parent,which one do I pick?,,Y
+65,test,10,K1,parent,A one thats standing like,,Y
+65,test,10,K1,parent,,parent,Y
+65,test,12,K1,parent,"okay, this one, it's not the person dancing, it's the person bowing",,Y
+65,test,12,K1,child,,child,Y
+65,test,26,K1,parent,"okay, which one?",,Y
+65,test,26,K1,child,he's bending,,Y
+65,test,26,K1,parent,,parent,Y
+65,test,36,K1,parent,"Okay, the one that's standing up",,Y
+65,test,36,K1,child,,child,Y
+65,test,36,K1,child,that guy?,,Y
+65,test,36,K1,parent,umhm,,Y

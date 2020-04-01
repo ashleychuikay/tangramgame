@@ -1,0 +1,150 @@
+subid,type,trial,target,person,utterance,selection,correct
+9,practice,1,apple,parent,"Do you see shapes, do you see your things?",,Y
+9,practice,1,apple,parent,OK um this can be white or green,,Y
+9,practice,1,apple,child,I know it,,Y
+9,practice,1,apple,parent,So touch it,,Y
+9,practice,1,apple,child,,child,Y
+9,practice,1,apple,child,I got it,,Y
+9,practice,4,apple,child,Um it can be red or yellow or green,,Y
+9,practice,4,apple,parent,,parent,Y
+9,practice,2,artichoke,parent,You're the leader!,,Y
+9,practice,2,artichoke,child,It's like,,Y
+9,practice,2,artichoke,child,"it's like I think it's a it's like brown it's a, it can be brown and then it has zzz like",,Y
+9,practice,2,artichoke,parent,Well maybe you could describe like the shape of it,,Y
+9,practice,2,artichoke,child,Well the shape is like a circle and then it has it looks like a pinecone,,Y
+9,practice,2,artichoke,parent,,parent,Y
+9,practice,2,artichoke,parent,That was a great description!,,Y
+9,practice,5,artichoke,parent,OK this kinda looks like a pineapple,,Y
+9,practice,5,artichoke,child,,child,Y
+9,practice,5,artichoke,parent,"It's an artichoke, that's what it's called",,Y
+9,practice,3,onion,parent,An artichoke,,Y
+9,practice,3,onion,parent,OK this one um is sticky if you cut it,,Y
+9,practice,3,onion,child,Oh,,Y
+9,practice,3,onion,child,,child,Y
+9,practice,3,onion,parent,"Go, yyy",,Y
+9,practice,6,onion,child,"Um, it makes your eyes watery",,Y
+9,practice,6,onion,parent,,parent,Y
+9,test,8,A1,child,Um it looks like someone that had a good day,,Y
+9,test,8,A1,parent,,parent,Y
+9,test,8,A1,child,And they were like this,,Y
+9,test,14,A1,parent,It looks like someone kinda like skipping,,Y
+9,test,14,A1,child,Oh,,Y
+9,test,14,A1,child,,child,Y
+9,test,24,A1,child,It looks like someone skipping,,Y
+9,test,24,A1,parent,,parent,Y
+9,test,38,A1,parent,Oh it looks like um someone walking away,,Y
+9,test,38,A1,parent,Kind of running away,,Y
+9,test,38,A1,child,,child,Y
+9,test,1,B1,parent,OK this one uh looks like a person walking with their head down,,Y
+9,test,1,B1,child,Oh,,Y
+9,test,1,B1,child,,child,Y
+9,test,1,B1,child,"Woah, that's cool",,Y
+9,test,17,B1,child,It looks like someone is walking and he had a sad day,,Y
+9,test,17,B1,parent,,parent,Y
+9,test,23,B1,parent,Uh someone who had a sad day,,Y
+9,test,23,B1,child,,child,Y
+9,test,39,B1,child,It looks like someone had a sad day,,Y
+9,test,39,B1,parent,,parent,Y
+9,test,9,C1,parent,Um it looks like someone who might be like kneeling and praying,,Y
+9,test,9,C1,child,Oh,,Y
+9,test,9,C1,child,,child,Y
+9,test,19,C1,child,It looks like someone praying and kneeling,,Y
+9,test,19,C1,parent,,parent,Y
+9,test,21,C1,parent,It's somebody who looks like they're kneeling or praying,,Y
+9,test,21,C1,child,Oh,,Y
+9,test,21,C1,child,,child,Y
+9,test,37,C1,child,"It looks like someone, like praying",,Y
+9,test,37,C1,parent,,parent,Y
+9,test,5,D1,parent,Um it looks like someone is laying down reading with like a foot up,,Y
+9,test,5,D1,child,,child,Y
+9,test,5,D1,child,I think I got it,,Y
+9,test,13,D1,child,It looks like somebody in a jet um and he has a little cart on like the back of it,,Y
+9,test,13,D1,parent,"Oh, like someone's flying in the jet",,Y
+9,test,13,D1,child,Yeah,,Y
+9,test,13,D1,parent,,parent,Y
+9,test,25,D1,parent,Oh someone riding in a jet,,Y
+9,test,25,D1,child,,child,Y
+9,test,35,D1,child,It looks like someone like flying in a jet,,Y
+9,test,35,D1,parent,,parent,Y
+9,test,7,E1,parent,OK um it looks like this person just found some good news,,Y
+9,test,7,E1,child,Or he's like flying off a jet?,,Y
+9,test,7,E1,parent,"Or flying off a jet, yes",,Y
+9,test,7,E1,child,,child,Y
+9,test,7,E1,parent,That's a perfectly good description too,,Y
+9,test,15,E1,child,It looks like someone that's flying off a jet,,Y
+9,test,15,E1,parent,,parent,Y
+9,test,15,E1,child,Like skydiving,,Y
+9,test,15,E1,parent,"Yeah, got it",,Y
+9,test,29,E1,parent,Um it looks like someone who is jumping off a cliff or had a good day,,Y
+9,test,29,E1,child,Or is skydiving or,,Y
+9,test,29,E1,parent,"Or is skydiving, yes",,Y
+9,test,29,E1,child,,child,Y
+9,test,33,E1,child,Um it looks like someone skydiving off a cliff,,Y
+9,test,33,E1,parent,,parent,Y
+9,test,3,F1,parent,"Uh this looks like someone running away going like ""yikes!"" with their hand up in the air",,Y
+9,test,3,F1,child,Like this?,,Y
+9,test,3,F1,parent,Yeah,,Y
+9,test,3,F1,child,,child,Y
+9,test,3,F1,child,Woah,,Y
+9,test,11,F1,parent,OK good job it says time for the next round,,Y
+9,test,11,F1,parent,Do you have a blue square or do I have a blue square?,,Y
+9,test,11,F1,child,I do,,Y
+9,test,11,F1,parent,Alright,,Y
+9,test,11,F1,child,Uh it looks like someone is like running away with his uh shark,,Y
+9,test,11,F1,parent,,parent,Y
+9,test,27,F1,parent,Uh it looks like someone running away from a shark,,Y
+9,test,27,F1,child,,child,Y
+9,test,27,F1,child,Like jaws,,Y
+9,test,31,F1,child,It looks like someone like they saw something really scary,,Y
+9,test,31,F1,parent,,parent,Y
+9,test,31,F1,child,Like a monster,,Y
+9,test,2,G1,child,It looks like someone like sitting down with a dress on,,Y
+9,test,2,G1,parent,,parent,Y
+9,test,18,G1,parent,It looks like someone who's sitting quietly in a dress,,Y
+9,test,18,G1,child,,child,Y
+9,test,22,G1,child,It looks like someone's sitting in a dress,,Y
+9,test,22,G1,parent,,parent,Y
+9,test,34,G1,parent,It looks like someone quietly sitting in a dress,,Y
+9,test,34,G1,child,,child,Y
+9,test,34,G1,child,They're very interesting,,Y
+9,test,6,H1,child,It looks like someone like,,Y
+9,test,6,H1,child,"With like a diamond head, and he has like a weird shape hands, and his feet are like this. look under the table, it's weird",,Y
+9,test,6,H1,parent,Does it look like he's bending over kneeling?,,Y
+9,test,6,H1,child,No,,Y
+9,test,6,H1,parent,Or does it look like he's like got a tray of something,,Y
+9,test,6,H1,child,Got a tray of something,,Y
+9,test,6,H1,parent,,parent,Y
+9,test,6,H1,child,Like he looks like a waitress,,Y
+9,test,12,H1,parent,um it looks like someone who is standing still with something on a tray,,Y
+9,test,12,H1,child,Oh,,Y
+9,test,12,H1,child,,child,Y
+9,test,26,H1,child,It looks like someone like offering you something on a tray,,Y
+9,test,26,H1,parent,,parent,Y
+9,test,40,H1,parent,Uh it looks like someone with a pointy hat on offering you something,,Y
+9,test,40,H1,child,,child,Y
+9,test,40,H1,child,I was ready to press the jet,,Y
+9,test,4,I1,child,It looks like someone is like offering you something like,,Y
+9,test,4,I1,parent,,parent,Y
+9,test,20,I1,parent,um somer--somebody offering you something on a tray kinda bent over,,Y
+9,test,20,I1,child,Ok,,Y
+9,test,20,I1,child,,child,Y
+9,test,20,I1,child,Like a triangle shape,,Y
+9,test,20,I1,parent,yes,,Y
+9,test,30,I1,child,This looks like someone offering you something,,Y
+9,test,30,I1,parent,,parent,Y
+9,test,36,I1,parent,It looks like someone offering you something,,Y
+9,test,36,I1,child,,child,Y
+9,test,36,I1,parent,On a tray,,Y
+9,test,10,K1,child,It looks like a dog but it's a person at the same time it's like a dog,,Y
+9,test,10,K1,parent,Laying down or like leaning over?,,Y
+9,test,10,K1,child,Like leaning over,,Y
+9,test,10,K1,parent,,parent,Y
+9,test,16,K1,parent,Uh it looks like someone is leaning over offering something with their butt sticking out,,Y
+9,test,16,K1,child,,child,Y
+9,test,28,K1,child,It looks like a dog that's like offering you something,,Y
+9,test,28,K1,parent,,parent,Y
+9,test,28,K1,child,With a hat on,,Y
+9,test,32,K1,parent,It looks like a dog with a tray offering you something,,Y
+9,test,32,K1,child,And a hat on,,Y
+9,test,32,K1,child,,child,Y
+9,test,32,K1,parent,And a hat on,,Y

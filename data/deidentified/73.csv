@@ -1,0 +1,227 @@
+subid,type,trial,target,person,utterance,selection,correct
+73,practice,1,apple,parent,"okay, I'm the leader right now and it's a fruit, it's red, you bite it, but you can't really bite good cause you don't have any teeth, what kind of fruit is it?",,Y
+73,practice,1,apple,child,apple,,Y
+73,practice,1,apple,parent,that's right,,Y
+73,practice,1,apple,child,,child,Y
+73,practice,4,apple,child,"something is red and you bite it, it- it 2also has a stump on the top and it has a xxx",,Y
+73,practice,4,apple,parent,is it an apple?,,Y
+73,practice,4,apple,child,yes,,Y
+73,practice,4,apple,parent,,parent,Y
+73,practice,2,artichoke,child,it's something has like- it's little like-,,Y
+73,practice,2,artichoke,parent,crinckles?,,Y
+73,practice,2,artichoke,child,yeah,,Y
+73,practice,2,artichoke,parent,"umm, is it an artichoke?",,Y
+73,practice,2,artichoke,child,uh it has a stump on the bottom,,Y
+73,practice,2,artichoke,parent,it has a stub at the bottom?,,Y
+73,practice,2,artichoke,child,a stump,,Y
+73,practice,2,artichoke,parent,a stump at the bottom,,Y
+73,practice,2,artichoke,parent,"it's a vegetable, right?",,Y
+73,practice,2,artichoke,child,yeah,,Y
+73,practice,2,artichoke,parent,"that's called an artichoke, mommy doesn't usually cook with them cause they're really expensive",,Y
+73,practice,2,artichoke,child,so you pressed it?,,Y
+73,practice,2,artichoke,parent,mhm,,Y
+73,practice,2,artichoke,parent,,parent,Y
+73,practice,5,artichoke,parent,"uhh I just said it, it starts with an 'A', mommy says she doesn't buy it cause it's really expensive sometimes",,Y
+73,practice,5,artichoke,child,apple! apple!,,Y
+73,practice,5,artichoke,parent,"no, no no, not the apple it's a vegetable",,Y
+73,practice,5,artichoke,child,what,,Y
+73,practice,5,artichoke,parent,"it's the prickly, what I just said",,Y
+73,practice,5,artichoke,child,I cannot remember,,Y
+73,practice,5,artichoke,parent,"you cannot remember? okay, next time we gonna go to the store I'm gonna pick out all the stuff and I'm gonna start cooking more with the stuff",,Y
+73,practice,5,artichoke,parent,artichoke,,Y
+73,practice,5,artichoke,child,artichoke,,Y
+73,practice,5,artichoke,child,,child,Y
+73,practice,3,onion,parent,"okay, so, it's, it's a vegetable, it's something that mommy uses for her pastas-- for my pastas and soups, I chop it up and it sometimes makes me cry, it can be uh white or yellow",,Y
+73,practice,3,onion,parent,what kind of vegetable is it?,,Y
+73,practice,3,onion,child,"uh, I don't know",,Y
+73,practice,3,onion,parent,"uh, it smells really strong and it makes mommy cry",,Y
+73,practice,3,onion,child,uh,,Y
+73,practice,3,onion,parent,"I chop it up with a knife, like that",,Y
+73,practice,3,onion,child,uh,,Y
+73,practice,3,onion,parent,uh I do it- that's a lot of vegetables,,Y
+73,practice,3,onion,parent,"um it smells really strong, not as  uhh, mommy puts it in her uh pasta sauces and soups, I use it uh for hash, I sometimes put it in my eggs, you see me chopping it",,Y
+73,practice,3,onion,child,uh a kiwi?,,Y
+73,practice,3,onion,parent,"no, not the- no it's a vegetable, a kiwi is a fruit",,Y
+73,practice,3,onion,parent,a fruit has uh seeds,,Y
+73,practice,3,onion,child,it's,,Y
+73,practice,3,onion,parent,"it's a vegetable, it starts with the letter 'o'",,Y
+73,practice,3,onion,parent,it starts with the letter 'o',,Y
+73,practice,3,onion,child,I don't-- I don't remember,,Y
+73,practice,3,onion,parent,it's an onion,,Y
+73,practice,3,onion,child,onion,,Y
+73,practice,3,onion,parent,mhm it's an onion,,Y
+73,practice,3,onion,child,,child,Y
+73,practice,6,onion,child,"something it smell really strong, and you cook it it sometimes make you cry",,Y
+73,practice,6,onion,parent,it's an onion,,Y
+73,practice,6,onion,child,yeah,,Y
+73,practice,6,onion,parent,,parent,Y
+73,test,7,A1,parent,"um, okay so the top, the top part is a square, it looks like it could be somebody uh the shapes it's shaped like somebody is uh running",,Y
+73,test,7,A1,child,okay,,Y
+73,test,7,A1,child,,child,Y
+73,test,19,A1,child,"okay, it's somebody that's running way too fast",,Y
+73,test,19,A1,parent,,parent,Y
+73,test,29,A1,parent,"looks like uh, it's somebody running--",,Y
+73,test,29,A1,parent,running away,,Y
+73,test,29,A1,child,uhh okay,,Y
+73,test,29,A1,child,,child,Y
+73,test,35,A1,child,it's someone that is running away,,Y
+73,test,35,A1,parent,,parent,Y
+73,test,3,B1,parent,"mmkay uh it has the shapes, the top is a square, it could be like a person walking",,Y
+73,test,3,B1,child,oh a people?,,Y
+73,test,3,B1,parent,uh oka-- yeah,,Y
+73,test,3,B1,child,,child,Y
+73,test,15,B1,child,It's somebody who's walking and feeling sad,,Y
+73,test,15,B1,parent,somebody's walking and feeling sad,,Y
+73,test,15,B1,parent,,parent,Y
+73,test,27,B1,parent,it's somebody walking and feeling sad,,Y
+73,test,27,B1,child,,child,Y
+73,test,33,B1,child,somebody is running really fast,,Y
+73,test,33,B1,parent,,parent,Y
+73,test,4,C1,child,"okay, it's something has a xxx it it might be a tornado and holding their head down",,Y
+73,test,4,C1,parent,"oh it is okay, uh I see yeah, um yeah we're gonna say this somebody uh doing the tornado drill",,Y
+73,test,4,C1,child,yeah,,Y
+73,test,4,C1,parent,,parent,Y
+73,test,18,C1,parent,"okay, it looks like somebody, the shapes, it's a square, but it's uh going uh, it looks like somebody is on the floor like crouched down",,Y
+73,test,18,C1,child,like doing the- the-,,Y
+73,test,18,C1,parent,like they're praying,,Y
+73,test,18,C1,child,"or doin, doing the drills",,Y
+73,test,18,C1,parent,"yes, doing tornado drills",,Y
+73,test,18,C1,child,,child,Y
+73,test,24,C1,child,uh it's somebody who's praying or doing the tornado-,,Y
+73,test,24,C1,parent,,parent,Y
+73,test,32,C1,child,"um, there's somebody doing the tornado drill",,Y
+73,test,32,C1,child,,child,Y
+73,test,6,D1,child,"okay, it's something, it's a people who's flying a airpl--uh something, it can fly into the sky",,Y
+73,test,6,D1,parent,is it a airplane?,,Y
+73,test,6,D1,child,yes,,Y
+73,test,6,D1,parent,,parent,Y
+73,test,12,D1,parent,"okay this one looks like the shapes uh of somebody reading, uh",,N
+73,test,12,D1,parent,"sit, sit, sit",,N
+73,test,12,D1,child,okay is the book is like-,,N
+73,test,12,D1,parent,"yeah, like a book, yeah",,N
+73,test,12,D1,child,,child,N
+73,test,28,D1,child,it's somebody's riding a airplane,,Y
+73,test,28,D1,parent,,parent,Y
+73,test,34,D1,parent,uh it looks like somebody is reading a book or it's like an airplane,,Y
+73,test,34,D1,child,somebody's riding a airplane because beca- because he's holdi- because he's had like a xxx ride a airplane like that one,,Y
+73,test,34,D1,parent,oh okay,,Y
+73,test,34,D1,child,,child,Y
+73,test,2,E1,child,"okay, something is like is eating a sandwich???  It eat some bird seed",,N
+73,test,2,E1,parent,"um, somebody that's holding something that's, I guess a person holding something?",,N
+73,test,2,E1,parent,,parent,N
+73,test,20,E1,parent,"um, it could be somebody that's like sitting down, so a square on top",,N
+73,test,20,E1,child,no I think,,N
+73,test,20,E1,parent,"they're not walking, they're not looking sad, but I think they're like, sitting down",,N
+73,test,20,E1,child,,child,N
+73,test,20,E1,child,it was walking,,N
+73,test,20,E1,child,okay,,N
+73,test,26,E1,child,"okay, it's somebody who's doing a ju-, a a, doing xxx jumping for joy",,Y
+73,test,26,E1,parent,,parent,Y
+73,test,38,E1,parent,it's of somebody uh where the shapes look like uh mm somebody may be sitting down,,Y
+73,test,38,E1,child,or jumping for joys,,Y
+73,test,38,E1,parent,mhm or jumping for joy,,Y
+73,test,38,E1,child,,child,Y
+73,test,5,F1,parent,"um, this one is gonna get a little bit more difficult, it is a square on top, and then triangles at the bottom, and then triangle like right next to it",,N
+73,test,5,F1,child,uh a xxx big bird?,,N
+73,test,5,F1,parent,I don't know if it's a bird,,N
+73,test,5,F1,child,a a puppy?,,N
+73,test,5,F1,parent,"no, it's not that one, no",,N
+73,test,5,F1,child,it's a human?,,N
+73,test,5,F1,parent,"I don't think so, maybe it's an alien",,N
+73,test,5,F1,parent,"I don't know, it's just it's shapes together",,N
+73,test,5,F1,child,it kind of- it might be a alien,,N
+73,test,5,F1,parent,"okay, well go ahead and press it",,N
+73,test,5,F1,child,,child,N
+73,test,17,F1,child,"okay, it's somebody it's it's pulling their those triangles and the, the square's on top",,Y
+73,test,17,F1,parent,okay,,Y
+73,test,17,F1,child,catching on something,,Y
+73,test,17,F1,parent,,parent,Y
+73,test,25,F1,parent,"um, um it's a square, and it looks like it's uh on top of, not on top of even but on the side of uh, uh triangles",,Y
+73,test,25,F1,parent,"it's not the, it's somebody kneeling, it's the other one",,Y
+73,test,25,F1,child,uh somebody's trying to catch something?,,Y
+73,test,25,F1,parent,yeah,,Y
+73,test,25,F1,child,,child,Y
+73,test,37,F1,child,"it's somebody who's trying to catch something or, or, or maybe get them",,Y
+73,test,37,F1,parent,,parent,Y
+73,test,9,G1,parent,"it is uh, the top part is a square, and it's tilted, the shapes almost look like they can represent somebody kneeling, or even sitting",,Y
+73,test,9,G1,child,"or pr-- is it like, is it the president?",,Y
+73,test,9,G1,parent,"n--no, or you can even uh, yeah maybe somebody sitting",,Y
+73,test,9,G1,parent,look at the- look at the picture,,Y
+73,test,9,G1,child,"yeah, yup",,Y
+73,test,9,G1,child,,child,Y
+73,test,11,G1,child,"it kinda looks weird, it's somebody who's sitting down and and taking a break waiting to play",,Y
+73,test,11,G1,parent,okay,,Y
+73,test,11,G1,parent,,parent,Y
+73,test,23,G1,parent,"it, there's a square on top uh it almost looks like somebody is kneeling",,N
+73,test,23,G1,child,or riding a airplane I think,,N
+73,test,23,G1,child,,child,N
+73,test,23,G1,parent,no,,N
+73,test,39,G1,child,"it's somebody who's xxx, it's the president, who's telling his xxx  in order to help them xxx he did not to do that again xxx",,Y
+73,test,39,G1,parent,I can't hear you honey,,Y
+73,test,39,G1,child,"uh it's the, it's the president is telling-",,Y
+73,test,39,G1,parent,are you looking at it?,,Y
+73,test,39,G1,child,yeah,,Y
+73,test,39,G1,parent,"okay, say it again",,Y
+73,test,39,G1,child,it's somebody who's telling xxx don't do something again,,Y
+73,test,39,G1,parent,there's somebody who's telling somebody not to to do something bad again?,,Y
+73,test,39,G1,parent,oh you mean somebody is sitting down scolding them? oh,,Y
+73,test,39,G1,parent,,parent,Y
+73,test,10,H1,child,"okay, it's somebody who's pointing at someone who didn't follow the laws",,Y
+73,test,10,H1,parent,say that again,,Y
+73,test,10,H1,child,it's somebody who's--,,Y
+73,test,10,H1,parent,"sit down, sit down",,Y
+73,test,10,H1,child,pointing at something or somebody who didn't do the laws,,Y
+73,test,10,H1,child,didn't do the laws,,Y
+73,test,10,H1,parent,"mmm does it look like it, does does it look like the shapes are somebody-- you said somebody lying?",,Y
+73,test,10,H1,child,no,,Y
+73,test,10,H1,parent,"are they, is it like, look like it's standing still, like they're holding something?",,Y
+73,test,10,H1,child,"yeah, I think",,Y
+73,test,10,H1,parent,,parent,Y
+73,test,14,H1,parent,uh okay it's a square but um,,N
+73,test,14,H1,child,"is it a, is it  a people who's running a airplane?",,N
+73,test,14,H1,parent,"um it's like uhh, their shapes are just like standing still, not laying down",,N
+73,test,14,H1,child,"oh uh, they're in a airplane? are they i , in a airplane?",,N
+73,test,14,H1,parent,"yeah, I guess it can kinda look like an airplane",,N
+73,test,14,H1,child,,child,N
+73,test,14,H1,parent,"No, that's wasn't it",,N
+73,test,30,H1,child,"okay, it's somebody who's pointing at people",,Y
+73,test,30,H1,parent,,parent,Y
+73,test,40,H1,parent,"um it's like, it's a square on top, and it's like they're serving something",,Y
+73,test,40,H1,child,"no it's like, it's people is pointing at people",,Y
+73,test,40,H1,parent,okay,,Y
+73,test,40,H1,child,,child,Y
+73,test,8,I1,child,"okay, it's somebody who's holding some breakfast",,Y
+73,test,8,I1,child,"it's like, somebody holding a breakfast, some food in it",,Y
+73,test,8,I1,parent,okay,,Y
+73,test,8,I1,parent,,parent,Y
+73,test,16,I1,parent,"it's somebody that's holding something, they're serving it",,Y
+73,test,16,I1,child,uhh,,Y
+73,test,16,I1,child,uh giving people some food?,,Y
+73,test,16,I1,parent,mhm,,Y
+73,test,16,I1,child,,child,Y
+73,test,22,I1,child,"okay, it's um",,Y
+73,test,22,I1,child,it's somebody who's holding something to observe it,,Y
+73,test,22,I1,parent,okay,,Y
+73,test,22,I1,parent,,parent,Y
+73,test,36,I1,parent,"um somebody who, the shapes are of somebody serving",,Y
+73,test,36,I1,child,,child,Y
+73,test,1,K1,child,I think something is.. it's two,,Y
+73,test,1,K1,parent,"um it looks like an arrow pointing up, uh it's-I think it's shaped like an animal, that goes ruff ruff",,Y
+73,test,1,K1,child,a dog?,,Y
+73,test,1,K1,parent,"uh okay, I'm gonna say yeah",,Y
+73,test,1,K1,parent,"okay go ahead, press it",,Y
+73,test,1,K1,child,,child,Y
+73,test,13,K1,child,okay it's somebody who's facing up and it look- yeah I think it's somebody who's facing up with a triangle in-- a triangle on the back,,Y
+73,test,13,K1,child,and an arrow pointing up,,Y
+73,test,13,K1,parent,is it like a triangle is like a tail?,,Y
+73,test,13,K1,child,yeah,,Y
+73,test,13,K1,parent,mm,,Y
+73,test,13,K1,parent,,parent,Y
+73,test,21,K1,parent,"it uh it's a triangle on top of a square, it almost loks like a doggy begging",,Y
+73,test,21,K1,child,"uh yeah, I think",,Y
+73,test,21,K1,child,,child,Y
+73,test,21,K1,child,"yeah, it's begging",,Y
+73,test,21,K1,parent,okay,,Y
+73,test,31,K1,child,"it's somebody who, who's dog is barking",,Y
+73,test,31,K1,parent,mhm,,Y
+73,test,31,K1,parent,,parent,Y

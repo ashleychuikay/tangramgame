@@ -1,0 +1,159 @@
+subid,type,trial,target,person,utterance,selection,correct
+15,practice,1,apple,parent,yyy I want you to pick the apple,,Y
+15,practice,1,apple,child,,child,Y
+15,practice,4,apple,parent,Ok which one should I pick?,,N
+15,practice,4,apple,child,you should pick the banana,,N
+15,practice,4,apple,parent,,parent,N
+15,practice,2,artichoke,parent,Which one should I pick? What's in the blue box?,,Y
+15,practice,2,artichoke,child,This one,,Y
+15,practice,2,artichoke,parent,No you have to tell me what's in the blue box,,Y
+15,practice,2,artichoke,parent,"Is it an onion or an artichoke? Does it have lots of leaves? I'll have to pick it, you are the leader",,Y
+15,practice,2,artichoke,parent,Does it have lots of leaves? Or not. Does it look like a pine cone? Look like a round pine cone?,,Y
+15,practice,2,artichoke,child,Yeah,,Y
+15,practice,2,artichoke,parent,,parent,Y
+15,practice,5,artichoke,parent,"Pick the artichoke, the one that looks like a pine cone",,Y
+15,practice,5,artichoke,child,,child,Y
+15,practice,3,onion,parent,"All right, my turn. I want you to pick an onion. Don't pick the one that looks like a pine cone, the round one",,Y
+15,practice,3,onion,child,,child,Y
+15,practice,6,onion,parent,which one do I pick,,Y
+15,practice,6,onion,child,the onion!,,Y
+15,practice,6,onion,parent,the onion?,,Y
+15,practice,6,onion,parent,,parent,Y
+15,test,2,A1,parent,"Okay, you tell me, is it the one that's running, or the one that's standing still?",,N
+15,test,2,A1,child,the one that's standing still,,N
+15,test,2,A1,parent,okay,,N
+15,test,2,A1,parent,,parent,N
+15,test,16,A1,parent,I want you to pick the one that's walking,,Y
+15,test,16,A1,child,,child,Y
+15,test,26,A1,child,"the guy that looks like, the walking okay?",,Y
+15,test,26,A1,parent,,parent,Y
+15,test,40,A1,parent,I want you to pick the one that's walking,,Y
+15,test,40,A1,child,,child,Y
+15,test,7,B1,parent,Pick the one that's walking,,Y
+15,test,7,B1,child,,child,Y
+15,test,11,B1,child,the one that's standing up,,N
+15,test,11,B1,parent,Ok he's not walking,,N
+15,test,11,B1,child,Yeah,,N
+15,test,11,B1,parent,,parent,N
+15,test,23,B1,parent,pick the one that's walking,,Y
+15,test,23,B1,child,,child,Y
+15,test,35,B1,child,this one with the hat,,N
+15,test,35,B1,parent,,parent,N
+15,test,9,C1,parent,pick the one that's bending down,,Y
+15,test,9,C1,child,"Okay, this one?",,Y
+15,test,9,C1,parent,the one with his head down,,Y
+15,test,9,C1,child,,child,Y
+15,test,9,C1,child,I picked the one with its head down,,Y
+15,test,15,C1,parent,should I pick the one that's walking or the one that's kneeling down?,,Y
+15,test,15,C1,child,kneeling down,,Y
+15,test,15,C1,parent,,parent,Y
+15,test,29,C1,parent,I want you to do the one with the head down,,Y
+15,test,29,C1,child,head down?,,Y
+15,test,29,C1,child,,child,Y
+15,test,39,C1,child,"um, the one that's laying down on the floor in a square",,Y
+15,test,39,C1,parent,,parent,Y
+15,test,10,D1,parent,"Okay, the one lying down or the one jumping up?",,Y
+15,test,10,D1,child,The one that's jumping up. You can pick jump up or lying down okay?,,Y
+15,test,10,D1,parent,which one is in the square?,,Y
+15,test,10,D1,child,"You have to pick one of these, and you've got to pick this one",,Y
+15,test,10,D1,parent,"right. but I don't know which one it is, you have to tell me what's in the blue square",,Y
+15,test,10,D1,child,the one laying down,,Y
+15,test,10,D1,parent,,parent,Y
+15,test,20,D1,parent,I want you to pick the one that's laying down,,Y
+15,test,20,D1,child,,child,Y
+15,test,30,D1,parent,which one should I pick? the one that's laying down? or the one walking,,Y
+15,test,30,D1,child,the one laying down. can I push this too?,,Y
+15,test,30,D1,parent,"yeah, but it won't work, it only works if I push it.",,Y
+15,test,30,D1,parent,,parent,Y
+15,test,38,D1,parent,i want you to pick the one that's laying down on the floor,,Y
+15,test,38,D1,child,Okay,,Y
+15,test,38,D1,child,,child,Y
+15,test,6,E1,parent,should I pick the one that's jumping or walking?,,N
+15,test,6,E1,child,walking,,N
+15,test,6,E1,parent,,parent,N
+15,test,14,E1,parent,you should pick the one that's jumping,,Y
+15,test,14,E1,child,,child,Y
+15,test,24,E1,child,"um, it has a square so you should do the square",,Y
+15,test,24,E1,parent,the one that's jumping? or the one that's walking,,Y
+15,test,24,E1,child,the one that's jumping,,Y
+15,test,24,E1,parent,,parent,Y
+15,test,32,E1,parent,now I want you to pick the one that's jumping,,Y
+15,test,32,E1,child,,child,Y
+15,test,8,F1,parent,"the one that's bend, that's kneeling down, or the one that's jumping up?",,Y
+15,test,8,F1,child,the one that's jumping up,,Y
+15,test,8,F1,parent,,parent,Y
+15,test,18,F1,parent,"I want you to pick the one, watch, doing this",,N
+15,test,18,F1,child,,child,N
+15,test,28,F1,parent,which one do I pick? the one that's walking with the arm? or the one that's kneeling,,N
+15,test,28,F1,child,"this one, it's kneeling on the ground",,N
+15,test,28,F1,parent,,parent,N
+15,test,34,F1,parent,I want you to pick the one that has his hands in the air,,Y
+15,test,34,F1,child,this one?,,Y
+15,test,34,F1,parent,the one that's standing up,,Y
+15,test,34,F1,child,this one?,,Y
+15,test,34,F1,parent,"I dont' know, I can't see your screen. Don't pick the one that's just walking, pick the one that's excited",,Y
+15,test,34,F1,child,,child,Y
+15,test,3,G1,parent,"I want you to pick the one that's... don't pick the one that's laying down, pick the one that's standing up",,Y
+15,test,3,G1,child,this one?,,Y
+15,test,3,G1,child,,child,Y
+15,test,13,G1,parent,which one do I pick? the one that has his arms out? or the one that's kneeling,,Y
+15,test,13,G1,child,you just pick the one in the square. the square this one,,Y
+15,test,13,G1,parent,In the square does it have a hat? is it the one with the hat or no?,,Y
+15,test,13,G1,child,no hat,,Y
+15,test,13,G1,parent,,parent,Y
+15,test,21,G1,parent,"I want you to pick the one that's kneeling, not the one that's jumping",,Y
+15,test,21,G1,child,OK this one?,,Y
+15,test,21,G1,parent,"the one that's kneeling, not this one that's jumping, the one that's kneeling",,Y
+15,test,21,G1,child,,child,Y
+15,test,37,G1,child,you pick the one that's in the square,,N
+15,test,37,G1,parent,which one's in the square? I don't know I can't see,,N
+15,test,37,G1,child,the one that's laying down on the floor,,N
+15,test,37,G1,parent,,parent,N
+15,test,1,H1,parent,"Oh yyy, I want you to pick the one that's standing up",,Y
+15,test,1,H1,child,,child,Y
+15,test,1,H1,child,okay,,Y
+15,test,19,H1,parent,do I pick the one that's walking?,,Y
+15,test,19,H1,child,"you can pick this one or this one, but this is the one you got to pick",,Y
+15,test,19,H1,parent,which one is in your square? i can't see it,,Y
+15,test,19,H1,parent,is it walking? or is it standing still,,Y
+15,test,19,H1,child,standing still,,Y
+15,test,19,H1,parent,,parent,Y
+15,test,25,H1,parent,pick the one that's standing still,,Y
+15,test,25,H1,child,but then this is standing still,,Y
+15,test,25,H1,parent,don't pick the jumping one,,Y
+15,test,25,H1,child,but pretend the jumping one is standing still,,Y
+15,test,25,H1,parent,"No, you gotta pick the one that's in the blue square",,Y
+15,test,25,H1,child,I don't have a blue square,,Y
+15,test,25,H1,parent,"right, only I do, I have to help you pick the right one",,Y
+15,test,25,H1,child,,child,Y
+15,test,33,H1,child,you should pick this one,,Y
+15,test,33,H1,parent,"you have to tell me, what's he doing? is he laying down, or is he holding and standing still",,Y
+15,test,33,H1,child,he's standing still,,Y
+15,test,33,H1,parent,,parent,Y
+15,test,5,I1,parent,"okay, pick the one that's standing still",,Y
+15,test,5,I1,child,okay,,Y
+15,test,5,I1,child,,child,Y
+15,test,17,I1,child,do the one that's standing still,,Y
+15,test,17,I1,parent,Ok the one that's holding the triangle?,,Y
+15,test,17,I1,child,yeah,,Y
+15,test,17,I1,parent,,parent,Y
+15,test,27,I1,parent,I want you to pick the one that's holding a triangle,,Y
+15,test,27,I1,child,,child,Y
+15,test,31,I1,parent,the jumper? or the one that's holding the triangle,,Y
+15,test,31,I1,child,the one that's holding the triangle,,Y
+15,test,31,I1,parent,,parent,Y
+15,test,4,K1,child,this one,,N
+15,test,4,K1,parent,the one that's walking or the one that's standing?,,N
+15,test,4,K1,child,the one that's walking,,N
+15,test,4,K1,parent,,parent,N
+15,test,12,K1,parent,I want you to pick the one that's standing,,Y
+15,test,12,K1,child,this one?,,Y
+15,test,12,K1,parent,Yeah,,Y
+15,test,12,K1,child,,child,Y
+15,test,12,K1,parent,the one that's not walking,,Y
+15,test,22,K1,child,"um, the hat",,Y
+15,test,22,K1,parent,the one wearing the hat?,,Y
+15,test,22,K1,parent,,parent,Y
+15,test,36,K1,parent,I want you to pick the guy with the hat,,Y
+15,test,36,K1,child,why you wanna me now,,Y
+15,test,36,K1,child,,child,Y

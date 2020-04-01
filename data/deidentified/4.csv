@@ -1,0 +1,152 @@
+subid,type,trial,target,person,utterance,selection,correct
+4,practice,1,apple,parent,Is your game showing?,,Y
+4,practice,1,apple,child,Mhm,,Y
+4,practice,1,apple,parent,So do you see two fruits?,,Y
+4,practice,1,apple,child,Mhm,,Y
+4,practice,1,apple,parent,So my blue box is around the apple,,Y
+4,practice,1,apple,child,,child,Y
+4,practice,1,apple,parent,"Oh my goodness, I heard zzz! Oh, it worked! Now you be the leader",,Y
+4,practice,4,apple,child,Apple,,Y
+4,practice,4,apple,parent,the apple?,,Y
+4,practice,4,apple,child,Mhm,,Y
+4,practice,4,apple,parent,,parent,Y
+4,practice,4,apple,parent,woo-hoo!,,Y
+4,practice,2,artichoke,child,Mmm wait it looks like a it looks like a pineapple with a zzz,,Y
+4,practice,2,artichoke,parent,"Say that artichoke, I've got one on my screen too, I'll press it and see",,Y
+4,practice,2,artichoke,parent,,parent,Y
+4,practice,2,artichoke,parent,"Ah, yes! That was an artichoke zzz",,Y
+4,practice,5,artichoke,parent,"Now, do you remember what that's called? The one with zzz?",,Y
+4,practice,5,artichoke,child,artichoke,,Y
+4,practice,5,artichoke,parent,yes!,,Y
+4,practice,5,artichoke,child,,child,Y
+4,practice,3,onion,parent,Now I have a blue box and it's the same fruits well it's the same fruits as before but don't touch don't touch yet because now the blue box is around the onion,,Y
+4,practice,3,onion,child,,child,Y
+4,practice,3,onion,parent,Yeah!,,Y
+4,practice,6,onion,child,onion,,Y
+4,practice,6,onion,parent,,parent,Y
+4,test,8,A1,child,Mine looks like something walking away zzz,,Y
+4,test,8,A1,parent,,parent,Y
+4,test,14,A1,parent,Mine looks like a person running away zzz,,Y
+4,test,14,A1,child,,child,Y
+4,test,24,A1,child,Yes mine just looks like they're-they're just walking so peacefully because they had a good day,,Y
+4,test,24,A1,parent,oh yeah,,Y
+4,test,24,A1,parent,,parent,Y
+4,test,24,A1,parent,good job,,Y
+4,test,34,A1,parent,And now my person is just walking down the street because they missed it,,Y
+4,test,34,A1,child,,child,Y
+4,test,6,B1,child,My mine looks like a person that has their hands in their pocket and is walking away,,Y
+4,test,6,B1,parent,oh yeah!,,Y
+4,test,6,B1,parent,,parent,Y
+4,test,6,B1,child,good job!,,Y
+4,test,18,B1,parent,My person had a bad day,,Y
+4,test,18,B1,child,,child,Y
+4,test,18,B1,parent,good job,,Y
+4,test,28,B1,child,My person looks like they're sad because somebody zzz,,Y
+4,test,28,B1,parent,Oh maybe they're looking on the ground for another one maybe they're gonna see,,Y
+4,test,28,B1,parent,,parent,Y
+4,test,40,B1,parent,My person is looking for a rocket to play pinecone and kick on zzz,,Y
+4,test,40,B1,child,,child,Y
+4,test,2,C1,child,Mine looks like a guy bendi--mine looks kinda like a guy bending down,,Y
+4,test,2,C1,parent,Oh I see,,Y
+4,test,2,C1,parent,,parent,Y
+4,test,2,C1,child,Yes!,,Y
+4,test,12,C1,parent,Mine looks like a person who dropped their keys on the ground,,Y
+4,test,12,C1,child,,child,Y
+4,test,22,C1,child,My person looks like he just dropped a penny and picked it up,,Y
+4,test,22,C1,parent,"oh, good!",,Y
+4,test,22,C1,parent,,parent,Y
+4,test,36,C1,parent,"My person is diving into the pool, with their arms",,Y
+4,test,36,C1,child,,child,Y
+4,test,36,C1,parent,good job!,,Y
+4,test,9,D1,parent,Mine looks like a person swimming,,Y
+4,test,9,D1,child,,child,Y
+4,test,19,D1,child,My person looks like they're swimming,,Y
+4,test,19,D1,parent,oh yeah!,,Y
+4,test,19,D1,parent,,parent,Y
+4,test,23,D1,parent,My person is superman zzz,,N
+4,test,23,D1,child,,child,N
+4,test,37,D1,child,My person looks like they're swimming at the end of the ocean,,Y
+4,test,37,D1,parent,,parent,Y
+4,test,4,E1,child,Mine looks like a person jumping for joy,,Y
+4,test,4,E1,parent,,parent,Y
+4,test,4,E1,parent,Oh I love it that's a good description,,Y
+4,test,20,E1,parent,Oh my person looks like we just did the best job and they're like yeah,,Y
+4,test,20,E1,child,,child,Y
+4,test,20,E1,parent,good job!,,Y
+4,test,30,E1,child,Mine looks like they're jumping for joy because zzz,,Y
+4,test,30,E1,parent,Yeah!,,Y
+4,test,30,E1,parent,,parent,Y
+4,test,38,E1,parent,My person is jumping up to catch something,,Y
+4,test,38,E1,child,,child,Y
+4,test,38,E1,child,got it,,Y
+4,test,10,F1,child,Mine looks like a person raise mine looks like a person making their hands in like a triangle shape and and and their feet are apart,,Y
+4,test,10,F1,parent,Oh yeah they're like hold that bus,,Y
+4,test,10,F1,parent,,parent,Y
+4,test,16,F1,parent,"that's okay.  I have a person saying wait for me, wait up!",,Y
+4,test,16,F1,child,,child,Y
+4,test,16,F1,child,I love that person who is waiting for the bus,,Y
+4,test,16,F1,parent,"Yeah, hold that bus!",,Y
+4,test,26,F1,child,My person my person is waiting for the bus and the bus ran off so,,Y
+4,test,26,F1,parent,oh no!,,Y
+4,test,26,F1,parent,"Good, yeah",,Y
+4,test,26,F1,parent,,parent,Y
+4,test,32,F1,parent,"My person is running down the street saying here I am, here I am, here I am!",,Y
+4,test,32,F1,child,,child,Y
+4,test,7,G1,parent,Well mine looks like someone who's kneeling down maybe to do something on the ground,,Y
+4,test,7,G1,child,,child,Y
+4,test,17,G1,child,My uh my person looks like they're sitting down on a bench,,Y
+4,test,17,G1,parent,Oh yeah!,,Y
+4,test,17,G1,parent,,parent,Y
+4,test,17,G1,parent,that's a good description,,Y
+4,test,29,G1,parent,Mine looks like a person who is sitting down for a quiet break,,Y
+4,test,29,G1,child,,child,Y
+4,test,33,G1,child,Oh it's my turn wait for me but my person is quietly waiting for the bus on a bench,,Y
+4,test,33,G1,parent,Oh yeah!,,Y
+4,test,33,G1,parent,,parent,Y
+4,test,33,G1,parent,they're early for it,,Y
+4,test,5,H1,parent,Mine looks like someone's hungry and is like can I please have some more,,Y
+4,test,5,H1,child,,child,Y
+4,test,5,H1,parent,good job!,,Y
+4,test,11,H1,child,Mine looks like mine looks like a monk,,Y
+4,test,11,H1,parent,oh yeah!,,Y
+4,test,11,H1,child,Mhm,,Y
+4,test,11,H1,parent,,parent,Y
+4,test,11,H1,parent,You're right with that monk,,Y
+4,test,25,H1,parent,"My person, he does look like a monk, holding a bowl",,Y
+4,test,25,H1,child,,child,Y
+4,test,25,H1,parent,good job!,,Y
+4,test,31,H1,child,My person looks like my person looks like it's it's a person who gives the flowers at zzz,,Y
+4,test,31,H1,parent,oh,,Y
+4,test,31,H1,parent,,parent,Y
+4,test,31,H1,parent,Yeah holding something like that,,Y
+4,test,31,H1,child,Yeah,,Y
+4,test,3,I1,parent,Mine looks like a guy carrying a tray saying would you like some?,,Y
+4,test,3,I1,child,,child,Y
+4,test,3,I1,parent,"Yeah, these are funny!",,Y
+4,test,15,I1,child,Mine looks like zzz a water for their dog,,Y
+4,test,15,I1,parent,Oh yeah!,,Y
+4,test,15,I1,parent,,parent,Y
+4,test,15,I1,parent,good description!,,Y
+4,test,27,I1,child,What is your person,,Y
+4,test,27,I1,parent,Oh yeah it's my turn isn't it? I have a person who's saying hey brought you some flowers,,Y
+4,test,27,I1,child,,child,Y
+4,test,39,I1,child,"My person is holding my person is holding out out a bucket of flowers, they're holding the flowers and putting them down for for their garden",,Y
+4,test,39,I1,parent,oh yeah!,,Y
+4,test,39,I1,parent,,parent,Y
+4,test,1,K1,parent,"OK, so you see the tangrams? Do you remember this?",,Y
+4,test,1,K1,child,zzz,,Y
+4,test,1,K1,parent,"OK, so mine looks like a guy with a little hat and he's going",,Y
+4,test,1,K1,child,,child,Y
+4,test,1,K1,parent,"Yeah, you got it!",,Y
+4,test,13,K1,child,Mine looks like a person that's ready to eat something and waiting for someone give them food,,Y
+4,test,13,K1,parent,"OK, got it",,Y
+4,test,13,K1,parent,,parent,Y
+4,test,21,K1,parent,OK now mine is the person who's leaning forward and holding his hands out,,Y
+4,test,21,K1,child,,child,Y
+4,test,21,K1,child,I know I got it,,Y
+4,test,21,K1,parent,Yeah?,,Y
+4,test,21,K1,child,he's begging for food,,Y
+4,test,21,K1,parent,yeah,,Y
+4,test,35,K1,child,My person is holding out some water I mean holding out a pot of soup for anybody wants to get it,,Y
+4,test,35,K1,parent,"oh nice, yeah!",,Y
+4,test,35,K1,parent,,parent,Y

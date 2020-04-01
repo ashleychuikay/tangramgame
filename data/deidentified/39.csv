@@ -1,0 +1,110 @@
+subid,type,trial,target,person,utterance,selection,correct
+39,practice,1,apple,parent,"ok, do you see an apple?",,Y
+39,practice,1,apple,child,yes,,Y
+39,practice,1,apple,child,,child,Y
+39,practice,4,apple,parent,now describe to me which one's in your blue box,,Y
+39,practice,4,apple,child,it's red and it's very tasty,,Y
+39,practice,4,apple,parent,"ohh, i think i know",,Y
+39,practice,4,apple,parent,,parent,Y
+39,practice,2,artichoke,parent,which one of yours is in a blue box? can you describe it to me?,,Y
+39,practice,2,artichoke,child,it's bristly,,Y
+39,practice,2,artichoke,parent,bristly. like an onion or not like an onion?,,Y
+39,practice,2,artichoke,child,not like an onion,,Y
+39,practice,2,artichoke,parent,,parent,Y
+39,practice,5,artichoke,parent,"ok, now this one is bristly like the one you said before",,Y
+39,practice,5,artichoke,child,,child,Y
+39,practice,3,onion,parent,"ok, now this one i have the one in the blue box looks like an onion",,Y
+39,practice,3,onion,child,,child,Y
+39,practice,6,onion,parent,which one of yours is in a blue box now?,,Y
+39,practice,6,onion,child,it's crunchy like an onion,,Y
+39,practice,6,onion,parent,,parent,Y
+39,test,10,A1,child,mine looks like a person standing on one leg,,Y
+39,test,10,A1,parent,,parent,Y
+39,test,16,A1,parent,"alright, this almost looks like somebody standing on one leg or running",,Y
+39,test,16,A1,child,,child,Y
+39,test,30,A1,child,mine looks like someone standing on one foot,,Y
+39,test,30,A1,parent,,parent,Y
+39,test,36,A1,parent,mine looks like a person running on one leg,,Y
+39,test,36,A1,child,,child,Y
+39,test,3,B1,parent,this one looks like a man standing up and walking with it's head tilted,,Y
+39,test,3,B1,child,,child,Y
+39,test,11,B1,child,it looks like a person walking with its head down,,Y
+39,test,11,B1,parent,,parent,Y
+39,test,27,B1,parent,mine looks like somebody walking with their head down,,Y
+39,test,27,B1,child,,child,Y
+39,test,31,B1,child,the one walking with his head down,,Y
+39,test,31,B1,parent,,parent,Y
+39,test,4,C1,child,mine looks like a person crouching,,Y
+39,test,4,C1,parent,,parent,Y
+39,test,12,C1,parent,"alright, this one looks like someone crouching or kneeling or something like that",,Y
+39,test,12,C1,child,,child,Y
+39,test,22,C1,child,mine looks like someone crouching,,Y
+39,test,22,C1,parent,,parent,Y
+39,test,38,C1,parent,mine looks like a person crouching,,Y
+39,test,38,C1,child,,child,Y
+39,test,7,D1,parent,"alright, mine looks like a person laying down",,Y
+39,test,7,D1,child,,child,Y
+39,test,13,D1,child,he's laying down,,Y
+39,test,13,D1,parent,,parent,Y
+39,test,23,D1,parent,mine looks like somebody laying down,,Y
+39,test,23,D1,child,,child,Y
+39,test,33,D1,child,this looks like a person reading,,Y
+39,test,33,D1,parent,,parent,Y
+39,test,9,E1,parent,mine kind of looks like somebody jumping up in the air like they're very excited,,Y
+39,test,9,E1,child,,child,Y
+39,test,19,E1,child,mine looks like a person jumping,,Y
+39,test,19,E1,parent,,parent,Y
+39,test,21,E1,parent,ok now the one in my blue square looks like somebody jumping into the air,,Y
+39,test,21,E1,child,,child,Y
+39,test,37,E1,child,mine looks like a person jumping,,Y
+39,test,37,E1,parent,,parent,Y
+39,test,1,F1,parent,"ok, the shape i want you to click on has a square and some pointy pieces and some triangles on the bottom corner",,Y
+39,test,1,F1,child,,child,Y
+39,test,17,F1,child,mine looks like a person doing the splits in zzz,,Y
+39,test,17,F1,parent,,parent,Y
+39,test,29,F1,parent,mine looks like somebody doing the splits in the hallway,,Y
+39,test,29,F1,child,,child,Y
+39,test,35,F1,child,mine looks like a person doing splits,,Y
+39,test,35,F1,parent,,parent,Y
+39,test,2,G1,parent,"ok, describe to me the one that's in the blue box for you now",,Y
+39,test,2,G1,child,she has a dress and the head is tilted and it's sitting on the square,,Y
+39,test,2,G1,parent,,parent,Y
+39,test,20,G1,parent,i heard you describe this one before as someone wearing a dress,,Y
+39,test,20,G1,child,,child,Y
+39,test,26,G1,child,mine looks like someone sitting down,,Y
+39,test,26,G1,parent,sitting down or laying down?,,Y
+39,test,26,G1,child,sitting down,,Y
+39,test,26,G1,parent,,parent,Y
+39,test,34,G1,parent,mine looks like a person sitting down,,Y
+39,test,34,G1,child,,child,Y
+39,test,6,H1,child,it looks like he's worshiping,,Y
+39,test,6,H1,parent,"interesting. ok, does it look like he's standing or jumping?",,Y
+39,test,6,H1,child,standing,,Y
+39,test,6,H1,parent,,parent,Y
+39,test,18,H1,parent,"um, mine looks like somebody who's maybe wearing a robe and standing up, and maybe they're hodling something?",,Y
+39,test,18,H1,child,,child,Y
+39,test,28,H1,child,now it looks like a priest,,Y
+39,test,28,H1,parent,hmm. a priest walking or running or just standing?,,Y
+39,test,28,H1,child,Just standing,,Y
+39,test,28,H1,parent,,parent,Y
+39,test,32,H1,parent,this one looks like the priest,,Y
+39,test,32,H1,child,,child,Y
+39,test,8,I1,child,"mine looks like a boy kneeling with a hand behind his back, carrying a pitcher",,Y
+39,test,8,I1,parent,carrying a pitcher?,,Y
+39,test,8,I1,child,that's a square,,Y
+39,test,8,I1,parent,"hmm, okay",,Y
+39,test,8,I1,parent,,parent,Y
+39,test,14,I1,parent,"ok, mine looks like somebody bending over and it looks like he's holding a bowl or something",,Y
+39,test,14,I1,child,,child,Y
+39,test,24,I1,child,mine looks like someone bending over,,Y
+39,test,24,I1,parent,,parent,Y
+39,test,40,I1,parent,mine looks like a person bending over holding a bowl,,Y
+39,test,40,I1,child,,child,Y
+39,test,5,K1,parent,mine looks like somebody bending over and it almost looks like they have a tail,,Y
+39,test,5,K1,child,,child,Y
+39,test,15,K1,child,it's a guy kneeling over,,Y
+39,test,15,K1,parent,,parent,Y
+39,test,25,K1,parent,"mine also looks like someone bending over this time, maybe they have a tail though",,Y
+39,test,25,K1,child,,child,Y
+39,test,39,K1,child,mine looks like a person bending over,,Y
+39,test,39,K1,parent,,parent,Y

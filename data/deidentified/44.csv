@@ -1,0 +1,112 @@
+subid,type,trial,target,person,utterance,selection,correct
+44,practice,1,apple,parent,An apple,,Y
+44,practice,1,apple,child,,child,Y
+44,practice,4,apple,child,It's a banana with a straight zzz,,N
+44,practice,4,apple,parent,,parent,N
+44,practice,2,artichoke,child,It's a pine cone,,Y
+44,practice,2,artichoke,parent,,parent,Y
+44,practice,5,artichoke,parent,It is an artichoke that looks like a pine cone,,Y
+44,practice,5,artichoke,child,,child,Y
+44,practice,3,onion,parent,It's um onion like a more round ball,,Y
+44,practice,3,onion,child,,child,Y
+44,practice,6,onion,child,It's a onion with a round sack,,Y
+44,practice,6,onion,parent,,parent,Y
+44,test,3,A1,parent,Alright now you have to select the one that has the person running with one foot on the ground,,Y
+44,test,3,A1,child,OK it's a a person running with one foot,,Y
+44,test,3,A1,child,,child,Y
+44,test,3,A1,child,on the ground and and two and a and then,,Y
+44,test,17,A1,child,In the blue square there's a person walking with one foot on the ground,,Y
+44,test,17,A1,parent,,parent,Y
+44,test,27,A1,parent,This is the person running,,Y
+44,test,27,A1,child,,child,Y
+44,test,37,A1,child,It's the a person running with,,Y
+44,test,37,A1,parent,,parent,Y
+44,test,8,B1,child,Um it's a people uh lonely uh by itself with a with a with one foot walking on the ground and its face up they um at they at the,,Y
+44,test,8,B1,parent,Is it wearing a hat,,Y
+44,test,8,B1,child,No,,Y
+44,test,8,B1,parent,No hat,,Y
+44,test,8,B1,child,No,,Y
+44,test,8,B1,parent,,parent,Y
+44,test,16,B1,parent,Alright yyy this is a persn standing up and walking,,Y
+44,test,16,B1,child,,child,Y
+44,test,24,B1,child,It's a person lonely and sad with a with one feet walking and another feet walking and,,Y
+44,test,24,B1,parent,,parent,Y
+44,test,24,B1,parent,He does look zzz yyy he does look lonely and sad doesn't he he does yeah,,Y
+44,test,38,B1,parent,It's the person who looks sad and lonely,,Y
+44,test,38,B1,child,,child,Y
+44,test,5,C1,parent,OK now this is a person kind of crouching down with their head near the ground,,Y
+44,test,5,C1,child,,child,Y
+44,test,11,C1,child,It's a person crouching on the floor,,Y
+44,test,11,C1,parent,,parent,Y
+44,test,25,C1,parent,Oh this is the one crouching down,,Y
+44,test,25,C1,child,,child,Y
+44,test,31,C1,child,Ok it's a person crouching down zzz,,Y
+44,test,31,C1,parent,,parent,Y
+44,test,9,D1,parent,Alright uh this is the one the person's lying down,,Y
+44,test,9,D1,child,,child,Y
+44,test,15,D1,child,It's a person lying down with,,Y
+44,test,15,D1,parent,,parent,Y
+44,test,21,D1,parent,This is a person lying down,,Y
+44,test,21,D1,child,,child,Y
+44,test,35,D1,child,It's a person lied down,,Y
+44,test,35,D1,parent,,parent,Y
+44,test,2,E1,child,It's a shape,,Y
+44,test,2,E1,parent,Does it look like a shape of someoen running or someone jumping,,Y
+44,test,2,E1,child,Someone uh running on their tippy toes,,Y
+44,test,2,E1,parent,Do they have one foot on the ground or two feet on the ground,,Y
+44,test,2,E1,child,Two feet,,Y
+44,test,2,E1,parent,On the ground,,Y
+44,test,2,E1,child,Yeah,,Y
+44,test,2,E1,child,With their knees they're running with their knees,,Y
+44,test,2,E1,parent,Is one foot forward and one foot back,,Y
+44,test,2,E1,child,No both feet back,,Y
+44,test,2,E1,parent,,parent,Y
+44,test,18,E1,parent,Alright this is a person jumping with two feet in the air and their hands up,,Y
+44,test,18,E1,child,,child,Y
+44,test,28,E1,child,This is the person jumping with two feet,,Y
+44,test,28,E1,parent,,parent,Y
+44,test,32,E1,parent,Person jumping in the air,,Y
+44,test,32,E1,child,,child,Y
+44,test,7,F1,parent,This is a person that's kind of bent in half like kind of bent over and their feet are really wide apart,,Y
+44,test,7,F1,child,,child,Y
+44,test,13,F1,child,In the blue square um it's a people wide with its legs straight open,,Y
+44,test,13,F1,parent,,parent,Y
+44,test,23,F1,parent,Alright this is a person whose legs spread wide open with his feet wide open,,Y
+44,test,23,F1,child,,child,Y
+44,test,33,F1,child,It's a person walking with it's wide open,,Y
+44,test,33,F1,parent,,parent,Y
+44,test,6,G1,child,OK it's a people sitting with no feet and a head,,Y
+44,test,6,G1,parent,,parent,Y
+44,test,12,G1,parent,This is a person sitting down in his seat,,Y
+44,test,12,G1,child,,child,Y
+44,test,22,G1,child,OK it's a person sitting on a chair,,Y
+44,test,22,G1,parent,,parent,Y
+44,test,34,G1,parent,This is a person sitting down,,Y
+44,test,34,G1,child,,child,Y
+44,test,10,H1,child,Um it's a person staying still with its eyes with its eyes straight and it's a little a little um finger pointing,,Y
+44,test,10,H1,parent,Hm does it have one foot on the ground or one foot behind him,,Y
+44,test,10,H1,child,No no no no two feet on the ground and face,,Y
+44,test,10,H1,parent,,parent,Y
+44,test,20,H1,parent,Alright this is a person with standing up with like a tray in his hand,,Y
+44,test,20,H1,child,,child,Y
+44,test,26,H1,child,It's a person with another tray in his hand,,Y
+44,test,26,H1,parent,,parent,Y
+44,test,40,H1,parent,This is the person with a tray in his hand,,Y
+44,test,40,H1,child,,child,Y
+44,test,4,I1,child,Um it's a people standing with a uh um a a a different kind of shaped triangle um it's in its hand,,Y
+44,test,4,I1,parent,,parent,Y
+44,test,14,I1,parent,OK this is like a guy holding a triangle in his hand,,Y
+44,test,14,I1,parent,He he's leaning,,Y
+44,test,14,I1,child,,child,Y
+44,test,14,I1,parent,over good job,,Y
+44,test,30,I1,child,Um there's a person um who um have in his hand like a triangle,,Y
+44,test,30,I1,parent,,parent,Y
+44,test,36,I1,parent,It's the person with a triangle on his hand,,Y
+44,test,36,I1,child,,child,Y
+44,test,1,K1,child,,child,Y
+44,test,19,K1,child,It's a person wearing a hat and it's got,,Y
+44,test,19,K1,parent,,parent,Y
+44,test,29,K1,parent,OK this is a person leaning over with his toushie out and a tray in his hand and he's wearing a hat,,Y
+44,test,29,K1,child,,child,Y
+44,test,39,K1,child,This is a person um have the zzz and,,Y
+44,test,39,K1,parent,,parent,Y

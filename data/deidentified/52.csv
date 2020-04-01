@@ -1,0 +1,102 @@
+subid,type,trial,target,person,utterance,selection,correct
+52,practice,1,apple,parent,press the apple,,Y
+52,practice,1,apple,child,,child,Y
+52,practice,4,apple,child,apple!,,Y
+52,practice,4,apple,parent,,parent,Y
+52,practice,2,artichoke,parent,"Now you tell me, what is the blue box, which one is the blue box?",,Y
+52,practice,2,artichoke,child,cabbage,,Y
+52,practice,2,artichoke,parent,,parent,Y
+52,practice,5,artichoke,parent,it's an artichoke but you called it a cabbage,,Y
+52,practice,5,artichoke,child,well its the same thing,,Y
+52,practice,5,artichoke,child,,child,Y
+52,practice,3,onion,parent,can you press the onion?,,Y
+52,practice,3,onion,child,,child,Y
+52,practice,6,onion,child,onion,,Y
+52,practice,6,onion,parent,,parent,Y
+52,test,4,A1,child,one that looks like someone is standing on one foot,,N
+52,test,4,A1,parent,,parent,N
+52,test,20,A1,parent,"someone with two legs, spread out, like they are dancing",,Y
+52,test,20,A1,child,,child,Y
+52,test,30,A1,child,someone standing on one foot,,Y
+52,test,30,A1,parent,,parent,Y
+52,test,32,A1,parent,"someone with two feet spread out and a square on her head, with two feet",,Y
+52,test,32,A1,child,,child,Y
+52,test,5,B1,parent,the person standing tall,,Y
+52,test,5,B1,child,,child,Y
+52,test,19,B1,child,someone walking,,Y
+52,test,19,B1,parent,,parent,Y
+52,test,21,B1,parent,someone leaning forward with two legs,,Y
+52,test,21,B1,child,okay,,Y
+52,test,21,B1,child,,child,Y
+52,test,35,B1,child,someone walking,,Y
+52,test,35,B1,parent,,parent,Y
+52,test,6,C1,child,someone laying down,,Y
+52,test,6,C1,parent,,parent,Y
+52,test,12,C1,parent,someone that look like they are going to do a somersault,,Y
+52,test,12,C1,child,,child,Y
+52,test,28,C1,child,someone laying down,,Y
+52,test,28,C1,parent,,parent,Y
+52,test,38,C1,parent,someone looks like they did a somersault,,Y
+52,test,38,C1,child,,child,Y
+52,test,1,D1,parent,can you press the shape that has... looks like an airplane I guess,,Y
+52,test,1,D1,child,,child,Y
+52,test,1,D1,child,yes! gotcha,,Y
+52,test,11,D1,parent,can you tell me,,Y
+52,test,11,D1,child,someone laying down,,Y
+52,test,11,D1,parent,,parent,Y
+52,test,29,D1,parent,someone laying down,,Y
+52,test,29,D1,child,,child,Y
+52,test,39,D1,child,someone laying down like an airplane,,Y
+52,test,39,D1,parent,,parent,Y
+52,test,3,E1,parent,"it looks like something with wings, with a square head and two legs, but wings, big streching out the arms--do you know which one?",,N
+52,test,3,E1,child,the second one!,,N
+52,test,3,E1,parent,then press,,N
+52,test,3,E1,child,,child,N
+52,test,13,E1,child,someone has a dimond head a big one,,Y
+52,test,13,E1,parent,,parent,Y
+52,test,25,E1,parent,someone looks like they are jumping up with two legs,,Y
+52,test,25,E1,child,,child,Y
+52,test,31,E1,child,someone jumping up with two legs,,Y
+52,test,31,E1,parent,,parent,Y
+52,test,9,F1,parent,someone that looks like they are doing the splits,,Y
+52,test,9,F1,child,easy,,Y
+52,test,9,F1,child,,child,Y
+52,test,15,F1,child,someone that is like doing the splits,,Y
+52,test,15,F1,parent,,parent,Y
+52,test,23,F1,parent,someone looks like they are doing splits,,Y
+52,test,23,F1,child,,child,Y
+52,test,37,F1,child,someone like jumping out with two legs,,Y
+52,test,37,F1,parent,,parent,Y
+52,test,8,G1,child,someone that looks like kind of a wand,,Y
+52,test,8,G1,parent,,parent,Y
+52,test,14,G1,parent,someone that looks like they are sitting in a chair,,Y
+52,test,14,G1,child,,child,Y
+52,test,26,G1,child,someone that is like a sitting on a chair,,Y
+52,test,26,G1,parent,,parent,Y
+52,test,40,G1,parent,someone sitting in a chair,,Y
+52,test,40,G1,child,,child,Y
+52,test,2,H1,parent,can you tell me?,,Y
+52,test,2,H1,child,it looks like a person,,Y
+52,test,2,H1,parent,,parent,Y
+52,test,16,H1,parent,someone that looks like serving food on the platter,,Y
+52,test,16,H1,child,,child,Y
+52,test,22,H1,child,someone serving food,,Y
+52,test,22,H1,parent,,parent,Y
+52,test,34,H1,parent,someone serving food,,Y
+52,test,34,H1,child,,child,Y
+52,test,7,I1,parent,someone that looks like they are serving food on a platter,,Y
+52,test,7,I1,child,,child,Y
+52,test,17,I1,child,someone serving food,,Y
+52,test,17,I1,parent,,parent,Y
+52,test,27,I1,parent,someone serving food,,Y
+52,test,27,I1,child,,child,Y
+52,test,33,I1,child,someone serving food,,Y
+52,test,33,I1,parent,,parent,Y
+52,test,10,K1,child,someone standing on one foot,,Y
+52,test,10,K1,parent,,parent,Y
+52,test,18,K1,parent,someone looks like they are serving food again,,Y
+52,test,18,K1,child,,child,Y
+52,test,24,K1,child,someone standing on one foot with a house on their head,,Y
+52,test,24,K1,parent,,parent,Y
+52,test,36,K1,parent,someone serving food,,Y
+52,test,36,K1,child,,child,Y

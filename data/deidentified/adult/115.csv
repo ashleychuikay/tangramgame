@@ -1,0 +1,108 @@
+subid,type,trial,target,person,utterance,selection,correct
+115,practice,1,apple,right,"uh, select the apple?",,Y
+115,practice,1,apple,left,,left,Y
+115,practice,4,apple,left,the apple,,Y
+115,practice,4,apple,right,,right,Y
+115,practice,2,artichoke,left,"uh, that is a vegetable that i don't know. not the onion, the other one",,Y
+115,practice,2,artichoke,right,ok,,Y
+115,practice,2,artichoke,right,,right,Y
+115,practice,2,artichoke,right,is that a brussels sprout?,,Y
+115,practice,5,artichoke,right,"uh select the brussels sprout, i think that's what it was",,Y
+115,practice,5,artichoke,left,,left,Y
+115,practice,3,onion,right,"uh, select the onion",,Y
+115,practice,3,onion,left,,left,Y
+115,practice,6,onion,left,"uh, the onion",,Y
+115,practice,6,onion,right,,right,Y
+115,test,1,A1,right,"ok it's, select the thing that's with the, with the rotated square at the top",,Y
+115,test,1,A1,left,,left,Y
+115,test,15,A1,left,"um, select the one that looks like it's running",,Y
+115,test,15,A1,right,ok,,Y
+115,test,15,A1,right,,right,Y
+115,test,29,A1,right,pick the one with the smaller square on top,,Y
+115,test,29,A1,left,,left,Y
+115,test,31,A1,left,um looks like it's running,,Y
+115,test,31,A1,right,,right,Y
+115,test,4,B1,left,"uh select the one that is upright, not horizontal",,Y
+115,test,4,B1,right,ok,,Y
+115,test,4,B1,right,,right,Y
+115,test,18,B1,right,"uh do the one that's, doesn't have an arm",,Y
+115,test,18,B1,left,,left,Y
+115,test,24,B1,left,um the guy who looks like he's walking,,Y
+115,test,24,B1,right,,right,Y
+115,test,40,B1,right,"pick the one that's like, uh, walking",,Y
+115,test,40,B1,left,,left,Y
+115,test,6,C1,left,"uh, select the one that's not the humanlike figure holding the triangle",,Y
+115,test,6,C1,right,,right,Y
+115,test,12,C1,right,"um, select the one that's like, it looks like it's, uh, bowing",,Y
+115,test,12,C1,left,,left,Y
+115,test,28,C1,left,he looks like he's kneeling,,Y
+115,test,28,C1,right,,right,Y
+115,test,38,C1,right,uh pick the one that's bowing,,Y
+115,test,38,C1,left,,left,Y
+115,test,7,D1,right,"um, select the one that's, uh, more horizontal",,Y
+115,test,7,D1,left,,left,Y
+115,test,17,D1,left,"um, the more horizontal one",,Y
+115,test,17,D1,right,,right,Y
+115,test,21,D1,right,"ok, um, pick the horizontal one",,Y
+115,test,21,D1,left,,left,Y
+115,test,33,D1,left,the one that's horizontal,,Y
+115,test,33,D1,right,,right,Y
+115,test,9,E1,right,"um, select the one that looks like its arms are up in the air",,Y
+115,test,9,E1,left,,left,Y
+115,test,11,E1,left,oh yeah the one with the kid- looking like it's got its arms up in the air,,Y
+115,test,11,E1,right,ok,,Y
+115,test,11,E1,right,,right,Y
+115,test,23,E1,right,um pick the one with the arms up in the air,,Y
+115,test,23,E1,left,,left,Y
+115,test,39,E1,left,uh the one with the arms in the air,,Y
+115,test,39,E1,right,,right,Y
+115,test,10,F1,left,"oh geez, it kinda looks like a mess, it's really spiky",,Y
+115,test,10,F1,right,ok so that one,,Y
+115,test,10,F1,left,yeah,,Y
+115,test,10,F1,right,,right,Y
+115,test,20,F1,right,uh do the one that's got the square lower than the highest point,,Y
+115,test,20,F1,left,,left,Y
+115,test,22,F1,left,"uh i described it as a mess last time, but you described it as the square below the horizontal, or below the top",,Y
+115,test,22,F1,right,"yeah, ok",,Y
+115,test,22,F1,right,,right,Y
+115,test,32,F1,right,uh the one that's not bowing,,Y
+115,test,32,F1,left,,left,Y
+115,test,2,G1,left,"um, select the one that is, uh, upright, not horizontal",,Y
+115,test,2,G1,right,ok,,Y
+115,test,2,G1,right,,right,Y
+115,test,14,G1,right,"um, select the kneeling one, that's going...",,Y
+115,test,14,G1,left,,left,Y
+115,test,30,G1,left,"uh, not the one that's kneeling",,Y
+115,test,30,G1,right,"ok, so the bowing one?",,Y
+115,test,30,G1,left,"no, no, sorry, um, i guess it's more of a vertical",,Y
+115,test,30,G1,right,ok,,Y
+115,test,30,G1,right,,right,Y
+115,test,36,G1,right,uh pick the one that's kneeling,,Y
+115,test,36,G1,left,,left,Y
+115,test,8,H1,left,"um, select the one that's uh thicker",,Y
+115,test,8,H1,right,yeah that's what i was going to say,,Y
+115,test,8,H1,right,,right,Y
+115,test,16,H1,right,"do the one with the, uh, like the more vertical one",,Y
+115,test,16,H1,left,,left,Y
+115,test,26,H1,left,"uh, not the arms one",,Y
+115,test,26,H1,right,,right,Y
+115,test,34,H1,right,"uh pick the one that's more, uh, vertical",,Y
+115,test,34,H1,left,,left,Y
+115,test,5,I1,right,"select the, like the humanlike figure holding up the triangle",,Y
+115,test,5,I1,left,ok,,Y
+115,test,5,I1,left,,left,Y
+115,test,13,I1,left,select the one that's not the bowing,,Y
+115,test,13,I1,right,,right,Y
+115,test,27,I1,right,pick the one that's holding up the triangle,,Y
+115,test,27,I1,left,,left,Y
+115,test,37,I1,left,"uh the one with, uh, holding a triangle",,Y
+115,test,37,I1,right,,right,Y
+115,test,3,K1,right,"select the, the one with the, like, rotated house shape on top",,Y
+115,test,3,K1,left,,left,Y
+115,test,19,K1,left,"um, not the horizontal one",,Y
+115,test,19,K1,right,ok,,Y
+115,test,19,K1,right,,right,Y
+115,test,25,K1,right,"um, pick the one with the house shape on top",,Y
+115,test,25,K1,left,,left,Y
+115,test,35,K1,left,"um, the one that's not running, looks like it's slightly leaning over",,Y
+115,test,35,K1,right,,right,Y

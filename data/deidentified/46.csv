@@ -1,0 +1,199 @@
+subid,type,trial,target,person,utterance,selection,correct
+46,practice,1,apple,parent,inside my blue box (can I tell her exactly what it is?) i have an apple. do you see an apple? you have to select the picture that has an apple.,,Y
+46,practice,1,apple,child,,child,Y
+46,practice,4,apple,child,a apple,,Y
+46,practice,4,apple,parent,an apple is inside of your blue box?,,Y
+46,practice,4,apple,parent,,parent,Y
+46,practice,4,apple,child,an apple is smooth,,Y
+46,practice,4,apple,parent,"yes, an apple is smooth",,Y
+46,practice,2,artichoke,parent,"ok, i have",,Y
+46,practice,2,artichoke,child,I have a square box,,Y
+46,practice,2,artichoke,child,it looks like brocoli,,Y
+46,practice,2,artichoke,parent,it looks like brocoli? does it have things kind of like flower petals on it?,,Y
+46,practice,2,artichoke,child,uh uh,,Y
+46,practice,2,artichoke,parent,no?,,Y
+46,practice,2,artichoke,child,but it does,,Y
+46,practice,2,artichoke,parent,but it does?,,Y
+46,practice,2,artichoke,parent,does it look like it has a stem at the bottom?,,Y
+46,practice,2,artichoke,child,"yeah, it do!",,Y
+46,practice,2,artichoke,parent,does it look smooth or textured?,,Y
+46,practice,2,artichoke,child,smooth,,Y
+46,practice,2,artichoke,parent,it looks smooth?,,Y
+46,practice,2,artichoke,child,mhm,,Y
+46,practice,2,artichoke,parent,so you do not see individual petals?,,Y
+46,practice,2,artichoke,child,mhm,,Y
+46,practice,2,artichoke,parent,"so the picture in your box is smooth, no petals",,Y
+46,practice,2,artichoke,child,you want me to press it?,,Y
+46,practice,2,artichoke,parent,"no, i want you to describe it to me. tell me about it, how it looks, what's inside of your blue box. does it have petals? does it look like flower petals with a stem at the bottom?",,Y
+46,practice,2,artichoke,child,yeah,,Y
+46,practice,2,artichoke,parent,inside your blue box?,,Y
+46,practice,2,artichoke,child,yes,,Y
+46,practice,2,artichoke,parent,,parent,Y
+46,practice,5,artichoke,parent,"so what's inside of my blue box is an artichoke. remember, an artichoke looked like it had flower petals with a stem. it's that picture",,Y
+46,practice,5,artichoke,child,,child,Y
+46,practice,3,onion,parent,"i think i'm supposed to describe it to you, so inside of my blue box it looks like an onion. it's smooth. so you have to select the picture that's smooth.",,Y
+46,practice,3,onion,child,,child,Y
+46,practice,6,onion,parent,what's inside of your blue box?,,Y
+46,practice,6,onion,child,"a pepper, it's so soft",,Y
+46,practice,6,onion,parent,"ok, a pepper? or maybe an onion?",,Y
+46,practice,6,onion,child,it looks like an onion,,Y
+46,practice,6,onion,parent,it looks like an onion?,,Y
+46,practice,6,onion,child,yeah,,Y
+46,practice,6,onion,parent,okay,,Y
+46,practice,6,onion,parent,,parent,Y
+46,test,4,A1,parent,what's inside of your blue box?,,Y
+46,test,4,A1,child,it's a person walking,,Y
+46,test,4,A1,parent,"ooh, like a person walking?",,Y
+46,test,4,A1,child,mhm,,Y
+46,test,4,A1,parent,,parent,Y
+46,test,12,A1,parent,"the one you should select look like a person standing on one leg and the other leg is up in the air, like they're trying to walk away, or they're jumping on one leg",,Y
+46,test,12,A1,child,,child,Y
+46,test,30,A1,parent,what's inside of your blue box?,,Y
+46,test,30,A1,child,a lady running,,Y
+46,test,30,A1,parent,a lady running is inside your blue box?,,Y
+46,test,30,A1,parent,,parent,Y
+46,test,40,A1,parent,"in my blue box i have lots of squares, i mean lots of triangles and one square at the top. it looks like the person is dancing on one leg, with one leg in the air",,Y
+46,test,40,A1,child,,child,Y
+46,test,10,B1,child,my box has a peoples walking,,Y
+46,test,10,B1,parent,it looks like a person walking away? inside of your blue box?,,Y
+46,test,10,B1,child,uh-huh,,Y
+46,test,10,B1,parent,,parent,Y
+46,test,16,B1,parent,inside of my blue box is something that look like the square head is facing the ground and the person is walking away,,Y
+46,test,16,B1,child,,child,Y
+46,test,26,B1,parent,"ok, so inside of your blue box it looks like it's a square trying to go inside of another shape, or it look like a person walking away. which one's inside of your blue box?",,Y
+46,test,26,B1,parent,"i see a person looking down at the ground, is that your shape in the box?",,Y
+46,test,26,B1,child,mhm,,Y
+46,test,26,B1,parent,,parent,Y
+46,test,36,B1,parent,inside of my blue box is a square at the very top and two triangles. the person's feet look like triangles and the head looks like a square,,N
+46,test,36,B1,child,,child,N
+46,test,8,C1,child,mine has like he's laying down,,Y
+46,test,8,C1,parent,the person look like they're laying down?,,Y
+46,test,8,C1,child,mhm,,Y
+46,test,8,C1,parent,"like they're laying on their knees, bent over?",,Y
+46,test,8,C1,child,mhm,,Y
+46,test,8,C1,parent,okay,,Y
+46,test,8,C1,parent,,parent,Y
+46,test,18,C1,parent,"inside of my blue box it look like a person is laying on their knees and trying.... oh, yyy, you know what it looks like? you know when you do yoga at school? remember the downward dog? it look like someone's trying to do the downward dog pose of yoga",,Y
+46,test,18,C1,child,,child,Y
+46,test,24,C1,child,"my box has um, i don't know what it is",,N
+46,test,24,C1,parent,"does it look like the person's bending over down on the ground, with their face kissing the ground? or does it look like the person's jumping up, maybe a bird?",,N
+46,test,24,C1,child,a bird,,N
+46,test,24,C1,parent,okay,,N
+46,test,24,C1,parent,,parent,N
+46,test,32,C1,parent,"ok, so in my blue box, i see a square that is going inside an empty space. do you see that?",,N
+46,test,32,C1,child,mhm,,N
+46,test,32,C1,child,,child,N
+46,test,7,D1,parent,so inside of my blue box it look like a person is laying down straight with their legs in the air,,Y
+46,test,7,D1,child,,child,Y
+46,test,13,D1,parent,what's in your blue box?,,Y
+46,test,13,D1,child,mine has peoples laying down,,Y
+46,test,13,D1,parent,in your box the person's laying down?,,Y
+46,test,13,D1,child,yeah,,Y
+46,test,13,D1,parent,,parent,Y
+46,test,29,D1,parent,"ok, inside of my blue box i see two triangles. do you see two triangles?",,Y
+46,test,29,D1,child,,child,Y
+46,test,31,D1,parent,can you tell me what you see on your screen?,,Y
+46,test,31,D1,child,my screen is a boy that has two triangles,,Y
+46,test,31,D1,parent,and is the boy laying down or jumping up?,,Y
+46,test,31,D1,child,laying down,,Y
+46,test,31,D1,parent,"oh, those are the two triangles that you seee",,Y
+46,test,31,D1,parent,,parent,Y
+46,test,2,E1,parent,what's inside your box?,,Y
+46,test,2,E1,child,i think she's flying around,,Y
+46,test,2,E1,parent,inside of your blue box looks like a person that's flying?,,Y
+46,test,2,E1,child,mhm,,Y
+46,test,2,E1,parent,,parent,Y
+46,test,14,E1,parent,inside of my blue box kinda look like a bird that's flying again,,Y
+46,test,14,E1,child,,child,Y
+46,test,22,E1,child,i think mine is a bird also,,Y
+46,test,22,E1,parent,inside your box is a bird flying?,,Y
+46,test,22,E1,child,mhm,,Y
+46,test,22,E1,parent,or like a person jumping up?,,Y
+46,test,22,E1,child,a bird flying!,,Y
+46,test,22,E1,parent,,parent,Y
+46,test,38,E1,parent,inside of my blue box it look like a bird flying. it's a square--,,Y
+46,test,38,E1,child,,child,Y
+46,test,9,F1,parent,"inside of my blue box it kind of look like a bird, flying. do you see that?",,Y
+46,test,9,F1,child,uh-huh,,Y
+46,test,9,F1,child,,child,Y
+46,test,15,F1,parent,what's inside of your blue box?,,Y
+46,test,15,F1,child,some that has foots and is walking away,,Y
+46,test,15,F1,parent,the person's walking away?,,Y
+46,test,15,F1,child,mhm,,Y
+46,test,15,F1,parent,do you see that structure that looks like a puppy? or the one that's bending over? halfway over? that's not inside of your box?,,Y
+46,test,15,F1,child,no,,Y
+46,test,15,F1,parent,no? so the one that looks like the person walking away or possibly maybe looks like a bird?,,Y
+46,test,15,F1,child,uh-huh,,Y
+46,test,15,F1,parent,,parent,Y
+46,test,21,F1,parent,inside of my box it look like there is a bird flying,,Y
+46,test,21,F1,child,,child,Y
+46,test,39,F1,child,in my blue box is a kid running.,,Y
+46,test,39,F1,parent,a kid running? and it kind of look like the kids arms are wings? with triangles sticking out? pointy triangles?,,Y
+46,test,39,F1,child,uh-huh,,Y
+46,test,39,F1,parent,and two triangles,,Y
+46,test,39,F1,child,mommy!,,Y
+46,test,39,F1,parent,,parent,Y
+46,test,6,G1,parent,what's inside of your blue box?,,Y
+46,test,6,G1,child,"mine have, i think, a dress and a square on its head",,Y
+46,test,6,G1,parent,"it has a square on its head? does the person look like they're bending over laying on the ground, or they're up straight on their knees",,Y
+46,test,6,G1,child,on their knees,,Y
+46,test,6,G1,parent,"so does it look like they're laying on their knees, or sitting up straight?",,Y
+46,test,6,G1,child,sitting up straight,,Y
+46,test,6,G1,parent,so inside of your blue box is the person sitting up straight on their knees,,Y
+46,test,6,G1,parent,,parent,Y
+46,test,20,G1,parent,"inside of my blue box it look like somebody is laying down or bending their knees. or, they could be sitting ontop of a box",,Y
+46,test,20,G1,child,,child,Y
+46,test,28,G1,parent,"do you see a... ooh, it kinda looks like a house. do you see the triangle on top of the square that look slike a house where the puppy is? or does it look like the lady with the square on top?",,N
+46,test,28,G1,parent,which one's in your blue box? do you see the house?,,N
+46,test,28,G1,child,mhm,,N
+46,test,28,G1,parent,"so, the house is inside of your blue box?",,N
+46,test,28,G1,child,mhm,,N
+46,test,28,G1,parent,,parent,N
+46,test,34,G1,parent,"inside of mommy's blue box, i have a square at the very top that looks like another square at the bottom with a triangle ontop of the square. it look like a lady sitting down ontop of the box.",,Y
+46,test,34,G1,child,,child,Y
+46,test,1,H1,parent,"okay, inside of my blue box looks like a person that is standing straight up and it look like they're holding a box or some books. select that picture.",,N
+46,test,1,H1,child,,child,N
+46,test,11,H1,parent,"ok, what's inside of your blue box?",,Y
+46,test,11,H1,child,somebody handing some food,,Y
+46,test,11,H1,parent,does it look like a big black object or a bunch of tiny triangles and squares?,,Y
+46,test,11,H1,child,triangles and squares,,Y
+46,test,11,H1,parent,is it like a thick square? like a rectangle? with a person standing up holding the tray? like a person with a thick rectangle holding the tray?,,Y
+46,test,11,H1,child,yeah,,Y
+46,test,11,H1,parent,okay,,Y
+46,test,11,H1,parent,,parent,Y
+46,test,23,H1,parent,inside of my blue box it looks like it is a big rectangle that's shaped like a person that's holding a tray with food,,Y
+46,test,23,H1,child,,child,Y
+46,test,37,H1,child,in my blue box,,Y
+46,test,37,H1,parent,what do you see?,,Y
+46,test,37,H1,child,i see a man giving you food,,Y
+46,test,37,H1,parent,you see a mommy giving me food?,,Y
+46,test,37,H1,parent,with a square at the top kind of like a diamond?,,Y
+46,test,37,H1,child,mhm,,Y
+46,test,37,H1,parent,like a rocket ship with a diamond on top?,,Y
+46,test,37,H1,child,mhm,,Y
+46,test,37,H1,parent,,parent,Y
+46,test,5,I1,parent,in my blue box it look like a person who's holding a tray and handing you some food,,Y
+46,test,5,I1,child,,child,Y
+46,test,19,I1,parent,you don't want to tell me? can we guess? do you have the person that is doing downward dog and yoga or--,,Y
+46,test,19,I1,child,No!,,Y
+46,test,19,I1,parent,or the person holding the tray,,Y
+46,test,19,I1,child,the person holding the tray with food,,Y
+46,test,19,I1,parent,you have the person holding the tray with food in your blue box?,,Y
+46,test,19,I1,child,mhm,,Y
+46,test,19,I1,parent,,parent,Y
+46,test,27,I1,child,,child,Y
+46,test,35,I1,child,my box has a man giving some food,,Y
+46,test,35,I1,parent,that's inside of your blue box?,,Y
+46,test,35,I1,child,mhm,,Y
+46,test,35,I1,parent,and there's a square on top? and the food look like a triangle?,,Y
+46,test,35,I1,child,mhm,,Y
+46,test,35,I1,parent,,parent,Y
+46,test,3,K1,parent,"inside of my blue box it kinda look like a puppy standing up on two legs, or maybe a person washing their hands. do you see that? select that picture",,Y
+46,test,3,K1,child,,child,Y
+46,test,17,K1,child,my box have a puppy,,Y
+46,test,17,K1,parent,your box have a puppy?,,Y
+46,test,17,K1,parent,,parent,Y
+46,test,25,K1,parent,"inside of my blue box it look like i have a puppy or a person that's bending over, trying to get to the water fountain",,Y
+46,test,25,K1,child,,child,Y
+46,test,33,K1,child,my box have a doggy,,Y
+46,test,33,K1,parent,,parent,Y

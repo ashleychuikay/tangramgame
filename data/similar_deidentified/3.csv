@@ -1,0 +1,118 @@
+subid,type,trial,target,leftpic,rightpic,person,utterance,selection,correct
+3,practice,1,apple,banana,apple,parent,do you see an apple?,,Y
+3,practice,1,apple,banana,apple,child,yeah,,Y
+3,practice,1,apple,banana,apple,parent,can you touch it?,,Y
+3,practice,1,apple,banana,apple,child,,child,Y
+3,practice,4,apple,apple,banana,child,apple,,Y
+3,practice,4,apple,apple,banana,parent,,parent,Y
+3,practice,2,artichoke,onion,artichoke,child,"uh, artichoke?",,Y
+3,practice,2,artichoke,onion,artichoke,parent,,parent,Y
+3,practice,5,artichoke,artichoke,onion,parent,artichoke,,Y
+3,practice,5,artichoke,artichoke,onion,child,,child,Y
+3,practice,3,onion,onion,artichoke,parent,onion,,Y
+3,practice,3,onion,onion,artichoke,child,,child,Y
+3,practice,6,onion,onion,artichoke,child,onion,,Y
+3,practice,6,onion,onion,artichoke,parent,,parent,Y
+3,test,2,B2,O1,B2,child,"uh, the man's wearing a triangle hat",,Y
+3,test,2,B2,O1,B2,parent,,parent,Y
+3,test,14,B2,L1,B2,parent,"um, this guy might be squatting down a little bit? both his feet are mostly on the ground",,Y
+3,test,14,B2,L1,B2,child,,child,Y
+3,test,30,B2,B2,R1,child,he has a hat,,Y
+3,test,30,B2,B2,R1,parent,,parent,Y
+3,test,32,B2,T1,B2,parent,he has a triangle hat on,,Y
+3,test,32,B2,T1,B2,child,,child,Y
+3,test,3,I1,B2,I1,parent,"maybe someone who's a waiter, who's saying ""here""",,Y
+3,test,3,I1,B2,I1,child,,child,Y
+3,test,3,I1,B2,I1,parent,sir would you like this?,,Y
+3,test,19,I1,I1,J1,child,it looks like he's serving something like,,Y
+3,test,19,I1,I1,J1,parent,,parent,Y
+3,test,21,I1,I1,K1,parent,"so this guy is saying, ""sir can I offer you a bowl of fruit?"" or something",,Y
+3,test,21,I1,I1,K1,child,"uh, does he have his booty?",,Y
+3,test,21,I1,I1,K1,parent,"no, he has a bowl",,Y
+3,test,21,I1,I1,K1,child,,child,Y
+3,test,21,I1,I1,K1,parent,and he has no hat,,Y
+3,test,37,I1,I1,T1,child,"""sir, can i""",,Y
+3,test,37,I1,I1,T1,parent,,parent,Y
+3,test,37,I1,I1,T1,child,"""serve you?""",,Y
+3,test,8,J1,T1,J1,child,"uh, this one kinda looks like it's kneeling",,Y
+3,test,8,J1,T1,J1,parent,,parent,Y
+3,test,18,J1,I1,J1,parent,he's kneeling,,Y
+3,test,18,J1,I1,J1,child,,child,Y
+3,test,26,J1,J1,R1,child,it's kneeling,,Y
+3,test,26,J1,J1,R1,parent,,parent,Y
+3,test,34,J1,J1,K1,parent,kneeling,,Y
+3,test,34,J1,J1,K1,child,,child,Y
+3,test,9,K1,K1,J1,parent,this guy's leaning forward and sticking is booty out so his,,Y
+3,test,9,K1,K1,J1,child,,child,Y
+3,test,9,K1,K1,J1,parent,coat tail is poking out,,Y
+3,test,11,K1,K1,L1,child,booty,,Y
+3,test,11,K1,K1,L1,parent,,parent,Y
+3,test,25,K1,K1,T1,parent,booty,,Y
+3,test,25,K1,K1,T1,child,,child,Y
+3,test,39,K1,K1,I1,child,would you like a butt?,,Y
+3,test,39,K1,K1,I1,parent,,parent,Y
+3,test,4,L1,U1,L1,child,"it, kinda, triangle? that has a, like, uh, uh, well it looks like some kind of a jumping of skipping?",,Y
+3,test,4,L1,U1,L1,parent,,parent,Y
+3,test,12,L1,L1,K1,parent,this guy looks like he's kicking up his foot,,Y
+3,test,12,L1,L1,K1,child,,child,Y
+3,test,24,L1,L1,B2,child,this guy looks like it's kinda jumping?,,Y
+3,test,24,L1,L1,B2,parent,,parent,Y
+3,test,40,L1,L1,N1,parent,"um, not running",,Y
+3,test,40,L1,L1,N1,child,,child,Y
+3,test,40,L1,L1,N1,parent,it almost looks like a dog,,Y
+3,test,1,N1,N1,R1,parent,"so it's like a man who looks like, it looks like a man who's kinda running forward, and his body's kind stretched out like a diamond",,Y
+3,test,1,N1,N1,R1,child,,child,Y
+3,test,15,N1,O1,N1,child,"uh, stretched out",,Y
+3,test,15,N1,O1,N1,parent,,parent,Y
+3,test,29,N1,I1,N1,parent,"this guy's running, he's running forward",,Y
+3,test,29,N1,I1,N1,child,,child,Y
+3,test,29,N1,I1,N1,parent,not serving,,Y
+3,test,35,N1,N1,U1,child,he's running,,Y
+3,test,35,N1,N1,U1,parent,,parent,Y
+3,test,6,O1,N1,O1,child,square head,,Y
+3,test,6,O1,N1,O1,child,"and, um, he isn't running",,Y
+3,test,6,O1,N1,O1,parent,,parent,Y
+3,test,20,O1,L1,O1,parent,"this guy looks like he's dancing, having a good time",,Y
+3,test,20,O1,L1,O1,child,,child,Y
+3,test,22,O1,U1,O1,child,this one looks like he's dancing,,Y
+3,test,22,O1,U1,O1,parent,,parent,Y
+3,test,38,O1,R1,O1,parent,oh this dude's dancing,,Y
+3,test,38,O1,R1,O1,child,,child,Y
+3,test,38,O1,R1,O1,child,dance in the pants like you have ants,,Y
+3,test,7,R1,B2,R1,parent,"this guy's like, ""I'm gonna reach my head out and get there super fast""",,Y
+3,test,7,R1,B2,R1,child,,child,Y
+3,test,13,R1,R1,N1,child,"this one is ""I have to go, I must be there one time""",,Y
+3,test,13,R1,R1,N1,parent,is his body stretched out?,,Y
+3,test,13,R1,R1,N1,child,nope,,Y
+3,test,13,R1,R1,N1,parent,,parent,Y
+3,test,27,R1,O1,R1,parent,"running, running fast trying to get there, hurry up hurry up!",,Y
+3,test,27,R1,O1,R1,child,,child,Y
+3,test,33,R1,J1,R1,child,he's running in a hurry,,Y
+3,test,33,R1,J1,R1,parent,,parent,Y
+3,test,5,T1,T1,K1,parent,"this one is the one with no hat on, and he doesn't look like he's leaning forward",,Y
+3,test,5,T1,T1,K1,child,i was just gonna say that,,Y
+3,test,5,T1,T1,K1,child,,child,Y
+3,test,17,T1,T1,I1,child,"this guy is, it looks like he's serving something but he's not the",,Y
+3,test,17,T1,T1,I1,parent,"he's wait, he looks like he's what?",,Y
+3,test,17,T1,T1,I1,child,serving something but it's not this side,,Y
+3,test,17,T1,T1,I1,parent,he looks like he's what?,,Y
+3,test,17,T1,T1,I1,child,serving something but,,Y
+3,test,17,T1,T1,I1,parent,oh serving something,,Y
+3,test,17,T1,T1,I1,child,but this side,,Y
+3,test,17,T1,T1,I1,parent,"is he's serving, does have like a bowl?",,Y
+3,test,17,T1,T1,I1,child,no,,Y
+3,test,17,T1,T1,I1,parent,,parent,Y
+3,test,23,T1,T1,J1,parent,this one's kicking up his foot,,Y
+3,test,23,T1,T1,J1,child,uh,,Y
+3,test,23,T1,T1,J1,parent,"not kneeling, kicking up his foot",,Y
+3,test,23,T1,T1,J1,child,,child,Y
+3,test,31,T1,T1,U1,child,"he's like, ""sir, can I serve you something?""",,Y
+3,test,31,T1,T1,U1,parent,,parent,Y
+3,test,10,U1,U1,B2,child,"uh, his head is a square but it looks like a diamond",,Y
+3,test,10,U1,U1,B2,parent,,parent,Y
+3,test,16,U1,U1,N1,parent,this guy is standing more upright,,Y
+3,test,16,U1,U1,N1,child,,child,Y
+3,test,28,U1,L1,U1,child,it has a diamond head,,Y
+3,test,28,U1,L1,U1,parent,,parent,Y
+3,test,36,U1,O1,U1,parent,"i don't know what's going on with this dude, he's got the diamond head but he also looks like part of his leg is missing or something",,Y
+3,test,36,U1,O1,U1,child,,child,Y
