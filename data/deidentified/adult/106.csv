@@ -1,0 +1,110 @@
+subid,type,trial,target,person,utterance,selection,correct
+106,practice,1,apple,left,"okay, the apple",,Y
+106,practice,1,apple,right,,right,Y
+106,practice,4,apple,right,um it's the round thing,,Y
+106,practice,4,apple,left,the apple?,,Y
+106,practice,4,apple,left,,left,Y
+106,practice,2,artichoke,right,oh um it's not the round thing,,Y
+106,practice,2,artichoke,left,they're both round,,Y
+106,practice,2,artichoke,right,"it's like, it has patterns on it",,Y
+106,practice,2,artichoke,left,it's the artichoke?,,Y
+106,practice,2,artichoke,right,"yeah, I don't know what it's called",,Y
+106,practice,2,artichoke,left,,left,Y
+106,practice,5,artichoke,left,the artichoke,,Y
+106,practice,5,artichoke,right,,right,Y
+106,practice,3,onion,left,the onion,,Y
+106,practice,3,onion,right,,right,Y
+106,practice,6,onion,right,onion,,Y
+106,practice,6,onion,left,,left,Y
+106,test,2,A1,right,"it's running, person",,Y
+106,test,2,A1,left,,left,Y
+106,test,12,A1,left,uh it's not the one bending over,,Y
+106,test,12,A1,right,,right,Y
+106,test,26,A1,right,oh it's walking,,Y
+106,test,26,A1,left,,left,Y
+106,test,32,A1,left,it's not the one with its butt out,,Y
+106,test,32,A1,right,,right,Y
+106,test,6,B1,right,"it's the, it's the quiet, walking person",,Y
+106,test,6,B1,left,,left,Y
+106,test,16,B1,left,it's walking,,Y
+106,test,16,B1,right,,right,Y
+106,test,30,B1,right,it's the walking one,,Y
+106,test,30,B1,left,,left,Y
+106,test,34,B1,left,it's not the one with it's butt out,,Y
+106,test,34,B1,right,,right,Y
+106,test,10,C1,right,it's begging,,Y
+106,test,10,C1,left,"the one, like, kneeling down?",,Y
+106,test,10,C1,right,yeah,,Y
+106,test,10,C1,left,okay,,Y
+106,test,10,C1,right,like,,Y
+106,test,10,C1,left,"the one that, like, we haven't seen before",,Y
+106,test,10,C1,right,yeah,,Y
+106,test,10,C1,left,,left,Y
+106,test,18,C1,left,it's begging,,Y
+106,test,18,C1,right,,right,Y
+106,test,18,C1,right,it's what I look like when I xxx,,Y
+106,test,28,C1,left,,left,Y
+106,test,38,C1,left,it's pray- uh begging,,Y
+106,test,38,C1,right,,right,Y
+106,test,1,D1,left,"okay, it's the shape that doesn't look like a person running, it looks more like an airplane",,Y
+106,test,1,D1,right,,right,Y
+106,test,11,D1,right,"oh it's, like, laying down",,Y
+106,test,11,D1,left,,left,Y
+106,test,27,D1,left,it's the airplane one,,Y
+106,test,27,D1,right,,right,Y
+106,test,27,D1,right,it's begging,,Y
+106,test,37,D1,right,it's the flat one,,Y
+106,test,37,D1,left,,left,Y
+106,test,8,E1,right,it's the person who looks like you,,Y
+106,test,8,E1,left,,left,Y
+106,test,14,E1,left,it's the one that looks like me,,Y
+106,test,14,E1,right,,right,Y
+106,test,22,E1,right,it's the one that looks like you,,Y
+106,test,22,E1,left,,left,Y
+106,test,40,E1,left,it's me,,Y
+106,test,40,E1,right,,right,Y
+106,test,5,F1,left,"it's not the person walking solemnly, it's the person like with his legs-",,Y
+106,test,5,F1,right,,right,Y
+106,test,5,F1,right,kinda looks like you,,Y
+106,test,19,F1,right,"it's not the, it's not the begging one, it's the other one",,Y
+106,test,19,F1,left,,left,Y
+106,test,25,F1,left,it's not the one sitting,,Y
+106,test,25,F1,right,,right,Y
+106,test,31,F1,right,hm it's the one that has its legs apart,,Y
+106,test,31,F1,left,,left,Y
+106,test,3,G1,left,"it's the person sitting in a chair, not the person jumping",,Y
+106,test,3,G1,right,the person that looks like you,,Y
+106,test,3,G1,right,,right,Y
+106,test,15,G1,right,it's sitting,,Y
+106,test,15,G1,left,,left,Y
+106,test,23,G1,left,it's the one sitting,,Y
+106,test,23,G1,right,,right,Y
+106,test,39,G1,right,it's sitting,,Y
+106,test,39,G1,left,,left,Y
+106,test,7,H1,left,it's not the person who looks like me,,Y
+106,test,7,H1,right,,right,Y
+106,test,17,H1,right,"it's pointing, but not with like no, no legs or",,Y
+106,test,17,H1,left,"it's the chunky one, right?",,Y
+106,test,17,H1,left,okay,,Y
+106,test,17,H1,left,,left,Y
+106,test,29,H1,left,it's the one that's not the airplane,,Y
+106,test,29,H1,right,,right,Y
+106,test,35,H1,right,it's the chunky one,,Y
+106,test,35,H1,left,,left,Y
+106,test,9,I1,left,it's not the person who looks like me,,Y
+106,test,9,I1,right,,right,Y
+106,test,13,I1,right,it's bending,,Y
+106,test,13,I1,left,,left,Y
+106,test,21,I1,left,it's the one uh holding the thing out,,Y
+106,test,21,I1,right,,right,Y
+106,test,33,I1,right,it's holding something,,Y
+106,test,33,I1,left,,left,Y
+106,test,33,I1,right,these two look funny next to each other,,Y
+106,test,4,K1,right,oh it's bending,,Y
+106,test,4,K1,left,,left,Y
+106,test,20,K1,left,it's the one with its butt out,,Y
+106,test,20,K1,right,,right,Y
+106,test,24,K1,right,oh it's the it's the one that has its butt out,,Y
+106,test,24,K1,left,,left,Y
+106,test,36,K1,left,it's holding its butt out,,Y
+106,test,36,K1,right,,right,Y

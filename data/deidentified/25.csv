@@ -1,0 +1,160 @@
+subid,type,trial,target,person,utterance,selection,correct
+25,practice,1,apple,parent,The thing that has a box around it is an apple,,Y
+25,practice,1,apple,child,,child,Y
+25,practice,4,apple,child,it's an apple,,Y
+25,practice,4,apple,parent,,parent,Y
+25,practice,2,artichoke,child,"It looks like, an, a green thing with lines on it",,Y
+25,practice,2,artichoke,parent,A green thing with lines on it?,,Y
+25,practice,2,artichoke,parent,,parent,Y
+25,practice,5,artichoke,parent,The thing that you said was a green thing with lines on it remember we have those sometimes for dinner? We make it with butter? It's called an artichoke,,Y
+25,practice,5,artichoke,child,,child,Y
+25,practice,3,onion,parent,I'm describing an onion,,Y
+25,practice,3,onion,child,,child,Y
+25,practice,6,onion,child,I think it's a mushroom?,,Y
+25,practice,6,onion,parent,A mushroom?,,Y
+25,practice,6,onion,child,xxx,,Y
+25,practice,6,onion,parent,,parent,Y
+25,test,5,A1,parent,this one looks like someone is standing up and marching,,Y
+25,test,5,A1,child,okay,,Y
+25,test,5,A1,child,,child,Y
+25,test,15,A1,child,"this is like somebody is running, and he has a triangle and another triangle",,Y
+25,test,15,A1,parent,,parent,Y
+25,test,15,A1,child,and a triangle,,Y
+25,test,21,A1,parent,to me this looks like someone who's walking and marching forward,,Y
+25,test,21,A1,parent,someone's marching and one of their legs is sticking out and the other leg is on the ground,,Y
+25,test,21,A1,child,"i don't know, tell me more",,Y
+25,test,21,A1,parent,"it looks like someone's, um, someone is marching, they have one leg down, one leg sticking out, and there's a triangle sticking out above the leg",,Y
+25,test,21,A1,child,,child,Y
+25,test,35,A1,child,"it's a diamond head, and a triangle and triangle, and a",,Y
+25,test,35,A1,parent,,parent,Y
+25,test,4,B1,child,it looks like someone walking with their head down and box-,,Y
+25,test,4,B1,parent,someone's walking with their head down?,,Y
+25,test,4,B1,parent,,parent,Y
+25,test,18,B1,parent,"to me this looks like a person standing and walking and a little bit sad, cause their head is down",,Y
+25,test,18,B1,child,,child,Y
+25,test,26,B1,child,"so someone walking xxx, and they have a body, and um",,Y
+25,test,26,B1,parent,can you say a little more about it?,,Y
+25,test,26,B1,child,and they have a xxx,,Y
+25,test,26,B1,parent,"i didn't quite hear what you said, can you say it louder?",,Y
+25,test,26,B1,child,"it's a diamond head and triangle feet, and xxx",,Y
+25,test,26,B1,parent,okay,,Y
+25,test,26,B1,parent,,parent,Y
+25,test,38,B1,parent,"this looks to me like a person who is walking, she's a little bit sad, so her head is facing down",,Y
+25,test,38,B1,parent,"and their feet are on the ground, their feet are triangles, you can see both feet",,Y
+25,test,38,B1,child,,child,Y
+25,test,6,C1,child,this looks like a cat,,Y
+25,test,6,C1,parent,a cat?,,Y
+25,test,6,C1,child,and walking with their head down,,Y
+25,test,6,C1,parent,,parent,Y
+25,test,12,C1,parent,"to me this looks like someone is sort of kneeling on the ground like, or when yyy used to pray? at daycare? and she would pray and kneel on the ground on her rug, remember that? this kinda looks like that to me, someone's kneeling to pray",,Y
+25,test,12,C1,child,,child,Y
+25,test,22,C1,child,"this is xxx laying down with their head going like xxx, and their xxx going like this",,Y
+25,test,22,C1,parent,,parent,Y
+25,test,36,C1,parent,"to me this looks like someone kneeling down to pray, like yyy used to",,Y
+25,test,36,C1,child,,child,Y
+25,test,7,D1,parent,this looks to me like someone who is lying down on the ground and maybe reading a book,,Y
+25,test,7,D1,child,okay,,Y
+25,test,7,D1,child,,child,Y
+25,test,17,D1,child,"this one looks like, like lying down and xxx and reading a book",,Y
+25,test,17,D1,parent,,parent,Y
+25,test,29,D1,parent,"this one to me looks like someone who is lying on the ground on their tummy reading a book or something, and they have one foot sticking up in the air",,Y
+25,test,29,D1,child,,child,Y
+25,test,33,D1,child,i have a person on their tummy and reading a book,,Y
+25,test,33,D1,parent,,parent,Y
+25,test,2,E1,child,"it kinda looks like a diamond at the top, a triangle here, a triangle going down, triangle going up, one triangle, two triangles and then triangles xxx",,Y
+25,test,2,E1,parent,Can you describe it a little more?,,Y
+25,test,2,E1,child,"and it, is has, it has a pointy on its side",,Y
+25,test,2,E1,parent,it has a pointy thing on the side of it?,,Y
+25,test,2,E1,child,the bottom part of xxx,,Y
+25,test,2,E1,parent,,parent,Y
+25,test,20,E1,parent,this to me looks like someone who's jumping for joy and dancing because they're happy,,Y
+25,test,20,E1,parent,"and they're, they have two feet, and the feet are sort of parallel to each other, and but one's higher than the, right above the other, cause they're jumping, and their arms are up like an angel's arms",,Y
+25,test,20,E1,child,,child,Y
+25,test,24,E1,child,it looks like someone with their arms sticking out and the xxx at the top,,Y
+25,test,24,E1,parent,,parent,Y
+25,test,40,E1,parent,i have a person who looks like they're jumping for joy,,Y
+25,test,40,E1,parent,person who's kind of joyful,,Y
+25,test,40,E1,child,their arms up?,,Y
+25,test,40,E1,parent,"their arms are up, their arms kinda look like angel wings",,Y
+25,test,40,E1,child,,child,Y
+25,test,40,E1,parent,their feet are triangles,,Y
+25,test,3,F1,parent,"so, to me this looks kinda like someone who's having fun",,Y
+25,test,3,F1,parent,"it looks like someone who's having fun, not someone who's just sitting there being bored, someone kind of active, maybe jumping? and the legs are kind of far apart",,Y
+25,test,3,F1,parent,And the head is kind of sticking up,,Y
+25,test,3,F1,parent,"so, it looks like the person is kind of joyful, almost",,Y
+25,test,3,F1,child,dancing,,Y
+25,test,3,F1,parent,"yeah, dancing, yeah! so do you know which one i'm talking about?",,Y
+25,test,3,F1,child,i don't know,,Y
+25,test,3,F1,parent,"just, okay, it looks like it's dancing and it looks like the arm is sticking up into the sky",,Y
+25,test,3,F1,child,"okay, xxx",,Y
+25,test,3,F1,parent,"and it looks like there are two feet on the ground, the feet are triangles, he has two triangle feet",,Y
+25,test,3,F1,child,"okay, a box on its head?",,Y
+25,test,3,F1,parent,it's head does look like a box,,Y
+25,test,3,F1,child,,child,Y
+25,test,11,F1,child,"a triangle on top, another triangle, look! like this... and then it has another triangle, and the arm is a triangle, and triangle, triangle",,N
+25,test,11,F1,parent,,parent,N
+25,test,25,F1,parent,"to me this looks like a person, there are two triangles which look like feet, and the triangles are both touching the ground, but one's a little bit higher than the other but they're both on the ground, and then it kinda looks like their head is a square that's a little bit diagonal, and it looks kinda like a, at least one arm, going up to the sky",,Y
+25,test,25,F1,child,,child,Y
+25,test,31,F1,child,triangle,,Y
+25,test,31,F1,parent,"i can't hear you, what?",,Y
+25,test,31,F1,child,"a triangle like an arm, sticking up",,Y
+25,test,31,F1,parent,,parent,Y
+25,test,10,G1,child,"this looks like someone sitting, and their arms, their arms, are like, this",,Y
+25,test,10,G1,parent,can you use words?,,Y
+25,test,10,G1,child,"so their arms, are like, they they they have, they have, a xxx in the box",,Y
+25,test,10,G1,parent,,parent,Y
+25,test,14,G1,parent,"to me this looks like someone is sitting on a chair, sitting very straight up, and it looks like maybe they are wearing a dress, they're facing forward",,Y
+25,test,14,G1,child,a girl?,,Y
+25,test,14,G1,parent,"it could be a girl wearing a dress, yeah",,Y
+25,test,14,G1,parent,you know which one it is?,,Y
+25,test,14,G1,child,,child,Y
+25,test,28,G1,child,i have a person sitting on a chair with their head down and triangle feet and they xxx,,Y
+25,test,28,G1,parent,,parent,Y
+25,test,32,G1,parent,"to me this looks like somebody who's sitting on a little chair or bench or stool, and it looks like it's uh wearing a skirt, her head is facing down a little bit, looks like she's sitting very still",,Y
+25,test,32,G1,parent,do you know which one I'm talking about?,,Y
+25,test,32,G1,child,,child,Y
+25,test,8,H1,child,"this looks like someone is standing up, this looks like they're reading a book, and uh xxx",,Y
+25,test,8,H1,parent,,parent,Y
+25,test,16,H1,parent,"to me this one looks like the person is standing very still and holding an upside down hat like he used to wear, like a magician wears",,Y
+25,test,16,H1,child,,child,Y
+25,test,30,H1,child,a person is holding a hat and they have a diamond head,,Y
+25,test,30,H1,parent,,parent,Y
+25,test,34,H1,parent,"this one looks to me like a person who's holdin an upside down hat, like yyy used to wear",,Y
+25,test,34,H1,child,,child,Y
+25,test,9,I1,parent,"this looks to me like someone is holding a bowl of soup about to serve it to someone, they're about to serve the soup to someone",,Y
+25,test,9,I1,child,,child,Y
+25,test,19,I1,child,"this is a, this is a person that looks, this looks like a person giving up some pie, that someone",,Y
+25,test,19,I1,parent,,parent,Y
+25,test,23,I1,parent,this looks like someone is serving a bowl of pasta to a person,,Y
+25,test,23,I1,parent,"they're holding out a bowl that looks like a triangle, and they're a little stooped down, because they're going to serve",,Y
+25,test,23,I1,child,"the pasta like this, and going like this",,Y
+25,test,23,I1,child,,child,Y
+25,test,37,I1,child,i have someone giving you some soup,,Y
+25,test,37,I1,parent,,parent,Y
+25,test,1,K1,parent,"So to me this looks kind of like a dog standing up on its back legs and the head looks kind of like an arrow, and it does not look so much like a person running",,Y
+25,test,1,K1,parent,"And it has, kind of, it has some long pieces and some triangles, and at the very top it has an arrow that's going diagonally, and the arrow is a square and a triangle",,Y
+25,test,1,K1,parent,"Like if you're drawing an aeroplane or something, and the it kinda looks like it has a tail at the back? and then an arm sticking out front",,Y
+25,test,1,K1,parent,And it's big,,Y
+25,test,1,K1,child,it's got a triangle on its,,Y
+25,test,1,K1,parent,"do you think you know which one it is, from the way I described it?",,Y
+25,test,1,K1,parent,"okay, so it starts out- look at the bottom: it has kind of like a triangle attached to a rectangle, and then the rectangle goes up",,Y
+25,test,1,K1,parent,"And it kinda looks like it goes straight up and a little diagonal, and it has a triangle sticking out at the bottom going sideways, and on the other side sticking the other direction it's like maybe some arms coming out",,Y
+25,test,1,K1,child,oh,,Y
+25,test,1,K1,parent,You know which one it is?,,Y
+25,test,1,K1,child,a dog?,,Y
+25,test,1,K1,parent,"I think it kinda looks like a dog, you can interpret it the way you want",,Y
+25,test,1,K1,child,this one,,Y
+25,test,1,K1,parent,"yeah, press it!",,Y
+25,test,1,K1,child,,child,Y
+25,test,13,K1,child,this looks like the two-headed xxx and um doing this,,Y
+25,test,13,K1,parent,can you use words instead of gestures?,,Y
+25,test,13,K1,child,"with his arms, oh and it's got a tail in the back, and xxx and a triangle",,Y
+25,test,13,K1,parent,,parent,Y
+25,test,27,K1,parent,"this one looks like, it's a, the head is a square that's wearing a triangle hat",,Y
+25,test,27,K1,parent,"if the head is a square, then it's wearing a triangle hat",,Y
+25,test,27,K1,parent,"and it, it has its feet on the ground kinda leaning forward",,Y
+25,test,27,K1,parent,and to me it almost looks like a dog,,Y
+25,test,27,K1,parent,the triangle sticking out of its bottom,,Y
+25,test,27,K1,child,,child,Y
+25,test,39,K1,child,"i have a person, kinda looks like a dog",,Y
+25,test,39,K1,parent,,parent,Y

@@ -1,0 +1,95 @@
+subid,type,trial,target,person,utterance,selection,correct
+110,practice,1,apple,left,"um, apple",,Y
+110,practice,1,apple,right,,right,Y
+110,practice,4,apple,right,apple,,Y
+110,practice,4,apple,left,,left,Y
+110,practice,2,artichoke,right,"oh, um, artichoke",,Y
+110,practice,2,artichoke,left,,left,Y
+110,practice,5,artichoke,left,artichoke,,Y
+110,practice,5,artichoke,right,,right,Y
+110,practice,3,onion,left,onion,,Y
+110,practice,3,onion,right,,right,Y
+110,practice,6,onion,right,onion,,Y
+110,practice,6,onion,left,,left,Y
+110,test,1,A1,left,"um, square on top",,Y
+110,test,1,A1,right,,right,Y
+110,test,17,A1,right,"um, square on top but almost running away?",,Y
+110,test,17,A1,left,,left,Y
+110,test,23,A1,left,"uh, running away",,Y
+110,test,23,A1,right,,right,Y
+110,test,35,A1,right,"uh, running away",,Y
+110,test,35,A1,left,,left,Y
+110,test,10,B1,right,"um, walking while looking downward?",,Y
+110,test,10,B1,left,,left,Y
+110,test,20,B1,left,"uh, walking looking down",,Y
+110,test,20,B1,right,,right,Y
+110,test,30,B1,right,"uh, walking looking down",,Y
+110,test,30,B1,left,,left,Y
+110,test,32,B1,left,walking looking down,,Y
+110,test,32,B1,right,,right,Y
+110,test,2,C1,right,"um, on knees, drinking water?",,Y
+110,test,2,C1,left,,left,Y
+110,test,2,C1,right,or bent over,,Y
+110,test,16,C1,left,"uh, square on bottom, slash lying down",,Y
+110,test,16,C1,right,,right,Y
+110,test,24,C1,right,"uh, bent over",,Y
+110,test,24,C1,left,,left,Y
+110,test,36,C1,left,crouching,,Y
+110,test,36,C1,right,,right,Y
+110,test,6,D1,right,"uh, triangle, or, triangle on the back, or laying down",,Y
+110,test,6,D1,left,,left,Y
+110,test,14,D1,left,laying down,,Y
+110,test,14,D1,right,,right,Y
+110,test,28,D1,right,"uh, laying down",,Y
+110,test,28,D1,left,,left,Y
+110,test,34,D1,left,lying down,,Y
+110,test,34,D1,right,,right,Y
+110,test,4,E1,right,hands in the air,,Y
+110,test,4,E1,left,,left,Y
+110,test,12,E1,left,arms in the air,,Y
+110,test,12,E1,right,,right,Y
+110,test,26,E1,right,hands in the air,,Y
+110,test,26,E1,left,,left,Y
+110,test,38,E1,left,arms in the air,,Y
+110,test,38,E1,right,,right,Y
+110,test,9,F1,left,"triangle on top, left of that is a square",,Y
+110,test,9,F1,right,,right,Y
+110,test,11,F1,right,"uh, square and, but triangles higher",,Y
+110,test,11,F1,left,,left,Y
+110,test,29,F1,left,"um, triangle on top",,Y
+110,test,29,F1,right,,right,Y
+110,test,37,F1,right,"um, triangle, highest point",,Y
+110,test,37,F1,left,,left,Y
+110,test,5,G1,left,"um, st-- kneeling",,Y
+110,test,5,G1,right,,right,Y
+110,test,13,G1,right,"uh, kneeling",,Y
+110,test,13,G1,left,,left,Y
+110,test,25,G1,left,kneeling,,Y
+110,test,25,G1,right,,right,Y
+110,test,39,G1,right,"um, square on top, looking downward, kneeling",,Y
+110,test,39,G1,left,,left,Y
+110,test,3,H1,left,"um, standing holding something",,Y
+110,test,3,H1,right,,right,Y
+110,test,19,H1,right,"um, square on top on a point",,Y
+110,test,19,H1,left,,left,Y
+110,test,27,H1,left,"uh, serving something",,Y
+110,test,27,H1,right,,right,Y
+110,test,31,H1,right,"um, server",,Y
+110,test,31,H1,left,,left,Y
+110,test,31,H1,right,serving something,,Y
+110,test,7,I1,left,serving something,,Y
+110,test,7,I1,right,,right,Y
+110,test,15,I1,right,serving something,,Y
+110,test,15,I1,left,,left,Y
+110,test,21,I1,left,serving something,,Y
+110,test,21,I1,right,,right,Y
+110,test,33,I1,right,"uh, server",,Y
+110,test,33,I1,left,,left,Y
+110,test,8,K1,right,"um, triangle house on top",,Y
+110,test,8,K1,left,,left,Y
+110,test,18,K1,left,"um, arrow on top",,Y
+110,test,18,K1,right,,right,Y
+110,test,22,K1,right,"um, arrow on top",,Y
+110,test,22,K1,left,,left,Y
+110,test,40,K1,left,arrow on top,,Y
+110,test,40,K1,right,,right,Y

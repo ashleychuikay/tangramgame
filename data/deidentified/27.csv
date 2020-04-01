@@ -1,0 +1,130 @@
+subid,type,trial,target,person,utterance,selection,correct
+27,practice,1,apple,parent,"this is the fruit that's red, that's crunchy, and it",,Y
+27,practice,1,apple,child,i have,,Y
+27,practice,1,apple,parent,which picture is it? which one is red?,,Y
+27,practice,1,apple,child,apple,,Y
+27,practice,1,apple,parent,"ok, touch it",,Y
+27,practice,1,apple,child,,child,Y
+27,practice,4,apple,child,"um, the apple",,Y
+27,practice,4,apple,parent,okay,,Y
+27,practice,4,apple,parent,,parent,Y
+27,practice,2,artichoke,child,it has... one of them doesn't have it but one of them does have it.,,Y
+27,practice,2,artichoke,parent,does it have leaves?,,Y
+27,practice,2,artichoke,child,yeah,,Y
+27,practice,2,artichoke,parent,,parent,Y
+27,practice,5,artichoke,parent,"this is the one that we had last time, i dont know, can we say the names of it? it's an artichoke. can you press the artichoke?",,Y
+27,practice,5,artichoke,child,this one?,,Y
+27,practice,5,artichoke,parent,it's the one that has all the leaves,,Y
+27,practice,5,artichoke,child,,child,Y
+27,practice,3,onion,parent,"ok, so this is the one that didn't have it last time.",,Y
+27,practice,3,onion,child,"um, this one",,Y
+27,practice,3,onion,parent,"ok, touch it",,Y
+27,practice,3,onion,child,,child,Y
+27,practice,6,onion,child,the onion,,Y
+27,practice,6,onion,parent,the onion,,Y
+27,practice,6,onion,parent,,parent,Y
+27,test,8,A1,child,"um, it looks like, to me, a man trotting",,Y
+27,test,8,A1,parent,"trotting? so it looks like the one running, not the man who's serving like that?",,Y
+27,test,8,A1,parent,,parent,Y
+27,test,18,A1,parent,this is the lady who's running,,Y
+27,test,18,A1,child,,child,Y
+27,test,30,A1,child,the man who's walking,,Y
+27,test,30,A1,parent,he's kinda running?,,Y
+27,test,30,A1,parent,,parent,Y
+27,test,32,A1,parent,the one who's running,,Y
+27,test,32,A1,child,,child,Y
+27,test,1,B1,parent,"ok, so to me, this is the one that looks like a man walking and he's standing up, instead of the one crawling, not that one. can you press the one that looks like a man standing up?",,Y
+27,test,1,B1,child,,child,Y
+27,test,11,B1,parent,"ok, which one?",,Y
+27,test,11,B1,child,"um, the person walking",,Y
+27,test,11,B1,parent,,parent,Y
+27,test,25,B1,parent,"the man who's walking, sad",,Y
+27,test,25,B1,child,,child,Y
+27,test,33,B1,child,the man that's sad walking,,Y
+27,test,33,B1,parent,,parent,Y
+27,test,6,C1,parent,which one has the blue box?,,Y
+27,test,6,C1,child,the man who's crawling,,Y
+27,test,6,C1,parent,,parent,Y
+27,test,12,C1,parent,"the person who's crawling or kneeling, not the man flying",,Y
+27,test,12,C1,child,,child,Y
+27,test,28,C1,child,"um, a man who's crawling",,Y
+27,test,28,C1,parent,,parent,Y
+27,test,36,C1,parent,crawling,,Y
+27,test,36,C1,child,,child,Y
+27,test,9,D1,parent,this looks like a man who's swimming,,Y
+27,test,9,D1,child,,child,Y
+27,test,15,D1,child,the man..,,Y
+27,test,15,D1,parent,which one? you need to tell me which one,,Y
+27,test,15,D1,child,the man that's kind of like crawling but is not,,Y
+27,test,15,D1,parent,like with it's arms out maybe?,,Y
+27,test,15,D1,child,yeah,,Y
+27,test,15,D1,parent,,parent,Y
+27,test,21,D1,parent,the one who's swimming,,Y
+27,test,21,D1,child,,child,Y
+27,test,39,D1,child,"um, a man who's swimming",,Y
+27,test,39,D1,parent,,parent,Y
+27,test,2,E1,parent,which one has the blue box?,,Y
+27,test,2,E1,child,this one,,Y
+27,test,2,E1,parent,"well I can't see it, so you have to tell me what it looks like",,Y
+27,test,2,E1,child,it looks like flying,,Y
+27,test,2,E1,parent,like woosh,,Y
+27,test,2,E1,parent,,parent,Y
+27,test,20,E1,parent,it's the man who's going phew,,Y
+27,test,20,E1,child,,child,Y
+27,test,24,E1,child,the man who's jumping,,Y
+27,test,24,E1,parent,,parent,Y
+27,test,34,E1,parent,phew,,Y
+27,test,34,E1,child,,child,Y
+27,test,5,F1,parent,this one looks like *pew*,,Y
+27,test,5,F1,child,,child,Y
+27,test,17,F1,parent,which one has the blue box?,,Y
+27,test,17,F1,child,um...,,Y
+27,test,17,F1,parent,is it the flying man or the walking man?,,Y
+27,test,17,F1,child,it looks like this,,Y
+27,test,17,F1,parent,i can't see it so you have to tell me with words,,Y
+27,test,17,F1,child,kind of like a man who's ...,,Y
+27,test,17,F1,parent,going like? that guy?,,Y
+27,test,17,F1,child,yeah,,Y
+27,test,17,F1,parent,,parent,Y
+27,test,29,F1,parent,man who's going phew,,Y
+27,test,29,F1,child,,child,Y
+27,test,35,F1,child,phew,,Y
+27,test,35,F1,parent,,parent,Y
+27,test,7,G1,parent,this to me looks like a lady sitting on a chair,,Y
+27,test,7,G1,child,,child,Y
+27,test,13,G1,parent,which one's in the blue box?,,Y
+27,test,13,G1,child,the lady who's sitting,,Y
+27,test,13,G1,parent,,parent,Y
+27,test,27,G1,child,the lady who's sitting,,Y
+27,test,27,G1,child,,child,Y
+27,test,31,G1,child,"um, it's the lady sitting",,Y
+27,test,31,G1,parent,,parent,Y
+27,test,10,H1,parent,what's in the blue box?,,Y
+27,test,10,H1,child,it looks like a king,,Y
+27,test,10,H1,parent,is he like this?,,Y
+27,test,10,H1,child,he is like this,,Y
+27,test,10,H1,parent,,parent,Y
+27,test,16,H1,parent,"this is the man who's serving, or the king",,Y
+27,test,16,H1,child,,child,Y
+27,test,26,H1,child,the man who's serving,,Y
+27,test,26,H1,parent,,parent,Y
+27,test,38,H1,parent,"a man who's serving, or a king",,Y
+27,test,38,H1,child,,child,Y
+27,test,3,I1,parent,this one to me looks like a man serving something. can you press that one?,,Y
+27,test,3,I1,child,,child,Y
+27,test,19,I1,child,it's not the man who's walking,,Y
+27,test,19,I1,parent,,parent,Y
+27,test,23,I1,parent,the man who's serving,,Y
+27,test,23,I1,child,,child,Y
+27,test,37,I1,child,a man who's serving,,Y
+27,test,37,I1,parent,,parent,Y
+27,test,4,K1,parent,which one do you see? which one has the blue box?,,Y
+27,test,4,K1,child,"the one that looks like, like",,Y
+27,test,4,K1,parent,oh he's like this?,,Y
+27,test,4,K1,parent,,parent,Y
+27,test,14,K1,parent,the man who's serving,,Y
+27,test,14,K1,child,,child,Y
+27,test,22,K1,child,"um, the man who's serving",,Y
+27,test,22,K1,parent,,parent,Y
+27,test,40,K1,parent,a man who's serving,,Y
+27,test,40,K1,child,,child,Y

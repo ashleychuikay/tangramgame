@@ -1,0 +1,105 @@
+subid,type,trial,target,person,utterance,selection,correct
+34,practice,1,apple,parent,The picture I see is an apple,,Y
+34,practice,1,apple,child,,child,Y
+34,practice,4,apple,child,My picture is an apple,,Y
+34,practice,4,apple,parent,,parent,Y
+34,practice,2,artichoke,child,Something that looks like a tree,,Y
+34,practice,2,artichoke,parent,So does it have a lot of little leaves going up,,Y
+34,practice,2,artichoke,child,Yes,,Y
+34,practice,2,artichoke,parent,,parent,Y
+34,practice,5,artichoke,parent,Oh I picked that my mine is that same one that looks like a tree it's called an artichoke,,Y
+34,practice,5,artichoke,child,,child,Y
+34,practice,3,onion,parent,My picture is the is the other one it's the onion it has a little,,Y
+34,practice,3,onion,child,,child,Y
+34,practice,3,onion,parent,shock at the bottom,,Y
+34,practice,6,onion,child,Mine is a onion,,Y
+34,practice,6,onion,parent,,parent,Y
+34,test,5,A1,parent,Mine looks like somebody running to the left,,Y
+34,test,5,A1,child,,child,Y
+34,test,15,A1,child,Mine looks like a person walking to the left,,Y
+34,test,15,A1,parent,,parent,Y
+34,test,21,A1,parent,Mine looks like a person running to the left,,Y
+34,test,21,A1,child,,child,Y
+34,test,37,A1,child,Now it looks someone like someone running to the left,,Y
+34,test,37,A1,parent,,parent,Y
+34,test,1,B1,parent,Mine looks like a man walking to the left,,Y
+34,test,1,B1,child,,child,Y
+34,test,17,B1,child,Mine looks like a person walking slowly to the left,,Y
+34,test,17,B1,parent,,parent,Y
+34,test,29,B1,parent,Mine looks like a sad person walking to the left,,Y
+34,test,29,B1,child,,child,Y
+34,test,39,B1,child,Now it's the person person who's sad walking to the left,,Y
+34,test,39,B1,parent,,parent,Y
+34,test,3,C1,parent,Mine looks like someone praying or diving into the water,,Y
+34,test,3,C1,child,,child,Y
+34,test,19,C1,child,Mine looks like someone kneeling down,,Y
+34,test,19,C1,parent,,parent,Y
+34,test,25,C1,parent,Mine looks like a person kneeling down,,Y
+34,test,25,C1,child,,child,Y
+34,test,35,C1,child,This looks somebody like someone kneeling,,Y
+34,test,35,C1,parent,,parent,Y
+34,test,4,D1,child,Car or something,,Y
+34,test,4,D1,parent,,parent,Y
+34,test,12,D1,parent,Mine looks like a a boat surrounded by mountains,,Y
+34,test,12,D1,child,,child,Y
+34,test,28,D1,child,Mine looks like a rocket,,N
+34,test,28,D1,parent,,parent,N
+34,test,40,D1,parent,Now it's the ocean that has the mountains and the boat,,Y
+34,test,40,D1,child,,child,Y
+34,test,2,E1,child,Mine looks like a man dancing to the right,,Y
+34,test,2,E1,parent,What size is it the biggest triangles or the smaller triangles,,Y
+34,test,2,E1,child,Biggest,,Y
+34,test,2,E1,parent,,parent,Y
+34,test,16,E1,parent,Mine looks like maybe like a bird it has like two triangles at the bottom,,Y
+34,test,16,E1,child,,child,Y
+34,test,22,E1,child,Mine looks like a person jumping and trying their zzz on like a bird,,Y
+34,test,22,E1,parent,,parent,Y
+34,test,32,E1,parent,Mine looks like a bird flying away,,Y
+34,test,32,E1,child,,child,Y
+34,test,7,F1,parent,This is mine is the one that has the bigger shapes to it and including,,Y
+34,test,7,F1,child,,child,Y
+34,test,7,F1,parent,the square,,Y
+34,test,11,F1,child,Mine looks like a person with that's made of triangles,,Y
+34,test,11,F1,parent,Like a sad person walking,,Y
+34,test,11,F1,child,No the one the one with the one with bigger shapes,,Y
+34,test,11,F1,parent,,parent,Y
+34,test,27,F1,parent,This is the one that doesn't look like a person kneeling,,Y
+34,test,27,F1,parent,With the triangles,,Y
+34,test,27,F1,child,,child,Y
+34,test,27,F1,parent,at the bottom,,Y
+34,test,31,F1,child,Mine looks like someone with a square head and has triangle feet,,Y
+34,test,31,F1,parent,,parent,Y
+34,test,9,G1,parent,A square on the top and a big square on the bottom and triangles on the square,,Y
+34,test,9,G1,child,,child,Y
+34,test,13,G1,child,Mine looks like something like a building or something,,Y
+34,test,13,G1,parent,Does it have a square on top,,Y
+34,test,13,G1,child,Yes,,Y
+34,test,13,G1,parent,,parent,Y
+34,test,23,G1,parent,Mine looks like someone sitting and kneeling uh square,,Y
+34,test,23,G1,child,,child,Y
+34,test,33,G1,child,Mine looks like someone sitting down,,Y
+34,test,33,G1,parent,,parent,Y
+34,test,8,H1,child,Mine is the one that has the bigger pieces,,Y
+34,test,8,H1,parent,,parent,Y
+34,test,18,H1,parent,Mine looks like a person holding something and we have a s square head,,Y
+34,test,18,H1,child,,child,Y
+34,test,26,H1,child,Mine looks like someone with a big diamond in the,,Y
+34,test,26,H1,parent,,parent,Y
+34,test,34,H1,parent,This looks like somebody holding a box,,Y
+34,test,34,H1,child,,child,Y
+34,test,6,I1,child,Mine looks like someone holding something,,Y
+34,test,6,I1,parent,,parent,Y
+34,test,20,I1,parent,Mine looks like a person holding a bowl,,Y
+34,test,20,I1,child,,child,Y
+34,test,30,I1,child,Mine looks like someone holding a bowl,,Y
+34,test,30,I1,parent,,parent,Y
+34,test,36,I1,parent,Now it looks like someone holding a bowl,,Y
+34,test,36,I1,child,,child,Y
+34,test,10,K1,child,Mine has the arrow at the top,,Y
+34,test,10,K1,parent,,parent,Y
+34,test,14,K1,parent,Mine looks like like a dog with a zzz at the top,,Y
+34,test,14,K1,child,,child,Y
+34,test,24,K1,child,Mine looks like a dog with a arrow head,,Y
+34,test,24,K1,parent,,parent,Y
+34,test,38,K1,parent,Now it's the dog with the arrow head,,Y
+34,test,38,K1,child,,child,Y

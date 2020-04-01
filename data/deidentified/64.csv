@@ -1,0 +1,199 @@
+subid,type,trial,target,person,utterance,selection,correct
+64,practice,1,apple,parent,Touch the apple,,Y
+64,practice,1,apple,child,,child,Y
+64,practice,4,apple,child,touch the banana,,N
+64,practice,4,apple,parent,,parent,N
+64,practice,2,artichoke,parent,Now I think you tell me which one to touch,,Y
+64,practice,2,artichoke,child,"uhh, touch, I don't know what these two are",,Y
+64,practice,2,artichoke,parent,"I think that's reasonable, can you tell me what they look like?",,Y
+64,practice,2,artichoke,child,"um, it looks like, um, lemon and a peach",,Y
+64,practice,2,artichoke,parent,"ok, the one that has the blue box around it, what does it look like?",,Y
+64,practice,2,artichoke,child,it looks like it has lace on it?,,Y
+64,practice,2,artichoke,parent,okay,,Y
+64,practice,2,artichoke,parent,,parent,Y
+64,practice,5,artichoke,parent,"ok, I want you to touch the artichoke, it's the leafy one",,Y
+64,practice,5,artichoke,child,okay,,Y
+64,practice,5,artichoke,child,,child,Y
+64,practice,3,onion,parent,"okay, I want you to touch the vegetable that has the point up, that's pointing up",,Y
+64,practice,3,onion,child,"ok, but which one is it",,Y
+64,practice,3,onion,parent,"it's an onion I think and it's got a point up, like the pointy part is sticking up",,Y
+64,practice,3,onion,child,okay,,Y
+64,practice,3,onion,parent,you see?,,Y
+64,practice,3,onion,child,mhm,,Y
+64,practice,3,onion,parent,"OK, touch it",,Y
+64,practice,3,onion,child,,child,Y
+64,practice,6,onion,child,oh um i think you touch the artichoke,,N
+64,practice,6,onion,parent,the artichoke? the one with the leafies?,,N
+64,practice,6,onion,child,yeah,,N
+64,practice,6,onion,parent,,parent,N
+64,test,10,A1,child,touch the one that's running,,Y
+64,test,10,A1,parent,okay,,Y
+64,test,10,A1,parent,,parent,Y
+64,test,12,A1,parent,"um, touch the one who is walking",,Y
+64,test,12,A1,child,,child,Y
+64,test,24,A1,child,"touch the one that, hm ha ha ha",,Y
+64,test,24,A1,parent,is that the one in the blue box?,,Y
+64,test,24,A1,child,um hmm,,Y
+64,test,24,A1,parent,okay,,Y
+64,test,24,A1,parent,,parent,Y
+64,test,34,A1,parent,"no, do, do the running person",,Y
+64,test,34,A1,child,,child,Y
+64,test,4,B1,child,"ok, um, touch the person who's walking",,Y
+64,test,4,B1,parent,ok,,Y
+64,test,4,B1,parent,,parent,Y
+64,test,14,B1,parent,"alright um, touch the one with no arms who's walking",,Y
+64,test,14,B1,child,who's not walking?,,Y
+64,test,14,B1,parent,yeah walking with no arms,,Y
+64,test,14,B1,child,who's walking or not walking?,,Y
+64,test,14,B1,parent,walking,,Y
+64,test,14,B1,child,,child,Y
+64,test,14,B1,parent,got it? okay,,Y
+64,test,30,B1,child,"I'll tell you, um, do the one that's walking with his square head. It's the blue box",,Y
+64,test,30,B1,parent,,parent,Y
+64,test,30,B1,child,"um, the person who's holding the bowl",,Y
+64,test,36,B1,parent,do the sad person walking away,,Y
+64,test,36,B1,child,"okay, is it the one holding the bowl?",,Y
+64,test,36,B1,parent,no the other one,,Y
+64,test,36,B1,child,okay,,Y
+64,test,36,B1,child,,child,Y
+64,test,36,B1,child,who had no hands?,,Y
+64,test,36,B1,parent,right,,Y
+64,test,3,C1,parent,um you should touch the one who's trying to do a headstand,,Y
+64,test,3,C1,child,"um, so, okay",,Y
+64,test,3,C1,child,,child,Y
+64,test,17,C1,child,"fine, um, touch the one that has that square head",,Y
+64,test,17,C1,parent,"they both have square heads. Is the jumping one, or the, with the head stand one",,Y
+64,test,17,C1,child,that one,,Y
+64,test,17,C1,parent,"I can't see it, tell me, is it the one that looks like it's jumping or the one that looks like it's doing a head stand",,Y
+64,test,17,C1,child,doing the head stand like that,,Y
+64,test,17,C1,parent,okay,,Y
+64,test,17,C1,parent,,parent,Y
+64,test,27,C1,parent,"um, touch the one trying to stand on his head",,Y
+64,test,27,C1,child,,child,Y
+64,test,31,C1,parent,"okay, so the person doing a head stand is in the blue box?",,Y
+64,test,31,C1,child,yeah,,Y
+64,test,31,C1,parent,,parent,Y
+64,test,31,C1,child,"don't, don't do that one",,Y
+64,test,5,D1,parent,"um, touch the one who's lying down like Juno",,Y
+64,test,5,D1,child,,child,Y
+64,test,11,D1,parent,okay you tell me,,Y
+64,test,11,D1,child,touch the one that is,,Y
+64,test,11,D1,parent,ok,,Y
+64,test,11,D1,child,touch the one that is lying down,,Y
+64,test,11,D1,parent,,parent,Y
+64,test,21,D1,parent,touch the one who's lying down like Juno,,Y
+64,test,21,D1,child,,child,Y
+64,test,37,D1,child,um do the one that's laying down,,Y
+64,test,37,D1,parent,is that the blue box?,,Y
+64,test,37,D1,child,yeah,,Y
+64,test,37,D1,parent,,parent,Y
+64,test,2,E1,parent,"I don't know, tell me which one to touch",,N
+64,test,2,E1,child,you should touch the man who's walking with the square on his head,,N
+64,test,2,E1,parent,,parent,N
+64,test,2,E1,parent,okay,,N
+64,test,18,E1,parent,"okay, touch the one that's jumping",,Y
+64,test,18,E1,child,,child,Y
+64,test,22,E1,child,do that one that and be like whoop,,Y
+64,test,22,E1,parent,okay is that the one in the blue box?,,Y
+64,test,22,E1,child,yeah,,Y
+64,test,22,E1,parent,,parent,Y
+64,test,40,E1,parent,do the jumping up and down one,,Y
+64,test,40,E1,child,,child,Y
+64,test,1,F1,parent,I want you to touch the one that has a square on the upper left part and it looks like its walking,,Y
+64,test,1,F1,child,okay,,Y
+64,test,1,F1,child,,child,Y
+64,test,19,F1,child,"okay um, the person who's walking with the square head",,Y
+64,test,19,F1,parent,with no arms?,,Y
+64,test,19,F1,child,yeah,,Y
+64,test,19,F1,parent,that's the one that's not in the blue box?,,Y
+64,test,19,F1,child,yeah,,Y
+64,test,19,F1,parent,okay,,Y
+64,test,19,F1,parent,,parent,Y
+64,test,29,F1,parent,touch the one doing the happy dance,,Y
+64,test,29,F1,child,which happy dance?,,Y
+64,test,29,F1,parent,"that is like, hey",,Y
+64,test,29,F1,child,so like this one?,,Y
+64,test,29,F1,parent,"I can't see it, touch the one that's doing the happy dance",,Y
+64,test,29,F1,child,is it,,Y
+64,test,29,F1,parent,the one that's doing the happy dance,,Y
+64,test,29,F1,parent,"not the one on, on their knees, the one doing the happy dance",,Y
+64,test,29,F1,child,"ok, is that the one",,Y
+64,test,29,F1,child,,child,Y
+64,test,29,F1,parent,I don't know,,Y
+64,test,33,F1,parent,"they both have square heads, happy dance or head stand",,Y
+64,test,33,F1,child,happy dance,,Y
+64,test,33,F1,parent,happy dance is in the blue box?,,Y
+64,test,33,F1,child,mm hm,,Y
+64,test,33,F1,parent,,parent,Y
+64,test,6,G1,child,"touch the one who's um, um, who's lying down",,N
+64,test,6,G1,parent,lying down?,,N
+64,test,6,G1,child,yeah,,N
+64,test,6,G1,parent,,parent,N
+64,test,6,G1,parent,okay,,N
+64,test,16,G1,parent,touch the one with the square head on their knees,,Y
+64,test,16,G1,parent,"i know, touch the one who's on their knees, with the square head",,Y
+64,test,16,G1,child,,child,Y
+64,test,26,G1,child,touch the one that's jumping,,Y
+64,test,26,G1,parent,is that the blue box?,,Y
+64,test,26,G1,child,no,,Y
+64,test,26,G1,parent,,parent,Y
+64,test,38,G1,parent,do the one who's on their knees,,Y
+64,test,38,G1,child,,child,Y
+64,test,38,G1,child,the one with hands down?,,Y
+64,test,38,G1,parent,no,,Y
+64,test,38,G1,child,okay good,,Y
+64,test,9,H1,parent,touch the one who's standing up holding something,,Y
+64,test,9,H1,child,a ball,,Y
+64,test,9,H1,parent,okay,,Y
+64,test,9,H1,child,,child,Y
+64,test,15,H1,child,"um, ta, uh, who's standing up with the ball",,Y
+64,test,15,H1,parent,okay,,Y
+64,test,15,H1,parent,,parent,Y
+64,test,23,H1,parent,"um, touch the one that's standing up holding the bowl.",,Y
+64,test,23,H1,child,,child,Y
+64,test,39,H1,child,"um, do the one that's sticking the butt out, and holding the bowl",,Y
+64,test,39,H1,parent,holding the bowl,,Y
+64,test,39,H1,parent,,parent,Y
+64,test,39,H1,child,"well he's not stickings, that's, that's in the blue box",,Y
+64,test,8,I1,child,"um do the one that's sticking his butt out, in the blue box",,Y
+64,test,8,I1,parent,the one who's holding a bowl and sticking his butt out?,,Y
+64,test,8,I1,child,yeah,,Y
+64,test,8,I1,parent,okay,,Y
+64,test,8,I1,parent,,parent,Y
+64,test,20,I1,parent,"touch the one that, who's sticking his butt out holding a bowl",,Y
+64,test,20,I1,child,fine,,Y
+64,test,20,I1,child,,child,Y
+64,test,28,I1,child,"touch the one that holding the bowls, sticking his butt out",,Y
+64,test,28,I1,parent,is that blue box?,,Y
+64,test,28,I1,child,yeah,,Y
+64,test,28,I1,parent,,parent,Y
+64,test,28,I1,child,not staying,,Y
+64,test,32,I1,parent,yeah touch the one who's sticking their butt out,,Y
+64,test,32,I1,child,,child,Y
+64,test,32,I1,parent,holding a bowl,,Y
+64,test,32,I1,child,"um, do the one that's with the square head",,Y
+64,test,7,K1,parent,touch the one who's standing up with their arms out,,Y
+64,test,7,K1,child,"and, and xxx",,Y
+64,test,7,K1,parent,with the arrowhead,,Y
+64,test,7,K1,child,it's okay but,,Y
+64,test,7,K1,parent,and the tail,,Y
+64,test,7,K1,child,okay but,,Y
+64,test,7,K1,parent,just touch it,,Y
+64,test,7,K1,parent,"look at the arrowhead, and standing up with the arms out",,Y
+64,test,7,K1,child,"I know, but",,Y
+64,test,7,K1,parent,just touch it dude,,Y
+64,test,7,K1,child,okay but he's,,Y
+64,test,7,K1,child,,child,Y
+64,test,7,K1,child,he's sticking his butt out?,,Y
+64,test,7,K1,parent,yeah he is totally sticking his butt out,,Y
+64,test,13,K1,child,"okay, do the one that's, uh, sticking his butt out",,Y
+64,test,13,K1,parent,"they both kinda look like they are sticking their butt, the one with the arms out with the arrow head?",,Y
+64,test,13,K1,child,yeah,,Y
+64,test,13,K1,parent,okay,,Y
+64,test,13,K1,parent,,parent,Y
+64,test,25,K1,parent,"um, touch the one holding the bowl with their butt out",,Y
+64,test,25,K1,child,,child,Y
+64,test,35,K1,child,"um, do the one that's sticking their butt out",,Y
+64,test,35,K1,parent,is it in the blue box,,Y
+64,test,35,K1,child,yeah,,Y
+64,test,35,K1,parent,,parent,Y

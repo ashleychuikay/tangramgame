@@ -1,0 +1,147 @@
+subid,type,trial,target,person,utterance,selection,correct
+11,practice,1,apple,parent,OK so I have a blue square around the apple can you touch the apple,,Y
+11,practice,1,apple,child,,child,Y
+11,practice,4,apple,child,Apple,,Y
+11,practice,4,apple,parent,Apple,,Y
+11,practice,4,apple,parent,,parent,Y
+11,practice,2,artichoke,child,I don't know,,Y
+11,practice,2,artichoke,parent,What does it look like,,Y
+11,practice,2,artichoke,child,Um a lettuce,,Y
+11,practice,2,artichoke,parent,Oh I see it,,Y
+11,practice,2,artichoke,child,It looks like this,,Y
+11,practice,2,artichoke,parent,,parent,Y
+11,practice,2,artichoke,child,Look to the left,,Y
+11,practice,2,artichoke,parent,Yup I see it it was an artichoke,,Y
+11,practice,5,artichoke,parent,Oh now mine's around the artichoke again the one that looks like a lettuce,,Y
+11,practice,5,artichoke,child,,child,Y
+11,practice,3,onion,parent,I see one that's around the other thing it's the onion,,Y
+11,practice,3,onion,child,,child,Y
+11,practice,6,onion,child,So it's garlic,,Y
+11,practice,6,onion,parent,Oh it looks liek garlic,,Y
+11,practice,6,onion,child,Yeah,,Y
+11,practice,6,onion,parent,Mmm is it smooth or does it have a bunch of stuff on it,,Y
+11,practice,6,onion,child,It's smooth see,,Y
+11,practice,6,onion,parent,,parent,Y
+11,practice,6,onion,child,See,,Y
+11,test,9,A1,parent,OK now I've got the person who's skinny and has less triangles,,Y
+11,test,9,A1,child,,child,Y
+11,test,19,A1,child,I've got the one that has lots of triangles,,Y
+11,test,19,A1,parent,There's lots of triangles,,Y
+11,test,19,A1,child,And one diamond head,,Y
+11,test,19,A1,parent,And a diamond head,,Y
+11,test,19,A1,parent,,parent,Y
+11,test,19,A1,parent,zzz,,Y
+11,test,27,A1,parent,Oh I've got the one that looks like uh,,Y
+11,test,27,A1,parent,Someone running,,Y
+11,test,27,A1,child,,child,Y
+11,test,31,A1,child,Uh uh the one with like some triangles,,Y
+11,test,31,A1,parent,,parent,Y
+11,test,4,B1,child,A person,,Y
+11,test,4,B1,parent,The person walking,,Y
+11,test,4,B1,child,Yeah,,Y
+11,test,4,B1,parent,Or the person bent over,,Y
+11,test,4,B1,child,The person walking,,Y
+11,test,4,B1,parent,,parent,Y
+11,test,20,B1,parent,Oh I've got the one that looks like a man who's walking he looks sad his head is down,,Y
+11,test,20,B1,child,,child,Y
+11,test,24,B1,child,I've got the one that's walking and it's a man and it's sad,,Y
+11,test,24,B1,parent,,parent,Y
+11,test,38,B1,parent,I've got the one that looks like the man walking really sad,,Y
+11,test,38,B1,child,,child,Y
+11,test,6,C1,child,The person crawling,,Y
+11,test,6,C1,parent,Person crawling,,Y
+11,test,6,C1,parent,,parent,Y
+11,test,18,C1,parent,So I've got one who looks like the man who's crawling,,Y
+11,test,18,C1,child,,child,Y
+11,test,30,C1,child,I have the one that's crawling,,Y
+11,test,30,C1,parent,,parent,Y
+11,test,40,C1,parent,I've got the one who looks like he's crawling,,Y
+11,test,40,C1,child,,child,Y
+11,test,1,D1,parent,Oh,,N
+11,test,1,D1,child,,child,N
+11,test,11,D1,child,The one that look has a mountain behind it,,Y
+11,test,11,D1,child,Right here,,Y
+11,test,11,D1,parent,Is it,,Y
+11,test,11,D1,child,Right here,,Y
+11,test,11,D1,parent,Is it the flatter one,,Y
+11,test,11,D1,child,Hey look at this one right here,,Y
+11,test,11,D1,parent,I can't see it is it the one that's flat,,Y
+11,test,11,D1,child,Yeah,,Y
+11,test,11,D1,parent,,parent,Y
+11,test,23,D1,parent,OK now I've got the one who is flat and like looks like they're in a boat,,Y
+11,test,23,D1,child,,child,Y
+11,test,35,D1,child,The one who that looks like they're in a boat,,Y
+11,test,35,D1,parent,,parent,Y
+11,test,2,E1,child,This one,,Y
+11,test,2,E1,parent,What does it look like,,Y
+11,test,2,E1,child,A bird,,Y
+11,test,2,E1,parent,A bird is it long and skinny or is it wider,,Y
+11,test,2,E1,child,Wider,,Y
+11,test,2,E1,parent,,parent,Y
+11,test,14,E1,parent,Now I've got the one who looks like a person who has their hands in the air and they're jumping,,Y
+11,test,14,E1,child,,child,Y
+11,test,26,E1,child,Bird,,Y
+11,test,26,E1,parent,The bird the one who's flying,,Y
+11,test,26,E1,child,Yeah,,Y
+11,test,26,E1,parent,,parent,Y
+11,test,32,E1,parent,I've got one jumping,,Y
+11,test,32,E1,child,,child,Y
+11,test,7,F1,parent,Oh well I've got the one that looks like the person who has their arms in the air and they're running,,Y
+11,test,7,F1,child,,child,Y
+11,test,15,F1,child,I've got the one that has their hands in the air and they're really wide and they're running,,Y
+11,test,15,F1,parent,,parent,Y
+11,test,15,F1,parent,That one,,Y
+11,test,29,F1,parent,I got the one that's really wide and looks like someone who's running,,Y
+11,test,29,F1,child,,child,Y
+11,test,39,F1,child,I've got the one that looks like it's running really wide,,Y
+11,test,39,F1,parent,,parent,Y
+11,test,5,G1,parent,Now I've got one that looks like uh a lady sitting in a chair,,Y
+11,test,5,G1,child,This one,,Y
+11,test,5,G1,child,I don't know,,Y
+11,test,5,G1,child,,child,Y
+11,test,13,G1,child,I got the one with lots of diamonds and triangles I I have the one with a little diamond on the top,,Y
+11,test,13,G1,parent,On the top of it,,Y
+11,test,13,G1,child,Yeah and a triangle in the middle,,Y
+11,test,13,G1,parent,,parent,Y
+11,test,13,G1,parent,Alright we figured that one out fast,,Y
+11,test,21,G1,parent,Oh now OK I've got the one who looks like the man sitting down,,Y
+11,test,21,G1,child,,child,Y
+11,test,37,G1,child,The one that has one triangle and one diamond,,Y
+11,test,37,G1,parent,,parent,Y
+11,test,8,H1,child,I have the person that has a kite head,,Y
+11,test,8,H1,parent,Mmm they both look like they have kite heads do you have the one that it's straight up and down or the one that it's kind of sideways,,Y
+11,test,8,H1,parent,Do you have the person who is really wide or the person who's skinny and has less triangles,,Y
+11,test,8,H1,child,The wide one,,Y
+11,test,8,H1,parent,,parent,Y
+11,test,16,H1,parent,I've got the one that is standing up,,Y
+11,test,16,H1,child,,child,Y
+11,test,16,H1,parent,Mmm it was red,,Y
+11,test,16,H1,child,Yeah,,Y
+11,test,28,H1,child,So I have this one,,Y
+11,test,28,H1,parent,Is it the one who's jumping,,Y
+11,test,28,H1,child,No,,Y
+11,test,28,H1,parent,It's the other one,,Y
+11,test,28,H1,child,Yeah,,Y
+11,test,28,H1,parent,,parent,Y
+11,test,34,H1,parent,I've got the one who's not the man crawling the other one,,Y
+11,test,34,H1,child,,child,Y
+11,test,10,I1,child,I got the one that's holding I got the person that's holding a triangle in his hands,,Y
+11,test,10,I1,parent,,parent,Y
+11,test,12,I1,parent,Oh now I got the one who's holding the triangle,,Y
+11,test,12,I1,child,,child,Y
+11,test,22,I1,parent,Is it the man holding something or is it the one who's jumping,,Y
+11,test,22,I1,child,The one that's holding something,,Y
+11,test,22,I1,parent,,parent,Y
+11,test,36,I1,child,I've got the one where he's holding something,,Y
+11,test,36,I1,child,,child,Y
+11,test,3,K1,parent,OK now wait I got the one that looks like a doggy standing up,,Y
+11,test,3,K1,child,,child,Y
+11,test,17,K1,child,I have the one that looks like a doggy standing up,,Y
+11,test,17,K1,parent,,parent,Y
+11,test,17,K1,parent,He has a big head,,Y
+11,test,25,K1,parent,Oh I've got the doggy standing up,,Y
+11,test,25,K1,child,,child,Y
+11,test,25,K1,child,Again,,Y
+11,test,25,K1,parent,Mhm,,Y
+11,test,33,K1,child,Dog standing up,,Y
+11,test,33,K1,parent,,parent,Y

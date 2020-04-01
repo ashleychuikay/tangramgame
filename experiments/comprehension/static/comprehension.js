@@ -82,6 +82,7 @@ class Experiment {
     this.timestamp = getCurrentTime();
     //the time that the trial was completed at 
     this.reactiontime = 0;
+    this.data = [];
 
     $('#audioPlayButton').on('click', this.playAudio.bind(this));
   }
@@ -95,7 +96,9 @@ class Experiment {
     // begin first trial as soon as we hear back from the server
     this.socket.on('onConnected', function(mongoData) {
       this.subid = mongoData['id'];
+      this.itemid = mongoData['set_id'];
       this.trials = mongoData['trials'];
+      this.age = 'mturk';
       this.preloadedAudio = _.map(this.trials, (trial) => {
 	return new WebAudioAPISound("/static/audio/" + trial['audio']);
       });
@@ -107,24 +110,29 @@ class Experiment {
 
   //the end of the experiment
   end () {
+    console.log('if submitted, data on mturk would be');
+    console.log(this.data);
+
     setTimeout(function () {
+      turk.submit(this.data, true);
       $("#stage").fadeOut();
-    }, normalpause);
-    showSlide("finish");
+      showSlide("finish");
+    }.bind(this), normalpause);
   };
 
   //concatenates all experimental variables into a string which
   //represents one "row" of data in the eventual csv, to live in the
   //server
   processOneRow () {
-    var dataforRound = this.subid; 
-    dataforRound += "," + this.age + "," + this.trialnum + "," + this.target;
-    dataforRound += "," + this.leftpic + "," + this.rightpic + "," + this.person;
-    dataforRound += "," + this.side + "," + this.chosenpic + "," + this.response;
-    dataforRound += "," + this.date + "," + this.timestamp + "," + this.reactiontime + "\n";
-    console.log(dataforRound);
-    $.post("https://callab.uchicago.edu/experiments/tangram-comprehension/tangramcomprehensionsave.php",
-	   {postresult_string : dataforRound});	
+    var jsonForRound = _.pick(this, [
+      'subid', 'itemid', 'audioid', 'trialnum', 'age', 'target',
+      'leftpic','rightpic', 'person','side','chosenpic','correct',
+      'date','timestamp','reactiontime', 'occurrence'
+    ]);
+
+    // send to server and save locally to submit to mturk
+    this.socket.emit('currentData', jsonForRound);
+    this.data.push(jsonForRound);
   };
 
   //Comprehension game
@@ -132,7 +140,8 @@ class Experiment {
     var currTrial = this.trials[trialnum];
     this.trialnum = trialnum;
     this.clickDisabled = true;
-    this.startTime = (new Date()).getTime();
+    this.audioid = currTrial['audio'];
+    this.occurrence = currTrial['occurrence'];
     this.target = currTrial['target'];
     this.leftpic = currTrial['leftpic'];
     this.rightpic = currTrial['rightpic'];
@@ -169,10 +178,12 @@ class Experiment {
   playAudio(event) {
     // Play audio
     var audio = this.preloadedAudio[this.trialnum];
-    audio.play();
 
-    // Only allow to click tangram after audio 
-    this.clickDisabled = false;
+    // after audio finishes, allow to click tangram and start clock
+    audio.play(function(){
+      this.clickDisabled = false;
+      this.startTime = (new Date()).getTime();
+    }.bind(this));
   }
 
   handleClick(event) {
@@ -182,12 +193,11 @@ class Experiment {
       $('#error').fadeIn();
       setTimeout(function() {$('#error').fadeOut();}, 1500);
       return;
-    } else {
-      this.clickDisabled = true; 
     }
-    
-    // time the participant clicked picture - the time the trial began
+
+    // time the participant clicked picture - the time the audio finished
     this.reactiontime = (new Date()).getTime() - this.startTime;
+    this.clickDisabled = true; 
 
     // Add color to selected picture
     var picID = $(event.currentTarget).attr('id');
@@ -210,16 +220,7 @@ class Experiment {
     // If the child picked the picture that matched with the target,
     // then they were correct. If they did not, they were not
     // correct.
-    if (this.chosenpic === this.target) {
-      this.response = "Y";
-    } else {
-      this.response = "N";
-    };
-
-    // Play sound at end of trial
-    setTimeout(function() {
-      //nextSound.play();
-    }, 100);
+    this.correct = this.chosenpic === this.target;
 
     //Process the data to be saved
     this.processOneRow();

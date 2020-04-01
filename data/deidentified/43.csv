@@ -1,0 +1,109 @@
+subid,type,trial,target,person,utterance,selection,correct
+43,practice,1,apple,parent,It's an apple,,Y
+43,practice,1,apple,child,,child,Y
+43,practice,4,apple,child,It has a leaf,,Y
+43,practice,4,apple,parent,,parent,Y
+43,practice,2,artichoke,child,It's spikey,,Y
+43,practice,2,artichoke,parent,,parent,Y
+43,practice,5,artichoke,parent,It's spikey,,Y
+43,practice,5,artichoke,child,,child,Y
+43,practice,3,onion,parent,It's I think it's an onion or a garlic it's a bulb it's not,,Y
+43,practice,3,onion,child,,child,Y
+43,practice,3,onion,parent,spikey,,Y
+43,practice,6,onion,child,It has lines,,Y
+43,practice,6,onion,parent,,parent,Y
+43,test,3,A1,parent,It is a person facing away with one leg up,,Y
+43,test,3,A1,child,,child,Y
+43,test,11,A1,child,Walking on one foot,,Y
+43,test,11,A1,parent,,parent,Y
+43,test,29,A1,parent,One leg up looks like not does not have a bowl,,Y
+43,test,29,A1,child,,child,Y
+43,test,33,A1,child,Running and playing,,Y
+43,test,33,A1,parent,Running and playing,,Y
+43,test,33,A1,child,Running,,Y
+43,test,33,A1,parent,,parent,Y
+43,test,4,B1,child,It is walking slowly with his head down,,Y
+43,test,4,B1,parent,,parent,Y
+43,test,16,B1,parent,Walking looking,,Y
+43,test,16,B1,child,,child,Y
+43,test,30,B1,child,Walking with head down,,Y
+43,test,30,B1,parent,,parent,Y
+43,test,36,B1,parent,Walking,,Y
+43,test,36,B1,child,,child,Y
+43,test,7,C1,parent,Um it's like leaning over like leapfrog,,Y
+43,test,7,C1,child,,child,Y
+43,test,17,C1,child,Bending over,,Y
+43,test,17,C1,parent,,parent,Y
+43,test,21,C1,parent,Leaned over leapfrog,,Y
+43,test,21,C1,child,,child,Y
+43,test,37,C1,child,Leapfrog,,Y
+43,test,37,C1,parent,,parent,Y
+43,test,5,D1,parent,It's lying down,,Y
+43,test,5,D1,child,,child,Y
+43,test,13,D1,child,Swinging,,Y
+43,test,13,D1,parent,,parent,Y
+43,test,25,D1,parent,Swimming,,Y
+43,test,25,D1,child,,child,Y
+43,test,39,D1,child,Swimming,,Y
+43,test,39,D1,parent,,parent,Y
+43,test,8,E1,child,It is jumping up,,Y
+43,test,8,E1,parent,,parent,Y
+43,test,12,E1,parent,Jumping two feet out,,Y
+43,test,12,E1,child,,child,Y
+43,test,24,E1,child,Jumping up,,Y
+43,test,24,E1,parent,,parent,Y
+43,test,40,E1,parent,Jumping up with arms out,,Y
+43,test,40,E1,child,,child,Y
+43,test,9,F1,parent,It has legs spread out and hands pointing up,,Y
+43,test,9,F1,child,,child,Y
+43,test,15,F1,child,Arms up,,Y
+43,test,15,F1,parent,,parent,Y
+43,test,23,F1,parent,Arms point out too are legs far apart,,Y
+43,test,23,F1,child,,child,Y
+43,test,31,F1,child,Um legs far apart,,Y
+43,test,31,F1,parent,,parent,Y
+43,test,6,G1,child,It has it is standing up,,Y
+43,test,6,G1,parent,,parent,Y
+43,test,20,G1,parent,Looks like he's kneeling,,Y
+43,test,20,G1,child,,child,Y
+43,test,22,G1,child,Standing up,,Y
+43,test,22,G1,child,Not jumping,,Y
+43,test,22,G1,parent,,parent,Y
+43,test,32,G1,parent,Kneeling,,Y
+43,test,32,G1,parent,Not the not not leapfrog,,Y
+43,test,32,G1,child,,child,Y
+43,test,1,H1,parent,OK it looks like a person standing up,,Y
+43,test,1,H1,child,,child,Y
+43,test,19,H1,child,Arms out,,Y
+43,test,19,H1,child,Looks,,Y
+43,test,19,H1,parent,With,,Y
+43,test,19,H1,child,Looks like um only has one leg,,Y
+43,test,19,H1,parent,,parent,Y
+43,test,27,H1,parent,Um not swimming,,Y
+43,test,27,H1,child,,child,Y
+43,test,35,H1,child,Arms out,,Y
+43,test,35,H1,parent,Jumping,,Y
+43,test,35,H1,child,No,,Y
+43,test,35,H1,parent,Just standing,,Y
+43,test,35,H1,child,Yeah,,Y
+43,test,35,H1,parent,,parent,Y
+43,test,10,I1,child,He is holding something,,Y
+43,test,10,I1,parent,,parent,Y
+43,test,14,I1,parent,Holding something,,Y
+43,test,14,I1,child,,child,Y
+43,test,26,I1,child,Bowl,,Y
+43,test,26,I1,parent,Holding a bowl,,Y
+43,test,26,I1,child,Yeah,,Y
+43,test,26,I1,parent,,parent,Y
+43,test,34,I1,parent,Bowl,,Y
+43,test,34,I1,child,,child,Y
+43,test,2,K1,child,It is praying,,Y
+43,test,2,K1,parent,Praying,,Y
+43,test,2,K1,parent,,parent,Y
+43,test,2,K1,child,It is bending over,,Y
+43,test,18,K1,parent,Hands straight out looks like he has a tail,,Y
+43,test,18,K1,child,,child,Y
+43,test,28,K1,child,Looks like it has a tail,,Y
+43,test,28,K1,parent,,parent,Y
+43,test,38,K1,parent,Standing with the tail,,Y
+43,test,38,K1,child,,child,Y

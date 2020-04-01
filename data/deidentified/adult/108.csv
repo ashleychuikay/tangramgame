@@ -1,0 +1,97 @@
+subid,type,trial,target,person,utterance,selection,correct
+108,practice,1,apple,right,"okay alright, uh, the olive",,Y
+108,practice,1,apple,left,okay,,Y
+108,practice,1,apple,left,,left,Y
+108,practice,4,apple,left,um the apple,,Y
+108,practice,4,apple,right,,right,Y
+108,practice,2,artichoke,left,um the artichoke thing,,Y
+108,practice,2,artichoke,right,,right,Y
+108,practice,2,artichoke,left,the not garlic,,Y
+108,practice,2,artichoke,right,got it,,Y
+108,practice,5,artichoke,right,uh the artichoke,,Y
+108,practice,5,artichoke,left,,left,Y
+108,practice,3,onion,right,"uh the other thing, the one that I just chose,the garlic",,Y
+108,practice,3,onion,left,yeah,,Y
+108,practice,3,onion,left,,left,Y
+108,practice,6,onion,left,uh the garlic,,Y
+108,practice,6,onion,right,,right,Y
+108,test,4,A1,left,"uh it's like one leg is back, behind it",,Y
+108,test,4,A1,right,,right,Y
+108,test,18,A1,right,running,,Y
+108,test,18,A1,left,,left,Y
+108,test,22,A1,left,"uh running, jumping",,Y
+108,test,22,A1,right,,right,Y
+108,test,38,A1,right,uh running,,Y
+108,test,38,A1,left,,left,Y
+108,test,6,B1,left,"uh the one that looks like that it's walking, like a normal person",,Y
+108,test,6,B1,right,,right,Y
+108,test,20,B1,right,uh walking,,Y
+108,test,20,B1,left,,left,Y
+108,test,28,B1,left,uh walking,,Y
+108,test,28,B1,right,,right,Y
+108,test,36,B1,right,walking,,Y
+108,test,36,B1,left,,left,Y
+108,test,2,C1,left,"uh the one that's lay down, sort of",,Y
+108,test,2,C1,right,,right,Y
+108,test,16,C1,right,"uh, bending down?",,Y
+108,test,16,C1,left,,left,Y
+108,test,24,C1,left,uh kneeling praying,,Y
+108,test,24,C1,right,,right,Y
+108,test,40,C1,right,uh kneeling bending down,,Y
+108,test,40,C1,left,,left,Y
+108,test,10,D1,left,uh laying down,,Y
+108,test,10,D1,right,,right,Y
+108,test,12,D1,right,uh laying down,,Y
+108,test,12,D1,left,,left,Y
+108,test,26,D1,left,uh laying down,,Y
+108,test,26,D1,right,,right,Y
+108,test,32,D1,right,laying down,,Y
+108,test,32,D1,left,,left,Y
+108,test,1,E1,right,"uh, dancing guy, the jumping guy",,Y
+108,test,1,E1,left,,left,Y
+108,test,11,E1,left,um jumping,,Y
+108,test,11,E1,right,,right,Y
+108,test,27,E1,right,jumping,,Y
+108,test,27,E1,left,,left,Y
+108,test,33,E1,left,uh jumping,,Y
+108,test,33,E1,right,,right,Y
+108,test,7,F1,right,"um, doing a split?",,Y
+108,test,7,F1,left,,left,Y
+108,test,19,F1,left,um split,,Y
+108,test,19,F1,right,,right,Y
+108,test,21,F1,right,uh split,,Y
+108,test,21,F1,left,,left,Y
+108,test,35,F1,left,uh split,,Y
+108,test,35,F1,right,,right,Y
+108,test,8,G1,left,"um, maybe kneeling?",,Y
+108,test,8,G1,right,,right,Y
+108,test,14,G1,right,uh kneeling,,Y
+108,test,14,G1,left,,left,Y
+108,test,30,G1,left,um kneeling,,Y
+108,test,30,G1,right,,right,Y
+108,test,34,G1,right,uh kneeling,,Y
+108,test,34,G1,left,,left,Y
+108,test,5,H1,right,"uh offering up something, but nothing's good",,Y
+108,test,5,H1,left,,left,Y
+108,test,13,H1,left,uh offering something,,Y
+108,test,13,H1,right,,right,Y
+108,test,29,H1,right,offering something,,Y
+108,test,29,H1,left,,left,Y
+108,test,31,H1,left,um kneeling offering,,Y
+108,test,31,H1,left,,left,Y
+108,test,9,I1,right,"uh, offering up something",,Y
+108,test,9,I1,left,,left,Y
+108,test,17,I1,left,"uh, offering something",,Y
+108,test,17,I1,right,,right,Y
+108,test,23,I1,right,offering the way up,,Y
+108,test,23,I1,left,,left,Y
+108,test,39,I1,left,uh offering,,Y
+108,test,39,I1,right,,right,Y
+108,test,3,K1,right,it's like putting something on a shelf,,Y
+108,test,3,K1,left,,left,Y
+108,test,15,K1,left,"um, bending over, putting something on a shelf",,Y
+108,test,15,K1,right,,right,Y
+108,test,25,K1,right,uh offering nothing,,Y
+108,test,25,K1,left,,left,Y
+108,test,37,K1,left,uh putting things on the shelf,,Y
+108,test,37,K1,right,,right,Y

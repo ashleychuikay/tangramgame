@@ -1,0 +1,114 @@
+subid,type,trial,target,person,utterance,selection,correct
+49,practice,1,apple,parent,"apple, so you gotta touch it",,Y
+49,practice,1,apple,child,,child,Y
+49,practice,4,apple,child,"it's not the b, it's the red apple",,Y
+49,practice,4,apple,parent,it is or it's not?,,Y
+49,practice,4,apple,child,it is,,Y
+49,practice,4,apple,parent,,parent,Y
+49,practice,2,artichoke,parent,"ok, it's your turn because I don't have a box",,Y
+49,practice,2,artichoke,child,"it's not the onion, it's the...",,Y
+49,practice,2,artichoke,parent,,parent,Y
+49,practice,2,artichoke,parent,artichoke,,Y
+49,practice,5,artichoke,parent,artichoke,,Y
+49,practice,5,artichoke,child,it is?,,Y
+49,practice,5,artichoke,parent,it is the artichoke,,Y
+49,practice,5,artichoke,child,,child,Y
+49,practice,3,onion,parent,it is the onion,,Y
+49,practice,3,onion,child,,child,Y
+49,practice,6,onion,child,onion,,Y
+49,practice,6,onion,parent,,parent,Y
+49,test,2,A1,child,"it's the second one where it has the square on top, then there's like one like this",,Y
+49,test,2,A1,parent,"ok, but you have to describe it. does he look like he's at a drinking fountain, or the other one",,Y
+49,test,2,A1,child,the other one,,Y
+49,test,2,A1,parent,,parent,Y
+49,test,16,A1,parent,the one that looks like they're running. one foot's up in the air,,Y
+49,test,16,A1,child,,child,Y
+49,test,30,A1,child,the guy who looks like he's running,,Y
+49,test,30,A1,parent,,parent,Y
+49,test,40,A1,parent,"um, the runner",,Y
+49,test,40,A1,child,,child,Y
+49,test,9,B1,parent,"um this one looks like a person walking very sad, like they're holding their head down",,Y
+49,test,9,B1,child,,child,Y
+49,test,15,B1,child,the one that looks like it's sad,,Y
+49,test,15,B1,parent,,parent,Y
+49,test,27,B1,parent,"um, the sad guy",,Y
+49,test,27,B1,child,,child,Y
+49,test,39,B1,child,the one that looks sad,,Y
+49,test,39,B1,parent,the walking sad man,,Y
+49,test,39,B1,child,yeah,,Y
+49,test,39,B1,parent,,parent,Y
+49,test,1,C1,parent,it's the one that kind of looks like a person bending down to get something,,Y
+49,test,1,C1,child,,child,Y
+49,test,17,C1,child,the one that looks like it fell,,Y
+49,test,17,C1,parent,,parent,Y
+49,test,23,C1,parent,um the one that's bending over to pick something up off the ground,,Y
+49,test,23,C1,child,,child,Y
+49,test,35,C1,child,the one that looks like it fell,,Y
+49,test,35,C1,parent,,parent,Y
+49,test,7,D1,parent,uh the one that looks like a person fell down on the ground,,Y
+49,test,7,D1,child,,child,Y
+49,test,11,D1,child,the one where it looks like a guy fell,,Y
+49,test,11,D1,parent,,parent,Y
+49,test,29,D1,parent,"um, the one that fell, fell down",,Y
+49,test,29,D1,child,,child,Y
+49,test,31,D1,parent,"alright, you're first",,Y
+49,test,31,D1,child,the guy who looks like it fell,,Y
+49,test,31,D1,parent,,parent,Y
+49,test,3,E1,parent,"um, ok, this is a person that maybe looks like it's tripping and falling",,Y
+49,test,3,E1,child,,child,Y
+49,test,3,E1,child,i did it!,,Y
+49,test,19,E1,child,it's not the one that looks like it's drinking out of a water fountain,,Y
+49,test,19,E1,parent,the other one that looks like it's jumping in the air,,Y
+49,test,19,E1,child,yeah,,Y
+49,test,19,E1,parent,,parent,Y
+49,test,25,E1,parent,"um the one who's jumping, dancing",,Y
+49,test,25,E1,child,,child,Y
+49,test,37,E1,child,the party animal,,Y
+49,test,37,E1,parent,,parent,Y
+49,test,6,F1,child,it's the person that's looking like it's raising its hands up,,Y
+49,test,6,F1,parent,okay,,Y
+49,test,6,F1,parent,,parent,Y
+49,test,18,F1,parent,The one that looks like it's dancing at a party,,Y
+49,test,18,F1,child,,child,Y
+49,test,26,F1,child,the one that looks like it's jumping,,Y
+49,test,26,F1,parent,like partay?,,Y
+49,test,26,F1,child,yeah,,Y
+49,test,26,F1,parent,,parent,Y
+49,test,38,F1,parent,uh the celebration one,,Y
+49,test,38,F1,child,,child,Y
+49,test,8,G1,child,the one that um looks like it's kneeling down and putting its hands on the ground,,Y
+49,test,8,G1,parent,,parent,Y
+49,test,14,G1,parent,"um, the one that's kneeling",,Y
+49,test,14,G1,child,the one that,,Y
+49,test,14,G1,parent,"not the one that fell down, but the one that's kneeling",,Y
+49,test,14,G1,child,,child,Y
+49,test,22,G1,child,the one that looks like its kneeling down in church,,Y
+49,test,22,G1,parent,,parent,Y
+49,test,34,G1,parent,"the one in church, kneeling or sitting",,Y
+49,test,34,G1,child,,child,Y
+49,test,5,H1,parent,"this one, it looks like a person holding a book",,Y
+49,test,5,H1,child,,child,Y
+49,test,13,H1,child,the one that is like almost holding a book,,Y
+49,test,13,H1,parent,,parent,Y
+49,test,21,H1,parent,the one that looks like its holding a book,,Y
+49,test,21,H1,child,,child,Y
+49,test,33,H1,child,the guy who looks like it's holding a book,,Y
+49,test,33,H1,parent,,parent,Y
+49,test,10,I1,child,it's the one that looks like its drinking from a water fountain,,Y
+49,test,10,I1,parent,,parent,Y
+49,test,20,I1,parent,"oh, the one that's drinking out of the water fountain",,Y
+49,test,20,I1,child,,child,Y
+49,test,28,I1,child,the guy that looks like he's drinking out of a water fountain,,Y
+49,test,28,I1,parent,,parent,Y
+49,test,32,I1,parent,the drinking fountain,,Y
+49,test,32,I1,child,,child,Y
+49,test,4,K1,child,the one where it looks like a dog that's standing up,,Y
+49,test,4,K1,parent,kinda sticking his booty out?,,Y
+49,test,4,K1,child,yeah,,Y
+49,test,4,K1,parent,,parent,Y
+49,test,12,K1,parent,the one that was the dog kinda sticking its booty out,,Y
+49,test,12,K1,child,,child,Y
+49,test,24,K1,child,the one that looks like a dog,,Y
+49,test,24,K1,parent,,parent,Y
+49,test,36,K1,parent,the dog,,Y
+49,test,36,K1,child,,child,Y

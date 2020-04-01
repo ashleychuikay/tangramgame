@@ -75,9 +75,14 @@ io.on('connection', function (socket) {
 
   // Set up callback for writing client data to mongo
   socket.on('currentData', function(data) {
+    var dbInfo = {
+      dbname: 'tangrams-comprehension',
+      colname: 'experiment1',
+      iterationname: 'testing'
+    };
     sendPostRequest(
       'http://localhost:6004/db/insert',
-      { json: data },
+      { json: _.extend({}, data, dbInfo) },
       (error, res, body) => {
         if (!error && res.statusCode === 200) {
           console.log(`sent data to store`);
@@ -114,7 +119,7 @@ const handleInvalidID = function(req, res) {
 function checkPreviousParticipant (workerId, callback) {
   const p = {'wID': workerId};
   const postData = {
-    dbname: 'bayesian-persuasion',
+    dbname: 'tangrams-comprehension',
     query: p,
     projection: {'_id': 1}
   };

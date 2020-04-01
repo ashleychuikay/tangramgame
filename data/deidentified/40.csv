@@ -1,0 +1,120 @@
+subid,type,trial,target,person,utterance,selection,correct
+40,practice,1,apple,parent,Alright this fruit it has a leaf on it,,Y
+40,practice,1,apple,child,,child,Y
+40,practice,4,apple,child,This vegetable is red,,Y
+40,practice,4,apple,parent,Is it a vegetable,,Y
+40,practice,4,apple,child,I mean fruit,,Y
+40,practice,4,apple,parent,It's red,,Y
+40,practice,4,apple,child,Yeah,,Y
+40,practice,4,apple,parent,,parent,Y
+40,practice,2,artichoke,child,This fruit has a stem on it,,Y
+40,practice,2,artichoke,parent,Ooh,,Y
+40,practice,2,artichoke,parent,,parent,Y
+40,practice,2,artichoke,parent,That was a vegetable,,Y
+40,practice,5,artichoke,parent,This vegetable kinda looks like it has scales,,Y
+40,practice,5,artichoke,child,,child,Y
+40,practice,3,onion,parent,This vegetable is super stinky,,Y
+40,practice,3,onion,child,,child,Y
+40,practice,6,onion,child,This vegetable has a stem and some little leaves on the bottom,,Y
+40,practice,6,onion,parent,,parent,Y
+40,practice,6,onion,parent,The roots coming out at the bottom,,Y
+40,test,10,A1,child,This guy looks like he's running,,Y
+40,test,10,A1,parent,Mmm,,Y
+40,test,10,A1,parent,,parent,Y
+40,test,20,A1,parent,This guy is could be running away,,Y
+40,test,20,A1,child,,child,Y
+40,test,22,A1,child,Runner,,Y
+40,test,22,A1,parent,,parent,Y
+40,test,34,A1,parent,The runner,,Y
+40,test,34,A1,child,,child,Y
+40,test,5,B1,parent,Uh this guys looks like he's walking away kinda sad,,Y
+40,test,5,B1,child,,child,Y
+40,test,15,B1,child,This guy looks like he's sad,,Y
+40,test,15,B1,parent,,parent,Y
+40,test,25,B1,parent,Walking away sad,,Y
+40,test,25,B1,child,,child,Y
+40,test,39,B1,child,The walker,,Y
+40,test,39,B1,parent,,parent,Y
+40,test,39,B1,parent,He looks so sad,,Y
+40,test,2,C1,child,This guy this looks like he's standing on his hands and doing a downward dog at the same time,,Y
+40,test,2,C1,parent,Oh that's a good one,,Y
+40,test,2,C1,parent,,parent,Y
+40,test,16,C1,parent,This guy looks like he's on the ground,,Y
+40,test,16,C1,child,,child,Y
+40,test,30,C1,child,The downward dog,,Y
+40,test,30,C1,parent,,parent,Y
+40,test,32,C1,parent,Downward dog,,Y
+40,test,32,C1,child,,child,Y
+40,test,3,D1,parent,OK this one looks like he's laying down and reading a book,,Y
+40,test,3,D1,child,,child,Y
+40,test,19,D1,parent,This guy is reading something,,Y
+40,test,19,D1,parent,,parent,Y
+40,test,27,D1,child,The reader,,Y
+40,test,27,D1,child,,child,Y
+40,test,31,D1,child,Reader,,Y
+40,test,31,D1,parent,,parent,Y
+40,test,4,E1,child,This guy looks like he's jumping,,Y
+40,test,4,E1,parent,,parent,Y
+40,test,18,E1,parent,This guy's jumping in the air,,Y
+40,test,18,E1,child,,child,Y
+40,test,26,E1,child,The jumper,,Y
+40,test,26,E1,parent,,parent,Y
+40,test,36,E1,parent,The jumper,,Y
+40,test,36,E1,child,,child,Y
+40,test,6,F1,child,This guy kinda looks like he's running with his arms up like this,,Y
+40,test,6,F1,parent,,parent,Y
+40,test,12,F1,parent,This guy could be happily dancing with his hands in the air,,Y
+40,test,12,F1,child,,child,Y
+40,test,24,F1,child,The jumper,,Y
+40,test,24,F1,parent,,parent,Y
+40,test,40,F1,parent,The jumper,,Y
+40,test,40,F1,child,,child,Y
+40,test,8,G1,child,This guy,,Y
+40,test,8,G1,child,Is probably sitting on the chair,,Y
+40,test,8,G1,parent,Mmm,,Y
+40,test,8,G1,parent,,parent,Y
+40,test,8,G1,child,With his head down,,Y
+40,test,14,G1,parent,This guy looks like he's sitting,,Y
+40,test,14,G1,child,,child,Y
+40,test,14,G1,parent,in prayer with his head down,,Y
+40,test,28,G1,child,The sitter,,Y
+40,test,28,G1,parent,,parent,Y
+40,test,38,G1,parent,Alright the sitter,,N
+40,test,38,G1,child,,child,N
+40,test,7,H1,parent,This guy is standing up,,Y
+40,test,7,H1,child,,child,Y
+40,test,7,H1,parent,tall,,Y
+40,test,11,H1,child,This guy looks like he's standing,,Y
+40,test,11,H1,parent,,parent,Y
+40,test,29,H1,parent,The stander,,Y
+40,test,29,H1,child,,child,Y
+40,test,37,H1,child,The reader,,Y
+40,test,37,H1,parent,The reader?,,Y
+40,test,37,H1,child,He's like standing up and reading,,Y
+40,test,37,H1,parent,"Ahh, okay",,Y
+40,test,37,H1,child,like for marriage,,Y
+40,test,37,H1,parent,,parent,Y
+40,test,37,H1,parent,Gotcha,,Y
+40,test,37,H1,parent,Oh so like a priest,,Y
+40,test,37,H1,child,Yeah,,Y
+40,test,37,H1,parent,Cool,,Y
+40,test,9,I1,parent,This guy looks like he's a waiter,,Y
+40,test,9,I1,child,,child,Y
+40,test,9,I1,parent,bringing some food,,Y
+40,test,17,I1,child,This guy is serving a triangle,,Y
+40,test,17,I1,parent,Ooh,,Y
+40,test,17,I1,parent,,parent,Y
+40,test,21,I1,parent,It's the waiter,,Y
+40,test,21,I1,child,,child,Y
+40,test,35,I1,child,The waiter,,Y
+40,test,35,I1,parent,,parent,Y
+40,test,1,K1,parent,"This shape kinda looks like someone's bending over, and..",,Y
+40,test,1,K1,child,,child,Y
+40,test,1,K1,parent,Ooh,,Y
+40,test,13,K1,child,This guy has his arm out and he has triangle hat,,Y
+40,test,13,K1,parent,,parent,Y
+40,test,13,K1,parent,Oh I like the triangle hat description,,Y
+40,test,23,K1,parent,Triangle hat,,Y
+40,test,23,K1,child,,child,Y
+40,test,33,K1,child,Triangle hat,,Y
+40,test,33,K1,parent,,parent,Y
