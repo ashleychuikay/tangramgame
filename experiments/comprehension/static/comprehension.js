@@ -140,7 +140,7 @@ class Experiment {
     
     // begin first trial as soon as we hear back from the server
     this.socket.on('onConnected', function(mongoData) {
-      this.subid = mongoData['id'];
+      this.subid = mongoData['gameid'];
       this.itemid = mongoData['set_id'];
       this.trials = mongoData['trials'];
       this.age = 'mturk';
