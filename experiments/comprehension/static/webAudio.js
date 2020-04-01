@@ -80,12 +80,13 @@ WebAudioAPISoundManager.prototype = {
  * WebAudioAPISound Prototype
  */
 WebAudioAPISound.prototype = {
-    play: function () {
+    play: function (onended) {
         var buffer = this.manager.bufferList[this.url];
         //Only play if it's loaded yet
         if (typeof buffer !== "undefined") {
             var source = this.makeSource(buffer);
             source.loop = this.settings.loop;
+            source.onended = onended;
             source.start(0);
 
             if(!this.manager.playingSounds.hasOwnProperty(this.url))
