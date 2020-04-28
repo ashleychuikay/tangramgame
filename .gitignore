@@ -8,7 +8,8 @@ conceptual_pacts.csv
 cogsci2020.tex
 cogsci2020.pdf
 parentsscaffold_0203.pdf
-node_modules/*
+experiments/comprehension/node_modules/*
+experiments/ref_game/node_modules/*
 *.log
 data/*
 similardata/*
