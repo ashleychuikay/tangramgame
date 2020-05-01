@@ -29,8 +29,6 @@ document.ontouchmove = function(event){
 
 // ---------------- PARAMETERS ------------------
 
-const numTrials = 10;
-
 //amount of white space between trials
 const normalpause = 1500;
 
@@ -143,6 +141,8 @@ class Experiment {
       this.subid = mongoData['gameid'];
       this.itemid = mongoData['set_id'];
       this.trials = mongoData['trials'];
+      this.numTrials = this.trials.length;
+      console.log('num trials', this.numTrials);
       this.age = 'mturk';
       this.preloadedAudio = _.map(this.trials, (trial) => {
 	return new WebAudioAPISound("/static/audio/" + trial['audio']);
@@ -278,7 +278,7 @@ class Experiment {
       $("#audioPlayButton").delay().fadeOut(1000);      
       document.getElementById("blank").click();
       setTimeout(function() {
-	if (this.trialnum + 1 === numTrials) {
+	if (this.trialnum + 1 === this.numTrials) {
 	  this.end();
 	} else {
 	  this.study(this.trialnum + 1);
