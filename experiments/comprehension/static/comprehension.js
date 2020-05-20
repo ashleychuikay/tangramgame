@@ -154,9 +154,15 @@ class Experiment {
   };
 
   //manipulation check
-  check () {
+  check (trialnum) {
+    this.trialnum = trialnum;
+    this.leftpic = "A1";
+    this.rightpic = "B1";
+    this.clickDisabled = true;
+    this.startTime = (new Date()).getTime();
+
     $("#stage").fadeOut();
-    $("#check").fadeIn;
+    $("#check").fadeIn();
     $("#checkobjects").html('\
       <table align = "center" cellpadding="25"> \
         <tr></tr>\
@@ -171,35 +177,11 @@ class Experiment {
       </table>'
     ).fadeIn(1000);
     $("#finalCheckButton").delay().fadeIn(1000);
-    $(".pic").on('click touchstart', this.handleClick.bind(this));
-
-    handleClick(event) {
-    // don't count click if disabled
-    // but disable subsequent clicks once the participant has made their choice
-    if (this.clickDisabled) {
-      $('#error').fadeIn();
-      setTimeout(function() {$('#error').fadeOut();}, 1500);
-      return;
-    }
-
-    // Add color to selected picture
-    var picID = $(event.currentTarget).attr('id');
-    if(picID == "leftPic") {
-      this.side = "L";
-      this.chosenpic = this.leftpic;
-      $("#leftPic").attr("src", "static/images/A1_color.jpg");
-      $("#rightPic").attr("src", "static/images/B1.jpg");
-    } else if(picID == "rightPic") {
-      this.side = "R";
-      this.chosenpic = this.rightpic;
-      $("#rightPic").attr("src", "static/images/B1_color.jpg");
-      $("#leftPic").attr("src", "static/images/A1.jpg");
-    } else {
-      console.error('unknown picID:', picID);
-    };
-
-    this.processOneRow();
-
+    $("#finalCheckButton").on('click touchstart', function (){
+      this.clickDisabled = false;
+      console.log("click")
+    });
+    $('.pic').on('click touchstart', this.handleClick.bind(this)); 
   };
 
   //the end of the experiment
@@ -328,7 +310,9 @@ class Experiment {
       document.getElementById("blank").click();
       setTimeout(function() {
 	if (this.trialnum + 1 === this.numTrials) {
-	  this.end();
+    this.check(this.trialnum + 1);
+  } else if (this.trialnum + 1 === this.numTrials + 1) {
+	  this.check();
 	} else {
 	  this.study(this.trialnum + 1);
 	}
