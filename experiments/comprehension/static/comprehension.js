@@ -153,6 +153,55 @@ class Experiment {
     }.bind(this));
   };
 
+  //manipulation check
+  check () {
+    $("#stage").fadeOut();
+    $("#check").fadeIn;
+    $("#checkobjects").html('\
+      <table align = "center" cellpadding="25"> \
+        <tr></tr>\
+        <tr>\
+          <td align="center">\
+            <img class="pic" src="static/images/A1.jpg" alt="images/A1.jpg" id= "leftPic"/>\
+          </td>\
+          <td align="center">\
+            <img class="pic" src="static/images/B1.jpg" alt="images/B1.jpg" id= "rightPic"/>\
+          </td>\
+        </tr>\
+      </table>'
+    ).fadeIn(1000);
+    $("#finalCheckButton").delay().fadeIn(1000);
+    $(".pic").on('click touchstart', this.handleClick.bind(this));
+
+    handleClick(event) {
+    // don't count click if disabled
+    // but disable subsequent clicks once the participant has made their choice
+    if (this.clickDisabled) {
+      $('#error').fadeIn();
+      setTimeout(function() {$('#error').fadeOut();}, 1500);
+      return;
+    }
+
+    // Add color to selected picture
+    var picID = $(event.currentTarget).attr('id');
+    if(picID == "leftPic") {
+      this.side = "L";
+      this.chosenpic = this.leftpic;
+      $("#leftPic").attr("src", "static/images/A1_color.jpg");
+      $("#rightPic").attr("src", "static/images/B1.jpg");
+    } else if(picID == "rightPic") {
+      this.side = "R";
+      this.chosenpic = this.rightpic;
+      $("#rightPic").attr("src", "static/images/B1_color.jpg");
+      $("#leftPic").attr("src", "static/images/A1.jpg");
+    } else {
+      console.error('unknown picID:', picID);
+    };
+
+    this.processOneRow();
+
+  };
+
   //the end of the experiment
   end () {
     console.log('if submitted, data on mturk would be');
@@ -160,7 +209,7 @@ class Experiment {
 
     setTimeout(function () {
       turk.submit(this.data, true);
-      $("#stage").fadeOut();
+      $("#check").fadeOut();
       showSlide("finish");
     }.bind(this), normalpause);
   };
