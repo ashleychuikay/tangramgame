@@ -20,7 +20,6 @@
      <script src="/static/mmturkey-nosocket.js"></script>
      <script type="text/javascript">
        var audiocheck = new WebAudioAPISound('/static/audio/audiocheck');
-       var finalcheck = new WebAudioAPISound('/static/audio/finalcheck');
      </script>
   </head>
   <body>
@@ -121,12 +120,6 @@
     <div class="slide" id="stage">
       <button id="audioPlayButton" style="display: block; margin: 50px auto 0px;"> Play Audio </button>
       <div id="objects"> </div>
-      <p id="error" style="text-align: center; display:none"> Please click "play" to listen to the description before responding </p>
-    </div>
-
-    <div class="slide" id="check">
-      <button type="button" id="finalCheckButton" onClick="finalcheck.play()" style="display: block; margin: 50px auto 0px;"> Play Audio </button>
-      <div id="checkobjects"> </div>
       <p id="error" style="text-align: center; display:none"> Please click "play" to listen to the description before responding </p>
     </div>
 

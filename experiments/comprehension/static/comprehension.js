@@ -141,6 +141,17 @@ class Experiment {
       this.subid = mongoData['gameid'];
       this.itemid = mongoData['set_id'];
       this.trials = mongoData['trials'];
+      this.trials.push({
+        audio: "finalcheck"
+        leftpic: "A1"
+        rightpic: "B1"
+        occurrence: 'check'
+        person: "check"
+        subid: "check"
+        subject: "check"
+        target: "A1"
+        trial: "check"
+      });
       this.numTrials = this.trials.length;
       console.log('num trials', this.numTrials);
       this.age = 'mturk';
@@ -151,37 +162,6 @@ class Experiment {
 	this.study(0);
       }.bind(this));
     }.bind(this));
-  };
-
-  //manipulation check
-  check (trialnum) {
-    this.trialnum = trialnum;
-    this.leftpic = "A1";
-    this.rightpic = "B1";
-    this.clickDisabled = true;
-    this.startTime = (new Date()).getTime();
-
-    $("#stage").fadeOut();
-    $("#check").fadeIn();
-    $("#checkobjects").html('\
-      <table align = "center" cellpadding="25"> \
-        <tr></tr>\
-        <tr>\
-          <td align="center">\
-            <img class="pic" src="static/images/A1.jpg" alt="images/A1.jpg" id= "leftPic"/>\
-          </td>\
-          <td align="center">\
-            <img class="pic" src="static/images/B1.jpg" alt="images/B1.jpg" id= "rightPic"/>\
-          </td>\
-        </tr>\
-      </table>'
-    ).fadeIn(1000);
-    $("#finalCheckButton").delay().fadeIn(1000);
-    $("#finalCheckButton").on('click touchstart', function (){
-      this.clickDisabled = false;
-      console.log("click")
-    });
-    $('.pic').on('click touchstart', this.handleClick.bind(this)); 
   };
 
   //the end of the experiment
@@ -310,9 +290,7 @@ class Experiment {
       document.getElementById("blank").click();
       setTimeout(function() {
 	if (this.trialnum + 1 === this.numTrials) {
-    this.check(this.trialnum + 1);
-  } else if (this.trialnum + 1 === this.numTrials + 1) {
-	  this.check();
+    this.end()
 	} else {
 	  this.study(this.trialnum + 1);
 	}
