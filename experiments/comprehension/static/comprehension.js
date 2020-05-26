@@ -142,15 +142,15 @@ class Experiment {
       this.itemid = mongoData['set_id'];
       this.trials = mongoData['trials'];
       this.trials.push({
-        audio: "finalcheck"
-        leftpic: "A1"
-        rightpic: "B1"
-        occurrence: 'check'
-        person: "check"
-        subid: "check"
-        subject: "check"
-        target: "A1"
-        trial: "check"
+        audio: 'finalcheck',
+        leftpic: 'A1',
+        rightpic: 'B1',
+        occurrence: 'check',
+        person: 'check',
+        subid: 'check',
+        subject: 'check',
+        target: 'A1',
+        trial: 'check'
       });
       this.numTrials = this.trials.length;
       console.log('num trials', this.numTrials);
