@@ -53,9 +53,9 @@ options(digits=2)
 ```
 
 ```{r load-data}
-kuperman_aoas <- read_csv(here("corpus_data/kuperman_aoas.csv"))
-combined_data <- read_csv(here("deidentified/combined.csv")) 
-exchanges_data <- read_csv(here("deidentified/exchanges.csv")) 
+kuperman_aoas <- read_csv(here("data/corpus_data/kuperman_aoas.csv"))
+combined_data <- read_csv(here("data/deidentified/combined.csv")) 
+exchanges_data <- read_csv(here("data/deidentified/exchanges.csv")) 
 ```
 
 Common ground is a foundational requirement for successful communication: Interlocutors must both understand each other and know that they understand each other [@bruner1985]. As a consequence, even simple referential expressions are constructed collaboratively. When the meaning of an utterance is unclear, interlocutors will engage in negotiation, arriving at a *conversational pact* about how to think and talk about the intended referent [@clark1986]. Adults fluently form, revise, and track the formation of pacts. For instance, Brennan and Clark [-@brennan1996] showed that adults will use the appropriate level of specificity for a referent (e.g. "loafer" rather than "shoe" when another shoe is present), carry this forward into a new context with the same conversational partner even when the initial competitor is removed, then revert to "shoe" when a new partner is introduced.
@@ -170,7 +170,7 @@ Children (ages 4, 6, and 8) and their parents were recruited from a database of 
 
 ### Stimuli 
 
-Twelve solid black images of tangrams were normed on Amazon Mechanical Turk for pairwise similarity. Based on these judgments, the ten maximally dissimilar tangrams were selected for use as stimuli (Fig. \ref{fig:ipads}A). 
+Twelve solid black images of tangrams were normed on Amazon Mechanical Turk (n = 60) for pairwise similarity. Each participant made 22 pairwise similarity judgments on a scale from 1-100. Based on these similarity ratings ($M$ = 42.3, $SD$ = 26.1), the ten maximally dissimilar tangrams were selected for use as stimuli (Fig. \ref{fig:ipads}A).
 
 ### Design and procedure
 
@@ -353,7 +353,7 @@ Finally, an intriguing developmental question is whether reduction changes over 
 # Analyzing the content of pacts
 
 ```{r matches}
-matches <- read_csv(here("deidentified/word_matches.csv")) %>% 
+matches <- read_csv(here("data/deidentified/word_matches.csv")) %>% 
   filter(later_rep == 4) %>%
   spread(earlier_rep, match) %>%
   mutate(first_appearance = case_when(`1` ~ '1', 
