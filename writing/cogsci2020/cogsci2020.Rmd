@@ -5,9 +5,15 @@ csl: apa6.csl
 document-params: "10pt, letterpaper"
 
 author-information: > 
-    \author{{\large \bf Ashley Leung (ashleyleung@uchicago.edu)} \\ Department of Psychology \\ University of Chicago
-    \AND {\large \bf Robert D. Hawkins (rdhawkins@princeton.edu)} \\ Department of Psychology \\ Princeton University
-    \AND {\large \bf Daniel Yurovsky (yurovsky@cmu.edu)} \\ Department of Psychology \\ Carnegie Mellon University}
+   \author{Ashley Leung \\
+         \texttt{ashleyleung@uchicago.edu} \\
+        Department of Psychology \\ University of Chicago
+   \And Robert D. Hawkins \\
+        \texttt{rdhawkins@princeton.edu} \\
+        Department of Psychology \\ Princeton University
+   \And Daniel Yurovsky \\
+        \texttt{yurovsky@cmu.edu} \\
+        Department of Psychology \\ Carnegie Mellon University \\ University of Chicago}
 
 abstract: >
     Adults readily form pacts, or temporary agreements about referent names, over the course of conversation. Young children fail to do so with peers, but recent evidence suggests that explicit feedback from adults may improve their performance [@matthews2007]. Do parents naturally provide such structure in their conversations with children? Using a director-matcher paradigm, we first show that parents and children (ages 4, 6, 8) converge on increasingly accurate and efficient conversational pacts. Further, parents of younger children provide more interactive feedback. Finally, we analyze asymmetries in parents' and children's contributions, finding that pacts tend to originate with the parent, but are simplified by younger children. Together, these results support the idea that parents sensitively adapt their language to their children's developmental level to scaffold successful communication.
@@ -171,7 +177,7 @@ Children (ages 4, 6, and 8) and their parents were recruited from a database of 
 
 ### Stimuli 
 
-Twelve solid black images of tangrams were normed on Amazon Mechanical Turk (n = 60) for pairwise similarity. Each participant made 22 pairwise similarity judgments on a scale from 1-100. Based on these similarity ratings ($M$ = 42.3, $SD$ = 26.1), the ten maximally dissimilar tangrams were selected for use as stimuli (Fig. \ref{fig:ipads}A).
+Twelve solid black images of tangrams were normed on Amazon Mechanical Turk for pairwise similarity. Each of the 60 participants made 22 pairwise similarity judgments on a scale from 1-100. Based on these similarity ratings ($M$ = 42.3, $SD$ = 26.1), the ten most dissimilar tangrams were selected for use as stimuli (Fig. \ref{fig:ipads}A).
 
 ### Design and procedure
 
@@ -463,7 +469,7 @@ person_age_rep_interaction_origin_pvalue <- ifelse(person_age_rep_interaction_or
                                                   '< 0.001', paste0(c('= ', person_age_rep_interaction_origin_pvalue), collapse = ' '))
 ```
 
-```{r origins,  fig.env = "figure*", fig.pos = "tb", fig.width=6, fig.height=3.5, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "(A) Probability of words used on final round first occuring with child or parent. (B) Complexity of language used by different age groups. Error bars are 95\\% CI."}
+```{r origins,  fig.env = "figure*", fig.pos = "tb", fig.width=6, fig.height=3.5, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "(A) Probability of words used on final round first occuring with child or parent. (B) Complexity of language used by different age groups estimated from words' average age of acquisition. Error bars are 95\\% CI."}
 
 origins.plt1 <- mean_matches %>%
   #tally() %>%
@@ -535,9 +541,9 @@ Additionally, we found a weak but significant interaction between speaker and ag
 
 ## How do pacts differ across ages?
 
-Given that the labels used by younger children tend to originate with their parents, it is tempting to conclude that adaptation for these pairs is entirely one-sided. However, the resulting pacts may have nonetheless been shaped by children. In particular, we suggest that even though young children may not be able to *supply* good initial labels, they may serve as "regularizers" or "filters" that constrain the complexity of the resulting pact, since it must pass through their comprehension and production system [@hudson-kam2005].
+Given that the labels used by younger children tend to originate with their parents, it is tempting to conclude that adaptation for these pairs is entirely one-sided. However, the resulting pacts may have nonetheless been shaped by children. In particular, we suggest that even though young children may not be able to *supply* good initial labels, they may serve as "simplifiers" or "filters" that constrain the complexity of the resulting pact, since it must pass through their comprehension and production system [@hudson-kam2005].
 
-We tested this hypothesis by asking about the linguistic complexity of the pacts developed in each age group. To estimate complexity of each word, we used self-reported age of acquisition (AoA) estimates [@kuperman2012]. For each participant, on each trial, we computed the average estimated AoA of all words in their utterance^[We first removed any words in a list of `r length(tm::stopwords())` stop words like "at" and "me" from the \texttt{tm} package [@feinerer2008]]. In all age groups, parents produced more linguistically complex referential expressions than children, but as children get older, both their expressions and their parents' become more linguistically complex over repetitions of the same tangram (like adults) (Fig. \ref{fig:origins}B). 
+We tested this hypothesis by asking about the linguistic complexity of the pacts developed in each age group. To estimate the complexity of individual words, we used self-reported age of acquisition (AoA) estimates [@kuperman2012]. Our assumption, based on Kuperman et al.'s work, is that more complex words are harder to acquire, and thus have later ages of acquisition (AoA). To estimate the complexity of referential expressions as a whole, we simply averaged the AoAs of all the words they contained^[We first removed any words in a list of `r length(tm::stopwords())` stop words like "at" and "me" from the \texttt{tm} package [@feinerer2008]]. In all age groups, parents produced more linguistically complex referential expressions than children, but as children get older, both their expressions and their parents' become more linguistically complex over repetitions of the same tangram (like adults) (Fig. \ref{fig:origins}B). 
 
 We confirmed this observation with a mixed-effects model including all possible interactions of age, person (child vs. parent), and repetition number, and maximal random effect structure as before. We found significant main effects of age ($\beta =$ `r age_effect_origin$estimate`, $t =$ `r age_effect_origin$statistic`, $p$`r age_effect_origin_pvalue`), and person ($\beta =$ `r person_effect_origin$estimate`, $t =$ `r person_effect_origin$statistic`, $p$ `r person_effect_origin_pvalue`), but not repetition ($\beta =$ `r rep_effect_origin$estimate`, $t =$ `r rep_effect_origin$statistic`, $p$ `r rep_effect_origin_pvalue`). All else being equal, pairs with older children produced more complex utterances, and parents produced more complex utterances than children. Further, we found a significant interaction between age and repetition number, suggesting that later repetitions became more complex for dyads with older children ($\beta =$ `r age_rep_interaction_origin$estimate`, $t =$ `r age_rep_interaction_origin$statistic`, $p$ `r  age_rep_interaction_origin_pvalue`). This interaction may be driven by reduction processes, as more distinctive words tend to persist as common words are dropped [@hawkins2019]. No other effects were significant, indicating that parents' utterances remained a constant level of complexity above children's even as children's utterances became more complex. These results suggest that pact formation depends not only on parental input, but on children as well---pacts may originate from parents, but children control their complexity.
 
@@ -549,7 +555,7 @@ Our results also contribute to the debate over why children may struggle to form
 
 While we find some support for each of these accounts in our data, our analysis of the asymmetry in the introduction of pacts suggests an additional possibility: Young children may simply be unable to supply a good enough label on their own, possibly due to limited expertise in identifying and labeling the most informative features of novel objects. Once presented with an appropriate label from a parent, however, they will readily adopt and use it. In this way, the processes underlying the mutual "learning" of referential pacts, in the service of coordinating on meaning with a specific partner, may be the same as those underlying language acquisition. Thus the everyday interaction of parents and children trying to understand one another may not only scaffold local pact formation, but support communicative development more broadly.
 
-\vspace{1em} \fbox{\parbox[b][][c]{7.3cm}{\centering All code for these analyses are available at\ \url{https://osf.io/vkug8/}}}
+\vspace{1em} \fbox{\parbox[b][][c]{7.3cm}{\centering Stimuli, data, and analysis code available at\ \url{https://osf.io/vkug8/}}}
 
 # Acknowledgements
 
