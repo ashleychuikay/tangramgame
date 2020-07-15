@@ -1,0 +1,54 @@
+---
+title: "Tangram comprehension analysis"
+author: "Ashley Leung, Robert Hawkins, and Dan Yurovsky"
+date: '`r Sys.Date()`'
+output: 
+  html_document:
+  toc: false
+number_sections: false
+theme: lumen
+toc_float: false
+code_folding: hide
+---
+
+```{r load-libraries}
+library(here)
+library(janitor)
+library(readxl)
+library(ggthemes)
+library(tidyverse)
+```
+
+```{r load-data}
+raw_turk_data <- read_csv(here("data/comprehension/dataFromMongo.csv")) %>%
+  select(-age) %>%
+  filter(!audioid %in% c("67_08", "67_08_b"))
+
+check_correct <- raw_turk_data %>%
+  filter(occurrence == "check") %>%
+  mutate(check_correct = correct) %>%
+  select(subid, check_correct)
+
+passed_check <- check_correct %>%
+  group_by(check_correct) %>%
+  count() %>%
+  pivot_wider(names_from = check_correct, values_from = n)
+```
+
+We kept `r passed_check$TRUE` out of `r passed_check$TRUE + passed_check$FALSE` participants.
+
+```{r tidy-data}
+database_ids <- read_csv(here("data/databaseid.csv")) %>%
+  select(subid, age) %>%
+  mutate(subid = as.character(subid))
+
+tidy_turk_data <- raw_turk_data %>%
+  left_join(check_correct, by = c("subid")) %>%
+  filter(check_correct, occurrence != "check") %>%
+  separate(audioid, into = c("gameid", "gametrial"), sep = "_") %>%
+  left_join(database_ids, by = ("gameid" = "subid"))
+```
+```{r descriptive-plots}
+
+```
+
