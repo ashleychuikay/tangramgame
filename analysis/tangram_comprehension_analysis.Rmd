@@ -39,16 +39,42 @@ We kept `r passed_check$TRUE` out of `r passed_check$TRUE + passed_check$FALSE` 
 
 ```{r tidy-data}
 database_ids <- read_csv(here("data/databaseid.csv")) %>%
-  select(subid, age) %>%
-  mutate(subid = as.character(subid))
+  rename(gameid = subid) %>%
+  select(gameid, age)
 
 tidy_turk_data <- raw_turk_data %>%
   left_join(check_correct, by = c("subid")) %>%
   filter(check_correct, occurrence != "check") %>%
   separate(audioid, into = c("gameid", "gametrial"), sep = "_") %>%
-  left_join(database_ids, by = ("gameid" = "subid"))
+  mutate(gameid = as.numeric(gameid),
+         gametrial = as.numeric(gametrial)) %>%
+  left_join(database_ids, by = ("gameid"))
 ```
+
+## Results
+
+Accuracy as a function of age, person, occurrence
+
 ```{r descriptive-plots}
+d.boot.acc <- tidy_turk_data %>%
+  group_by(age, person, occurrence) %>%
+  tidyboot::tidyboot_mean(correct, nboot = 100) 
 
+d.boot.acc %>%
+  ggplot(aes(x = occurrence, y = empirical_stat, color = factor(age), linetype = person, group=interaction(person,age))) +
+    geom_line() +
+    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
+    theme_few()
 ```
 
+```{r}
+d.boot.rt <- tidy_turk_data %>%
+  group_by(age, person, occurrence) %>%
+  tidyboot::tidyboot_mean(reactiontime, nboot = 100) 
+
+d.boot.rt %>%
+  ggplot(aes(x = occurrence, y = empirical_stat, color = factor(age), linetype = person, group=interaction(person,age))) +
+    geom_line() +
+    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
+    theme_few()
+```
