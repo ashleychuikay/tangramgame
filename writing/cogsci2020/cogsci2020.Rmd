@@ -347,6 +347,7 @@ d.reduction.means %>%
   ylab("# words per exchange") +
   xlab("repetition #") +
   scale_color_manual(values = c(ADULTS, CHILD_SCALE[2], PARENTS))
+
 ```
 
 A key signature of successful communication among adults is an increase in efficiency over repeated reference [@clark1986]. As pairs form conceptual pacts, they are able to communicate the same meaning using fewer words. Our control sample of adults replicated this classic effect ($\beta =$ `r adult_age_effect$estimate`, $t =$ `r adult_age_effect$statistic`, `r papaja::printp(adult_age_effect$p.value)`). Here, we asked whether parents and children of different ages spontaneously reduce their referential expressions in the same way. We define referential expressions as all utterances produced by the director on a given trial, up until a selection is made by the matcher. Because the total number of words produced on a trial is correlated with the number of dialogue exchanges examined above ($r=$ `r word_exchange_cor`), we constructed a normalized efficiency measure that controls for additional turns. Specifically, we defined efficiency as the total number of words produced by the *director* divided by the number of dialogue exchanges on that trial. 
@@ -532,6 +533,66 @@ match.model <- matches %>%
 
 speaker_effect <- match.model %>% filter(term == 'director1')
 match.interaction_effect <- match.model %>% filter(term == 'age:director1')
+```
+
+```{r plots for talk}
+
+#reduction overall
+d.reduction.raw %>% 
+  group_by(age, rep_num) %>%
+  tidyboot_mean(normalized_num_words) %>%
+  ggplot(aes(x = rep_num, y = empirical_stat, group = age, color = age)) +
+  geom_line(size = 0.6, position = position_dodge(.25)) +
+  facet_grid(. ~ age) + 
+  geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0,
+                position = position_dodge(.25)) +
+  geom_point(size = 3) +
+  theme_few() +
+  theme(aspect.ratio = 1.5, legend.position = "none", 
+        axis.text = element_text(size = 12),
+        axis.title = element_text(size = 14),
+        strip.text = element_text(size = 12)) +
+  ylab("Words per exchange") +
+  xlab("Repetition") +
+  scale_color_manual(values = c(CHILD_SCALE, ADULTS))
+
+#pact origins
+mean_matches %>%
+  #tally() %>%
+  ggplot(aes(x = as.numeric(as.factor(age)), y = empirical_stat, 
+             group = director, color = director, label = director)) +
+    geom_line(size = .75, position = position_dodge(.25)) +
+    geom_point(size = 3, position = position_dodge(.25)) +
+    geom_hline(yintercept = .5, linetype = "dashed") +
+    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0,
+                  position = position_dodge(.25),
+                  size = .75) +
+    theme(legend.position="top") +
+    ylab('Proportion of words introduced by partner') +
+    scale_x_continuous(name = "age group", limits = c(.25, 4.25),
+                       breaks = 1:4, labels = c("4", "6", "8", "adult")) +
+    theme(aspect.ratio = .8, legend.position = "none",
+          axis.title = element_text(size = 18),
+          axis.text = element_text(size = 16)) +
+    guides(color=guide_legend(title="Director")) +
+    scale_color_manual(values = c(ADULTS, CHILD_SCALE[2], PARENTS)) +
+    geom_dl(method = list(dl.trans(x = x - .15), "first.points", cex= 1.5), 
+            position = position_dodge(.25))
+
+#questions
+questionMarks %>%
+  filter(containQ == "TRUE") %>%
+  mutate(age = gsub(pattern = "age", replacement = "", x = age)) %>%
+  ggplot(aes(x = age, y = proportion, fill = age)) +
+  theme(legend.position = "none") +
+  geom_bar(stat = "identity") +
+  xlab("Age") +
+  ylab("Proportion of utterances containing questions") +
+  theme(plot.margin = unit(c(1, 0, .5, 0), "cm"),
+        aspect.ratio = .75, axis.title = element_text(size = 18),
+        axis.text = element_text(size = 16)) +
+  scale_fill_manual(values = CHILD_SCALE)
+
 ```
 
 For each word in the final description of a tangram, we checked whether it had appeared in an earlier referential expression for that tangram. We noted the first trial where it appeared, and who was director when it was produced^[To match different forms of the same word (e.g. "jumping" vs. "jumped") we first lemmatized each word. We also filtered out stop words ("the", "with"), as well as common words that were not part of the pacts ("person", "box"), and excluded words that appeared for the first time on the final repetition of each target.]. The proportion of words originating with the child and parent is shown in Fig. \ref{fig:origins}A. We observed an asymmetry: the words used by children on the final repetition were more likely to have originated with their parents than the words used by parents were to originate with their children. In addition, this gap appeared to close with older groups, with parents more likely to adopt words introduced by older children.
