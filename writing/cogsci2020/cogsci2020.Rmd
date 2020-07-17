@@ -537,6 +537,23 @@ match.interaction_effect <- match.model %>% filter(term == 'age:director1')
 
 ```{r plots for talk}
 
+#exchanges
+d.exchanges.mean %>%
+  ggplot(aes(x = rep_num, y = empirical_stat, color = age, 
+             group = age, label = age)) +
+    geom_line(size = 0.6, position = position_dodge(.25)) +
+    geom_point(size = 3, position = position_dodge(.25)) +
+    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0,
+                  position = position_dodge(.25)) +
+    ylab("Number of exchanges per round") +
+    xlab("Repetition") +
+    theme(aspect.ratio = 1 / 1.3 , legend.position = "none",
+          axis.title = element_text(size = 20),
+          axis.text = element_text(size = 18)) +
+    scale_color_manual(values = c(rev(COLLAPSED_SCALE), ADULTS)) +
+    scale_x_continuous(limits = c(.75, 4.5), breaks = 1:4) + 
+    geom_dl(method = list(dl.trans(x = x + .6), "last.qp", cex = 1.5))
+
 #reduction overall
 d.reduction.raw %>% 
   group_by(age, rep_num) %>%
@@ -592,6 +609,56 @@ questionMarks %>%
         aspect.ratio = .75, axis.title = element_text(size = 18),
         axis.text = element_text(size = 16)) +
   scale_fill_manual(values = CHILD_SCALE)
+
+#parent feedback
+feedback_labels = tibble(rep_num = c(3.5, 3.5, 2), 
+                          empirical_stat = c(8.2, 4, 5), 
+                          person = c("parent", "child", "adult"), 
+                          plot_person = c("parent", "child", "adult"),
+                          age = c("4", "4", "adult"))
+
+feedback <- exchanges_data %>%
+  mutate(age = ifelse(is.na(age), 'adult', age),
+         num_words =  str_count(utterance, " ") +1) %>%
+  filter(role == 'matcher') %>%
+  mutate(person = ifelse(person %in% c('left', 'right', 'parent'), 'adult', person)) %>%
+  group_by(age, rep_num, person, target, subid, trial) %>%
+  summarize(numExchanges = n(),
+            num_words = sum(num_words)) %>%
+  mutate(normalized_num_words = num_words / numExchanges) %>%
+  ungroup()
+
+feedback_means <- feedback %>%
+  group_by(age, rep_num, person) %>%
+  tidyboot_mean(normalized_num_words) %>%
+  mutate(plot_person = case_when(age == "adult" ~ "adult",
+                                 person == "adult" ~ "parent",
+                                 T ~ "child"))
+
+feedback_means %>%
+  ggplot(aes(x = rep_num, y = empirical_stat, group = person, color = plot_person,
+             label = plot_person)) +
+  geom_point(size = 3, position = position_dodge(.25)) +
+  geom_line(size = .6, position = position_dodge(.25)) +
+  geom_text(size = 5, data = feedback_labels) +
+  facet_grid(. ~ age) +
+  geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0,
+                position = position_dodge(.25)) +
+  xlab("Repetition") +
+  ylab("Words per exchange") +
+  scale_color_manual(values = c(ADULTS, CHILD_SCALE[2], PARENTS)) +
+  theme_few() +
+  theme(aspect.ratio = 1.5, legend.position = "none",
+        axis.title = element_text(size = 16),
+        axis.text = element_text(size = 14),
+        strip.text.x = element_text(size = 14))
+
+lmer.feedback <- feedback %>% 
+  filter(age != 'adult') %>%
+  mutate(age = as.numeric(age)) %>%
+  lmer(num_words ~ age * person +  (rep_num | subid) + (1 | target), 
+       control = lmerControl(optimizer = "bobyqa"), data = .) %>%
+  tidy()
 
 ```
 
