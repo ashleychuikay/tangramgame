@@ -656,9 +656,10 @@ feedback_means %>%
 lmer.feedback <- feedback %>% 
   filter(age != 'adult') %>%
   mutate(age = as.numeric(age)) %>%
-  lmer(num_words ~ age * person +  (rep_num | subid) + (1 | target), 
+  lmer(log(normalized_num_words) ~ age * person +  (rep_num | subid), 
        control = lmerControl(optimizer = "bobyqa"), data = .) %>%
-  tidy()
+  tidy() %>%
+  filter(effect == "fixed")
 
 ```
 
