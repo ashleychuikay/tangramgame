@@ -55,6 +55,7 @@ database_ids <- read_csv(here("data/databaseid.csv")) %>%
   rename(gameid = subid) %>%
   select(gameid, age)
 
+#gameid is original subject id
 tidy_turk_data <- raw_turk_data %>%
   left_join(check_correct, by = c("subid")) %>%
   filter(check_correct, occurrence != "check") %>%
@@ -151,3 +152,24 @@ rt_lmer
 So parents' descriptions lead to more accurate and faster guesses. Both older kids and parents of older kids give better descriptions. 
 
 But no effect of occurrence--descriptions on the second appearance of each item do not appear to contain less information for guessing the target.
+
+
+```{r}
+exchange_data <- read_csv(here("data/exchange_data.csv")) %>%
+  select(subid, trial, director, person, num_exchanges) %>%
+  group_by(trial, subid) %>%
+  summarise(num_exchanges = sum(num_exchanges))
+
+turk_exchange_data <- tidy_turk_data %>% left_join(exchange_data, 
+                                                   by = c("gameid" = "subid"),
+                                                   "gametrial" = "trial")
+
+turk_exchange_data %>%
+  filter(measure == "correct") %>%
+  group_by(age, num_exchanges, person) %>%
+  summarise(value = mean(value)) %>%
+  ggplot(aes(x = num_exchanges, y = value, color = as.factor(age))) +
+  facet_wrap(~ person) +
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE)
+```

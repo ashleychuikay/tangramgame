@@ -21,8 +21,9 @@ library(janitor)
 library(lme4)
 library(lmerTest)
 library(broom)
+library(here)
 
-theme_set(theme_classic(base_size = 18))
+theme_set(theme_few(base_size = 18))
 ```
 
 ## Number of exchanges 
@@ -53,22 +54,38 @@ summary(lmer(num_exchanges ~ age + rep_num + (1 + rep_num | subid) + (1 | target
 ## Asymmetry in number of exchanges?
 
 ```{r}
-d.exchanges.raw <- read_csv('../data/deidentified/exchanges.csv') %>%
-  filter(experiment == 'adult-child') %>%
-  mutate(age = ifelse(is.na(age), 'adult', age)) %>%
+d.exchanges.raw <- read_csv(here("data/deidentified/exchanges.csv")) %>%
+  filter(experiment == "adult-child", !is.na(role)) %>%
   group_by(subid, trial, age, person, role, rep_num) %>%
   summarize(num_exchanges = n()) %>%
-  unite(person_role, person, role) %>%
-  pivot_wider(names_from = person_role, values_from = num_exchanges, values_fill = 0) %>%
-  pivot_longer(cols = c(parent_director, parent_matcher, child_director, child_matcher),
-               names_to = 'person_role',
-               values_to = 'num_exchanges')
+  ungroup() %>%
+  mutate(director = if_else((person == "child" & role == "director") |
+                              (person == "parent" & role == "matcher"), 
+                             "child", "parent")) %>%
+  complete(nesting(subid, trial, age, rep_num, director), person,
+           fill = list(num_exchanges = 0)) %>%
+  mutate(role = if_else(is.na(role), if_else(person == director, 
+                                             "director",
+                                             "matcher"),
+                        role))
 
-d.exchanges.boot <- d.exchanges.raw %>%
-  group_by(age, person, role) %>%
+d.exchanges.assymetric <- d.exchanges.raw %>%
+  group_by(age, director, person, role) %>%
   tidyboot_mean(num_exchanges) %>%
   ungroup()
+
+write_csv(d.exchanges.raw, here("data/exchange_data.csv"))
 ```
+
+```{r}
+ggplot(d.exchanges.assymetric, aes(x = age, y = empirical_stat, 
+                                   color = person)) +
+  facet_wrap(~ director) +
+  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper), 
+                  position = position_dodge(.5))
+  
+```
+
 
 
 ## Origin of final descriptions
