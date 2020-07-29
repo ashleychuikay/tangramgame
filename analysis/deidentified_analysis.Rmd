@@ -28,7 +28,7 @@ theme_set(theme_classic(base_size = 18))
 ## Number of exchanges 
 
 ```{r}
-d.exchanges.raw <- read_csv('../deidentified/exchanges.csv') %>%
+d.exchanges.raw <- read_csv('deidentified/exchanges.csv') %>%
   mutate(age = ifelse(is.na(age), 'adult', age)) %>%
   group_by(subid, trial, age, rep_num) %>%
   summarize(num_exchanges = n()) 
@@ -50,12 +50,33 @@ d.exchanges.boot %>%
 summary(lmer(num_exchanges ~ age + rep_num + (1 + rep_num | subid) + (1 | target), data = d.exchanges.raw))
 ```
 
+## Asymmetry in number of exchanges?
+
+```{r}
+d.exchanges.raw <- read_csv('../data/deidentified/exchanges.csv') %>%
+  filter(experiment == 'adult-child') %>%
+  mutate(age = ifelse(is.na(age), 'adult', age)) %>%
+  group_by(subid, trial, age, person, role, rep_num) %>%
+  summarize(num_exchanges = n()) %>%
+  unite(person_role, person, role) %>%
+  pivot_wider(names_from = person_role, values_from = num_exchanges, values_fill = 0) %>%
+  pivot_longer(cols = c(parent_director, parent_matcher, child_director, child_matcher),
+               names_to = 'person_role',
+               values_to = 'num_exchanges')
+
+d.exchanges.boot <- d.exchanges.raw %>%
+  group_by(age, person, role) %>%
+  tidyboot_mean(num_exchanges) %>%
+  ungroup()
+```
+
+
 ## Origin of final descriptions
 
 Look at *first* round final words appear.
 
 ```{r}
-matches <- read_csv('../deidentified/word_matches.csv') %>% 
+matches <- read_csv('../data/deidentified/word_matches.csv') %>% 
   filter(later_rep == 4) %>%
   spread(earlier_rep, match) %>%
   mutate(first_appearance = case_when(`1` ~ '1', 
