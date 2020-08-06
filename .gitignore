@@ -12,6 +12,7 @@ experiments/comprehension/mturk/*
 experiments/ref_game/node_modules/*
 *.log
 data/*
+!*/deidentified
 similardata/*
 pacts/*
 original_images/*
@@ -19,3 +20,4 @@ original_images/*
 .RHistory
 *_cache*
 *_files*
+desktop.ini
