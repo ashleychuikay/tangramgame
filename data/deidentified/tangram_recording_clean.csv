@@ -1,0 +1,1206 @@
+﻿ ,type,trial,target,person,correct,record
+4,test,8,A1,child,Y,mine looks like something walking away
+4,test,34,A1,parent,Y,And now my person is just walking down the street because they missed it
+4,test,6,B1,child,Y,mine looks like a person that has their hands in their pocket and is walking away
+4,test,2,C1,child,Y,mine looks kinda like a guy bending down
+4,test,36,C1,parent,Y,"My person is diving into the pool, with their arms"
+4,test,9,D1,parent,Y,Mine looks like a person swimming
+4,test,37,D1,child,Y,My person looks like they're swimming at the end of the ocean
+4,test,4,E1,child,Y,Mine looks like a person jumping for joy
+4,test,38,E1,parent,Y,My person is jumping up to catch something
+4,test,10,F1,child,Y,mine looks like a person making their hands in like a triangle shape and their feet are apart
+4,test,32,F1,parent,Y,"My person is running down the street saying here I am, here I am, here I am!"
+4,test,7,G1,parent,Y,Well mine looks like someone who's kneeling down maybe to do something on the ground
+4,test,33,G1,child,Y,my person is quietly waiting for the bus on a bench
+4,test,5,H1,parent,Y,Mine looks like someone's hungry and is like can I please have some more
+4,test,3,I1,parent,Y,Mine looks like a guy carrying a tray saying would you like some?
+4,test,39,I1,child,Y,"my person is holding out out a bucket of flowers, they're holding the flowers and putting them down for for their garden"
+4,test,1,K1,parent,Y,"OK, so mine looks like a guy with a little hat"
+4,test,35,K1,child,Y,My person is holding out a pot of soup for anybody wants to get it
+5,test,5,A1,child,Y,he's standing on one leg
+5,test,37,A1,child,Y,a person running
+5,test,4,B1,child,Y,it's the person walking
+5,test,27,C1,child,Y,now I see a triangle
+5,test,33,C1,child,Y,I see a diamond on the person
+5,test,10,D1,child,Y,I see an airplane
+5,test,36,D1,child,Y,it's an airplane
+5,test,9,E1,child,N,someone jumping and he's gonna fall down
+5,test,31,E1,child,Y,someone jumped and a triangle and now they're pointing it facing down
+5,test,2,F1,child,N,it looks like it has one point on right here and another point right here and it looks like a line down and a line down right here
+5,test,30,F1,child,Y,It's the guy
+5,test,8,G1,child,N,someone crawling
+5,test,6,H1,child,Y,someone jumped into the air and he gonna fall down
+5,test,38,H1,child,Y,It looks like it has a a diamond on a head and it looks like it has a triangle facing that way on the right
+5,test,7,I1,parent,Y,pick the one with the doggy standing
+5,test,39,I1,child,Y,the doggy
+5,test,3,K1,parent,Y,do you see the one that looks like a doggy tryna like stand on its legs
+5,test,35,K1,child,Y,The doggy standing on one leg
+7,test,8,A1,child,Y,this one is the one that's running
+7,test,38,A1,parent,Y,this one is when he's running but only got one foot on the ground
+7,test,4,B1,child,Y,this one is walking
+7,test,40,B1,parent,Y,this one is walking looking down
+7,test,2,C1,child,Y,this one is a person is lying down
+7,test,32,C1,parent,Y,this one's when he's on his elbows and knees
+7,test,5,D1,parent,Y,"this one is when it's laying on its belly, like reading on the floor, kicking his knees up"
+7,test,31,D1,child,Y,this one he is laying down reading a book
+7,test,10,E1,child,Y,this one is doing jumping
+7,test,36,E1,parent,Y,this one is jumping for joy
+7,test,9,F1,parent,Y,this one looks like he's been doing dabs
+7,test,7,G1,parent,Y,So this one is sitting in chair
+7,test,37,G1,child,Y,this one is when he's sitting down on a chair
+7,test,3,H1,parent,Y,this one's when it's standing up in a row and it's holding a plate again
+7,test,1,I1,parent,Y,this one looks like a person holding a tray of food
+7,test,6,K1,child,Y,he's bowing
+7,test,34,K1,parent,Y,this one's when he's got that triangle on his tush and he's leaned over a bit
+9,test,8,A1,child,Y,it looks like someone that had a good day
+9,test,38,A1,parent,Y,it looks like someone walking away
+9,test,1,B1,parent,Y,this one looks like a person walking with their head down
+9,test,39,B1,child,Y,It looks like someone had a sad day
+9,test,9,C1,parent,Y,it looks like someone who might be like kneeling and praying
+9,test,37,C1,child,Y,"it looks like someone, like praying"
+9,test,5,D1,parent,Y,it looks like someone is laying down reading with like a foot up
+9,test,35,D1,child,Y,it looks like someone like flying a jet
+9,test,7,E1,parent,Y,it looks like this person just found some good news
+9,test,33,E1,child,Y,it looks like someone skydiving off a cliff
+9,test,3,F1,parent,Y,"this looks like someone running away going like ""yikes!"" with their hand up in the air"
+9,test,31,F1,child,Y,It looks like someone like they saw something really scary
+9,test,2,G1,child,Y,It looks like someone like sitting down with a dress on
+9,test,34,G1,parent,Y,It looks like someone quietly sitting in a dress
+9,test,6,H1,child,Y,"With like a diamond head, and he has like a weird shape hands, and his feet are like this"
+9,test,40,H1,parent,Y,it looks like someone with a pointy hat on offering you something
+9,test,4,I1,child,Y,It looks like someone is like offering you something
+9,test,36,I1,parent,Y,It looks like someone offering you something
+9,test,10,K1,child,Y,It looks like a dog but it's a person at the same time it's like a dog
+9,test,32,K1,parent,Y,It looks like a dog with a tray offering you something
+10,test,10,A1,child,Y,Person who looks like they're about to run
+10,test,34,A1,parent,Y,Running away
+10,test,7,B1,parent,Y,A person who looks like they're walking away
+10,test,37,B1,child,Y,Walking away
+10,test,4,C1,child,Y,Person who looks like they're about to do a push-up
+10,test,38,C1,parent,Y,laying down in prayer
+10,test,3,D1,parent,Y,Person who looks like they're laying down with long legs sticking up in the air
+10,test,35,D1,child,Y,Leg up
+10,test,1,E1,parent,Y,press one who looks like they're jumping in the air
+10,test,31,E1,child,Y,wee
+10,test,8,F1,child,Y,Person who looks like they're jumping with one arm up
+10,test,36,F1,parent,Y,Dabbing
+10,test,9,G1,parent,Y,Person who looks like they're sitting in a chair
+10,test,33,G1,child,Y,sitting down
+10,test,2,H1,child,Y,a person who looks like they're sitting down
+10,test,32,H1,parent,Y,Person holding a bowl of soup again
+10,test,6,I1,child,Y,Person who's carrying like a bowl or something
+10,test,40,I1,parent,Y,Holding a bowl of soup out
+10,test,5,K1,parent,Y,Person who looks like they're sticking their bum out
+10,test,39,K1,child,Y,Sticking their butt out
+11,test,9,A1,parent,Y,the person who's skinny and has less triangles
+11,test,31,A1,child,Y,the one with like some triangles 
+11,test,4,B1,child,Y,The person walking
+11,test,38,B1,parent,Y,the one that looks like the man walking really sad
+11,test,6,C1,child,Y,The person crawling
+11,test,40,C1,parent,Y,the one who looks like he's crawling
+11,test,11,D1,child,Y,The one that look has a mountain behind it
+11,test,35,D1,child,Y,The one who that looks like they're in a boat
+11,test,2,E1,child,Y,A bird
+11,test,32,E1,parent,Y,one jumping
+11,test,7,F1,parent,Y,the one that looks like the person who has their arms in the air and they're running
+11,test,39,F1,child,Y,the one that looks like it's running really wide
+11,test,5,G1,parent,Y,the one that looks like a lady sitting in a chair
+11,test,37,G1,child,Y,The one that has one triangle and one diamond
+11,test,8,H1,child,Y,the person that has a kite head
+11,test,34,H1,parent,Y,"the one who's not the man crawling, the other one"
+11,test,10,I1,child,Y,the person that's holding a triangle in his hands
+11,test,36,I1,child,Y,the one where he's holding something
+11,test,3,K1,parent,Y,the one that looks like a doggy standing up
+11,test,33,K1,child,Y,Dog standing up
+12,test,7,A1,parent,Y,a man walking this way
+12,test,35,A1,child,N,Big one
+12,test,6,B1,child,Y,A man walking
+12,test,36,B1,parent,Y,a man looking at the ground
+12,test,5,C1,parent,Y,a man bending down
+12,test,31,C1,child,Y,A dog
+12,test,3,D1,parent,Y,a man laying down
+12,test,39,D1,child,Y,the man laying down
+12,test,10,E1,child,N,a man who's walking
+12,test,32,E1,parent,Y,a man jumping in the air
+12,test,9,F1,parent,N,a man pointing to the sky
+12,test,37,F1,child,Y,a man pointing
+12,test,2,G1,child,N,a man bending down
+12,test,40,G1,parent,Y,the man sitting down
+12,test,1,H1,parent,Y,it look like a man pointing this way 
+12,test,33,H1,child,Y,a man pointing
+12,test,4,I1,child,Y,a man holding a triangle
+12,test,34,I1,parent,Y,a man with the upside down triangle
+12,test,8,K1,child,Y,"a man, he's bending down"
+12,test,38,K1,parent,Y,the man pointing
+13,test,6,A1,child,Y,it looks like a person is running away
+13,test,32,A1,parent,Y,it's someone running
+13,test,3,B1,parent,Y,it looks like a person who's walking with their head down
+13,test,39,B1,child,Y,somebody walking away with their head down
+13,test,36,C1,parent,Y,it's someone bent over on the ground
+13,test,2,D1,child,Y,like a person that has a head and he's like on the ground with his hands out
+13,test,38,D1,parent,Y,It looks like they're laying back and reading something
+13,test,9,E1,parent,Y,it looks like it's a person jumping up
+13,test,31,E1,child,Y, it looks like someone pointing up to the air and jumping
+13,test,10,F1,child,Y,it looks like someone who's running like a bird
+13,test,34,F1,parent,Y, it's someone running
+13,test,5,G1,parent,Y,it looks like a person is sitting down
+13,test,37,G1,child,Y,someone sitting down
+13,test,7,H1,parent,Y,it looks like a person is reading a book
+13,test,8,I1,child,Y,it looks like a person who is bending over and reading a book
+13,test,40,I1,parent,Y,"somebody is standing up, bent over, with something in their hand."
+13,test,1,K1,parent,Y,it looks like a person is kind of bent over
+13,test,33,K1,child,Y,it's someone bending over reading a book
+14,test,8,A1,child,Y,pick the one that looks like a person on one foot
+14,test,36,A1,parent,Y,pick the one that looks like they're running
+14,test,4,B1,child,Y,Pick the one that looks like a human walking
+14,test,40,B1,parent,Y,pick the person who looks like they're walking
+14,test,3,C1,parent,Y,Pick the one that looks like a dome
+14,test,35,C1,child,Y,pick the one that's like a dome
+14,test,1,D1,parent,Y,That looks like the car
+14,test,33,D1,child,Y,pick the one that looks like a racecar
+14,test,2,E1,child,Y,pick the one that looks like a boat
+14,test,38,E1,parent,N,pick the one that looks like jumping
+14,test,10,F1,child,Y,running
+14,test,34,F1,parent,Y,pick the one that's like they're running
+14,test,6,G1,child,Y,Pick the one that looks like standing
+14,test,32,G1,parent,Y,pick the one that's like kneeling and sitting in a seat
+14,test,5,H1,parent,Y,Pick the one that looks like the pastor at the podium
+14,test,31,H1,child,Y,pick the one that's like a pastor
+14,test,9,I1,parent,Y,pick the one that looks like a waiter delivering food to the table
+14,test,37,I1,child,Y,pick the one that's like a server
+14,test,7,K1,parent,Y,Pick the one that looks like a sideway desk propped up
+14,test,39,K1,child,Y,like it's serving
+15,test,2,A1,child,N,the one that's standing still
+15,test,40,A1,parent,Y,pick the one that's walking
+15,test,7,B1,parent,Y,Pick the one that's walking
+15,test,35,B1,child,N,this one with the hat
+15,test,9,C1,parent,Y,pick the one that's bending down
+15,test,39,C1,child,Y,the one that's laying down on the floor in a square
+15,test,10,D1,child,Y,The one that's jumping up
+15,test,38,D1,parent,Y,pick the one that's laying down on the floor
+15,test,6,E1,child,N,walking
+15,test,32,E1,parent,Y,pick the one that's jumping
+15,test,8,F1,child,Y,the one that's jumping up
+15,test,34,F1,parent,Y,Pick the one that's excited
+15,test,3,G1,parent,Y,Pick the one that's standing up
+15,test,37,G1,child,N,the one that's laying down on the floor
+15,test,1,H1,parent,Y,pick the one that's standing up 
+15,test,33,H1,child,Y,he's standing still
+15,test,5,I1,parent,Y,pick the one that's standing still
+15,test,31,I1,child,Y,the one that's holding the triangle
+15,test,4,K1,child,N,the one that's walking
+15,test,36,K1,parent,Y,pick the guy with the hat
+16,test,6,A1,child,Y,It looks like a person dancing
+16,test,34,A1,parent,Y,This is somebody with a diamond head running
+16,test,9,B1,parent,Y,Looking at the ground and walking
+16,test,39,B1,child,Y,This is the one guy looking at the ground sadly
+16,test,10,C1,child,N,it's legs and feet that's walking and the square
+16,test,36,C1,parent,Y,"the one that looks like it's just legs and feet and a square, that one"
+16,test,2,D1,child,N,it looks like there's a square top
+16,test,32,D1,parent,Y,This looks like an airplane with a square on top
+16,test,1,E1,parent,Y,It looks like a person jumping
+16,test,31,E1,child,Y,This looks like somebody jumped like jumping in the air
+16,test,37,F1,child,Y,its arms in the air of the square head with triangle feet
+16,test,3,G1,parent,Y,A rocketship with a square on top
+16,test,35,G1,child,Y,This looks like a rocketship touching a square
+16,test,8,H1,child,Y,Has a diamond head on top
+16,test,38,H1,parent,Y,This looks like a person with a diamond head
+16,test,7,I1,parent,Y,This looks like somebody holding a triangle
+16,test,33,I1,child,Y,This looks like somebody holding a triangle
+16,test,4,K1,child,N,It looks like airplane with a triangle on top
+16,test,40,K1,parent,Y,This looks like a dog that's jumping up
+17,test,7,A1,parent,Y,this person is like running or skipping
+17,test,39,A1,child,N,this person is laying down
+17,test,2,B1,child,Y,"it's a person and he's sad, he's walking"
+17,test,34,B1,parent,Y,this person just lost his dog
+17,test,5,C1,parent,Y,this person looks like he's bending down looking for something
+17,test,37,C1,child,N,"this person is saying, ""more tea, sir?"""
+17,test,10,D1,child,Y,it's a person laying down
+17,test,36,D1,parent,Y,this person is scrolling
+17,test,3,E1,parent,N,it looks like he's weeping with his head in his chest
+17,test,33,E1,child,N,this is the person who's walking down sadly
+17,test,1,F1,parent,Y,"it's like a bird, it flies maybe"
+17,test,8,G1,child,Y,it's a sad lady with black hair
+17,test,38,G1,parent,Y,this person may be using the bathroom
+17,test,4,H1,child,Y,it's a person with triangle head
+17,test,32,H1,parent,Y,this person is standing up in front of people
+17,test,6,I1,child,Y,he just bending down
+17,test,9,K1,parent,Y,"this person looks like a begger, saying give me some more"
+17,test,35,K1,child,N,this person is skipping
+18,test,7,A1,parent,Y,this one looks like they're running
+18,test,37,A1,child,Y,this one thinks he's running
+18,test,8,B1,child,Y,"this one, it is walking"
+18,test,40,B1,parent,Y,this one looks like they're walking slowly and sad
+18,test,2,C1,child,N,sitting
+18,test,32,C1,parent,Y,this one looks like they're kneeling on the floor
+18,test,6,D1,child,Y,"this one, he is falling down"
+18,test,36,D1,parent,Y,this one looks like he's laying on the floor reading a book
+18,test,5,E1,parent,Y,this one looks like they're jumping in the air
+18,test,31,E1,child,Y,jump
+18,test,3,F1,parent,Y,this person looks like they've got their hands in the air
+18,test,33,F1,child,Y,"this one thinks he's running, and holding stuff in the air"
+18,test,1,G1,parent,N,pick the one that's like a person sitting
+18,test,39,G1,child,Y,I think this one is sitting
+18,test,9,H1,parent,Y,this one looks like he's sitting reading a book
+18,test,35,H1,child,Y,he looks like he is standing
+18,test,10,I1,child,Y,this one's standing and reading a book
+18,test,38,I1,parent,Y,this one looks like they're holding a bowl
+18,test,4,K1,child,Y,putting one arm up
+18,test,34,K1,parent,Y,this one looks like leaning over a counter
+20,test,5,A1,parent,Y,this looks like someone who is running
+20,test,33,A1,child,Y,run
+20,test,1,B1,parent,Y,this looks like an image of someone walking with their head tilted down.
+20,test,37,B1,child,Y,sorrow
+20,test,2,C1,child,Y,someone doing a crawl pose
+20,test,40,C1,parent,Y,yoga pose
+20,test,3,D1,parent,Y,this looks like someone who is lying on their stomach and reading a book
+20,test,39,D1,child,Y,melt
+20,test,4,E1,child,Y,it looks like someone flying
+20,test,38,E1,parent,Y,gleeful
+20,test,10,F1,child,Y,this looks like someone doing the splits
+20,test,34,F1,parent,Y,dance
+20,test,8,G1,child,Y,it looks like they're sitting on a bench
+20,test,32,G1,parent,Y,pray
+20,test,9,H1,parent,Y,"this looks like someone standing still, holding out their arms, offering something"
+20,test,31,H1,child,Y,preach
+20,test,6,I1,child,Y,this looks like someone holding a bowl
+20,test,36,I1,parent,Y,serve
+20,test,7,K1,parent,Y,"this looks like someone bending at their hips, offering something to someone"
+20,test,35,K1,child,Y,butt
+21,test,8,A1,child,Y,"The person that is, like, it's running"
+21,test,34,A1,parent,Y,One who's running
+21,test,2,B1,child,N,one that's bending over
+21,test,32,B1,parent,Y,The one who's walking slowly sadly
+21,test,6,C1,child,N,A person that's running
+21,test,40,C1,parent,Y,bent over on the ground
+21,test,5,D1,parent,Y,a person who's lying down and reading a book
+21,test,33,D1,child,N,The one that's running
+21,test,1,E1,parent,Y,the man that's looking like he's leaping in the air
+21,test,37,E1,child,N,The one that's running
+21,test,9,F1,parent,Y,"A person who looks like their looking up, their pointing up to the sky"
+21,test,35,F1,child,Y,The one that's leaping up into the sky
+21,test,4,G1,child,Y,A one that's sitting down
+21,test,36,G1,parent,Y,The one who is sitting
+21,test,36,G1,parent,Y,Like looking down
+21,test,7,H1,parent,Y,A person who is praying
+21,test,31,H1,child,N,the one who's bending over
+21,test,3,I1,parent,Y,A man who has a tray in his hand
+21,test,39,I1,child,Y,The one that has a tray
+21,test,10,K1,child,N,the one that's swimming
+21,test,38,K1,parent,Y,The one who looks like a dog
+26,test,9,A1,parent,Y,this picture reminds me of maybe a ballerina dancing and she's standing on one foot and her other foot is kicking behind her
+26,test,31,A1,child,Y,someone that is holding their feet up 
+26,test,5,B1,parent,Y,do you have a picture that looks like a person walking?
+26,test,37,B1,child,Y,the one that is walking with their head down
+26,test,1,C1,parent,Y,do you have a picture that looks like a person who is kneeling down on their hands and knees?
+26,test,33,C1,child,Y,someone leaping down
+26,test,7,D1,parent,Y,do you have a picture that looks like it might be an airplane? or a boat or something?
+26,test,39,D1,child,Y,someone driving an airplane
+26,test,6,E1,child,Y,do you have somebody that is touching the box?
+26,test,38,E1,parent,Y,a person who looks like they're jumping up in the air and putting their arms up
+26,test,3,F1,parent,Y,it's just a bunch of crazy shapes
+26,test,35,F1,child,Y,it's someone that is putting their hands up
+26,test,2,G1,child,N,pointing
+26,test,32,G1,parent,Y,"a person who's sitting on a box, like a block and looking down"
+26,test,10,H1,child,Y,it's pointing at the guy that's jumping
+26,test,36,H1,parent,Y,a person who is straight up
+26,test,4,I1,child,Y,someone holding a triangle
+26,test,34,I1,parent,Y,a person who's holding a half broken diamond
+26,test,8,K1,child,Y,do you have somebody that has a tail?
+26,test,40,K1,parent,Y,a person who's standing and they look like they're bending over
+27,test,8,A1,child,Y,"it looks like, to me, a man trotting"
+27,test,32,A1,parent,Y,the one who's running
+27,test,1,B1,parent,Y,can you press the one that looks like a man standing up?
+27,test,33,B1,child,Y,the man that's sad walking
+27,test,6,C1,child,Y,the one crawling
+27,test,36,C1,parent,Y,crawling
+27,test,9,D1,parent,Y,this looks like a man who's swimming
+27,test,39,D1,child,Y,a man who's swimming
+27,test,2,E1,child,Y,it looks like flying
+27,test,7,G1,parent,Y,this to me looks like a lady sitting on a chair
+27,test,31,G1,child,Y,it's the lady sitting
+27,test,10,H1,child,Y,it looks like a king
+27,test,38,H1,parent,Y,"a man who's serving, or a king"
+27,test,3,I1,parent,Y,this one to me looks like a man serving something 
+27,test,37,I1,child,Y,a man who's serving
+27,test,40,K1,parent,Y,a man who's serving
+28,test,10,A1,child,Y,can you press the one with one foot
+28,test,40,A1,parent,Y,Can you touch the person who's walking on one foot
+28,test,1,B1,parent,Y,Can you press the person walking
+28,test,37,B1,child,Y,Can you press the person walking
+28,test,6,C1,child,Y,the one kneeling on the ground
+28,test,34,C1,parent,Y,Can you touch the person who is leaning down
+28,test,8,D1,child,N,Can you press the one standing up
+28,test,36,D1,parent,Y,Can you touch the person who's lying down
+28,test,5,E1,parent,Y,Can you press the the one with the person with their feet behind them
+28,test,39,E1,child,N,Can you press the person walking on one foot
+28,test,3,F1,parent,Y,Can you press the person who is raising their arms in the air
+28,test,35,F1,child,Y,Can you press the person very still
+28,test,4,G1,child,N,Can you press the one who's jumping
+28,test,38,G1,parent,Y,Can you touch the person who's sitting down
+28,test,7,H1,parent,N,can you press the the person  with the head that looks more like a diamond
+28,test,33,H1,child,N,Can you press the person jumping
+28,test,2,I1,child,N,Can you press the person tumbling
+28,test,32,I1,parent,Y,can you touch the person who's holding the triangle
+28,test,9,K1,parent,Y,can you press the person who is leaning over and they have a triangle hat
+28,test,31,K1,child,N,can you press the one leaning down with one foot on the ground one foot in the air
+51,test,4,A1,child,Y,Looks like someone walking
+51,test,38,A1,parent,Y,"walking, skipping"
+51,test,5,B1,parent,Y,"this looks like they are blocks and there is a square at the very top, and it's looking down"
+51,test,35,B1,child,Y,it's someone walking
+51,test,2,C1,child,Y,it looks like a dog or something
+51,test,32,C1,parent,Y,"this is something or somebody kneeling, the square is not connected"
+51,test,9,D1,parent,Y,I think it looks like an airplane
+51,test,39,D1,child,Y,it's someone lying down on his tablet
+51,test,3,E1,parent,Y,it's like they are skipping or jumping up high
+51,test,33,E1,child,Y,this is the one that's jumping for joy
+51,test,10,F1,child,Y,"it's someone that has a square head and has arm up, and it's trying to do a jump"
+51,test,10,F1,child,Y,its doing a split jump
+51,test,36,F1,parent,Y,doing a split
+51,test,6,G1,child,Y,someone that's sitting in a chair
+51,test,34,G1,parent,Y,this is not the one jumping for joy
+51,test,7,H1,parent,Y,"this one looks like a rectangle, and it's the top of the triangle with a square at the top"
+51,test,31,H1,child,Y,this one is someone that's holding a plate with soup in it at a restaurant
+51,test,8,I1,child,Y,it's someone that's giving a drink to someone and it's bending
+51,test,40,I1,parent,Y,this is the one not walking
+51,test,1,K1,parent,Y,okay so this looks like a man bending over and serving something to somebody
+51,test,37,K1,child,Y,it's someone that's giving someone the food at the restaurant
+52,test,4,A1,child,N,one that looks like someone is standing on one foot
+52,test,32,A1,parent,Y,"someone with two feet spread out and a square on her head, with two feet"
+52,test,5,B1,parent,Y,the person standing tall
+52,test,35,B1,child,Y,someone walking
+52,test,6,C1,child,Y,someone laying down
+52,test,38,C1,parent,Y,someone looks like they did a somersault
+52,test,1,D1,parent,Y,looks like an airplane I guess
+52,test,39,D1,child,Y,someone laying down like an airplane
+52,test,3,E1,parent,N,"it looks like something with wings, with a square head and two legs, but wings, big streching out the arms--do you know which one?"
+52,test,31,E1,child,Y,someone jumping up with two legs
+52,test,9,F1,parent,Y,someone that looks like they are doing the splits
+52,test,37,F1,child,Y,someone like jumping out with two legs
+52,test,8,G1,child,Y,someone that looks like kind of a wand
+52,test,40,G1,parent,Y,someone sitting in a chair
+52,test,2,H1,child,Y,it looks like a person
+52,test,34,H1,parent,Y,someone serving food
+52,test,7,I1,parent,Y,someone that looks like they are serving food on a platter
+52,test,33,I1,child,Y,someone serving food
+52,test,10,K1,child,Y,someone standing on one foot
+52,test,36,K1,parent,Y,someone serving food
+53,test,10,A1,child,Y,this one looks like they're running
+53,test,36,A1,parent,Y,This is someone walking with their foot in the air
+53,test,4,B1,child,Y,this is somebody walking with their head down
+53,test,34,B1,parent,Y,This is someone walking with their head down
+53,test,9,C1,parent,Y,this one looks like they're about to do a somersault or a headstand
+53,test,31,C1,child,Y,It's somebody is about to do a somersault
+53,test,3,D1,parent,Y,this looks like someone laying down
+53,test,37,D1,child,Y,This is somebody laying down with their foot up in the air
+53,test,7,E1,parent,Y,this one it looks like they're jumping in the air
+53,test,33,E1,child,Y,This one is somebody jumping in the air and saying hooray
+53,test,2,F1,child,Y,this one is somebody running
+53,test,40,F1,parent,Y,This is someone that looks like they're walking with their hand in the air
+53,test,8,G1,child,Y,this one looks like they're sitting down
+53,test,38,G1,parent,Y,This is someone that looks like they're sitting down
+53,test,5,H1,parent,Y,this is someone just standing up and it looks like they're just holding something
+53,test,39,H1,child,Y,This one is somebody that's putting out their arm
+53,test,1,I1,parent,Y,it kind of looks like a person holding a tray
+53,test,35,I1,child,Y,This is somebody holding out a tray
+53,test,32,K1,parent,Y,This person looks like they're holding a tray and bending over a little bit
+54,test,4,A1,child,Y,it looks like that person is running
+54,test,36,A1,parent,Y,the one who's running
+54,test,6,B1,child,Y,it's walking
+54,test,32,B1,parent,Y,the one who's walking?
+54,test,9,C1,parent,Y,can you pick the one who looks like they're on their hands and knees? 
+54,test,33,C1,child,Y,kneeling down
+54,test,10,D1,child,Y,triangle and triangle and a square on top and then another triangle and triangle and i think that that person fell over and cut his head off and then broke
+54,test,38,D1,parent,Y,can you pick the person who fell down and lost their head?
+54,test,34,E1,parent,Y,the one who's jumping
+54,test,5,F1,parent,Y,looks like a person who's running
+54,test,35,F1,child,Y,the one who's running
+54,test,1,G1,parent,Y,"can you pick the one who looks like the lady maybe, sitting up, with the square on top?"
+54,test,31,G1,child,Y,the person that fell down
+54,test,3,H1,parent,Y, a square that looks like a diamond that's a person standing
+54,test,39,H1,child,Y,the person that only has one foot
+54,test,37,I1,child,Y,the one that's holding the triangle
+54,test,2,K1,child,Y,it has one straight line and another straight line but there's a little triangle right there that I usually get when I cut a paper off
+54,test,40,K1,parent,Y,can you pick the one pointing?
+55,test,5,A1,parent,Y,can you pick the one that's running
+55,test,39,A1,child,Y,running but not the one holding
+55,test,2,B1,child,Y,I have a person
+55,test,32,B1,parent,Y,the guy sad that's walking
+55,test,10,C1,child,Y,I got somebody hiding down
+55,test,40,C1,parent,Y,pick the guy that's trying to hide
+55,test,8,D1,child,Y,I have someone laying down
+55,test,38,D1,parent,Y,pick the guy that's laying down
+55,test,7,E1,child,Y,a superhero chasing a bad guy
+55,test,31,E1,child,Y,I have a superhero
+55,test,9,F1,parent,Y,pick the one that's like really weird with all those weird shapes
+55,test,35,F1,child,Y,the really really weird one
+55,test,1,G1,parent,Y,pick the one with the square that's at the very tippy top
+55,test,37,G1,child,Y,the really weird one
+55,test,3,H1,parent,Y,pick the one that's just standing
+55,test,33,H1,child,Y,the one that's pointing
+55,test,4,I1,child,Y,the one that's leaving the box
+55,test,36,I1,parent,Y,the judge holding that triangle
+55,test,6,K1,child,Y,I got a cat
+55,test,34,K1,parent,Y,the cat that's kinda on his hind legs
+56,test,9,A1,parent,Y,it looks like a person running with their foot up?
+56,test,37,A1,child,Y,the person running
+56,test,4,B1,parent,Y,the person walking
+56,test,36,B1,parent,Y,a person walking. can you press the square that looks like the person walking?
+56,test,8,C1,child,Y,it's a human sleeping in the morning
+56,test,40,C1,parent,Y,the person laying in bed
+56,test,2,D1,child,Y,an airplane
+56,test,32,D1,parent,Y,the airplane
+56,test,1,E1,parent,Y,pick the one that looks like a person jumping
+56,test,31,E1,child,Y,the person jumping
+56,test,5,F1,parent,N,it looks like somebody running with their arms up
+56,test,39,F1,child,Y,"i have a triangle with a person who's running, really fast"
+56,test,3,G1,parent,N,this one looks like somebody sitting down
+56,test,33,G1,child,N,falling
+56,test,10,H1,child,Y,this is a person standing
+56,test,38,H1,parent,N,"the person holding a tray, not jumping"
+56,test,6,I1,child,Y,a doggie on a couch
+56,test,34,I1,parent,Y,the one that looks like a doggie getting on the couch
+56,test,7,K1,parent,Y,choose the one with the doggie on the couch
+56,test,35,K1,child,Y,"the doggie, the dog got on the couch"
+57,test,8,A1,child,Y,tap the one that's look like it's running
+57,test,38,A1,parent,Y,tap the one that looks like it's running away
+57,test,10,B1,child,Y,tap the one with no arms
+57,test,40,B1,parent,Y,tap the one that looks like it's walking away sad
+57,test,3,C1,parent,Y,tap the one that looks like its kneeling down with a square head
+57,test,35,C1,child,Y,tap the one that looks like it's kneeling down
+57,test,1,D1,parent,Y,tap the shape that looks like a plane lying down or something
+57,test,31,D1,child,Y,tap the one that looks like an airplane
+57,test,2,E1,child,Y,tap the one with the arms that's a triangle
+57,test,34,E1,parent,Y,tap the one that looks like it's jumping
+57,test,7,F1,parent,Y,"tap the one that looks really, it has like a square head tilted back, and maybe the arms are in the air, and a triangle."
+57,test,39,F1,child,Y,tap the one that has his arms up
+57,test,4,G1,child,Y,tap the one that's on a box
+57,test,36,G1,parent,Y,tap the one that looks like it's sitting on a box
+57,test,9,H1,parent,Y,tap the one that looks like it's just standing there holding a box
+57,test,37,H1,child,Y,tap the one that's serving something
+57,test,6,I1,child,Y,tap the one with the triangle in its hand
+57,test,32,I1,parent,Y,tap the one that looks like it's serving something
+57,test,5,K1,parent,Y,tap the one that looks like its bending over to serve something
+57,test,33,K1,child,Y,tap the one that's serving something
+58,test,8,A1,child,Y,it looks like a guy that's running and he has his foot up
+58,test,40,A1,parent,Y,this looks like somebody walking down the street snapping their fingers
+58,test,9,B1,parent,Y,looks like a person that's walking with their hands in the pockets with their head down
+58,test,31,B1,child,Y,someone putting their hands in the pockets
+58,test,5,C1,parent,Y,looks like somebody kneeling kind of
+58,test,35,C1,child,Y,looks like a guy with his head down on the ground
+58,test,10,D1,child,Y,"it looks like a boat, but it looks like a guy"
+58,test,32,D1,parent,Y,that looks like somebody on a boat
+58,test,3,E1,parent,Y,looks like somebody that has no arms that's jumping in the air
+58,test,33,E1,child,Y,it looks like a guy jumping for joy
+58,test,2,F1,child,N,it's a guy looks like a square sticking out of his head
+58,test,34,F1,parent,Y,it looks like a crazy chicken
+58,test,7,G1,parent,Y,kind of looks like somebody's sitting or kneeling
+58,test,37,G1,child,Y,it looks like a guy like playing on their phone or something
+58,test,4,H1,child,Y,it looks like a square and kind of a triangle shape mixed with a rectangle 
+58,test,38,H1,parent,Y,this looks like somebody holding a tray
+58,test,1,I1,parent,Y,looks like somebody holding something
+58,test,39,I1,child,Y,it looks like a guy he's like bending his arm
+58,test,6,K1,child,N,it's a thing that looks like it has a tail and a triangle on its head
+58,test,36,K1,parent,Y,this looks like a frankie with a tail in a party
+59,test,4,A1,child,Y,This is a person that's running
+59,test,7,B1,parent,Y,This one looks like a person walking with his head down like he is sad
+59,test,33,B1,child,Y,walk slow
+59,test,3,C1,parent,Y,which one looks like a dog running?
+59,test,9,D1,parent,N,This one looks like someone when she is in her room reading on the floor.
+59,test,39,D1,child,Y,this one's when I'm reading my book with my mom
+59,test,2,E1,child,N,This one has a diamond on the top
+59,test,40,E1,parent,Y,When you are super excited to play with someone
+59,test,10,F1,child,Y,there is a square on top
+59,test,34,F1,parent,Y,This one looks like a big bird that we see on a zoo.
+59,test,8,G1,child,Y,person sitting down for bus or doctor
+59,test,36,G1,parent,Y,This one looks like when we are sitting on our chair eating dinner.
+59,test,1,H1,parent,N,This has a square at the top
+59,test,35,H1,child,Y,This one look like some daddy bringing a handsome gift
+59,test,5,I1,parent,Y,This one looks like a waitress that has a tray with food that they are serving you.
+59,test,31,I1,child,Y,This one has a  nice food.
+60,test,7,A1,parent,Y,click on the one that looks like somebody running and looking up.
+60,test,37,A1,child,Y,it's the man running
+60,test,6,B1,child,Y,it looks like someone walking and looking down at the ground
+60,test,36,B1,parent,Y,tap on the one that looks like a man walking looking down at the ground.
+60,test,1,C1,parent,N,tap on the guy who is bending down
+60,test,33,C1,child,Y,He looks like he's a doggy
+60,test,3,D1,parent,Y,click on the one that looks like somebody lying down on his belly.
+60,test,39,D1,child,Y,it's a person laying down on his belly.
+60,test,5,E1,parent,Y,click on the one that looks like someone jumping up with their arms up in the air.
+60,test,35,E1,child,Y,"he's jumping with his feet backwards, and he is putting his hands straight up"
+60,test,2,F1,child,Y,someone jumping and holding up their hands
+60,test,38,F1,parent,Y,can you tap on the one that looks like he is running with triangle feet?
+60,test,10,G1,child,N,tap one the one that looks like it's jumping up and putting its hands in the air
+60,test,32,G1,parent,Y,tap on the one that looks like it's jumping up and putting its hands in the air
+60,test,8,H1,child,N,the one that looks like it's running 
+60,test,40,H1,parent,Y,"the person looks like they are standing up, holding up their hands in their hat"
+60,test,9,I1,parent,N,I want you to tap on the one that looks like a doggy on its hind legs
+60,test,31,I1,child,Y,It looks like a doggy
+60,test,4,K1,child,Y,dog.
+60,test,34,K1,parent,Y,can you tap on the one who has a head that is on the shape of a house
+61,test,4,A1,child,Y,a human who looks like it's dancing
+61,test,38,A1,parent,Y,"this one has like two separate legs, like it's running"
+61,test,5,B1,parent,Y,"This one kinda looks like it's walking, it's the one that does not have the triangle"
+61,test,33,B1,child,Y,This one looks like it's sad and is walking slowly
+61,test,3,C1,parent,Y,the thing that looks like his head is kinda to the side instead of on top of him
+61,test,37,C1,child,Y,This one looks like it's diving
+61,test,7,D1,parent,Y,This one looks like it's laying down
+61,test,31,D1,child,Y,This one looks like it's laying down
+61,test,35,E1,child,Y,This one looks like its jumping
+61,test,6,F1,child,Y,Hm this one looks like it's running away from something
+61,test,34,F1,parent,Y,"this is the crazy looking one, not the sad one, but the one that looks like it has arms spread open"
+61,test,8,G1,child,Y,this one looks like it's architecture
+61,test,32,G1,parent,Y,"not the one that's diving, but the one that looks like it's kneeling"
+61,test,10,H1,child,Y,This one looks like it's in some sort of school
+61,test,36,H1,parent,Y,looks like it's eating ice cream
+61,test,2,I1,child,Y,he's kinda leaning over and he has a triangle in his hand
+61,test,40,I1,parent,Y,looked like it was eating ice cream?
+61,test,9,K1,parent,Y,"this one has a triangle at the very top, kinda looks like a house at the very top"
+61,test,39,K1,child,Y,This one looks like it has a house and tail
+62,test,5,A1,parent,Y,mine is the man walking
+62,test,31,A1,child,Y,Someone running
+62,test,3,B1,parent,Y,looks like a man walking
+62,test,39,B1,child,Y,The guy walking with his head down
+62,test,2,C1,child,Y,sort of like a guy crouching over on stairs or something
+62,test,32,C1,parent,Y,"this one looks like someone that's kneeling down, praying with their head on the floor"
+62,test,1,D1,parent,Y,it's got  a triangle on the left side
+62,test,37,D1,child,Y,the guy in the hovercraft
+62,test,6,E1,child,Y,It's sort of looks like a bat trying to fly or something
+62,test,40,E1,parent,Y,the bat-looking one
+62,test,8,F1,child,Y,It looks like someone's running with their hands up
+62,test,38,F1,parent,Y,the person running with their arms outstretched
+62,test,4,G1,child,Y,It sort of looks like someone with a dress sitting on something
+62,test,34,G1,parent,Y,this is the one that looks like they're in a dress sitting on the floor
+62,test,7,H1,parent,Y,looks like someone is holding a bowl
+62,test,35,H1,child,Y,The guy with the cloak with his hands out
+62,test,9,I1,parent,Y,looks like a person holding out a triangle bowl
+62,test,33,I1,child,Y,Someone holding out a triangular bowl
+62,test,10,K1,child,Y,It sort of looks like someone with a triangle hat
+62,test,36,K1,parent,Y,"the house-head person, or dog"
+64,test,10,A1,child,Y,touch the one that's running
+64,test,34,A1,parent,Y,the running person
+64,test,4,B1,child,Y,touch the person who's walking
+64,test,36,B1,parent,Y,the sad person walking away
+64,test,3,C1,parent,Y,you should touch the one who's trying to do a headstand
+64,test,31,C1,parent,Y,the person doing a headstand?
+64,test,5,D1,parent,Y,touch the one who's lying down
+64,test,37,D1,child,Y,the one that's laying down
+64,test,2,E1,child,N,you should touch the man who's walking with the square on his head
+64,test,40,E1,parent,Y,the jumping up and down one
+64,test,1,F1,parent,Y,touch the one that has a square on the upper left part and it looks like its walking
+64,test,33,F1,child,Y,happy dance
+64,test,6,G1,child,N,touch the one who's lying down
+64,test,38,G1,parent,Y,the one who's on their knees
+64,test,9,H1,parent,Y,touch the one who's standing up holding something
+64,test,39,H1,child,Y,the one that's sticking the butt out and holding the bowl
+64,test,8,I1,child,Y,the one that's sticking his butt out
+64,test,32,I1,parent,Y,touch the one who's sticking their butt out
+64,test,7,K1,parent,Y,touch the one who's standing up with their arms out
+64,test,35,K1,child,Y,the one that's sticking their butt out
+65,test,8,A1,child,Y,it's the one that's standing on one foot
+65,test,34,A1,parent,Y,this is the woman walking backwards
+65,test,3,B1,parent,Y,this one looks like the person walking away
+65,test,37,B1,child,Y,the one that's walking away
+65,test,9,C1,parent,Y,this one the person's got his head down on the ground
+65,test,39,C1,child,Y,the one that's laying down
+65,test,2,D1,child,Y,lying down
+65,test,40,D1,parent,Y,this is the one lying down
+65,test,4,E1,child,Y,the one that's jumping
+65,test,38,E1,parent,Y,this is the one that's jumping
+65,test,5,F1,parent,Y,this one looks like the person's dancing
+65,test,35,F1,child,Y,the one that's skipping
+65,test,6,G1,child,Y,the one that's standing up
+65,test,32,G1,parent,Y,the one on her knees
+65,test,7,H1,parent,N,this one looks like the person's on his knees
+65,test,33,H1,child,Y,on his knees
+65,test,1,I1,parent,Y,press the one that has a person that looks like hes holding a bowl
+65,test,31,I1,child,Y,the one that's holding the ball
+65,test,10,K1,parent,Y,one thats standing
+65,test,36,K1,parent,Y,the one that's standing up
+30,test,10,A1,parent,Y,"it's like one foot's on the ground, and one's in the air"
+30,test,40,A1,parent,Y,someone's running with a cape
+30,test,4,B1,child,Y,pick the one that looks like he's walking
+30,test,38,B1,parent,Y,walking with the head down
+30,test,8,C1,child,Y,pick the one that looks like it's kneeling
+30,test,36,C1,parent,Y,kneeling down
+30,test,7,D1,parent,Y,it looks like an airplane actually
+30,test,35,D1,child,Y,airplane with a cube on top
+30,test,3,E1,parent,Y,"looks like a person who's jumping really excited like they'd just gotten good news, or they're just graduated from college or something"
+30,test,33,E1,child,Y,jumping for joy
+30,test,9,F1,child,N,like it's running
+30,test,23,F1,parent,Y,this one looks like it's doing the dab
+30,test,1,G1,parent,Y,the one that looks like there's a lady standing straight up
+30,test,39,G1,child,Y,the lady sitting at church
+30,test,2,H1,child,Y,the one that looks like he has a dress cloak thing cause of church
+30,test,34,H1,parent,Y,this looks like it's in a cap and gown
+30,test,5,I1,parent,Y,this looks like someone serving something on a tray
+30,test,6,K1,child,Y,"looks like its's a man or something, with a triangle hat on"
+30,test,32,K1,parent,N,hands out looking to receive
+31,test,3,A1,parent,Y,this person looks like he or she is walking
+31,test,37,A1,child,Y,this one looks like she's running
+31,test,7,B1,parent,Y,"this person looks like he or she is walking with the head down, maybe kinda sad"
+31,test,31,B1,child,Y,"it looks like her head's down, she looks like she's walking"
+31,test,9,C1,parent,Y,this person looks like they might be kneeling on the ground
+31,test,35,C1,child,Y,this one looks like she's kicking up her leg
+31,test,4,D1,child,Y,it looks like she's laying down
+31,test,36,D1,parent,Y,"this one looks like someone who has one foot in the air, one foot down"
+31,test,6,E1,parent,Y,this girl looks like she's jumping up
+31,test,34,E1,parent,Y,this is like someone who is jumping for joy
+31,test,2,F1,child,Y,this one looks like it's dabbing
+31,test,32,F1,parent,Y,"this one looks like two triangles, someone wearing a dress with maybe two triangular heels"
+31,test,1,G1,parent,N,this looks like a person who has a straight back and bent knees
+31,test,33,G1,child,Y,this looks like a lady on the potty
+31,test,5,H1,parent,N,"this person looks like they could be sitting or standing and perhaps reading a book, it has a straight back"
+31,test,39,H1,child,Y,this looks like a person ministering
+31,test,10,I1,child,Y,this one looks like she's giving maybe some stew
+31,test,40,I1,parent,Y,"so this looks like maybe a butler, or someone like that, holding a basin or bowl"
+31,test,8,K1,child,Y,this one looks like it's giving something but it has a tail sticking out
+31,test,38,K1,parent,Y,this one looks like it has a triangular hat
+32,test,8,A1,child,Y,choose the boy that has one foot up and one foot down
+32,test,34,A1,parent,Y,choose the person that has one foot down and one foot up
+32,test,2,B1,child,Y,the man that's walking
+32,test,32,B1,parent,Y,choose the person that looks like it's walking
+32,test,9,C1,parent,Y,choose the person that looks like it's crawling
+32,test,31,C1,child,Y,choose the man that's bending down
+32,test,4,D1,child,Y,choose the man that's on the floor
+32,test,38,D1,parent,Y,"choose the person that's laying flat, not the person that looks like it's jumping, the one that's laying flat on the ground"
+32,test,7,E1,parent,Y,choose the man that looks like it's jumping
+32,test,33,E1,child,Y,choose the boy that's like flying up
+32,test,10,F1,child,Y,choose that girl that's running
+32,test,40,F1,parent,N," choose the opposite of the person that's laying, that's bending over"
+32,test,5,G1,parent,Y,choose the man who's standing up
+32,test,37,G1,parent,Y,who has a sharp point on the right side?
+32,test,3,H1,parent,Y,choose the person that looks like it's shaped like it's standing up
+32,test,35,H1,child,Y,choose the boy that has the cup in his hand
+32,test,1,I1,parent,Y,choose the waiter. it looks like a waiter when you go out to eat? and he comes with the plate in his hand?
+32,test,39,I1,child,Y,choose the boy that has the cup in it's hand
+32,test,6,K1,child,Y,choose that man that's with one hand
+32,test,36,K1,parent,Y,choose the person that doesn't have one foot down and one foot up
+33,test,9,A1,parent,Y,a person running 
+33,test,31,A1,child,Y,A person on one leg
+33,test,4,B1,child,Y,Something walking
+33,test,36,B1,parent,Y,a person walking like an old man 
+33,test,8,C1,child,Y,the person crawling
+33,test,34,C1,parent,Y,it's a person crawling
+33,test,7,D1,parent,Y,like a person maybe lying down
+33,test,5,E1,parent,Y,it looks like a person maybe jumping in the air
+33,test,39,E1,child,Y,A person jumping
+33,test,3,F1,parent,Y,It looks like a maybe like a clown with a funny hat on like a birthday hat
+33,test,2,G1,child,Y,a tower
+33,test,38,G1,parent,Y,like a tower
+33,test,1,H1,parent,Y,it looks like a tower
+33,test,33,H1,child,Y,A person giving a bowl
+33,test,6,I1,child,Y,Somebody giving something to something that looks like somebody stealing something
+33,test,32,I1,parent,Y,it's the person giving a bowl
+33,test,10,K1,child,Y,a person with a house playing on top of them
+33,test,40,K1,parent,Y,a person bending over to give something to someone
+34,test,5,A1,parent,Y,looks like somebody running to the left
+34,test,37,A1,child,Y,it looks someone like someone running to the left
+34,test,1,B1,parent,Y,looks like a man walking to the left
+34,test,39,B1,child,Y,it's the person person who's sad walking to the left
+34,test,3,C1,parent,Y,looks like someone praying or diving into the water
+34,test,35,C1,child,Y,This looks like someone kneeling
+34,test,4,D1,child,Y,Car or something
+34,test,40,D1,parent,Y,it's the ocean that has the mountains and the boat
+34,test,2,E1,child,Y,looks like a man dancing to the right
+34,test,32,E1,parent,Y,looks like a bird flying away
+34,test,7,F1,parent,Y,the one that has the bigger shapes to it
+34,test,31,F1,child,Y,looks like someone with a square head and has triangle feet
+34,test,9,G1,parent,Y,A square on the top and a big square on the bottom and triangles on the square
+34,test,33,G1,child,Y,looks like someone sitting down
+34,test,8,H1,child,Y,is the one that has the bigger pieces
+34,test,34,H1,parent,Y,This looks like somebody holding a box
+34,test,6,I1,child,Y,looks like someone holding something
+34,test,36,I1,parent,Y,it looks like someone holding a bowl
+34,test,10,K1,child,Y,the arrow at the top
+34,test,38,K1,parent,Y,it's the dog with the arrow head
+35,test,1,A1,parent,Y,someone running
+35,test,37,A1,child,Y,a person running
+35,test,6,B1,child,N,a tired person
+35,test,38,B1,parent,Y,a tired person walking
+35,test,9,C1,parent,N,a sleeping person
+35,test,35,C1,child,Y,a person crawling
+35,test,32,D1,parent,Y,an airplane
+35,test,7,E1,parent,Y,"a person jumping up, they look really happy"
+35,test,39,E1,child,Y,a person jumping up
+35,test,10,F1,child,Y,a bird
+35,test,40,F1,parent,Y,a flying bird
+35,test,4,G1,child,Y,a pigeon standing up
+35,test,34,G1,parent,Y,a pigeon
+35,test,3,H1,parent,Y,someone standing up
+35,test,31,H1,child,Y,person reading a book
+35,test,5,I1,parent,Y,looks like a waiter standing next to a table holding a bowl
+35,test,33,I1,child,Y,a person holding a bowl
+35,test,8,K1,child,Y,a puppy
+35,test,36,K1,parent,Y,a puppy
+36,test,6,A1,child,Y,This one looks like a person who's running
+36,test,38,A1,parent,Y,This looks like skip to my lou
+36,test,2,B1,child,Y,The one who's walking lonely
+36,test,32,B1,parent,Y,I'm so sad I'm walking
+36,test,10,C1,child,Y,it looks like two feet and then there's one rock
+36,test,7,D1,parent,Y,the one who looks sleepy
+36,test,37,D1,child,Y,I'm sleepy
+36,test,1,E1,parent,Y,the one that looks like he's falling down
+36,test,35,E1,child,Y,Hooray I'm gonna catch a ball
+36,test,3,F1,parent,Y,This one looks like the one that's trying to catch a basketball that's in the air
+36,test,33,F1,child,Y,hooray I'm gonna catch a ball
+36,test,5,G1,parent,Y,this one looks like the person that's praying on their knees
+36,test,31,G1,child,Y,I'm gonna pray
+36,test,9,H1,parent,Y,this one looks like a student who's holding a box in front of him
+36,test,39,H1,child,Y,Excuse me there you go
+36,test,4,I1,child,Y,this person is holding a bowl
+36,test,36,I1,parent,Y,Excuse me sir
+36,test,8,K1,child,Y,the one who's trying to catching something
+37,test,10,A1,child,Y,it looks like a man
+37,test,38,A1,parent,Y,walking
+37,test,6,B1,child,Y,it's a man walking
+37,test,36,B1,parent,Y,walking with their head down
+37,test,2,C1,child,Y,it's a person laying down
+37,test,32,C1,parent,Y,diving
+37,test,3,D1,parent,Y,it looks like an airplane
+37,test,37,D1,child,Y,airplane
+37,test,9,E1,parent,Y,this one looks like they're jumping for joy
+37,test,31,E1,child,Y,jumping
+37,test,4,F1,child,Y,"it's not the tall one, it doesn't have the square on top"
+37,test,40,F1,parent,Y,dabbing or a woman running with a purse
+37,test,1,G1,parent,Y,"it's like a building, it's really tall"
+37,test,33,G1,child,Y,a seal
+37,test,7,H1,parent,Y,this one looks like someone who's singing
+37,test,35,H1,child,Y,singing
+37,test,5,I1,parent,Y,this looks like it's Jeeves
+37,test,39,I1,child,Y,Jeeves
+37,test,8,K1,child,Y,it's like Jeeves
+37,test,34,K1,parent,Y,Jeeves
+38,test,7,A1,parent,N,it has a tail
+38,test,35,A1,child,N,the big one
+38,test,39,B1,child,Y,the one standing up
+38,test,8,C1,child,Y,the small square
+38,test,32,C1,parent,Y,this is the the small one. not the one that's standing up
+38,test,1,D1,parent,Y,"a flat shape. it's not the one standing up, it's the one laying down"
+38,test,31,D1,child,N,the big one
+38,test,10,E1,child,Y,the square
+38,test,38,E1,parent,Y,it's real big and it has a big diamond
+38,test,2,F1,child,N,it's standing up
+38,test,34,F1,parent,Y,which one has the square? and which has the two half triangles at the bottom
+38,test,9,G1,parent,Y,"this one is standing up straight, it's not the one that's laying down, it's the one that's tall"
+38,test,5,H1,parent,Y,this one has a diamond at the top of it
+38,test,37,H1,child,N,the one laying down
+38,test,6,I1,child,Y,the square
+38,test,40,I1,parent,Y,"this one is the one that is standing up and it has a big diamond at the top of its head, and a half triangle that looks like it's his hand"
+38,test,4,K1,child,Y,standing up
+38,test,36,K1,parent,Y,the big arrow with the tail
+39,test,10,A1,child,Y,looks like a person standing on one leg
+39,test,36,A1,parent,Y,looks like a person running on one leg
+39,test,3,B1,parent,Y,this one looks like a man standing up and walking with it's head tilted
+39,test,31,B1,child,Y,the one walking with his head down
+39,test,4,C1,child,Y,looks like a person crouching
+39,test,38,C1,parent,Y,looks like a person crouching
+39,test,7,D1,parent,Y,looks like a person laying down
+39,test,33,D1,child,Y,this looks like a person reading
+39,test,9,E1,parent,Y,kind of looks like somebody jumping up in the air like they're very excited
+39,test,37,E1,child,Y,looks like a person jumping
+39,test,1,F1,parent,Y,has a square and some pointy pieces and some triangles on the bottom corner
+39,test,35,F1,child,Y,looks like a person doing splits
+39,test,2,G1,child,Y,she has a dress and the head is tilted and it's sitting on the square
+39,test,34,G1,parent,Y,looks like a person sitting down
+39,test,6,H1,child,Y,it looks like he's worshiping
+39,test,32,H1,parent,Y,this one looks like the priest
+39,test,8,I1,child,Y,"looks like a boy kneeling with a hand behind his back, carrying a pitcher"
+39,test,40,I1,parent,Y,looks like a person bending over holding a bowl
+39,test,5,K1,parent,Y,looks like somebody bending over and it almost looks like they have a tail
+39,test,39,K1,child,Y,looks like a person bending over
+40,test,10,A1,child,Y,This guy looks like he's running
+40,test,34,A1,parent,Y,The runner
+40,test,5,B1,parent,Y,this guy looks like he's walking away kinda sad
+40,test,39,B1,child,Y,The walker
+40,test,2,C1,child,Y,This guy this looks like he's standing on his hands and doing a downward dog at the same time
+40,test,32,C1,parent,Y,Downward dog
+40,test,3,D1,parent,Y,this one looks like he's laying down and reading a book
+40,test,31,D1,child,Y,Reader
+40,test,4,E1,child,Y,This guy looks like he's jumping
+40,test,36,E1,parent,Y,The jumper
+40,test,6,F1,child,Y,This guy kinda looks like he's running with his arms up
+40,test,40,F1,parent,Y,The jumper
+40,test,8,G1,child,Y,It's probably sitting on the chair
+40,test,38,G1,parent,N,the sitter
+40,test,7,H1,parent,Y,This guy is standing up
+40,test,37,H1,child,Y,"The reader, He's like standing up and reading, like for marriage"
+40,test,9,I1,parent,Y,This guy looks like he's a waiter
+40,test,35,I1,child,Y,The waiter
+40,test,1,K1,parent,Y,This shape kinda looks like someone's bending over
+40,test,33,K1,child,Y,Triangle hat
+42,test,9,A1,parent,Y,a person that is standing on one leg and has one leg up behind him
+42,test,31,A1,child,Y,someone running on one leg
+42,test,5,B1,parent,Y,a person walking with no hat and two legs
+42,test,33,B1,child,Y,No ice cream
+42,test,7,C1,parent,Y,it's a person kneeling down
+42,test,35,C1,child,Y,he's laying down but it's not connected
+42,test,6,D1,child,Y,It's a rocketship
+42,test,34,D1,parent,Y,It's a person laying down with two triangle feet
+42,test,10,E1,child,Y,He's jumping
+42,test,38,E1,parent,Y,No ice cream
+42,test,4,F1,child,Y,like a split
+42,test,40,F1,parent,Y,a person and they're standing on two triangle feet
+42,test,1,G1,parent,Y,big black box at the bottom and a little square at the top
+42,test,37,G1,child,Y,It's a woman sitting down
+42,test,3,H1,parent,Y,"Someone a little bit wider, and standing not running"
+42,test,39,H1,child,Y,And he's like fat
+42,test,8,I1,child,Y,he has a icecream with no ice cream on top
+42,test,36,I1,parent,Y,ice cream no cone
+42,test,2,K1,child,Y,It has a tail
+42,test,24,K1,parent,Y,You can only see one leg and a tail and a triangle hat
+43,test,3,A1,parent,Y,It is a person facing away with one leg up
+43,test,33,A1,child,Y,Running
+43,test,4,B1,child,Y,It is walking slowly with his head down
+43,test,36,B1,parent,Y,Walking
+43,test,7,C1,parent,Y,it's like leaning over like leapfrog
+43,test,37,C1,child,Y,Leapfrog
+43,test,5,D1,parent,Y,It's lying down
+43,test,39,D1,child,Y,Swimming
+43,test,8,E1,child,Y,It is jumping up
+43,test,40,E1,parent,Y,Jumping up with arms out
+43,test,9,F1,parent,Y,It has legs spread out and hands pointing up
+43,test,31,F1,child,Y,legs far apart
+43,test,6,G1,child,Y,it is standing up
+43,test,32,G1,parent,Y,not the leapfrog
+43,test,1,H1,parent,Y,it looks like a person standing up
+43,test,35,H1,child,Y,Arms out
+43,test,10,I1,child,Y,He is holding something
+43,test,34,I1,parent,Y,Bowl
+43,test,2,K1,child,Y,It is praying
+43,test,38,K1,parent,Y,Standing with the tail
+44,test,3,A1,parent,Y,select the one that has the person running with one foot on the ground
+44,test,37,A1,child,Y,the person running
+44,test,8,B1,child,Y,it's a lonely person with one foot walking on the ground and its face up 
+44,test,38,B1,parent,Y,It's the person who looks sad and lonely
+44,test,5,C1,parent,Y,this is a person kind of crouching down with their head near the ground
+44,test,31,C1,child,Y,It's a person crouching down
+44,test,9,D1,parent,Y,the person's lying down
+44,test,35,D1,child,Y,a person lied down
+44,test,2,E1,child,Y,It's a shape
+44,test,32,E1,parent,Y,Person jumping in the air
+44,test,7,F1,parent,Y,This is a person that's kind of bent in half like kind of bent over and their feet are really wide apart
+44,test,33,F1,child,Y,It's a person walking with it's legs wide open
+44,test,6,G1,child,Y,it's a person sitting with no feet and a head
+44,test,34,G1,parent,Y,This is a person sitting down
+44,test,10,H1,child,Y,it's a person staying still with its eyes straight and finger pointing
+44,test,40,H1,parent,Y,This is the person with a tray in his hand
+44,test,4,I1,child,Y,it's a person standing with a different kind of shaped triangles in its hand
+44,test,36,I1,parent,Y,It's the person with a triangle on his hand
+44,test,19,K1,child,Y,It's a person wearing a hat
+45,test,4,A1,child,Y,He's running
+45,test,38,A1,parent,Y,This is a person running
+45,test,1,B1,parent,Y,this one looks like a person standing up
+45,test,37,B1,child,Y,This is a person walking
+45,test,2,C1,child,Y,He's kneeling down and it's like he's looking
+45,test,40,C1,parent,Y,This looks like someone crawling
+45,test,3,D1,parent,Y,This one looks like somebody laying on the floor
+45,test,35,D1,child,Y,this one looks like a person laying kicking his legs up and down
+45,test,6,E1,child,Y,he's jumping up with his legs kicked backwards
+45,test,32,E1,parent,Y,This one looks like someone jumping for joy
+45,test,7,F1,parent,Y,it is not the one that looks like somebody crawling
+45,test,39,F1,child,Y,This is a person that kinda looks like a duck
+45,test,9,G1,parent,Y,this one at the very top is a square that's tilted a little bit
+45,test,33,G1,child,Y,it has a triangle sticking out and a square tilted at the top
+45,test,8,H1,child,Y,It kinda looks like he's holding a towel
+45,test,36,H1,parent,Y,this is a person standing up
+45,test,10,I1,child,Y,it looks like a guy holding a a tea pot
+45,test,34,I1,parent,Y,This one looks like a waiter holding a tea pot
+45,test,5,K1,parent,Y,it looks like an arrow pointing up at the very top of it
+45,test,31,K1,child,Y,It's a person with a triangle on the top like a hat and it kinda has a tail and its arms are sticking out
+46,test,4,A1,child,Y,it's a person walking
+46,test,40,A1,parent,Y,"it looks like the person is dancing on one leg, with one leg in the air"
+46,test,10,B1,child,Y,a person walking
+46,test,36,B1,parent,N,the person's feet look like triangles and the head looks like a square
+46,test,8,C1,child,Y,he's laying down
+46,test,32,C1,parent,N,a square that is going inside an empty space
+46,test,7,D1,parent,Y,it look like a person is laying down straight with their legs in the air
+46,test,31,D1,child,Y,a boy that has two triangles
+46,test,2,E1,child,Y,she's flying around
+46,test,38,E1,parent,Y,it looks like a bird flying
+46,test,9,F1,parent,Y,"it kind of looks like a bird, flying"
+46,test,39,F1,child,Y,a kid running
+46,test,6,G1,child,Y,a dress and a square on its head
+46,test,34,G1,parent,Y,a square at the very top that looks like another square at the bottom with a triangle on top of the square. it look like a lady sitting down on top of the box.
+46,test,1,H1,parent,N,looks like a person that is standing straight up and it look like they're holding a box or some books
+46,test,37,H1,child,Y,a man giving you food
+46,test,5,I1,parent,Y,it looks like a person who's holding a tray and about to hand you some food
+46,test,35,I1,child,Y, a man giving them some food
+46,test,3,K1,parent,Y,"it kinda look like a puppy standing up on two legs, or maybe a person washing their hands."
+46,test,33,K1,child,Y,a doggy
+47,test,9,A1,parent,Y,"don't pick the dog, pick the one that looks like a regular person just standing on one leg"
+47,test,39,A1,child,Y,choose the one that looks like it's standing up straight with all kind of arms
+47,test,4,B1,child,Y,pick the one that looks like it's walking instead of holding a triangle
+47,test,38,B1,parent,Y,"choose the one that looks like it's walking away, sad"
+47,test,10,C1,child,Y,pick the one that looks like them praying
+47,test,36,C1,parent,Y,choose the one that is praying
+47,test,5,D1,parent,Y,pick the one that looks like its laying down
+47,test,37,D1,child,Y,"choose the one that doesn't look like the dog, the one that looks like it's having no fun"
+47,test,3,E1,parent,N,choose the one that has the two big points at the top
+47,test,35,E1,child,Y,choose someone that doesn't look sad
+47,test,8,F1,child,Y,pick the one that doesn't look like a teacher. the one that looks like a student running
+47,test,34,F1,parent,Y,"choose the one that looks like they're running, not praying"
+47,test,1,G1,parent,Y,choose the one that looks like there's a teacher sitting on a chair looking downward
+47,test,33,G1,child,Y,"choose the one who doesn't look like a dog, the opposite one"
+47,test,7,H1,parent,Y,"pick the one that looks like a person pointing, not jumping up and down"
+47,test,31,H1,child,Y, choose the one who looks like the pastor preaching
+47,test,2,I1,child,Y,pick the one that looks like a person holding like a triangle
+47,test,40,I1,parent,Y,choose the one that's holding the triangle
+47,test,6,K1,child,Y,"pick the one that kind of looks like a dog because it has a triangle tail, and it's not laying it's like standing up"
+47,test,32,K1,parent,Y,"choose the doggie, with his tail"
+48,test,2,A1,child,Y,a cocka-doodle-doo
+48,test,40,A1,parent,Y,this person is running
+48,test,8,B1,child,Y,a person who's standing up
+48,test,38,B1,parent,Y,this person is walking
+48,test,3,C1,parent,Y,this looks like a person on his arms and feet
+48,test,39,C1,child,Y,this person is laying down
+48,test,7,D1,parent,Y,"this looks like a person that's laying down, like sleeping"
+48,test,37,D1,child,Y,this person is laying down
+48,test,6,E1,child,N,a person who's standing up
+48,test,34,E1,parent,Y,this person looks like he is dancing
+48,test,1,F1,parent,Y,"a shape that does not look like a human, not a human"
+48,test,35,F1,child,Y,this person is a duckie
+48,test,4,G1,child,Y,it looks like its sitting on his butt
+48,test,32,G1,parent,Y,this person is sitting down
+48,test,5,H1,parent,N,"this also looks like a person, just standing up"
+48,test,31,H1,child,Y,this person is giving you something
+48,test,10,I1,child,Y,someone who's holding a triangle
+48,test,36,I1,parent,Y,this person is holding a triangle
+48,test,9,K1,parent,Y,this looks like a person standing up but bending over trying to give you something
+48,test,33,K1,child,Y,this person is giving you something
+49,test,2,A1,child,Y, it has the square on top
+49,test,40,A1,parent,Y,the runner
+49,test,9,B1,parent,Y," this one looks like a person walking very sad, like they're holding their head down"
+49,test,39,B1,child,Y,the one that looks sad
+49,test,1,C1,parent,Y,it's the one that kind of looks like a person bending down to get something
+49,test,35,C1,child,Y,the one that looks like it fell
+49,test,7,D1,parent,Y,the one that looks like a person fell down on the ground
+49,test,31,D1,child,Y,the guy who looks like it fell
+49,test,3,E1,parent,Y, this is a person that maybe looks like it's tripping and falling
+49,test,37,E1,child,Y,the party animal
+49,test,6,F1,child,Y,it's the person that's looking like it's raising its hands up
+49,test,38,F1,parent,Y,the celebration one
+49,test,8,G1,child,Y,the one that looks like it's kneeling down and putting its hands on the ground
+49,test,34,G1,parent,Y,"the one in church, kneeling or sitting"
+49,test,5,H1,parent,Y,it looks like a person holding a book
+49,test,33,H1,child,Y,the guy who looks like it's holding a book
+49,test,10,I1,child,Y,it's the one that looks like its drinking from a water fountain
+49,test,32,I1,parent,Y,the drinking fountain
+49,test,4,K1,child,Y,the one where it looks like a dog that's standing up
+49,test,36,K1,parent,Y,the dog
+50,test,4,A1,child,Y,like a person who's like standing on one leg
+50,test,38,A1,parent,Y,the person walking left
+50,test,6,B1,child,Y,like a person walking
+50,test,34,B1,parent,Y,walking to the left
+50,test,2,C1,child,Y,"a person who's like, crawling"
+50,test,36,C1,parent,Y,the crawling person
+50,test,10,D1,child,Y,a person laying down on their belly
+50,test,32,D1,parent,Y,"the belly, lying down"
+50,test,9,E1,parent,Y,a person jumping
+50,test,33,E1,child,Y,jumping
+50,test,3,F1,parent,Y,a person who's maybe running or something?
+50,test,37,F1,child,Y,the person with their hands in the air
+50,test,8,G1,child,Y,a person who has both hands like straight not crawling but straight
+50,test,40,G1,parent,Y,the person who's sitting
+50,test,7,H1,parent,Y,"this person is not moving, not jumping, just standing"
+50,test,39,H1,child,Y,the person who's standing up
+50,test,5,I1,parent,Y,"a person, he's like holding something like a tray"
+50,test,35,I1,child,Y,person holding a tray
+50,test,1,K1,parent,Y,a man. he's sort of reaching to the right.
+50,test,31,K1,child,Y,a person who's bending over
+66,test,8,A1,child,Y,kind of like you are running  or jogging or something like that
+66,test,36,A1,parent,Y,"the dancing, twirling ballerina"
+66,test,9,B1,parent,Y,this one looks like someone who is sad and looking at the ground  and maybe has like their hands in their pocket in that coat or something
+66,test,31,B1,child,Y,he's looking down at the ground
+66,test,10,C1,child,Y,this guy is like crawling like a baby like if he were trying to get under something tiny
+66,test,40,C1,parent,Y, this is the baby crawling
+66,test,7,D1,parent,Y,this one looks like they are lying on the floor on their tummy reading with their little feet in the air
+66,test,37,D1,parent,Y,you on your tummy reading
+66,test,5,E1,parent,Y,"it looks like someone who's jumping up and has their arms up in the air, it looks like they are happy, or maybe, playing basketball or something and they're like reaching up with one of their hands"
+66,test,35,E1,child,Y,you're jumping up in the air with hands in the sky
+66,test,1,F1,parent,Y,the one that doesn't look like a person who looks sad. so it's the opposite one.
+66,test,39,F1,child,Y,"this guy has flapping bird wings, bird feet"
+66,test,4,G1,child,Y,kinda looks like it's sitting on a chair
+66,test,34,G1,parent,Y,"this one is the sad woman, sitting on a square box"
+66,test,3,H1,parent,Y,looks like maybe a person who's standing up on the ground and they're holding like a bowl or something
+66,test,33,H1,child,Y,so this emperor is holding up something
+66,test,6,I1,child,Y,"so this kind of looks like someone that's showing something, and it kinda has like a tuxedo design, like a tuxedo body"
+66,test,32,I1,parent,Y,this one looks like a waiter holding a bowl
+66,test,2,K1,child,Y,"it kinda has a tail like a dog, and it has like regular legs like a human"
+66,test,38,K1,parent,Y,this one is the doggy
+67,test,9,A1,parent,Y,it looks like it's a woman walking away
+67,test,35,A1,child,Y,tap on the one that looks like a woman walking away
+67,test,10,B1,child,Y,tap on the one that's looking down and it has no arms
+67,test,34,B1,parent,Y,"tap on the one that's walking away, where it look like he got the hands in the box"
+67,test,1,C1,parent,Y,tap on the figure that looks like he's crouching down walking like a dog
+67,test,39,C1,child,Y,tap on the one that looks like they're crouching
+67,test,2,D1,child,Y,"it looks like he's crouching down, like he's crawling"
+67,test,38,D1,parent,N,tap on the one that looks like they're flying
+67,test,6,E1,child,Y,the one that's jumping like he's happy
+67,test,40,E1,parent,Y,tap on the one where it looks like they're jumping
+67,test,8,F1,child,Y,tap on the one that looks like a bird
+67,test,8,F1,child,Y,feet looks like a triangle
+67,test,36,F1,parent,Y,tap on the one that looks like they're about to fly with those triangles for their feet
+67,test,7,G1,parent,Y,"tap on the one that looks like they're kneeling, as if they're praying"
+67,test,37,G1,child,Y,tap on the one that looks like they're kneeling
+67,test,4,H1,child,Y,the one that looks like he's carrying a large container
+67,test,32,H1,parent,Y,tap on the one that looks like it's carrying a box
+67,test,3,I1,parent,Y,tap the one that looks like he's about to serve you dinner
+67,test,33,I1,child,Y,"tap on the one that looks like a butler, about to save the soup"
+67,test,5,K1,parent,Y,tap the one that looks like they're leaning forward
+67,test,31,K1,child,Y,tap on the one that has an arrow for a head
+68,test,2,A1,child,N,you're looking for something that has a triangle
+68,test,32,A1,parent,Y,you are running away from the rainstorm
+68,test,6,B1,child,Y,you are walking like you're sad
+68,test,38,B1,parent,Y,you are sad cause you just lost your money
+68,test,1,C1,parent,N, you're looking for something that's on the sidewalk
+68,test,33,C1,child,Y,he's saying please your majesty don't hurt me
+68,test,10,D1,child,Y,you're laying down
+68,test,36,D1,parent,Y,you are reading a book in bed
+68,test,3,E1,parent,Y,you are jumping up in the air cause you're so excited
+68,test,37,E1,child,N,you are walking away
+68,test,7,F1,parent,Y,you are doing the splits in the air
+68,test,35,F1,parent,Y,triangle feet
+68,test,9,G1,parent,Y,in this one you're sitting watching tv
+68,test,5,H1,parent,Y,you are standing at the store waiting for coffee
+68,test,39,H1,child,Y,you are looking inside a box
+68,test,4,I1,child,N,jumping up in the air
+68,test,40,I1,parent,Y,you are presenting someone with a drink
+68,test,8,K1,child,Y,it has a hat on
+68,test,34,K1,parent,Y,you have a triangle on your butt
+69,test,3,A1,parent,Y,he's running away
+69,test,33,A1,child,Y,He's running
+69,test,6,B1,child,Y,he's walking
+69,test,36,B1,parent,Y,He's so sad
+69,test,9,C1,parent,N,he's praying
+69,test,35,C1,child,Y,begging to go on the plane
+69,test,2,D1,child,Y,he fell and he's laying down
+69,test,34,D1,parent,Y,he just fell and hit his head
+69,test,1,E1,parent,Y,this guy is falling
+69,test,40,F1,parent,Y,This guy's running away from you
+69,test,4,G1,child,Y,he's sitting down
+69,test,32,G1,parent,Y,he's sitting on a bench
+69,test,7,H1,parent,Y,he went to college and now he's getting his degree
+69,test,31,H1,child,Y,He's giving out cookies
+69,test,10,I1,child,Y,it's like a person that's holding something
+69,test,5,K1,parent,Y,I think he's jumping. It's like a dog on two legs
+69,test,37,K1,child,Y,he's giving out drinks
+70,test,5,A1,parent,Y,"it look like somebody walking again, but got their leg all the way kicked back"
+70,test,33,A1,child,Y,someone running I think hes happy
+70,test,3,B1,parent,Y,it look like a person walking
+70,test,37,B1,child,Y,someone sad
+70,test,4,C1,child,Y,it looks like a person crawling
+70,test,38,C1,parent,Y,someone bent over on their knees
+70,test,6,D1,child,Y,it looks like he's a person crawling or laying on the ground
+70,test,36,D1,parent,Y,someone driving a car
+70,test,10,E1,child,Y,it looks like the person jumped
+70,test,40,E1,parent,Y,someone leaping in the air
+70,test,9,F1,parent,Y,it looks like they might have wings
+70,test,2,G1,child,Y,it looks like a person sitting on something
+70,test,32,G1,parent,Y,a lady sitting down
+70,test,8,H1,child,Y,it look like a person standing up but I don't see no legs
+70,test,34,H1,parent,Y,someone carrying a bucket
+70,test,1,I1,parent,Y,like a person holding something
+70,test,39,I1,child,Y,someone holding something that's a triangle
+70,test,7,K1,parent,Y,it looks like somebody reaching forward
+70,test,35,K1,child,Y,"someone that has a head, someone with a tail"
+71,test,5,A1,parent,Y,it looks like somebody is ice skating 
+71,test,35,A1,child,Y,someone running with his hands behind his back
+71,test,10,B1,child,Y,it looks like somebody walking and looking down
+71,test,38,B1,parent,N,"I think that looks like a rocket ship that is losing it's square command module from it's nose, cause it's leaning over to one side"
+71,test,6,C1,child,Y,someone laying down in a ball
+71,test,34,C1,parent,Y,this is someone doing some yoga--
+71,test,9,D1,parent,Y,this looks like someone lying on the ground--
+71,test,31,D1,child,Y,somebody laying down with a tail and one foot in the air
+71,test,1,E1,parent,Y,"it looks like a square-shaped man jumping up, his legs to one side"
+71,test,39,E1,child,N,someone who has a dip in their body and has a diamond-shaped head
+71,test,3,F1,parent,Y,"this looks like someone with his arms running very fast, one foot in the front, one foot in the back, with his arms stretched up"
+71,test,37,F1,child,Y,someone pointing up in the air and has two triangle feet
+71,test,4,G1,child,Y,"it looks like a triangle sitting down with a point sticking up, going like this with a angle and a square"
+71,test,32,G1,parent,Y,this looks like a jet fighter
+71,test,2,H1,child,Y,it is someone pointing with a diamond head
+71,test,40,H1,parent,Y,this is a graduate 
+71,test,7,I1,parent,Y,this looks like a waiter serving something
+71,test,33,I1,child,N,"it looks like somebody is learning forward, has a triangle foot and has the head on the point of the head "
+71,test,8,K1,child,Y,"he has his arms out and his head is an arrow, and he has a pointy foot, and he is leaning forward"
+71,test,36,K1,parent,Y, this is a dog who's learning to do a trick by standing on his hind legs
+72,test,5,A1,parent,Y,this one looks like a person running with a square balanced on top
+72,test,39,A1,child,Y,somebody running
+72,test,9,B1,parent,Y,this is a person walking looking down
+72,test,37,B1,child,N,somebody looking down
+72,test,8,C1,child,Y,this one it's lying down its head is floating and it's a square
+72,test,40,C1,parent,Y,somebody going into a handstand
+72,test,4,D1,child,Y,"it's lying down, triangle feet"
+72,test,32,D1,parent,Y,somebody lying down with their leg up
+72,test,7,E1,parent,Y,this one looks like somebody jumping for joy with their arms up  in the air
+72,test,35,E1,child,Y,somebody jumping
+72,test,3,F1,parent,Y,"the sqaure is on the left side on a point,  kind of tilted, looks like it's gonna roll down a hill"
+72,test,31,F1,child,Y,somebody pointing with the shark mouth
+72,test,1,G1,parent,N, there is a weird shape on the bottom and there is a square on the top kind of tilted sitting on top of a point
+72,test,33,G1,child,Y,somebody sitting
+72,test,10,H1,child,Y,this is a person pointing at something
+72,test,36,H1,parent,Y,holding out a tray
+72,test,6,I1,child,Y,this one has a triangle hand
+72,test,34,I1,parent,Y,somebody holding out a diamond tray
+72,test,2,K1,child,Y,"kind of dog like things, with the square thing on the top under the bottom, the point thing"
+72,test,38,K1,parent,Y,somebody holding out a tray
+73,test,7,A1,parent,Y,it's shaped like somebody is running
+73,test,35,A1,child,Y,it's someone that is running away
+73,test,3,B1,parent,Y,it could be like a person walking
+73,test,33,B1,child,Y,somebody is running really fast
+73,test,4,C1,parent,Y,this is somebody doing the tornado drill
+73,test,32,C1,child,Y,there's somebody doing the tornado drill
+73,test,6,D1,child,Y,it can fly into the sky
+73,test,34,D1,parent,Y,it looks like somebody is reading a book or it's like an airplane
+73,test,2,E1,child,N,something is like is eating sandwich
+73,test,38,E1,parent,Y,somebody sitting down or jumping for joy
+73,test,5,F1,parent,N,"maybe it's an alien, it's just shapes together"
+73,test,37,F1,child,Y,it's somebody who's trying to catch something or maybe get them
+73,test,9,G1,parent,Y,"the top part is a square, and it's tilted, the shapes almost look like they can represent somebody kneeling, or even sitting"
+73,test,39,G1,child,Y,it is the president telling somebody don't do something again
+73,test,10,H1,parent,Y,like they're holding something
+73,test,40,H1,parent,Y," it's a square on top, and it's like they're serving something"
+73,test,8,I1,child,Y,it's somebody who's holding some breakfast
+73,test,36,I1,parent,Y,the shapes are of somebody serving 
+73,test,1,K1,parent,Y,"it's shaped like an animal, that goes ruff ruff"
+73,test,31,K1,child,Y,it's somebody whose dog is barking
+74,test,5,A1,parent,Y,the shape looks like one leg is up
+74,test,37,A1,child,Y,it's something that looks like it's running
+74,test,4,B1,child,Y,it's a man that's walking
+74,test,36,B1,parent,Y, it looks like it's walking away
+74,test,6,C1,child,Y,it's something that's on the ground crawling
+74,test,38,C1,parent,N,it looks like it's falling down
+74,test,8,D1,child,Y,it is a man on the ground and one foot is up
+74,test,34,D1,parent,Y,it looks like it's laying on it's stomach with its leg up
+74,test,3,E1,parent,Y,it looks like it's jumping
+74,test,31,E1,child,Y,it's something that's flying
+74,test,7,F1,parent,Y, it looks like it's running
+74,test,33,F1,child,Y,it looks like it's looking up in the sky
+74,test,2,G1,child,Y,it has a square on the top it's like a statue
+74,test,32,G1,parent,Y,it looks like it's sitting
+74,test,1,H1,parent,Y,it looks like the person is pointing
+74,test,39,H1,child,Y,looks like it's giving you a coin
+74,test,10,I1,child,Y,it's a man that standing up and it has something in its hands
+74,test,40,I1,parent,Y, it looks like it's handing you something
+74,test,9,K1,parent,Y,it looks like it has a tail
+74,test,35,K1,child,Y,it's something that looks like it's giving to you
+75,test,7,A1,parent,Y,this one looks like maybe somebody running
+75,test,35,A1,child,Y,guy who has fin arms
+75,test,2,B1,child,Y,"this one looks like a sad, lonely man walking"
+75,test,36,B1,parent,Y,"this is the sad, lonely guy"
+75,test,8,C1,child,Y,this one looks like somebody laying down
+75,test,32,C1,parent,Y,"getting a drink out of the river, laying down"
+75,test,3,D1,parent,Y,this one looks like you reading a book in your  bed
+75,test,33,D1,child,Y,floating racecar
+75,test,6,E1,child,Y,this one looks like someone jumping into the air with a vest but has no arms
+75,test,40,E1,parent,Y,this one is jumping for joy
+75,test,1,F1,parent,Y,it looks like someone doing the dab
+75,test,31,F1,child,Y,dab
+75,test,5,G1,parent,Y,looks like somebody may be kneeling down and praying
+75,test,37,G1,child,Y,someone sitting in a chair
+75,test,9,H1,parent,Y,this one looks like somebody in a robe holding out a plate or a bowl
+75,test,39,H1,child,Y,guy with the flag on his arm
+75,test,10,I1,child,Y,this one looks like somebody leaning with a pointy ball
+75,test,34,I1,parent,Y,this is the upside down triangle that's being served to the table
+75,test,4,K1,child,Y,it's a cliff with a foot on the bottom and then there's two platforms on the different sides
+75,test,38,K1,parent,Y,it's the dog one
