@@ -38,7 +38,6 @@ flatten_sim_matrix <- function(cormat, ids) {
 
 make_within_df <- function(M_mat, F_mat, method) {
   M_mat %>%
-    group_by(subid, target) %>%
     do(flatten_sim_matrix(get_sim_matrix(., F_mat, method = method),
                           .$rep_num)) %>%
     mutate(rep1 = as.numeric(dim1), 
