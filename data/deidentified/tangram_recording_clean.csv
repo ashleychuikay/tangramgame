@@ -280,8 +280,7 @@
 21,test,9,F1,parent,Y,"A person who looks like their looking up, their pointing up to the sky"
 21,test,35,F1,child,Y,The one that's leaping up into the sky
 21,test,4,G1,child,Y,A one that's sitting down
-21,test,36,G1,parent,Y,The one who is sitting
-21,test,36,G1,parent,Y,Like looking down
+21,test,36,G1,parent,Y,The one who is sitting like looking down
 21,test,7,H1,parent,Y,A person who is praying
 21,test,31,H1,child,N,the one who's bending over
 21,test,3,I1,parent,Y,A man who has a tray in his hand
@@ -354,8 +353,7 @@
 51,test,39,D1,child,Y,it's someone lying down on his tablet
 51,test,3,E1,parent,Y,it's like they are skipping or jumping up high
 51,test,33,E1,child,Y,this is the one that's jumping for joy
-51,test,10,F1,child,Y,"it's someone that has a square head and has arm up, and it's trying to do a jump"
-51,test,10,F1,child,Y,its doing a split jump
+51,test,10,F1,child,Y,"it's someone that has a square head and has arm up, and it's trying to do a jump, it's doing a split jump"
 51,test,36,F1,parent,Y,doing a split
 51,test,6,G1,child,Y,someone that's sitting in a chair
 51,test,34,G1,parent,Y,this is not the one jumping for joy
@@ -1038,8 +1036,7 @@
 67,test,38,D1,parent,N,tap on the one that looks like they're flying
 67,test,6,E1,child,Y,the one that's jumping like he's happy
 67,test,40,E1,parent,Y,tap on the one where it looks like they're jumping
-67,test,8,F1,child,Y,tap on the one that looks like a bird
-67,test,8,F1,child,Y,feet looks like a triangle
+67,test,8,F1,child,Y,"tap on the one that looks like a bird, feet looks like a triangle"
 67,test,36,F1,parent,Y,tap on the one that looks like they're about to fly with those triangles for their feet
 67,test,7,G1,parent,Y,"tap on the one that looks like they're kneeling, as if they're praying"
 67,test,37,G1,child,Y,tap on the one that looks like they're kneeling
