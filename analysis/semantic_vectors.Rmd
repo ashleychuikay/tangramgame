@@ -21,6 +21,7 @@ M_mat = read_csv('../data/deidentified/meta_tangrams_embeddings.csv',
   mutate(feature_ind = row_number(),
          rep_num = floor((trial -1) / 10),
          rep_num = ifelse(rep_num == 3, 1, 0)) %>%
+  left_join(read_csv('../data/deidentified/meta.csv')) %>%
   select(-X1) 
 ```
 
@@ -57,7 +58,10 @@ F_mat = readRDS(here('data/deidentified/feats_tangrams_embeddings_rawavg.RData')
 Stats 
 
 ```{r, message=FALSE, cache=TRUE}
-true_lmer.within <- make_within_df(M_mat, F_mat, 'cosine') %>% 
+true_lmer.within <- M_mat %>%
+  group_by(subid, target, age) %>%
+  filter(length(text) == 2) %>%
+  make_within_df(F_mat, 'cosine') %>% 
   filter(rep2 == rep1 + 1) %>% 
   mutate(sim = ifelse(is.nan(sim), NA, sim)) %>%
   ungroup()
@@ -77,22 +81,21 @@ Viz
 
 ```{r, message=FALSE, cache=TRUE}
 true_lmer.within.toplot <- true_lmer.within %>%
-  group_by(subid, rep1) %>%
+  group_by(subid, rep1, age) %>%
   summarize(m = mean(sim,na.rm=T)) %>%
-  group_by(rep1) %>%
+  group_by(rep1, age) %>%
   tidyboot::tidyboot_mean(m, na.rm=T)
 
 true_lmer.within.toplot %>%
-  ggplot(aes(x = as.character(rep1), y = empirical_stat, group = 1)) +
+  ggplot(aes(x = age, y = empirical_stat)) +
+    geom_point() +
     geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) + 
-    geom_line()  +
     scale_x_discrete(labels = c('(1,2)','(2,3)', '(3,4)', '(4,5)', '(5,6)' )) +
     ylim(0.4, 1) +
-    ylab('cosine similarity') +
+    labs(x = 'age', y = 'cosine similarity b/w first & final rep') +
     ggtitle('convergence within game') +
     theme_few() +
-    xlab('repetition pair') +
-    guides(color = F, fill = F) +
+    guides(fill = F) +
     theme(aspect.ratio = 1, legend.position = c(0.6, 0.5), text = element_text(size=18), 
           element_line(size=1), element_rect(size=2, color="#00000"))
 # ggsave('../../writing/figs/stability_mean.pdf', 
@@ -105,29 +108,30 @@ Stats
 
 ```{r, message=FALSE, cache=TRUE}
 true_lmer.across <- M_mat %>% 
-   group_by(target, rep_num) %>%  
+   group_by(target, rep_num, age) %>%  
    do(flatten_sim_matrix(get_sim_matrix(., F_mat, method = 'cosine'), .$subid)) %>% 
   ungroup() %>%
   mutate(sim = ifelse(is.nan(sim), NA, sim)) %>%
-  mutate(target = factor(target))
+  mutate(target = factor(target),
+         age = (age - 6)/2)
 
-# true_lmer.across %>%
-#   lmer(sim ~ poly(repetition, 2) + (1 +poly(repetition, 2)  | target), 
-#        control = lmerControl(optimizer ='optimx', 
-#                              optCtrl=list(method='nlminb')),  
-#        data = .) %>%
-#   tidy()
+true_lmer.across %>%
+  lmer(sim ~ rep_num * age + (1 + rep_num  | target),
+       control = lmerControl(optimizer ='optimx',
+                             optCtrl=list(method='nlminb')),
+       data = .) %>%
+  tidy()
 ```
 
 Viz 
 
 ```{r}
 true_lmer.across %>%
-  group_by(dim1, rep_num) %>%
+  group_by(dim1, age, rep_num) %>%
   summarize(m = mean(sim, na.rm=T)) %>%
-  group_by(rep_num) %>%
+  group_by(age, rep_num) %>%
   tidyboot::tidyboot_mean(m, na.rm=T) %>%
-  ggplot(aes(x = rep_num, y = empirical_stat)) +
+  ggplot(aes(x = rep_num, y = empirical_stat, color = as.factor(age))) +
     geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
     geom_line()  +
     scale_x_continuous(breaks = c(1,2,3,4,5,6), labels = c(1,2,3,4,5,6)) +
@@ -136,7 +140,7 @@ true_lmer.across %>%
     ggtitle('divergence across pairs') +
     theme_few() +
     xlab('repetition') +
-    guides(color = F, fill = F) +
+    guides(fill = F) +
     theme(aspect.ratio = 1, legend.position = c(0.5, 0.8), text = element_text(size=18), 
           element_line(size=1), element_rect(size=2, color="#00000"))
 ggsave('../../writing/figs/divergence_mean.pdf', height = 10, width = 10, units = 'cm', useDingbats = F)
@@ -155,16 +159,17 @@ tsne <- read_csv('../data/deidentified/tsne_embeddings.csv') %>%
          theta = useful::cart2pol(x_tsne, y_tsne)$theta) %>%
   group_by(subid,  target) %>%
   arrange(rep_num) %>%
-  mutate(finalTheta = last(theta)) 
+  mutate(finalTheta = last(theta)) %>%
+  left_join(read_csv('../data/deidentified/meta.csv'))
 
 tsne.toplot <- tsne %>% 
-  filter(target == 'C') %>% 
-  filter(rep_num %in% c(1, 3)) %>%
+  filter(target == 'C1') %>% 
+  filter(rep_num %in% c(0,3)) %>%
   filter(!is.na(x_tsne)) %>%
   group_by(subid) %>%
   mutate(next_x = lead(x_tsne) ,
          next_y = lead(y_tsne))
-ggplot(tsne.toplot, aes(x = x_tsne, y = y_tsne, color = finalTheta)) +
+ggplot(tsne.toplot, aes(x = x_tsne, y = y_tsne)) +
     geom_point(data = subset(tsne.toplot, rep_num == 1),
                size = 1) +
     geom_segment(aes(xend = next_x, yend = next_y), 
@@ -175,20 +180,21 @@ ggplot(tsne.toplot, aes(x = x_tsne, y = y_tsne, color = finalTheta)) +
     # uncomment this line to see text labels
     # geom_text(aes(label=contents), size = 1)+
     theme_few(20) +
+    facet_wrap(~ age) +
     scale_shape_manual(values = c(21)) +
     scale_alpha_continuous(range = c(0.5, 1))+
-    scale_color_gradientn(colours = viridis(5))+
-      theme(axis.title=element_blank(),
-        axis.text=element_blank(),
-        axis.ticks=element_blank()) +
+    # scale_color_gradientn(colours = viridis(5))+
+    #   theme(axis.title=element_blank(),
+    #     axis.text=element_blank(),
+    #     axis.ticks=element_blank()) +
     labs(x = "", y = "") +
-    guides(color = F, shape = F, alpha = F) +
+    guides(shape = F, alpha = F) +
     theme(aspect.ratio = 1)  #+
 # make it big to zoom in on text... 
 # ggsave(filename = '../../writing/figs/tsne-tangramC_enlarged.pdf',
 #        width = 15, height = 15)
-ggsave(filename = '../../writing/figs/tsne-tangramC.pdf',
-       width = 5, height = 5)
+# ggsave(filename = '../../writing/figs/tsne-tangramC.pdf',
+#        width = 5, height = 5)
 ```
 
 ## supplemental figure 11 showing all tangrams
