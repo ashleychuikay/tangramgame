@@ -1,0 +1,98 @@
+Timeline.ordinal,Timeline.onset,Timeline.offset,Timeline.leftspeech,Timeline.rightspeech,Timeline.trial,Timeline.selection
+0,0,0,,umm it's an apple,p1,
+1,83391,0,,,p1,left
+2,83391,88902,uhh it's a brussel sprout,,p2,
+3,88902,0,,,p2,right
+4,90849,0,,it's an onion,p2,
+5,95370,0,,,p2,left
+6,96426,0,uh it's an apple,,p3,
+7,96426,0,,,p3,right
+8,98769,0,,it's a brussel sprout,p4,
+9,98769,0,,,p4,left
+10,101739,0,uh it's an onion,,p5,
+11,109923,0,,,p5,right
+12,109923,0,,did you press begin?,na,
+13,112200,0,uhh I did not zzz,,na,
+14,121737,0,,okay,na,
+15,121737,0,,uh it looks like a dog on its hind legs ,1,
+16,129327,0,,,1,left
+17,129327,0,"um it looks like someone sitting, or just kneeling",,2,
+18,129327,129326,,,2,right
+19,144342,0,,"umm it looks like a person or maybe an animal holding something, like a triangle",3,
+20,153681,0,,,3,left
+21,153681,0,umm it looks like someone serving a volleyball.. where they're like jumping,,4,
+22,170907,0,,oh yeah... got it,4,
+23,170907,0,,,4,right
+24,170907,0,,umm it looks like a person in a airplane,5,
+25,177309,0,,,5,left
+26,177309,0,umm it looks like someone walking with their head down,,6,
+27,177309,177308,,,6,right
+28,183513,0,,ummm it looks like a person uh like standing by a podium,7,
+29,183513,196283,,,7,left
+30,196284,0,umm it looks like someone kneeling all the way down,,8,
+31,205293,0,,,8,right
+32,205293,0,,"it looks like a... person in like maybe a plane flying, shooting",9,
+33,219879,0,,,9,left
+34,219879,0,umm it looks like someone galloping and their legs are at a ninety degree angle,,10,
+35,219879,0,,,10,right
+36,229020,0,,mine just says good job,na,
+37,241197,0,umm it's the person in the plane,,11,
+38,243771,0,,,11,right
+39,243771,0,,it's the person walking with their head down,12,
+40,246312,0,,,12,left
+41,246312,0,um it's the person by the podium,,13,
+42,255255,0,,,13,right
+43,255288,0,,it's the person leaning almost as if they're in child's pose,14,
+44,259875,0,,,14,left
+45,259875,0,umm its a person in the plane that's shooting upwards,,15,
+46,266574,0,,,15,right
+47,268785,0,,umm it's the person i think that you said that looks like it's serving a volleyball,16,
+48,283008,0,,,16,left
+49,283008,0,uh it's the person that or it's the dog thats kind of on its hind legs,,17,
+50,289113,289685,,,17,right
+51,289686,291510,,it's a person walking with a 90 degree angle,18,
+52,291511,297628,,,18,left
+53,297629,301352,um it's a person who's leaning forwards with like a bowl that's triangular ,,19,
+54,301353,306146,,,19,right
+55,306147,308320,,"it's a person, it looks like they're sitting",20,
+56,308321,320023,,,20,left
+57,320024,320555,,it looks like a dog on its hind legs,21,
+58,320556,325075,,,21,left
+59,325076,332178,"um it's a person kneeling um but not all the way to the ground, they're like upright",,22,
+60,332179,336672,,,22,right
+61,336673,337316,,it looks like a person um at the podium,23,
+62,337317,342855,,,23,left
+63,342856,343558,um it's the person walking while looking down,,24,
+64,343559,349807,,,24,right
+65,349808,350462,,it's like the person in the plane shooting something,25,
+66,350463,355131,,,25,left
+67,355132,356489,um it's the person serving the volleyball,,26,
+68,356490,362170,,,26,right
+69,362171,368585,,it looks like a person bending forward with something in its hands like the triangle,27,
+70,368586,373468,,,27,left
+71,373469,373882,um it's a person walking at a 90 degree angle,,28,
+72,373883,378794,,,28,right
+73,378795,379962,,it's a person in the plane,29,
+74,379963,385293,,,29,left
+75,385294,386659,um it's a person bending all the way down,,30,
+76,386660,396486,,,30,right
+77,396487,396803,um it's the person at the podium,,31,
+78,396804,402279,,,31,right
+79,402280,403334,,it's a person kneeling all the way down,32,
+80,403335,408798,,,32,left
+81,408799,0,um it's a person leaning forwards with something in their hands,,33,
+82,408837,414481,,,33,right
+83,414482,415001,,it's a person walking at a 90 degree angle,34,
+84,415002,419927,,,34,left
+85,419928,421449,uh it's the person in the plane that's shooting up,,35,
+86,421450,426394,,,35,right
+87,426395,426858,,it's a person serving the volleyball,36,
+88,426859,431876,,,36,left
+89,431877,432647,um it's a dog on its hind legs,,37,
+90,432648,437899,,,37,right
+91,437900,438890,,it's a person sitting down,38,
+92,438891,443521,,,38,left
+93,443522,446173,"uh it's a person in a plane, uh that's just going forwards ",,39,
+94,446174,451587,,,39,right
+95,451588,452682,,it's the person walking with their head down,40,
+96,452683,0,,,40,left
