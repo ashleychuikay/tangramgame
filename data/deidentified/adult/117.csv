@@ -1,0 +1,102 @@
+Timeline.ordinal,Timeline.onset,Timeline.offset,Timeline.leftspeech,Timeline.rightspeech,Timeline.trial,Timeline.selection
+0,0,0,,"okay, so the one in the blue box is the apple",p1,
+1,65484,0,"okay, wait so I tap it? oh okay",,p1,
+2,74504,0,,,p1,left
+3,77282,0,umm the one in the blue square is an artichoke,,p2,
+4,84694,0,,,p2,right
+5,84694,0,,the one in the blue square is an onion,p3,
+6,85606,0,,,p3,left
+7,87142,0,uh the one in the blue square is an apple,,p4,
+8,91766,0,,,p4,right
+9,91766,0,,the one in the blue square is an artichoke,p5,
+10,98090,0,,,p5,left
+11,98090,0,one in a- one in the blue square is an onion,,p6,
+12,105128,0,,,p6,right
+13,106624,0,,"okay, are you ready?",na,
+14,111350,0,"yeah so when we see the blue square, do we describe it or tell them what it is?",,na,
+15,125120,0,,ready?,na,
+16,125120,0,hmm,,na,
+17,125120,0,,"okay, so the one in the blue square looks kind of like a person who's bending over and they kinda, it kinda looks like they have a tail",1,
+18,138720,0,okay,,1,
+19,138720,0,,,1,left
+20,138720,0,the one in the blue square is a person- it looks like a person is laying on the ground with their feet up,,2,
+21,152422,0,,mhm,2,
+22,152422,0,,,2,right
+23,152422,0,,"okay, the one in the blue square looks like someone, maybe like someone praying, but they're upright and maybe holding like a book",3,
+24,167858,0,,,3,left
+25,167858,0,"can i push it, like, whenever?",,na,
+26,167926,0,,hmm,na,
+27,167926,0,okay the one in the blue square doesn't look like the person laying down,,4,
+28,175338,0,,,4,right
+29,175338,0,,okay the one in the blue square is upright and it looks maybe like they're walking,5,
+30,182750,0,,,5,right
+31,185062,0,"the one in the blue square looks like a person is sitting down, it doesn't look like the person is praying",,6,
+32,196554,0,,,6,right
+33,196554,0,,"okay, the person in the blue square, is like holding a triangle and they're upright",7,
+34,207502,0,,,7,left
+35,207502,0,"the one in the blue square is kneeling down, looks like they're maybe, umm, praying",,8,
+36,215934,0,,,8,right
+37,217566,0,,okay the person in the blue square kinda looks like they're jumping and they're wider than the other person,9,
+38,224264,0,,,9,left
+39,224264,0,"the one in the blue square umm it looks like maybe a person with a cape on, flying",,10,
+40,242250,242250,,,10,right
+41,243508,0,"the one in the blue square is upright, it looks like they're maybe reading a book",,11,
+42,253844,0,,,11,right
+43,255748,0,,person in the blue square is wider than the other person. It looks like maybe they're trying to catch something. They have a square head with no triangle on top,12,
+44,270980,0,,,12,left
+45,272816,0,the one in the blue square looks like they're kind of jumping with their legs in the air,,13,
+46,279582,0,,,13,right
+47,279582,0,,the person in the blue square has one really skinny leg and one leg stuck out behind them,14,
+48,289680,0,,,14,left
+49,289680,0,the one in the blue square looks like they're walking with their head down,,15,
+50,296786,0,,,15,right
+51,296786,0,,the one in the blue square is on their hands and knees,16,
+52,303348,0,,,16,left
+53,303348,0,the one in the blue square looks kind of bent over with an arrow shaped head,,17,
+54,313854,0,,,17,right
+55,313854,0,,the one in the blue square looks like they're sitting down,18,
+56,322014,0,,,18,left
+57,322014,0,"the one in the blue square is bent over, looks like they're carrying something that looks triangular",,19,
+58,332248,0,,,19,right
+59,332248,0,,"the person in the blue square looks like they, just like, dove on the ground, and they're lying there",20,
+60,345984,0,,,20,left
+61,345984,0,,"the person in the blue square looks like they're walking, with their head pointed down",21,
+62,353770,0,,,21,left
+63,353770,0,the one in the blue square looks like they're sitting umm and they have like a triangular body towards the bottom,,22,
+64,365364,0,,,22,right
+65,365364,0,,the person in the blue square is bent over and they're holding a triangle,23,
+66,374408,0,,,23,left
+67,374408,0,"the person in the blue square, it looks  like they're laying down with a square head",,24,
+68,382228,0,,,24,right
+69,382228,0,,the person in the blue square is bent over and has a triangular head,25,
+70,389164,0,,,25,left
+71,389164,0,"the person in the blue square, umm, looks like their wee-leaning on the ground and they have a square head",,26,
+72,398684,0,,,26,right
+73,398684,0,,person in the blue square has a wide body. looks like they're jumping,27,
+74,407048,0,,,27,left
+75,408918,0,"umm the person in the blue square has a wide body... umm... triangular feet, square head",,28,
+76,421362,0,,,28,right
+77,421362,0,,umm person in the blue square looks like they're holding a book and maybe praying,29,
+78,428570,0,,,29,left
+79,428570,0,person in the blue square has skinny legs and yeah,,30,
+80,439858,0,,,30,right
+81,439858,0,the person in the blue square looks like they're standing up and they look like they have a book in their hand,,31,
+82,452302,0,,,31,right
+83,452302,0,,the person in the blue square is the other one. looks like they're lying down,32,
+84,459578,0,,,32,left
+85,459578,0,person in the blue square looks like they're jumping with their legs in the air,,33,
+86,470424,0,,,33,right
+87,470424,0,,the person in the blue square is wide and looks like they're running,34,
+88,470424,0,,,34,left
+89,473654,0,"the person in the blue square looks like they're leaning forward, has a square tail",,35,
+90,486370,0,,,35,right
+91,486370,0,,person in the blue square is on hands and knees,36,
+92,490790,0,,,36,left
+93,490790,0,"person in blue square is umm... looks like they have a book in their hand leaning forward, upright",,37,
+94,499358,0,,,37,right
+95,499358,0,,person in the blue square has skinny legs,38,
+96,509082,0,,,38,left
+97,509082,0,person in the blue square is leaning forward with a square head,,39,
+98,510374,0,,,39,right
+99,510374,0,,person in the blue square looks like  they're sitting down with a triangular pie,40,
+100,521220,0,,,40,left
