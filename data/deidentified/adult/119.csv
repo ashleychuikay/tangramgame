@@ -1,0 +1,95 @@
+subid,type,trial,target,person,utterance,selection,correct
+119,practice,1,apple,right,umm it's an apple,,Y
+119,practice,1,apple,left,,left,Y
+119,practice,4,apple,left,it's an apple,,Y
+119,practice,4,apple,right,,right,Y
+119,practice,2,artichoke,left,"okay it's uh.. a.. i think it's like, looks like an artichoke",,Y
+119,practice,2,artichoke,right,,right,Y
+119,practice,5,artichoke,right,an artichoke,,Y
+119,practice,5,artichoke,left,,left,Y
+119,practice,3,onion,right,"umm it's a, it looks like an onion to me, a turnip",,Y
+119,practice,3,onion,left,,left,Y
+119,practice,6,onion,left,ah that's an onion,,Y
+119,practice,6,onion,right,,right,Y
+119,test,5,A1,right,umm it's like someone standing up instead of someone offering something,,Y
+119,test,5,A1,left,,left,Y
+119,test,13,A1,left,uhh someone is in motion like walking where like one leg is off the ground,,Y
+119,test,13,A1,right,,right,Y
+119,test,21,A1,right,someone standing up with one leg off the ground,,Y
+119,test,21,A1,left,,left,Y
+119,test,33,A1,left,uhh someone is walking with one foot off the ground,,Y
+119,test,33,A1,right,,right,Y
+119,test,7,B1,right,it looks like someone's walking,,Y
+119,test,7,B1,left,,left,Y
+119,test,15,B1,left,uhh someone is walking and head is leaning down,,Y
+119,test,15,B1,right,,right,Y
+119,test,27,B1,right,someone seems to be walking,,Y
+119,test,27,B1,left,,left,Y
+119,test,35,B1,left,uhh someone is walking dejectedly,,Y
+119,test,35,B1,right,,right,Y
+119,test,4,C1,left,uhh it looks like someone's like fully bent over to the point where their hands are touching the ground,,Y
+119,test,4,C1,right,,right,Y
+119,test,16,C1,right,someone's kneeling and their hips bent angular,,Y
+119,test,16,C1,left,,left,Y
+119,test,28,C1,left,uhh someone is like bent all the way over with their hands touching the ground,,Y
+119,test,28,C1,right,,right,Y
+119,test,38,C1,right,it's the person kneeling all the way down,,Y
+119,test,38,C1,left,,left,Y
+119,test,1,D1,right,umm it's this bunch of shapes that's projected horizontally,,Y
+119,test,1,D1,left,,left,Y
+119,test,17,D1,left,uhh horizontal. it's like a person in an airplane,,Y
+119,test,17,D1,right,,right,Y
+119,test,23,D1,right,it's a... it's the person in that airplane,,Y
+119,test,23,D1,left,,left,Y
+119,test,39,D1,left,it's the person in the airplane,,Y
+119,test,39,D1,right,,right,Y
+119,test,9,E1,right,it looks like someone's jumping in the midair,,Y
+119,test,9,E1,left,,left,Y
+119,test,19,E1,left,uhh someone who likes like they're jumping for joy,,Y
+119,test,19,E1,right,,right,Y
+119,test,25,E1,right,"yeah someone's jumping, in the midair",,Y
+119,test,25,E1,left,,left,Y
+119,test,37,E1,left,it's the person jumping,,Y
+119,test,37,E1,right,,right,Y
+119,test,8,F1,left,"uhh it is not the one that looks like someone kneeling. and it has like uhh i don't know what it is. but it's not the person kneeling, if that makes sense",,N
+119,test,8,F1,right,,right,N
+119,test,20,F1,right,umm it's not the person who's kneeling with his hip bent down,,Y
+119,test,20,F1,left,gotcha,,Y
+119,test,20,F1,left,,left,Y
+119,test,30,F1,left,uhh it's not the one where the person looks like they're dejectedly walking,,Y
+119,test,30,F1,right,,right,Y
+119,test,40,F1,right,it's not the person offering something,,Y
+119,test,40,F1,left,,left,Y
+119,test,2,G1,left,uhh it looks more like a person standing straight up than bending over,,Y
+119,test,2,G1,right,,right,Y
+119,test,18,G1,right,someone standing up straight. so it's not the horizontal one,,Y
+119,test,18,G1,left,okay,,Y
+119,test,18,G1,left,,left,Y
+119,test,24,G1,left,uhh so it looks like a person kneeling but their back is straight,,N
+119,test,24,G1,right,,right,N
+119,test,36,G1,right,umm it's not the person jumping,,Y
+119,test,36,G1,left,,left,Y
+119,test,10,H1,left,uhh it looks like someone is offering something,,Y
+119,test,10,H1,right,,right,Y
+119,test,12,H1,right,someone's standing up straight offering something,,Y
+119,test,12,H1,left,,left,Y
+119,test,22,H1,left,someone offering something,,Y
+119,test,22,H1,right,,right,Y
+119,test,34,H1,right,someone's standing up straight offering something,,Y
+119,test,34,H1,left,,left,Y
+119,test,6,I1,left,uhh someone offering something,,Y
+119,test,6,I1,right,,right,Y
+119,test,14,I1,right,someone's offering something,,Y
+119,test,14,I1,left,,left,Y
+119,test,26,I1,left,uhh someone is offering something,,Y
+119,test,26,I1,right,,right,Y
+119,test,32,I1,right,someone's offering something,,Y
+119,test,32,I1,left,,left,Y
+119,test,3,K1,right,umm looks like someone bending over,,Y
+119,test,3,K1,left,,left,Y
+119,test,11,K1,left,uhh someone is bending over and putting their hands up,,Y
+119,test,11,K1,right,,right,Y
+119,test,29,K1,right,umm looks like someone's offering something and their back is slightly bent downwards,,Y
+119,test,29,K1,left,,left,Y
+119,test,31,K1,left,uhh looks like someone is bent slightly offering something,,Y
+119,test,31,K1,right,,right,Y

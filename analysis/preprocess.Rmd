@@ -8,9 +8,9 @@ library(tidyverse)
 
 ```{r}
 # get all files with participant data (this excludes meta.csv for now)
-raw_csv_names <- c(dir(path = '../deidentified/', pattern = "*[0-9].csv", full.names = T),
-                   dir(path = '../deidentified/adult/', pattern = "*[0-9].csv", full.names = T))
-meta <- read_csv('../deidentified/meta.csv')
+raw_csv_names <- c(dir(path = 'data/deidentified/', pattern = "*[0-9].csv", full.names = T),
+                   dir(path = 'data/deidentified/adult/', pattern = "*[0-9].csv", full.names = T))
+meta <- read_csv('data/deidentified/meta.csv')
 
 raw_data <- raw_csv_names %>%      # read all csvs and combine into single data frame
   map(read_csv) %>%             
@@ -62,8 +62,8 @@ combined_data <- exchanges %>% # combine with info about who had which role on e
 Write out combined data to import into python for nlp
 
 ```{r}
-write_csv(exchanges, '../deidentified/exchanges.csv')
-write_csv(combined_data, '../deidentified/combined.csv')
+write_csv(exchanges, 'data/deidentified/exchanges.csv')
+write_csv(combined_data, 'data/deidentified/combined.csv')
 ```
 
 
