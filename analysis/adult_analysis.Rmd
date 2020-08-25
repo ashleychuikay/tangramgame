@@ -95,7 +95,7 @@ subids <- unique(coding$subid)
 for (i in subids) {
    codingfile <- filter(coding, subid == i)
    name <- paste0(codingfile$subid[1], ".csv")
-   write_csv(codingfile, here(paste0("deidentified/adult/", name)), na="", append = FALSE)
+   write_csv(codingfile, here(paste0("data/deidentified/adult/", name)), na="", append = FALSE)
  }
 ```
 

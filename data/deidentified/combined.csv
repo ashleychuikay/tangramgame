@@ -935,7 +935,7 @@ subid,trial,person,role,target,rep_num,age,experiment,utterance,correct
 27,17,parent,matcher,F1,2,4,adult-child,which one has the blue box? is it the flying man or the walking man? i can't see it so you have to tell me with words going like? that guy?,TRUE
 27,18,parent,director,A1,2,4,adult-child,this is the lady who's running,TRUE
 27,19,child,director,I1,2,4,adult-child,it's not the man who's walking,TRUE
-27,20,parent,director,E1,2,4,adult-child,it's the man who's going phew *gesture*,TRUE
+27,20,parent,director,E1,2,4,adult-child,it's the man who's going phew,TRUE
 27,21,parent,director,D1,3,4,adult-child,the one who's swimming,TRUE
 27,22,child,director,K1,3,4,adult-child,"um, the man who's serving",TRUE
 27,23,parent,director,I1,3,4,adult-child,the man who's serving,TRUE
@@ -3954,3 +3954,177 @@ subid,trial,person,role,target,rep_num,age,experiment,utterance,correct
 115,38,right,director,C1,4,NA,adult-adult,uh pick the one that's bowing,TRUE
 115,39,left,director,E1,4,NA,adult-adult,uh the one with the arms in the air,TRUE
 115,40,right,director,B1,4,NA,adult-adult,"pick the one that's like, uh, walking",TRUE
+116,1,left,matcher,H1,1,NA,adult-adult,okay okay zzz,TRUE
+116,1,right,director,H1,1,NA,adult-adult,"i mean like it's like a, it's like not obviously a person, but it, like, looks like a person",TRUE
+116,2,left,director,F1,1,NA,adult-adult,"god what umm.. okay so there's a square in the, like, top left corner, just like, hanging on, like, a triangle, and then there are like two tri- two small triangles on the bottom right and left corner",TRUE
+116,2,right,matcher,F1,1,NA,adult-adult,oh okay,TRUE
+116,3,right,director,I1,1,NA,adult-adult,"umm, it looks like a person again, and it looks like the person's, like, leaning forward a little bit and, like, holding out, like, a bowl or something",TRUE
+116,4,left,director,K1,1,NA,adult-adult,umm it looks like a dog with a triangle head,TRUE
+116,4,right,matcher,K1,1,NA,adult-adult,"okay, yeah, gotcha",TRUE
+116,5,right,director,A1,1,NA,adult-adult,"umm it's, like, the one who's like kind of like skipping, or like running around, yeah",TRUE
+116,6,left,director,B1,1,NA,adult-adult,umm just like a person who's looking down yeah,TRUE
+116,6,right,matcher,B1,1,NA,adult-adult,yeah,TRUE
+116,7,right,director,C1,1,NA,adult-adult,"umm, the one that's, like, looking on the floor, like kneeling on the floor, like, yeah",TRUE
+116,8,left,director,D1,1,NA,adult-adult,it's like lying on the floor and then there are like two triangles on the left side of the screen look like- look like they have a zzz,TRUE
+116,8,right,matcher,D1,1,NA,adult-adult,"so like, so the person with like legs up, like, kind of yeah",TRUE
+116,9,right,director,E1,1,NA,adult-adult,"umm mine's like the one where like, imagine a person in the air, like, like  jumping up in the air and their leg, like, like their feet are in the air yeah",TRUE
+116,10,left,director,G1,1,NA,adult-adult,mine is like a person sitting on like a square block,TRUE
+116,10,right,matcher,G1,1,NA,adult-adult,okay,TRUE
+116,11,left,director,E1,2,NA,adult-adult,umm it's a person jumping in the air with their legs in the air,TRUE
+116,12,right,director,B1,2,NA,adult-adult,umm just a person walking looking down,TRUE
+116,13,left,director,C1,2,NA,adult-adult,"it's the person praying, yeah",TRUE
+116,14,right,director,K1,2,NA,adult-adult,"umm like the dog or whatever, sticking its butt out",TRUE
+116,15,left,director,A1,2,NA,adult-adult,its the person who's like skipping sideways,TRUE
+116,15,right,matcher,A1,2,NA,adult-adult,yeah,TRUE
+116,16,right,director,F1,2,NA,adult-adult,umm the one that's not the dog with the butt out,TRUE
+116,17,left,director,H1,2,NA,adult-adult,it's like the person with the dish in their hand and they're standing straight up,TRUE
+116,18,right,director,D1,2,NA,adult-adult,umm again the one that's not the dog thing yeah,TRUE
+116,19,left,director,I1,2,NA,adult-adult,"it's the person with a triangular dish, leaning little bit forward",TRUE
+116,20,right,director,G1,2,NA,adult-adult,umm it's the person who's sitting on that square thing,TRUE
+116,21,right,director,H1,3,NA,adult-adult,umm the person who's holding out like a dish or something sitting upright,TRUE
+116,22,left,director,D1,3,NA,adult-adult,the person who's lying on the floor with his feet up,TRUE
+116,23,right,director,C1,3,NA,adult-adult,umm the person who's maybe praying or just on the floor,TRUE
+116,24,left,director,K1,3,NA,adult-adult,the dog with the triangle hat,TRUE
+116,25,right,director,I1,3,NA,adult-adult,umm the person with the triangular dish thing,TRUE
+116,26,left,director,F1,3,NA,adult-adult,the one that doesn't look like anything- it doesn't look like a person yeah,TRUE
+116,26,right,matcher,F1,3,NA,adult-adult,"like, the weird thing a bird almost, yeah, okay",TRUE
+116,27,right,director,E1,3,NA,adult-adult,"umm the one jumping up, feet in the air",TRUE
+116,28,left,director,B1,3,NA,adult-adult,"the one walking, looking down no",TRUE
+116,28,right,matcher,B1,3,NA,adult-adult,not the dog,TRUE
+116,29,right,director,A1,3,NA,adult-adult,umm not the dog,TRUE
+116,30,left,director,G1,3,NA,adult-adult,um the one sitting on the square,TRUE
+116,31,left,director,A1,4,NA,adult-adult,umm the one walk- skipping sideways,TRUE
+116,32,right,director,G1,4,NA,adult-adult,umm the one sitting on the little square,TRUE
+116,33,left,director,I1,4,NA,adult-adult,the one with the triangle dish,TRUE
+116,34,right,director,F1,4,NA,adult-adult,the one that doesn't look like anything,TRUE
+116,35,left,director,C1,4,NA,adult-adult,the one praying,TRUE
+116,36,right,director,D1,4,NA,adult-adult,the one lying on the floor with feet up,TRUE
+116,37,left,director,E1,4,NA,adult-adult,the one jumping in the air,TRUE
+116,38,right,director,B1,4,NA,adult-adult,the one looking down and walking,TRUE
+116,39,left,director,H1,4,NA,adult-adult,the one with the dish in their hand,TRUE
+116,40,right,director,K1,4,NA,adult-adult,umm the dog,TRUE
+117,1,left,matcher,K1,1,NA,adult-adult,okay,TRUE
+117,1,right,director,K1,1,NA,adult-adult,"okay, so the one in the blue square looks kind of like a person who's bending over and they kinda, it kinda looks like they have a tail",TRUE
+117,2,left,director,D1,1,NA,adult-adult,the one in the blue square is a person- it looks like a person is laying on the ground with their feet up,TRUE
+117,2,right,matcher,D1,1,NA,adult-adult,mhm,TRUE
+117,3,right,director,H1,1,NA,adult-adult,"okay, the one in the blue square looks like someone, maybe like someone praying, but they're upright and maybe holding like a book",FALSE
+117,4,left,director,A1,1,NA,adult-adult,okay the one in the blue square doesn't look like the person laying down,TRUE
+117,5,right,matcher,B1,1,NA,adult-adult,okay the one in the blue square is upright and it looks maybe like they're walking,TRUE
+117,6,left,director,G1,1,NA,adult-adult,"the one in the blue square looks like a person is sitting down, it doesn't look like the person is praying",TRUE
+117,7,right,director,I1,1,NA,adult-adult,"okay, the person in the blue square, is like holding a triangle and they're upright",TRUE
+117,8,left,director,C1,1,NA,adult-adult,"the one in the blue square is kneeling down, looks like they're maybe, umm, praying",TRUE
+117,9,right,director,E1,1,NA,adult-adult,okay the person in the blue square kinda looks like they're jumping and they're wider than the other person,TRUE
+117,10,left,director,F1,1,NA,adult-adult,"the one in the blue square umm it looks like maybe a person with a cape on, flying",TRUE
+117,11,left,director,H1,2,NA,adult-adult,"the one in the blue square is upright, it looks like they're maybe reading a book",TRUE
+117,12,right,director,F1,2,NA,adult-adult,person in the blue square is wider than the other person. It looks like maybe they're trying to catch something. They have a square head with no triangle on top,TRUE
+117,13,left,director,E1,2,NA,adult-adult,the one in the blue square looks like they're kind of jumping with their legs in the air,TRUE
+117,14,right,director,A1,2,NA,adult-adult,the person in the blue square has one really skinny leg and one leg stuck out behind them,TRUE
+117,15,left,director,B1,2,NA,adult-adult,the one in the blue square looks like they're walking with their head down,TRUE
+117,16,right,director,C1,2,NA,adult-adult,the one in the blue square is on their hands and knees,TRUE
+117,17,left,director,K1,2,NA,adult-adult,the one in the blue square looks kind of bent over with an arrow shaped head,TRUE
+117,18,right,director,G1,2,NA,adult-adult,the one in the blue square looks like they're sitting down,TRUE
+117,19,left,director,I1,2,NA,adult-adult,"the one in the blue square is bent over, looks like they're carrying something that looks triangular",TRUE
+117,20,right,director,D1,2,NA,adult-adult,"the person in the blue square looks like they, just like, dove on the ground, and they're lying there",TRUE
+117,21,right,director,B1,3,NA,adult-adult,"the person in the blue square looks like they're walking, with their head pointed down",TRUE
+117,22,left,director,G1,3,NA,adult-adult,the one in the blue square looks like they're sitting umm and they have like a triangular body towards the bottom,TRUE
+117,23,right,director,I1,3,NA,adult-adult,the person in the blue square is bent over and they're holding a triangle,TRUE
+117,24,left,director,D1,3,NA,adult-adult,"the person in the blue square, it looks  like they're laying down with a square head",TRUE
+117,25,right,director,K1,3,NA,adult-adult,the person in the blue square is bent over and has a triangular head,TRUE
+117,26,left,director,C1,3,NA,adult-adult,"the person in the blue square, umm, looks like their wee-leaning on the ground and they have a square head",TRUE
+117,27,right,director,E1,3,NA,adult-adult,person in the blue square has a wide body. looks like they're jumping,TRUE
+117,28,left,director,F1,3,NA,adult-adult,"umm the person in the blue square has a wide body... umm... triangular feet, square head",TRUE
+117,29,right,director,H1,3,NA,adult-adult,umm person in the blue square looks like they're holding a book and maybe praying,TRUE
+117,30,left,director,A1,3,NA,adult-adult,person in the blue square has skinny legs and yeah,TRUE
+117,31,left,director,H1,4,NA,adult-adult,the person in the blue square looks like they're standing up and they look like they have a book in their hand,TRUE
+117,32,right,director,D1,4,NA,adult-adult,the person in the blue square is the other one. looks like they're lying down,TRUE
+117,33,left,director,E1,4,NA,adult-adult,person in the blue square looks like they're jumping with their legs in the air,TRUE
+117,34,right,director,F1,4,NA,adult-adult,the person in the blue square is wide and looks like they're running,TRUE
+117,35,left,director,K1,4,NA,adult-adult,"the person in the blue square looks like they're leaning forward, has a square tail",TRUE
+117,36,right,director,C1,4,NA,adult-adult,person in the blue square is on hands and knees,TRUE
+117,37,left,director,I1,4,NA,adult-adult,"person in blue square is umm... looks like they have a book in their hand leaning forward, upright",TRUE
+117,38,right,director,A1,4,NA,adult-adult,person in the blue square has skinny legs,TRUE
+117,39,left,director,B1,4,NA,adult-adult,person in the blue square is leaning forward with a square head,TRUE
+117,40,right,director,G1,4,NA,adult-adult,person in the blue square looks like  they're sitting down with a triangular pie,TRUE
+118,1,right,director,K1,1,NA,adult-adult,uh it looks like a dog on its hind legs,TRUE
+118,2,left,director,G1,1,NA,adult-adult,"um it looks like someone sitting, or just kneeling",TRUE
+118,3,right,director,I1,1,NA,adult-adult,"umm it looks like a person or maybe an animal holding something, like a triangle",TRUE
+118,4,left,director,E1,1,NA,adult-adult,umm it looks like someone serving a volleyball.. where they're like jumping,TRUE
+118,4,right,matcher,E1,1,NA,adult-adult,oh yeah... got it,TRUE
+118,5,right,director,D1,1,NA,adult-adult,umm it looks like a person in a airplane,TRUE
+118,6,left,director,B1,1,NA,adult-adult,umm it looks like someone walking with their head down,TRUE
+118,7,right,director,H1,1,NA,adult-adult,ummm it looks like a person uh like standing by a podium,TRUE
+118,8,left,director,C1,1,NA,adult-adult,umm it looks like someone kneeling all the way down,TRUE
+118,9,right,director,F1,1,NA,adult-adult,"it looks like a... person in like maybe a plane flying, shooting",TRUE
+118,10,left,director,A1,1,NA,adult-adult,umm it looks like someone galloping and their legs are at a ninety degree angle,TRUE
+118,11,left,director,D1,2,NA,adult-adult,umm it's the person in the plane,TRUE
+118,12,right,director,B1,2,NA,adult-adult,it's the person walking with their head down,TRUE
+118,13,left,director,H1,2,NA,adult-adult,um it's the person by the podium,TRUE
+118,14,right,director,C1,2,NA,adult-adult,it's the person leaning almost as if they're in child's pose,TRUE
+118,15,left,director,F1,2,NA,adult-adult,umm its a person in the plane that's shooting upwards,TRUE
+118,16,right,director,E1,2,NA,adult-adult,umm it's the person i think that you said that looks like it's serving a volleyball,TRUE
+118,17,left,director,K1,2,NA,adult-adult,uh it's the person that or it's the dog thats kind of on its hind legs,TRUE
+118,18,right,director,A1,2,NA,adult-adult,it's a person walking with a 90 degree angle,TRUE
+118,19,left,director,I1,2,NA,adult-adult,um it's a person who's leaning forwards with like a bowl that's triangular,TRUE
+118,20,right,director,G1,2,NA,adult-adult,"it's a person, it looks like they're sitting",TRUE
+118,21,right,director,K1,3,NA,adult-adult,it looks like a dog on its hind legs,TRUE
+118,22,left,director,G1,3,NA,adult-adult,"um it's a person kneeling um but not all the way to the ground, they're like upright",TRUE
+118,23,right,director,H1,3,NA,adult-adult,it looks like a person um at the podium,TRUE
+118,24,left,director,B1,3,NA,adult-adult,um it's the person walking while looking down,TRUE
+118,25,right,director,F1,3,NA,adult-adult,it's like the person in the plane shooting something,TRUE
+118,26,left,director,E1,3,NA,adult-adult,um it's the person serving the volleyball,TRUE
+118,27,right,director,I1,3,NA,adult-adult,it looks like a person bending forward with something in its hands like the triangle,TRUE
+118,28,left,director,A1,3,NA,adult-adult,um it's a person walking at a 90 degree angle,TRUE
+118,29,right,director,D1,3,NA,adult-adult,it's a person in the plane,TRUE
+118,30,left,director,C1,3,NA,adult-adult,um it's a person bending all the way down,TRUE
+118,31,left,director,H1,4,NA,adult-adult,um it's the person at the podium,TRUE
+118,32,right,director,C1,4,NA,adult-adult,it's a person kneeling all the way down,TRUE
+118,33,left,director,I1,4,NA,adult-adult,um it's a person leaning forwards with something in their hands,TRUE
+118,34,right,director,A1,4,NA,adult-adult,it's a person walking at a 90 degree angle,TRUE
+118,35,left,director,F1,4,NA,adult-adult,uh it's the person in the plane that's shooting up,TRUE
+118,36,right,director,E1,4,NA,adult-adult,it's a person serving the volleyball,TRUE
+118,37,left,director,K1,4,NA,adult-adult,um it's a dog on its hind legs,TRUE
+118,38,right,director,G1,4,NA,adult-adult,it's a person sitting down,TRUE
+118,39,left,director,D1,4,NA,adult-adult,"uh it's a person in a plane, uh that's just going forwards",TRUE
+118,40,right,director,B1,4,NA,adult-adult,it's the person walking with their head down,TRUE
+119,1,right,director,D1,1,NA,adult-adult,umm it's this bunch of shapes that's projected horizontally,TRUE
+119,2,left,director,G1,1,NA,adult-adult,uhh it looks more like a person standing straight up than bending over,TRUE
+119,3,right,director,K1,1,NA,adult-adult,umm looks like someone bending over,TRUE
+119,4,left,director,C1,1,NA,adult-adult,uhh it looks like someone's like fully bent over to the point where their hands are touching the ground,TRUE
+119,5,right,director,A1,1,NA,adult-adult,umm it's like someone standing up instead of someone offering something,TRUE
+119,6,left,director,I1,1,NA,adult-adult,uhh someone offering something,TRUE
+119,7,right,director,B1,1,NA,adult-adult,it looks like someone's walking,TRUE
+119,8,left,director,F1,1,NA,adult-adult,"uhh it is not the one that looks like someone kneeling. and it has like uhh i don't know what it is. but it's not the person kneeling, if that makes sense",FALSE
+119,9,right,director,E1,1,NA,adult-adult,it looks like someone's jumping in the midair,TRUE
+119,10,left,director,H1,1,NA,adult-adult,uhh it looks like someone is offering something,TRUE
+119,11,left,director,K1,2,NA,adult-adult,uhh someone is bending over and putting their hands up,TRUE
+119,12,right,director,H1,2,NA,adult-adult,someone's standing up straight offering something,TRUE
+119,13,left,director,A1,2,NA,adult-adult,uhh someone is in motion like walking where like one leg is off the ground,TRUE
+119,14,right,director,I1,2,NA,adult-adult,someone's offering something,TRUE
+119,15,left,director,B1,2,NA,adult-adult,uhh someone is walking and head is leaning down,TRUE
+119,16,right,director,C1,2,NA,adult-adult,someone's kneeling and their hips bent angular,TRUE
+119,17,left,director,D1,2,NA,adult-adult,uhh horizontal. it's like a person in an airplane,TRUE
+119,18,left,matcher,G1,2,NA,adult-adult,okay,TRUE
+119,18,right,director,G1,2,NA,adult-adult,someone standing up straight. so it's not the horizontal one,TRUE
+119,19,left,director,E1,2,NA,adult-adult,uhh someone who likes like they're jumping for joy,TRUE
+119,20,left,matcher,F1,2,NA,adult-adult,gotcha,TRUE
+119,20,right,director,F1,2,NA,adult-adult,umm it's not the person who's kneeling with his hip bent down,TRUE
+119,21,right,director,A1,3,NA,adult-adult,someone standing up with one leg off the ground,TRUE
+119,22,left,director,H1,3,NA,adult-adult,someone offering something,TRUE
+119,23,right,director,D1,3,NA,adult-adult,it's a... it's the person in that airplane,TRUE
+119,24,left,director,G1,3,NA,adult-adult,uhh so it looks like a person kneeling but their back is straight,FALSE
+119,25,right,director,E1,3,NA,adult-adult,"yeah someone's jumping, in the midair",TRUE
+119,26,left,director,I1,3,NA,adult-adult,uhh someone is offering something,TRUE
+119,27,right,director,B1,3,NA,adult-adult,someone seems to be walking,TRUE
+119,28,left,director,C1,3,NA,adult-adult,uhh someone is like bent all the way over with their hands touching the ground,TRUE
+119,29,right,director,K1,3,NA,adult-adult,umm looks like someone's offering something and their back is slightly bent downwards,TRUE
+119,30,left,director,F1,3,NA,adult-adult,uhh it's not the one where the person looks like they're dejectedly walking,TRUE
+119,31,left,director,K1,4,NA,adult-adult,uhh looks like someone is bent slightly offering something,TRUE
+119,32,right,director,I1,4,NA,adult-adult,someone's offering something,TRUE
+119,33,left,director,A1,4,NA,adult-adult,uhh someone is walking with one foot off the ground,TRUE
+119,34,right,director,H1,4,NA,adult-adult,someone's standing up straight offering something,TRUE
+119,35,left,director,B1,4,NA,adult-adult,uhh someone is walking dejectedly,TRUE
+119,36,right,director,G1,4,NA,adult-adult,umm it's not the person jumping,TRUE
+119,37,left,director,E1,4,NA,adult-adult,it's the person jumping,TRUE
+119,38,right,director,C1,4,NA,adult-adult,it's the person kneeling all the way down,TRUE
+119,39,left,director,D1,4,NA,adult-adult,it's the person in the airplane,TRUE
+119,40,right,director,F1,4,NA,adult-adult,it's not the person offering something,TRUE
