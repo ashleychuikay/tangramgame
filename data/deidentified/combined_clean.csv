@@ -63,7 +63,7 @@
 5,2,parent,matcher,F1,1,4,adult-child,OK no wait you have to describe to me what it looks like Does it look like a person What does it look like the person is doing It looks like a person walking? OK,FALSE
 5,3,child,matcher,K1,1,4,adult-child,"Now I see I see the next shape with a triangle Up and down and I see a point up and now I I see another triangle hanging down I don't I'll pick I'll pick both I'll pick Yeah Oh, ok",TRUE
 5,3,parent,director,K1,1,4,adult-child,Does it look doesn't one look like a airplane and one look like a doggy Do you see the one that looks like a doggy trying to like stand on on its legs,TRUE
-5,4,child,director,B1,1,4,adult-child,Now I see someone having a traingle down And facing that way and and it's down I see One going down and a  it's the person walking,TRUE
+5,4,child,director,B1,1,4,adult-child,Now I see someone having a triangle down And facing that way and and it's down I see One going down and a  it's the person walking,TRUE
 5,4,parent,matcher,B1,1,4,adult-child,Mhm What shapes do you see Mm so which one is in the blue box That's what it looks like,TRUE
 5,5,child,matcher,A1,1,4,adult-child,But now Now Now  OK wait I see a person a running  all going that way Yeah he's standing on one leg So I'll pick it,TRUE
 5,5,parent,director,A1,1,4,adult-child,Does it look like a person on one standing on one leg,TRUE
@@ -1084,7 +1084,7 @@
 31,27,parent,director,C1,3,6,adult-child,and this person looks like they might be kneeling on the ground praying,TRUE
 31,28,child,director,K1,3,6,adult-child,"okay this lady is like this it looks like she's doing something, she's like giving someone something like maybe a little present, but nothing, she's like, ""here, give me some money""",TRUE
 31,29,parent,director,A1,3,6,adult-child,and this person looks like they might be walking somewhere,TRUE
-31,30,child,director,D1,3,6,adult-child,"this lady looks like she is wasasa, i'm just playing, it looks like she's wasasawing, you know, it means laying down in my langauge",TRUE
+31,30,child,director,D1,3,6,adult-child,"this lady looks like she is wasasa, i'm just playing, it looks like she's wasasawing, it means laying down in my language",TRUE
 31,31,child,director,B1,4,6,adult-child,"mine is saying, it looks like her head's down, she looks like she's walking",TRUE
 31,32,parent,director,F1,4,6,adult-child,"this one looks like,  two triangles,  someone wearing a dress with maybe two triangular heels",TRUE
 31,33,child,director,G1,4,6,adult-child,this looks like a lady on the potty,TRUE
@@ -1142,8 +1142,8 @@
 32,34,parent,director,A1,4,6,adult-child,choose the person that has one foot down and one foot up,TRUE
 32,35,child,director,H1,4,6,adult-child,choose the boy that has the cup in his hand,TRUE
 32,36,parent,director,K1,4,6,adult-child,"choose the person that doesn't have one foot down and one foot up, the opposite",TRUE
-32,37,child,director,G1,4,6,adult-child,"choose the man. that girl that has that poor  choose the girl that has the -- the one that has the leggo, like a big square and the girl with one",TRUE
-32,37,parent,matcher,G1,4,6,adult-child,? is it a long square? with a block? who has a sharp point on the right side?,TRUE
+32,37,child,director,G1,4,6,adult-child,"choose the man. that girl that has that poor  choose the girl that has the -- the one that has the lego, like a big square and the girl with one",TRUE
+32,37,parent,matcher,G1,4,6,adult-child,is it a long square? with a block? who has a sharp point on the right side?,TRUE
 32,38,parent,director,D1,4,6,adult-child,"choose the person that's laying flat, not the person that looks like it's jumping, the one that's laying flat on the ground",TRUE
 32,39,child,director,I1,4,6,adult-child,choose the boy that has the cup in it's hand,TRUE
 32,40,parent,director,F1,4,6,adult-child,"choose the person that's, that has the... choose the opposite the person that's not... choose the opposite of the person that's laying, that's bending over",FALSE
@@ -2018,7 +2018,7 @@
 52,2,child,director,H1,1,6,adult-child,it looks like a person,TRUE
 52,2,parent,matcher,H1,1,6,adult-child,can you tell me?,TRUE
 52,3,child,matcher,E1,1,6,adult-child,the second one!,FALSE
-52,3,parent,director,E1,1,6,adult-child,"it looks like something with wings, with a square head and two legs, but wings, big streching out the arms",FALSE
+52,3,parent,director,E1,1,6,adult-child,"it looks like something with wings, with a square head and two legs, but wings, big stretching out the arms",FALSE
 52,4,child,director,A1,1,6,adult-child,one that looks like someone is standing on one foot,FALSE
 52,5,parent,director,B1,1,6,adult-child,the person standing tall,TRUE
 52,6,child,director,C1,1,6,adult-child,someone laying down,TRUE
