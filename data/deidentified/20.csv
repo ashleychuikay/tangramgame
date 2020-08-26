@@ -68,7 +68,7 @@ subid,type,trial,target,person,utterance,selection,correct
 20,test,10,F1,parent,can you give me more? descriptive?,,Y
 20,test,10,F1,child,it looks like someone doing the splits! it has two little triangles for feet.,,Y
 20,test,10,F1,parent,and what do they do with their arms?,,Y
-20,test,10,F1,child,they're going like this (gestures arms outward),,Y
+20,test,10,F1,child,they're going like this,,Y
 20,test,10,F1,parent,,parent,Y
 20,test,14,F1,parent,this looks like someone who is doing a dance and throwing her arms up in the air and throwing her head back,,Y
 20,test,14,F1,child,,child,Y

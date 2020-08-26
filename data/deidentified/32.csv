@@ -33,7 +33,7 @@ subid,type,trial,target,person,utterance,selection,correct
 32,test,9,C1,child,,child,Y
 32,test,11,C1,child,can you choose the man that's bending down,,N
 32,test,11,C1,parent,,parent,N
-32,test,21,C1,parent,choose the person that looks like it's ... don't choose the man that looks like it's... choose the persont hat looks like it's jumping. it's the person that looks like it's bending over.,,Y
+32,test,21,C1,parent,choose the person that looks like it's ... don't choose the man that looks like it's... choose the person that looks like it's jumping. it's the person that looks like it's bending over.,,Y
 32,test,21,C1,child,this one?,,Y
 32,test,21,C1,parent,"the one that's bending over, yyy",,Y
 32,test,21,C1,child,,child,Y
@@ -79,7 +79,7 @@ subid,type,trial,target,person,utterance,selection,correct
 32,test,5,G1,child,it looks like a girl,,Y
 32,test,5,G1,parent,"but it's the one that's standing up, standing tall",,Y
 32,test,5,G1,child,,child,Y
-32,test,13,G1,child,"don't choose the man that's doing this *gesture*, choose that girl",,Y
+32,test,13,G1,child,"don't choose the man that's doing this, choose that girl",,Y
 32,test,13,G1,parent,,parent,Y
 32,test,23,G1,parent,"don't choose the person that looks like it's jumping in the air, choose the opposite",,Y
 32,test,23,G1,child,,child,Y
@@ -99,7 +99,7 @@ subid,type,trial,target,person,utterance,selection,correct
 32,test,15,H1,parent,the cup in her hand?,,Y
 32,test,15,H1,child,"yeah, that girl",,Y
 32,test,15,H1,parent,does she have one foot up and one foot down?,,Y
-32,test,15,H1,child,"no, this one *attempts to show ipad*",,Y
+32,test,15,H1,child,"no, this one",,Y
 32,test,15,H1,parent,,parent,Y
 32,test,25,H1,parent,choose the waiter that has his hand out,,Y
 32,test,25,H1,child,this one?,,Y
@@ -131,7 +131,7 @@ subid,type,trial,target,person,utterance,selection,correct
 32,test,28,K1,parent,which one?,,Y
 32,test,28,K1,child,choose the one that's like one up hand and one,,Y
 32,test,28,K1,parent,is it laying down?,,Y
-32,test,28,K1,child,"mmm mm *""no"" sound*",,Y
+32,test,28,K1,child,mmm mm,,Y
 32,test,28,K1,parent,,parent,Y
 32,test,36,K1,parent,"choose the person that doesn't have one foot down and one foot up, the opposite",,Y
 32,test,36,K1,child,,child,Y

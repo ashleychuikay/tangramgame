@@ -64,7 +64,7 @@ subid,type,trial,target,person,utterance,selection,correct
 54,test,9,C1,child,,child,Y
 54,test,15,C1,child,now mine just looks like yours that you got,,Y
 54,test,15,C1,parent,the walking?,,Y
-54,test,15,C1,child,"no, the one going like this (bends over)",,Y
+54,test,15,C1,child,"no, the one going like this",,Y
 54,test,15,C1,parent,"ok, alright, they're kneeling",,Y
 54,test,15,C1,child,yeah,,Y
 54,test,15,C1,parent,,parent,Y
@@ -98,7 +98,7 @@ subid,type,trial,target,person,utterance,selection,correct
 54,test,38,D1,parent,can you pick the person who fell down and lost their head?,,Y
 54,test,38,D1,child,,child,Y
 54,test,8,E1,parent,"ok, which blue box do you have?",,Y
-54,test,8,E1,child,i have two triangles on there and those things and i have a big triangle right there that doesn't ahve that line and i have a square on top that looks like this that these are legs and this is a head and he's going (spreads arms and legs),,Y
+54,test,8,E1,child,i have two triangles on there and those things and i have a big triangle right there that doesn't have that line and i have a square on top that looks like this that these are legs and this is a head and he's going,,Y
 54,test,8,E1,parent,like he's jumping?,,Y
 54,test,8,E1,child,"yeah, just like that",,Y
 54,test,8,E1,parent,"so it's not the person walking, it's the person who looks like they're jumping",,Y
@@ -180,7 +180,7 @@ subid,type,trial,target,person,utterance,selection,correct
 54,test,39,H1,parent,one foot,,Y
 54,test,39,H1,parent,,parent,Y
 54,test,7,I1,parent,"alright, so on my screen i see one who looks like a person who's jumping and another that looks like",,Y
-54,test,7,I1,child,it doesn't look like this one is jumping because it's going like (gestures with hand out),,Y
+54,test,7,I1,child,it doesn't look like this one is jumping because it's going like,,Y
 54,test,7,I1,parent,it's going... oh it's holding something?,,Y
 54,test,7,I1,child,yeah. it's holding a triangle.,,Y
 54,test,7,I1,parent,"ok, so that's my blue box. so you can pick the one who's holding a triangle",,Y

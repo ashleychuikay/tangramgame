@@ -53,7 +53,7 @@ subid,type,trial,target,person,utterance,selection,correct
 10,test,35,D1,child,Leg up,,Y
 10,test,35,D1,parent,,parent,Y
 10,test,35,D1,parent,You're a bit more zzz than that,,Y
-10,test,1,E1,parent,Uh press one who looks like they're jumping in the air like this (arms up),,Y
+10,test,1,E1,parent,Uh press one who looks like they're jumping in the air like this,,Y
 10,test,1,E1,child,,child,Y
 10,test,13,E1,child,Person who looks like they're jumping,,Y
 10,test,13,E1,parent,,parent,Y
@@ -64,11 +64,11 @@ subid,type,trial,target,person,utterance,selection,correct
 10,test,8,F1,child,Person who looks like they're jumping with one arm up like this,,Y
 10,test,8,F1,parent,,parent,Y
 10,test,14,F1,parent,Person who is like looks like they're sort of,,Y
-10,test,14,F1,child,like this? (gestures),,Y
+10,test,14,F1,child,like this?,,Y
 10,test,14,F1,child,yeah,,Y
 10,test,14,F1,child,,child,Y
 10,test,14,F1,parent,doing a dab,,Y
-10,test,14,F1,child,this (gestures),,Y
+10,test,14,F1,child,this,,Y
 10,test,22,F1,child,Person who looks like they're um zzz like this,,Y
 10,test,22,F1,parent,,parent,Y
 10,test,36,F1,parent,Dabbing,,Y
