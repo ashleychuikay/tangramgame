@@ -1,4 +1,4 @@
-subid,trial,person,role,target,rep_num,age,experiment,utterance,correct
+﻿subid,trial,person,role,target,rep_num,age,experiment,utterance,correct
 4,1,child,matcher,K1,1,6,adult-child,,TRUE
 4,1,parent,director,K1,1,6,adult-child,so mine looks like a guy with a little hat and he's going,TRUE
 4,2,child,director,C1,1,6,adult-child,Mine looks like a guy mine looks kinda like a guy bending down,TRUE
@@ -1726,7 +1726,7 @@ subid,trial,person,role,target,rep_num,age,experiment,utterance,correct
 46,7,parent,director,D1,1,4,adult-child,a person is laying down straight with their legs in the air,TRUE
 46,8,child,director,C1,1,4,adult-child,mine has like he's laying down,TRUE
 46,8,parent,matcher,C1,1,4,adult-child,"the person look like they're laying down? like they're laying on their knees, bent over? okay",TRUE
-46,9,child,matcher,F1,1,4,adult-child,-h,TRUE
+46,9,child,matcher,F1,1,4,adult-child,,TRUE
 46,9,parent,director,F1,1,4,adult-child,"kind of look like a bird, flying",TRUE
 46,10,child,director,B1,1,4,adult-child,a peoples walking,TRUE
 46,10,parent,matcher,B1,1,4,adult-child,it looks like a person walking away? inside of your blue box?,TRUE
@@ -2982,7 +2982,7 @@ subid,trial,person,role,target,rep_num,age,experiment,utterance,correct
 70,13,child,director,B1,2,6,adult-child,"it look like it's a person walking sadly, looking like he's walking sadly",TRUE
 70,13,parent,matcher,B1,2,6,adult-child,sad?,TRUE
 70,14,child,matcher,C1,2,6,adult-child,you got the one that was up?,TRUE
-70,14,parent,director,C1,2,6,adult-child,it look like somebody's bent over � on the ground,TRUE
+70,14,parent,director,C1,2,6,adult-child,it look like somebody's bent over … on the ground,TRUE
 70,15,child,director,F1,2,6,adult-child,it look like someone jumping my  a split,TRUE
 70,15,parent,matcher,F1,2,6,adult-child,jumping and doing the split? okay,TRUE
 70,16,child,matcher,G1,2,6,adult-child,hm? that's what I said,TRUE
