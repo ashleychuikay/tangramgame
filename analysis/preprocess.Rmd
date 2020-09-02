@@ -58,11 +58,17 @@ combined_data <- exchanges %>% # combine with info about who had which role on e
   group_by(subid, trial, person, role, target, rep_num, age, experiment) %>%
   summarize(utterance = paste0(utterance, collapse = ' '), correct = any(correct)) %>%
   mutate(age = if_else(is.na(age), "adult", as.character(age)),
-         director = if_else((person == "child" & role == "director") |
-                              (person == "parent" & role == "matcher"), 
-                            "child", "parent"))
+         director = case_when(
+           person == "child" & role == "director" ~ "child",
+           person == "parent" & role == "matcher" ~ "child",
+           person == "parent" & role == "director" ~ "parent",
+           person == "child" & role == "matcher" ~ "parent",
+           person == "left" & role == "director" ~ "left",
+           person == "right" & role == "matcher" ~ "left",
+           person == "right" & role == "director" ~ "right",
+           person == "left" & role == "matcher" ~ "right"
+         ))
 
-         
 write_csv(combined_clean, here("data/deidentified/combined_clean.csv"))
 ```
 
