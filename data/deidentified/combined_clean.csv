@@ -174,7 +174,7 @@ subid,trial,person,role,target,rep_num,age,experiment,utterance,correct,director
 7,31,child,director,D1,4,6,adult-child,this one he is laying down reading a book,TRUE,child
 7,32,parent,director,C1,4,6,adult-child,this one's when he's on his elbows and knees,TRUE,parent
 7,33,child,director,H1,4,6,adult-child,that one is when he has and he's holding a bowl,TRUE,child
-7,34,parent,director,K1,4,6,adult-child,this one's when he's got that triangle on his tush and he's leaned over a bit,TRUE,parent
+7,34,parent,director,K1,4,6,adult-child,this one's when he's got that triangle on his tushy and he's leaned over a bit,TRUE,parent
 7,35,child,director,F1,4,6,adult-child,this one is when he's doing that,TRUE,child
 7,35,parent,matcher,F1,4,6,adult-child,dabbing?,TRUE,child
 7,36,parent,director,E1,4,6,adult-child,this one is jumping for joy,TRUE,parent
@@ -1216,7 +1216,7 @@ subid,trial,person,role,target,rep_num,age,experiment,utterance,correct,director
 34,20,parent,director,I1,2,8,adult-child,Mine looks like a person holding a bowl,TRUE,parent
 34,21,parent,director,A1,3,8,adult-child,Mine looks like a person running to the left,TRUE,parent
 34,22,child,director,E1,3,8,adult-child,Mine looks like a person jumping and trying their on like a bird,TRUE,child
-34,23,parent,director,G1,3,8,adult-child,Mine looks like someone sitting and kneelingsquare,TRUE,parent
+34,23,parent,director,G1,3,8,adult-child,Mine looks like someone sitting and kneeling square,TRUE,parent
 34,24,child,director,K1,3,8,adult-child,Mine looks like a dog with a arrow head,TRUE,child
 34,25,parent,director,C1,3,8,adult-child,Mine looks like a person kneeling down,TRUE,parent
 34,26,child,director,H1,3,8,adult-child,Mine looks like someone with a big diamond in the,TRUE,child
@@ -1625,7 +1625,7 @@ subid,trial,person,role,target,rep_num,age,experiment,utterance,correct,director
 43,38,parent,director,K1,4,8,adult-child,Standing with the tail,TRUE,parent
 43,39,child,director,D1,4,8,adult-child,Swimming,TRUE,child
 43,40,parent,director,E1,4,8,adult-child,Jumping up with arms out,TRUE,parent
-44,2,child,director,E1,1,4,adult-child,It's a shape Someonerunning on their tippy toes Two feet With their knees they're running with their knees both feet back,TRUE,child
+44,2,child,director,E1,1,4,adult-child,It's a shape Someone running on their tippy toes Two feet With their knees they're running with their knees both feet back,TRUE,child
 44,2,parent,matcher,E1,1,4,adult-child,Does it look like a shape of someoen running or someone jumping Do they have one foot on the ground or two feet on the ground On the ground Is one foot forward and one foot back,TRUE,child
 44,3,child,matcher,A1,1,4,adult-child,a person running with one foot,TRUE,parent
 44,3,parent,director,A1,1,4,adult-child,the one that has the person running with one foot on the ground,TRUE,parent
@@ -1656,7 +1656,7 @@ subid,trial,person,role,target,rep_num,age,experiment,utterance,correct,director
 44,26,child,director,H1,3,4,adult-child,It's a person with another tray in his hand,TRUE,child
 44,27,parent,director,A1,3,4,adult-child,This is the person running,TRUE,parent
 44,28,child,director,E1,3,4,adult-child,This is the person jumping with two feet,TRUE,child
-44,29,parent,director,K1,3,4,adult-child,OK this is a person leaning over with his toushie out and a tray in his hand and he's wearing a hat,TRUE,parent
+44,29,parent,director,K1,3,4,adult-child,OK this is a person leaning over with his tushy out and a tray in his hand and he's wearing a hat,TRUE,parent
 44,30,child,director,I1,3,4,adult-child,there's a person um who um have in his hand like a triangle,TRUE,child
 44,31,child,director,C1,4,4,adult-child,it's a person crouching down,TRUE,child
 44,32,parent,director,E1,4,4,adult-child,Person jumping in the air,TRUE,parent
@@ -2065,7 +2065,7 @@ subid,trial,person,role,target,rep_num,age,experiment,utterance,correct,director
 53,3,parent,director,D1,1,4,adult-child,this looks like someone laying down,TRUE,parent
 53,4,child,director,B1,1,4,adult-child,this is somebody walking with their head down,TRUE,child
 53,5,parent,director,H1,1,4,adult-child,this is someone just standing up and it looks like they're just holding something,TRUE,parent
-53,6,child,director,K1,1,4,adult-child,this one is with somebodysomebody that has a hind legand their hand is out,TRUE,child
+53,6,child,director,K1,1,4,adult-child,this one is with somebody that has a hind leg and their hand is out,TRUE,child
 53,6,parent,matcher,K1,1,4,adult-child,it looks like they're standing up?,TRUE,child
 53,7,parent,director,E1,1,4,adult-child,this one it looks like they're jumping in the air,TRUE,parent
 53,8,child,director,G1,1,4,adult-child,this one it looks like they're sitting down,TRUE,child
@@ -2104,7 +2104,7 @@ subid,trial,person,role,target,rep_num,age,experiment,utterance,correct,director
 53,36,parent,director,A1,4,4,adult-child,This is someone walking with their foot in the air,TRUE,parent
 53,37,child,director,D1,4,4,adult-child,This is somebody laying down with their foot up in the air,TRUE,child
 53,38,parent,director,G1,4,4,adult-child,This is someone that looks like they're sitting down,TRUE,parent
-53,39,child,director,H1,4,4,adult-child,This one is somebodythat's putting out their arm,TRUE,child
+53,39,child,director,H1,4,4,adult-child,This one is somebody that's putting out their arm,TRUE,child
 53,39,parent,matcher,H1,4,4,adult-child,Putting out their arm standing up,TRUE,child
 53,40,parent,director,F1,4,4,adult-child,This is someone that looks like they're walking with their hand in the air,TRUE,parent
 54,1,child,matcher,G1,1,4,adult-child,the one with the square on top.,TRUE,parent
@@ -2121,7 +2121,7 @@ subid,trial,person,role,target,rep_num,age,experiment,utterance,correct,director
 54,6,parent,matcher,B1,1,4,adult-child,the person's walking now?,TRUE,child
 54,7,child,matcher,I1,1,4,adult-child,it doesn't look like this one is jumping because it's going like it's holding a triangle.,TRUE,parent
 54,7,parent,director,I1,1,4,adult-child,i see one who looks like a person who's jumping and another that looks like it's going... oh it's holding something? so you can pick the one who's holding a triangle,TRUE,parent
-54,8,child,director,E1,1,4,adult-child,i have two triangles on there and those things and i have a big triangle right there that doesn't have that line and i have a square on top that looks like this that these are legs and this is a head and he's goingjust like that and i see the person that was walking now again,TRUE,child
+54,8,child,director,E1,1,4,adult-child,i have two triangles on there and those things and i have a big triangle right there that doesn't have that line and i have a square on top that looks like this that these are legs and this is a head and he's going just like that and i see the person that was walking now again,TRUE,child
 54,8,parent,matcher,E1,1,4,adult-child,"like he's jumping? so it's not the person walking, it's the person who looks like they're jumping",TRUE,child
 54,9,parent,director,C1,1,4,adult-child,"i see the one who looks like they're jumping again and one that looks like they're kneeling. the one who's not jumping, can you pick the one who looks like they're on their hands and knees?",TRUE,parent
 54,10,child,director,D1,1,4,adult-child,"so i see triangle and triangle and a square on top and then another triangle and triangle and this that's not supposed to be there and i think that that person fell over and and and cut his head off and then broke i think that he falled down from all the way, he fell down from all the way seventeen yeah he actually did that he died yeah, it's on the side",TRUE,child
@@ -2153,7 +2153,7 @@ subid,trial,person,role,target,rep_num,age,experiment,utterance,correct,director
 54,24,child,director,D1,3,4,adult-child,its the person that fell down,TRUE,child
 54,24,parent,matcher,D1,3,4,adult-child,the one who fell down?,TRUE,child
 54,25,child,matcher,G1,3,4,adult-child,NA,TRUE,parent
-54,25,parent,director,G1,3,4,adult-child,can you pick the one that has no legs after they fell down? the one not jumping but the one wholooks like they're sitting on a box,TRUE,parent
+54,25,parent,director,G1,3,4,adult-child,the one that has no legs after they fell down? the one not jumping but the one who looks like they're sitting on a box,TRUE,parent
 54,26,child,director,E1,3,4,adult-child,it's the one that is doing like this,TRUE,child
 54,26,parent,matcher,E1,3,4,adult-child,it's jumping?,TRUE,child
 54,27,parent,director,F1,3,4,adult-child,"alright, can you pick the one who's running?",TRUE,parent
@@ -2233,7 +2233,7 @@ subid,trial,person,role,target,rep_num,age,experiment,utterance,correct,director
 55,33,child,director,H1,4,4,adult-child,I have the guy pointing and the one laying down but the one that's pointing,TRUE,child
 55,33,parent,matcher,H1,4,4,adult-child,the one pointing,TRUE,child
 55,34,child,matcher,K1,4,4,adult-child,I have the cat and the sad one,TRUE,parent
-55,34,parent,director,K1,4,4,adult-child,alright in my blue box is the cat that's kinda on his hind legspick the cat because that's what's in my blue box not the sad guy,TRUE,parent
+55,34,parent,director,K1,4,4,adult-child,the cat that's kinda on his hind legs pick the cat not the sad guy,TRUE,parent
 55,35,child,director,F1,4,4,adult-child,I have the very very weird one and the other very very weird one I have the one of them has one feet the really really weird one two,TRUE,child
 55,35,parent,matcher,F1,4,4,adult-child,Does one of them have two feet How many feet,TRUE,child
 55,36,parent,director,I1,4,4,adult-child,the judge holding that triangle not the guy,TRUE,parent
@@ -2445,7 +2445,7 @@ subid,trial,person,role,target,rep_num,age,experiment,utterance,correct,director
 59,34,parent,director,F1,4,6,adult-child,This one looks like a big bird that we see on a zoo.,TRUE,parent
 59,35,child,director,H1,4,6,adult-child,This one look like some daddy bringing a handsome gift,TRUE,child
 59,36,parent,director,G1,4,6,adult-child,This one looks like when we are sitting on our chair eating dinner.,TRUE,parent
-59,37,child,director,C1,4,6,adult-child,This one's like a Apolloand it's sniffing,TRUE,child
+59,37,child,director,C1,4,6,adult-child,This one's like a Apollo and it's sniffing,TRUE,child
 59,39,child,director,D1,4,6,adult-child,This one...this one's when I'm reading my book with my mom,TRUE,child
 59,40,parent,director,E1,4,6,adult-child,This is when you know you get to talk to on the phone and you are super excited.When you are super excited to play with,TRUE,parent
 60,1,parent,director,C1,1,4,adult-child,okay. tap on the guy who is bending down,FALSE,parent
@@ -2585,7 +2585,7 @@ subid,trial,person,role,target,rep_num,age,experiment,utterance,correct,director
 62,10,child,director,K1,1,8,adult-child,It's sort of looks like someone with a triangle hat,TRUE,child
 62,10,parent,matcher,K1,1,8,adult-child,NA,TRUE,child
 62,11,child,director,I1,2,8,adult-child,Someone holding out a triangle bowl,TRUE,child
-62,12,parent,director,K1,2,8,adult-child,so mine is the person holding with the triangle hat itkinda looks like a dog to me,TRUE,parent
+62,12,parent,director,K1,2,8,adult-child,the person holding with the triangle hat it kinda looks like a dog to me,TRUE,parent
 62,13,child,director,H1,2,8,adult-child,"The one holding out something, and sort of like a cloak or something",TRUE,child
 62,13,parent,matcher,H1,2,8,adult-child,NA,TRUE,child
 62,14,child,matcher,F1,2,8,adult-child,NA,TRUE,parent
@@ -2650,7 +2650,7 @@ subid,trial,person,role,target,rep_num,age,experiment,utterance,correct,director
 64,17,child,director,C1,2,4,adult-child,the one that has that square head that one doing the head stand like that,TRUE,child
 64,17,parent,matcher,C1,2,4,adult-child,"they both have square heads. Is the jumping one, or the head stand one the one that looks like it's jumping or the one that looks like it's doing a head stand",TRUE,child
 64,18,parent,director,E1,2,4,adult-child,"okay,  the one that's jumping",TRUE,parent
-64,19,child,director,F1,2,4,adult-child,okaythe person who's walking with the square head,TRUE,child
+64,19,child,director,F1,2,4,adult-child,the person who's walking with the square head,TRUE,child
 64,19,parent,matcher,F1,2,4,adult-child,with no arms?,TRUE,child
 64,20,child,matcher,I1,2,4,adult-child,NA,TRUE,parent
 64,20,parent,director,I1,2,4,adult-child,"the one that, who's sticking his butt out holding a bowl",TRUE,parent
@@ -2757,7 +2757,7 @@ subid,trial,person,role,target,rep_num,age,experiment,utterance,correct,director
 66,6,parent,matcher,I1,1,6,adult-child,NA,TRUE,child
 66,7,child,matcher,D1,1,6,adult-child,I see the one on its tummy,TRUE,parent
 66,7,parent,director,D1,1,6,adult-child,"this one looks like when , looks like they are lying on the floor on their ty reading or like when you are in bed and you are reading on your ty or sometimes when you get tired, you lie on your ty with your little feet in the air",TRUE,parent
-66,8,child,director,A1,1,6,adult-child,mine's kind of like you are runningor jogging or something like that,TRUE,child
+66,8,child,director,A1,1,6,adult-child,kind of like you are running or jogging or something like that,TRUE,child
 66,8,parent,matcher,A1,1,6,adult-child,NA,TRUE,child
 66,9,parent,director,B1,1,6,adult-child,this one looks like someone who is sad and looking at the groundand maybe has like their hands in their pocket in that coat or something,TRUE,parent
 66,10,child,director,C1,1,6,adult-child,so this guy is like crawling like a baby like if he were trying to get like under something tiny,TRUE,child
@@ -2773,7 +2773,7 @@ subid,trial,person,role,target,rep_num,age,experiment,utterance,correct,director
 66,15,parent,matcher,F1,2,6,adult-child,"human head, bird body and bird feet",TRUE,child
 66,16,child,matcher,G1,2,6,adult-child,no she's like looking up at the sky like this,TRUE,parent
 66,16,parent,director,G1,2,6,adult-child,"this is someone who looks like she is sitting on a box, maybe looking down at the ground",TRUE,parent
-66,17,child,director,D1,2,6,adult-child,"okay so this guy is kind of like, like, you're likeputting feet up and relaxing",TRUE,child
+66,17,child,director,D1,2,6,adult-child,"this guy is kind of like, you're like putting feet up and relaxing",TRUE,child
 66,17,parent,matcher,D1,2,6,adult-child,NA,TRUE,child
 66,18,child,matcher,C1,2,6,adult-child,NA,TRUE,parent
 66,18,parent,director,C1,2,6,adult-child,"this one looks like, a baby crawling on the ground",TRUE,parent
@@ -2788,7 +2788,7 @@ subid,trial,person,role,target,rep_num,age,experiment,utterance,correct,director
 66,23,parent,director,E1,3,6,adult-child,"this one looks like someone jumping for joy reaching up into the sky the one with the hands up in the air yeah, both hands are up in the air",TRUE,parent
 66,24,child,director,K1,3,6,adult-child,"the dog paws, the tail, the dog body, the human legs",TRUE,child
 66,24,parent,matcher,K1,3,6,adult-child,pointy hat,TRUE,child
-66,25,parent,director,H1,3,6,adult-child,"alright, this looks like it looked like an emperorholding something, so it looks like someone who's got a hat, like a triangle hat and a long robes and it's holding a bowl",TRUE,parent
+66,25,parent,director,H1,3,6,adult-child,"alright, this looks like it looked like an emperor holding something, so it looks like someone who's got a hat, like a triangle hat and a long robes and it's holding a bowl",TRUE,parent
 66,26,child,director,A1,3,6,adult-child,"so this guy is like dancing and twirling around like he's, like he's , like a ballerina",TRUE,child
 66,26,parent,matcher,A1,3,6,adult-child,NA,TRUE,child
 66,27,parent,director,B1,3,6,adult-child,"this is someone who looks sort of down, sort of sad, looking at the ground, or maybe thinking, maybe not sad, maybe just pensive, like thinking, got their hands in their pockets, in their long coat",TRUE,parent
@@ -3027,7 +3027,7 @@ subid,trial,person,role,target,rep_num,age,experiment,utterance,correct,director
 71,9,parent,director,D1,1,8,adult-child,this looks like someone lying on the ground --,TRUE,parent
 71,10,child,director,B1,1,8,adult-child,it looks like somebody walking and looking down,TRUE,child
 71,11,child,director,F1,2,8,adult-child,it looks like somebody running with a triangle very high,TRUE,child
-71,12,parent,director,K1,2,8,adult-child,this one looks like someone leaning forward and has a tailtail,TRUE,parent
+71,12,parent,director,K1,2,8,adult-child,this one looks like someone leaning forward and has a tail,TRUE,parent
 71,13,child,director,A1,2,8,adult-child,it looks like somebody running,TRUE,child
 71,14,parent,director,B1,2,8,adult-child,this looks like someone walking leaning forward,TRUE,parent
 71,15,child,director,E1,2,8,adult-child,it looks like somebody jumping and they have a square head and their feet are this way to the left,TRUE,child
@@ -3121,7 +3121,7 @@ subid,trial,person,role,target,rep_num,age,experiment,utterance,correct,director
 73,6,child,director,D1,1,6,adult-child,"okay, it's something, it's a people who's flying a airplane -- something, it can fly into the sky",TRUE,child
 73,6,parent,matcher,D1,1,6,adult-child,is it a airplane?,TRUE,child
 73,7,child,matcher,A1,1,6,adult-child,NA,TRUE,parent
-73,7,parent,director,A1,1,6,adult-child,"okay so the top, the top part is a square, it looks like it could be somebodythe shapes it's shaped like somebody isrunning",TRUE,parent
+73,7,parent,director,A1,1,6,adult-child,"okay so the top part is a square, it looks like it could be somebody the shapes it's shaped like somebody is running",TRUE,parent
 73,8,child,director,I1,1,6,adult-child,"okay, it's somebody who's holding some breakfast it's like, somebody holding a breakfast, some food in it",TRUE,child
 73,8,parent,matcher,I1,1,6,adult-child,NA,TRUE,child
 73,9,child,matcher,G1,1,6,adult-child,is it the president?,TRUE,parent
@@ -3131,7 +3131,7 @@ subid,trial,person,role,target,rep_num,age,experiment,utterance,correct,director
 73,11,child,director,G1,2,6,adult-child,"it kinda looks weird, it's somebody who's sitting down and and taking a break waiting to play",TRUE,child
 73,11,parent,matcher,G1,2,6,adult-child,NA,TRUE,child
 73,12,child,matcher,D1,2,6,adult-child,the book,FALSE,parent
-73,12,parent,director,D1,2,6,adult-child,"okay this one looks like the shapesof somebody reading, like a book",FALSE,parent
+73,12,parent,director,D1,2,6,adult-child,"okay this one looks like the shapes of somebody reading, like a book",FALSE,parent
 73,13,child,director,K1,2,6,adult-child,okay it's somebody who's facing up and it look - yeah I think it's somebody who's facing up with a triangle in -- a triangle on the back and an arrow pointing up,TRUE,child
 73,13,parent,matcher,K1,2,6,adult-child,is it like a triangle is like a tail?,TRUE,child
 73,14,child,matcher,H1,2,6,adult-child,people who's running a airplane? they're in a airplane? in a airplane?,FALSE,parent
@@ -3152,11 +3152,11 @@ subid,trial,person,role,target,rep_num,age,experiment,utterance,correct,director
 73,22,child,director,I1,3,6,adult-child,"okay, it's it's somebody who's holding something to observe it",TRUE,child
 73,22,parent,matcher,I1,3,6,adult-child,NA,TRUE,child
 73,23,child,matcher,G1,3,6,adult-child,or riding a airplane,FALSE,parent
-73,23,parent,director,G1,3,6,adult-child,"it, there's a square on topit almost looks like somebody is kneeling",FALSE,parent
+73,23,parent,director,G1,3,6,adult-child,there's a square on top it almost looks like somebody is kneeling,FALSE,parent
 73,24,child,director,C1,3,6,adult-child,it's somebody who's praying or doing the tornado,TRUE,child
 73,25,child,matcher,F1,3,6,adult-child,somebody's trying to catch something?,TRUE,parent
 73,25,parent,director,F1,3,6,adult-child,"it's a square, and it looks like it'son top of, not on top of even but on the side of ,triangles it's not the, it's somebody kneeling, it's the other one",TRUE,parent
-73,26,child,director,E1,3,6,adult-child,"okay, it's somebody who's doing a jump, a a, doingjumping for joy",TRUE,child
+73,26,child,director,E1,3,6,adult-child,"okay, it's somebody who's doing a jump, doing jumping for joy",TRUE,child
 73,27,parent,director,B1,3,6,adult-child,it's somebody walking and feeling sad,TRUE,parent
 73,28,child,director,D1,3,6,adult-child,it's somebody's riding a airplane,TRUE,child
 73,29,child,matcher,A1,3,6,adult-child,NA,TRUE,parent
@@ -3172,8 +3172,8 @@ subid,trial,person,role,target,rep_num,age,experiment,utterance,correct,director
 73,36,parent,director,I1,4,6,adult-child,"somebody who, the shapes are of somebody serving",TRUE,parent
 73,37,child,director,F1,4,6,adult-child,"it's somebody who's trying to catch something or, or, or maybe get them",TRUE,child
 73,38,child,matcher,E1,4,6,adult-child,or jumping for joy,TRUE,parent
-73,38,parent,director,E1,4,6,adult-child,it's of somebodywhere the shapes look like somebody may be sitting down mhm or jumping for joy,TRUE,parent
-73,39,child,director,G1,4,6,adult-child,"it's somebody who's , it's the president, who's telling his in order to help themhe did not to do that again it's the, it's the president is telling - yeah it's somebody who's tellingdon't do something again",TRUE,child
+73,38,parent,director,E1,4,6,adult-child,it's of somebody where the shapes look like somebody may be sitting down or jumping for joy,TRUE,parent
+73,39,child,director,G1,4,6,adult-child,"it's somebody who's , it's the president, who's telling his in order to help them he did not to do that again it's the, it's the president is telling - it's somebody who's telling don't do something again",TRUE,child
 73,39,parent,matcher,G1,4,6,adult-child,somebody who's telling somebody not to to do something bad again? somebody is sitting down scolding them?,TRUE,child
 73,40,child,matcher,H1,4,6,adult-child,"no it's like, it's people is pointing at people",TRUE,parent
 73,40,parent,director,H1,4,6,adult-child,"it's like, it's a square on top, and it's like they're serving something",TRUE,parent
