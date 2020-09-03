@@ -17,11 +17,9 @@ source('analysis_helpers.R')
 
 ```{r}
 M_mat = read_csv('../data/deidentified/meta_tangrams_embeddings.csv', 
-                na = c('[nan]'), quote = '"') %>%
-  mutate(feature_ind = row_number(),
-         rep_num = floor((trial -1) / 10),
-         rep_num = ifelse(rep_num == 3, 1, 0)) %>%
-  left_join(read_csv('../data/deidentified/meta.csv')) %>%
+                na = c('[nan]'), col_types = cols(age = "c"), quote = '"') %>%
+  mutate(feature_ind = row_number()) %>%
+  left_join(read_csv('../data/deidentified/meta.csv', col_types = cols(age = "c"))) %>%
   select(-X1) 
 ```
 
@@ -35,6 +33,7 @@ saveRDS(mat, here('data/deidentified/feats_tangrams_embeddings_rawavg.RData'))
 
 ```{r}
 F_mat = readRDS(here('data/deidentified/feats_tangrams_embeddings_rawavg.RData'))
+dim(F_mat)
 # combined.df <- compute_within_vs_across(M_mat, F_mat)
 # 
 # true_dprime = dprime(combined.df)
@@ -60,21 +59,19 @@ Stats
 ```{r, message=FALSE, cache=TRUE}
 true_lmer.within <- M_mat %>%
   group_by(subid, target, age) %>%
-  filter(length(text) == 2) %>%
+  filter(length(text) == 4) %>%
   make_within_df(F_mat, 'cosine') %>% 
   filter(rep2 == rep1 + 1) %>% 
   mutate(sim = ifelse(is.nan(sim), NA, sim)) %>%
   ungroup()
 
 # library(optimx)
-# true_lmer.within %>%
-#   lmer(sim ~ poly(rep1, 2) + 
-#          (1 + poly(rep1, 2) | subid) + 
-#          (1 + poly(rep1, 2) | target), 
-#        control = lmerControl(optimizer ='optimx', 
-#                              optCtrl=list(method='nlminb')),  
-#        data = .) %>%
-#   tidy()
+true_lmer.within %>%
+  lmer(sim ~ rep1 * age + (rep1 | subid),
+       control = lmerControl(optimizer ='optimx',
+                             optCtrl=list(method='nlminb')),
+       data = .) %>%
+  tidy()
 ```
 
 Viz
@@ -87,17 +84,17 @@ true_lmer.within.toplot <- true_lmer.within %>%
   tidyboot::tidyboot_mean(m, na.rm=T)
 
 true_lmer.within.toplot %>%
-  ggplot(aes(x = age, y = empirical_stat)) +
-    geom_point() +
+  ggplot(aes(x = rep1, y = empirical_stat, color = factor(age))) +
+    geom_line() +
     geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) + 
     scale_x_discrete(labels = c('(1,2)','(2,3)', '(3,4)', '(4,5)', '(5,6)' )) +
-    ylim(0.4, 1) +
-    labs(x = 'age', y = 'cosine similarity b/w first & final rep') +
+   # ylim(0.4, 1) +
+    labs(x = 'rep', y = 'cosine similarity b/w first & final rep') +
     ggtitle('convergence within game') +
     theme_few() +
-    guides(fill = F) +
-    theme(aspect.ratio = 1, legend.position = c(0.6, 0.5), text = element_text(size=18), 
-          element_line(size=1), element_rect(size=2, color="#00000"))
+    guides(fill = F) 
+    #theme(aspect.ratio = 1, legend.position = c(0.6, 0.5), text = element_text(size=18), 
+          #element_line(size=1), element_rect(size=2, color="#00000"))
 # ggsave('../../writing/figs/stability_mean.pdf', 
 #        height = 10, width = 10, units = 'cm', useDingbats = F)
 ```
@@ -108,14 +105,15 @@ Stats
 
 ```{r, message=FALSE, cache=TRUE}
 true_lmer.across <- M_mat %>% 
-   group_by(target, rep_num, age) %>%  
+   group_by(target, rep_num, age, director) %>%  
    do(flatten_sim_matrix(get_sim_matrix(., F_mat, method = 'cosine'), .$subid)) %>% 
   ungroup() %>%
   mutate(sim = ifelse(is.nan(sim), NA, sim)) %>%
-  mutate(target = factor(target),
-         age = (age - 6)/2)
+  mutate(target = factor(target))
 
 true_lmer.across %>%
+  filter(age != 'adult') %>%
+  mutate(age = as.numeric(age) - 6) %>%
   lmer(sim ~ rep_num * age + (1 + rep_num  | target),
        control = lmerControl(optimizer ='optimx',
                              optCtrl=list(method='nlminb')),
@@ -127,9 +125,9 @@ Viz
 
 ```{r}
 true_lmer.across %>%
-  group_by(dim1, age, rep_num) %>%
+  group_by(dim1, age, director, rep_num) %>%
   summarize(m = mean(sim, na.rm=T)) %>%
-  group_by(age, rep_num) %>%
+  group_by(age, director, rep_num) %>%
   tidyboot::tidyboot_mean(m, na.rm=T) %>%
   ggplot(aes(x = rep_num, y = empirical_stat, color = as.factor(age))) +
     geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
@@ -139,10 +137,11 @@ true_lmer.across %>%
     ylab('cosine similarity') +
     ggtitle('divergence across pairs') +
     theme_few() +
+    facet_wrap(~ director) +
     xlab('repetition') +
-    guides(fill = F) +
-    theme(aspect.ratio = 1, legend.position = c(0.5, 0.8), text = element_text(size=18), 
-          element_line(size=1), element_rect(size=2, color="#00000"))
+    guides(fill = F) 
+    # theme(aspect.ratio = 1, legend.position = c(0.5, 0.8), text = element_text(size=18), 
+    #       element_line(size=1), element_rect(size=2, color="#00000"))
 ggsave('../../writing/figs/divergence_mean.pdf', height = 10, width = 10, units = 'cm', useDingbats = F)
 ```
 
