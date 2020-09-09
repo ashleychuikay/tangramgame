@@ -290,35 +290,32 @@ questionMarkCount <- exchanges_data %>%
   mutate(containQ = str_detect(utterance, "\\?")) %>% 
   rowwise() %>%
   mutate(age = paste0(c('age', age), collapse = "")) %>%
-  group_by(person, age, rep_num, subid, containQ) %>% 
+  group_by(person, age, rep_num, target, subid, containQ) %>% 
   tally() %>% 
-  group_by(age, person, subid, rep_num) %>%
+  group_by(age, person, subid, rep_num, target) %>%
   ungroup() %>%
   pivot_wider(names_from = containQ, values_from = n) %>%
   mutate(`FALSE` = if_else(is.na(`FALSE`), 0, as.numeric(`FALSE`)),
          `TRUE` = if_else(is.na(`TRUE`), 0, as.numeric(`TRUE`))) %>%
   pivot_longer(cols = c(`FALSE`, `TRUE`), names_to = "has_question", 
-               values_to = "n")
+               values_to = "n") %>%
+  group_by(person, age, rep_num, subid, target) %>%
+  mutate(prop = n / sum(n)) %>%
+  mutate(has_question = as.logical(has_question)) %>%
+  filter(has_question) %>%
+  group_by(person, age, rep_num, subid) %>%
+  summarise(prop = mean(prop), n = mean(n))
 
 questionMarkBooted <- questionMarkCount %>%
-  group_by(age, person, has_question, rep_num) %>%
-  tidyboot_mean(n) %>%
-  mutate(has_question = as.logical(has_question))
+  group_by(age, person, rep_num) %>%
+  tidyboot_mean(n) 
 
 
 questionMarkBooted %>%
-  filter(has_question) %>%
   ggplot(aes(x = rep_num, y = empirical_stat, color = person)) + 
   facet_grid(. ~ age) + 
   geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper)) + 
   geom_line()
-
-chisq.out <- questionMarks %>% 
-  select(age, containQ,n) %>%
-  spread(containQ,n) %>% 
-  select(-age) %>%
-  chisq.test() %>%
-  tidy()
 ```
 
 If the ability of children of different ages to successfully establish reference depends on scaffolding provided by their parents, we would expect additional dialogue exchanges for younger children. We quantified dialogue by counting the total number of distinct turns of continuous speech on each trial. 
