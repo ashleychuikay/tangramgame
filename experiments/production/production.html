@@ -31,6 +31,9 @@
     var rightpic = pics[1];
     allStim.push({preamble: "<table align = 'center'><tr><td height = 200>" + leftpic + "</td><td width = 150></td><td height = 200>" + rightpic + "</td></tr></table>"})
 
+
+
+
     // reCAPTCHA object
     var recaptcha = {
       type: "external-html",
@@ -59,6 +62,27 @@
       post_trial_gap: 1000
     };
     timeline.push(instructions);
+
+    var tangram_close = {
+      type: "survey-text",
+      preamble: function() {return "<p>Describe the highlighted picture in a few words.</p><br>" +
+        "<div style = 'border-color: blue;'><img src = '" + target + "'</img></div><img src ='" + foil + "'</img>"
+      }
+      timeline_variables: [
+        {target: "images/A1.jpg", foil: "images/B1.jpg"},
+        {target: "images/C1.jpg", foil: "images/D1.jpg"},
+        {target: "images/E1.jpg", foil: "images/F1.jpg"},
+        {target: "images/G1.jpg", foil: "images/H1.jpg"},
+        {target: "images/I1.jpg", foil: "images/K1.jpg"},
+        {target: "images/B1.jpg", foil: "images/A1.jpg"},
+        {target: "images/D1.jpg", foil: "images/C1.jpg"},
+        {target: "images/F1.jpg", foil: "images/E1.jpg"},
+        {target: "images/H1.jpg", foil: "images/G1.jpg"},
+        {target: "images/K1.jpg", foil: "images/I1.jpg"},
+      ],
+      randomize_order: true,
+    } 
+
 
     var trial = {
       type: "survey-text",
