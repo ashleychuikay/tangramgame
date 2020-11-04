@@ -9,8 +9,6 @@
     <script src="consent/consent.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="jspsych-6.1.0/css/jspsych.css"></link>
-    <script src="mmturkey-0.6.js"></script>
-    <script src="//uniqueturker.myleott.com/lib.js" type="text/javascript"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
   <body></body>
@@ -32,28 +30,27 @@
     //   execute_script: true
     // };
     // timeline.push(recaptcha);
-  
+
     // consent form
     var consent = {
       type:'external-html',
       url: "consent/consent.html",
       cont_btn: "start"
     };
-    timeline.push(consent);
+    //timeline.push(consent);
 
     // trials
 
     var instructions = {
       type: "html-button-response",
-      stimulus: "<p>In this experiment, you will see pictures on the screen.</p>" +
-      "<p>On each trial, you will be asked to describe one picture.</p>",
+      stimulus: "<p>In this experiment, you will see one or more pictures on the screen at a time.</p><p>One of the objects will have a <span style='color:blue'>blue border</span> around it.</p><p>Please describe this picture as best as you can in a single word</p>",
       choices: ['Start'],
       data: {test_part: 'setup'},
       post_trial_gap: 1000
     };
     timeline.push(instructions);
 
-    
+
     var closetangrams = [
         {target: "images/A1.jpg", foil: "images/B1.jpg"},
         {target: "images/C1.jpg", foil: "images/D1.jpg"},
@@ -74,9 +71,9 @@
                 html += "<img style='margin: 50px' src='"+jsPsych.timelineVariable('foil', true)+"' height='250px'>";
                 return html;
         },
-        questions: [{prompt: "Describe the highlighted picture in a few words", required: true}],
+        questions: [{prompt: "Describe the object in the <span style='color:blue'>blue border</span> in <strong>one word</strong> that uniquely identifes it compared to the other one", required: true, columns: 20}],
         data: {test_part: 'tangram_close', target: jsPsych.timelineVariable('target')},
-        post_trial_gap: 500      
+        post_trial_gap: 500
     };
 
     var tangram_close_trial = {
@@ -95,7 +92,7 @@
       turk.submit(data);
       }
     })
-    
+
     </script>
 
 </html>
