@@ -3,10 +3,11 @@
   <head>
     <title>Tangram Production</title>
     <script src="jspsych-6.1.0/jspsych.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
     <script src="jspsych-6.1.0/plugins/jspsych-html-button-response.js"></script>
     <script src="jspsych-6.1.0/plugins/jspsych-survey-text.js"></script>
     <script src="jspsych-6.1.0/plugins/jspsych-external-html.js"></script>
-    <script src="consent/consent.js"></script>
+    <script type="text/javascript" src="consent/consent.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="jspsych-6.1.0/css/jspsych.css"></link>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -37,7 +38,7 @@
       url: "consent/consent.html",
       cont_btn: "start"
     };
-    //timeline.push(consent);
+      //timeline.push(consent);
 
     // trials
 
@@ -65,15 +66,19 @@
     ];
 
     var tangram_close = {
-        type: "survey-text",
-        preamble: function(){
-                var html="<img style='border: 10px solid blue; margin: 50px' src='"+jsPsych.timelineVariable('target', true)+"' height='250px'>";
-                html += "<img style='margin: 50px' src='"+jsPsych.timelineVariable('foil', true)+"' height='250px'>";
-                return html;
-        },
-        questions: [{prompt: "Describe the object in the <span style='color:blue'>blue border</span> in <strong>one word</strong> that uniquely identifes it compared to the other one", required: true, columns: 20}],
-        data: {test_part: 'tangram_close', target: jsPsych.timelineVariable('target')},
-        post_trial_gap: 500
+      type: "survey-text",
+      preamble: function(){
+        var target = ("<img style='border: 10px solid blue; margin: 50px' src='" +
+                      jsPsych.timelineVariable('target', true) +
+                      "' height='250px'>");
+        var foil = ("<img style='margin: 50px' src='" +
+                    jsPsych.timelineVariable('foil', true)+
+                    "' height='250px'>");
+        return _.shuffle([target, foil]).join('');
+      },
+      questions: [{prompt: "Describe the object in the <span style='color:blue'>blue border</span> in <strong>one word</strong> that uniquely identifes it compared to the other one", required: true, columns: 20}],
+      data: {test_part: 'tangram_close'},//, target: jsPsych.timelineVariable('target')},
+      post_trial_gap: 500      
     };
 
     var tangram_close_trial = {
