@@ -31,28 +31,27 @@
     //   execute_script: true
     // };
     // timeline.push(recaptcha);
-  
+
     // consent form
     var consent = {
       type:'external-html',
       url: "consent/consent.html",
       cont_btn: "start"
     };
-      timeline.push(consent);
+      //timeline.push(consent);
 
     // trials
 
     var instructions = {
       type: "html-button-response",
-      stimulus: "<p>In this experiment, you will see pictures on the screen.</p>" +
-      "<p>On each trial, you will be asked to describe one picture.</p>",
+      stimulus: "<p>In this experiment, you will see one or more pictures on the screen at a time.</p><p>One of the objects will have a <span style='color:blue'>blue border</span> around it.</p><p>Please describe this picture as best as you can in a single word</p>",
       choices: ['Start'],
       data: {test_part: 'setup'},
       post_trial_gap: 1000
     };
     timeline.push(instructions);
 
-    
+
     var closetangrams = [
         {target: "images/A1.jpg", foil: "images/B1.jpg"},
         {target: "images/C1.jpg", foil: "images/D1.jpg"},
@@ -77,7 +76,7 @@
                     "' height='250px'>");
         return _.shuffle([target, foil]).join('');
       },
-      questions: [{prompt: "Provide a single word that would allow someone else to pick the highlighted picture", required: true}],
+      questions: [{prompt: "Describe the object in the <span style='color:blue'>blue border</span> in <strong>one word</strong> that uniquely identifes it compared to the other one", required: true, columns: 20}],
       data: {test_part: 'tangram_close'},//, target: jsPsych.timelineVariable('target')},
       post_trial_gap: 500      
     };
@@ -98,7 +97,7 @@
       turk.submit(data);
       }
     })
-    
+
     </script>
 
 </html>
