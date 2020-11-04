@@ -22,26 +22,16 @@
 
     /* create timeline */
     var timeline = [];
-    var allStim = [];
-
-    // images
-    var pics = jsPsych.randomization.sampleWithoutReplacement(["images/A1.jpg", "images/B1.jpg", "images/C1.jpg", "images/D1.jpg",
-        "images/E1.jpg", "images/F1.jpg", "images/G1.jpg"], 2);
-    var leftpic = pics[0];
-    var rightpic = pics[1];
-    allStim.push({preamble: "<table align = 'center'><tr><td height = 200>" + leftpic + "</td><td width = 150></td><td height = 200>" + rightpic + "</td></tr></table>"})
-
-
 
 
     // reCAPTCHA object
-    var recaptcha = {
-      type: "external-html",
-      url: "recaptcha.html",
-      cont_btn: "submit_button",
-      execute_script: true
-    };
-    timeline.push(recaptcha);
+    // var recaptcha = {
+    //   type: "external-html",
+    //   url: "recaptcha.html",
+    //   cont_btn: "submit_button",
+    //   execute_script: true
+    // };
+    // timeline.push(recaptcha);
   
     // consent form
     var consent = {
@@ -63,12 +53,8 @@
     };
     timeline.push(instructions);
 
-    var tangram_close = {
-      type: "survey-text",
-      preamble: function() {return "<p>Describe the highlighted picture in a few words.</p><br>" +
-        "<div style = 'border-color: blue;'><img src = '" + target + "'</img></div><img src ='" + foil + "'</img>"
-      }
-      timeline_variables: [
+    
+    var closetangrams = [
         {target: "images/A1.jpg", foil: "images/B1.jpg"},
         {target: "images/C1.jpg", foil: "images/D1.jpg"},
         {target: "images/E1.jpg", foil: "images/F1.jpg"},
@@ -79,27 +65,37 @@
         {target: "images/F1.jpg", foil: "images/E1.jpg"},
         {target: "images/H1.jpg", foil: "images/G1.jpg"},
         {target: "images/K1.jpg", foil: "images/I1.jpg"},
-      ],
-      randomize_order: true,
-    } 
+    ];
 
-
-    var trial = {
-      type: "survey-text",
-      preamble: jsPsych.timelineVariable('preamble'),
-      questions: [{prompt:"Describe the picture on the right", required: true}],
-      post_trial_gap: 500
+    var tangram_close = {
+        type: "survey-text",
+        preamble: function(){
+                var html="<img style='border: 10px solid blue; margin: 50px' src='"+jsPsych.timelineVariable('target', true)+"' height='250px'>";
+                html += "<img style='margin: 50px' src='"+jsPsych.timelineVariable('foil', true)+"' height='250px'>";
+                return html;
+        },
+        questions: [{prompt: "Describe the highlighted picture in a few words", required: true}],
+        data: {test_part: 'tangram_close', target: jsPsych.timelineVariable('target')},
+        post_trial_gap: 500      
     };
 
-    var test_procedure = {
-      timeline: [trial],
-      timeline_variables: allStim,
-      // sample: {
-      //   type: 'without-replacement',
-      //   size: 1
-      // }
+    var tangram_close_trial = {
+      timeline: [tangram_close],
+      timeline_variables: closetangrams,
+      randomize_order: true,
+      repetitions: 1
     }
-    timeline.push(test_procedure);
+    timeline.push(tangram_close_trial);
+
+
+    jsPsych.init({
+      timeline: timeline,
+      on_finish: function() {
+      var data = jsPsych.data.get().csv();
+      turk.submit(data);
+      }
+    })
+    
     </script>
 
 </html>
