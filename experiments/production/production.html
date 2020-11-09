@@ -52,20 +52,30 @@
     timeline.push(instructions);
 
 
-    var closetangrams = [
-        {target: "images/A1.jpg", foil: "images/B1.jpg"},
-        {target: "images/C1.jpg", foil: "images/D1.jpg"},
+    var close_tangrams = [
+        {target: "images/A1.jpg", foil: "images/A2.jpg"},
         {target: "images/E1.jpg", foil: "images/F1.jpg"},
-        {target: "images/G1.jpg", foil: "images/H1.jpg"},
-        {target: "images/I1.jpg", foil: "images/K1.jpg"},
-        {target: "images/B1.jpg", foil: "images/A1.jpg"},
-        {target: "images/D1.jpg", foil: "images/C1.jpg"},
-        {target: "images/F1.jpg", foil: "images/E1.jpg"},
-        {target: "images/H1.jpg", foil: "images/G1.jpg"},
-        {target: "images/K1.jpg", foil: "images/I1.jpg"},
+        {target: "images/G1.jpg", foil: "images/M1.jpg"},
+        {target: "images/I1.jpg", foil: "images/J1.jpg"},
+        {target: "images/B1.jpg", foil: "images/P1.jpg"},
+        {target: "images/F1.jpg", foil: "images/W1.jpg"},
+        {target: "images/H1.jpg", foil: "images/Y1.jpg"},
+        {target: "images/K1.jpg", foil: "images/T1.jpg"},
     ];
 
-    var tangram_close = {
+    var far_tangrams = [
+        {target: "images/A1.jpg", foil: "images/D1.jpg"},
+        {target: "images/E1.jpg", foil: "images/C2.jpg"},
+        {target: "images/G1.jpg", foil: "images/N1.jpg"},
+        {target: "images/I1.jpg", foil: "images/R1.jpg"},
+        {target: "images/B1.jpg", foil: "images/O1.jpg"},
+        {target: "images/F1.jpg", foil: "images/C1.jpg"},
+        {target: "images/H1.jpg", foil: "images/A2.jpg"},
+        {target: "images/K1.jpg", foil: "images/V1.jpg"},
+    ];
+
+
+    var paired_trial = {
       type: "survey-text",
       preamble: function(){
         var target = ("<img style='border: 10px solid blue; margin: 50px' src='" +
@@ -77,18 +87,27 @@
         return _.shuffle([target, foil]).join('');
       },
       questions: [{prompt: "Describe the object in the <span style='color:blue'>blue border</span> in <strong>one word</strong> that uniquely identifes it compared to the other one", required: true, columns: 20}],
-      data: {test_part: 'tangram_close'},//, target: jsPsych.timelineVariable('target')},
+      data: {trialtype: tangram_variables},//, target: jsPsych.timelineVariable('target')},
       post_trial_gap: 500      
     };
 
     var tangram_close_trial = {
-      timeline: [tangram_close],
-      timeline_variables: closetangrams,
+      timeline: [paired_trial],
+      timeline_variables: close_tangrams,
       randomize_order: true,
       repetitions: 1
     }
-    timeline.push(tangram_close_trial);
 
+    var tangram_far_trial = {
+      timeline: [paired_trial],
+      timeline_variables: far_tangrams,
+      randomize_order: true,
+      repetitions: 1
+    }
+
+    var alltrials = jsPsych.sampleWithoutReplacement([tangram_close_trial, tangram_far_trial, familiar_close_trial, familiar_far_trial], 1)
+    
+    timeline.push(alltrials)
 
     jsPsych.init({
       timeline: timeline,
