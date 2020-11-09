@@ -74,6 +74,41 @@
         {target: "images/K1.jpg", foil: "images/V1.jpg"},
     ];
 
+    var close_familiar = [
+        {target: "images/dalmatian.jpg", foil: "images/pug.jpg"},
+        {target: "images/parrot.jpg", foil: "images/eagle.jpg"},
+        {target: "images/polarbear.jpg", foil: "images/blackbear.jpg"},
+        {target: "images/goldfish.jpg", foil: "images/clownfish.jpg"},
+        {target: "images/mnms.jpg", foil: "images/skittles.jpg"},
+        {target: "images/minivan.jpg", foil: "images/sportscar.jpg"},
+        {target: "images/picnictable.jpg", foil: "images/diningtable.jpg"},
+        {target: "images/tshirt.jpg", foil: "images/poloshirt.jpg"}
+    ];
+
+    var far_familiar = [
+        {target: "images/dalmatian.jpg", foil: "images/cow.jpg"},
+        {target: "images/parrot.jpg", foil: "images/squirrel.jpg"},
+        {target: "images/polarbear.jpg", foil: "images/lion.jpg"},
+        {target: "images/goldfish.jpg", foil: "images/iguana.jpg"},
+        {target: "images/mnms.jpg", foil: "images/pretzels.jpg"},
+        {target: "images/minivan.jpg", foil: "images/firetruck.jpg"},
+        {target: "images/picnictable.jpg", foil: "images/wardrobe.jpg"},
+        {target: "images/tshirt.jpg", foil: "images/dress.jpg"}
+    ];
+
+
+    var iso_trial = {
+      type: "survey-text",
+      preamble: function(){
+        var target = ("<img style='border: 10px solid blue; margin: 50px' src='" +
+                      jsPsych.timelineVariable('target', true) +
+                      "' height='250px'>");
+        return target;
+      },
+      questions: [{prompt: "Describe the object in the <span style='color:blue'>blue border</span> in <strong>one word</strong>", required: true, columns: 20}],
+      data: {trialtype: tangram_variables},//, target: jsPsych.timelineVariable('target')},
+      post_trial_gap: 500      
+    };
 
     var paired_trial = {
       type: "survey-text",
@@ -96,24 +131,53 @@
       timeline_variables: close_tangrams,
       randomize_order: true,
       repetitions: 1
-    }
+    };
 
     var tangram_far_trial = {
       timeline: [paired_trial],
       timeline_variables: far_tangrams,
       randomize_order: true,
       repetitions: 1
-    }
+    };
 
-    var alltrials = jsPsych.sampleWithoutReplacement([tangram_close_trial, tangram_far_trial, familiar_close_trial, familiar_far_trial], 1)
-    
+    var tangram_iso_trial = {
+      timeline: [iso_trial],
+      timeline_variables: close_tangrams,
+      randomize_order: true,
+      repetitions: 1
+    };
+
+    var familiar_close_trial = {
+      timeline: [paired_trial],
+      timeline_variables: close_familiar,
+      randomize_order: true,
+      repetitions: 1
+    };
+
+    var familiar_far_trial = {
+      timeline: [paired_trial],
+      timeline_variables: far_familiar,
+      randomize_order: true,
+      repetitions: 1
+    };
+
+    var familiar_iso_trial = {
+      timeline: [iso_trial],
+      timeline_variables: familiar_tangrams,
+      randomize_order: true,
+      repetitions: 1
+    };
+
+    var alltrials = jsPsych.sampleWithoutReplacement([tangram_close_trial, tangram_far_trial, tangram_iso_trial,
+      familiar_close_trial, familiar_far_trial, familiar_iso_trial], 1);
+
     timeline.push(alltrials)
 
     jsPsych.init({
       timeline: timeline,
       on_finish: function() {
       var data = jsPsych.data.get().csv();
-      turk.submit(data);
+      turk.submitToTurk(data);
       }
     })
 
