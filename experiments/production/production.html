@@ -128,7 +128,6 @@
         return target;
       },
       questions: [{prompt: "Describe the object in the <span style='color:blue'>blue border</span> in <strong>one word</strong>", required: true, columns: 20}],
-      data: {trialtype: "isolated"},
       post_trial_gap: 500
     };
 
@@ -144,7 +143,7 @@
         return _.shuffle([target, foil]).join('');
       },
       questions: [{prompt: "Describe the object in the <span style='color:blue'>blue border</span> in <strong>one word</strong> that uniquely identifes it compared to the other one", required: true, columns: 20}],
-      data: {trialtype: "paired"},//, target: jsPsych.timelineVariable('target')},
+      //data: {trial_type: "paired"},//, target: jsPsych.timelineVariable('target')},
       post_trial_gap: 500
     };
 
@@ -153,7 +152,8 @@
       timeline_variables: close_tangrams,
       randomize_order: true,
       repetitions: 1,
-      data: {trialtype: "paired"}
+      data: {competitor_type: "paired", target_type: "tangram",
+      test_part: 'trial'}
     };
 
 
@@ -162,7 +162,8 @@
       timeline_variables: far_tangrams,
       randomize_order: true,
       repetitions: 1,
-      data: {trialtype: "paired"}
+      data: {competitor_type: "paired", target_type: "tangram",
+      test_part: 'trial'}
     };
 
     var tangram_iso_trial = {
@@ -170,7 +171,8 @@
       timeline_variables: close_tangrams,
       randomize_order: true,
       repetitions: 1,
-      data: {trialtype: "iso"}
+      data: {competitor_type: "isolated", target_type: "tangram",
+      test_part: 'trial'}
     };
 
     var familiar_close_trial = {
@@ -178,7 +180,7 @@
       timeline_variables: close_familiar,
       randomize_order: true,
       repetitions: 1,
-      data: {trialtype: "paired"}
+      data: {competitor_type: "paired", target_type: "familiar", test_part: 'trial'}
     };
 
     var familiar_far_trial = {
@@ -186,7 +188,7 @@
       timeline_variables: far_familiar,
       randomize_order: true,
       repetitions: 1,
-      data: {trialtype: "paired"}
+      data: {competitor_type: "paired", target_type: "familiar", test_part: 'trial'}
     };
 
     var familiar_iso_trial = {
@@ -194,7 +196,7 @@
       timeline_variables: close_familiar,
       randomize_order: true,
       repetitions: 1,
-      data: {trialtype: "paired"}
+      data: {competitor_type: "paired", target_type: "familiar", test_part: 'trial'}
     };
 
     var alltrials = jsPsych.randomization.sampleWithoutReplacement([tangram_close_trial, tangram_far_trial, tangram_iso_trial,familiar_close_trial, familiar_far_trial, familiar_iso_trial], 6);
@@ -211,8 +213,10 @@
     jsPsych.init({
       timeline: timeline,
       on_finish: function() {
+
         var data = jsPsych.data.get().csv();
         jsPsych.turk.submitToTurk(data);
+        jsPsych.data.displayData();
       },
       preload_images: all_imgs
     })
