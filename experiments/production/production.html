@@ -51,7 +51,8 @@
     };
     timeline.push(instructions);
 
-
+    var images = [];
+    
     var close_tangrams = [
         {target: "images/A1.jpg", foil: "images/A2.jpg"},
         {target: "images/E1.jpg", foil: "images/F1.jpg"},
@@ -79,7 +80,7 @@
         {target: "images/parrot.jpg", foil: "images/eagle.jpg"},
         {target: "images/polarbear.jpg", foil: "images/blackbear.jpg"},
         {target: "images/goldfish.jpg", foil: "images/clownfish.jpg"},
-        {target: "images/mnms.jpg", foil: "images/skittles.jpg"},
+        {target: "images/mnms.jpg", foil: "images/gummybears.jpg"},
         {target: "images/minivan.jpg", foil: "images/sportscar.jpg"},
         {target: "images/picnictable.jpg", foil: "images/diningtable.jpg"},
         {target: "images/tshirt.jpg", foil: "images/poloshirt.jpg"}
@@ -102,11 +103,11 @@
       preamble: function(){
         var target = ("<img style='border: 10px solid blue; margin: 50px' src='" +
                       jsPsych.timelineVariable('target', true) +
-                      "' height='250px'>");
+                      "' height='200px'>");
         return target;
       },
       questions: [{prompt: "Describe the object in the <span style='color:blue'>blue border</span> in <strong>one word</strong>", required: true, columns: 20}],
-      data: {trialtype: tangram_variables},//, target: jsPsych.timelineVariable('target')},
+      data: {trialtype: "isolated"},
       post_trial_gap: 500      
     };
 
@@ -115,14 +116,14 @@
       preamble: function(){
         var target = ("<img style='border: 10px solid blue; margin: 50px' src='" +
                       jsPsych.timelineVariable('target', true) +
-                      "' height='250px'>");
+                      "' height='200px'>");
         var foil = ("<img style='margin: 50px' src='" +
                     jsPsych.timelineVariable('foil', true)+
-                    "' height='250px'>");
+                    "' height='200px'>");
         return _.shuffle([target, foil]).join('');
       },
       questions: [{prompt: "Describe the object in the <span style='color:blue'>blue border</span> in <strong>one word</strong> that uniquely identifes it compared to the other one", required: true, columns: 20}],
-      data: {trialtype: tangram_variables},//, target: jsPsych.timelineVariable('target')},
+      data: {trialtype: "paired"},//, target: jsPsych.timelineVariable('target')},
       post_trial_gap: 500      
     };
 
@@ -132,6 +133,7 @@
       randomize_order: true,
       repetitions: 1
     };
+
 
     var tangram_far_trial = {
       timeline: [paired_trial],
@@ -163,21 +165,23 @@
 
     var familiar_iso_trial = {
       timeline: [iso_trial],
-      timeline_variables: familiar_tangrams,
+      timeline_variables: close_familiar,
       randomize_order: true,
       repetitions: 1
     };
 
-    var alltrials = jsPsych.sampleWithoutReplacement([tangram_close_trial, tangram_far_trial, tangram_iso_trial,
-      familiar_close_trial, familiar_far_trial, familiar_iso_trial], 1);
 
-    timeline.push(alltrials)
+    var alltrials = jsPsych.randomization.sampleWithoutReplacement([tangram_close_trial, tangram_far_trial, tangram_iso_trial,familiar_close_trial, familiar_far_trial, familiar_iso_trial], 6);
+
+    for (i=0; i<alltrials.length; i++) {
+      timeline.push(alltrials[i]);
+    }
 
     jsPsych.init({
       timeline: timeline,
       on_finish: function() {
       var data = jsPsych.data.get().csv();
-      turk.submitToTurk(data);
+      jsPsych.turk.submitToTurk(data);
       }
     })
 
