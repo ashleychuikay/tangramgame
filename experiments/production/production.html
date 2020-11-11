@@ -52,7 +52,24 @@
     timeline.push(instructions);
 
     var images = [];
-    
+
+    var iso_item_block = {
+      type: "html-button-response",
+      stimulus: "<p>In this block, you will see one picture on the screen at a time.</p><p>Please describe this object as best as you can in <strong>one word</strong>.</p><p>",
+      choices: ['Continue'],
+      data: {test_part: 'block-setup'},
+      post_trial_gap: 500
+    };
+
+    var paired_item_block = {
+      type: "html-button-response",
+      stimulus: "<p>In this block, you will see two pictures on the screen at a time.</p><p>One of the objects will be in a <span style='color:blue'>blue box</span>.</p><p>Please describe this object as best as you can in <strong>one word</strong> so that someone else could guess which of the two objects is in the <span style='color:blue'>blue box</span>.</p>",
+      choices: ['Continue'],
+      data: {test_part: 'block-setup'},
+      post_trial_gap: 500
+    };
+
+
     var close_tangrams = [
         {target: "images/A1.jpg", foil: "images/A2.jpg"},
         {target: "images/E1.jpg", foil: "images/F1.jpg"},
@@ -108,7 +125,7 @@
       },
       questions: [{prompt: "Describe the object in the <span style='color:blue'>blue border</span> in <strong>one word</strong>", required: true, columns: 20}],
       data: {trialtype: "isolated"},
-      post_trial_gap: 500      
+      post_trial_gap: 500
     };
 
     var paired_trial = {
@@ -124,14 +141,15 @@
       },
       questions: [{prompt: "Describe the object in the <span style='color:blue'>blue border</span> in <strong>one word</strong> that uniquely identifes it compared to the other one", required: true, columns: 20}],
       data: {trialtype: "paired"},//, target: jsPsych.timelineVariable('target')},
-      post_trial_gap: 500      
+      post_trial_gap: 500
     };
 
     var tangram_close_trial = {
       timeline: [paired_trial],
       timeline_variables: close_tangrams,
       randomize_order: true,
-      repetitions: 1
+      repetitions: 1,
+      data: {trialtype: "paired"}
     };
 
 
@@ -139,41 +157,50 @@
       timeline: [paired_trial],
       timeline_variables: far_tangrams,
       randomize_order: true,
-      repetitions: 1
+      repetitions: 1,
+      data: {trialtype: "paired"}
     };
 
     var tangram_iso_trial = {
       timeline: [iso_trial],
       timeline_variables: close_tangrams,
       randomize_order: true,
-      repetitions: 1
+      repetitions: 1,
+      data: {trialtype: "iso"}
     };
 
     var familiar_close_trial = {
       timeline: [paired_trial],
       timeline_variables: close_familiar,
       randomize_order: true,
-      repetitions: 1
+      repetitions: 1,
+      data: {trialtype: "paired"}
     };
 
     var familiar_far_trial = {
       timeline: [paired_trial],
       timeline_variables: far_familiar,
       randomize_order: true,
-      repetitions: 1
+      repetitions: 1,
+      data: {trialtype: "paired"}
     };
 
     var familiar_iso_trial = {
       timeline: [iso_trial],
       timeline_variables: close_familiar,
       randomize_order: true,
-      repetitions: 1
+      repetitions: 1,
+      data: {trialtype: "paired"}
     };
-
 
     var alltrials = jsPsych.randomization.sampleWithoutReplacement([tangram_close_trial, tangram_far_trial, tangram_iso_trial,familiar_close_trial, familiar_far_trial, familiar_iso_trial], 6);
 
-    for (i=0; i<alltrials.length; i++) {
+    for (i = 0; i < alltrials.length; i++) {
+      if(alltrials[i].data.trialtype == "paired")
+        timeline.push(paired_item_block)
+      else
+        timeline.push(iso_item_block)
+
       timeline.push(alltrials[i]);
     }
 
