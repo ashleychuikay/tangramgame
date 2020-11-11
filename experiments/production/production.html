@@ -91,34 +91,34 @@
     ];
 
     var close_familiar = [
-        {target: "images/dalmatian.jpg", foil: "images/pug.jpg"},
-        {target: "images/parrot.jpg", foil: "images/eagle.jpg"},
-        {target: "images/polarbear.jpg", foil: "images/blackbear.jpg"},
-        {target: "images/goldfish.jpg", foil: "images/clownfish.jpg"},
-        {target: "images/mnms.jpg", foil: "images/gummybears.jpg"},
-        {target: "images/minivan.jpg", foil: "images/sportscar.jpg"},
-        {target: "images/picnictable.jpg", foil: "images/diningtable.jpg"},
-        {target: "images/tshirt.jpg", foil: "images/poloshirt.jpg"}
+      {target: "images/germanshepherd.jpg", foil: "images/pug.jpg"},
+      {target: "images/sparrow.jpg", foil: "images/eagle.jpg"},
+      {target: "images/grizzlybear.jpg", foil: "images/polarbear.jpg"},
+      {target: "images/goldfish.jpg", foil: "images/swordfish.jpg"},
+      {target: "images/mnms.jpg", foil: "images/gummybears.jpg"},
+      {target: "images/sedan.jpg", foil: "images/sportscar.jpg"},
+      {target: "images/diningtable.jpg", foil: "images/picnictable.jpg"},
+      {target: "images/tshirt.jpg", foil: "images/dressshirt.jpg"}
     ];
-
+      
     var far_familiar = [
-        {target: "images/dalmatian.jpg", foil: "images/cow.jpg"},
-        {target: "images/parrot.jpg", foil: "images/squirrel.jpg"},
-        {target: "images/polarbear.jpg", foil: "images/lion.jpg"},
-        {target: "images/goldfish.jpg", foil: "images/iguana.jpg"},
-        {target: "images/mnms.jpg", foil: "images/pretzels.jpg"},
-        {target: "images/minivan.jpg", foil: "images/firetruck.jpg"},
-        {target: "images/picnictable.jpg", foil: "images/wardrobe.jpg"},
-        {target: "images/tshirt.jpg", foil: "images/dress.jpg"}
+      {target: "images/germanshepherd.jpg", foil: "images/cow.jpg"},
+      {target: "images/sparrow.jpg", foil: "images/squirrel.jpg"},
+      {target: "images/grizzlybear.jpg", foil: "images/lion.jpg"},
+      {target: "images/goldfish.jpg", foil: "images/iguana.jpg"},
+      {target: "images/mnms.jpg", foil: "images/pretzels.jpg"},
+      {target: "images/sedan.jpg", foil: "images/firetruck.jpg"},
+      {target: "images/diningtable.jpg", foil: "images/wardrobe.jpg"},
+      {target: "images/tshirt.jpg", foil: "images/dress.jpg"}
     ];
 
-      var all_imgs = _.flatten(_.map(
-        close_tangrams.concat(far_tangrams, close_familiar, far_familiar),
-        v => {
-          return [v.target, v.foil];
-        }
-      ));
-      console.log(all_imgs)
+    var all_imgs = _.flatten(_.map(
+      close_tangrams.concat(far_tangrams, close_familiar, far_familiar),
+      v => {
+        return [v.target, v.foil];
+      }
+    ));
+
     var iso_trial = {
       type: "survey-text",
       preamble: function(){
