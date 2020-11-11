@@ -51,8 +51,6 @@
     };
     timeline.push(instructions);
 
-    var images = [];
-
     var iso_item_block = {
       type: "html-button-response",
       stimulus: "<p>In this block, you will see one picture on the screen at a time.</p><p>Please describe this object as best as you can in <strong>one word</strong>.</p><p>",
@@ -114,7 +112,13 @@
         {target: "images/tshirt.jpg", foil: "images/dress.jpg"}
     ];
 
-
+      var all_imgs = _.flatten(_.map(
+        close_tangrams.concat(far_tangrams, close_familiar, far_familiar),
+        v => {
+          return [v.target, v.foil];
+        }
+      ));
+      console.log(all_imgs)
     var iso_trial = {
       type: "survey-text",
       preamble: function(){
@@ -207,9 +211,10 @@
     jsPsych.init({
       timeline: timeline,
       on_finish: function() {
-      var data = jsPsych.data.get().csv();
-      jsPsych.turk.submitToTurk(data);
-      }
+        var data = jsPsych.data.get().csv();
+        jsPsych.turk.submitToTurk(data);
+      },
+      preload_images: all_imgs
     })
 
     </script>
