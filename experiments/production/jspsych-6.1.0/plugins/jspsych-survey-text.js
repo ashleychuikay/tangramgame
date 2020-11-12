@@ -160,6 +160,9 @@ jsPsych.plugins['survey-text'] = (function() {
       // save data
       var trialdata = {
         "rt": response_time,
+	"utterance" : question_data['Q0'],
+	'target' :jsPsych.timelineVariable('target', true).replace('images/', ''),
+	'foil' :jsPsych.timelineVariable('foil', true).replace('images/', ''),	
         "responses": JSON.stringify(question_data)
       };
 
