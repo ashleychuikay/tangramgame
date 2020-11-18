@@ -50,6 +50,7 @@ library(egg)
 library(xtable)
 library(knitr)
 library(papaja)
+library(entropy)
 library(ggthemes)
 library(lme4)
 library(lmerTest)
@@ -744,6 +745,96 @@ Given that the labels used by younger children tend to originate with their pare
 We tested this hypothesis by asking about the linguistic complexity of the pacts developed in each age group. To estimate the complexity of individual words, we used self-reported age of acquisition (AoA) estimates [@kuperman2012]. Our assumption, based on Kuperman et al.'s work, is that more complex words are harder to acquire, and thus have later ages of acquisition (AoA). To estimate the complexity of referential expressions as a whole, we simply averaged the AoAs of all the words they contained^[We first removed any words in a list of `r length(tm::stopwords())` stop words like "at" and "me" from the \texttt{tm} package [@feinerer2008]]. In all age groups, parents produced more linguistically complex referential expressions than children, but as children get older, both their expressions and their parents' become more linguistically complex over repetitions of the same tangram (like adults) (Fig. \ref{fig:origins}B). 
 
 We confirmed this observation with a mixed-effects model including all possible interactions of age, person (child vs. parent), and repetition number, and maximal random effect structure as before. We found significant main effects of age ($\beta =$ `r age_effect_origin$estimate`, $t =$ `r age_effect_origin$statistic`, $p$`r age_effect_origin_pvalue`), and person ($\beta =$ `r person_effect_origin$estimate`, $t =$ `r person_effect_origin$statistic`, $p$ `r person_effect_origin_pvalue`), but not repetition ($\beta =$ `r rep_effect_origin$estimate`, $t =$ `r rep_effect_origin$statistic`, $p$ `r rep_effect_origin_pvalue`). All else being equal, pairs with older children produced more complex utterances, and parents produced more complex utterances than children. Further, we found a significant interaction between age and repetition number, suggesting that later repetitions became more complex for dyads with older children ($\beta =$ `r age_rep_interaction_origin$estimate`, $t =$ `r age_rep_interaction_origin$statistic`, $p$ `r  age_rep_interaction_origin_pvalue`). This interaction may be driven by reduction processes, as more distinctive words tend to persist as common words are dropped [@hawkins2019]. No other effects were significant, indicating that parents' utterances remained a constant level of complexity above children's even as children's utterances became more complex. These results suggest that pact formation depends not only on parental input, but on children as well---pacts may originate from parents, but children control their complexity.
+
+# Production experiment
+
+We ran a production experiment.
+
+```{r}
+d.prod <- read_csv('../../data/production/pilot_data.csv') %>%
+  filter(trial_type == 'survey-text') %>%
+  filter(rt < 20000) %>%
+  mutate(utterance = str_to_lower(utterance),
+         utterance = str_trim(utterance),
+         utterance = str_remove_all(utterance, pattern = ' '),
+         utt_length = str_length(utterance)) 
+```
+## Response times reflect familiarity and context
+
+We examined log response times.
+
+```{r}
+# overall RT distribution
+
+d.prod %>%
+  mutate(logged_rt =log(rt)) %>%
+  gather(measure, value, logged_rt, rt) %>%
+  ggplot(aes(x = value)) +
+    geom_histogram() +
+    facet_wrap(~ measure, scales='free')
+```
+  
+```{r}
+ggplot(d.prod, aes(x = target_type, y = log(rt), color = competitor_type)) +
+  geom_boxplot() +
+  theme(legend.position = 'top')
+```
+```{r}
+d.prod %>%
+  lm(log(rt) ~ target_type * competitor_type, 
+     data = .) %>%
+  tidy()
+```
+## Variability in labels 
+
+```{r}
+dodge = position_dodge(0.9)
+d.prod %>%
+  group_by(target_type, competitor_type) %>%
+  tidyboot_mean(utt_length) %>%
+  ggplot(aes(x = target_type, y = empirical_stat, fill = competitor_type)) +
+    geom_bar(stat='identity', position=dodge) +
+    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0, position=dodge) +
+    theme(legend.position = 'top')
+```
+
+We considered several measures of codability/overlap:
+
+* total number of unique labels (when people overlap a lot, this is smaller because we collect the same number of labels for each target; warning, this could be misleading if we're dropping trials due to high rts and some conditions have more dropped)
+* proportion of unique labels to total labels (fixes this problem, but still doesn't account for the distribution of overlap, e.g. if one gets hit 10 times and others get hit 1 vs. everything gets hit 2 times.)
+* entropy (we all know and love)
+* codeability (what proportion of people provided the most common label, if there were 40 labels and 20 were 'bird', this would be 50%)
+
+```{r}
+d.prod %>%
+  group_by(target_type, competitor_type, utterance, target) %>%
+  tally() %>%
+  arrange(target) %>%
+  group_by(target_type, competitor_type, target) %>%
+  mutate(total_labels = sum(n)) %>%
+  summarize(unique_labels = length(n), 
+            normalized_unique_labels = mean(unique_labels) / mean(total_labels),
+            entropy = entropy(n, method="SG"),
+            normalized_entropy = mean(entropy) / log(length(n)),
+            codeability = max(n) / sum(n)) %>%
+  gather(measure, value, unique_labels:codeability) %>%
+  # group_by(target_type, competitor_type, measure) %>%
+  # tidyboot_mean(value) %>%
+  ggplot(aes(x = target_type, y = value, fill = competitor_type)) +
+    geom_bar(stat = 'identity', position=dodge) +
+    facet_grid(target~measure, scales='free')
+
+ggsave('variability_measures.pdf', width = 10, height = 10, unit = 'in')
+```
+
+# TODO: Measuring similarity within participant
+
+* within-participant version: For a particular participant, measure whether they use the same word across competition_type conditions for same targets. 
+* population version: does entire distribution shift?
+
+# TODO: Tangram label norming & adversarial context design
+
+Our hypothesis is that we're not getting context effects for adults in this pilot because even the 'close' contexts aren't close along the actual representational dimensions people are using to label things. So if their labeling prior in isolation is to say it's 'sad', that's still highly informative in the close context because the distractor doesn't look sad at all and there's no pressure being put on the prior (kids likely have very different priors, e.g. 'guy' or 'person' with high probability, so these same contexts probably would put pressure on them). To do this in adults, we probably need to elicit priors in isolation for more tangrams (e.g. all 40) and then design better 'close' contexts where we put together tangrams where adults have very similar priors. Maybe the same for kids.
 
 # Discussion
 
