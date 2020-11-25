@@ -751,13 +751,26 @@ We confirmed this observation with a mixed-effects model including all possible 
 We ran a production experiment.
 
 ```{r}
-d.prod <- read_csv('../../data/production/pilot_data.csv') %>%
+d.prod.raw <- read_csv('../../data/production/pilot_data.csv')
+
+complete_games <- d.prod.raw %>%
+  group_by(anonymized_id) %>%
+  tally() %>%
+  filter(n == 55) %>%
+  pull(anonymized_id)
+
+cat('we have', length(complete_games), 'games')
+
+d.prod <- d.prod.raw %>%
   filter(trial_type == 'survey-text') %>%
+  filter(anonymized_id %in% complete_games) %>%
   filter(rt < 20000) %>%
   mutate(utterance = str_to_lower(utterance),
          utterance = str_trim(utterance),
          utterance = str_remove_all(utterance, pattern = ' '),
          utt_length = str_length(utterance)) 
+
+  
 ```
 ## Response times reflect familiarity and context
 
@@ -767,7 +780,7 @@ We examined log response times.
 # overall RT distribution
 
 d.prod %>%
-  mutate(logged_rt =log(rt)) %>%
+  mutate(logged_rt = log(rt)) %>%
   gather(measure, value, logged_rt, rt) %>%
   ggplot(aes(x = value)) +
     geom_histogram() +
@@ -810,7 +823,7 @@ d.prod %>%
   group_by(target_type, competitor_type, utterance, target) %>%
   tally() %>%
   arrange(target) %>%
-  group_by(target_type, competitor_type, target) %>%
+  group_by(target_type, competitor_type) %>%
   mutate(total_labels = sum(n)) %>%
   summarize(unique_labels = length(n), 
             normalized_unique_labels = mean(unique_labels) / mean(total_labels),
@@ -818,18 +831,46 @@ d.prod %>%
             normalized_entropy = mean(entropy) / log(length(n)),
             codeability = max(n) / sum(n)) %>%
   gather(measure, value, unique_labels:codeability) %>%
-  # group_by(target_type, competitor_type, measure) %>%
-  # tidyboot_mean(value) %>%
-  ggplot(aes(x = target_type, y = value, fill = competitor_type)) +
+  group_by(target_type, competitor_type, measure) %>%
+  tidyboot_mean(value) %>%
+  ggplot(aes(x = target_type, y = empirical_stat, fill = competitor_type)) +
     geom_bar(stat = 'identity', position=dodge) +
-    facet_grid(target~measure, scales='free')
+    facet_grid(measure ~. , scales='free')
 
 ggsave('variability_measures.pdf', width = 10, height = 10, unit = 'in')
 ```
 
-# TODO: Measuring similarity within participant
+# Measuring similarity within participant
 
 * within-participant version: For a particular participant, measure whether they use the same word across competition_type conditions for same targets. 
+
+```{r}
+normalized_lv <- function(s1, s2) {
+  lv_dist = stringdist::stringdist(s1, s2, method = 'lv')
+  s1_len <- str_length(s1)
+  s2_len <- str_length(s2)
+  maxlength = pmax(s1_len, s2_len)
+  return(lv_dist / maxlength)
+}
+
+d.prod %>%
+  select(anonymized_id, target, target_type, competitor_type, utterance) %>%
+  group_by(anonymized_id, target_type, target) %>%
+  spread(competitor_type, utterance) %>%
+  filter(!is.na(close), !is.na(far), !is.na(isolated)) %>%
+  mutate(close_far.distance = normalized_lv(close, far),
+         close_isolated.distance = normalized_lv(close, isolated),
+         far_isolated.distance = normalized_lv(far, isolated),
+         close_far.match = close == far,
+         close_isolated.match = close == isolated,
+         far_isolated.match = far == isolated) %>%
+  gather(pair, distance, close_far.distance:far_isolated.match) %>%
+  group_by(target_type, pair) %>%
+  tidyboot_mean(distance) %>%
+  separate(pair, sep = '\\.', into = c('pair', 'measure')) %>%
+  arrange(measure)
+```
+
 * population version: does entire distribution shift?
 
 # TODO: Tangram label norming & adversarial context design
