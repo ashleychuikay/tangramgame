@@ -9,10 +9,12 @@ cogsci2020.tex
 parentsscaffold_0203.pdf
 experiments/comprehension/node_modules/*
 experiments/comprehension/mturk/*
+experiments/production/mturk/
 experiments/ref_game/node_modules/*
 *.log
 data/*
 !*/deidentified
+!*/production
 similardata/*
 pacts/*
 original_images/*
