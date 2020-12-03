@@ -14,6 +14,7 @@ parentsscaffold_0203.pdf
 *.log
 data/*
 !*/deidentified
+!*/production
 similardata/*
 pacts/*
 original_images/*
