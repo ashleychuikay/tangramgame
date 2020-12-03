@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tangram Production</title>
+    <script src="jspsych-6.1.0/jspsych.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+    <script src="jspsych-6.1.0/plugins/jspsych-html-button-response.js"></script>
+    <script src="jspsych-6.1.0/plugins/jspsych-survey-text.js"></script>
+    <script src="jspsych-6.1.0/plugins/jspsych-external-html.js"></script>
+    <script type="text/javascript" src="consent/consent.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="jspsych-6.1.0/css/jspsych.css"></link>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+  <body></body>
+
+    <script>
+      window.onload = function() {
+	setupGame();
+      };
+
+      function setupGame() {
+	var socket = io.connect();
+	/* get info from turk */
+	var turkInfo = jsPsych.turk.turkInfo();
+
+	/* create timeline */
+	var timeline = [];
+
+
+	// reCAPTCHA object
+	// var recaptcha = {
+	//   type: "external-html",
+	//   url: "recaptcha.html",
+	//   cont_btn: "submit_button",
+	//   execute_script: true
+	// };
+	// timeline.push(recaptcha);
+
+	// consent form
+	var consent = {
+	  type:'external-html',
+	  url: "consent/consent.html",
+	  cont_btn: "start"
+	};
+	timeline.push(consent);
+
+	// trials
+
+	var instructions = {
+	  type: "html-button-response",
+	  stimulus: "<p>In this experiment, you will see one or more pictures on the screen at a time.</p>\
+                     <p>One of the objects will be in a <span style='color:blue'>blue box</span>.</p>\
+                     <p>Please describe this object as best as you can in <strong>one word</strong>.</p>\
+                     <p>If there are multiple objects, describe the object in the \
+                        <span style='color:blue'>blue box</span> \
+                        so that someone else could guess which one of the two objects is in the \
+                        <span style='color:blue'>blue box</span>.</p>",
+	  choices: ['Start'],
+	  data: {test_part: 'setup'},
+	  post_trial_gap: 1000
+	};
+	timeline.push(instructions);
+
+	var iso_item_block = {
+	  type: "html-button-response",
+	  stimulus: "<p>In this block, you will see one picture on the screen at a time.</p>\
+                     <p>Please describe this object as best as you can in <strong>one word</strong>.</p><p>",
+	  choices: ['Continue'],
+	  data: {test_part: 'block-setup'},
+	  post_trial_gap: 500
+	};
+
+	var all_tangrams = [
+          {'target': "images/A1.jpg"},
+          {'target': "images/A2.jpg"},
+          {'target': "images/B1.jpg"},
+          {'target': "images/C1.jpg"},
+          {'target': "images/C2.jpg"},
+          {'target': "images/D1.jpg"},
+          {'target': "images/E1.jpg"},
+          {'target': "images/F1.jpg"},
+          {'target': "images/G1.jpg"},
+          {'target': "images/H1.jpg"},
+          {'target': "images/I1.jpg"},
+          {'target': "images/J1.jpg"},
+          {'target': "images/K1.jpg"},
+          {'target': "images/L1.jpg"},
+          {'target': "images/M1.jpg"},
+          {'target': "images/N1.jpg"},
+          {'target': "images/O1.jpg"},
+          {'target': "images/P1.jpg"},
+          {'target': "images/R1.jpg"},
+          {'target': "images/T1.jpg"},
+          {'target': "images/V1.jpg"},
+          {'target': "images/W1.jpg"},
+          {'target': "images/Y1.jpg"}
+	];
+
+	var iso_trial = {
+	  type: "survey-text",
+	  preamble: function(){
+            var target = ("<img style='border: 10px solid blue; margin: 50px' src='" +
+			  jsPsych.timelineVariable('target', true) +
+			  "' height='200px'>");
+            return target;
+	  },
+	  questions: [{
+            prompt: "Describe the object in the <span style='color:blue'>blue border</span>\
+                     in <strong>one word</strong>",
+            required: true,
+            columns: 20
+          }],
+	  post_trial_gap: 500
+	};
+
+        _.forEach(all_tangrams, tangram => {
+          timeline.push({
+	    timeline: [iso_trial],
+	    timeline_variables: [tangram],
+	    randomize_order: true,
+	    repetitions: 1,
+	    data: {
+              competitor_type: "isolated",
+              target_type: "tangram",
+	      test_part: 'trial'
+            }
+	  });
+        })
+        
+	jsPsych.init({
+	  timeline: timeline,
+	  on_trial_finish: function(trialData){
+	    console.log('here');
+	    var packet = _.extend({}, trialData, {
+	      dbname: 'tangramgame',
+	      colname: 'production',
+	      wID: turkInfo.workerId,
+	      aID: turkInfo.assignmentId,
+	      hitID: turkInfo.hitId,
+	      iterationName: 'testing'
+	    })
+	    console.log(trialData)
+	    socket.emit('currentData', packet);
+	  },
+	  on_finish: function() {
+	    console.log(jsPsych.data.get().values());
+            jsPsych.turk.submitToTurk({
+	      'utterances' : jsPsych.data.get().select('utterance').values,
+	      'rt' : jsPsych.data.get().select('rt').values,
+	      'target_type' : jsPsych.data.get().select('target_type').values,
+	      'competitor_type' : jsPsych.data.get().select('competitor_type').values,
+	      'target' : jsPsych.data.get().select('target').values,
+	    })
+            jsPsych.data.displayData();
+	  },
+          show_progress_bar: true,
+	  preload_images: _.map(all_tangrams, 'target')
+	})
+      }
+    </script>
+</html>

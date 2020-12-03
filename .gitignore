@@ -1,4 +1,8 @@
 *-1.pdf
+node_modules/
+*.zip
+credentials.py
+mturk
 *~
 __pycache__
 .ipynb_checkpoints
@@ -7,9 +11,6 @@ logo.rgb.maroon.jpg
 conceptual_pacts.csv
 cogsci2020.tex
 parentsscaffold_0203.pdf
-experiments/comprehension/node_modules/*
-experiments/comprehension/mturk/*
-experiments/ref_game/node_modules/*
 *.log
 data/*
 !*/deidentified
