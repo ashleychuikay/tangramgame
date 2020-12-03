@@ -68,6 +68,7 @@ library(effectsize)
 library(glue)
 library(tidyverse)
 library(tidytext)
+library(textstem)
 
 theme_set(theme_few(base_size = 10) + theme(legend.position = "none"))
 
@@ -768,8 +769,10 @@ d.prod <- d.prod.raw %>%
   mutate(utterance = str_to_lower(utterance),
          utterance = str_trim(utterance),
          utterance = str_remove_all(utterance, pattern = ' '),
-         utt_length = str_length(utterance)) 
+         utt_length = str_length(utterance),
+         clean_utt = lemmatize_words(utterance))
 
+write.csv(d.prod, "data/production/pilot_data_lemmatized.csv")
   
 ```
 ## Response times reflect familiarity and context
@@ -792,6 +795,7 @@ ggplot(d.prod, aes(x = target_type, y = log(rt), color = competitor_type)) +
   geom_boxplot() +
   theme(legend.position = 'top')
 ```
+
 ```{r}
 d.prod %>%
   lm(log(rt) ~ target_type * competitor_type, 
