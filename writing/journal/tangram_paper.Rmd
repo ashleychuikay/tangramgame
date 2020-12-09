@@ -773,6 +773,10 @@ d.prod <- d.prod.raw %>%
          clean_utt = lemmatize_words(utterance))
 
 write.csv(d.prod, "data/production/pilot_data_lemmatized.csv")
+
+d.prod.clean <- read_csv('../../data/production/pilot_data_clean.csv') %>%
+  filter(utt_length > 1) %>%
+  mutuate(clean_utt = lemmatize_words(clean_utt))
   
 ```
 ## Response times reflect familiarity and context
