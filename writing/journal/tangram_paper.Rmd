@@ -69,6 +69,7 @@ library(glue)
 library(tidyverse)
 library(tidytext)
 library(textstem)
+library(entropy)
 
 theme_set(theme_few(base_size = 10) + theme(legend.position = "none"))
 
@@ -752,7 +753,7 @@ We confirmed this observation with a mixed-effects model including all possible 
 We ran a production experiment.
 
 ```{r}
-d.prod.raw <- read_csv('../../data/production/pilot_data.csv')
+d.prod.raw <- read_csv(here("data/production/pilot_data.csv"))
 
 complete_games <- d.prod.raw %>%
   group_by(anonymized_id) %>%
@@ -774,9 +775,9 @@ d.prod <- d.prod.raw %>%
 
 write.csv(d.prod, "data/production/pilot_data_lemmatized.csv")
 
-d.prod.clean <- read_csv('../../data/production/pilot_data_clean.csv') %>%
-  filter(utt_length > 1) %>%
-  mutuate(clean_utt = lemmatize_words(clean_utt))
+d.prod.clean <- read_csv(here("data/production/pilot_data_clean.csv")) %>%
+  filter(utt_length > 1) #%>%
+  #mutate(clean_utt = lemmatize_words(clean_utt))
   
 ```
 ## Response times reflect familiarity and context
@@ -786,7 +787,7 @@ We examined log response times.
 ```{r}
 # overall RT distribution
 
-d.prod %>%
+d.prod.clean %>%
   mutate(logged_rt = log(rt)) %>%
   gather(measure, value, logged_rt, rt) %>%
   ggplot(aes(x = value)) +
@@ -795,13 +796,13 @@ d.prod %>%
 ```
   
 ```{r}
-ggplot(d.prod, aes(x = target_type, y = log(rt), color = competitor_type)) +
+ggplot(d.prod.clean, aes(x = target_type, y = log(rt), color = competitor_type)) +
   geom_boxplot() +
   theme(legend.position = 'top')
 ```
 
 ```{r}
-d.prod %>%
+d.prod.clean %>%
   lm(log(rt) ~ target_type * competitor_type, 
      data = .) %>%
   tidy()
@@ -810,7 +811,7 @@ d.prod %>%
 
 ```{r}
 dodge = position_dodge(0.9)
-d.prod %>%
+d.prod.clean %>%
   group_by(target_type, competitor_type) %>%
   tidyboot_mean(utt_length) %>%
   ggplot(aes(x = target_type, y = empirical_stat, fill = competitor_type)) +
@@ -827,7 +828,7 @@ We considered several measures of codability/overlap:
 * codeability (what proportion of people provided the most common label, if there were 40 labels and 20 were 'bird', this would be 50%)
 
 ```{r}
-d.prod %>%
+d.prod.clean %>%
   group_by(target_type, competitor_type, utterance, target) %>%
   tally() %>%
   arrange(target) %>%
@@ -845,9 +846,41 @@ d.prod %>%
     geom_bar(stat = 'identity', position=dodge) +
     facet_grid(measure ~. , scales='free')
 
-ggsave('variability_measures.pdf', width = 10, height = 10, unit = 'in')
+ggsave('variability_measures_clean.pdf', width = 10, height = 10, unit = 'in')
 ```
 
+```{r comparing-distributions}
+kl_drop <- function(df, x1, x2) {
+  x1 <- enquo(x1)
+  x2 <- enquo(x2)
+  # 
+  df %>%
+    filter(!!x1 != 0, !!x2 != 0) %>%
+    summarise(kl = KL.empirical(!!x1, !!x2)) %>%
+    pull(kl)
+}
+
+kls <- d.prod.clean %>%
+  count(target_type, competitor_type, target, clean_utt) %>%
+  complete(nesting(target_type, target), competitor_type, clean_utt, 
+           fill = list(n = 0)) %>%
+  pivot_wider(names_from = competitor_type, values_from = n) %>%
+  group_by(target_type, target) %>%
+  nest() %>%
+  mutate(close_far = map(data, ~kl_drop(.x,close, far)),
+         isolated_far = map(data, ~kl_drop(.x,isolated, far)),
+         isolated_close = map(data, ~kl_drop(.x, close, isolated))) %>%
+  unnest(cols = c(close_far, isolated_far, isolated_close)) %>%
+  select(-data) %>%
+  pivot_longer(cols = c(close_far, isolated_far, isolated_close), 
+               names_to = "comparison", values_to = "kl")
+
+
+ggplot(kls, aes(x = comparison, y = kl)) + 
+  facet_wrap(~ target_type) + 
+  geom_boxplot()
+
+```
 # Measuring similarity within participant
 
 * within-participant version: For a particular participant, measure whether they use the same word across competition_type conditions for same targets. 
@@ -861,9 +894,11 @@ normalized_lv <- function(s1, s2) {
   return(lv_dist / maxlength)
 }
 
-d.prod %>%
-  select(anonymized_id, target, target_type, competitor_type, utterance) %>%
-  group_by(anonymized_id, target_type, target) %>%
+indiv_measures <- d.prod.clean %>%
+  pivot_longer(cols = c(utterance, clean_utt), 
+               names_to = "type", values_to = "utterance") %>%
+  select(anonymized_id, target, target_type, competitor_type, type, utterance) %>%
+  group_by(anonymized_id, target_type, target, type) %>%
   spread(competitor_type, utterance) %>%
   filter(!is.na(close), !is.na(far), !is.na(isolated)) %>%
   mutate(close_far.distance = normalized_lv(close, far),
@@ -873,7 +908,7 @@ d.prod %>%
          close_isolated.match = close == isolated,
          far_isolated.match = far == isolated) %>%
   gather(pair, distance, close_far.distance:far_isolated.match) %>%
-  group_by(target_type, pair) %>%
+  group_by(target_type, pair, type) %>%
   tidyboot_mean(distance) %>%
   separate(pair, sep = '\\.', into = c('pair', 'measure')) %>%
   arrange(measure)
