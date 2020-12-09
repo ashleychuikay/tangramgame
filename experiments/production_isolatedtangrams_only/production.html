@@ -7,6 +7,7 @@
     <script src="jspsych-6.1.0/plugins/jspsych-html-button-response.js"></script>
     <script src="jspsych-6.1.0/plugins/jspsych-survey-text.js"></script>
     <script src="jspsych-6.1.0/plugins/jspsych-external-html.js"></script>
+    <script src="images/imgs.js"></script>    
     <script type="text/javascript" src="consent/consent.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="jspsych-6.1.0/css/jspsych.css"></link>
@@ -27,7 +28,8 @@
 
 	/* create timeline */
 	var timeline = [];
-
+        var nTrials = 30;
+        var tangramSubset = jsPsych.randomization.sampleWithoutReplacement(all_tangrams, nTrials)
 
 	// reCAPTCHA object
 	// var recaptcha = {
@@ -72,32 +74,6 @@
 	  post_trial_gap: 500
 	};
 
-	var all_tangrams = [
-          {'target': "images/A1.jpg"},
-          {'target': "images/A2.jpg"},
-          {'target': "images/B1.jpg"},
-          {'target': "images/C1.jpg"},
-          {'target': "images/C2.jpg"},
-          {'target': "images/D1.jpg"},
-          {'target': "images/E1.jpg"},
-          {'target': "images/F1.jpg"},
-          {'target': "images/G1.jpg"},
-          {'target': "images/H1.jpg"},
-          {'target': "images/I1.jpg"},
-          {'target': "images/J1.jpg"},
-          {'target': "images/K1.jpg"},
-          {'target': "images/L1.jpg"},
-          {'target': "images/M1.jpg"},
-          {'target': "images/N1.jpg"},
-          {'target': "images/O1.jpg"},
-          {'target': "images/P1.jpg"},
-          {'target': "images/R1.jpg"},
-          {'target': "images/T1.jpg"},
-          {'target': "images/V1.jpg"},
-          {'target': "images/W1.jpg"},
-          {'target': "images/Y1.jpg"}
-	];
-
 	var iso_trial = {
 	  type: "survey-text",
 	  preamble: function(){
@@ -115,7 +91,7 @@
 	  post_trial_gap: 500
 	};
 
-        _.forEach(all_tangrams, tangram => {
+        _.forEach(tangramSubset, tangram => {
           timeline.push({
 	    timeline: [iso_trial],
 	    timeline_variables: [tangram],
@@ -156,7 +132,7 @@
             jsPsych.data.displayData();
 	  },
           show_progress_bar: true,
-	  preload_images: _.map(all_tangrams, 'target')
+	  preload_images: _.map(tangramSubset, 'target')
 	})
       }
     </script>
