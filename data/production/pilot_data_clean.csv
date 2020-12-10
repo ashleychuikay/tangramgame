@@ -184,7 +184,7 @@
 637,testing,dancingman,8713,tangram,isolated,A1.jpg,A2.jpg,survey-text,6,71932,10,10,dancing
 640,testing,somethingflying,13733,tangram,isolated,F1.jpg,W1.jpg,survey-text,7,86169,10,15,flying
 641,testing,standingperson,9788,tangram,isolated,K1.jpg,T1.jpg,survey-text,8,96461,10,14,standing
-643,testing,sittingwoman,6306,tangram,isolated,G1.jpg,M1.jpg,survey-text,9,103271,10,12,sitting
+643,testing,sittingwoman,6306,tangram,isolated,G1.jpg,M1.jpg,survey-text,9,103271,10,12,sittingwoman
 646,testing,car,6694,familiar,close,sedan.jpg,sportscar.jpg,survey-text,11,114668,10,3,car
 648,testing,goldenfish,7236,familiar,close,goldfish.jpg,swordfish.jpg,survey-text,12,122412,10,10,goldenfish
 650,testing,bird,4772,familiar,close,sparrow.jpg,eagle.jpg,survey-text,13,127694,10,4,bird
@@ -217,8 +217,8 @@
 685,testing,sittingperson,8812,tangram,far,E1.jpg,C2.jpg,survey-text,43,289143,10,13,sitting
 686,testing,sittingwoman,4753,tangram,far,G1.jpg,N1.jpg,survey-text,44,294402,10,12,sitting
 687,testing,sittingperson,12204,tangram,far,H1.jpg,A2.jpg,survey-text,45,307111,10,13,sitting
-688,testing,sittingwoman,6879,tangram,close,G1.jpg,M1.jpg,survey-text,47,317821,10,12,sitting
-689,testing,sittingman,4182,tangram,close,E1.jpg,F1.jpg,survey-text,48,322511,10,10,sitting
+688,testing,sittingwoman,6879,tangram,close,G1.jpg,M1.jpg,survey-text,47,317821,10,12,sittingwoman
+689,testing,sittingman,4182,tangram,close,E1.jpg,F1.jpg,survey-text,48,322511,10,10,sittingman
 690,testing,runningone,6337,tangram,close,A1.jpg,A2.jpg,survey-text,49,329358,10,10,running
 691,testing,sittingone,4583,tangram,close,H1.jpg,Y1.jpg,survey-text,50,334449,10,10,sitting
 692,testing,runningone,5497,tangram,close,F1.jpg,W1.jpg,survey-text,51,340449,10,10,running
@@ -694,14 +694,14 @@
 178,testing,dress,3837.165,familiar,far,poloshirt.jpg,dress.jpg,survey-text,4,1798292,25,5,dress
 180,testing,animal,7823.695,familiar,far,germanshepherd.jpg,cow.jpg,survey-text,5,1806624,25,6,animal
 182,testing,birds,5110.245,familiar,far,sparrow.jpg,squirrel.jpg,survey-text,6,1812243,25,5,bird
-187,testing,trasporter,11013.42,familiar,far,sedan.jpg,firetruck.jpg,survey-text,7,1823781,25,10,trasporter
+187,testing,trasporter,11013.42,familiar,far,sedan.jpg,firetruck.jpg,survey-text,7,1823781,25,10,transporter
 192,testing,tables,5600.875,familiar,far,diningtable.jpg,wardrobe.jpg,survey-text,8,1829889,25,6,table
 195,testing,animal,5485.695,familiar,far,grizzlybear.jpg,lion.jpg,survey-text,9,1835887,25,6,animal
 200,testing,art,8057.925,tangram,close,E1.jpg,F1.jpg,survey-text,11,1846358,25,3,art
 202,testing,man,14355.265,tangram,close,K1.jpg,T1.jpg,survey-text,12,1861221,25,3,man
 206,testing,walk,10941.265,tangram,close,A1.jpg,A2.jpg,survey-text,13,1872690,25,4,walk
 209,testing,dance,8638.985,tangram,close,F1.jpg,W1.jpg,survey-text,14,1881854,25,5,dance
-213,testing,standingman,8723.165,tangram,close,H1.jpg,Y1.jpg,survey-text,15,1891442,25,11,standing
+213,testing,standingman,8723.165,tangram,close,H1.jpg,Y1.jpg,survey-text,15,1891442,25,11,standingman
 215,testing,sad,5112.445,tangram,close,B1.jpg,P1.jpg,survey-text,16,1897062,25,3,sad
 219,testing,beggar,12242.86,tangram,close,I1.jpg,J1.jpg,survey-text,17,1909812,25,6,beggar
 224,testing,sad,12243.515,tangram,close,G1.jpg,M1.jpg,survey-text,18,1922566,25,3,sad
