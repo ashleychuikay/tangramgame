@@ -111,7 +111,7 @@ const handleInvalidID = function(req, res) {
 function checkPreviousParticipant (workerId, callback) {
   const p = {'wID': workerId};
   const postData = {
-    dbname: 'color-ref',
+    dbname: 'tangramgame',
     query: p,
     projection: {'_id': 1}
   };
