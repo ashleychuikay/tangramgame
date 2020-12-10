@@ -7,11 +7,11 @@
     <script src="jspsych-6.1.0/plugins/jspsych-html-button-response.js"></script>
     <script src="jspsych-6.1.0/plugins/jspsych-survey-text.js"></script>
     <script src="jspsych-6.1.0/plugins/jspsych-external-html.js"></script>
+    <script src="jspsych-6.1.0/plugins/jspsych-survey-html-form.js"></script>    
     <script src="images/imgs.js"></script>    
     <script type="text/javascript" src="consent/consent.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="jspsych-6.1.0/css/jspsych.css"></link>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="/socket.io/socket.io.js"></script>
   </head>
   <body></body>
@@ -31,34 +31,19 @@
         var nTrials = 30;
         var tangramSubset = jsPsych.randomization.sampleWithoutReplacement(all_tangrams, nTrials)
 
-	// reCAPTCHA object
-	// var recaptcha = {
-	//   type: "external-html",
-	//   url: "recaptcha.html",
-	//   cont_btn: "submit_button",
-	//   execute_script: true
-	// };
-	// timeline.push(recaptcha);
-
 	// consent form
-	var consent = {
+	timeline.push({
 	  type:'external-html',
 	  url: "consent/consent.html",
 	  cont_btn: "start"
-	};
-	timeline.push(consent);
+	});
 
 	// trials
 
 	var instructions = {
 	  type: "html-button-response",
-	  stimulus: "<p>In this experiment, you will see one or more pictures on the screen at a time.</p>\
-                     <p>One of the objects will be in a <span style='color:blue'>blue box</span>.</p>\
-                     <p>Please describe this object as best as you can in <strong>one word</strong>.</p>\
-                     <p>If there are multiple objects, describe the object in the \
-                        <span style='color:blue'>blue box</span> \
-                        so that someone else could guess which one of the two objects is in the \
-                        <span style='color:blue'>blue box</span>.</p>",
+	  stimulus: "<p>In this experiment, you will see a series of pictures on the screen.</p>\
+                     <p>Please describe each picture in <strong>one word</strong>.</p>",
 	  choices: ['Start'],
 	  data: {test_part: 'setup'},
 	  post_trial_gap: 1000
@@ -77,14 +62,13 @@
 	var iso_trial = {
 	  type: "survey-text",
 	  preamble: function(){
-            var target = ("<img style='border: 10px solid blue; margin: 50px' src='" +
+            var target = ("<img src='" +
 			  jsPsych.timelineVariable('target', true) +
 			  "' height='200px'>");
             return target;
 	  },
 	  questions: [{
-            prompt: "Describe the object in the <span style='color:blue'>blue border</span>\
-                     in <strong>one word</strong>",
+            prompt: "Describe the object in <strong>one word</strong>",
             required: true,
             columns: 20
           }],
@@ -111,7 +95,7 @@
 	    console.log('here');
 	    var packet = _.extend({}, trialData, {
 	      dbname: 'tangramgame',
-	      colname: 'production',
+	      colname: 'production-tangramonly',
 	      wID: turkInfo.workerId,
 	      aID: turkInfo.assignmentId,
 	      hitID: turkInfo.hitId,
