@@ -29,6 +29,7 @@
 	/* create timeline */
 	var timeline = [];
         var nTrials = 30;
+        var catch_index = 15;
         var tangramSubset = jsPsych.randomization.sampleWithoutReplacement(all_tangrams, nTrials)
 
 	// consent form
@@ -75,7 +76,28 @@
 	  post_trial_gap: 500
 	};
 
-        _.forEach(tangramSubset, tangram => {
+        var catch_trial = {
+          timeline: [{
+	    type: "survey-text",
+	    preamble: function(){
+              var target = ("<img src='images/catch_trial.jpg'" +
+			    "' height='200px'>");
+              return target;
+	    },
+	    questions: [{
+              prompt: "Describe the object in <strong>one word</strong>",
+              required: true,
+              columns: 20
+            }],
+	    post_trial_gap: 500
+          }],
+          timeline_variables: [{target: 'catch_trial.jpg'}],
+          data: {target_type: 'catch'}
+        }
+        
+        _.forEach(tangramSubset, (tangram, i) => {
+          if(i == catch_index)
+            timeline.push(catch_trial)
           timeline.push({
 	    timeline: [iso_trial],
 	    timeline_variables: [tangram],
