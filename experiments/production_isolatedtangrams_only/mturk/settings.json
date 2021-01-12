@@ -1,14 +1,14 @@
 {
   "_cosubSpecVersion": 2,
-  "Url": "https://cogtoolslab.org:8882/production.html",
+  "Url": "https://cogtoolslab.org:8887/production.html",
   "Title": "Naming game",
-  "Description": "We'll show you some pictures and ask you to use one word to describe them. Takes less than 5 minutes!",
+  "Description": "We'll show you some pictures and ask you to use one word to describe them. Takes about 3 minutes!",
   "Keywords": "research, color, language, cognitive science, princeton",
   "Batch": true,
   "FrameHeight": 850,
-  "AssignmentDuration": "45 minutes",
+  "AssignmentDuration": "30 minutes",
   "AutoApprovalDelay": "5 minutes",
-  "Reward": "1.00",
+  "Reward": "0.6",
   "QualificationRequirements": [
     {
       "Name": "Worker_Locale",
@@ -23,7 +23,7 @@
       "Name": "Worker_PercentAssignmentsApproved",
       "Comparator": "GreaterThan",
       "IntegerValues": [
-        97
+        98
       ]
     }
   ]
