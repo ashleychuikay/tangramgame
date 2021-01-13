@@ -1,6 +1,6 @@
 To run locally,
 
-1. put your local `/audio/` directory at `/comprehension/static/audio/`
+1. put your local `/audio/` directory at `/comprehension/static/audio/` (files too big to store in github)
 2. run `npm install` in the `/comprehension/` directory
 3. run `node app.js` in the `/comprehension/` directory
 4. go to `http://localhost:8887/comprehension.html` in the browser
