@@ -914,22 +914,23 @@ indiv_measures <- d.prod.clean %>%
   arrange(measure)
 ```
 
-* population version: does entire distribution shift?
 
 # Tangram label norming 
 
 Our current hypothesis is that we're not getting context effects for adults in this pilot because even the 'close' contexts aren't close along the actual representational dimensions people are using to label things. So if their labeling prior in isolation is to say it's 'sad', that's still highly informative in the close context because the distractor doesn't look sad at all and there's no pressure being put on the prior (kids likely have very different priors, e.g. 'guy' or 'person' with high probability, so these same contexts probably would put pressure on them). To do this in adults, we probably need to elicit priors in isolation for more tangrams (e.g. all 40) and then design better 'close' contexts where we put together tangrams where adults have very similar priors. Maybe the same for kids.
 
 ```{r}
-# read_csv(here('./data/production_tangram_only/dataFromMongo.csv')) %>%
-#   filter(iterationName == 'full_sample') %>%
-#   filter(trial_type == 'survey-text') %>%
-#   mutate(wID = as.numeric(as.factor(wID))) %>%
-#   write_csv(file = here('./data/production_tangram_only/anonymizedDataFromMongo.csv'))
+# take the first 31 rows of each wID. 
+# gets the first game of people who did it twice -- Mongo returns objectIDs in order of insertion date
+d.raw.labels <- read_csv(here('./data/production_tangram_only/anonymizedDataFromMongo.csv')) 
 
-d.raw.labels <- read_csv(here('./data/production_tangram_only/anonymizedDataFromMongo.csv'))
+initialAssignmentIDs <- d.raw.labels %>%
+  group_by(wID) %>%
+  summarize(firstAssignmentID = first(aID)) %>%
+  pull(firstAssignmentID)
 
 complete_games <- d.raw.labels %>%
+  filter(aID %in% initialAssignmentIDs) %>%
   group_by(wID) %>%
   tally() %>%
   filter(n == 31) %>%
@@ -944,6 +945,7 @@ passed_catch <- d.raw.labels %>%
 d <- d.raw.labels %>%
   filter(wID %in% complete_games) %>%
   filter(wID %in% passed_catch) %>%
+  #filter(aID %in% initialAssignmentIDs) %>%
   filter(target_type != 'catch') %>%
   mutate(clean_utt = tolower(utterance)) %>%
   mutate(clean_utt = str_replace_all(clean_utt, regex("\\W+"), ""))
@@ -956,7 +958,7 @@ d %>%
   group_by(target) %>%
   tally() %>%
   ggplot(aes(x = n)) +
-    geom_histogram(bins = 10)
+    geom_histogram(bins = 5)
 ```
 
 Find most similar sets by JS/KL divergence
