@@ -963,14 +963,49 @@ d %>%
 
 Find most similar sets by JS/KL divergence
 
+```{r get-pair-kl}
+get_kl_data <- function(df, tangram1, tangram2) {
+  df %>%
+    filter(target == tangram1) %>%
+    select(clean_utt, n) %>%
+    rename(target_n = n) %>%
+    left_join(df %>%
+                filter(target == tangram2) %>%
+                select(clean_utt, n),
+              by = "clean_utt") %>%
+    rename(comparison_n = n)
+}
+
+```
+
 ```{r}
 # TODO: take all pairwise comparisons
-d %>%
+kl_unput_data <- d %>%
   count(target, clean_utt) %>%
   complete(target, clean_utt, 
            fill = list(n = 0)) %>%
   pivot_wider(names_from = target, values_from = n)
 
+
+pairs <- d %>% distinct(target) %>%
+  pull() %>%
+  combn(2) %>%
+  t() %>%
+  as_tibble(.name_repair = "unique") %>%
+  rename(tangram1 = `...1`, tangram2 = `...2`) %>%
+  mutate(target_id = tangram1,
+         comparison_id = tangram2) %>%
+  group_by(target_id, comparison_id) %>%
+  nest() %>%
+  mutate(kl = map(data, ~get_kl_data(kl_data, .x$tangram1, .x$tangram2) %>%
+                    kl_drop(., target_n, comparison_n))) %>%
+  select(-data) %>%
+  unnest(cols = c(kl))
+```
+
+```{r plot kl} 
+ggplot(pairs, aes(x = target_id, y = comparison_id, fill = kl)) + 
+  geom_tile()
 ```
 
 # adversarial context design
