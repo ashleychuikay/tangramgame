@@ -855,8 +855,8 @@ kl_drop <- function(df, x1, x2) {
   x2 <- enquo(x2)
   # 
   df %>%
-    filter(!!x1 != 0, !!x2 != 0) %>%
-    summarise(kl = KL.empirical(!!x1, !!x2)) %>%
+    filter(!!x1 != 0 | !!x2 != 0) %>%
+    summarise(kl = KL.shrink(!!x1, !!x2)) %>%
     pull(kl)
 }
 
@@ -976,15 +976,27 @@ get_kl_data <- function(df, tangram1, tangram2) {
     rename(comparison_n = n)
 }
 
+kl_drop <- function(df, x1, x2) {
+  x1 <- enquo(x1)
+  x2 <- enquo(x2)
+  # 
+  df %>%
+    filter(!!x1 != 0 | !!x2 != 0) %>%
+    summarise(kl = KL.shrink(!!x1, !!x2)) %>%
+    pull(kl)
+}
+
 ```
 
 ```{r}
 # TODO: take all pairwise comparisons
-kl_unput_data <- d %>%
+kl_input_data <- d %>%
   count(target, clean_utt) %>%
   complete(target, clean_utt, 
-           fill = list(n = 0)) %>%
-  pivot_wider(names_from = target, values_from = n)
+           fill = list(n = 0)) 
+
+#%>%
+#  pivot_wider(names_from = target, values_from = n)
 
 
 pairs <- d %>% distinct(target) %>%
@@ -997,10 +1009,41 @@ pairs <- d %>% distinct(target) %>%
          comparison_id = tangram2) %>%
   group_by(target_id, comparison_id) %>%
   nest() %>%
-  mutate(kl = map(data, ~get_kl_data(kl_data, .x$tangram1, .x$tangram2) %>%
+  mutate(kl = map(data, ~get_kl_data(kl_input_data, .x$tangram1, .x$tangram2) %>%
                     kl_drop(., target_n, comparison_n))) %>%
   select(-data) %>%
   unnest(cols = c(kl))
+
+symmetric_pairs <- pairs %>%
+  mutate(tmp = target_id, 
+          target_id = comparison_id, 
+          comparison_id = tmp) %>%
+  select(-tmp) %>%
+  bind_rows(pairs)
+
+```
+
+```{r}
+ggplot(pairs, aes(x = kl)) + 
+  geom_histogram()
+```
+
+```{r}
+pilot_items <- d.prod.clean %>% 
+  filter(target_type == "tangram", competitor_type != "isolated") %>%
+  distinct(target, foil, competitor_type) %>%
+  rename(target_id = target, comparison_id = foil) %>%
+  left_join(symmetric_pairs, by = c("target_id", "comparison_id"))
+
+
+pilot_items %>%
+  group_by(competitor_type) %>%
+  tidyboot_mean(kl)
+```
+
+```{r}
+pairs %>%
+  arrange(kl) 
 ```
 
 ```{r plot kl} 
