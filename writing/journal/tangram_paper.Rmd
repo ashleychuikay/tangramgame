@@ -964,7 +964,7 @@ d %>%
 Find most similar sets by JS/KL divergence
 
 ```{r get-pair-kl}
-get_kl_data <- function(df, tangram1, tangram2) {
+get_pair_data <- function(df, tangram1, tangram2) {
   df %>%
     filter(target == tangram1) %>%
     select(clean_utt, n) %>%
@@ -995,10 +995,6 @@ kl_input_data <- d %>%
   complete(target, clean_utt, 
            fill = list(n = 0)) 
 
-#%>%
-#  pivot_wider(names_from = target, values_from = n)
-
-
 pairs <- d %>% distinct(target) %>%
   pull() %>%
   combn(2) %>%
@@ -1008,9 +1004,13 @@ pairs <- d %>% distinct(target) %>%
   mutate(target_id = tangram1,
          comparison_id = tangram2) %>%
   group_by(target_id, comparison_id) %>%
-  nest() %>%
-  mutate(kl = map(data, ~get_kl_data(kl_input_data, .x$tangram1, .x$tangram2) %>%
-                    kl_drop(., target_n, comparison_n))) %>%
+  nest() 
+
+kl.pairs <- pairs %>%
+  mutate(kl = map(data, ~ {
+    get_pair_data(kl_input_data, .x$tangram1, .x$tangram2) %>%
+      kl_drop(., target_n, comparison_n))
+    })) %>%
   select(-data) %>%
   unnest(cols = c(kl))
 
@@ -1028,27 +1028,78 @@ ggplot(pairs, aes(x = kl)) +
   geom_histogram()
 ```
 
+# Try a simpler, non-KL measure of overlap
+
+```{r}
+check_overlap <- function(df, x1, x2) {
+  x1 <- enquo(x1)
+  x2 <- enquo(x2)
+  df %>%
+    filter(!!x1 > 0) %>%
+    mutate(prop = !!x1 / sum(!!x1)) %>%
+    filter(!!x2 > 0) %>%
+    summarise(overlap = sum(prop))
+}
+  
+overlap <- pairs %>%
+  # filter(target_id == 'P1.jpg') %>%
+  # filter(comparison_id == 'C1.jpg') %>%
+  ungroup() %>%
+  # slice_head(n = 1) %>%
+  mutate(overlap = map(data, ~ {
+    get_pair_data(kl_input_data, .x$tangram1, .x$tangram2) %>%
+    check_overlap(., target_n, comparison_n)
+  })) %>%
+  select(-data) %>%
+  unnest(cols = overlap)
+symmetric_overlap <- overlap %>%  
+  mutate(tmp = target_id, 
+          target_id = comparison_id, 
+          comparison_id = tmp) %>%
+  select(-tmp) %>%
+  bind_rows(overlap)
+```
+
+look at all pairwise comparisons...
+
+```{r plot kl} 
+ggplot(symmetric_overlap, aes(x = target_id, y = comparison_id, fill = log1p(overlap))) + 
+  geom_tile() +
+  theme(legend.position = 'right')
+```
+
+```{r}
+d %>%
+  group_by(target, clean_utt) %>%
+  tally() %>%
+  arrange(target) %>%
+  group_by(target_type, competitor_type) %>%
+  mutate(total_labels = sum(n))
+```
+
 ```{r}
 pilot_items <- d.prod.clean %>% 
   filter(target_type == "tangram", competitor_type != "isolated") %>%
   distinct(target, foil, competitor_type) %>%
   rename(target_id = target, comparison_id = foil) %>%
-  left_join(symmetric_pairs, by = c("target_id", "comparison_id"))
+  left_join(symmetric_overlap, by = c("target_id", "comparison_id"))
 
 
 pilot_items %>%
   group_by(competitor_type) %>%
-  tidyboot_mean(kl)
+  tidyboot_mean(overlap)
+```
+
+```{r}
+pilot_items %>%
+  ggplot(aes(x = competitor_type, y = overlap)) +
+    geom_jitter(width = .1, height = .1) +
+    geom_boxplot(alpha = .5)
 ```
 
 ```{r}
 pairs %>%
   arrange(kl) 
-```
-
-```{r plot kl} 
-ggplot(pairs, aes(x = target_id, y = comparison_id, fill = kl)) + 
-  geom_tile()
 ```
 
 # adversarial context design
