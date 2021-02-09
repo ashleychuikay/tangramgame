@@ -968,12 +968,12 @@ Find most similar sets by JS/KL divergence
 get_pair_data <- function(df, tangram1, tangram2) {
   df %>%
     filter(target == tangram1) %>%
-    select(clean_utt, n) %>%
+    select(lemmatized_utt, n) %>%
     rename(target_n = n) %>%
     left_join(df %>%
                 filter(target == tangram2) %>%
-                select(clean_utt, n),
-              by = "clean_utt") %>%
+                select(lemmatized_utt, n),
+              by = "lemmatized_utt") %>%
     rename(comparison_n = n)
 }
 
@@ -992,8 +992,8 @@ kl_drop <- function(df, x1, x2) {
 ```{r}
 # TODO: take all pairwise comparisons
 kl_input_data <- d %>%
-  count(target, clean_utt) %>%
-  complete(target, clean_utt, 
+  count(target, lemmatized_utt) %>%
+  complete(target, lemmatized_utt, 
            fill = list(n = 0)) 
 
 pairs <- d %>% distinct(target) %>%
@@ -1031,7 +1031,7 @@ ggplot(pairs, aes(x = kl)) +
 
 # Try a simpler, non-KL measure of overlap
 
-```{r}
+```{r overlap helpers}
 check_overlap <- function(df, x1, x2) {
   x1 <- enquo(x1)
   x2 <- enquo(x2)
@@ -1042,28 +1042,73 @@ check_overlap <- function(df, x1, x2) {
     summarise(overlap = sum(prop))
 }
   
-overlap <- pairs %>%
-  # filter(target_id == 'P1.jpg') %>%
-  # filter(comparison_id == 'C1.jpg') %>%
-  ungroup() %>%
-  # slice_head(n = 1) %>%
-  mutate(overlap = map(data, ~ {
-    get_pair_data(kl_input_data, .x$tangram1, .x$tangram2) %>%
-    check_overlap(., target_n, comparison_n)
-  })) %>%
-  select(-data) %>%
-  unnest(cols = overlap)
-symmetric_overlap <- overlap %>%  
-  mutate(tmp = target_id, 
-          target_id = comparison_id, 
-          comparison_id = tmp) %>%
-  select(-tmp) %>%
-  bind_rows(overlap)
+flip_target_competitior <- function(df, x1, x2) {
+  x1 <- enquo(x1)
+  x2 <- enquo(x2)
+  
+  df %>%
+    mutate(tmp = !!x1, 
+           !!x1 := !!x2, 
+          !!x2 := tmp) %>%
+    select(-tmp)
+}
+```
+
+```{r}
+get_average_overlap <- function(input_data) {
+  flipped_pairs <- pairs %>%
+    #flip_target_competitior(.,target_id, comparison_id) %>%
+    mutate(data = map(data, ~flip_target_competitior(.x, tangram1, tangram2)))
+  
+  symmetric_overlap <- pairs %>%
+    bind_rows(flipped_pairs) %>%
+    ungroup() %>%
+    # slice_head(n = 1) %>%
+    mutate(overlap = map(data, ~ {
+      get_pair_data(input_data, .x$tangram1, .x$tangram2) %>%
+      check_overlap(., target_n, comparison_n)
+    })) %>%
+    select(-data) %>%
+    unnest(cols = overlap)
+  
+  symmetric_overlap %>%
+    group_by(target_id, comparison_id) %>%
+    summarise(overlap = mean(overlap), n= n())
+}
+
+ps <- d %>%
+  distinct(wID)
+
+first_half <- d %>%
+  filter(wID %in% (slice(ps, 1:(n()/2)) %>% pull(wID))) %>%
+  count(target, lemmatized_utt) %>%
+  complete(target, lemmatized_utt, 
+           fill = list(n = 0)) %>%
+  get_average_overlap()
+
+second_half <- d %>%
+  filter(wID %in% (slice(ps, ((n()/2)+1):(n())) %>% pull(wID))) %>%
+  count(target, lemmatized_utt) %>%
+  complete(target, lemmatized_utt, 
+           fill = list(n = 0)) %>%
+  get_average_overlap()
+
+
+first_half %>%
+  rename(first_half = overlap) %>%
+  left_join(second_half, by = c("target_id", "comparison_id", "n")) %>%
+  summarise(cor = cor(first_half, overlap, method = "spearman")) %>%
+  summarise(cor = mean(cor, na.rm = T))
+
+
+
+
+
 ```
 
 look at all pairwise comparisons...
 
-```{r plot kl} 
+```{r plot-overlap} 
 ggplot(symmetric_overlap, aes(x = target_id, y = comparison_id, fill = log1p(overlap))) + 
   geom_tile() +
   theme(legend.position = 'right')
