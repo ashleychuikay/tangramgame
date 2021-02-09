@@ -947,8 +947,9 @@ d <- d.raw.labels %>%
   filter(wID %in% passed_catch) %>%
   #filter(aID %in% initialAssignmentIDs) %>%
   filter(target_type != 'catch') %>%
-  mutate(clean_utt = tolower(utterance)) %>%
-  mutate(clean_utt = str_replace_all(clean_utt, regex("\\W+"), ""))
+  mutate(clean_utt = tolower(utterance),
+         lemmatized_utt = lemmatize_words(clean_utt)) %>%
+  mutate(lemmatized_utt = str_replace_all(lemmatized_utt, regex("\\W+"), ""))
 ```
 
 How unbalanced is our sample across targets?
