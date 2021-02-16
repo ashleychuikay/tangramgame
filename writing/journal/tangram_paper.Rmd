@@ -780,6 +780,7 @@ d.prod.clean <- read_csv(here("data/production/pilot_data_clean.csv")) %>%
   #mutate(clean_utt = lemmatize_words(clean_utt))
   
 ```
+
 ## Response times reflect familiarity and context
 
 We examined log response times.
@@ -807,6 +808,7 @@ d.prod.clean %>%
      data = .) %>%
   tidy()
 ```
+
 ## Variability in labels 
 
 ```{r}
@@ -881,6 +883,7 @@ ggplot(kls, aes(x = comparison, y = kl)) +
   geom_boxplot()
 
 ```
+
 # Measuring similarity within participant
 
 * within-participant version: For a particular participant, measure whether they use the same word across competition_type conditions for same targets. 
@@ -920,9 +923,16 @@ indiv_measures <- d.prod.clean %>%
 Our current hypothesis is that we're not getting context effects for adults in this pilot because even the 'close' contexts aren't close along the actual representational dimensions people are using to label things. So if their labeling prior in isolation is to say it's 'sad', that's still highly informative in the close context because the distractor doesn't look sad at all and there's no pressure being put on the prior (kids likely have very different priors, e.g. 'guy' or 'person' with high probability, so these same contexts probably would put pressure on them). To do this in adults, we probably need to elicit priors in isolation for more tangrams (e.g. all 40) and then design better 'close' contexts where we put together tangrams where adults have very similar priors. Maybe the same for kids.
 
 ```{r}
+# anonymize raw csv
+read_csv(here('./data/norming/dataFromMongo.csv')) %>%
+  filter(iterationName %in% c('full_sample', 'full_sample2')) %>%
+  filter(trial_type == 'survey-text') %>%
+  mutate(wID = as.numeric(as.factor(wID))) %>%
+  write_csv(here('./data/norming/anonymizedDataFromMongo.csv'))
+
 # take the first 31 rows of each wID. 
 # gets the first game of people who did it twice -- Mongo returns objectIDs in order of insertion date
-d.raw.labels <- read_csv(here('./data/production_tangram_only/anonymizedDataFromMongo.csv')) 
+d.raw.labels <- read_csv(here('./data/norming/anonymizedDataFromMongo.csv')) 
 
 initialAssignmentIDs <- d.raw.labels %>%
   group_by(wID) %>%
@@ -945,10 +955,16 @@ passed_catch <- d.raw.labels %>%
 d <- d.raw.labels %>%
   filter(wID %in% complete_games) %>%
   filter(wID %in% passed_catch) %>%
-  #filter(aID %in% initialAssignmentIDs) %>%
   filter(target_type != 'catch') %>%
   mutate(clean_utt = tolower(utterance)) %>%
   mutate(clean_utt = str_replace_all(clean_utt, regex("\\W+"), ""))
+
+
+d %>%
+  group_by(target) %>%
+  tally() 
+
+
 ```
 
 How unbalanced is our sample across targets?
@@ -976,26 +992,14 @@ get_pair_data <- function(df, tangram1, tangram2) {
     rename(comparison_n = n)
 }
 
-kl_drop <- function(df, x1, x2) {
-  x1 <- enquo(x1)
-  x2 <- enquo(x2)
-  # 
-  df %>%
-    filter(!!x1 != 0 | !!x2 != 0) %>%
-    summarise(kl = KL.shrink(!!x1, !!x2)) %>%
-    pull(kl)
-}
-
-```
-
-```{r}
 # TODO: take all pairwise comparisons
-kl_input_data <- d %>%
+completed_data <- d %>%
   count(target, clean_utt) %>%
   complete(target, clean_utt, 
            fill = list(n = 0)) 
 
-pairs <- d %>% distinct(target) %>%
+pairs <- d %>% 
+  distinct(target) %>%
   pull() %>%
   combn(2) %>%
   t() %>%
@@ -1005,27 +1009,6 @@ pairs <- d %>% distinct(target) %>%
          comparison_id = tangram2) %>%
   group_by(target_id, comparison_id) %>%
   nest() 
-
-kl.pairs <- pairs %>%
-  mutate(kl = map(data, ~ {
-    get_pair_data(kl_input_data, .x$tangram1, .x$tangram2) %>%
-      kl_drop(., target_n, comparison_n))
-    })) %>%
-  select(-data) %>%
-  unnest(cols = c(kl))
-
-symmetric_pairs <- pairs %>%
-  mutate(tmp = target_id, 
-          target_id = comparison_id, 
-          comparison_id = tmp) %>%
-  select(-tmp) %>%
-  bind_rows(pairs)
-
-```
-
-```{r}
-ggplot(pairs, aes(x = kl)) + 
-  geom_histogram()
 ```
 
 # Try a simpler, non-KL measure of overlap
@@ -1047,11 +1030,12 @@ overlap <- pairs %>%
   ungroup() %>%
   # slice_head(n = 1) %>%
   mutate(overlap = map(data, ~ {
-    get_pair_data(kl_input_data, .x$tangram1, .x$tangram2) %>%
+    get_pair_data(completed_data, .x$tangram1, .x$tangram2) %>%
     check_overlap(., target_n, comparison_n)
   })) %>%
   select(-data) %>%
   unnest(cols = overlap)
+
 symmetric_overlap <- overlap %>%  
   mutate(tmp = target_id, 
           target_id = comparison_id, 
@@ -1069,21 +1053,11 @@ ggplot(symmetric_overlap, aes(x = target_id, y = comparison_id, fill = log1p(ove
 ```
 
 ```{r}
-d %>%
-  group_by(target, clean_utt) %>%
-  tally() %>%
-  arrange(target) %>%
-  group_by(target_type, competitor_type) %>%
-  mutate(total_labels = sum(n))
-```
-
-```{r}
 pilot_items <- d.prod.clean %>% 
   filter(target_type == "tangram", competitor_type != "isolated") %>%
   distinct(target, foil, competitor_type) %>%
   rename(target_id = target, comparison_id = foil) %>%
   left_join(symmetric_overlap, by = c("target_id", "comparison_id"))
-
 
 pilot_items %>%
   group_by(competitor_type) %>%
