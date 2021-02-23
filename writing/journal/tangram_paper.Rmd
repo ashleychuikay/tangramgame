@@ -1095,6 +1095,8 @@ first_half %>%
   summarise(cor = mean(cor, na.rm = T))
 
 overall <- d %>%
+  filter(!(target %in% c("R1.jpg", "O1.jpg"))) %>%
+  mutate(target = as.factor(target)) %>%
   count(target, lemmatized_utt) %>%
   complete(target, lemmatized_utt, 
            fill = list(n = 0)) %>%
@@ -1137,12 +1139,18 @@ highest and lowest overlap pairs
 ```{r overall overlap}
 
 dissimilar <- overall %>%
+  filter(!(target_id %in% c("R1.jpg", "O1.jpg"))) %>%
+  filter(!(comparison_id %in% c("R1.jpg", "O1.jpg"))) %>%
   arrange(overlap) %>%
   head(10)
 
 similar <- overall %>%
+  filter(!(target_id %in% c("R1.jpg", "O1.jpg"))) %>%
+  filter(!(comparison_id %in% c("R1.jpg", "O1.jpg"))) %>%
   arrange(overlap) %>%
   tail(10)
+
+#TODO: Tangrams that have high and low similarity matches
 
 ```
 
