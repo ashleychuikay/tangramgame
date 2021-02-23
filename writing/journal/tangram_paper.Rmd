@@ -1087,11 +1087,18 @@ second_half <- d %>%
            fill = list(n = 0)) %>%
   get_average_overlap()
 
+# correlation b/w split data
 first_half %>%
   rename(first_half = overlap) %>%
   left_join(second_half, by = c("target_id", "comparison_id", "n")) %>%
   summarise(cor = cor(first_half, overlap, method = "spearman")) %>%
   summarise(cor = mean(cor, na.rm = T))
+
+overall <- d %>%
+  count(target, lemmatized_utt) %>%
+  complete(target, lemmatized_utt, 
+           fill = list(n = 0)) %>%
+  get_average_overlap()
 ```
 
 look at all pairwise comparisons...
@@ -1124,6 +1131,19 @@ pilot_items %>%
 ```{r}
 pairs %>%
   arrange(kl) 
+```
+
+highest and lowest overlap pairs
+```{r overall overlap}
+
+dissimilar <- overall %>%
+  arrange(overlap) %>%
+  head(10)
+
+similar <- overall %>%
+  arrange(overlap) %>%
+  tail(10)
+
 ```
 
 # adversarial context design
