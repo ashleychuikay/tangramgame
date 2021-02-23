@@ -957,8 +957,8 @@ d <- d.raw.labels %>%
   filter(wID %in% passed_catch) %>%
   filter(target_type != 'catch') %>%
   mutate(clean_utt = tolower(utterance),
-         lemmatized_utt = lemmatize_words(clean_utt)) %>%
-  mutate(lemmatized_utt = str_replace_all(lemmatized_utt, regex("\\W+"), ""))
+         lemmatized_utt = lemmatize_words(clean_utt),
+         lemmatized_utt = str_replace_all(lemmatized_utt, regex("\\W+"), ""))
 ```
 
 How unbalanced is our sample across targets?
@@ -969,6 +969,24 @@ d %>%
   tally() %>%
   ggplot(aes(x = n)) +
     geom_histogram(bins = 5)
+```
+
+check RTs
+
+```{r}
+d %>%
+  group_by(wID) %>%
+  arrange(trial_index) %>%
+  mutate(rep = (lemmatized_utt == lag(lemmatized_utt, 1) &
+                lemmatized_utt == lag(lemmatized_utt, 2))) %>%
+  filter(rep) %>%
+  arrange(wID)
+  # group_by(wID) %>%
+  # summarize(meanRT = mean(rt)) %>%
+  filter(rt < 2000)
+  ggplot(aes(x = meanRT)) +
+    geom_histogram(bins = 20)
+
 ```
 
 Find most similar sets by JS/KL divergence
@@ -988,8 +1006,8 @@ get_pair_data <- function(df, tangram1, tangram2) {
 
 # TODO: take all pairwise comparisons
 completed_data <- d %>%
-  count(target, clean_utt) %>%
-  complete(target, clean_utt, 
+  count(target, lemmatized_utt) %>%
+  complete(target, lemmatized_utt, 
            fill = list(n = 0)) 
 
 pairs <- d %>% 
