@@ -1095,8 +1095,8 @@ first_half %>%
   summarise(cor = mean(cor, na.rm = T))
 
 overall <- d %>%
-  filter(!(target %in% c("R1.jpg", "O1.jpg"))) %>%
-  mutate(target = as.factor(target)) %>%
+  #filter(!(target %in% c("R1.jpg", "O1.jpg"))) %>%
+  #mutate(target = as.factor(target)) %>%
   count(target, lemmatized_utt) %>%
   complete(target, lemmatized_utt, 
            fill = list(n = 0)) %>%
@@ -1142,15 +1142,48 @@ dissimilar <- overall %>%
   filter(!(target_id %in% c("R1.jpg", "O1.jpg"))) %>%
   filter(!(comparison_id %in% c("R1.jpg", "O1.jpg"))) %>%
   arrange(overlap) %>%
-  head(10)
+  filter(overlap < median(overlap)) %>%
+  filter(!duplicated(target_id)) %>%
+  mutate(dissimilar = comparison_id,
+         dvalue = overlap) %>%
+  select(-c(comparison_id, overlap, n))
 
 similar <- overall %>%
   filter(!(target_id %in% c("R1.jpg", "O1.jpg"))) %>%
   filter(!(comparison_id %in% c("R1.jpg", "O1.jpg"))) %>%
-  arrange(overlap) %>%
-  tail(10)
+  filter(overlap > median(overlap)) %>%
+  arrange(desc(overlap)) %>%
+  filter(!duplicated(target_id)) %>%
+  mutate(similar = comparison_id,
+         svalue = overlap) %>%
+  select(-c(comparison_id, overlap, n))
 
 #TODO: Tangrams that have high and low similarity matches
+
+matches <- left_join(dissimilar, similar, by = "target_id") %>%
+  arrange(dvalue, desc(svalue)) %>%
+  write.csv(here("data/norming/high_low_matches.csv"))
+  
+#matches <- overall %>%
+#  filter(!(target_id %in% c("R1.jpg", "O1.jpg"))) %>%
+#  filter(!(comparison_id %in% c("R1.jpg", "O1.jpg"))) %>%
+#  filter(target_id %in% c(dissimilar$target_id, dissimilar$comparison_id) |
+#        comparison_id %in% c(dissimilar$target_id, dissimilar$comparison_id)) %>%
+#  arrange(desc(overlap))
+
+# function to find targets with high and low similarity matches
+
+#df = NULL
+
+#match_pairs <- function(data, comparison){
+#  for (i in 1:data.length) {
+#    ifelse (data$target_id %in% c(comparison$target_id, comparison$comparison_id) |
+#        comparison_id %in% c(comparison$target_id, comparison$comparison_id), 
+#        bind_rows(data[i,], df), return)
+#  }
+#}
+
+
 
 ```
 
