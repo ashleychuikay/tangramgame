@@ -6,9 +6,12 @@ targets = pd.unique(d['target_id'])
 
 def get_distractor_lists (d, previously_used) :
     matches = pd.DataFrame(columns = ['target', 'close_distractor', 'far_distractor', 'overlap_diff'])
+    # only consider targets that haven't previously appeared as targets
     for target in [t for t in targets if t not in previously_used] :
+
+        # we want to make sure duplicates don't appear in the same context (e.g. if O1 is context, tangram-32 will be
+        # most similar distractor simply because it's the exact same image)
         excluded = previously_used.copy()
-        stims['target'].tolist() + stims['close_distractor'].tolist() + stims['far_distractor'].tolist()
         excluded.extend(['O1.jpg'] if target == 'tangram-32.jpg' else ['tangram-32.jpg'] if target == 'O1.jpg' else [])
         excluded.extend(['R1.jpg'] if target == 'tangram-55.jpg' else ['tangram-55.jpg'] if target == 'R1.jpg' else [])
         relevant_rows = (d
@@ -16,6 +19,8 @@ def get_distractor_lists (d, previously_used) :
                          .query('target_id not in {}'.format(excluded))
                          .query('comparison_id not in {}'.format(excluded))
                          .sort_values('overlap'))
+
+        # identify the most and least similar tangrams to the target
         highest_row = relevant_rows.iloc[-1]
         lowest_row = relevant_rows.iloc[0]
         highest_distractor = [a for a in [highest_row['target_id'], highest_row['comparison_id']] if a != target]
@@ -28,9 +33,13 @@ def get_distractor_lists (d, previously_used) :
             'far_overlap' : lowest_row['overlap'],
             'overlap_diff' : highest_row['overlap'] - lowest_row['overlap']
         }))
-    print(matches.sort_values('overlap_diff'))
+
+    # pull out the target with the biggest difference b/w close and far 
     return matches.sort_values('overlap_diff').iloc[-1]
 
+# we iteratively find the next stimulus pair that is maximally distinct,
+# excluding all tangrams that have previously been identified
+# so we end up with the optimal 'greedy' sequence of stims
 stims = pd.DataFrame(columns = ['target', 'close_distractor', 'far_distractor', 'overlap_diff', 'close_overlap','far_overlap'])
 previously_used = []
 for i in range(desired_stims) :
