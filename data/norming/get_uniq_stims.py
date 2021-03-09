@@ -1,8 +1,23 @@
 import pandas as pd
+from collections import defaultdict 
 
 desired_stims = 10
 d = pd.read_csv('overall_comparisons.csv')
 targets = pd.unique(d['target_id'])
+
+duplicates = defaultdict(list)
+duplicates.update({
+    'A2.jpg': 'tangram-150.jpg',
+    'tangram-150.jpg' : 'A2.jpg',
+    'V1.jpg': 'tangram-90.jpg',
+    'tangram-90.jpg' : 'V1.jpg',
+    'Y1.jpg': 'tangram-142.jpg',
+    'tangram-142.jpg' : 'Y1.jpg',
+    'O1.jpg' : 'tangram-32.jpg',
+    'tangram-32.jpg' : 'O1.jpg',
+    'R1.jpg' : 'tangram-55.jpg',
+    'tangram-55.jpg' : 'R1.jpg'
+})
 
 def get_distractor_lists (d, previously_used) :
     matches = pd.DataFrame(columns = ['target', 'close_distractor', 'far_distractor', 'overlap_diff'])
@@ -12,8 +27,8 @@ def get_distractor_lists (d, previously_used) :
         # we want to make sure duplicates don't appear in the same context (e.g. if O1 is context, tangram-32 will be
         # most similar distractor simply because it's the exact same image)
         excluded = previously_used.copy()
-        excluded.extend(['O1.jpg'] if target == 'tangram-32.jpg' else ['tangram-32.jpg'] if target == 'O1.jpg' else [])
-        excluded.extend(['R1.jpg'] if target == 'tangram-55.jpg' else ['tangram-55.jpg'] if target == 'R1.jpg' else [])
+        excluded.extend([duplicates[target]])
+        print(excluded)
         relevant_rows = (d
                          .query('target_id == "{}" or comparison_id == "{}"'.format(target, target))
                          .query('target_id not in {}'.format(excluded))
@@ -45,8 +60,9 @@ previously_used = []
 for i in range(desired_stims) :
     next_stim = get_distractor_lists(d, previously_used)
     stims = stims.append(next_stim)
-    previously_used.extend((next_stim['close_distractor'], next_stim['far_distractor'], next_stim['target']))
-    previously_used.extend(('O1.jpg', 'tangram-32.jpg') if 'O1.jpg' in previously_used or 'tangram-32.jpg' in previously_used else [])
-    previously_used.extend(('R1.jpg', 'tangram-55.jpg') if 'R1.jpg' in previously_used or 'tangram-55.jpg' in previously_used else [])
-
+    previously_used.extend([
+        next_stim['close_distractor'], next_stim['far_distractor'], next_stim['target'],
+        duplicates[next_stim['close_distractor']], duplicates[next_stim['far_distractor']], duplicates[next_stim['target']]
+    ])
+    print(previously_used)
 stims.to_csv('jsPsychStims.csv', index=False)
