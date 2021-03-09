@@ -50,7 +50,7 @@
 
 	var instructions = {
 	  type: "html-button-response",
-	  stimulus: "<p>In this experiment, you will see one or more pictures on the screen at a time.</p><p>One of the objects will be in a <span style='color:blue'>blue box</span>.</p><p>Please describe this object as best as you can in <strong>one word</strong>.</p><p>If there are multiple objects, describe the object in the <span style='color:blue'>blue box</span> so that someone else could guess which one of the two objects is in the <span style='color:blue'>blue box</span>.</p>",
+	  stimulus: "<p>In this experiment, you will see one or more pictures on the screen at a time.</p><p>One of the objects will be in a <span style='color:blue'>blue box</span>.</p><p>Please describe this object as best as you can in <strong>one or two words</strong>.</p><p>If there are multiple objects, describe the object in the <span style='color:blue'>blue box</span> so that someone else could guess which one of the two objects is in the <span style='color:blue'>blue box</span>.</p>",
 	  choices: ['Start'],
 	  data: {test_part: 'setup'},
 	  post_trial_gap: 1000
@@ -59,7 +59,7 @@
 
 	var iso_item_block = {
 	  type: "html-button-response",
-	  stimulus: "<p>In this block, you will see one picture on the screen at a time.</p><p>Please describe this object as best as you can in <strong>one word</strong>.</p><p>",
+	  stimulus: "<p>In this block, you will see one picture on the screen at a time.</p><p>Please describe this object as best as you can in <strong>one or two words</strong>.</p><p>",
 	  choices: ['Continue'],
 	  data: {test_part: 'block-setup'},
 	  post_trial_gap: 500
@@ -67,7 +67,7 @@
 
 	var paired_item_block = {
 	  type: "html-button-response",
-	  stimulus: "<p>In this block, you will see two pictures on the screen at a time.</p><p>One of the objects will be in a <span style='color:blue'>blue box</span>.</p><p>Please describe this object as best as you can in <strong>one word</strong> so that someone else could guess which of the two objects is in the <span style='color:blue'>blue box</span>.</p>",
+	  stimulus: "<p>In this block, you will see two pictures on the screen at a time.</p><p>One of the objects will be in a <span style='color:blue'>blue box</span>.</p><p>Please describe this object as best as you can in <strong>one or two words</strong> so that someone else could successfully pick the one you mean.</p>",
 	  choices: ['Continue'],
 	  data: {test_part: 'block-setup'},
 	  post_trial_gap: 500
@@ -75,25 +75,29 @@
 
 
 	var close_tangrams = [
-          {target: "images/A1.jpg", foil: "images/A2.jpg"},
-          {target: "images/E1.jpg", foil: "images/F1.jpg"},
-          {target: "images/G1.jpg", foil: "images/M1.jpg"},
-          {target: "images/I1.jpg", foil: "images/J1.jpg"},
-          {target: "images/B1.jpg", foil: "images/P1.jpg"},
-          {target: "images/F1.jpg", foil: "images/W1.jpg"},
-          {target: "images/H1.jpg", foil: "images/Y1.jpg"},
-          {target: "images/K1.jpg", foil: "images/T1.jpg"},
+          {target: "images/tangram-55.jpg", foil: "images/N1.jpg"},
+          {target: "images/tangram-48.jpg", foil: "images/tangram-187.jpg"},
+          {target: "images/tangram-67.jpg", foil: "images/tangram-32.jpg"},
+          {target: "images/tangram-164.jpg", foil: "images/tangram-183.jpg"},
+          {target: "images/A2.jpg", foil: "images/tangram-150.jpg"},
+          {target: "images/H1.jpg", foil: "images/I1.jpg"},
+          {target: "images/V1.jpg", foil: "images/tangram-90.jpg"},
+          {target: "images/Y1.jpg", foil: "images/tangram-142.jpg"}
+          // {target: "images/B1.jpg", foil: "images/P1.jpg"},
+          // {target: "images/tangram-81.jpg", foil: "images/tangram-119.jpg"}
 	];
 
 	var far_tangrams = [
-          {target: "images/A1.jpg", foil: "images/D1.jpg"},
-          {target: "images/E1.jpg", foil: "images/C2.jpg"},
-          {target: "images/G1.jpg", foil: "images/N1.jpg"},
-          {target: "images/I1.jpg", foil: "images/R1.jpg"},
-          {target: "images/B1.jpg", foil: "images/O1.jpg"},
-          {target: "images/F1.jpg", foil: "images/C1.jpg"},
-          {target: "images/H1.jpg", foil: "images/A2.jpg"},
-          {target: "images/K1.jpg", foil: "images/V1.jpg"},
+          {target: "images/tangram-55.jpg", foil: "images/tangram-143.jpg"},
+          {target: "images/tangram-48.jpg", foil: "images/D1.jpg"},
+          {target: "images/tangram-67.jpg", foil: "images/G1.jpg"},
+          {target: "images/tangram-164.jpg", foil: "images/tangram-64.jpg"},
+          {target: "images/A2.jpg", foil: "images/C1.jpg"},
+          {target: "images/H1.jpg", foil: "images/tangram-8.jpg"},
+          {target: "images/V1.jpg", foil: "images/C2.jpg"},
+          {target: "images/Y1.jpg", foil: "images/tangram-168.jpg"}
+          // {target: "images/B1.jpg", foil: "images/tangram-4.jpg"},
+          // {target: "images/tangram-81.jpg", foil: "images/tangram-179.jpg"},
 	];
 
 	var close_familiar = [
@@ -133,7 +137,7 @@
 			  "' height='200px'>");
             return target;
 	  },
-	  questions: [{prompt: "Describe the object in the <span style='color:blue'>blue border</span> in <strong>one word</strong>", required: true, columns: 20}],
+	  questions: [{prompt: "Describe the object in the <span style='color:blue'>blue border</span> in <strong>one or two words</strong>", required: true, columns: 20}],
 	  post_trial_gap: 500
 	};
 
@@ -148,7 +152,7 @@
 			"' height='200px'>");
             return _.shuffle([target, foil]).join('');
 	  },
-	  questions: [{prompt: "Describe the object in the <span style='color:blue'>blue border</span> in <strong>one word</strong> that uniquely identifes it compared to the other one", required: true, columns: 20}],
+	  questions: [{prompt: "Describe the object in the <span style='color:blue'>blue border</span> in <strong>one or two word</strong> that uniquely identifes it compared to the other one", required: true, columns: 20}],
 	  //data: {trial_type: "paired"},//, target: jsPsych.timelineVariable('target')},
 	    post_trial_gap: 500
 	};
