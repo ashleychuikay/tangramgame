@@ -1,0 +1,1 @@
+Note that `production/pilot_data.csv` used a different set of stimuli before we ran our norming experiment and determined optimally close/far tangram contexts.
