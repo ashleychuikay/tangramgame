@@ -44,13 +44,13 @@
 	  url: "consent/consent.html",
 	  cont_btn: "start"
 	};
-	//timeline.push(consent);
-
+	timeline.push(consent);
+      
 	// trials
 
 	var instructions = {
 	  type: "html-button-response",
-	  stimulus: "<p>In this experiment, you will see one or more pictures on the screen at a time.</p><p>One of the objects will be in a <span style='color:blue'>blue box</span>.</p><p>Please describe this object as best as you can in <strong>one or two words</strong>.</p><p>If there are multiple objects, describe the object in the <span style='color:blue'>blue box</span> so that someone else could guess which one of the two objects is in the <span style='color:blue'>blue box</span>.</p>",
+	  stimulus: "<p>In this experiment, you will see one or more pictures on the screen at a time.</p><p>One of the objects will be in a <span style='color:blue'>blue box</span>.</p><p>Please describe this object as best as you can in <strong>one or two words</strong>.</p>",
 	  choices: ['Start'],
 	  data: {test_part: 'setup'},
 	  post_trial_gap: 1000
@@ -67,7 +67,7 @@
 
 	var paired_item_block = {
 	  type: "html-button-response",
-	  stimulus: "<p>In this block, you will see two pictures on the screen at a time.</p><p>One of the objects will be in a <span style='color:blue'>blue box</span>.</p><p>Please describe this object as best as you can in <strong>one or two words</strong> so that someone else could successfully pick the one you mean.</p>",
+	  stimulus: "<p>In this block, you will see two pictures on the screen at a time.</p><p>One of the objects will be in a <span style='color:blue'>blue box</span>.</p><p>Please describe this object as best as you can in <strong>one or two words</strong></p>. <p>We will show your description to someone else and ask them to pick which image you meant, so try your best to help them uniquely identify it!</p>",
 	  choices: ['Continue'],
 	  data: {test_part: 'block-setup'},
 	  post_trial_gap: 500
@@ -79,12 +79,10 @@
           {target: "images/tangram-48.jpg", foil: "images/tangram-187.jpg"},
           {target: "images/tangram-67.jpg", foil: "images/tangram-32.jpg"},
           {target: "images/tangram-164.jpg", foil: "images/tangram-183.jpg"},
-          {target: "images/A2.jpg", foil: "images/tangram-150.jpg"},
+          {target: "images/A2.jpg", foil: "images/tangram-99.jpg"},
           {target: "images/H1.jpg", foil: "images/I1.jpg"},
-          {target: "images/V1.jpg", foil: "images/tangram-90.jpg"},
-          {target: "images/Y1.jpg", foil: "images/tangram-142.jpg"}
-          // {target: "images/B1.jpg", foil: "images/P1.jpg"},
-          // {target: "images/tangram-81.jpg", foil: "images/tangram-119.jpg"}
+          {target: "images/tangram-90.jpg", foil: "images/tangram-81.jpg"},
+          {target: "images/B1.jpg", foil: "images/P1.jpg"}
 	];
 
 	var far_tangrams = [
@@ -94,10 +92,8 @@
           {target: "images/tangram-164.jpg", foil: "images/tangram-64.jpg"},
           {target: "images/A2.jpg", foil: "images/C1.jpg"},
           {target: "images/H1.jpg", foil: "images/tangram-8.jpg"},
-          {target: "images/V1.jpg", foil: "images/C2.jpg"},
-          {target: "images/Y1.jpg", foil: "images/tangram-168.jpg"}
-          // {target: "images/B1.jpg", foil: "images/tangram-4.jpg"},
-          // {target: "images/tangram-81.jpg", foil: "images/tangram-179.jpg"},
+          {target: "images/tangram-90.jpg", foil: "images/tangram-120.jpg"},
+          {target: "images/B1.jpg", foil: "images/tangram-4.jpg"}
 	];
 
 	var close_familiar = [
@@ -153,8 +149,8 @@
             return _.shuffle([target, foil]).join('');
 	  },
 	  questions: [{prompt: "Describe the object in the <span style='color:blue'>blue border</span> in <strong>one or two word</strong> that uniquely identifes it compared to the other one", required: true, columns: 20}],
-	  //data: {trial_type: "paired"},//, target: jsPsych.timelineVariable('target')},
-	    post_trial_gap: 500
+	  data: {trialtype: "paired"},//, target: jsPsych.timelineVariable('target')},
+	  post_trial_gap: 500
 	};
 
 	var tangram_close_trial = {
@@ -212,7 +208,8 @@
 	var alltrials = jsPsych.randomization.sampleWithoutReplacement([tangram_close_trial, tangram_far_trial, tangram_iso_trial,familiar_close_trial, familiar_far_trial, familiar_iso_trial], 6);
 
 	for (i = 0; i < alltrials.length; i++) {
-	  if(alltrials[i].data.trialtype == "paired")
+	  console.log(alltrials[i].data)
+	  if(alltrials[i].data.competitor_type != "isolated")
             timeline.push(paired_item_block)
 	  else
             timeline.push(iso_item_block)
@@ -226,7 +223,7 @@
 	    console.log('here');
 	    var packet = _.extend({}, trialData, {
 	      dbname: 'tangramgame',
-	      colname: 'production',
+	      colname: 'production-optimized',
 	      wID: turkInfo.workerId,
 	      aID: turkInfo.assignmentId,
 	      hitID: turkInfo.hitId,
