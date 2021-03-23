@@ -753,30 +753,36 @@ We confirmed this observation with a mixed-effects model including all possible 
 We ran a production experiment.
 
 ```{r}
-d.prod.raw <- read_csv(here("data/production/pilot_data.csv"))
+#anonymize
+read_csv(here("data/production/dataFromMongo.csv"))%>%
+  filter(trial_type == "survey-text") %>%
+  filter(iterationName == "pilot2") %>%
+  mutate(wID = as.numeric(as.factor(wID))) %>%
+  write_csv(here('./data/production/anonymizedDataFromMongo.csv'))
 
+d.prod.raw <- read_csv(here("data/production/anonymizedDataFromMongo.csv"))
+  
 complete_games <- d.prod.raw %>%
-  group_by(anonymized_id) %>%
+  group_by(wID) %>%
   tally() %>%
-  filter(n == 55) %>%
-  pull(anonymized_id)
+  filter(n == 48) %>%
+  pull(wID)
 
 cat('we have', length(complete_games), 'games')
 
 d.prod <- d.prod.raw %>%
-  filter(trial_type == 'survey-text') %>%
-  filter(anonymized_id %in% complete_games) %>%
-  filter(rt < 20000) %>%
+  filter(wID %in% complete_games) %>%
+  filter(rt > 1000) %>%
   mutate(utterance = str_to_lower(utterance),
          utterance = str_trim(utterance),
-         utterance = str_remove_all(utterance, pattern = ' '),
          utt_length = str_length(utterance),
-         clean_utt = lemmatize_words(utterance))
+         clean_utt = lemmatize_strings(utterance),
+         clean_utt = str_remove_all(clean_utt, pattern = ' '))
 
-write.csv(d.prod, "data/production/pilot_data_lemmatized.csv")
+#write.csv(d.prod, "data/production/pilot_data_lemmatized.csv")
 
-d.prod.clean <- read_csv(here("data/production/pilot_data_clean.csv")) %>%
-  filter(utt_length > 1) #%>%
+#d.prod.clean <- read_csv(here("data/production/pilot_data_clean.csv")) %>%
+  #filter(utt_length > 1) #%>%
   #mutate(clean_utt = lemmatize_words(clean_utt))
   
 ```
@@ -788,7 +794,14 @@ We examined log response times.
 ```{r}
 # overall RT distribution
 
-d.prod.clean %>%
+d.prod.raw %>%
+  mutate(logged_rt = log(rt)) %>%
+  gather(measure, value, logged_rt, rt) %>%
+  ggplot(aes(x = value)) +
+    geom_histogram() +
+    facet_wrap(~ measure, scales='free')
+
+d.prod %>%
   mutate(logged_rt = log(rt)) %>%
   gather(measure, value, logged_rt, rt) %>%
   ggplot(aes(x = value)) +
@@ -797,13 +810,13 @@ d.prod.clean %>%
 ```
   
 ```{r}
-ggplot(d.prod.clean, aes(x = target_type, y = log(rt), color = competitor_type)) +
+ggplot(d.prod, aes(x = target_type, y = log(rt), color = competitor_type)) +
   geom_boxplot() +
   theme(legend.position = 'top')
 ```
 
 ```{r}
-d.prod.clean %>%
+d.prod %>%
   lm(log(rt) ~ target_type * competitor_type, 
      data = .) %>%
   tidy()
@@ -813,7 +826,7 @@ d.prod.clean %>%
 
 ```{r}
 dodge = position_dodge(0.9)
-d.prod.clean %>%
+d.prod %>%
   group_by(target_type, competitor_type) %>%
   tidyboot_mean(utt_length) %>%
   ggplot(aes(x = target_type, y = empirical_stat, fill = competitor_type)) +
@@ -830,7 +843,7 @@ We considered several measures of codability/overlap:
 * codeability (what proportion of people provided the most common label, if there were 40 labels and 20 were 'bird', this would be 50%)
 
 ```{r}
-d.prod.clean %>%
+d.prod %>%
   group_by(target_type, competitor_type, utterance, target) %>%
   tally() %>%
   arrange(target) %>%
@@ -849,6 +862,28 @@ d.prod.clean %>%
     facet_grid(measure ~. , scales='free')
 
 ggsave('variability_measures_clean.pdf', width = 10, height = 10, unit = 'in')
+
+#compare with old data
+d.prod.old <- read_csv(here("data/production/pilot_data_clean.csv"))
+
+d.prod.old %>% 
+  group_by(target_type, competitor_type, utterance, target) %>%
+  tally() %>%
+  arrange(target) %>%
+  group_by(target_type, competitor_type) %>%
+  mutate(total_labels = sum(n)) %>%
+  summarize(unique_labels = length(n), 
+            normalized_unique_labels = mean(unique_labels) / mean(total_labels),
+            entropy = entropy(n, method="SG"),
+            normalized_entropy = mean(entropy) / log(length(n)),
+            codeability = max(n) / sum(n)) %>%
+  gather(measure, value, unique_labels:codeability) %>%
+  group_by(target_type, competitor_type, measure) %>%
+  tidyboot_mean(value) %>%
+  ggplot(aes(x = target_type, y = empirical_stat, fill = competitor_type)) +
+    geom_bar(stat = 'identity', position=dodge) +
+    facet_grid(measure ~. , scales='free')
+
 ```
 
 ```{r comparing-distributions}
