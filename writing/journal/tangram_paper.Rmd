@@ -852,7 +852,7 @@ d.prod %>%
   group_by(target_type, competitor_type) %>%
   mutate(total_labels = sum(n)) %>%
   summarize(unique_labels = length(n), 
-            normalized_unique_labels = mean(unique_labels) / mean(total_labels),
+            normalized_unique_labels = mean(unique_labels) /  mean(total_labels),
             entropy = entropy(n, method="SG"),
             normalized_entropy = mean(entropy) / log(length(n)),
             codeability = max(n) / sum(n)) %>%
@@ -861,7 +861,8 @@ d.prod %>%
   tidyboot_mean(value) %>%
   ggplot(aes(x = target_type, y = empirical_stat, fill = competitor_type)) +
     geom_bar(stat = 'identity', position=dodge) +
-    facet_grid(measure ~. , scales='free')
+    facet_grid(measure ~. , scales='free') +
+    theme(legend.position = "top")
 
 ggsave('variability_measures_clean.pdf', width = 10, height = 10, unit = 'in')
 
