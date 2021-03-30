@@ -832,6 +832,8 @@ d.prod %>%
   ggplot(aes(x = target_type, y = empirical_stat, fill = competitor_type)) +
     geom_bar(stat='identity', position=dodge) +
     geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0, position=dodge) +
+    labs(x = "target type",
+         y = "utterance length") +
     theme(legend.position = 'top')
 ```
 
@@ -886,6 +888,41 @@ d.prod.old %>%
 
 ```
 
+```{r scatterplots}
+
+#Look at codeability, etc., as a function of our norming data 
+norming_overlap <- read_csv(here("data/norming/jsPsychStims.csv")) %>%
+  select(target, overlap_diff) %>%
+  right_join(kls, by = "target") %>%
+  filter(target_type == "tangram")
+
+ggplot(norming_overlap, aes(x = overlap_diff, y = kl)) +
+  geom_point() +
+  facet_wrap(~comparison)
+
+```
+
+```{r regression model comparing competitor types}
+
+prod.model <- d.prod %>%
+  group_by(target_type, competitor_type, utterance, target) %>%
+  tally() %>%
+  arrange(target) %>%
+  group_by(target_type, competitor_type, target) %>%
+  mutate(total_labels = sum(n)) %>%
+  summarize(unique_labels = length(n), 
+            normalized_unique_labels = mean(unique_labels) / mean(total_labels),
+            entropy = entropy(n, method="SG"),
+            normalized_entropy = mean(entropy) / log(length(n)),
+            codeability = max(n) / sum(n))
+
+prod.model %>%
+  lmer(codeability ~ target_type*competitor_type + (1|target), data =.) %>%
+  tidy() %>%
+  filter(effect == "fixed")
+
+```
+
 ```{r comparing-distributions}
 kl_drop <- function(df, x1, x2) {
   x1 <- enquo(x1)
@@ -897,7 +934,7 @@ kl_drop <- function(df, x1, x2) {
     pull(kl)
 }
 
-kls <- d.prod.clean %>%
+kls <- d.prod %>%
   count(target_type, competitor_type, target, clean_utt) %>%
   complete(nesting(target_type, target), competitor_type, clean_utt, 
            fill = list(n = 0)) %>%
@@ -932,11 +969,11 @@ normalized_lv <- function(s1, s2) {
   return(lv_dist / maxlength)
 }
 
-indiv_measures <- d.prod.clean %>%
+indiv_measures <- d.prod %>%
   pivot_longer(cols = c(utterance, clean_utt), 
                names_to = "type", values_to = "utterance") %>%
-  select(anonymized_id, target, target_type, competitor_type, type, utterance) %>%
-  group_by(anonymized_id, target_type, target, type) %>%
+  select(wID, target, target_type, competitor_type, type, utterance) %>%
+  group_by(wID, target_type, target, type) %>%
   spread(competitor_type, utterance) %>%
   filter(!is.na(close), !is.na(far), !is.na(isolated)) %>%
   mutate(close_far.distance = normalized_lv(close, far),
