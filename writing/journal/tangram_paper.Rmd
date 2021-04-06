@@ -889,19 +889,6 @@ d.prod.old %>%
 
 ```
 
-```{r scatterplots}
-
-#Look at codeability, etc., as a function of our norming data 
-norming_overlap <- read_csv(here("data/norming/jsPsychStims.csv")) %>%
-  select(target, overlap_diff) %>%
-  right_join(kls, by = "target") %>%
-  filter(target_type == "tangram")
-
-ggplot(norming_overlap, aes(x = overlap_diff, y = kl)) +
-  geom_point() +
-  facet_wrap(~comparison)
-
-```
 
 ```{r regression model comparing competitor types}
 
@@ -956,6 +943,21 @@ ggplot(kls, aes(x = comparison, y = kl)) +
   geom_boxplot()
 
 ```
+
+```{r scatterplots}
+
+#Look at codeability, etc., as a function of our norming data 
+norming_overlap <- read_csv(here("data/norming/jsPsychStims.csv")) %>%
+  select(target, overlap_diff) %>%
+  right_join(kls, by = "target") %>%
+  filter(target_type == "tangram")
+
+ggplot(norming_overlap, aes(x = overlap_diff, y = kl)) +
+  geom_point() +
+  facet_wrap(~comparison)
+
+```
+
 
 # Measuring similarity within participant
 
