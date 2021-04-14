@@ -1,0 +1,169 @@
+---
+title: "Tangram gesture analysis"
+authors: "Ashley Leung, Karina Kling, and Dan Yurovsky"
+output: html_document
+---
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, cache = TRUE,
+                      message = FALSE)
+```
+
+```{r load-libraries}
+library(here)
+library(janitor)
+library(readxl)
+library(ggthemes)
+library(tidyboot)
+library(tidyverse)
+library(broom) 
+library(broom.mixed)
+library(lme4)
+library(lmerTest)
+
+theme_set(theme_few(base_size = 12))
+```
+
+
+```{r load data}
+raw_data <- list.files(here("data/gesture"), ".*csv", full.names = T)
+agedata <- read_csv(here("data/databaseid.csv")) %>%
+  mutate(subid = as.character(subid))
+
+read_data <- function(file) {
+  
+  data <- read_csv(file) %>%
+    remove_empty("cols") %>%
+    mutate(id = parse_number(basename(file))) %>%
+    clean_names() %>%
+    select(-c(childgesture_ordinal, childgesture_onset, childgesture_offset,
+              parentgesture_ordinal, parentgesture_onset, parentgesture_offset))
+}
+
+data <- map(raw_data, read_data) %>%
+  bind_rows() %>%
+  left_join(agedata, by = c("id" = "database_id"))
+
+```
+
+```{r tidy data}
+
+tidy_data <- data %>%
+  select(-id) %>%
+  rename(ctrial = childgesture_trial,
+         ptrial = parentgesture_trial,
+         cgesture = childgesture_gesture,
+         pgesture = parentgesture_gesture,
+         cbarrier = childgesture_barrier,
+         pbarrier = parentgesture_barrier,
+         cspeech = childgesture_speech,
+         pspeech = parentgesture_speech) %>%
+  mutate(cgesture = cgesture == "y",
+         cbarrier = if_else(cbarrier == "a", 1, 0),
+         cspeech = cspeech == "y",
+         pgesture = pgesture == "y",
+         pbarrier = if_else(pbarrier == "a", 1, 0),
+         pspeech = pspeech == "y")
+
+kid_data <- tidy_data %>%
+  filter(!is.na(ctrial)) %>%
+  select(-c(pgesture:ptrial)) %>%
+  rename(gesture = cgesture,
+         barrier = cbarrier,
+         speech = cspeech,
+         trial = ctrial) %>%
+  mutate(person = "child")
+
+parent_data <- tidy_data %>%
+  filter(!is.na(ptrial)) %>%
+  select(-c(cgesture:ctrial)) %>%
+  rename(gesture = pgesture,
+         barrier = pbarrier,
+         speech = pspeech,
+         trial = ptrial) %>%
+  mutate(person = "parent")
+
+all_data <- bind_rows(parent_data, kid_data)
+
+```
+
+# Gestures in parent-child communication
+
+In a previous study, we invited parent-child pairs to play an interactive referential game. During the game, parents and children took turns describing novel tangram images to one another over multiple rounds. In this work, we examine the use of gestures in parents and children during the game, and ask whether gesture use differs between parents and children, and how patterns change over development.
+
+```{r gesture use analysis}
+
+# children's gestures
+
+kid_gestures <- kid_data %>%
+  group_by(age) %>%
+  tidyboot_mean(cgesture) %>%
+  mutate(age = as.factor(age))
+
+ggplot(kid_gestures, aes(x = age, y = empirical_stat, fill = age)) +
+  geom_bar(stat = "identity") +
+  geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
+  labs(y = "Proportion of gesture use",
+       x = "Age")
+
+kid_visible_gestures <- kid_data %>%
+  group_by(age) %>%
+  tidyboot_mean(cbarrier, na.rm = T)
+
+kid_speech <- kid_data %>%
+  group_by(age) %>%
+  tidyboot_mean(cspeech, na.rm = T)
+
+# parent's gestures
+
+parent_gestures <- parent_data %>%
+  group_by(age) %>%
+  tidyboot_mean(pgesture) %>%
+  mutate(age = as.factor(age))
+
+ggplot(parent_gestures, aes(x = age, y = empirical_stat, fill = age)) +
+  geom_bar(stat = "identity") +
+  geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
+  labs(y = "Proportion of gesture use",
+       x = "Child age")
+
+parent_visible_gestures <- parent_data %>%
+  group_by(age) %>%
+  tidyboot_mean(pbarrier, na.rm = T)
+
+parent_speech <- parent_data %>%
+  group_by(age) %>%
+  tidyboot_mean(pspeech, na.rm = T)
+
+```
+
+```{r models}
+
+# kid model
+
+kid_model <- kid_data %>%
+  group_by(age, subid) %>%
+  glmer(cgesture ~ age + (1|subid), family = "binomial", data = .) %>%
+  tidy() %>%
+  filter(effect == "fixed")
+
+# parent model
+
+parent_model <- parent_data %>%
+  group_by(age, subid) %>%
+  glmer(pgesture ~ age + (1|subid), family = "binomial", data = .) %>%
+  tidy() %>%
+  filter(effect == "fixed")
+
+```
+
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
