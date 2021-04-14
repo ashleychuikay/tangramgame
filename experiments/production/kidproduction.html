@@ -23,21 +23,10 @@
  //      function setupGame() {
 	// var socket = io.connect();
 	
-	/* get info from turk */
-	var turkInfo = jsPsych.turk.turkInfo();
 
 	/* create timeline */
 	var timeline = [];
 
-
-	// reCAPTCHA object
-	// var recaptcha = {
-	//   type: "external-html",
-	//   url: "recaptcha.html",
-	//   cont_btn: "submit_button",
-	//   execute_script: true
-	// };
-	// timeline.push(recaptcha);
 
 	// consent form
 	// var consent = {
@@ -49,6 +38,14 @@
       
 	// trials
 
+	var welcome = {
+		type: "survey-text",
+		questions: [{prompt: "Enter the subject ID that was given to you by email", required: true, columns: 20},
+		{prompt: "How old is the child participant? (Round to nearest age)", required: true, columns, 20}],
+		data: {test_part: "welcome"}
+	};
+	timeline.push(welcome);
+
 	var instructions = {
 	  type: "html-button-response",
 	  stimulus: "<p>In this experiment, you will see one or more pictures on the screen at a time.</p><p>One of the objects will be in a <span style='color:blue'>blue box</span>.</p><p>Please describe this object as best as you can in <strong>one or two words</strong>.</p>",
@@ -58,13 +55,6 @@
 	};
 	timeline.push(instructions);
 
-	// var iso_item_block = {
-	//   type: "html-button-response",
-	//   stimulus: "<p>In this block, you will see one picture on the screen at a time.</p><p>Please describe this object as best as you can in <strong>one or two words</strong>.</p><p>",
-	//   choices: ['Continue'],
-	//   data: {test_part: 'block-setup'},
-	//   post_trial_gap: 500
-	// };
 
 	var paired_item_block = {
 	  type: "html-button-response",
@@ -98,25 +88,25 @@
 	];
 
 	var close_familiar = [
-	  {target: "images/germanshepherd.jpg", foil: "images/pug.jpg"},
-	  {target: "images/sparrow.jpg", foil: "images/eagle.jpg"},
-	  {target: "images/grizzlybear.jpg", foil: "images/polarbear.jpg"},
-	  {target: "images/goldfish.jpg", foil: "images/swordfish.jpg"},
-	  {target: "images/mnms.jpg", foil: "images/gummybears.jpg"},
-	  {target: "images/sedan.jpg", foil: "images/sportscar.jpg"},
-	  {target: "images/diningtable.jpg", foil: "images/picnictable.jpg"},
-	  {target: "images/poloshirt.jpg", foil: "images/hawaiishirt.jpg"}
+		  {target: "images/germanshepherd.jpg", foil: "images/pug.jpg"},
+		  {target: "images/sparrow.jpg", foil: "images/eagle.jpg"},
+		  {target: "images/grizzlybear.jpg", foil: "images/polarbear.jpg"},
+		  {target: "images/goldfish.jpg", foil: "images/swordfish.jpg"},
+		  {target: "images/mnms.jpg", foil: "images/gummybears.jpg"},
+		  {target: "images/sedan.jpg", foil: "images/sportscar.jpg"},
+		  {target: "images/diningtable.jpg", foil: "images/picnictable.jpg"},
+		  {target: "images/poloshirt.jpg", foil: "images/hawaiishirt.jpg"}
 	];
 	
 	var far_familiar = [
-	  {target: "images/germanshepherd.jpg", foil: "images/cow.jpg"},
-	  {target: "images/sparrow.jpg", foil: "images/squirrel.jpg"},
-	  {target: "images/grizzlybear.jpg", foil: "images/lion.jpg"},
-	  {target: "images/goldfish.jpg", foil: "images/iguana.jpg"},
-	  {target: "images/mnms.jpg", foil: "images/pretzels.jpg"},
-	  {target: "images/sedan.jpg", foil: "images/firetruck.jpg"},
-	  {target: "images/diningtable.jpg", foil: "images/wardrobe.jpg"},
-	  {target: "images/poloshirt.jpg", foil: "images/dress.jpg"}
+		  {target: "images/germanshepherd.jpg", foil: "images/cow.jpg"},
+		  {target: "images/sparrow.jpg", foil: "images/squirrel.jpg"},
+		  {target: "images/grizzlybear.jpg", foil: "images/lion.jpg"},
+		  {target: "images/goldfish.jpg", foil: "images/iguana.jpg"},
+		  {target: "images/mnms.jpg", foil: "images/pretzels.jpg"},
+		  {target: "images/sedan.jpg", foil: "images/firetruck.jpg"},
+		  {target: "images/diningtable.jpg", foil: "images/wardrobe.jpg"},
+		  {target: "images/poloshirt.jpg", foil: "images/dress.jpg"}
 	];
 
 	var all_imgs = _.flatten(_.map(
@@ -126,17 +116,6 @@
 	  }
 	));
 
-	// var iso_trial = {
-	//   type: "survey-text",
-	//   preamble: function(){
- //            var target = ("<img style='border: 10px solid blue; margin: 50px' src='" +
-	// 		  jsPsych.timelineVariable('target', true) +
-	// 		  "' height='200px'>");
- //            return target;
-	//   },
-	//   questions: [{prompt: "Describe the object in the <span style='color:blue'>blue border</span> in <strong>one or two words</strong>", required: true, columns: 20}],
-	//   post_trial_gap: 500
-	// };
 
 	var paired_trial = {
 	  type: "survey-text",
@@ -173,15 +152,6 @@
 		 test_part: 'trial'}
 	};
 
-	// var tangram_iso_trial = {
-	//   timeline: [iso_trial],
-	//   timeline_variables: close_tangrams,
-	//   randomize_order: true,
-	//   repetitions: 1,
-	//   data: {competitor_type: "isolated", target_type: "tangram",
-	// 	 test_part: 'trial'}
-	// };
-
 	var familiar_close_trial = {
 	  timeline: [paired_trial],
 	  timeline_variables: close_familiar,
@@ -198,14 +168,6 @@
 	  data: {competitor_type: "far", target_type: "familiar", test_part: 'trial'}
 	};
 
-	// var familiar_iso_trial = {
-	//   timeline: [iso_trial],
-	//   timeline_variables: close_familiar,
-	//   randomize_order: true,
-	//   repetitions: 1,
-	//   data: {competitor_type: "isolated", target_type: "familiar", test_part: 'trial'}
-	// };
-
 	var alltrials = jsPsych.randomization.sampleWithoutReplacement([tangram_close_trial, tangram_far_trial, familiar_close_trial, familiar_far_trial], 4);
 
 	for (i = 0; i < alltrials.length; i++) {
@@ -215,15 +177,15 @@
 
 	//save data via php
 	// experimental session-defining variables
-	var task_name = "kidproduction";
-	var subid = "test01";
+	//var task_name = "kidproduction";
+	var subid = //TODO: Get subid from welcome Q
 
 	// you must put your save_data php url here.
 	var save_url = "https://callab.uchicago.edu/experiments/tangram-production/tangramproductionsave.php";
-	var data_dir = task_name;
+	var data_dir = "kidproduction";
 
 	// my preference is to include the task and sbj_id in the file name
-	var file_name = task_name + '_' + sbj_id; 
+	var file_name = subid; 
 
 	function save_data_csv() {
     jQuery.ajax({
@@ -231,8 +193,8 @@
         cache: false,
         url: save_url,
         data: {
-            //data_dir: data_dir,
-            //file_name: file_name + '.csv', // the file type should be added
+            data_dir: data_dir,
+            file_name: file_name + '.csv', // the file type should be added
             exp_data: jsPsych.data.get().csv()
         }
     });
@@ -240,34 +202,36 @@
 
 	jsPsych.init({
 	  timeline: timeline,
-	  on_trial_finish: function(trialData){
-	    console.log('here');
-	    var packet = _.extend({}, trialData, {
-	      dbname: 'tangramgame',
-	      colname: 'production-optimized',
-	      wID: turkInfo.workerId,
-	      aID: turkInfo.assignmentId,
-	      hitID: turkInfo.hitId,
-	      iterationName: 'testing'
-	    })
-	    console.log(trialData)
-	    socket.emit('currentData', packet);
-	  },
+	  // on_trial_finish: function(trialData){
+	  //   console.log('here');
+	  //   var packet = _.extend({}, trialData, {
+	  //     dbname: 'tangramgame',
+	  //     colname: 'production-optimized',
+	  //     wID: turkInfo.workerId,
+	  //     aID: turkInfo.assignmentId,
+	  //     hitID: turkInfo.hitId,
+	  //     iterationName: 'testing'
+	  //   })
+	  //   console.log(trialData)
+	  //   socket.emit('currentData', packet);
+	  // },
 	  on_finish: function() {
 
-	  	var data = jsPsych.data.get().csv();
-	  	$.post("https://callab.uchicago.edu/experiments/tangram-comprehension/tangramcomprehensionsave.php", {postresult_string : data});
+	  	var data = jsPsych.data.get().add({participant: subid});
 
-	    console.log(jsPsych.data.get().values());
-            jsPsych.turk.submitToTurk({
-	      'utterances' : jsPsych.data.get().select('utterance').values,
-	      'rt' : jsPsych.data.get().select('rt').values,
-	      'target_type' : jsPsych.data.get().select('target_type').values,
-	      'competitor_type' : jsPsych.data.get().select('competitor_type').values,
-	      'target' : jsPsych.data.get().select('target').values,
-	      'foil' : jsPsych.data.get().select('foil').values,
-	    })
-            jsPsych.data.displayData();
+	  	save_data_csv();
+
+	  	// $.post("https://callab.uchicago.edu/experiments/tangram-comprehension/tangramcomprehensionsave.php", {postresult_string : data});
+
+	    // console.log(jsPsych.data.get().values());
+     //    jsPsych.turk.submitToTurk({
+	    //   'utterances' : jsPsych.data.get().select('utterance').values,
+	    //   'rt' : jsPsych.data.get().select('rt').values,
+	    //   'target_type' : jsPsych.data.get().select('target_type').values,
+	    //   'competitor_type' : jsPsych.data.get().select('competitor_type').values,
+	    //   'target' : jsPsych.data.get().select('target').values,
+	    //   'foil' : jsPsych.data.get().select('foil').values,
+	    // })
 	  },
 	  preload_images: all_imgs
 	})
