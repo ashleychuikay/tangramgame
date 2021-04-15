@@ -42,7 +42,8 @@
 		type: "survey-text",
 		questions: [{prompt: "Enter the subject ID that was given to you by email", required: true, columns: 20},
 		{prompt: "How old is the child participant? (Round to nearest age)", required: true, columns, 20}],
-		data: {test_part: "welcome"}
+		data: {test_part: "welcome"},
+		post_trial_gap: 1000
 	};
 	timeline.push(welcome);
 

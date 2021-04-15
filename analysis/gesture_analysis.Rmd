@@ -1,6 +1,6 @@
 ---
 title: "Tangram gesture analysis"
-authors: "Ashley Leung, Karina Kling, and Dan Yurovsky"
+authors: "Ashley Leung and Dan Yurovsky"
 output: html_document
 ---
 
@@ -83,7 +83,8 @@ parent_data <- tidy_data %>%
          trial = ptrial) %>%
   mutate(person = "parent")
 
-all_data <- bind_rows(parent_data, kid_data)
+all_data <- bind_rows(parent_data, kid_data) %>%
+  mutate(age = as.factor(age))
 
 ```
 
@@ -97,7 +98,7 @@ In a previous study, we invited parent-child pairs to play an interactive refere
 
 kid_gestures <- kid_data %>%
   group_by(age) %>%
-  tidyboot_mean(cgesture) %>%
+  tidyboot_mean(gesture) %>%
   mutate(age = as.factor(age))
 
 ggplot(kid_gestures, aes(x = age, y = empirical_stat, fill = age)) +
@@ -108,17 +109,17 @@ ggplot(kid_gestures, aes(x = age, y = empirical_stat, fill = age)) +
 
 kid_visible_gestures <- kid_data %>%
   group_by(age) %>%
-  tidyboot_mean(cbarrier, na.rm = T)
+  tidyboot_mean(barrier, na.rm = T)
 
 kid_speech <- kid_data %>%
   group_by(age) %>%
-  tidyboot_mean(cspeech, na.rm = T)
+  tidyboot_mean(speech, na.rm = T)
 
 # parent's gestures
 
 parent_gestures <- parent_data %>%
   group_by(age) %>%
-  tidyboot_mean(pgesture) %>%
+  tidyboot_mean(gesture) %>%
   mutate(age = as.factor(age))
 
 ggplot(parent_gestures, aes(x = age, y = empirical_stat, fill = age)) +
@@ -129,11 +130,48 @@ ggplot(parent_gestures, aes(x = age, y = empirical_stat, fill = age)) +
 
 parent_visible_gestures <- parent_data %>%
   group_by(age) %>%
-  tidyboot_mean(pbarrier, na.rm = T)
+  tidyboot_mean(barrier, na.rm = T)
 
 parent_speech <- parent_data %>%
   group_by(age) %>%
-  tidyboot_mean(pspeech, na.rm = T)
+  tidyboot_mean(speech, na.rm = T)
+
+# compare parent and children gestures
+
+all_gestures <- all_data %>%
+  group_by(person, age) %>%
+  tidyboot_mean(gesture)
+
+ggplot(all_gestures, aes(x = age, y = empirical_stat, fill = age)) +
+  geom_bar(stat = "identity") +
+  geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
+  facet_wrap(~ person) +
+  labs(y = "Proportion of gesture use",
+       x = "Child age")
+
+all_visible_gestures <- all_data %>% 
+  filter(gesture == T) %>%
+  group_by(person, age) %>%
+  tidyboot_mean(barrier)
+
+ggplot(all_visible_gestures, aes(x = age, y = empirical_stat, fill = age)) +
+  geom_bar(stat = "identity") +
+  geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
+  facet_wrap(~ person) +
+  labs(y = "Proportion of gestures above barrier",
+       x = "Child age")
+
+all_speech <- all_data %>%
+  filter(gesture == T) %>% 
+  group_by(person, age) %>% 
+  tidyboot_mean(speech)
+
+ggplot(all_speech, aes(x = age, y = empirical_stat, fill = age)) +
+  geom_bar(stat = "identity") +
+  geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
+  facet_wrap(~ person) +
+  labs(y = "Proportion of gestures represented in speech",
+       x = "Child age")
 
 ```
 
@@ -143,7 +181,7 @@ parent_speech <- parent_data %>%
 
 kid_model <- kid_data %>%
   group_by(age, subid) %>%
-  glmer(cgesture ~ age + (1|subid), family = "binomial", data = .) %>%
+  glmer(gesture ~ age + (1|subid), family = "binomial", data = .) %>%
   tidy() %>%
   filter(effect == "fixed")
 
@@ -151,8 +189,16 @@ kid_model <- kid_data %>%
 
 parent_model <- parent_data %>%
   group_by(age, subid) %>%
-  glmer(pgesture ~ age + (1|subid), family = "binomial", data = .) %>%
+  glmer(gesture ~ age + (1|subid), family = "binomial", data = .) %>%
   tidy() %>%
+  filter(effect == "fixed")
+
+# overall model
+
+overall_model <- all_data %>%
+  group_by(person, age, subid) %>%
+  glmer(gesture ~ person + age + (1|subid), family = "binomial", data = .) %>%
+  tidy() %>% 
   filter(effect == "fixed")
 
 ```
