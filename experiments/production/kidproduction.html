@@ -40,10 +40,15 @@
 
 	var welcome = {
 		type: "survey-text",
-		questions: [{prompt: "Enter the subject ID that was given to you by email", required: true, columns: 20},
-		{prompt: "How old is the child participant? (Round to nearest age)", required: true, columns, 20}],
+		questions: [
+			{prompt: "Enter the subject ID that was given to you by email", required: true, columns: 20, name: "ID"},
+			{prompt: "How old is the child participant? (Round to nearest age)", required: true, columns: 20, name: "Age"}
+		],
 		data: {test_part: "welcome"},
-		post_trial_gap: 1000
+		post_trial_gap: 1000,
+		on_finish: function(){
+        console.log(jsPsych.data.get().select("Age").values);
+      	}
 	};
 	timeline.push(welcome);
 
@@ -130,7 +135,7 @@
             return _.shuffle([target, foil]).join('');
 	  },
 	  questions: [{prompt: "Describe the object in the <span style='color:blue'>blue border</span> in <strong>one or two word</strong> that uniquely identifes it compared to the other one", required: true, columns: 20}],
-	  data: {trialtype: "paired"},//, target: jsPsych.timelineVariable('target')},
+	  data: {trialtype: "paired"},
 	  post_trial_gap: 500
 	};
 
@@ -139,8 +144,7 @@
 	  timeline_variables: close_tangrams,
 	  randomize_order: true,
 	  repetitions: 1,
-	  data: {competitor_type: "close", target_type: "tangram",
-		 test_part: 'trial'}
+	  data: {competitor_type: "close", target_type: "tangram", test_part: 'trial'}
 	};
 
 
@@ -149,8 +153,7 @@
 	  timeline_variables: far_tangrams,
 	  randomize_order: true,
 	  repetitions: 1,
-	  data: {competitor_type: "far", target_type: "tangram",
-		 test_part: 'trial'}
+	  data: {competitor_type: "far", target_type: "tangram", test_part: 'trial'}
 	};
 
 	var familiar_close_trial = {
@@ -179,7 +182,7 @@
 	//save data via php
 	// experimental session-defining variables
 	//var task_name = "kidproduction";
-	var subid = //TODO: Get subid from welcome Q
+	var subid = jsPsych.data.get().select({name: "ID"}).values
 
 	// you must put your save_data php url here.
 	var save_url = "https://callab.uchicago.edu/experiments/tangram-production/tangramproductionsave.php";
@@ -203,6 +206,13 @@
 
 	jsPsych.init({
 	  timeline: timeline,
+
+	  on_trial_finish: function() {
+	  	console.log(jsPsych.data.get().select("responses").values);
+	  	console.log(jsPsych.data.get().select("ID").values);
+	  	console.log(jsPsych.data.get().filter({questions: "ID"}).values());
+	  },
+
 	  // on_trial_finish: function(trialData){
 	  //   console.log('here');
 	  //   var packet = _.extend({}, trialData, {
@@ -218,7 +228,7 @@
 	  // },
 	  on_finish: function() {
 
-	  	var data = jsPsych.data.get().add({participant: subid});
+	  	var data = jsPsych.data.get().add({id: subid});
 
 	  	save_data_csv();
 
@@ -236,6 +246,6 @@
 	  },
 	  preload_images: all_imgs
 	})
-      }
+      //}
     </script>
 </html>
