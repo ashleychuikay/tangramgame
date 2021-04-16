@@ -100,7 +100,7 @@ jsPsych.plugins['survey-text'] = (function() {
       html += '<div id="jspsych-survey-text-preamble" class="jspsych-survey-text-preamble">'+trial.preamble+'</div>';
     }
     // start form
-    html += '<form id="jspsych-survey-text-form">'
+    html += '<form id="jspsych-survey-text-form" autocomplete="off">'
 
     // generate question order
     var question_order = [];
@@ -158,12 +158,21 @@ jsPsych.plugins['survey-text'] = (function() {
         Object.assign(question_data, obje);
       }
       // save data
-      var trialdata = {
-        "rt": response_time,
-	"utterance" : question_data['Q0'],
-	'target' :jsPsych.timelineVariable('target', true).replace('images/', ''),
-	'foil' :jsPsych.timelineVariable('foil', true).replace('images/', ''),	
-        "responses": JSON.stringify(question_data)
+      if (test_part = "welcome") {
+        var trialdata = {
+          "rt": response_time,
+          "id" : question_data['ID'],
+          "age" : question_data['Age'],
+          "responses": JSON.stringify(question_data)
+        }
+      } else {
+        var trialdata = {
+          "rt": response_time,
+          "utterance" : question_data['Q0'],
+          'target' :jsPsych.timelineVariable('target', true).replace('images/', ''),
+          'foil' :jsPsych.timelineVariable('foil', true).replace('images/', ''),
+          "responses": JSON.stringify(question_data)
+        }
       };
 
       display_element.innerHTML = '';

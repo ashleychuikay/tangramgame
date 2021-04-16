@@ -47,7 +47,12 @@
 		data: {test_part: "welcome"},
 		post_trial_gap: 1000,
 		on_finish: function(){
-        console.log(jsPsych.data.get().select("Age").values);
+			var subid = jsPsych.data.get().select("id").values;
+			var age = jsPsych.data.get().select("age").values;
+        	jsPsych.data.addProperties({
+        		id: subid,
+        		age: age
+        	});
       	}
 	};
 	timeline.push(welcome);
@@ -172,7 +177,8 @@
 	  data: {competitor_type: "far", target_type: "familiar", test_part: 'trial'}
 	};
 
-	var alltrials = jsPsych.randomization.sampleWithoutReplacement([tangram_close_trial, tangram_far_trial, familiar_close_trial, familiar_far_trial], 4);
+	var alltrials = jsPsych.randomization.sampleWithoutReplacement([tangram_close_trial, tangram_far_trial, familiar_close_trial, familiar_far_trial], 1); //one block for troubleshooting
+		//4);
 
 	for (i = 0; i < alltrials.length; i++) {
 		timeline.push(paired_item_block);
@@ -180,38 +186,41 @@
 	}
 
 	//save data via php
-	// experimental session-defining variables
-	//var task_name = "kidproduction";
-	var subid = jsPsych.data.get().select({name: "ID"}).values
 
-	// you must put your save_data php url here.
-	var save_url = "https://callab.uchicago.edu/experiments/tangram-production/tangramproductionsave.php";
-	var data_dir = "kidproduction";
+	// function save_data_csv() {
+ //    jQuery.ajax({
+ //        type: 'post',
+ //        cache: false,
+ //        url: save_url,
+ //        data: {
+ //            data_dir: data_dir,
+ //            file_name: file_name + '.csv', // the file type should be added
+ //            exp_data: jsPsych.data.get().csv()
+ //        }
+ //    });
+	// }
 
-	// my preference is to include the task and sbj_id in the file name
-	var file_name = subid; 
-
-	function save_data_csv() {
-    jQuery.ajax({
-        type: 'post',
-        cache: false,
-        url: save_url,
-        data: {
-            data_dir: data_dir,
-            file_name: file_name + '.csv', // the file type should be added
-            exp_data: jsPsych.data.get().csv()
-        }
-    });
+	function saveData(filename, filedata){
+	   $.ajax({
+	      type:'post',
+	      cache: false,
+	      url: 'tangramproductionsave.php', // this is the path to the PHP script
+	      data: {filename: filename, filedata: filedata}
+	   });
 	}
+
+	// function saveData(name, data){
+	//   var xhr = new XMLHttpRequest();
+	//   xhr.open('POST', 'tangramproductionsave.php'); // path to the php file
+	//   xhr.setRequestHeader('Content-Type', 'application/json');
+	//   xhr.send(JSON.stringify({filename: name, filedata: data}));
+	// }	
 
 	jsPsych.init({
 	  timeline: timeline,
 
-	  on_trial_finish: function() {
-	  	console.log(jsPsych.data.get().select("responses").values);
-	  	console.log(jsPsych.data.get().select("ID").values);
-	  	console.log(jsPsych.data.get().filter({questions: "ID"}).values());
-	  },
+	  // on_trial_finish: function() {
+	  // },
 
 	  // on_trial_finish: function(trialData){
 	  //   console.log('here');
@@ -228,11 +237,12 @@
 	  // },
 	  on_finish: function() {
 
-	  	var data = jsPsych.data.get().add({id: subid});
+	  	var file_name = jsPsych.data.get().last(1).select("id").values + ".csv";
+	  	console.log(file_name);
 
-	  	save_data_csv();
+	  	saveData(file_name, jsPsych.data.get().csv());
 
-	  	// $.post("https://callab.uchicago.edu/experiments/tangram-comprehension/tangramcomprehensionsave.php", {postresult_string : data});
+	  	//save_data_csv();
 
 	    // console.log(jsPsych.data.get().values());
      //    jsPsych.turk.submitToTurk({
