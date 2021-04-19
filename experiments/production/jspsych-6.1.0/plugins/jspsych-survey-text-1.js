@@ -9,12 +9,12 @@
  */
 
 
-jsPsych.plugins['survey-text'] = (function() {
+jsPsych.plugins['survey-text-1'] = (function() {
 
   var plugin = {};
 
   plugin.info = {
-    name: 'survey-text',
+    name: 'survey-text-1',
     description: '',
     parameters: {
       questions: {
@@ -160,9 +160,8 @@ jsPsych.plugins['survey-text'] = (function() {
       // save data
       var trialdata = {
         "rt": response_time,
-        "utterance" : question_data['Q0'],
-        'target' :jsPsych.timelineVariable('target', true).replace('images/', ''),
-        'foil' :jsPsych.timelineVariable('foil', true).replace('images/', ''),
+        "id" : question_data['ID'],
+        "age" : question_data['Age'],
         "responses": JSON.stringify(question_data)
       };
 

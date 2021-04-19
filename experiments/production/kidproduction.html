@@ -7,6 +7,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
     <script src="jspsych-6.1.0/plugins/jspsych-html-button-response.js"></script>
     <script src="jspsych-6.1.0/plugins/jspsych-survey-text.js"></script>
+    <script src="jspsych-6.1.0/plugins/jspsych-survey-text-1.js"></script>
     <script src="jspsych-6.1.0/plugins/jspsych-external-html.js"></script>
     <script type="text/javascript" src="consent/consent.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -39,7 +40,7 @@
 	// trials
 
 	var welcome = {
-		type: "survey-text",
+		type: "survey-text-1",
 		questions: [
 			{prompt: "Enter the subject ID that was given to you by email", required: true, columns: 20, name: "ID"},
 			{prompt: "How old is the child participant? (Round to nearest age)", required: true, columns: 20, name: "Age"}
@@ -240,7 +241,7 @@
 	  	var file_name = jsPsych.data.get().last(1).select("id").values + ".csv";
 	  	console.log(file_name);
 
-	  	saveData(file_name, jsPsych.data.get().csv());
+	  	saveData(file_name, jsPsych.data.get().filter({trial_type: "survey-text"}).csv());
 
 	  	//save_data_csv();
 
