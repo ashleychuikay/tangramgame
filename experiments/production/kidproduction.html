@@ -17,32 +17,16 @@
   <body></body>
 
     <script>
- //      window.onload = function() {
-	// setupGame();
- //      };
-
- //      function setupGame() {
-	// var socket = io.connect();
-	
 
 	/* create timeline */
 	var timeline = [];
 
-
-	// consent form
-	// var consent = {
-	//   type:'external-html',
-	//   url: "consent/consent.html",
-	//   cont_btn: "start"
-	// };
-	// timeline.push(consent);
       
 	// trials
-
 	var welcome = {
 		type: "survey-text-1",
 		questions: [
-			{prompt: "Enter the subject ID that was given to you by email", required: true, columns: 20, name: "ID"},
+			{prompt: "Enter the subject ID", required: true, columns: 20, name: "ID"},
 			{prompt: "How old is the child participant? (Round to nearest age)", required: true, columns: 20, name: "Age"}
 		],
 		data: {test_part: "welcome"},
@@ -178,8 +162,7 @@
 	  data: {competitor_type: "far", target_type: "familiar", test_part: 'trial'}
 	};
 
-	var alltrials = jsPsych.randomization.sampleWithoutReplacement([tangram_close_trial, tangram_far_trial, familiar_close_trial, familiar_far_trial], 1); //one block for troubleshooting
-		//4);
+	var alltrials = jsPsych.randomization.sampleWithoutReplacement([tangram_close_trial, tangram_far_trial, familiar_close_trial, familiar_far_trial], 4); 
 
 	for (i = 0; i < alltrials.length; i++) {
 		timeline.push(paired_item_block);
@@ -187,20 +170,6 @@
 	}
 
 	//save data via php
-
-	// function save_data_csv() {
- //    jQuery.ajax({
- //        type: 'post',
- //        cache: false,
- //        url: save_url,
- //        data: {
- //            data_dir: data_dir,
- //            file_name: file_name + '.csv', // the file type should be added
- //            exp_data: jsPsych.data.get().csv()
- //        }
- //    });
-	// }
-
 	function saveData(filename, filedata){
 	   $.ajax({
 	      type:'post',
@@ -210,50 +179,16 @@
 	   });
 	}
 
-	// function saveData(name, data){
-	//   var xhr = new XMLHttpRequest();
-	//   xhr.open('POST', 'tangramproductionsave.php'); // path to the php file
-	//   xhr.setRequestHeader('Content-Type', 'application/json');
-	//   xhr.send(JSON.stringify({filename: name, filedata: data}));
-	// }	
-
+	
 	jsPsych.init({
 	  timeline: timeline,
 
-	  // on_trial_finish: function() {
-	  // },
-
-	  // on_trial_finish: function(trialData){
-	  //   console.log('here');
-	  //   var packet = _.extend({}, trialData, {
-	  //     dbname: 'tangramgame',
-	  //     colname: 'production-optimized',
-	  //     wID: turkInfo.workerId,
-	  //     aID: turkInfo.assignmentId,
-	  //     hitID: turkInfo.hitId,
-	  //     iterationName: 'testing'
-	  //   })
-	  //   console.log(trialData)
-	  //   socket.emit('currentData', packet);
-	  // },
 	  on_finish: function() {
 
 	  	var file_name = jsPsych.data.get().last(1).select("id").values + ".csv";
 	  	console.log(file_name);
 
 	  	saveData(file_name, jsPsych.data.get().filter({trial_type: "survey-text"}).csv());
-
-	  	//save_data_csv();
-
-	    // console.log(jsPsych.data.get().values());
-     //    jsPsych.turk.submitToTurk({
-	    //   'utterances' : jsPsych.data.get().select('utterance').values,
-	    //   'rt' : jsPsych.data.get().select('rt').values,
-	    //   'target_type' : jsPsych.data.get().select('target_type').values,
-	    //   'competitor_type' : jsPsych.data.get().select('competitor_type').values,
-	    //   'target' : jsPsych.data.get().select('target').values,
-	    //   'foil' : jsPsych.data.get().select('foil').values,
-	    // })
 	  },
 	  preload_images: all_imgs
 	})
