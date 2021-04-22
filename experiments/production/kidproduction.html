@@ -27,7 +27,7 @@
 		type: "survey-text-1",
 		questions: [
 			{prompt: "Enter the subject ID", required: true, columns: 20, name: "ID"},
-			{prompt: "How old is the child participant? (Round to nearest age)", required: true, columns: 20, name: "Age"}
+			{prompt: "Age (Round to nearest age)", required: true, columns: 20, name: "Age"}
 		],
 		data: {test_part: "welcome"},
 		post_trial_gap: 1000,
@@ -44,7 +44,7 @@
 
 	var instructions = {
 	  type: "html-button-response",
-	  stimulus: "<p>In this experiment, you will see one or more pictures on the screen at a time.</p><p>One of the objects will be in a <span style='color:blue'>blue box</span>.</p><p>Please describe this object as best as you can in <strong>one or two words</strong>.</p>",
+	  stimulus: "<p>In this game, you will see two pictures on the screen at a time.</p><p>One of the pictures will be in a <span style='color:blue'>blue box</span>.</p><p>Your job is to describe this object as best as you can in <strong>one or two words</strong>, to help someone else pick out that same picture.</p>",
 	  choices: ['Start'],
 	  data: {test_part: 'setup'},
 	  post_trial_gap: 1000
@@ -54,12 +54,16 @@
 
 	var paired_item_block = {
 	  type: "html-button-response",
-	  stimulus: "<p>In this block, you will see two pictures on the screen at a time.</p><p>One of the objects will be in a <span style='color:blue'>blue box</span>.</p><p>Please describe this object as best as you can in <strong>one or two words</strong></p>. <p>We will show your description to someone else and ask them to pick which image you meant, so try your best to help them uniquely identify it!</p>",
+	  stimulus: "<p>In this round, you will see two pictures on the screen at a time.</p><p>One of the objects will be in a <span style='color:blue'>blue box</span>.</p><p>Your job is to describe this object as best as you can in <strong>one or two words</strong></p>. <p>Someone else will see the same pictures, but without the blue box, but they will see what you said so that they can pick the picture you're talking about. Try your best to help them pick out the right picture!</p>",
 	  choices: ['Continue'],
 	  data: {test_part: 'block-setup'},
 	  post_trial_gap: 500
 	};
 
+
+	var practice = [
+		  {target: "images/rainbowball.jpg", foil: "images/pinkball.jpg"}
+	];
 
 	var close_tangrams = [
           {target: "images/tangram-55.jpg", foil: "images/N1.jpg"},
@@ -106,7 +110,7 @@
 	];
 
 	var all_imgs = _.flatten(_.map(
-	  close_tangrams.concat(far_tangrams, close_familiar, far_familiar),
+	  practice.concat(close_tangrams, far_tangrams, close_familiar, far_familiar),
 	  v => {
             return [v.target, v.foil];
 	  }
@@ -124,10 +128,19 @@
 			"' height='200px'>");
             return _.shuffle([target, foil]).join('');
 	  },
-	  questions: [{prompt: "Describe the object in the <span style='color:blue'>blue border</span> in <strong>one or two word</strong> that uniquely identifes it compared to the other one", required: true, columns: 20}],
+	  questions: [{prompt: "Describe the object in the <span style='color:blue'>blue box</span> in <strong>one or two words</strong> to help someone else pick that picture!", required: true, columns: 20}],
 	  data: {trialtype: "paired"},
 	  post_trial_gap: 500
 	};
+
+	var practice_trial = {
+	  timeline: [paired_trial],
+	  timeline_variables: practice,
+	  randomize_order: true,
+	  repetitions: 1,
+	  data: {competitor_type: "practice", target_type: "practice", test_part: 'practice'}
+	};
+	timeline.push(practice_trial);
 
 	var tangram_close_trial = {
 	  timeline: [paired_trial],
@@ -162,7 +175,12 @@
 	  data: {competitor_type: "far", target_type: "familiar", test_part: 'trial'}
 	};
 
-	var alltrials = jsPsych.randomization.sampleWithoutReplacement([tangram_close_trial, tangram_far_trial, familiar_close_trial, familiar_far_trial], 4); 
+	var familiartrials = jsPsych.randomization.sampleWithoutReplacement([familiar_close_trial, familiar_far_trial], 2); 
+
+	var tangramtrials = jsPsych.randomization.sampleWithoutReplacement([tangram_close_trial, tangram_far_trial], 2);
+
+	var alltrials = [];
+	alltrials.push(familiartrials[0], tangramtrials[0], familiartrials[1], tangramtrials[1]);
 
 	for (i = 0; i < alltrials.length; i++) {
 		timeline.push(paired_item_block);
