@@ -8,6 +8,8 @@
     <script src="jspsych-6.1.0/plugins/jspsych-html-button-response.js"></script>
     <script src="jspsych-6.1.0/plugins/jspsych-survey-text.js"></script>
     <script src="jspsych-6.1.0/plugins/jspsych-survey-text-1.js"></script>
+    <script src="jspsych-6.1.0/plugins/jspsych-image-keyboard-response.js"></script>
+    <script src="jspsych-6.1.0/plugins/jspsych-html-keyboard-response.js"></script>
     <script src="jspsych-6.1.0/plugins/jspsych-external-html.js"></script>
     <script type="text/javascript" src="consent/consent.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -44,7 +46,7 @@
 
 	var instructions = {
 	  type: "html-button-response",
-	  stimulus: "<p>In this game, you will see two pictures on the screen at a time.</p><p>One of the pictures will be in a <span style='color:blue'>blue box</span>.</p><p>Your job is to describe this object as best as you can in <strong>one or two words</strong>, to help someone else pick out that same picture.</p>",
+	  stimulus: "<p>In this game, I will show you pictures on the screen, and you will tell me what you see.</p><p>I will start with one picture, and then I will show two pictures at a time.</p><p>Let's start with our first picture!</p>",
 	  choices: ['Start'],
 	  data: {test_part: 'setup'},
 	  post_trial_gap: 1000
@@ -54,7 +56,7 @@
 
 	var paired_item_block = {
 	  type: "html-button-response",
-	  stimulus: "<p>In this round, you will see two pictures on the screen at a time.</p><p>One of the objects will be in a <span style='color:blue'>blue box</span>.</p><p>Your job is to describe this object as best as you can in <strong>one or two words</strong></p>. <p>Someone else will see the same pictures, but without the blue box, but they will see what you said so that they can pick the picture you're talking about. Try your best to help them pick out the right picture!</p>",
+	  stimulus: "<p>In this round, you will see two pictures on the screen at a time.</p><p>One of the pictures will be in a <span style='color:blue'>blue box</span>.</p><p>Your job is to say what's inside the blue box using <strong>one or two words</strong></p>.<p>Someone else will see the same pictures, but without the blue box.</p><p>I will tell them what you said so that they can pick the picture you're talking about.</p><p>Try your best to help them pick out the right picture!</p>",
 	  choices: ['Continue'],
 	  data: {test_part: 'block-setup'},
 	  post_trial_gap: 500
@@ -62,7 +64,8 @@
 
 
 	var practice = [
-		  {target: "images/rainbowball.jpg", foil: "images/pinkball.jpg"}
+		  {target: "images/pear.jpg", foil: "images/apple.jpg"},
+		  {target: "images/cup.jpg", foil: "images/plate.jpg"}
 	];
 
 	var close_tangrams = [
@@ -116,6 +119,47 @@
 	  }
 	));
 
+	var intro_single = {
+	  type: "image-keyboard-response",
+	  stimulus: "images/apple.jpg",
+	  prompt: "<p>What do you see on the screen?</p>",
+	  data: {trialtype: "single", competitor_type: "practice", target_type: "practice", test_part: "practice"},
+	  post_trial_gap: 500
+	};
+	timeline.push(intro_single);
+
+	var intro_paired = {
+	  type: "html-keyboard-response",
+	  stimulus: function(){return( 
+		"<img style='border: 10px solid blue; margin: 50px' src='images/pear.jpg' height='200px'>" +
+		"<img style='margin: 50px' src='images/apple.jpg' height='200px'>")},
+	  promt: "<p>What's in the blue box?</p>",
+	  data: {trialtype: "paired", competitor_type: "practice", target_type: "practice", test_part: "practice"},
+	  post_trial_gap: 500
+	};
+	timeline.push(intro_paired);
+
+	var intro_practice_1 = {
+	  type: "html-keyboard-response",
+	  stimulus: function(){return( 
+		"<img style='border: 10px solid blue; margin: 50px' src='images/cup.jpg' height='200px'>" +
+		"<img style='margin: 50px' src='images/plate.jpg' height='200px'>")},
+	  promt: "<p>What's in the blue box?</p>",
+	  data: {trialtype: "paired", competitor_type: "practice", target_type: "practice", test_part: "practice"},
+	  post_trial_gap: 500
+	};
+	timeline.push(intro_practice_1);
+
+	var intro_practice_2 = {
+	  type: "html-keyboard-response",
+	  stimulus: function(){return( 
+		"<img style='margin: 50px' src='images/cup.jpg' height='200px'>" +
+		"<img style='margin: 50px' src='images/plate.jpg' height='200px'>")},
+	  promt: "<p>What's in the blue box?</p>",
+	  data: {trialtype: "paired", competitor_type: "practice", target_type: "practice", test_part: "practice"},
+	  post_trial_gap: 500
+	};
+	timeline.push(intro_practice_2);
 
 	var paired_trial = {
 	  type: "survey-text",
@@ -133,6 +177,7 @@
 	  post_trial_gap: 500
 	};
 
+
 	var practice_trial = {
 	  timeline: [paired_trial],
 	  timeline_variables: practice,
@@ -140,7 +185,7 @@
 	  repetitions: 1,
 	  data: {competitor_type: "practice", target_type: "practice", test_part: 'practice'}
 	};
-	timeline.push(practice_trial);
+	//timeline.push(practice_trial);
 
 	var tangram_close_trial = {
 	  timeline: [paired_trial],
