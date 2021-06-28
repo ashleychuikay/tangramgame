@@ -52,7 +52,7 @@
 	  data: {test_part: 'setup'},
 	  post_trial_gap: 1000
 	};
-	//timeline.push(instructions);
+	timeline.push(instructions);
 
 
 	var paired_item_block = {
@@ -65,7 +65,7 @@
 
 	var check_block = {
 	  type: "html-button-response",
-	  stimulus: "<p>Another kid played this game before you, and I'm going to tell you what they said. I'll show you two pictures each time, without the blue box.</p><p>It looks like I might have jumbled some of the pictures and words, so sometimes you might not be able to find the picture that the other kid was talking about.<p></p>Your just need to tell me whether you know, or don't know, which picture the other kid was talking about.</p><p>",
+	  stimulus: "<p>Another kid played this game before you, and I'm going to tell you what they said.</p><p>I'll show you two pictures each time, without the blue box.</p><p>It looks like I might have jumbled some of the pictures and words,</p><p>so sometimes you might not be able to find the picture that the other kid was talking about.<p></p>You just need to tell me whether you know, or don't know, which picture the other kid was talking about.</p>",
 	  choices: ['Continue'],
 	  data: {test_part: 'block-setup'},
 	  post_trial_gap: 500
@@ -74,7 +74,8 @@
 
 	var practice = [
 		  {target: "images/pear.jpg", foil: "images/apple.jpg"},
-		  {target: "images/cup.jpg", foil: "images/plate.jpg"}
+		  {target: "images/cup.jpg", foil: "images/plate.jpg"},
+		  {target: "images/lily.jpg", foil: "images/rose.jpg"}
 	];
 
 	var close_tangrams = [
@@ -148,7 +149,7 @@
 	  data: {trialtype: "single", competitor_type: "practice", target_type: "practice", test_part: "practice"},
 	  post_trial_gap: 500
 	};
-	//timeline.push(intro_single);
+	timeline.push(intro_single);
 
 	var intro_paired = {
 	  type: "html-keyboard-response",
@@ -159,7 +160,7 @@
 	  data: {trialtype: "paired", competitor_type: "practice", target_type: "practice", test_part: "practice"},
 	  post_trial_gap: 500
 	};
-	//timeline.push(intro_paired);
+	timeline.push(intro_paired);
 
 	var intro_practice_1 = {
 	  type: "html-keyboard-response",
@@ -170,7 +171,7 @@
 	  data: {trialtype: "practice", competitor_type: "practice", target_type: "practice", test_part: "practice"},
 	  post_trial_gap: 500
 	};
-	//timeline.push(intro_practice_1);
+	timeline.push(intro_practice_1);
 
 	var intro_practice_2 = {
 	  type: "html-keyboard-response",
@@ -181,7 +182,18 @@
 	  data: {trialtype: "practice", competitor_type: "practice", target_type: "practice", test_part: "practice"},
 	  post_trial_gap: 500
 	};
-	//timeline.push(intro_practice_2);
+	timeline.push(intro_practice_2);
+
+	var intro_practice_3 = {
+	  type: "html-keyboard-response",
+	  stimulus: function(){return( 
+		"<img style='margin: 50px' src='images/lily.jpg' height='200px'>" +
+		"<img style='margin: 50px' src='images/rose.jpg' height='200px'>")},
+	  prompt: "<p>A different kid played this game before you, and they saw these two pictures.</p><p>They said <i>flower</i>. Do you know which picture they're talking about?</p>",
+	  data: {trialtype: "practice", competitor_type: "practice", target_type: "practice", test_part: "practice"},
+	  post_trial_gap: 500
+	};
+	timeline.push(intro_practice_3);
 
 	var paired_trial = {
 	  type: "survey-text",
@@ -194,7 +206,7 @@
 			"' height='200px'>");
             return _.shuffle([target, foil]).join('');
 	  },
-	  questions: [{prompt: "Describe the object in the <span style='color:blue'>blue box</span> in <strong>one or two words</strong> to help someone else pick that picture!", required: true, columns: 20}],
+	  questions: [{prompt: "What would you call the picture in the <span style='color:blue'>blue box</span>? Use <strong>one or two words</strong> to help someone else pick that picture!", required: true, columns: 20}],
 	  data: {trialtype: "paired"},
 	  post_trial_gap: 500
 	};
@@ -273,21 +285,23 @@
 	//timeline.push(familiar_far_trial);
 
 	//check block here for testing
+	// timeline.push(check_block);
+	// timeline.push(check_trial);
+
+	var familiartrials = jsPsych.randomization.sampleWithoutReplacement([familiar_close_trial, familiar_far_trial], 2); 
+
+	var tangramtrials = jsPsych.randomization.sampleWithoutReplacement([tangram_close_trial, tangram_far_trial], 2);
+
+	var alltrials = [];
+	alltrials.push(familiartrials[0], tangramtrials[0], familiartrials[1], tangramtrials[1]);
+
+	for (i = 0; i < alltrials.length; i++) {
+	 	timeline.push(paired_item_block);
+	 	timeline.push(alltrials[i]);
+	}
+
 	timeline.push(check_block);
 	timeline.push(check_trial);
-
-	// var familiartrials = jsPsych.randomization.sampleWithoutReplacement([familiar_close_trial, familiar_far_trial], 2); 
-
-	// var tangramtrials = jsPsych.randomization.sampleWithoutReplacement([tangram_close_trial, tangram_far_trial], 2);
-
-	// var alltrials = [];
-	// alltrials.push(familiartrials[0], tangramtrials[0], familiartrials[1], tangramtrials[1]);
-
-	// for (i = 0; i < alltrials.length; i++) {
-	// 	timeline.push(paired_item_block);
-	// 	timeline.push(alltrials[i]);
-	// }
-
 
 	//save data via php
 	function saveData(filename, filedata){
@@ -312,8 +326,8 @@
 
 	  	var alldata = trialdata.join(checkdata);
 
-	  	//saveData(file_name, alldata.csv());
-	  	saveData(file_name, checkdata.csv())
+	  	saveData(file_name, alldata.csv());
+	  	//saveData(file_name, checkdata.csv())
 	  },
 	  preload_images: all_imgs
 	})
