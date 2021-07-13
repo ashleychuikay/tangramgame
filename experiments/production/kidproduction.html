@@ -57,7 +57,7 @@
 
 	var paired_item_block = {
 	  type: "html-button-response",
-	  stimulus: "<p>In this round, you will see two pictures on the screen at a time.</p><p>One of the pictures will be in a <span style='color:blue'>blue box</span>.</p><p>Your job is to say what's inside the blue box using <strong>one or two words</strong></p>.<p>Someone else will see the same pictures, but without the blue box.</p><p>I will tell them what you said so that they can pick the picture you're talking about.</p><p>Try your best to help them pick out the right picture!</p>",
+	  stimulus: "<p>In this round, you will see two pictures on the screen at a time.</p><p>One of the pictures will be in a <span style='color:blue'>blue box</span>.</p><p>Your job is to say what's inside the blue box using <strong>one or two words</strong>.</p><p>Someone else will see the same pictures, but without the blue box.</p><p>I will tell them what you said so that they can pick the picture you're talking about.</p><p>Try your best to help them pick out the right picture!</p>",
 	  choices: ['Continue'],
 	  data: {test_part: 'block-setup'},
 	  post_trial_gap: 500
@@ -105,7 +105,7 @@
 		  {target: "images/sparrow.jpg", foil: "images/eagle.jpg"},
 		  {target: "images/grizzlybear.jpg", foil: "images/polarbear.jpg"},
 		  {target: "images/goldfish.jpg", foil: "images/swordfish.jpg"},
-		  {target: "images/mnms.jpg", foil: "images/gummybears.jpg"},
+		  {target: "images/jellybeans.jpg", foil: "images/gummybears.jpg"},
 		  {target: "images/sedan.jpg", foil: "images/sportscar.jpg"},
 		  {target: "images/diningtable.jpg", foil: "images/picnictable.jpg"},
 		  {target: "images/poloshirt.jpg", foil: "images/hawaiishirt.jpg"}
@@ -116,7 +116,7 @@
 		  {target: "images/sparrow.jpg", foil: "images/squirrel.jpg"},
 		  {target: "images/grizzlybear.jpg", foil: "images/lion.jpg"},
 		  {target: "images/goldfish.jpg", foil: "images/iguana.jpg"},
-		  {target: "images/mnms.jpg", foil: "images/pretzels.jpg"},
+		  {target: "images/jellybeans.jpg", foil: "images/pretzels.jpg"},
 		  {target: "images/sedan.jpg", foil: "images/firetruck.jpg"},
 		  {target: "images/diningtable.jpg", foil: "images/wardrobe.jpg"},
 		  {target: "images/poloshirt.jpg", foil: "images/dress.jpg"}
@@ -151,6 +151,15 @@
 	};
 	timeline.push(intro_single);
 
+	var instructions_paired = {
+	  type: "html-button-response",
+	  stimulus: "<p>Now, I'm going to show you two pictures, and one of them will be in a blue box.</p><p>I'm going to ask you to tell me what you see in the blue box.</p>",
+	  choices: ['Next'],
+	  data: {test_part: 'setup'},
+	  post_trial_gap: 1000
+	};
+	timeline.push(instructions_paired);
+
 	var intro_paired = {
 	  type: "html-keyboard-response",
 	  stimulus: function(){return( 
@@ -161,6 +170,15 @@
 	  post_trial_gap: 500
 	};
 	timeline.push(intro_paired);
+
+	var instructions_practice = {
+	  type: "html-button-response",
+	  stimulus: "<p>Now, I'm going to show you two pictures again, and one of them will be in a blue box.</p><p>I'm going to close my eyes, and you'll tell me what you see in the blue box.</p><p>After that, I'll try and find the picture that you're talking about.</p>",
+	  choices: ['Next'],
+	  data: {test_part: 'setup'},
+	  post_trial_gap: 1000
+	};
+	timeline.push(instructions_practice);
 
 	var intro_practice_1 = {
 	  type: "html-keyboard-response",
@@ -184,12 +202,21 @@
 	};
 	timeline.push(intro_practice_2);
 
+	var instructions_practice_2 = {
+	  type: "html-button-response",
+	  stimulus: "<p>A different kid played this game before you. They saw lots of pictures, and they talked about what was in the blue box.</p><p>I'm going to show you two pictures without the blue box, and tell you what the other kid said.</p><p>And then I'm going to ask you if you know which picture they were talking about.</p>",
+	  choices: ['Next'],
+	  data: {test_part: 'setup'},
+	  post_trial_gap: 1000
+	};
+	timeline.push(instructions_practice);
+
 	var intro_practice_3 = {
 	  type: "html-keyboard-response",
 	  stimulus: function(){return( 
 		"<img style='margin: 50px' src='images/lily.jpg' height='200px'>" +
 		"<img style='margin: 50px' src='images/rose.jpg' height='200px'>")},
-	  prompt: "<p>A different kid played this game before you, and they saw these two pictures.</p><p>They said <i>flower</i>. Do you know which picture they're talking about?</p>",
+	  prompt: "<p>The other kid saw these two pictures, and they said <i>flower</i>. Do you know which picture they're talking about?</p><p>Yes or No?</p>",
 	  data: {trialtype: "practice", competitor_type: "practice", target_type: "practice", test_part: "practice"},
 	  post_trial_gap: 500
 	};
@@ -221,7 +248,7 @@
 			jsPsych.timelineVariable('foil', true) +
 			"'height='200px'>");
 		return _.shuffle([target, foil]).join('') +
-			"<br><p>They said <i>" + jsPsych.timelineVariable('utt', true) + "</i>. Do you know which picture they're talking about?</p>";
+			"<br><p>They said <i>" + jsPsych.timelineVariable('utt', true) + "</i>. Do you know which picture they're talking about?</p><p>Yes or No?</p>";
 	  },
 	  choices: ['Yes', 'No'],
 	  margin_horizontal: "20px",
