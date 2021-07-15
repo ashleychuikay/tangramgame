@@ -47,7 +47,7 @@
 
 	var instructions = {
 	  type: "html-button-response",
-	  stimulus: "<p>In this game, I will show you pictures on the screen, and you will tell me what you see.</p><p>I will start with one picture, and then I will show two pictures at a time.</p><p>Let's start with our first picture!</p>",
+	  stimulus: "<p>In this game, I will show you pictures on the screen, and you will tell me what you see.</p><p>Let's start with our first picture!</p>",
 	  choices: ['Start'],
 	  data: {test_part: 'setup'},
 	  post_trial_gap: 1000
@@ -128,7 +128,7 @@
 		  {target: "images/dressshirt.jpg", foil: "images/campshirt.jpg", utt: "shirt"},
 		  {target: "images/polarbear.jpg", foil: "images/grizzlybear.jpg", utt: "polar bear"},
 		  {target: "images/rose.jpg", foil: "images/daisy.jpg", utt: "red flower"},
-		  {target: "images/jellybeans.jpg", foil: "images/gummybears.jpg", utt: "jelly beans"},
+		  {target: "images/mnms.jpg", foil: "images/gummybears.jpg", utt: "M&Ms"},
 		  {target: "images/apple.jpg", foil: "images/pear.jpg", utt: "cup"},
 		  {target: "images/pug.jpg", foil: "images/rabbit.jpg", utt: "table"},
 		  {target: "images/firetruck.jpg", foil: "images/ambulance.jpg", utt: "bear"}
@@ -153,7 +153,7 @@
 
 	var instructions_paired = {
 	  type: "html-button-response",
-	  stimulus: "<p>Now, I'm going to show you two pictures, and one of them will be in a blue box.</p><p>I'm going to ask you to tell me what you see in the blue box.</p>",
+	  stimulus: "<p>Now, I'm going to show you two pictures, and one of them will be in a <span style='color:blue'>blue box</span>.</p><p>I'm going to ask you to tell me what you see in the <span style='color:blue'>blue box</span>.</p>",
 	  choices: ['Next'],
 	  data: {test_part: 'setup'},
 	  post_trial_gap: 1000
@@ -173,7 +173,7 @@
 
 	var instructions_practice = {
 	  type: "html-button-response",
-	  stimulus: "<p>Now, I'm going to show you two pictures again, and one of them will be in a blue box.</p><p>I'm going to close my eyes, and you'll tell me what you see in the blue box.</p><p>After that, I'll try and find the picture that you're talking about.</p>",
+	  stimulus: "<p>Now, I'm going to show you two pictures again, and one of them will be in a <span style='color:blue'>blue box</span>.</p><p>I'm going to close my eyes, and you'll tell me what you see in the <span style='color:blue'>blue box</span>.</p><p>After that, I'll try and find the picture that you're talking about.</p>",
 	  choices: ['Next'],
 	  data: {test_part: 'setup'},
 	  post_trial_gap: 1000
@@ -204,12 +204,12 @@
 
 	var instructions_practice_2 = {
 	  type: "html-button-response",
-	  stimulus: "<p>A different kid played this game before you. They saw lots of pictures, and they talked about what was in the blue box.</p><p>I'm going to show you two pictures without the blue box, and tell you what the other kid said.</p><p>And then I'm going to ask you if you know which picture they were talking about.</p>",
+	  stimulus: "<p>A different kid played this game before you. They also saw two pictures, and they talked about what was in the blue box.</p><p>I'm going to show you two pictures without the blue box, and tell you what the other kid said.</p><p>And then I'm going to ask you if you know which picture they were talking about.</p>",
 	  choices: ['Next'],
 	  data: {test_part: 'setup'},
 	  post_trial_gap: 1000
 	};
-	timeline.push(instructions_practice);
+	timeline.push(instructions_practice_2);
 
 	var intro_practice_3 = {
 	  type: "html-keyboard-response",
