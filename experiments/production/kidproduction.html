@@ -75,7 +75,9 @@
 	var practice = [
 		  {target: "images/pear.jpg", foil: "images/apple.jpg"},
 		  {target: "images/cup.jpg", foil: "images/plate.jpg"},
-		  {target: "images/lily.jpg", foil: "images/rose.jpg"}
+		  {target: "images/pinkball.jpg", foil: "images/pottedplant.jpg"},
+		  {target: "images/lily.jpg", foil: "images/rose.jpg"},
+		  {target: "images/sidetable.jpg", foil: "images/coffeetable.jpg"}
 	];
 
 	var close_tangrams = [
@@ -180,7 +182,7 @@
 	};
 	timeline.push(instructions_practice);
 
-	var intro_practice_1 = {
+	var cup_practice_1 = {
 	  type: "html-keyboard-response",
 	  stimulus: function(){return( 
 		"<img style='border: 10px solid blue; margin: 50px' src='images/cup.jpg' height='200px'>" +
@@ -189,38 +191,141 @@
 	  data: {trialtype: "practice", competitor_type: "practice", target_type: "practice", test_part: "practice"},
 	  post_trial_gap: 500
 	};
-	timeline.push(intro_practice_1);
+	timeline.push(cup_practice_1);
 
-	var intro_practice_2 = {
+	var cup_practice_2 = {
 	  type: "html-keyboard-response",
 	  stimulus: function(){return( 
-		"<img style='margin: 50px' src='images/cup.jpg' height='200px'>" +
-		"<img style='margin: 50px' src='images/plate.jpg' height='200px'>")},
+		"<img style='margin: 50px' src='images/plate.jpg' height='200px'>" +
+		"<img style='margin: 50px' src='images/cup.jpg' height='200px'>")},
+	  data: {trialtype: "practice", competitor_type: "practice", target_type: "practice", test_part: "practice"},
+	  post_trial_gap: 500
+	};
+	timeline.push(cup_practice_2);
+
+	var cup_practice_3 = {
+	  type: "html-keyboard-response",
+	  stimulus: function(){return( 
+		"<img style='margin: 50px' src='images/plate.jpg' height='200px'>" +
+		"<img style='border: 10px solid blue; margin: 50px' src='images/cup.jpg' height='200px'>")},
+	  data: {trialtype: "practice", competitor_type: "practice", target_type: "practice", test_part: "practice"},
+	  post_trial_gap: 500
+	};
+	timeline.push(cup_practice_3);
+
+	var ball_practice_1 = {
+	  type: "html-keyboard-response",
+	  stimulus: function(){return( 
+		"<img style='border: 10px solid blue; margin: 50px' src='images/pinkball.jpg' height='200px'>" +
+		"<img style='margin: 50px' src='images/pottedplant.jpg' height='200px'>")},
 	  prompt: "<p>What's in the blue box?</p>",
 	  data: {trialtype: "practice", competitor_type: "practice", target_type: "practice", test_part: "practice"},
 	  post_trial_gap: 500
 	};
-	timeline.push(intro_practice_2);
+	timeline.push(ball_practice_1);
 
-	var instructions_practice_2 = {
-	  type: "html-button-response",
-	  stimulus: "<p>A different kid played this game before you. They also saw two pictures, and they talked about what was in the blue box.</p><p>I'm going to show you two pictures without the blue box, and tell you what the other kid said.</p><p>And then I'm going to ask you if you know which picture they were talking about.</p>",
-	  choices: ['Next'],
-	  data: {test_part: 'setup'},
-	  post_trial_gap: 1000
+	var ball_practice_2 = {
+	  type: "html-keyboard-response",
+	  stimulus: function(){return( 
+		"<img style='margin: 50px' src='images/pinkball.jpg' height='200px'>" +
+		"<img style='margin: 50px' src='images/pottedplant.jpg' height='200px'>")},
+	  data: {trialtype: "practice", competitor_type: "practice", target_type: "practice", test_part: "practice"},
+	  post_trial_gap: 500
 	};
-	timeline.push(instructions_practice_2);
+	timeline.push(ball_practice_2);
 
-	var intro_practice_3 = {
+	var ball_practice_3 = {
+	  type: "html-keyboard-response",
+	  stimulus: function(){return( 
+		"<img style='border: 10px solid blue; margin: 50px' src='images/pinkball.jpg' height='200px'>" +
+		"<img style='margin: 50px' src='images/pottedplant.jpg' height='200px'>")},
+	  data: {trialtype: "practice", competitor_type: "practice", target_type: "practice", test_part: "practice"},
+	  post_trial_gap: 500
+	};
+	timeline.push(ball_practice_3);
+
+	var flower_practice_1 = {
+	  type: "html-keyboard-response",
+	  stimulus: function(){return( 
+		"<img style='border: 10px solid blue; margin: 50px' src='images/lily.jpg' height='200px'>" +
+		"<img style='margin: 50px' src='images/rose.jpg' height='200px'>")},
+	  prompt: "<p>What's in the blue box?</p>",
+	  data: {trialtype: "practice", competitor_type: "practice", target_type: "practice", test_part: "practice"},
+	  post_trial_gap: 500
+	};
+	timeline.push(flower_practice_1);
+
+	var flower_practice_2 = {
 	  type: "html-keyboard-response",
 	  stimulus: function(){return( 
 		"<img style='margin: 50px' src='images/lily.jpg' height='200px'>" +
 		"<img style='margin: 50px' src='images/rose.jpg' height='200px'>")},
-	  prompt: "<p>The other kid saw these two pictures, and they said <i>flower</i>. Do you know which picture they're talking about?</p><p>Yes or No?</p>",
 	  data: {trialtype: "practice", competitor_type: "practice", target_type: "practice", test_part: "practice"},
 	  post_trial_gap: 500
 	};
-	timeline.push(intro_practice_3);
+	timeline.push(flower_practice_2);
+
+	var flower_practice_3 = {
+	  type: "html-keyboard-response",
+	  stimulus: function(){return( 
+		"<img style='border: 10px solid blue; margin: 50px' src='images/lily.jpg' height='200px'>" +
+		"<img style='margin: 50px' src='images/rose.jpg' height='200px'>")},
+	  data: {trialtype: "practice", competitor_type: "practice", target_type: "practice", test_part: "practice"},
+	  post_trial_gap: 500
+	};
+	timeline.push(flower_practice_3);
+
+	var table_practice_1 = {
+	  type: "html-keyboard-response",
+	  stimulus: function(){return( 
+		"<img style='border: 10px solid blue; margin: 50px' src='images/roundtable.jpg' height='200px'>" +
+		"<img style='margin: 50px' src='images/sidetable.jpg' height='200px'>")},
+	  prompt: "<p>What's in the blue box?</p>",
+	  data: {trialtype: "practice", competitor_type: "practice", target_type: "practice", test_part: "practice"},
+	  post_trial_gap: 500
+	};
+	timeline.push(table_practice_1);
+
+	var table_practice_2 = {
+	  type: "html-keyboard-response",
+	  stimulus: function(){return( 
+		"<img style='margin: 50px' src='images/sidetable.jpg' height='200px'>" +
+		"<img style='margin: 50px' src='images/roundtable.jpg' height='200px'>")},
+	  prompt: "<p>What's in the blue box?</p>",
+	  data: {trialtype: "practice", competitor_type: "practice", target_type: "practice", test_part: "practice"},
+	  post_trial_gap: 500
+	};
+	timeline.push(table_practice_2);
+
+	var table_practice_3 = {
+	  type: "html-keyboard-response",
+	  stimulus: function(){return( 
+		"<img style='margin: 50px' src='images/sidetable.jpg' height='200px'>" +
+		"<img style='border: 10px solid blue; margin: 50px' src='images/roundtable.jpg' height='200px'>")},
+	  data: {trialtype: "practice", competitor_type: "practice", target_type: "practice", test_part: "practice"},
+	  post_trial_gap: 500
+	};
+	timeline.push(table_practice_3);
+
+	// var instructions_practice_2 = {
+	//   type: "html-button-response",
+	//   stimulus: "<p>A different kid played this game before you. They also saw two pictures, and they talked about what was in the blue box.</p><p>I'm going to show you two pictures without the blue box, and tell you what the other kid said.</p><p>And then I'm going to ask you if you know which picture they were talking about.</p>",
+	//   choices: ['Next'],
+	//   data: {test_part: 'setup'},
+	//   post_trial_gap: 1000
+	// };
+	// timeline.push(instructions_practice_2);
+
+	// var intro_practice_3 = {
+	//   type: "html-keyboard-response",
+	//   stimulus: function(){return( 
+	// 	"<img style='margin: 50px' src='images/lily.jpg' height='200px'>" +
+	// 	"<img style='margin: 50px' src='images/rose.jpg' height='200px'>")},
+	//   prompt: "<p>The other kid saw these two pictures, and they said <i>flower</i>. Do you know which picture they're talking about?</p><p>Yes or No?</p>",
+	//   data: {trialtype: "practice", competitor_type: "practice", target_type: "practice", test_part: "practice"},
+	//   post_trial_gap: 500
+	// };
+	// timeline.push(intro_practice_3);
 
 	var paired_trial = {
 	  type: "survey-text",
