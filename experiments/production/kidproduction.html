@@ -30,7 +30,7 @@
 		type: "survey-text-1",
 		questions: [
 			{prompt: "Enter the subject ID", required: true, columns: 20, name: "ID"},
-			{prompt: "Age (Round to nearest age)", required: true, columns: 20, name: "Age"}
+			{prompt: "Age", required: true, columns: 20, name: "Age"}
 		],
 		data: {test_part: "welcome"},
 		post_trial_gap: 1000,
@@ -57,7 +57,7 @@
 
 	var paired_item_block = {
 	  type: "html-button-response",
-	  stimulus: "<p>In this round, you will see two pictures on the screen at a time.</p><p>One of the pictures will be in a <span style='color:blue'>blue box</span>.</p><p>Your job is to say what's inside the blue box using <strong>one or two words</strong>.</p><p>Someone else will see the same pictures, but without the blue box.</p><p>I will tell them what you said so that they can pick the picture you're talking about.</p><p>Try your best to help them pick out the right picture!</p>",
+	  stimulus: "<p>In this round, you will see two pictures on the screen at a time.</p><p>One of the pictures will be in a <span style='color:blue'>blue box</span>.</p><p>Your job is to say what's inside the blue box using a few words.</p><p>Someone else will see the same pictures, but without the blue box.</p><p>I will tell them what you said so that they can pick the picture you're talking about.</p><p>Try your best to help them pick out the right picture!</p>",
 	  choices: ['Continue'],
 	  data: {test_part: 'block-setup'},
 	  post_trial_gap: 500
@@ -65,11 +65,11 @@
 
 	var check_block = {
 	  type: "html-button-response",
-	  stimulus: "<p>Another kid played this game before you, and I'm going to tell you what they said.</p><p>I'll show you two pictures each time, without the blue box.</p><p>It looks like I might have jumbled some of the pictures and words,</p><p>so sometimes you might not be able to find the picture that the other kid was talking about.<p></p>You just need to tell me whether you know, or don't know, which picture the other kid was talking about.</p>",
+	  stimulus: "<p>Another kid played this game before you, and I'm going to tell you what they said.</p><p>I'll show you two pictures each time, without the blue box.</p><p>Sometimes, what they said will help you pick the right picture, but sometimes it might not,</p><p>and sometimes, it might not even match the pictures you see.<p></p>When I ask you if you know which picture the other kid is talking about, you can say 'Yes' if you think what they said helps you find the right picture,</p><p>or 'No' if you think it doesn't, or if what they said doesn't match what's on the screen",
 	  choices: ['Continue'],
 	  data: {test_part: 'block-setup'},
 	  post_trial_gap: 500
-	}
+	};
 
 
 	var practice = [
@@ -77,7 +77,7 @@
 		  {target: "images/cup.jpg", foil: "images/plate.jpg"},
 		  {target: "images/pinkball.jpg", foil: "images/pottedplant.jpg"},
 		  {target: "images/lily.jpg", foil: "images/rose.jpg"},
-		  {target: "images/sidetable.jpg", foil: "images/coffeetable.jpg"}
+		  {target: "images/sidetable.jpg", foil: "images/roundtable2.jpg"}
 	];
 
 	var close_tangrams = [
@@ -278,7 +278,7 @@
 	var table_practice_1 = {
 	  type: "html-keyboard-response",
 	  stimulus: function(){return( 
-		"<img style='border: 10px solid blue; margin: 50px' src='images/roundtable.jpg' height='200px'>" +
+		"<img style='border: 10px solid blue; margin: 50px' src='images/roundtable2.jpg' height='200px'>" +
 		"<img style='margin: 50px' src='images/sidetable.jpg' height='200px'>")},
 	  prompt: "<p>What's in the blue box?</p>",
 	  data: {trialtype: "practice", competitor_type: "practice", target_type: "practice", test_part: "practice"},
@@ -290,8 +290,7 @@
 	  type: "html-keyboard-response",
 	  stimulus: function(){return( 
 		"<img style='margin: 50px' src='images/sidetable.jpg' height='200px'>" +
-		"<img style='margin: 50px' src='images/roundtable.jpg' height='200px'>")},
-	  prompt: "<p>What's in the blue box?</p>",
+		"<img style='margin: 50px' src='images/roundtable2.jpg' height='200px'>")},
 	  data: {trialtype: "practice", competitor_type: "practice", target_type: "practice", test_part: "practice"},
 	  post_trial_gap: 500
 	};
@@ -301,31 +300,11 @@
 	  type: "html-keyboard-response",
 	  stimulus: function(){return( 
 		"<img style='margin: 50px' src='images/sidetable.jpg' height='200px'>" +
-		"<img style='border: 10px solid blue; margin: 50px' src='images/roundtable.jpg' height='200px'>")},
+		"<img style='border: 10px solid blue; margin: 50px' src='images/roundtable2.jpg' height='200px'>")},
 	  data: {trialtype: "practice", competitor_type: "practice", target_type: "practice", test_part: "practice"},
 	  post_trial_gap: 500
 	};
 	timeline.push(table_practice_3);
-
-	// var instructions_practice_2 = {
-	//   type: "html-button-response",
-	//   stimulus: "<p>A different kid played this game before you. They also saw two pictures, and they talked about what was in the blue box.</p><p>I'm going to show you two pictures without the blue box, and tell you what the other kid said.</p><p>And then I'm going to ask you if you know which picture they were talking about.</p>",
-	//   choices: ['Next'],
-	//   data: {test_part: 'setup'},
-	//   post_trial_gap: 1000
-	// };
-	// timeline.push(instructions_practice_2);
-
-	// var intro_practice_3 = {
-	//   type: "html-keyboard-response",
-	//   stimulus: function(){return( 
-	// 	"<img style='margin: 50px' src='images/lily.jpg' height='200px'>" +
-	// 	"<img style='margin: 50px' src='images/rose.jpg' height='200px'>")},
-	//   prompt: "<p>The other kid saw these two pictures, and they said <i>flower</i>. Do you know which picture they're talking about?</p><p>Yes or No?</p>",
-	//   data: {trialtype: "practice", competitor_type: "practice", target_type: "practice", test_part: "practice"},
-	//   post_trial_gap: 500
-	// };
-	// timeline.push(intro_practice_3);
 
 	var paired_trial = {
 	  type: "survey-text",
@@ -338,7 +317,7 @@
 			"' height='200px'>");
             return _.shuffle([target, foil]).join('');
 	  },
-	  questions: [{prompt: "What would you call the picture in the <span style='color:blue'>blue box</span>? Use <strong>one or two words</strong> to help someone else pick that picture!", required: true, columns: 20}],
+	  questions: [{prompt: "What would you call the picture in the <span style='color:blue'>blue box</span>? Use a few words to help someone else pick that picture!", required: true, columns: 20}],
 	  data: {trialtype: "paired"},
 	  post_trial_gap: 500
 	};
