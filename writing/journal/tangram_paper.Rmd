@@ -169,7 +169,7 @@ age_effect_exchanges = lmer.exchanges %>% filter(term == 'age')
 rep_effect_exchanges = lmer.exchanges %>% filter(term == 'rep_num')
 ```
 
-```{r acc_exchanges, cache = T, fig.env = "figure*", fig.pos = "tb", fig.width = 6, fig.height = 2.75, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "(A) Accuracy improves over time for all groups. (B) Number of dialogue exchanges is higher for younger children. Error bars are 95\\% CIs. The drop in accuracy for 8-year-olds is likely an artifact of a small set of children losing interest in the task."}
+```{r acc_exchanges, fig.width = 6, fig.height = 2.75, fig.align = "center", fig.cap = "(A) Accuracy improves over time for all groups. (B) Number of dialogue exchanges is higher for younger children. Error bars are 95\\% CIs. The drop in accuracy for 8-year-olds is likely an artifact of a small set of children losing interest in the task."}
 
 # render plot
 plt.results.acc <- result.acc.means %>%   
@@ -257,7 +257,7 @@ We characterized developmental differences using three measures of communicative
 
 We began by analyzing task performance across age groups. Because pairs of adults were consistently at ceiling throughout the task, we focused on the performance of parent-child pairs. We constructed a mixed-effects logistic regression predicting whether the matcher successfully chose the correct referent on each trial. The model included (continuous) fixed effects of age and repetition block, random intercepts for each tangram and pair of participants, and random effects of repetition block for each pair of participants^[In principle, we were also interested in whether there were differences in accuracy when the child vs. parent was matcher, but our sample is likely underpowered for such a finer-grained analysis within games.].
 
-Initial accuracy was well above chance for all age groups, indicating that even young children can succeed in this referential task with their parents. We also found a significant main effect of age ($\beta$ = `r age_effect_acc$estimate`, $t$ = `r age_effect_acc$statistic`; $p =$ `r papaja::printp(age_effect_acc$p.value)`):  Pairs with younger children performed significantly worse than pairs with older children. Critically, however, accuracy improved significantly over the four repetition blocks for all groups ($\beta$ = `r rep_effect_acc$estimate`, $t$ = `r rep_effect_acc$statistic`, $p$ `r papaja::printp(rep_effect_acc$p.value)`; Fig. \ref{fig:acc_exchanges}A). Such improvement for 4-year-olds contrasts with previous results showing no improvement in accuracy with pairs of kindergarteners [age 5, @krauss1969]. 
+Initial accuracy was well above chance for all age groups, indicating that even young children can succeed in this referential task with their parents. We also found a significant main effect of age ($\beta$ = `r age_effect_acc$estimate`, $t$ = `r age_effect_acc$statistic`; $p=$ `r papaja::printp(age_effect_acc$p.value)`):  Pairs with younger children performed significantly worse than pairs with older children. Critically, however, accuracy improved significantly over the four repetition blocks for all groups ($\beta$ = `r rep_effect_acc$estimate`, $t$ = `r rep_effect_acc$statistic`, $p$ `r papaja::printp(rep_effect_acc$p.value)`; Fig. \ref{fig:acc_exchanges}A). Such improvement for 4-year-olds contrasts with previous results showing no improvement in accuracy with pairs of kindergarteners [age 5, @krauss1969]. 
 
 ### Interactive dialogue exchanges
 
@@ -422,13 +422,13 @@ d.reduction.means %>%
 
 ```
 
-A key signature of successful communication among adults is an increase in efficiency over repeated reference [@clark1986]. As pairs form conceptual pacts, they are able to communicate the same meaning using fewer words. Our control sample of adults replicated this classic effect ($\beta =$ `r adult_age_effect$estimate`, $t =$ `r adult_age_effect$statistic`, `r papaja::printp(adult_age_effect$p.value)`). Here, we asked whether parents and children of different ages spontaneously reduce their referential expressions in the same way. We define referential expressions as all utterances produced by the director on a given trial, up until a selection is made by the matcher. Because the total number of words produced on a trial is correlated with the number of dialogue exchanges examined above ($r=$ `r word_exchange_cor`), we constructed a normalized efficiency measure that controls for additional turns. Specifically, we defined efficiency as the total number of words produced by the *director* divided by the number of dialogue exchanges on that trial. 
+A key signature of successful communication among adults is an increase in efficiency over repeated reference [@clark1986]. As pairs form conceptual pacts, they are able to communicate the same meaning using fewer words. Our control sample of adults replicated this classic effect ($\beta=$ `r adult_age_effect$estimate`, $t=$ `r adult_age_effect$statistic`, `r papaja::printp(adult_age_effect$p.value)`). Here, we asked whether parents and children of different ages spontaneously reduce their referential expressions in the same way. We define referential expressions as all utterances produced by the director on a given trial, up until a selection is made by the matcher. Because the total number of words produced on a trial is correlated with the number of dialogue exchanges examined above ($r=$ `r word_exchange_cor`), we constructed a normalized efficiency measure that controls for additional turns. Specifically, we defined efficiency as the total number of words produced by the *director* divided by the number of dialogue exchanges on that trial. 
 
-Because participants in a pair alternated roles, each participant served as the director twice for each tangram. This structure allowed us to examine how each participant changed their language when they were the director (Fig. \ref{fig:reduction}). Using a mixed-effects model, we predicted the (log) number of words per exchange on each trial, including fixed effects of age, repetition block, and speaker identity (parent vs. child) as well as all of their interactions. We also included random intercepts at the tangram-level and maximal random structure at the dyad level [i.e. intercept, slopes for repetition block and speaker identity, and their interaction; @BarrLevyScheepersTily13_KeepItMaximal]. All variables were centered to allow interpretation of lower-order terms as effects at the average level of the other terms. We found significant main effects of repetition block ($\beta =$ `r rep_effect_reduction$estimate`, $t =$ `r rep_effect_reduction$statistic`, $p$ `r rep_effect_reduction_pvalue`), speaker identity ($\beta =$ `r person_effect_reduction$estimate`, $t =$ `r person_effect_reduction$statistic`, $p$ `r person_effect_reduction_pvalue`), and age ($\beta =$ `r age_effect_reduction$estimate`, $t =$ `r age_effect_reduction$statistic`, $p$ `r age_effect_reduction_pvalue`). All else being equal, directors used fewer words over subsequent repetitions, children used fewer words than their parents, and pairs with older children used fewer words than pairs with younger children. However, these main effects were clarified by several interactions of interest.
+Because participants in a pair alternated roles, each participant served as the director twice for each tangram. This structure allowed us to examine how each participant changed their language when they were the director (Fig. \ref{fig:reduction}). Using a mixed-effects model, we predicted the (log) number of words per exchange on each trial, including fixed effects of age, repetition block, and speaker identity (parent vs. child) as well as all of their interactions. We also included random intercepts at the tangram-level and maximal random structure at the dyad level [i.e. intercept, slopes for repetition block and speaker identity, and their interaction; @BarrLevyScheepersTily13_KeepItMaximal]. All variables were centered to allow interpretation of lower-order terms as effects at the average level of the other terms. We found significant main effects of repetition block ($\beta=$ `r rep_effect_reduction$estimate`, $t=$ `r rep_effect_reduction$statistic`, $p$ `r rep_effect_reduction_pvalue`), speaker identity ($\beta=$ `r person_effect_reduction$estimate`, $t=$ `r person_effect_reduction$statistic`, $p$ `r person_effect_reduction_pvalue`), and age ($\beta=$ `r age_effect_reduction$estimate`, $t=$ `r age_effect_reduction$statistic`, $p$ `r age_effect_reduction_pvalue`). All else being equal, directors used fewer words over subsequent repetitions, children used fewer words than their parents, and pairs with older children used fewer words than pairs with younger children. However, these main effects were clarified by several interactions of interest.
 
-First, while parents on average used more words as director than their children did, we found a significant interaction with the child's age ($\beta =$ `r person_age_interaction_reduction$estimate`, $t =$ `r person_age_interaction_reduction$statistic`, $p$ `r  person_age_interaction_reduction_pvalue`). This gap between parent and child utterance length was largest at age 4 but nearly disappeared by age 8. Second, we found that parents reduced their utterance length over time more strongly than children did, holding age group constant ($\beta =$ `r person_rep_interaction_reduction$estimate`, $t =$ `r person_rep_interaction_reduction$statistic`, $p$ `r person_rep_interaction_reduction_pvalue`). Third, having older children in a pair supported stronger reduction overall, ($\beta =$ `r age_rep_interaction_reduction$estimate`, $t =$ `r age_rep_interaction_reduction$statistic`, $p$ `r age_rep_interaction_reduction_pvalue`). 
+First, while parents on average used more words as director than their children did, we found a significant interaction with the child's age ($\beta =$ `r person_age_interaction_reduction$estimate`, $t =$ `r person_age_interaction_reduction$statistic`, $p$ `r  person_age_interaction_reduction_pvalue`). This gap between parent and child utterance length was largest at age 4 but nearly disappeared by age 8. Second, we found that parents reduced their utterance length over time more strongly than children did, holding age group constant ($\beta =$ `r person_rep_interaction_reduction$estimate`, $t=$ `r person_rep_interaction_reduction$statistic`, $p$ `r person_rep_interaction_reduction_pvalue`). Third, having older children in a pair supported stronger reduction overall, ($\beta=$ `r age_rep_interaction_reduction$estimate`, $t=$ `r age_rep_interaction_reduction$statistic`, $p$ `r age_rep_interaction_reduction_pvalue`). 
 
-Finally, an intriguing developmental question is whether reduction changes over the course of development: are 4-year-olds able to become more efficient as common ground is built, in the same way 8-year-olds do? Because parents of different age groups display similar slopes of reduction, this question is addressed by a 3-way interaction. We found that this interaction was not significant ($\beta =$ `r person_age_rep_interaction_reduction$estimate`, $t =$ `r person_age_rep_interaction_reduction$statistic`, $p$ `r person_age_rep_interaction_reduction_pvalue`), although our sample was likely underpowered to detect this higher-order interaction.
+Finally, an intriguing developmental question is whether reduction changes over the course of development: are 4-year-olds able to become more efficient as common ground is built, in the same way 8-year-olds do? Because parents of different age groups display similar slopes of reduction, this question is addressed by a 3-way interaction. We found that this interaction was not significant ($\beta=$ `r person_age_rep_interaction_reduction$estimate`, $t=$ `r person_age_rep_interaction_reduction$statistic`, $p$ `r person_age_rep_interaction_reduction_pvalue`), although our sample was likely underpowered to detect this higher-order interaction.
 
 # Analyzing the content of pacts
 
@@ -737,8 +737,8 @@ lmer.feedback <- feedback %>%
 
 For each word in the final description of a tangram, we checked whether it had appeared in an earlier referential expression for that tangram. We noted the first trial where it appeared, and who was director when it was produced^[To match different forms of the same word (e.g. "jumping" vs. "jumped") we first lemmatized each word. We also filtered out stop words ("the", "with"), as well as common words that were not part of the pacts ("person", "box"), and excluded words that appeared for the first time on the final repetition of each target.]. The proportion of words originating with the child and parent is shown in Fig. \ref{fig:origins}A. We observed an asymmetry: the words used by children on the final repetition were more likely to have originated with their parents than the words used by parents were to originate with their children. In addition, this gap appeared to close with older groups, with parents more likely to adopt words introduced by older children.
 
-We tested this hypothesized interaction using a mixed-effects logistic model predicting whether each word appearing on the final repetition for each tangram was introduced by the current director or by their partner. We included fixed effects of age group and the speaker identity (parent or child), as well as random intercepts for each pair of participants and each tangram. We found a significant main effect of speaker identity, with the words used by children more likely to originate with their partner than the words used by parents, ($\beta =$ `r speaker_effect$estimate`, $t =$ `r speaker_effect$statistic`, `r papaja::printp(speaker_effect$p.value)`).
-Additionally, we found a weak but significant interaction between speaker and age, indicating that this asymmetry was smaller for older children ($\beta =$ `r match.interaction_effect$estimate`, $t =$ `r match.interaction_effect$statistic`, $p=$ `r papaja::printp(match.interaction_effect$p.value)`). Thus, parents---especially parents of younger children---appear to be the source of the words that persist in successful conceptual pacts.
+We tested this hypothesized interaction using a mixed-effects logistic model predicting whether each word appearing on the final repetition for each tangram was introduced by the current director or by their partner. We included fixed effects of age group and the speaker identity (parent or child), as well as random intercepts for each pair of participants and each tangram. We found a significant main effect of speaker identity, with the words used by children more likely to originate with their partner than the words used by parents, ($\beta=$ `r speaker_effect$estimate`, $t=$ `r speaker_effect$statistic`, `r papaja::printp(speaker_effect$p.value)`).
+Additionally, we found a weak but significant interaction between speaker and age, indicating that this asymmetry was smaller for older children ($\beta=$ `r match.interaction_effect$estimate`, $t=$ `r match.interaction_effect$statistic`, $p=$ `r papaja::printp(match.interaction_effect$p.value)`). Thus, parents---especially parents of younger children---appear to be the source of the words that persist in successful conceptual pacts.
 
 ## How do pacts differ across ages?
 
@@ -746,21 +746,24 @@ Given that the labels used by younger children tend to originate with their pare
 
 We tested this hypothesis by asking about the linguistic complexity of the pacts developed in each age group. To estimate the complexity of individual words, we used self-reported age of acquisition (AoA) estimates [@kuperman2012]. Our assumption, based on Kuperman et al.'s work, is that more complex words are harder to acquire, and thus have later ages of acquisition (AoA). To estimate the complexity of referential expressions as a whole, we simply averaged the AoAs of all the words they contained^[We first removed any words in a list of `r length(tm::stopwords())` stop words like "at" and "me" from the \texttt{tm} package [@feinerer2008]]. In all age groups, parents produced more linguistically complex referential expressions than children, but as children get older, both their expressions and their parents' become more linguistically complex over repetitions of the same tangram (like adults) (Fig. \ref{fig:origins}B). 
 
-We confirmed this observation with a mixed-effects model including all possible interactions of age, person (child vs. parent), and repetition number, and maximal random effect structure as before. We found significant main effects of age ($\beta =$ `r age_effect_origin$estimate`, $t =$ `r age_effect_origin$statistic`, $p$`r age_effect_origin_pvalue`), and person ($\beta =$ `r person_effect_origin$estimate`, $t =$ `r person_effect_origin$statistic`, $p$ `r person_effect_origin_pvalue`), but not repetition ($\beta =$ `r rep_effect_origin$estimate`, $t =$ `r rep_effect_origin$statistic`, $p$ `r rep_effect_origin_pvalue`). All else being equal, pairs with older children produced more complex utterances, and parents produced more complex utterances than children. Further, we found a significant interaction between age and repetition number, suggesting that later repetitions became more complex for dyads with older children ($\beta =$ `r age_rep_interaction_origin$estimate`, $t =$ `r age_rep_interaction_origin$statistic`, $p$ `r  age_rep_interaction_origin_pvalue`). This interaction may be driven by reduction processes, as more distinctive words tend to persist as common words are dropped [@hawkins2019]. No other effects were significant, indicating that parents' utterances remained a constant level of complexity above children's even as children's utterances became more complex. These results suggest that pact formation depends not only on parental input, but on children as well---pacts may originate from parents, but children control their complexity.
+We confirmed this observation with a mixed-effects model including all possible interactions of age, person (child vs. parent), and repetition number, and maximal random effect structure as before. We found significant main effects of age ($\beta=$ `r age_effect_origin$estimate`, $t =$ `r age_effect_origin$statistic`, $p$`r age_effect_origin_pvalue`), and person ($\beta=$ `r person_effect_origin$estimate`, $t=$ `r person_effect_origin$statistic`, $p$ `r person_effect_origin_pvalue`), but not repetition ($\beta=$ `r rep_effect_origin$estimate`, $t =$ `r rep_effect_origin$statistic`, $p$ `r rep_effect_origin_pvalue`). All else being equal, pairs with older children produced more complex utterances, and parents produced more complex utterances than children. Further, we found a significant interaction between age and repetition number, suggesting that later repetitions became more complex for dyads with older children ($\beta=$ `r age_rep_interaction_origin$estimate`, $t=$ `r age_rep_interaction_origin$statistic`, $p$ `r  age_rep_interaction_origin_pvalue`). This interaction may be driven by reduction processes, as more distinctive words tend to persist as common words are dropped [@hawkins2019]. No other effects were significant, indicating that parents' utterances remained a constant level of complexity above children's even as children's utterances became more complex. These results suggest that pact formation depends not only on parental input, but on children as well---pacts may originate from parents, but children control their complexity.
 
 # Production experiment
 
 We ran a production experiment.
 
-```{r}
+```{r anonymize-e2-data, eval = FALSE}
 #anonymize
 read_csv(here("data/production/dataFromMongo.csv"))%>%
   filter(trial_type == "survey-text") %>%
   filter(iterationName == "pilot2") %>%
   mutate(wID = as.numeric(as.factor(wID))) %>%
   write_csv(here('./data/production/anonymizedDataFromMongo.csv'))
+```
 
-d.prod.raw <- read_csv(here("data/production/anonymizedDataFromMongo.csv"))
+```{r e2-data}
+d.prod.raw <- read_csv(here("data/production/anonymizedDataFromMongo.csv"),
+                       show_col_types = FALSE)
   
 complete_games <- d.prod.raw %>%
   group_by(wID) %>%
@@ -781,7 +784,8 @@ d.prod <- d.prod.raw %>%
 
 #write.csv(d.prod, "data/production/pilot_data_lemmatized.csv")
 
-#d.prod.clean <- read_csv(here("data/production/pilot_data_clean.csv")) %>%
+d.prod.clean <- read_csv(here("data/production/pilot_data_clean.csv"),
+                         show_col_types = FALSE) 
   #filter(utt_length > 1) #%>%
   #mutate(clean_utt = lemmatize_words(clean_utt))
   
@@ -997,17 +1001,19 @@ indiv_measures <- d.prod %>%
 
 Our current hypothesis is that we're not getting context effects for adults in this pilot because even the 'close' contexts aren't close along the actual representational dimensions people are using to label things. So if their labeling prior in isolation is to say it's 'sad', that's still highly informative in the close context because the distractor doesn't look sad at all and there's no pressure being put on the prior (kids likely have very different priors, e.g. 'guy' or 'person' with high probability, so these same contexts probably would put pressure on them). To do this in adults, we probably need to elicit priors in isolation for more tangrams (e.g. all 40) and then design better 'close' contexts where we put together tangrams where adults have very similar priors. Maybe the same for kids.
 
-```{r}
+```{r anonymize-norming-data, eval = FALSE}
 # anonymize raw csv
-read_csv(here('./data/norming/dataFromMongo.csv')) %>%
+read_csv(here('data/norming/dataFromMongo.csv')) %>%
   filter(iterationName %in% c('full_sample', 'full_sample2')) %>%
   filter(trial_type == 'survey-text') %>%
   mutate(wID = as.numeric(as.factor(wID))) %>%
   write_csv(here('./data/norming/anonymizedDataFromMongo.csv'))
+```
 
+```{r load-norming-data}
 # take the first 31 rows of each wID. 
 # gets the first game of people who did it twice -- Mongo returns objectIDs in order of insertion date
-d.raw.labels <- read_csv(here('./data/norming/anonymizedDataFromMongo.csv')) 
+d.raw.labels <- read_csv(here("data/norming/anonymizedDataFromMongo.csv")) 
 
 initialAssignmentIDs <- d.raw.labels %>%
   group_by(wID) %>%
@@ -1048,14 +1054,14 @@ d %>%
 
 check RTs
 
-```{r}
+```{r eval = FALSE}
 d %>%
   group_by(wID) %>%
   arrange(trial_index) %>%
   mutate(rep = (lemmatized_utt == lag(lemmatized_utt, 1) &
                 lemmatized_utt == lag(lemmatized_utt, 2))) %>%
   filter(rep) %>%
-  arrange(wID)
+  arrange(wID) 
   # group_by(wID) %>%
   # summarize(meanRT = mean(rt)) %>%
   filter(rt < 2000)
@@ -1100,7 +1106,7 @@ pairs <- d %>%
 
 # Try a simpler, non-KL measure of overlap
 
-```{r overlap helpers}
+```{r overlap-helpers}
 check_overlap <- function(df, x1, x2) {
   x1 <- enquo(x1)
   x2 <- enquo(x2)
@@ -1123,7 +1129,7 @@ flip_target_competitior <- function(df, x1, x2) {
 }
 ```
 
-```{r}
+```{r simulate-overlap, eval = FALSE}
 get_average_overlap <- function(input_data) {
   flipped_pairs <- pairs %>%
     #flip_target_competitior(.,target_id, comparison_id) %>%
@@ -1180,13 +1186,13 @@ overall <- d %>%
 
 look at all pairwise comparisons...
 
-```{r plot-overlap} 
+```{r plot-overlap, eval = FALSE} 
 ggplot(symmetric_overlap, aes(x = target_id, y = comparison_id, fill = log1p(overlap))) + 
   geom_tile() +
   theme(legend.position = 'right')
 ```
 
-```{r}
+```{r pilot-items, eval = FALSE}
 pilot_items <- d.prod.clean %>% 
   filter(target_type == "tangram", competitor_type != "isolated") %>%
   distinct(target, foil, competitor_type) %>%
@@ -1198,20 +1204,20 @@ pilot_items %>%
   tidyboot_mean(overlap)
 ```
 
-```{r}
+```{r, eval = FALSE}
 pilot_items %>%
   ggplot(aes(x = competitor_type, y = overlap)) +
     geom_jitter(width = .1, height = .1) +
     geom_boxplot(alpha = .5)
 ```
 
-```{r}
+```{r, eval = FALSE}
 pairs %>%
   arrange(kl) 
 ```
 
 highest and lowest overlap pairs
-```{r overall overlap}
+```{r overall overlap, eval = FALSE}
 
 dissimilar <- overall %>%
   filter(!(target_id %in% c("R1.jpg", "O1.jpg"))) %>%
