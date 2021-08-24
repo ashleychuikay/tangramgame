@@ -750,12 +750,23 @@ We confirmed this observation with a mixed-effects model including all possible 
 
 # Experiment 2: Comprehension experiment
 
+Given appropriate scaffolding from their parents, we have found that even young children are able to successfully coordinate on pacts.
+But why do younger children struggle so much in the first place?
+Understanding the source of their difficulty may shed new light on what allows children to succeed in interactions with their parents while failing in interactions with their peers.
+One possibility is that the difficulty lies primarily in the process of *comprehension*.
+Each child may have their own idiosyncratic way of conceptualizing and describing tangrams, and are simply unable to understand or accommodate their partner's descriptions.
+Another possibility is that the difficulty lies in *production*.
+In other words, children may have difficulty generating a sufficiently descriptive referring expression on their own, given their limited vocabulary.
+
+In this study, we explored the ability of children and adults to comprehend the descriptions provided by both children and adults.
+If the primary source of difficulty were comprehension, we might expect that naive adults would equally good at understanding referring expressions produced by children and adults, while naive children would be equally bad.
+
 ```{r load-data}
-raw_turk_data <- read_csv(here("data/comprehension/comprehension_raw.csv")) %>%
+raw_adult_data <- read_csv(here("data/comprehension/comprehension_adults.csv")) %>%
   select(-age) %>%
   filter(!audioid %in% c("67_08", "67_08_b"))
 
-check_correct <- raw_turk_data %>%
+check_correct <- raw_adult_data %>%
   filter(occurrence == "check") %>%
   mutate(check_correct = correct) %>%
   select(subid, check_correct)
@@ -770,7 +781,7 @@ passed_check <- check_correct %>%
 stims <- read_csv(here("data/comprehension/random_stims.csv")) %>%
   select(-c(correct, trial, rightpic, leftpic))
 
-kid_data <- read_csv(here("data/comprehension/kid_comprehension_data.csv")) %>%
+raw_kid_data <- read_csv(here("data/comprehension/kid_comprehension_data.csv")) %>%
   filter(!is.na(id)) %>%
   left_join(stims, by = c("id" = "subject", "target")) %>%
   rename(audioid = audio,
@@ -789,7 +800,7 @@ database_ids <- read_csv(here("data/databaseid.csv")) %>%
   select(gameid, age)
 
 #gameid is original subject id
-tidy_turk_data <- raw_turk_data %>%
+tidy_turk_data <- raw_adult_data %>%
   left_join(check_correct, by = c("subid")) %>%
   filter(check_correct, occurrence != "check") %>%
   separate(audioid, into = c("gameid", "gametrial"), sep = "_") %>%
@@ -799,7 +810,7 @@ tidy_turk_data <- raw_turk_data %>%
   mutate(log_rt = log(reactiontime)) %>%
   pivot_longer(cols = c(correct, reactiontime, log_rt), names_to = "measure")
 
-tidy_kid_data <- kid_data %>%
+tidy_kid_data <- raw_kid_data %>%
   separate(audioid, into = c("gameid", "gametrial"), sep = "_") %>%
   mutate(gameid = as.numeric(gameid),
          gametrial = as.numeric(gametrial)) %>%
