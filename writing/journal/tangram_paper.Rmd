@@ -751,7 +751,7 @@ We confirmed this observation with a mixed-effects model including all possible 
 # Experiment 2: Comprehension experiment
 
 ```{r load-data}
-raw_turk_data <- read_csv(here("data/comprehension/dataFromMongo.csv")) %>%
+raw_turk_data <- read_csv(here("data/comprehension/comprehension_raw.csv")) %>%
   select(-age) %>%
   filter(!audioid %in% c("67_08", "67_08_b"))
 
