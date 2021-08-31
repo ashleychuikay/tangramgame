@@ -70,6 +70,7 @@ library(tidyverse)
 library(tidytext)
 library(textstem)
 library(entropy)
+library(janitor)
 
 theme_set(theme_few(base_size = 10) + theme(legend.position = "none"))
 
@@ -89,9 +90,12 @@ PARENTS <- "#fe9929"
 ```
 
 ```{r load-data}
-kuperman_aoas <- read_csv(here("data/corpus_data/kuperman_aoas.csv"))
-combined_data <- read_csv(here("data/deidentified/combined.csv")) 
-exchanges_data <- read_csv(here("data/deidentified/exchanges.csv")) 
+kuperman_aoas <- read_csv(here("data/corpus_data/kuperman_aoas.csv"),
+                          show_col_types = FALSE)
+combined_data <- read_csv(here("data/deidentified/combined.csv"),
+                          show_col_type = FALSE) 
+exchanges_data <- read_csv(here("data/deidentified/exchanges.csv"),
+                           show_col_types = FALSE) 
 ```
 
 Common ground is a foundational requirement for successful communication: Interlocutors must both understand each other and know that they understand each other [@bruner1985]. As a consequence, even simple referential expressions are constructed collaboratively. When the meaning of an utterance is unclear, interlocutors will engage in negotiation, arriving at a *conversational pact* about how to think and talk about the intended referent [@clark1986]. Adults fluently form, revise, and track the formation of pacts. For instance, Brennan and Clark [-@brennan1996] showed that adults will use the appropriate level of specificity for a referent (e.g. "loafer" rather than "shoe" when another shoe is present), carry this forward into a new context with the same conversational partner even when the initial competitor is removed, then revert to "shoe" when a new partner is introduced.
@@ -261,7 +265,7 @@ Initial accuracy was well above chance for all age groups, indicating that even 
 
 ### Interactive dialogue exchanges
 
-```{r}
+```{r question-marks}
 questionMarks <- exchanges_data %>% 
   filter(person == 'parent', role == 'matcher') %>% 
   mutate(containQ = str_detect(utterance, "\\?")) %>% 
@@ -287,7 +291,7 @@ chisq.out <- questionMarks %>%
 ```
 
 
-```{r}
+```{r question-count}
 questionMarkCount <- exchanges_data %>% 
   filter(role == "matcher") %>%
   mutate(containQ = str_detect(utterance, "\\?")) %>% 
@@ -329,7 +333,7 @@ These lengthier exchanges may reflect efforts by parents to provide and elicit a
 
 ### Reduction in length of referential expression
 
-```{r}
+```{r exchange-reduction}
 word_exchange_cor = round(cor(d.reduction.raw$numExchanges, d.reduction.raw$num_words),2)
 
 d.reduction.centered <- d.reduction.raw %>% 
@@ -433,7 +437,8 @@ Finally, an intriguing developmental question is whether reduction changes over 
 # Analyzing the content of pacts
 
 ```{r matches}
-matches <- read_csv(here("data/deidentified/word_matches.csv")) %>% 
+matches <- read_csv(here("data/deidentified/word_matches.csv"),
+                    show_col_types = FALSE) %>% 
   filter(later_rep == 4) %>%
   spread(earlier_rep, match) %>%
   mutate(first_appearance = case_when(`1` ~ '1', 
@@ -467,6 +472,7 @@ tokens <- combined_data %>%
   filter(role == "director") %>%
   group_by(age, person, subid, target, rep_num) %>%
   summarise(words = str_to_lower(utterance)) %>%
+  ungroup() %>%
   unnest_tokens(word, words) %>%
   ungroup() %>%
   mutate(word = str_to_lower(word))
@@ -607,7 +613,7 @@ speaker_effect <- match.model %>% filter(term == 'director1')
 match.interaction_effect <- match.model %>% filter(term == 'age:director1')
 ```
 
-```{r plots for talk}
+```{r plots-for-talk, eval = FALSE}
 
 #exchanges
 d.exchanges.mean %>%
@@ -761,8 +767,9 @@ In other words, children may have difficulty generating a sufficiently descripti
 In this study, we explored the ability of children and adults to comprehend the descriptions provided by both children and adults.
 If the primary source of difficulty were comprehension, we might expect that naive adults would equally good at understanding referring expressions produced by children and adults, while naive children would be equally bad.
 
-```{r load-data}
-raw_adult_data <- read_csv(here("data/comprehension/comprehension_adults.csv")) %>%
+```{r load-comprehension-data}
+raw_adult_data <- read_csv(here("data/comprehension/comprehension_adults.csv"),
+                           show_col_types = FALSE) %>%
   select(-age) %>%
   filter(!audioid %in% c("67_08", "67_08_b"))
 
@@ -778,10 +785,12 @@ passed_check <- check_correct %>%
   clean_names()
 
 # kid data
-stims <- read_csv(here("data/comprehension/random_stims.csv")) %>%
+stims <- read_csv(here("data/comprehension/random_stims.csv"),
+                  show_col_types = FALSE) %>%
   select(-c(correct, trial, rightpic, leftpic))
 
-raw_kid_data <- read_csv(here("data/comprehension/kid_comprehension_data.csv")) %>%
+raw_kid_data <- read_csv(here("data/comprehension/kid_comprehension_data.csv"),
+                         show_col_types = FALSE) %>%
   filter(!is.na(id)) %>%
   left_join(stims, by = c("id" = "subject", "target")) %>%
   rename(audioid = audio,
@@ -967,7 +976,7 @@ So parents' descriptions lead to more accurate and faster guesses. Both older ki
 
 But no effect of occurrence--descriptions on the second appearance of each item do not appear to contain less information for guessing the target.
 
-```{r}
+```{r exchange-data}
 exchange_data <- read_csv(here("data/exchange_data.csv")) %>%
   select(subid, trial, director, person, num_exchanges) %>%
   group_by(trial, subid) %>%
@@ -1034,7 +1043,7 @@ d.prod.clean <- read_csv(here("data/production/pilot_data_clean.csv"),
 
 We examined log response times.
 
-```{r}
+```{r e2-rts}
 # overall RT distribution
 
 d.prod.raw %>%
