@@ -109,7 +109,7 @@ Children engage in conversation with their caregivers from their second year of 
 
 Parents spend a tremendous amount of time with children, and often have quite accurate models of their children's lexical and conceptual knowledge [@fenson1994]. Prior work has shown that parents leverage their knowledge of their children's vocabularies to calibrate the informativeness of their referential expressions [@leung2019]. Do they also leverage this knowledge to scaffold the formation of conversational pacts with children? In this study, we asked parents and their 4-, 6-, and 8-year-old children, as well as pairs of adults, to play an adapted version of Krauss and Glucksberg's [-@krauss1969] director-matcher game. We analyzed their interactions to ask (1) whether parents' contributions support the formation of conversational pacts, (2) what strategies parents use to support pact formation, and (3) whether the nature of these pacts changes over development as children acquire more language.
 
-# Referential Communication Experiment
+# Experiment 1: Referential communication
 
 ```{r acc-exchange-setup, cache = T}
 # Note: this is moved up here to get the fig to appear on the right page... i know it's annoying.
@@ -208,6 +208,8 @@ plt.results.exchanges <- d.exchanges.mean %>%
 gridExtra::grid.arrange(plt.results.acc, plt.results.exchanges, ncol = 1)
 ```
 
+## Methods
+
 ### Participants
 
 Children (ages 4, 6, and 8) and their parents were recruited from a database of families in the local community to achieve a planned sample of 60 parent-child pairs (20 per age group). A total of 75 children and their parents participated. Data from 12 pairs were dropped due to failure to complete the study, leaving a final sample of 63 pairs. For comparison, adult participants were also recruited from a Psychology Department subject pool to achieve a planned control sample of 20 adult-adult pairs. At the time of analysis, only 15 of these pairs had their sessions transcribed.
@@ -258,6 +260,8 @@ We characterized developmental differences using three measures of communicative
 We began by analyzing task performance across age groups. Because pairs of adults were consistently at ceiling throughout the task, we focused on the performance of parent-child pairs. We constructed a mixed-effects logistic regression predicting whether the matcher successfully chose the correct referent on each trial. The model included (continuous) fixed effects of age and repetition block, random intercepts for each tangram and pair of participants, and random effects of repetition block for each pair of participants^[In principle, we were also interested in whether there were differences in accuracy when the child vs. parent was matcher, but our sample is likely underpowered for such a finer-grained analysis within games.].
 
 Initial accuracy was well above chance for all age groups, indicating that even young children can succeed in this referential task with their parents. We also found a significant main effect of age ($\beta$ = `r age_effect_acc$estimate`, $t$ = `r age_effect_acc$statistic`; $p=$ `r papaja::printp(age_effect_acc$p.value)`):  Pairs with younger children performed significantly worse than pairs with older children. Critically, however, accuracy improved significantly over the four repetition blocks for all groups ($\beta$ = `r rep_effect_acc$estimate`, $t$ = `r rep_effect_acc$statistic`, $p$ `r papaja::printp(rep_effect_acc$p.value)`; Fig. \ref{fig:acc_exchanges}A). Such improvement for 4-year-olds contrasts with previous results showing no improvement in accuracy with pairs of kindergarteners [age 5, @krauss1969]. 
+
+> **_TODO:_**  Include analyses breaking down errors by which role kids were playing. I think we found that errors were more likely to happen when kids were *directors* than when kids were *matchers*, which set up our later predictions for the comprehension/production experiments? (i.e. that even young kids seemed to do okay interpreting their parents' instructions, but that even after dialogue exchanges, parents weren't always able to understand the kids' instructions.) 
 
 ### Interactive dialogue exchanges
 
@@ -430,8 +434,6 @@ First, while parents on average used more words as director than their children 
 
 Finally, an intriguing developmental question is whether reduction changes over the course of development: are 4-year-olds able to become more efficient as common ground is built, in the same way 8-year-olds do? Because parents of different age groups display similar slopes of reduction, this question is addressed by a 3-way interaction. We found that this interaction was not significant ($\beta=$ `r person_age_rep_interaction_reduction$estimate`, $t=$ `r person_age_rep_interaction_reduction$statistic`, $p$ `r person_age_rep_interaction_reduction_pvalue`), although our sample was likely underpowered to detect this higher-order interaction.
 
-# Analyzing the content of pacts
-
 ```{r matches}
 matches <- read_csv(here("data/deidentified/word_matches.csv")) %>% 
   filter(later_rep == 4) %>%
@@ -590,7 +592,7 @@ One possibility is that children lack the ability to *adapt* to their partner: t
 
 These accounts make different predictions about who is adapting to who: do pacts originate with children, or with adults? We distinguish these accounts by quantitatively analyzing the natural-language transcripts. 
 
-## Where do pacts come from?
+### Where do pacts come from?
 
 ```{r match-model, cache = TRUE}
 match.model <- matches %>% 
@@ -740,7 +742,7 @@ For each word in the final description of a tangram, we checked whether it had a
 We tested this hypothesized interaction using a mixed-effects logistic model predicting whether each word appearing on the final repetition for each tangram was introduced by the current director or by their partner. We included fixed effects of age group and the speaker identity (parent or child), as well as random intercepts for each pair of participants and each tangram. We found a significant main effect of speaker identity, with the words used by children more likely to originate with their partner than the words used by parents, ($\beta=$ `r speaker_effect$estimate`, $t=$ `r speaker_effect$statistic`, `r papaja::printp(speaker_effect$p.value)`).
 Additionally, we found a weak but significant interaction between speaker and age, indicating that this asymmetry was smaller for older children ($\beta=$ `r match.interaction_effect$estimate`, $t=$ `r match.interaction_effect$statistic`, $p=$ `r papaja::printp(match.interaction_effect$p.value)`). Thus, parents---especially parents of younger children---appear to be the source of the words that persist in successful conceptual pacts.
 
-## How do pacts differ across ages?
+### How do pacts differ across ages?
 
 Given that the labels used by younger children tend to originate with their parents, it is tempting to conclude that adaptation for these pairs is entirely one-sided. However, the resulting pacts may have nonetheless been shaped by children. In particular, we suggest that even though young children may not be able to *supply* good initial labels, they may serve as "simplifiers" or "filters" that constrain the complexity of the resulting pact, since it must pass through their comprehension and production system [@hudson-kam2005].
 
@@ -748,18 +750,41 @@ We tested this hypothesis by asking about the linguistic complexity of the pacts
 
 We confirmed this observation with a mixed-effects model including all possible interactions of age, person (child vs. parent), and repetition number, and maximal random effect structure as before. We found significant main effects of age ($\beta=$ `r age_effect_origin$estimate`, $t =$ `r age_effect_origin$statistic`, $p$`r age_effect_origin_pvalue`), and person ($\beta=$ `r person_effect_origin$estimate`, $t=$ `r person_effect_origin$statistic`, $p$ `r person_effect_origin_pvalue`), but not repetition ($\beta=$ `r rep_effect_origin$estimate`, $t =$ `r rep_effect_origin$statistic`, $p$ `r rep_effect_origin_pvalue`). All else being equal, pairs with older children produced more complex utterances, and parents produced more complex utterances than children. Further, we found a significant interaction between age and repetition number, suggesting that later repetitions became more complex for dyads with older children ($\beta=$ `r age_rep_interaction_origin$estimate`, $t=$ `r age_rep_interaction_origin$statistic`, $p$ `r  age_rep_interaction_origin_pvalue`). This interaction may be driven by reduction processes, as more distinctive words tend to persist as common words are dropped [@hawkins2019]. No other effects were significant, indicating that parents' utterances remained a constant level of complexity above children's even as children's utterances became more complex. These results suggest that pact formation depends not only on parental input, but on children as well---pacts may originate from parents, but children control their complexity.
 
-# Experiment 2: Comprehension experiment
+# Experiment 2: Comprehension
 
-Given appropriate scaffolding from their parents, we have found that even young children are able to successfully coordinate on pacts.
-But why do younger children struggle so much in the first place?
-Understanding the source of their difficulty may shed new light on what allows children to succeed in interactions with their parents while failing in interactions with their peers.
-One possibility is that the difficulty lies primarily in the process of *comprehension*.
-Each child may have their own idiosyncratic way of conceptualizing and describing tangrams, and are simply unable to understand or accommodate their partner's descriptions.
-Another possibility is that the difficulty lies in *production*.
-In other words, children may have difficulty generating a sufficiently descriptive referring expression on their own, given their limited vocabulary.
+Our first experiment found that young children are able to successfully coordinate on pacts with their parents.
+Even four-year-olds readily adopted the labels introduced by their parents and interactively refined their descriptions in response to spontaneous parent-initiated repair.
+So why do younger children struggle so much with their peers?
+One possibility is that the difficulty lies primarily in the process of *comprehension*; children might be poor listeners.
+If each child has their own idiosyncratic way of conceptualizing a tangram, they may be unable to understand or accommodate their partner's description if it does not align with their own way of thinking about it.
+Another possibility is that the root of the difficulty primarily lies in *production*.
+In other words, children may have difficulty *generating* sufficiently descriptive referring expressions on their own, given their limited vocabulary and other processing constraints, but are able to recognize a good description when they hear it, and adopt that description going forward.
 
-In this study, we explored the ability of children and adults to comprehend the descriptions provided by both children and adults.
-If the primary source of difficulty were comprehension, we might expect that naive adults would equally good at understanding referring expressions produced by children and adults, while naive children would be equally bad.
+In Experiment 2, we conducted a comprehension experiment to test the first of these two hypotheses. 
+We provided naive children and adults with the descriptions produced by participants in Experiment 1 and asked how well they were able to interpret them.
+If children are bad listeners, we might expect that naive adults would be equally good at understanding referring expressions produced by children and adults, while naive children would be equally bad.
+Conversely, if naive children are able to understand the referring expressions produced by parents, then we may expect the source of the difficulty to be elsewhere.
+
+# Methods
+
+### Participants
+
+XXX adults (ages XXX) were recruited from MTurk.
+YYY children (ages XXX) were recruited from a preschool in the local community to achieve a planned sample of 200 children.
+Because of the COVID-19 pandemic, we were forced to terminate data collection early.
+Data from XXXX pairs were dropped due to failure to complete the study, leaving a final sample of XXX pairs. 
+
+### Stimuli 
+
+We re-recorded all of the referring expressions produced in Exp. 1.
+
+### Design and procedure
+
+Each participants listened to exactly 10 recordings, one for each tangram.
+On each trial, the target tangram appeared with the foil from Exp. 1.
+
+### Pre-processing
+
 
 ```{r load-data}
 raw_adult_data <- read_csv(here("data/comprehension/comprehension_adults.csv")) %>%
