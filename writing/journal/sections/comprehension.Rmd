@@ -1,0 +1,264 @@
+# Experiment 2: Comprehension
+
+Our first experiment found that young children are able to successfully coordinate on pacts with their parents.
+Even four-year-olds readily adopted the labels introduced by their parents and interactively refined their descriptions in response to spontaneous parent-initiated repair.
+So why do younger children struggle so much with their peers?
+One possibility is that the difficulty lies primarily in the process of *comprehension*; children might be poor listeners.
+If each child has their own idiosyncratic way of conceptualizing a tangram, they may be unable to understand or accommodate their partner's description if it does not align with their own way of thinking about it.
+Another possibility is that the root of the difficulty primarily lies in *production*.
+In other words, children may have difficulty *generating* sufficiently descriptive referring expressions on their own, given their limited vocabulary and other processing constraints, but are able to recognize a good description when they hear it, and adopt that description going forward.
+
+In Experiment 2, we conducted a comprehension experiment to test the first of these two hypotheses. 
+We provided naive children and adults with the descriptions produced by participants in Experiment 1 and asked how well they were able to interpret them.
+If children are bad listeners, we might expect that naive adults would be equally good at understanding referring expressions produced by children and adults, while naive children would be equally bad.
+Conversely, if naive children are able to understand the referring expressions produced by parents, then we may expect the source of the difficulty to be elsewhere.
+
+# Methods
+
+### Participants
+
+XXX adults (ages XXX) were recruited from MTurk.
+YYY children (ages XXX) were recruited from a preschool in the local community to achieve a planned sample of 200 children.
+Because of the COVID-19 pandemic, we were forced to terminate data collection early.
+Data from XXXX pairs were dropped due to failure to complete the study, leaving a final sample of XXX pairs. 
+
+### Stimuli 
+
+We re-recorded all of the referring expressions produced in Exp. 1.
+
+### Design and procedure
+
+Each participants listened to exactly 10 recordings, one for each tangram.
+On each trial, the target tangram appeared with the foil from Exp. 1.
+
+### Pre-processing
+
+
+```{r load-comprehension-data}
+raw_adult_data <- read_csv(here("data/comprehension/comprehension_adults.csv"),
+                           show_col_types = FALSE) %>%
+  select(-age) %>%
+  filter(!audioid %in% c("67_08", "67_08_b"))
+
+check_correct <- raw_adult_data %>%
+  filter(occurrence == "check") %>%
+  mutate(check_correct = correct) %>%
+  select(subid, check_correct)
+
+passed_check <- check_correct %>%
+  group_by(check_correct) %>%
+  count() %>%
+  pivot_wider(names_from = check_correct, values_from = n) %>%
+  clean_names()
+
+# kid data
+stims <- read_csv(here("data/comprehension/random_stims.csv"),
+                  show_col_types = FALSE) %>%
+  select(-c(correct, trial, rightpic, leftpic))
+
+raw_kid_data <- read_csv(here("data/comprehension/kid_comprehension_data.csv"),
+                         show_col_types = FALSE) %>%
+  filter(!is.na(id)) %>%
+  left_join(stims, by = c("id" = "subject", "target")) %>%
+  rename(audioid = audio,
+         trialnum = trial,
+         p_age = age) %>%
+  mutate(correct = correct=="Y") %>%
+  filter(!audioid %in% c("67_08", "67_08_b"))
+
+```
+
+We kept `r passed_check$true` out of `r passed_check$true + passed_check$false` participants.
+
+```{r tidy-data}
+database_ids <- read_csv(here("data/databaseid.csv")) %>%
+  rename(gameid = subid) %>%
+  select(gameid, age)
+
+#gameid is original subject id
+tidy_turk_data <- raw_adult_data %>%
+  left_join(check_correct, by = c("subid")) %>%
+  filter(check_correct, occurrence != "check") %>%
+  separate(audioid, into = c("gameid", "gametrial"), sep = "_") %>%
+  mutate(gameid = as.numeric(gameid),
+         gametrial = as.numeric(gametrial)) %>%
+  left_join(database_ids, by = ("gameid")) %>%
+  mutate(log_rt = log(reactiontime)) %>%
+  pivot_longer(cols = c(correct, reactiontime, log_rt), names_to = "measure")
+
+tidy_kid_data <- raw_kid_data %>%
+  separate(audioid, into = c("gameid", "gametrial"), sep = "_") %>%
+  mutate(gameid = as.numeric(gameid),
+         gametrial = as.numeric(gametrial)) %>%
+  left_join(database_ids, by = ("gameid")) %>%
+  mutate(log_rt = log(rt)) %>%
+  filter(rt < 10000) %>%
+  pivot_longer(cols = c(correct, rt, log_rt), names_to = "measure")
+  
+```
+
+```{r rt-skew}
+ggplot(tidy_turk_data %>% filter(measure != "correct"), aes(x = value)) +
+  facet_wrap(~ measure, scales = "free") + 
+  geom_histogram()
+
+ggplot(tidy_kid_data %>% filter(measure != "correct"), aes(x = value)) +
+  facet_wrap(~ measure, scales = "free") + 
+  geom_histogram()
+```
+
+
+## Results
+
+Accuracy and RT as a function of age, person, occurrence
+
+```{r descriptive-plots}
+subj_data <- tidy_turk_data %>%
+  filter(measure != "reactiontime") %>% #exclude 17
+  group_by(age, person, occurrence, measure, gameid) %>%
+  summarise(value = mean(value))
+
+simple_effects <- subj_data %>%
+  tidyboot_mean(value)
+
+simple_effects %>% 
+  ggplot(aes(x = as.factor(age), y = empirical_stat, color = person)) +
+  facet_grid(measure ~ occurrence, scales = "free") + 
+  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper), 
+                  position = position_dodge(.5)) +
+  theme_few()
+
+#kid plots
+kid_subj_data <- tidy_kid_data %>%
+  filter(measure != "rt") %>% #exclude 17
+  group_by(age, person, occurrence, measure, gameid) %>%
+  summarise(value = mean(value))
+
+kid_simple_effects <- kid_subj_data %>%
+  tidyboot_mean(value)
+
+kid_simple_effects %>% 
+  ggplot(aes(x = as.factor(age), y = empirical_stat, color = person)) +
+  facet_grid(measure ~ occurrence, scales = "free") + 
+  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper), 
+                  position = position_dodge(.5)) +
+  theme_few()
+```
+
+Models from Pre-reg
+
+We will fit a logistic mixed effects model predicting informativeness from person (parent/child), age of child in the pair (4, 6, 8), trial (1 vs 2) and all of their interactions.
+
+```{r full-acc-lmer}
+full_acc_lmer <- tidy_turk_data %>%
+  filter(measure == "correct") %>%
+  glmer(value ~ person * age * occurrence + 
+                   (1|target) ,
+       family = "binomial", data = .) %>%
+  tidy() %>%
+  filter(effect == "fixed") %>%
+  select(-effect, -group)
+
+full_acc_lmer
+
+#kid model
+
+kid_full_acc_lmer <- tidy_kid_data %>%
+  filter(measure == "correct") %>%
+  glmer(value ~ person * age * occurrence + 
+                   (1|target) ,
+       family = "binomial", data = .) %>%
+  tidy() %>%
+  filter(effect == "fixed") %>%
+  select(-effect, -group)
+
+kid_full_acc_lmer
+
+```
+
+```{r reduced-acc-lmer}
+acc_lmer <- tidy_turk_data %>%
+  filter(measure == "correct") %>%
+  glmer(value ~ person + age + occurrence  + 
+                   (1|target) + (1|subid), 
+        family = "binomial", data = .) %>%
+  tidy() %>%
+  filter(effect == "fixed") %>%
+  select(-effect, -group)
+
+acc_lmer
+
+#kid model
+kid_acc_lmer <- tidy_kid_data %>%
+  filter(measure == "correct") %>%
+  glmer(value ~ person + age + occurrence  + 
+                   (1|target) + (1|subid), 
+        family = "binomial", data = .) %>%
+  tidy() %>%
+  filter(effect == "fixed") %>%
+  select(-effect, -group)
+
+kid_acc_lmer
+
+#two-way
+kid_two_way_lmer <- tidy_kid_data %>%
+  filter(measure == "correct") %>%
+  glmer(value ~ person*occurrence + age + 
+                   (1|target) + (1|subid), 
+        family = "binomial", data = .) %>%
+  tidy() %>%
+  filter(effect == "fixed") %>%
+  select(-effect, -group)
+
+kid_two_way_lmer
+
+```
+
+```{r full-rt-lmer}
+full_rt_lmer <- tidy_turk_data %>%
+  filter(measure == "log_rt") %>%
+  lmer(value ~ person * age * occurrence + 
+                   (1|target) + (1|subid), data = .) %>%
+  tidy() %>%
+  filter(effect == "fixed") %>%
+  select(-effect, -group)
+
+full_rt_lmer
+```
+
+```{r reduced-rt-lmer}
+rt_lmer <- tidy_turk_data %>%
+  filter(measure == "log_rt") %>%
+  lmer(value ~ person + age + occurrence  + 
+                   (1|target) + (1|subid), data = .) %>%
+  tidy() %>%
+  filter(effect == "fixed") %>%
+  select(-effect, -group)
+
+rt_lmer
+```
+
+
+So parents' descriptions lead to more accurate and faster guesses. Both older kids and parents of older kids give better descriptions. 
+
+But no effect of occurrence--descriptions on the second appearance of each item do not appear to contain less information for guessing the target.
+
+```{r exchange-data}
+exchange_data <- read_csv(here("data/exchange_data.csv")) %>%
+  select(subid, trial, director, person, num_exchanges) %>%
+  group_by(trial, subid) %>%
+  summarise(num_exchanges = sum(num_exchanges))
+
+turk_exchange_data <- tidy_turk_data %>% left_join(exchange_data, 
+                                                   by = c("gameid" = "subid"),
+                                                   "gametrial" = "trial")
+
+turk_exchange_data %>%
+  filter(measure == "correct") %>%
+  group_by(age, num_exchanges, person) %>%
+  summarise(value = mean(value)) %>%
+  ggplot(aes(x = num_exchanges, y = value, color = as.factor(age))) +
+  facet_wrap(~ person) +
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE)
+```
