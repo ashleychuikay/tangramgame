@@ -758,39 +758,19 @@ We confirmed this observation with a mixed-effects model including all possible 
 
 # Experiment 2: Comprehension
 
-Our first experiment found that young children are able to successfully coordinate on pacts with their parents.
+Our first experiment found that young children are able to coordinate on pacts with their parents.
 Even four-year-olds readily adopted the labels introduced by their parents and interactively refined their descriptions in response to spontaneous parent-initiated repair.
 So why do younger children struggle so much with their peers?
-One possibility is that the difficulty lies primarily in the process of *comprehension*; children might be poor listeners.
-If each child has their own idiosyncratic way of conceptualizing a tangram, they may be unable to understand or accommodate their partner's description if it does not align with their own way of thinking about it.
+One possibility is that the difficulty lies primarily in the process of *comprehension*. 
+Children might be poor listeners.
+They may be unable to understand or accommodate their partner's description if it does not align with their own way of conceptualizing the tangram, preventing uptake of a pact.
 Another possibility is that the root of the difficulty primarily lies in *production*.
 In other words, children may have difficulty *generating* sufficiently descriptive referring expressions on their own, given their limited vocabulary and other processing constraints, but are able to recognize a good description when they hear it, and adopt that description going forward.
 
-In Experiment 2, we conducted a comprehension experiment to test the first of these two hypotheses. 
+In Experiment 2, we tested the first of these two hypotheses using a comprehension task. 
 We provided naive children and adults with the descriptions produced by participants in Experiment 1 and asked how well they were able to interpret them.
-If children are bad listeners, we might expect that naive adults would be equally good at understanding referring expressions produced by children and adults, while naive children would be equally bad.
-Conversely, if naive children are able to understand the referring expressions produced by parents, then we may expect the source of the difficulty to be elsewhere.
-
-# Methods
-
-### Participants
-
-XXX adults (ages XXX) were recruited from MTurk.
-YYY children (ages XXX) were recruited from a preschool in the local community to achieve a planned sample of 200 children.
-Because of the COVID-19 pandemic, we were forced to terminate data collection early.
-Data from XXXX pairs were dropped due to failure to complete the study, leaving a final sample of XXX pairs. 
-
-### Stimuli 
-
-We re-recorded all of the referring expressions produced in Exp. 1.
-
-### Design and procedure
-
-Each participants listened to exactly 10 recordings, one for each tangram.
-On each trial, the target tangram appeared with the foil from Exp. 1.
-
-### Pre-processing
-
+If comprehension is the root of the developmental problem, we might expect that naive children would be equally unable to interpret all referring expressions (regardless of whether they were originally produced by adults or children) while naive adults would have no difficulty.
+Conversely, if naive children are able to understand the referring expressions produced by parents (and not necessarily those by children), then we may expect the source of the difficulty to be elsewhere.
 
 ```{r load-comprehension-data}
 raw_adult_data <- read_csv(here("data/comprehension/comprehension_adults.csv"),
@@ -826,7 +806,26 @@ raw_kid_data <- read_csv(here("data/comprehension/kid_comprehension_data.csv"),
 
 ```
 
-We kept `r passed_check$true` out of `r passed_check$true + passed_check$false` participants.
+
+# Methods
+
+### Participants
+
+`r passed_check$false + passed_check$true$` adults (ages XXX) were recruited from Amazon Mechanical Turk.
+YYY children (ages XXX) were recruited from a preschool in the local community to achieve a planned sample of 200 children.
+Because of the COVID-19 pandemic, we were forced to terminate data collection early.
+Data from `r passed_check$false` pairs were dropped due to failure to complete the study, leaving a final sample of `r passed_check$true` pairs. 
+
+### Stimuli 
+
+We re-recorded all of the referring expressions produced in Exp. 1.
+
+### Design and procedure
+
+Each participants listened to exactly 10 recordings, one for each tangram.
+On each trial, the target tangram appeared with the foil from Exp. 1.
+
+### Pre-processing
 
 ```{r tidy-data}
 database_ids <- read_csv(here("data/databaseid.csv")) %>%
