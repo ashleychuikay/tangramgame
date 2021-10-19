@@ -23,3 +23,5 @@ original_images/*
 *_cache*
 *_files*
 desktop.ini
+
+*figs/

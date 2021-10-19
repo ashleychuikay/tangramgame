@@ -1,0 +1,521 @@
+# Experiment 3: Production experiment
+
+We ran a production experiment.
+
+```{r anonymize-e2-data, eval = FALSE}
+#anonymize
+read_csv(here("data/production/dataFromMongo.csv"))%>%
+  filter(trial_type == "survey-text") %>%
+  filter(iterationName == "pilot2") %>%
+  mutate(wID = as.numeric(as.factor(wID))) %>%
+  write_csv(here('./data/production/anonymizedDataFromMongo.csv'))
+```
+
+```{r e2-data}
+d.prod.raw <- read_csv(here("data/production/anonymizedDataFromMongo.csv"),
+                       show_col_types = FALSE)
+  
+complete_games <- d.prod.raw %>%
+  group_by(wID) %>%
+  tally() %>%
+  filter(n == 48) %>%
+  pull(wID)
+
+cat('we have', length(complete_games), 'games')
+
+d.prod <- d.prod.raw %>%
+  filter(wID %in% complete_games) %>%
+  filter(rt > 1000) %>%
+  mutate(utterance = str_to_lower(utterance),
+         utterance = str_trim(utterance),
+         utt_length = str_length(utterance),
+         clean_utt = lemmatize_strings(utterance),
+         clean_utt = str_remove_all(clean_utt, pattern = ' '))
+
+#write.csv(d.prod, "data/production/pilot_data_lemmatized.csv")
+
+d.prod.clean <- read_csv(here("data/production/pilot_data_clean.csv"),
+                         show_col_types = FALSE) 
+  #filter(utt_length > 1) #%>%
+  #mutate(clean_utt = lemmatize_words(clean_utt))
+  
+```
+
+## Response times reflect familiarity and context
+
+We examined log response times.
+
+```{r e2-rts}
+# overall RT distribution
+
+d.prod.raw %>%
+  mutate(logged_rt = log(rt)) %>%
+  gather(measure, value, logged_rt, rt) %>%
+  ggplot(aes(x = value)) +
+    geom_histogram() +
+    facet_wrap(~ measure, scales='free')
+
+d.prod %>%
+  mutate(logged_rt = log(rt)) %>%
+  gather(measure, value, logged_rt, rt) %>%
+  ggplot(aes(x = value)) +
+    geom_histogram() +
+    facet_wrap(~ measure, scales='free')
+```
+  
+```{r}
+ggplot(d.prod, aes(x = target_type, y = log(rt), color = competitor_type)) +
+  geom_boxplot() +
+  theme(legend.position = 'top')
+```
+
+```{r}
+d.prod %>%
+  lm(log(rt) ~ target_type * competitor_type, 
+     data = .) %>%
+  tidy()
+```
+
+## Variability in labels 
+
+```{r}
+dodge = position_dodge(0.9)
+d.prod %>%
+  group_by(target_type, competitor_type) %>%
+  tidyboot_mean(utt_length) %>%
+  ggplot(aes(x = target_type, y = empirical_stat, fill = competitor_type)) +
+    geom_bar(stat='identity', position=dodge) +
+    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0, position=dodge) +
+    labs(x = "target type",
+         y = "utterance length") +
+    theme(legend.position = 'top')
+```
+
+We considered several measures of codability/overlap:
+
+* total number of unique labels (when people overlap a lot, this is smaller because we collect the same number of labels for each target; warning, this could be misleading if we're dropping trials due to high rts and some conditions have more dropped)
+* proportion of unique labels to total labels (fixes this problem, but still doesn't account for the distribution of overlap, e.g. if one gets hit 10 times and others get hit 1 vs. everything gets hit 2 times.)
+* entropy (we all know and love)
+* codeability (what proportion of people provided the most common label, if there were 40 labels and 20 were 'bird', this would be 50%)
+
+```{r}
+d.prod %>%
+  group_by(target_type, competitor_type, utterance, target) %>%
+  tally() %>%
+  arrange(target) %>%
+  group_by(target_type, competitor_type) %>%
+  mutate(total_labels = sum(n)) %>%
+  summarize(unique_labels = length(n), 
+            normalized_unique_labels = mean(unique_labels) /  mean(total_labels),
+            entropy = entropy(n, method="SG"),
+            normalized_entropy = mean(entropy) / log(length(n)),
+            codeability = max(n) / sum(n)) %>%
+  gather(measure, value, unique_labels:codeability) %>%
+  group_by(target_type, competitor_type, measure) %>%
+  tidyboot_mean(value) %>%
+  ggplot(aes(x = target_type, y = empirical_stat, fill = competitor_type)) +
+    geom_bar(stat = 'identity', position=dodge) +
+    facet_grid(measure ~. , scales='free') +
+    theme(legend.position = "top")
+
+ggsave('variability_measures_clean.pdf', width = 10, height = 10, unit = 'in')
+
+#compare with old data
+d.prod.old <- read_csv(here("data/production/pilot_data_clean.csv"))
+
+d.prod.old %>% 
+  group_by(target_type, competitor_type, utterance, target) %>%
+  tally() %>%
+  arrange(target) %>%
+  group_by(target_type, competitor_type) %>%
+  mutate(total_labels = sum(n)) %>%
+  summarize(unique_labels = length(n), 
+            normalized_unique_labels = mean(unique_labels) / mean(total_labels),
+            entropy = entropy(n, method="SG"),
+            normalized_entropy = mean(entropy) / log(length(n)),
+            codeability = max(n) / sum(n)) %>%
+  gather(measure, value, unique_labels:codeability) %>%
+  group_by(target_type, competitor_type, measure) %>%
+  tidyboot_mean(value) %>%
+  ggplot(aes(x = target_type, y = empirical_stat, fill = competitor_type)) +
+    geom_bar(stat = 'identity', position=dodge) +
+    facet_grid(measure ~. , scales='free')
+
+```
+
+
+```{r regression model comparing competitor types}
+
+prod.model <- d.prod %>%
+  group_by(target_type, competitor_type, utterance, target) %>%
+  tally() %>%
+  arrange(target) %>%
+  group_by(target_type, competitor_type, target) %>%
+  mutate(total_labels = sum(n)) %>%
+  summarize(unique_labels = length(n), 
+            normalized_unique_labels = mean(unique_labels) / mean(total_labels),
+            entropy = entropy(n, method="SG"),
+            normalized_entropy = mean(entropy) / log(length(n)),
+            codeability = max(n) / sum(n))
+
+prod.model %>%
+  lmer(codeability ~ target_type*competitor_type + (1|target), data =.) %>%
+  tidy() %>%
+  filter(effect == "fixed")
+
+```
+
+```{r comparing-distributions}
+kl_drop <- function(df, x1, x2) {
+  x1 <- enquo(x1)
+  x2 <- enquo(x2)
+  # 
+  df %>%
+    filter(!!x1 != 0 | !!x2 != 0) %>%
+    summarise(kl = KL.shrink(!!x1, !!x2)) %>%
+    pull(kl)
+}
+
+kls <- d.prod %>%
+  count(target_type, competitor_type, target, clean_utt) %>%
+  complete(nesting(target_type, target), competitor_type, clean_utt, 
+           fill = list(n = 0)) %>%
+  pivot_wider(names_from = competitor_type, values_from = n) %>%
+  group_by(target_type, target) %>%
+  nest() %>%
+  mutate(close_far = map(data, ~kl_drop(.x,close, far)),
+         isolated_far = map(data, ~kl_drop(.x,isolated, far)),
+         isolated_close = map(data, ~kl_drop(.x, close, isolated))) %>%
+  unnest(cols = c(close_far, isolated_far, isolated_close)) %>%
+  select(-data) %>%
+  pivot_longer(cols = c(close_far, isolated_far, isolated_close), 
+               names_to = "comparison", values_to = "kl")
+
+
+ggplot(kls, aes(x = comparison, y = kl)) + 
+  facet_wrap(~ target_type) + 
+  geom_boxplot()
+
+```
+
+```{r scatterplots}
+
+#Look at codeability, etc., as a function of our norming data 
+norming_overlap <- read_csv(here("data/norming/jsPsychStims.csv")) %>%
+  select(target, overlap_diff) %>%
+  right_join(kls, by = "target") %>%
+  filter(target_type == "tangram")
+
+ggplot(norming_overlap, aes(x = overlap_diff, y = kl)) +
+  geom_point() +
+  facet_wrap(~comparison)
+
+```
+
+
+# Measuring similarity within participant
+
+* within-participant version: For a particular participant, measure whether they use the same word across competition_type conditions for same targets. 
+
+```{r}
+normalized_lv <- function(s1, s2) {
+  lv_dist = stringdist::stringdist(s1, s2, method = 'lv')
+  s1_len <- str_length(s1)
+  s2_len <- str_length(s2)
+  maxlength = pmax(s1_len, s2_len)
+  return(lv_dist / maxlength)
+}
+
+indiv_measures <- d.prod %>%
+  pivot_longer(cols = c(utterance, clean_utt), 
+               names_to = "type", values_to = "utterance") %>%
+  select(wID, target, target_type, competitor_type, type, utterance) %>%
+  group_by(wID, target_type, target, type) %>%
+  spread(competitor_type, utterance) %>%
+  filter(!is.na(close), !is.na(far), !is.na(isolated)) %>%
+  mutate(close_far.distance = normalized_lv(close, far),
+         close_isolated.distance = normalized_lv(close, isolated),
+         far_isolated.distance = normalized_lv(far, isolated),
+         close_far.match = close == far,
+         close_isolated.match = close == isolated,
+         far_isolated.match = far == isolated) %>%
+  gather(pair, distance, close_far.distance:far_isolated.match) %>%
+  group_by(target_type, pair, type) %>%
+  tidyboot_mean(distance) %>%
+  separate(pair, sep = '\\.', into = c('pair', 'measure')) %>%
+  arrange(measure)
+```
+
+
+# Tangram label norming 
+
+Our current hypothesis is that we're not getting context effects for adults in this pilot because even the 'close' contexts aren't close along the actual representational dimensions people are using to label things. So if their labeling prior in isolation is to say it's 'sad', that's still highly informative in the close context because the distractor doesn't look sad at all and there's no pressure being put on the prior (kids likely have very different priors, e.g. 'guy' or 'person' with high probability, so these same contexts probably would put pressure on them). To do this in adults, we probably need to elicit priors in isolation for more tangrams (e.g. all 40) and then design better 'close' contexts where we put together tangrams where adults have very similar priors. Maybe the same for kids.
+
+```{r anonymize-norming-data, eval = FALSE}
+# anonymize raw csv
+read_csv(here('data/norming/dataFromMongo.csv')) %>%
+  filter(iterationName %in% c('full_sample', 'full_sample2')) %>%
+  filter(trial_type == 'survey-text') %>%
+  mutate(wID = as.numeric(as.factor(wID))) %>%
+  write_csv(here('./data/norming/anonymizedDataFromMongo.csv'))
+```
+
+```{r load-norming-data}
+# take the first 31 rows of each wID. 
+# gets the first game of people who did it twice -- Mongo returns objectIDs in order of insertion date
+d.raw.labels <- read_csv(here("data/norming/anonymizedDataFromMongo.csv")) 
+
+initialAssignmentIDs <- d.raw.labels %>%
+  group_by(wID) %>%
+  summarize(firstAssignmentID = first(aID)) %>%
+  pull(firstAssignmentID)
+
+complete_games <- d.raw.labels %>%
+  filter(aID %in% initialAssignmentIDs) %>%
+  group_by(wID) %>%
+  tally() %>%
+  filter(n == 31) %>%
+  pull(wID)
+
+passed_catch <- d.raw.labels %>%
+  filter(target_type == 'catch') %>%
+  mutate(utterance = tolower(utterance)) %>%
+  filter(utterance == 'strawberry') %>%
+  pull(wID)
+
+d <- d.raw.labels %>%
+  filter(wID %in% complete_games) %>%
+  filter(wID %in% passed_catch) %>%
+  filter(target_type != 'catch') %>%
+  mutate(clean_utt = tolower(utterance),
+         lemmatized_utt = lemmatize_words(clean_utt),
+         lemmatized_utt = str_replace_all(lemmatized_utt, regex("\\W+"), ""))
+```
+
+How unbalanced is our sample across targets?
+
+```{r}
+d %>%
+  group_by(target) %>%
+  tally() %>%
+  ggplot(aes(x = n)) +
+    geom_histogram(bins = 5)
+```
+
+check RTs
+
+```{r eval = FALSE}
+d %>%
+  group_by(wID) %>%
+  arrange(trial_index) %>%
+  mutate(rep = (lemmatized_utt == lag(lemmatized_utt, 1) &
+                lemmatized_utt == lag(lemmatized_utt, 2))) %>%
+  filter(rep) %>%
+  arrange(wID) 
+  # group_by(wID) %>%
+  # summarize(meanRT = mean(rt)) %>%
+  filter(rt < 2000)
+  ggplot(aes(x = meanRT)) +
+    geom_histogram(bins = 20)
+
+```
+
+Find most similar sets by JS/KL divergence
+
+```{r get-pair-kl}
+get_pair_data <- function(df, tangram1, tangram2) {
+  df %>%
+    filter(target == tangram1) %>%
+    select(lemmatized_utt, n) %>%
+    rename(target_n = n) %>%
+    left_join(df %>%
+                filter(target == tangram2) %>%
+                select(lemmatized_utt, n),
+              by = "lemmatized_utt") %>%
+    rename(comparison_n = n)
+}
+
+# TODO: take all pairwise comparisons
+completed_data <- d %>%
+  count(target, lemmatized_utt) %>%
+  complete(target, lemmatized_utt, 
+           fill = list(n = 0)) 
+
+pairs <- d %>% 
+  distinct(target) %>%
+  pull() %>%
+  combn(2) %>%
+  t() %>%
+  as_tibble(.name_repair = "unique") %>%
+  rename(tangram1 = `...1`, tangram2 = `...2`) %>%
+  mutate(target_id = tangram1,
+         comparison_id = tangram2) %>%
+  group_by(target_id, comparison_id) %>%
+  nest() 
+```
+
+# Try a simpler, non-KL measure of overlap
+
+```{r overlap-helpers}
+check_overlap <- function(df, x1, x2) {
+  x1 <- enquo(x1)
+  x2 <- enquo(x2)
+  df %>%
+    filter(!!x1 > 0) %>%
+    mutate(prop = !!x1 / sum(!!x1)) %>%
+    filter(!!x2 > 0) %>%
+    summarise(overlap = sum(prop))
+}
+  
+flip_target_competitior <- function(df, x1, x2) {
+  x1 <- enquo(x1)
+  x2 <- enquo(x2)
+  
+  df %>%
+    mutate(tmp = !!x1, 
+           !!x1 := !!x2, 
+          !!x2 := tmp) %>%
+    select(-tmp)
+}
+```
+
+```{r simulate-overlap, eval = FALSE}
+get_average_overlap <- function(input_data) {
+  flipped_pairs <- pairs %>%
+    #flip_target_competitior(.,target_id, comparison_id) %>%
+    mutate(data = map(data, ~flip_target_competitior(.x, tangram1, tangram2)))
+  
+  symmetric_overlap <- pairs %>%
+    bind_rows(flipped_pairs) %>%
+    ungroup() %>%
+    # slice_head(n = 1) %>%
+    mutate(overlap = map(data, ~ {
+      get_pair_data(input_data, .x$tangram1, .x$tangram2) %>%
+      check_overlap(., target_n, comparison_n)
+    })) %>%
+    select(-data) %>%
+    unnest(cols = overlap)
+  
+  symmetric_overlap %>%
+    group_by(target_id, comparison_id) %>%
+    summarise(overlap = mean(overlap), n= n())
+}
+
+ps <- d %>%
+  distinct(wID)
+
+first_half <- d %>%
+  filter(wID %in% (slice(ps, 1:(n()/2)) %>% pull(wID))) %>%
+  count(target, lemmatized_utt) %>%
+  complete(target, lemmatized_utt, 
+           fill = list(n = 0)) %>%
+  get_average_overlap()
+
+second_half <- d %>%
+  filter(wID %in% (slice(ps, ((n()/2)+1):(n())) %>% pull(wID))) %>%
+  count(target, lemmatized_utt) %>%
+  complete(target, lemmatized_utt, 
+           fill = list(n = 0)) %>%
+  get_average_overlap()
+
+# correlation b/w split data
+first_half %>%
+  rename(first_half = overlap) %>%
+  left_join(second_half, by = c("target_id", "comparison_id", "n")) %>%
+  summarise(cor = cor(first_half, overlap, method = "spearman")) %>%
+  summarise(cor = mean(cor, na.rm = T))
+
+overall <- d %>%
+  #filter(!(target %in% c("R1.jpg", "O1.jpg"))) %>%
+  #mutate(target = as.factor(target)) %>%
+  count(target, lemmatized_utt) %>%
+  complete(target, lemmatized_utt, 
+           fill = list(n = 0)) %>%
+  get_average_overlap()
+```
+
+look at all pairwise comparisons...
+
+```{r plot-overlap, eval = FALSE} 
+ggplot(symmetric_overlap, aes(x = target_id, y = comparison_id, fill = log1p(overlap))) + 
+  geom_tile() +
+  theme(legend.position = 'right')
+```
+
+```{r pilot-items, eval = FALSE}
+pilot_items <- d.prod.clean %>% 
+  filter(target_type == "tangram", competitor_type != "isolated") %>%
+  distinct(target, foil, competitor_type) %>%
+  rename(target_id = target, comparison_id = foil) %>%
+  left_join(symmetric_overlap, by = c("target_id", "comparison_id"))
+
+pilot_items %>%
+  group_by(competitor_type) %>%
+  tidyboot_mean(overlap)
+```
+
+```{r, eval = FALSE}
+pilot_items %>%
+  ggplot(aes(x = competitor_type, y = overlap)) +
+    geom_jitter(width = .1, height = .1) +
+    geom_boxplot(alpha = .5)
+```
+
+```{r, eval = FALSE}
+pairs %>%
+  arrange(kl) 
+```
+
+highest and lowest overlap pairs
+```{r overall overlap, eval = FALSE}
+
+dissimilar <- overall %>%
+  filter(!(target_id %in% c("R1.jpg", "O1.jpg"))) %>%
+  filter(!(comparison_id %in% c("R1.jpg", "O1.jpg"))) %>%
+  arrange(overlap) %>%
+  filter(overlap < median(overlap)) %>%
+  filter(!duplicated(target_id)) %>%
+  mutate(dissimilar = comparison_id,
+         dvalue = overlap) %>%
+  select(-c(comparison_id, overlap, n))
+
+similar <- overall %>%
+  filter(!(target_id %in% c("R1.jpg", "O1.jpg"))) %>%
+  filter(!(comparison_id %in% c("R1.jpg", "O1.jpg"))) %>%
+  filter(overlap > median(overlap)) %>%
+  arrange(desc(overlap)) %>%
+  filter(!duplicated(target_id)) %>%
+  mutate(similar = comparison_id,
+         svalue = overlap) %>%
+  select(-c(comparison_id, overlap, n))
+
+#TODO: Tangrams that have high and low similarity matches
+
+matches <- left_join(dissimilar, similar, by = "target_id") %>%
+  arrange(dvalue, desc(svalue)) %>%
+  write.csv(here("data/norming/high_low_matches.csv"))
+  
+#matches <- overall %>%
+#  filter(!(target_id %in% c("R1.jpg", "O1.jpg"))) %>%
+#  filter(!(comparison_id %in% c("R1.jpg", "O1.jpg"))) %>%
+#  filter(target_id %in% c(dissimilar$target_id, dissimilar$comparison_id) |
+#        comparison_id %in% c(dissimilar$target_id, dissimilar$comparison_id)) %>%
+#  arrange(desc(overlap))
+
+# function to find targets with high and low similarity matches
+
+#df = NULL
+
+#match_pairs <- function(data, comparison){
+#  for (i in 1:data.length) {
+#    ifelse (data$target_id %in% c(comparison$target_id, comparison$comparison_id) |
+#        comparison_id %in% c(comparison$target_id, comparison$comparison_id), 
+#        bind_rows(data[i,], df), return)
+#  }
+#}
+
+
+
+```
+
+# adversarial context design
