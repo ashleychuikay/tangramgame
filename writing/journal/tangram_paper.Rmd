@@ -80,22 +80,6 @@ knitr::opts_chunk$set(fig.pos = '!tb', echo = FALSE, cache = TRUE,
                       fig.height = 3, fig.pos = "t!")
 set.seed(42)
 options(digits=3, dplyr.summarise.inform = FALSE)
-
-
-CHILD_SCALE <- c("#9ecae1", "#4292c6", "#08519c")
-COLLAPSED_SCALE <-c('#525252', '#737373','#969696')
-ADULTS <- "black"
-PARENTS <- "#fe9929"
-
-```
-
-```{r load-data}
-kuperman_aoas <- read_csv(here("data/corpus_data/kuperman_aoas.csv"),
-                          show_col_types = FALSE)
-combined_data <- read_csv(here("data/deidentified/combined.csv"),
-                          show_col_type = FALSE) 
-exchanges_data <- read_csv(here("data/deidentified/exchanges.csv"),
-                           show_col_types = FALSE) 
 ```
 
 Common ground is a foundational requirement for successful communication: Interlocutors must both understand each other and know that they understand each other [@bruner1985]. As a consequence, even simple referential expressions are constructed collaboratively. When the meaning of an utterance is unclear, interlocutors will engage in negotiation, arriving at a *conversational pact* about how to think and talk about the intended referent [@clark1986]. Adults fluently form, revise, and track the formation of pacts. For instance, Brennan and Clark [-@brennan1996] showed that adults will use the appropriate level of specificity for a referent (e.g. "loafer" rather than "shoe" when another shoe is present), carry this forward into a new context with the same conversational partner even when the initial competitor is removed, then revert to "shoe" when a new partner is introduced.
@@ -103,11 +87,6 @@ Common ground is a foundational requirement for successful communication: Interl
 Children, on the other hand, struggle substantially both to establish and to deploy conversational pacts. In a series of studies, Krauss and Glucksberg [-@krauss1977] asked pairs of age-matched children to play a director-matcher game that required them to refer to novel objects [see also @krauss1969]. Across repeated interactions with the same novel objects, 5- and 6-year-old children showed very little evidence of pact formation: The matcher's accuracy in selecting the correct referent remained low, and the director did not reduce of the length of their referential expressions as adults do. Older children showed some improvement on both measures, but even 10- and 11-year-olds were less successful than a comparison group of adults. 
 
 While children struggle as directors, their performance can improve significantly when an adult offers explicit guidance on whether their referential expressions are ambiguous or otherwise insufficiently informative. For example, @deutsch1982 showed that clarification questions could be used by adults to eventually elicit unambiguous descriptions from 6- and 9-year-olds and, to a lesser extent, from 3-year-olds. A recent training study by @matthews2007 replicated this finding in 2- to 4-year-olds, and further showed transfer to a different communication task. While these studies show how adult input may help children produce informative referential expressions, it remains unclear whether, or how, adults provide such feedback in the course of natural adult-child conversations.
-
-```{r ipads, fig.env = "figure*", fig.pos = "!ht", out.width = "450px", fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "(A) Tangram figures used as referential targets, (B) director and matcher displays, (C) trial sequence."}
-# Note: this is moved up here to get the fig to appear on the right page... i know it's annoying.
-knitr::include_graphics("figs/design.pdf")
-```
 
 Children engage in conversation with their caregivers from their second year of life and reciprocal social interaction even before that [@bruner1985]. Further, children's language development is predicted most strongly not by the amount of language they hear, but rather by the amount of conversational turns they engage in [@romeo2018]. Given that young children struggle with informativity and perspective-taking, how do conversations with caregivers succeed? One possibility is that parents naturally adopt some of the strategies used by experimenters in training studies of conversational pact formation: Pointing out when references are ambiguous, clarifying when children have produced insufficient information, and/or helping children to conceptualize their referential targets in better ways. Indeed, parents' contingent responses to children's incorrect or incomplete utterances have been implicated in language learning more broadly [@chouinard2003]. 
 

@@ -1,5 +1,28 @@
 # Experiment 1: Referential communication
 
+```{r color-constants}
+CHILD_SCALE <- c("#9ecae1", "#4292c6", "#08519c")
+COLLAPSED_SCALE <-c('#525252', '#737373','#969696')
+ADULTS <- "black"
+PARENTS <- "#fe9929"
+
+```
+
+```{r load-data}
+kuperman_aoas <- read_csv(here("data/corpus_data/kuperman_aoas.csv"),
+                          show_col_types = FALSE)
+combined_data <- read_csv(here("data/deidentified/combined.csv"),
+                          show_col_type = FALSE) 
+exchanges_data <- read_csv(here("data/deidentified/exchanges.csv"),
+                           show_col_types = FALSE) 
+```
+
+
+```{r ipads, fig.env = "figure*", fig.pos = "!ht", out.width = "450px", fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "(A) Tangram figures used as referential targets, (B) director and matcher displays, (C) trial sequence."}
+# Note: this is moved up here to get the fig to appear on the right page... i know it's annoying.
+knitr::include_graphics("figs/design.pdf")
+```
+
 ```{r acc-exchange-setup, cache = T}
 # Note: this is moved up here to get the fig to appear on the right page... i know it's annoying.
 d.accuracy.raw <- combined_data %>%

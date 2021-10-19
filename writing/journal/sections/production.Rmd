@@ -2,6 +2,8 @@
 
 We ran a production experiment.
 
+## Method
+
 ```{r anonymize-e2-data, eval = FALSE}
 #anonymize
 read_csv(here("data/production/dataFromMongo.csv"))%>%
@@ -12,19 +14,21 @@ read_csv(here("data/production/dataFromMongo.csv"))%>%
 ```
 
 ```{r e2-data}
+NUM_TRIALS <- 48
+
 d.prod.raw <- read_csv(here("data/production/anonymizedDataFromMongo.csv"),
                        show_col_types = FALSE)
   
 complete_games <- d.prod.raw %>%
   group_by(wID) %>%
   tally() %>%
-  filter(n == 48) %>%
+  filter(n >= NUM_TRIALS) %>%
   pull(wID)
-
-cat('we have', length(complete_games), 'games')
 
 d.prod <- d.prod.raw %>%
   filter(wID %in% complete_games) %>%
+  group_by(wID) %>%
+  slice(1:NUM_TRIALS) %>%
   filter(rt > 1000) %>%
   mutate(utterance = str_to_lower(utterance),
          utterance = str_trim(utterance),
@@ -32,14 +36,45 @@ d.prod <- d.prod.raw %>%
          clean_utt = lemmatize_strings(utterance),
          clean_utt = str_remove_all(clean_utt, pattern = ' '))
 
-#write.csv(d.prod, "data/production/pilot_data_lemmatized.csv")
+write.csv(d.prod, here("data/production/pilot_data_lemmatized.csv"))
 
+
+## NOTE: I think ashley manually cleaned this data but we're missing four participants frmo above
 d.prod.clean <- read_csv(here("data/production/pilot_data_clean.csv"),
                          show_col_types = FALSE) 
   #filter(utt_length > 1) #%>%
   #mutate(clean_utt = lemmatize_words(clean_utt))
   
+
+n_stims <- d.prod.clean %>%
+  distinct(target_type, competitor_type, target, foil) 
+
+fam_stims <- n_stims %>%
+  filter(target_type == "familiar") %>%
+  distinct(target, foil) %>%
+  unlist() %>%
+  unique()
+  
+
+novel_stims <- n_stims  %>%
+  filter(target_type == "familiar") %>%
+  distinct(target, foil) %>%
+  unlist() %>%
+  unique()
+
+
+
+
 ```
+
+
+### Participants
+
+We recruited `r length(complete games)` adult participants from Mechanical Turk. All participants gave informed consent prior to the start of the study and were compensated XX dollars.
+
+### Stimuli
+
+Stimuli for the game were `r length(fam_stims)` pictures of familiar objects and `r length(novel_stims)` pictures of tangram constructions. Familiar objects were drawn from the set used by @degen2020.
 
 ## Response times reflect familiarity and context
 
