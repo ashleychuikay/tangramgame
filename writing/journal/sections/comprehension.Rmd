@@ -37,25 +37,6 @@ stims <- read_csv(here("data/comprehension/random_stims.csv"),
   select(-c(correct, trial, rightpic, leftpic))
 ```
 
-# Methods
-
-### Participants
-
-`r passed_check$false + passed_check$true` adults (ages XXX) were recruited from Amazon Mechanical Turk.
-YYY children (ages XXX) were recruited from a preschool in the local community to achieve a planned sample of 200 children.
-Because of the COVID-19 pandemic, we were forced to terminate data collection early.
-Data from `r passed_check$false` pairs were dropped due to failure to complete the study, leaving a final sample of `r passed_check$true` pairs. 
-
-### Stimuli 
-
-We re-recorded all of the referring expressions produced in Exp. 1.
-
-### Design and procedure
-
-Each participants listened to exactly 10 recordings, one for each tangram.
-On each trial, the target tangram appeared with the foil from Exp. 1.
-
-### Pre-processing
 
 ```{r tidy-data}
 # Note: our pre-processing pipeline started with raw, de-anonymized data. 
@@ -83,10 +64,29 @@ On each trial, the target tangram appeared with the foil from Exp. 1.
 #   filter(rt < 10000) %>%
 #   pivot_longer(cols = c(correct, rt, log_rt), names_to = "measure")
   
-write_csv(tidy_kid_data, 'data/comprehension/comprehension_kids_tidy.csv')
+#write_csv(tidy_kid_data, 'data/comprehension/comprehension_kids_tidy.csv')
 
 tidy_kid_data <- read_csv(here("data/comprehension/comprehension_kids_tidy.csv"))
 ```
+# Methods
+
+### Participants
+
+`r passed_check$false + passed_check$true` adults (ages XXX) were recruited from Amazon Mechanical Turk.
+Data from `r passed_check$false` pairs were dropped due to failure to complete the study, leaving a final sample of `r passed_check$true` pairs. 
+Additionally, we planned to recruited a sample of 200 children from a preschool in the local community.
+However, because of the COVID-19 pandemic, we were forced to terminate data collection early with only `r length(unique(tidy_kid_data$id))` children (ages `r min(tidy_kid_data$age)`-`r max(tidy_kid_data$age)`) .
+
+### Stimuli 
+
+We re-recorded all of the referring expressions produced in Exp. 1.
+
+### Design and procedure
+
+Each participants listened to exactly 10 recordings, one for each tangram.
+On each trial, the target tangram appeared with the foil from Exp. 1.
+
+### Pre-processing
 
 ```{r}
 #gameid is original subject id
