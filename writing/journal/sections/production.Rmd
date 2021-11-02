@@ -72,9 +72,15 @@ novel_stims <- n_stims  %>%
 
 We recruited `r length(complete games)` adult participants from Mechanical Turk. All participants gave informed consent prior to the start of the study and were compensated XX dollars.
 
-### Stimuli
+### Stimuli and Design
 
-Stimuli for the game were `r length(fam_stims)` pictures of familiar objects and `r length(novel_stims)` pictures of tangram constructions. Familiar objects were drawn from the set used by @degen2020.
+Stimuli for the game were `r length(fam_stims)` pictures of familiar objects and `r length(novel_stims)` pictures of tangram constructions. Familiar objects were drawn from the set used by @degen2020. Tangrams were drawn from a publicly royalty free set available on XX. Target familiar objects belonged to eight different basic-level categories: bears, birds, cars, candy, dogs, fish, shirts, and tables.
+
+For both familiar objects and novel tangrams, trials were divided into three types: Isolation trials in which a single target object was presented, Far trials in which a target was paired with a competitor of the same type but with low semantic overlap, and Close trials in which the target waws paired with a competitor with high semantic overlap. For familiar objects, close trials involved two objects in the same basic-level semantic category (e.g. German Shepherd and Pug), and far trials involved two objects in different basic-level categories (e.g. German Shepherd and Cow). For novel tangrams, close and far competitors were determined on the basis of their degree of labeling overlap with target in a pilot experiment. In this pilot experiment, we asked participants to label a number of tangrams in isolation. We used naming agreement--the proportion of responses that were the same for two tangrams--to estimate their semantic similarity [see @zettersten2020]. Details of the novel tangram selection procedure are described in the Supporting Information (XX ACTUALLY DO THIS).
+
+Adults provided labels for a total of eight familiar objects and eight novel tangrams. Each object appeared three times: once in Isolation, once in a Close context, and once in a Far context. All trials of a single type were blocked (e.g. Isolation familiar objects), and the six blocks were presented in random order across participants. 
+
+Move Children to a separate experiment?? XX
 
 ## Response times reflect familiarity and context
 
