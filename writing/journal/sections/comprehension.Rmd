@@ -42,9 +42,9 @@ stims <- read_csv(here("data/comprehension/random_stims.csv"),
 # Note: our pre-processing pipeline started with raw, de-anonymized data. 
 #       we have preserved this pipeline for reproducibility but only release the pre-processed data.
 
-database_ids <- read_csv(here("data/comprehension/databaseid.csv"), show_col_types = FALSE) %>%
-  rename(gameid = subid) %>%
-  select(gameid, age)
+# database_ids <- read_csv(here("data/comprehension/databaseid.csv"), show_col_types = FALSE) %>%
+#   rename(gameid = subid) %>%
+#   select(gameid, age)
 
 # raw_kid_data <- read_csv(here("data/comprehension/comprehension_kids.csv"), show_col_types = FALSE) %>%
 #   filter(!is.na(id)) %>%
@@ -84,16 +84,16 @@ kid_stims <- tidy_kid_data %>%
 # histogram of how many times we hit each cell in adult data
 tidy_turk_data %>% 
     unite(audioid, gametrial, gameid) %>% group_by(audioid) %>% tally() %>% mutate(n = n /3) %>% qplot(n, data = .)
-
 ```
+
 # Methods
 
 ### Participants
 
-`r passed_check$false + passed_check$true` adults were recruited from Amazon Mechanical Turk.
-Data from `r passed_check$false` pairs were excluded due to failing a pre-registered attention check or failing to complete the study, leaving a final sample of `r passed_check$true` pairs. 
-Additionally, we planned to recruited a preregistered sample of 200 children from a preschool in the local community.
-Because of the COVID-19 pandemic, we were forced to terminate data collection early with only `r length(unique(tidy_kid_data$id))` children (ages `r min(tidy_kid_data$age)`-`r max(tidy_kid_data$age)`).
+`r passed_check$false + passed_check$true` adults (ages XXX) were recruited from Amazon Mechanical Turk.
+Data from `r passed_check$false` pairs were dropped due to failure to complete the study, leaving a final sample of `r passed_check$true` pairs. 
+Additionally, we planned to recruited a sample of 200 children from a preschool in the local community.
+However, because of the COVID-19 pandemic, we were forced to terminate data collection early with only `r length(unique(tidy_kid_data$id))` children (ages `r min(tidy_kid_data$age)`-`r max(tidy_kid_data$age)`) .
 
 ### Stimuli
 
@@ -101,8 +101,6 @@ To conceal the identity of the original speaker, the first author produced new r
 We removed disfluencies and isolated the speaker's referring expression (i.e. excluded additional information provided in response to the listener's questions or prompting).
 This process produced `r adult_stims$parent + adult_stims$child` unique audio stimuli, one for each trial of each game. 
 These stimuli were broken into 118 unique 'item sets' containing 10 recordings each, such that each tangram appeared as the target once in each set. 
-
-### Procedure
 
 Participants were placed in the role of the listener and presented with audio recordings of a referring expression originally produced in Exp.~1. 
 Each participant proceeded through exactly 10 trials --- a single referring expression for each tangram, in a randomized order, paired with their foils from the corresponding trial in Exp.~1.

@@ -560,3 +560,74 @@ matches <- left_join(dissimilar, similar, by = "target_id") %>%
 ```
 
 # adversarial context design
+
+```{r load-child-production-data}
+kid_production_files <- list.files(here("data/production/kid"), "*.csv", 
+                                   full.names = TRUE)
+
+kid_production_data <- map_dfr(kid_production_files, ~read_csv(.x, show_col_types = FALSE))
+```
+
+check trials
+```{r check-trials}
+
+check_trial_data <- kid_production_data %>%
+  filter(trialtype == "check")
+
+ground_truth_responses <- check_trial_data %>%
+  distinct(utterance) %>%
+  mutate(unambiguous = utterance %in% c("polar bear", "red flower", "M&Ms"),
+         wrong = utterance %in% c("cup", "table", "bear"),
+         a)
+
+joined_check_trial_data <- check_trial_data %>%
+  left_join(ground_truth_responses, by = "utterance") %>%
+  mutate(correct = (unambiguous & button_pressed == 0) | 
+           (!unambiguous & button_pressed == 1))
+  
+subj_check_trial_data <- joined_check_trial_data %>%  
+  group_by(age, id) %>%
+  summarise(correct = mean(correct))
+
+type_check_trial_data <- joined_check_trial_data %>%
+  mutate(check_type = case_when(
+    unambiguous ~ "unambiguous",
+    wrong ~ "wrong",
+    T ~ "ambiguous")) %>%
+  group_by(check_type, age, id) %>%
+  summarise(correct = mean(correct))
+
+ggplot(type_check_trial_data, aes(x = age, y = correct, color = check_type)) +
+  facet_wrap(~ check_type) +
+  geom_hline(aes(yintercept = .5), linetype = "dashed") +
+  geom_jitter()
+  
+```
+
+```{r plot-check-data}
+ggplot(subj_check_trial_data, aes(x = age, y = correct)) + 
+  geom_jitter() + 
+  geom_hline(aes(yintercept = .5), linetype = "dashed")
+
+subj_check_trial_data %>%
+  ungroup() %>%
+  tidyboot_mean(correct)
+```
+
+```{r compare-lenghts}
+booted_lengths <- kid_production_data %>%
+  filter(trialtype == "paired") %>%
+  mutate(length = str_count(str_trim(utterance), " ") + 1) %>%
+  group_by(age, target_type, competitor_type, id) %>%
+  summarise(length = mean(length)) %>%
+  tidyboot_mean(length)
+
+
+ggplot(booted_lengths, aes(x = age, y = empirical_stat, 
+                           color = competitor_type)) + 
+         facet_wrap(~ target_type) + 
+  geom_pointrange(aes(ymin = ci_lower, 
+                      ymax = ci_upper),
+                  position = position_dodge(.5)) + 
+  theme(legend.position = "bottom")
+```
