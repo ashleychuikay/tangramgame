@@ -67,6 +67,24 @@ database_ids <- read_csv(here("data/comprehension/databaseid.csv"), show_col_typ
 #write_csv(tidy_kid_data, 'data/comprehension/comprehension_kids_tidy.csv')
 
 tidy_kid_data <- read_csv(here("data/comprehension/comprehension_kids_tidy.csv"))
+
+adult_stims <- tidy_turk_data %>% 
+  unite(audioid, gametrial, gameid) %>% group_by(person) %>% 
+  summarize(l = length(unique(audioid))) %>% 
+  pivot_wider(  names_from = person, values_from = l)
+
+kid_stims <- tidy_kid_data %>% 
+  unite(audioid, gametrial, gameid) %>% group_by(person) %>% 
+  summarize(l = length(unique(audioid))) %>% 
+  pivot_wider(  names_from = person, values_from = l)
+
+```
+
+```{r}
+# histogram of how many times we hit each cell in adult data
+tidy_turk_data %>% 
+    unite(audioid, gametrial, gameid) %>% group_by(audioid) %>% tally() %>% mutate(n = n /3) %>% qplot(n, data = .)
+
 ```
 # Methods
 
@@ -77,21 +95,33 @@ Data from `r passed_check$false` pairs were excluded due to failing a pre-regist
 Additionally, we planned to recruited a preregistered sample of 200 children from a preschool in the local community.
 Because of the COVID-19 pandemic, we were forced to terminate data collection early with only `r length(unique(tidy_kid_data$id))` children (ages `r min(tidy_kid_data$age)`-`r max(tidy_kid_data$age)`).
 
-### Design and procedure
+### Stimuli
 
-To evaluate comprehension, participants were placed in the role of the listener.
-On each trial, they were presented with an audio recording of a referring expression from Exp.~1. 
-These recordings were produced by the first author reading the transcript in a uniform style, in order to conceal the identity of the original speaker.
-After the recording played, they were asked to click on the intended referent and did not receive any feedback.
-Each participant proceeded through exactly 10 trials --- a single referring expression for each tangram, paired with its foil from the corresponding trial in Exp.~1.
-To detect participants who were not following instructions, we included an attention check which asked people to click 'the one on the left'.
-We also did not allow participants to proceed past the consent page without the audio on by asking them to play a recording that said to "type the number 86 into the box."
-We measured both accuracy (clicking the correct target) and response time (time interval between the completion of the audio and onset of the response). 
+To conceal the identity of the original speaker, the first author produced new recordings by reading from the Exp.~1 game transcripts in a uniform vocal style.
+We removed disfluencies and isolated the speaker's referring expression (i.e. excluded additional information provided in response to the listener's questions or prompting).
+This process produced `r adult_stims$parent + adult_stims$child` unique audio stimuli, one for each trial of each game. 
+These stimuli were broken into 118 unique 'item sets' containing 10 recordings each, such that each tangram appeared as the target once in each set. 
 
+### Procedure
 
-### Pre-processing
+Participants were placed in the role of the listener and presented with audio recordings of a referring expression originally produced in Exp.~1. 
+Each participant proceeded through exactly 10 trials --- a single referring expression for each tangram, in a randomized order, paired with their foils from the corresponding trial in Exp.~1.
+At the beginning of each trial, a recording was played and participants were asked to click the intended referent.
+To reduce possible learning effects, participants did not receive any feedback after their response.
+
+Before participants began the experiment, we ensured their audio was working. 
+We did not allow participants to proceed past the consent page without clicking a 'play' button that asked them to "type the number 86 into the box."
+Additionally, to detect participants who were not following instructions, we included an attention check which simply asked people to click 'the one on the left'.
+We measured both accuracy and response time, measured as the time interval between the completion of the audio recording and their response. 
+
+### Design 
+
+We used a $2 \times 2$ factorial design manipulating the age of the producer (adult vs. child) and comprehender (adult vs. child). 
+The age of the producer was a within-subjects manipulation while the age of the comprehender was an across-subjects manipulate: each comprehender was exposed to utterances originally produced by both adults and children.
+We predicted that if children struggle to form conceptual pacts primarily due to *comprehension* difficulties, then adult comprehenders should be highly accurate across the board (regardless of whether the referring expression was originally produced by an adult or child), while child comprehenders should uniformly struggle.
 
 ```{r}
+### Pre-processing
 #gameid is original subject id
 tidy_turk_data <- raw_adult_data %>%
   left_join(check_correct, by = c("subid")) %>%
@@ -104,7 +134,7 @@ tidy_turk_data <- raw_adult_data %>%
   pivot_longer(cols = c(correct, reactiontime, log_rt), names_to = "measure")
 ```
 
-```{r rt-skew}
+```{r rt-skew }
 ggplot(tidy_turk_data %>% filter(measure != "correct"), aes(x = value)) +
   facet_wrap(~ measure, scales = "free") + 
   geom_histogram()
