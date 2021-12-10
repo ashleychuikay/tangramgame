@@ -279,22 +279,10 @@ So parents' descriptions lead to more accurate and faster guesses. Both older ki
 But no effect of occurrence--descriptions on the second appearance of each item do not appear to contain less information for guessing the target.
 
 ```{r exchange-data}
-exchange_data <- read_csv(here("data/deidentified/exchanges.csv")) %>%
-  mutate(age = as.character(age),
-         age = if_else(is.na(age), 'adult', age),
-         director = case_when(person == "parent" & role == "matcher" ~ "child",
-                              person == "child" & role == "director" ~ "child",
-                              T ~ "adult")) %>%
-  group_by(director, person, subid, trial, age, target, rep_num) %>%
-  summarize(num_exchanges = n()) %>% 
-  ungroup() %>%
-  select(subid, trial, director, person, num_exchanges) %>%
-  group_by(trial, subid) %>%
-  summarise(num_exchanges = sum(num_exchanges))
-
-turk_exchange_data <- tidy_turk_data %>% left_join(exchange_data, 
-                                                   by = c("gameid" = "subid"),
-                                                   "gametrial" = "trial")
+turk_exchange_data <- d.exchanges.raw %>% 
+  group_by(trial, subid) %>% 
+  summarise(num_exchanges = sum(num_exchanges)) %>% 
+  right_join(tidy_turk_data, by = c("subid" = "gameid"), "trial" = "gametrial")
 
 turk_exchange_data %>%
   filter(measure == "correct") %>%
