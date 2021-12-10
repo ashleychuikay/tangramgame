@@ -41,10 +41,9 @@ stims <- read_csv(here("data/comprehension/random_stims.csv"),
 ```{r tidy-data}
 # Note: our pre-processing pipeline started with raw, de-anonymized data. 
 #       we have preserved this pipeline for reproducibility but only release the pre-processed data.
-
-# database_ids <- read_csv(here("data/comprehension/databaseid.csv"), show_col_types = FALSE) %>%
-#   rename(gameid = subid) %>%
-#   select(gameid, age)
+database_ids <- read_csv(here("data/comprehension/databaseid.csv"), show_col_types = FALSE) %>%
+  rename(gameid = subid) %>%
+  select(gameid, age)
 
 # raw_kid_data <- read_csv(here("data/comprehension/comprehension_kids.csv"), show_col_types = FALSE) %>%
 #   filter(!is.na(id)) %>%
@@ -65,6 +64,26 @@ stims <- read_csv(here("data/comprehension/random_stims.csv"),
 #   pivot_longer(cols = c(correct, rt, log_rt), names_to = "measure")
   
 #write_csv(tidy_kid_data, 'data/comprehension/comprehension_kids_tidy.csv')
+```
+
+```{r import-data}
+tidy_turk_data <- raw_adult_data %>%
+  left_join(check_correct, by = c("subid")) %>%
+  filter(check_correct, occurrence != "check") %>%
+  separate(audioid, into = c("gameid", "gametrial"), sep = "_") %>%
+  mutate(gameid = as.numeric(gameid),
+         gametrial = as.numeric(gametrial)) %>%
+  left_join(database_ids, by = ("gameid")) %>%
+  mutate(log_rt = log(reactiontime)) %>%
+  pivot_longer(cols = c(correct, reactiontime, log_rt), names_to = "measure")
+
+# histogram of how many times we hit each cell in adult data
+tidy_turk_data %>% 
+    unite(audioid, gametrial, gameid) %>% 
+    group_by(audioid) %>% 
+    tally() %>% 
+    mutate(n = n /3) %>% 
+    qplot(n, data = .)
 
 tidy_kid_data <- read_csv(here("data/comprehension/comprehension_kids_tidy.csv"))
 
@@ -80,11 +99,6 @@ kid_stims <- tidy_kid_data %>%
 
 ```
 
-```{r}
-# histogram of how many times we hit each cell in adult data
-tidy_turk_data %>% 
-    unite(audioid, gametrial, gameid) %>% group_by(audioid) %>% tally() %>% mutate(n = n /3) %>% qplot(n, data = .)
-```
 
 # Methods
 
@@ -117,20 +131,6 @@ We measured both accuracy and response time, measured as the time interval betwe
 We used a $2 \times 2$ factorial design manipulating the age of the producer (adult vs. child) and comprehender (adult vs. child). 
 The age of the producer was a within-subjects manipulation while the age of the comprehender was an across-subjects manipulate: each comprehender was exposed to utterances originally produced by both adults and children.
 We predicted that if children struggle to form conceptual pacts primarily due to *comprehension* difficulties, then adult comprehenders should be highly accurate across the board (regardless of whether the referring expression was originally produced by an adult or child), while child comprehenders should uniformly struggle.
-
-```{r}
-### Pre-processing
-#gameid is original subject id
-tidy_turk_data <- raw_adult_data %>%
-  left_join(check_correct, by = c("subid")) %>%
-  filter(check_correct, occurrence != "check") %>%
-  separate(audioid, into = c("gameid", "gametrial"), sep = "_") %>%
-  mutate(gameid = as.numeric(gameid),
-         gametrial = as.numeric(gametrial)) %>%
-  left_join(database_ids, by = ("gameid")) %>%
-  mutate(log_rt = log(reactiontime)) %>%
-  pivot_longer(cols = c(correct, reactiontime, log_rt), names_to = "measure")
-```
 
 ```{r rt-skew }
 ggplot(tidy_turk_data %>% filter(measure != "correct"), aes(x = value)) +
@@ -279,7 +279,15 @@ So parents' descriptions lead to more accurate and faster guesses. Both older ki
 But no effect of occurrence--descriptions on the second appearance of each item do not appear to contain less information for guessing the target.
 
 ```{r exchange-data}
-exchange_data <- read_csv(here("data/exchange_data.csv")) %>%
+exchange_data <- read_csv(here("data/deidentified/exchanges.csv")) %>%
+  mutate(age = as.character(age),
+         age = if_else(is.na(age), 'adult', age),
+         director = case_when(person == "parent" & role == "matcher" ~ "child",
+                              person == "child" & role == "director" ~ "child",
+                              T ~ "adult")) %>%
+  group_by(director, person, subid, trial, age, target, rep_num) %>%
+  summarize(num_exchanges = n()) %>% 
+  ungroup() %>%
   select(subid, trial, director, person, num_exchanges) %>%
   group_by(trial, subid) %>%
   summarise(num_exchanges = sum(num_exchanges))
