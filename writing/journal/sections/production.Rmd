@@ -88,10 +88,9 @@ kid_novel_stims <- n_stims  %>%
   unique()
 
 ```
-
 ### Participants
 
-We recruited `r length(complete games)` adult participants from Mechanical Turk. All participants gave informed consent prior to the start of the study and were compensated XX dollars. 
+We recruited `r length(complete_games)` adult participants from Mechanical Turk. All participants gave informed consent prior to the start of the study and were compensated XX dollars. 
 
 We also recruited XX children to participate in the study. DEMOGRAPHICS XX.
 
@@ -281,7 +280,7 @@ ggplot(norming_overlap, aes(x = overlap_diff, y = kl)) +
 
 * within-participant version: For a particular participant, measure whether they use the same word across competition_type conditions for same targets. 
 
-```{r}
+```{r, eval = FALSE}
 normalized_lv <- function(s1, s2) {
   lv_dist = stringdist::stringdist(s1, s2, method = 'lv')
   s1_len <- str_length(s1)
@@ -584,13 +583,6 @@ matches <- left_join(dissimilar, similar, by = "target_id") %>%
 
 # adversarial context design
 
-```{r load-child-production-data}
-kid_production_files <- list.files(here("data/production/kid"), "*.csv", 
-                                   full.names = TRUE)
-
-kid_production_data <- map_dfr(kid_production_files, ~read_csv(.x, show_col_types = FALSE))
-```
-
 check trials
 ```{r check-trials}
 
@@ -601,7 +593,7 @@ ground_truth_responses <- check_trial_data %>%
   distinct(utterance) %>%
   mutate(unambiguous = utterance %in% c("polar bear", "red flower", "M&Ms"),
          wrong = utterance %in% c("cup", "table", "bear"),
-         a)
+         ambiguous = utterance %in% c("dog", "bird", "shirt"))
 
 joined_check_trial_data <- check_trial_data %>%
   left_join(ground_truth_responses, by = "utterance") %>%
