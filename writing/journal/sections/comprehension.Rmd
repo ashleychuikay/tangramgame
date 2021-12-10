@@ -80,11 +80,6 @@ kid_stims <- tidy_kid_data %>%
 
 ```
 
-```{r}
-# histogram of how many times we hit each cell in adult data
-tidy_turk_data %>% 
-    unite(audioid, gametrial, gameid) %>% group_by(audioid) %>% tally() %>% mutate(n = n /3) %>% qplot(n, data = .)
-```
 
 # Methods
 
@@ -130,6 +125,14 @@ tidy_turk_data <- raw_adult_data %>%
   left_join(database_ids, by = ("gameid")) %>%
   mutate(log_rt = log(reactiontime)) %>%
   pivot_longer(cols = c(correct, reactiontime, log_rt), names_to = "measure")
+
+# histogram of how many times we hit each cell in adult data
+tidy_turk_data %>% 
+    unite(audioid, gametrial, gameid) %>% 
+    group_by(audioid) %>% 
+    tally() %>% 
+    mutate(n = n /3) %>% 
+    qplot(n, data = .)
 ```
 
 ```{r rt-skew }
