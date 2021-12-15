@@ -62,25 +62,47 @@ novel_stims <- n_stims  %>%
   unlist() %>%
   unique()
 
-
-
-
 ```
 
+```{r e2-child-data}
+kid_production_files <- list.files(here("data/production/kid/"), "*.csv",
+                                   full.names = TRUE)
 
+kid_production_data <- map_dfr(kid_production_files, read_csv, 
+                               show_col_types = FALSE)
+
+n_kid_stims <- kid_production_data %>%
+  distinct(target_type, competitor_type, target, foil) 
+
+kid_fam_stims <- n_stims %>%
+  filter(target_type == "familiar") %>%
+  distinct(target, foil) %>%
+  unlist() %>%
+  unique()
+  
+
+kid_novel_stims <- n_stims  %>%
+  filter(target_type == "familiar") %>%
+  distinct(target, foil) %>%
+  unlist() %>%
+  unique()
+
+```
 ### Participants
 
-We recruited `r length(complete games)` adult participants from Mechanical Turk. All participants gave informed consent prior to the start of the study and were compensated XX dollars.
+We recruited `r length(complete_games)` adult participants from Mechanical Turk. All participants gave informed consent prior to the start of the study and were compensated XX dollars. 
+
+We also recruited XX children to participate in the study. DEMOGRAPHICS XX.
 
 ### Stimuli and Design
 
 Stimuli for the game were `r length(fam_stims)` pictures of familiar objects and `r length(novel_stims)` pictures of tangram constructions. Familiar objects were drawn from the set used by @degen2020. Tangrams were drawn from a publicly royalty free set available on XX. Target familiar objects belonged to eight different basic-level categories: bears, birds, cars, candy, dogs, fish, shirts, and tables.
 
-For both familiar objects and novel tangrams, trials were divided into three types: Isolation trials in which a single target object was presented, Far trials in which a target was paired with a competitor of the same type but with low semantic overlap, and Close trials in which the target waws paired with a competitor with high semantic overlap. For familiar objects, close trials involved two objects in the same basic-level semantic category (e.g. German Shepherd and Pug), and far trials involved two objects in different basic-level categories (e.g. German Shepherd and Cow). For novel tangrams, close and far competitors were determined on the basis of their degree of labeling overlap with target in a pilot experiment. In this pilot experiment, we asked participants to label a number of tangrams in isolation. We used naming agreement--the proportion of responses that were the same for two tangrams--to estimate their semantic similarity [see @zettersten2020]. Details of the novel tangram selection procedure are described in the Supporting Information (XX ACTUALLY DO THIS).
+For both familiar objects and novel tangrams, trials were divided into three types: Isolation trials in which a single target object was presented, Far trials in which a target was paired with a competitor of the same type but with low semantic overlap, and Close trials in which the target waws paired with a competitor with high semantic overlap. For familiar objects, close trials involved two objects in the same basic-level semantic category (e.g. German Shepherd and Pug), and far trials involved two objects in different basic-level categories (e.g. German Shepherd and Cow). For novel tangrams, Close and Far competitors were determined on the basis of their degree of labeling overlap with target in a pilot experiment. In this pilot experiment, we asked participants to label a number of tangrams in isolation. We used naming agreement--the proportion of responses that were the same for two tangrams--to estimate their semantic similarity [see @zettersten2020]. Details of the novel tangram selection procedure are described in the Supporting Information (XX ACTUALLY DO THIS).
 
 Adults provided labels for a total of eight familiar objects and eight novel tangrams. Each object appeared three times: once in Isolation, once in a Close context, and once in a Far context. All trials of a single type were blocked (e.g. Isolation familiar objects), and the six blocks were presented in random order across participants. 
 
-Move Children to a separate experiment?? XX
+Children provided labels for the same eight familiar and novel objects. To maintain children's attention for the duration of the experiment, they gave responses only in the Close and Far conditions and not in the Isolation condition. Children also participated in an additional Check condition in which they were told that they would hear a label produced by another child and would indicate whether it unambiguously identified the target object. The goal of the Check condition was to aid in interpretation of potentially ambiguous utterances that children were expected to provide in the Close condition (e.g. saying "bear" to distinguish between a brown bear and a polar bear). In this condition, three of the trials were Far trials in which an unambiguously incorrect label was provided to the child (e.g. "table" to distinguish between a pug and a rabbit), three of the trials were Close trials in which an unambiguously correct label was provided (e.g. "polar bear" to distinguish between a polar bear and a grizzly bear), and three were Close trials in which an ambiguous label was provided (e.g. "dog" to distinguish between a husky and a dalmation). Children's productions in all conditions were transcribed from video recordings of their participation.
 
 ## Response times reflect familiarity and context
 
@@ -258,7 +280,7 @@ ggplot(norming_overlap, aes(x = overlap_diff, y = kl)) +
 
 * within-participant version: For a particular participant, measure whether they use the same word across competition_type conditions for same targets. 
 
-```{r}
+```{r, eval = FALSE}
 normalized_lv <- function(s1, s2) {
   lv_dist = stringdist::stringdist(s1, s2, method = 'lv')
   s1_len <- str_length(s1)
@@ -561,13 +583,6 @@ matches <- left_join(dissimilar, similar, by = "target_id") %>%
 
 # adversarial context design
 
-```{r load-child-production-data}
-kid_production_files <- list.files(here("data/production/kid"), "*.csv", 
-                                   full.names = TRUE)
-
-kid_production_data <- map_dfr(kid_production_files, ~read_csv(.x, show_col_types = FALSE))
-```
-
 check trials
 ```{r check-trials}
 
@@ -578,7 +593,7 @@ ground_truth_responses <- check_trial_data %>%
   distinct(utterance) %>%
   mutate(unambiguous = utterance %in% c("polar bear", "red flower", "M&Ms"),
          wrong = utterance %in% c("cup", "table", "bear"),
-         a)
+         ambiguous = utterance %in% c("dog", "bird", "shirt"))
 
 joined_check_trial_data <- check_trial_data %>%
   left_join(ground_truth_responses, by = "utterance") %>%
