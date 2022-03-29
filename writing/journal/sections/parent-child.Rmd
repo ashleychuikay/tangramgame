@@ -61,7 +61,7 @@ d.exchanges.raw <- exchanges_data %>%
          director = case_when(person == "parent" & role == "matcher" ~ "child",
                               person == "child" & role == "director" ~ "child",
                               T ~ "adult")) %>%
-  group_by(director, subid, trial, age, target, rep_num) %>%
+  group_by(director, person, subid, trial, age, target, rep_num) %>%
   summarize(num_exchanges = n()) %>% 
   ungroup()
 
