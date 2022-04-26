@@ -1,6 +1,10 @@
 # Experiment 3: Production experiment
 
-We ran a production experiment.
+In Experiment 2, we found that even young children produced sufficiently informative descriptions of novel tangrams. While children's descriptions were slightly less informative (as indexed by slower reaction times and lower accuracy), they were nonetheless sufficient for naive adult and child listeners to identify the correct tangram. These findings starkly contrast previous research showing that children are poor producers (and identifiers) of informative descriptions [e.g., @anderson1994]. One possible reason for our results is that children, when interacting with their parents, received adequate scaffolding that allowed them to produce informative expressions. That is, parent-child pairs' success in our interactive game could be due to the supportive context of parent scaffolding.
+
+In Experiment 3, we remove the supportive context to ask whether children, compared to adults, produce referential expressions that are underinformative. We asked adults and children to give short descriptions of familiar and novel objects. Importantly, the target objects were shown in different contexts, namely a "close" context, where the foil object was similar to the target, and a "far" context, where the foil was dissimilar to the target. 
+
+This experiment allows us to investigate the reasons behind children's apparent failure to coordinate with peers in referential settings. One possibility is that children struggle to produce uniquely identifying expressions, particularly for novel objects.
 
 ## Method
 
@@ -98,7 +102,7 @@ kid_novel_stims <- n_kid_stims  %>%
 
 We recruited `r length(complete_games.adult)` adult participants from Mechanical Turk. All participants gave informed consent prior to the start of the study and were compensated XX dollars. 
 
-We also recruited XX children to participate in the study. DEMOGRAPHICS XX.
+We also recruited XX children to participate in the study. DEMOGRAPHICS XX. The study was conducted online over Zoom.
 
 ### Stimuli and Design
 
