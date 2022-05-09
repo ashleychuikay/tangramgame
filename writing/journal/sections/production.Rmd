@@ -2,7 +2,7 @@
 
 In Experiment 2, we found that even young children produced sufficiently informative descriptions of novel tangrams. While children's descriptions were slightly less informative (as indexed by slower reaction times and lower accuracy), they were nonetheless sufficient for naive adult and child listeners to identify the correct tangram. These findings starkly contrast previous research showing that children are poor producers (and identifiers) of informative descriptions [e.g., @anderson1994]. One possible reason for our results is that children, when interacting with their parents, received adequate scaffolding that allowed them to produce informative expressions. That is, parent-child pairs' success in our interactive game could be due to the supportive context of parent scaffolding.
 
-In Experiment 3, we remove the supportive context to ask whether children, compared to adults, produce referential expressions that are underinformative. We asked adults and children to give short descriptions of familiar and novel objects. Importantly, the target objects were shown in different contexts, namely a "close" context, where the foil object was similar to the target, and a "far" context, where the foil was dissimilar to the target. 
+In Experiment 3, we remove the supportive context to ask whether children, as compared to adults, produce referential expressions that are underinformative. We asked adults and children to give short descriptions of familiar and novel objects. Across trials, we varied the context in which target objects appeared. In "close" contexts, the foil object was highly similar to the target, whereas in "far" contexts the foil was dissimilar. In the contexts, a successful referring experession only needs to be a good description of the target. In contrast, in close contexts, a successful referring expression needs to both describe the target well and not describe the foil. For example, a Pug can successfully be called a "dog" if the foil is a table, but not if it is a German Shepherd. 
 
 This experiment allows us to investigate the reasons behind children's apparent failure to coordinate with peers in referential settings. One possibility is that children struggle to produce uniquely identifying expressions, particularly for novel objects.
 
@@ -98,15 +98,25 @@ We also recruited \textcolor{red}{XX children} to participate in the study. \tex
 
 Stimuli for the game were `r length(fam_stims)` pictures of familiar objects and `r length(novel_stims)` pictures of tangram constructions. Familiar objects were drawn from the set used by @degen2020. Tangrams were drawn from a publicly royalty free set available on \textcolor{red}{XX tangrams site}. Target familiar objects belonged to eight different basic-level categories: bears, birds, cars, candy, dogs, fish, shirts, and tables.
 
-For both familiar objects and novel tangrams, trials were divided into three types: isolation trials in which a single target object was presented, far trials in which a target was paired with a competitor of the same type but with low semantic overlap, and close trials in which the target was paired with a competitor with high semantic overlap. For familiar objects, close trials involved two objects in the same basic-level semantic category (e.g. German Shepherd and Pug), and far trials involved two objects in different basic-level categories (e.g. German Shepherd and Cow). For novel tangrams, close and far competitors were determined on the basis of their degree of labeling overlap with target in a norming experiment. In this norming experiment, we asked participants to label a number of tangrams in isolation. We used naming agreement--the proportion of responses that were the same for two tangrams--to estimate their semantic similarity [see @zettersten2020]. Details of the novel tangram selection procedure are described in the Supporting Information (\textcolor{red}{actually do this}).
+```{r e3-design, out.height = "450px", fig.align = "center", set.cap.width=T, fig.cap = "Objects in Experiment 3 could appear in isolation (A), in a far context (B), or in a close context (C)."}
+knitr::include_graphics("figs/e3_diagram.png")
+```
+
+For both familiar objects and novel tangrams, trials were divided into three types: isolation trials in which a single target object was presented (Fig. \ref{fig:e3-design}A), far trials in which a target was paired with a competitor of the same type but with low semantic overlap (Fig. \ref{fig:e3-design}B), and close trials in which the target was paired with a competitor with high semantic overlap (Fig. \ref{fig:e3-design}C). For familiar objects, close trials involved two objects in the same basic-level semantic category (e.g. Pug and German Shepherd), and far trials involved two objects in different basic-level categories (e.g. Pug and Rabbit). For novel tangrams, close and far competitors were determined on the basis of their degree of labeling overlap with target in a norming experiment. In this norming experiment, we asked participants to label a number of tangrams in isolation. We used naming agreement--the proportion of responses that were the same for two tangrams--to estimate their semantic similarity [see @zettersten2020]. Details of the novel tangram selection procedure are described in the Supporting Information (\textcolor{red}{actually do this}).
 
 Adults provided labels for a total of eight familiar objects and eight novel tangrams. Each object appeared three times: once in isolation, once in a close context, and once in a far context. All trials of a single type were blocked (e.g. isolation familiar objects), and the six blocks were presented in random order across participants. 
 
-Children provided labels for the same eight familiar and novel objects. To maintain children's attention for the duration of the experiment, they gave responses only in the close and far conditions and not in the isolation condition. Children also participated in an additional check condition designed to measure their comprehension of incorrect and ambiguous label. In this condition, children were told that they would hear a label produced by another child, and that they should indicate whether this label unambiguously identified the target object. The
+Children provided labels for the same eight familiar and novel objects. To maintain children's attention for the duration of the experiment, they gave responses only in the close and far conditions and not in the isolation condition. Children also participated in an additional check condition designed to measure their understanding of ambiguity in comprehension. The check condition's purpose was to aid in interpretation of potentially ambiguous utterances that children were expected to provide in the Close condition (e.g. saying "bear" to distinguish between a brown bear and a polar bear). In this condition, children were told that they would hear a label produced by another child, and that they should indicate whether this label unambiguously identified the target object. Three of the trials were far trials in which an unambiguously incorrect label was provided to the child (e.g. "table" to distinguish between a pug and a rabbit), three of the trials were close trials in which an unambiguously correct label was provided (e.g. "polar bear" to distinguish between a polar bear and a grizzly bear), and three were close trials in which an ambiguous label was provided (e.g. "dog" to distinguish between a husky and a dalmatian). Children's productions in all conditions were transcribed from video recordings of their participation.
 
-and would indicate whether it unambiguously identified the target object. The goal of the check condition was to aid in interpretation of potentially ambiguous utterances that children were expected to provide in the Close condition (e.g. saying "bear" to distinguish between a brown bear and a polar bear). In this condition, three of the trials were Far trials in which an unambiguously incorrect label was provided to the child (e.g. "table" to distinguish between a pug and a rabbit), three of the trials were Close trials in which an unambiguously correct label was provided (e.g. "polar bear" to distinguish between a polar bear and a grizzly bear), and three were Close trials in which an ambiguous label was provided (e.g. "dog" to distinguish between a husky and a dalmation). Children's productions in all conditions were transcribed from video recordings of their participation.
+### Procedure
 
-## Response times reflect familiarity and context
+After giving informed consent, adults read a introduction screen informing them that they would be doing an experiment in which they saw one or pictures on the screen at a time. One of these objects would be in a blue box, and they should describe this object as best as they could by typing one or two words into a text box. At the start of each block, they would be told whether they would see one picture (isolation), or two pictures (close and far), and reminded that they should type in a description that would help another participant identify the target in the blue border. Adults then completed all blocks in random order.
+
+After parents gave consent and children assented to participate, children were told that they would see pictures and be asked to describe them. Children then completed several warm-up trials to introduce them to the game. On the first trial, they saw a picture of a red apple. On the next trial, they saw a pear with a blue border around it and the same apple and were asked to describe the object in thge blue box. Then, the experimenter indicated that they would close their eyes on the next trial so that they wouldn't see what children saw. On this trial, children saw a white mug with a blue border around it and a white plate. The blue border disappeared, the experimenter opened their eyes, and the child was encouraged to describe the object in the blue box so that the experimenter could identify it. \textcolor{red}{Ashley's script for the two objects}. A red purple ball and a plant. A white rose and a red rose. A round wooden table and a rectangular wooden table. \textcolor{red}{This was repeated for these other objects I think?}. After these warm-up trials, children were told that they would continue to play this labeling game and that their responses would be told to another person who could see the objects but not which one was in the blue border. In contrast to adults, children always began with a block of familiar objects in either the close or far condition. They always completed the check block last.
+
+## REsults
+
+### Response times reflect familiarity and context
 
 We examined log response times.
 
@@ -141,7 +151,7 @@ d.prod %>%
   tidy()
 ```
 
-## Variability in labels 
+### Variability in labels 
 
 ```{r eval = FALSE}
 dodge = position_dodge(0.9)
@@ -277,7 +287,7 @@ ggplot(norming_overlap, aes(x = overlap_diff, y = kl)) +
 
 ```
 
-# Measuring similarity within participant
+### Measuring similarity within participant
 
 * within-participant version: For a particular participant, measure whether they use the same word across competition_type conditions for same targets. 
 
@@ -311,7 +321,7 @@ indiv_measures <- d.prod %>%
 ```
 
 
-# Tangram label norming 
+### Tangram label norming 
 
 Our current hypothesis is that we're not getting context effects for adults in this pilot because even the 'close' contexts aren't close along the actual representational dimensions people are using to label things. So if their labeling prior in isolation is to say it's 'sad', that's still highly informative in the close context because the distractor doesn't look sad at all and there's no pressure being put on the prior (kids likely have very different priors, e.g. 'guy' or 'person' with high probability, so these same contexts probably would put pressure on them). To do this in adults, we probably need to elicit priors in isolation for more tangrams (e.g. all 40) and then design better 'close' contexts where we put together tangrams where adults have very similar priors. Maybe the same for kids.
 
@@ -418,7 +428,7 @@ pairs <- d %>%
   nest() 
 ```
 
-# Try a simpler, non-KL measure of overlap
+### Try a simpler, non-KL measure of overlap
 
 ```{r overlap-helpers, eval = FALSE}
 check_overlap <- function(df, x1, x2) {
@@ -582,7 +592,7 @@ matches <- left_join(dissimilar, similar, by = "target_id") %>%
 
 ```
 
-# adversarial context design
+### adversarial context design
 
 check trials
 ```{r check-trials, eval = FALSE}
