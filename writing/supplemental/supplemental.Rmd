@@ -47,6 +47,36 @@ options(digits=3)
 
 \section{Norming Experiment}
 
+To construct the "close" and "far" conditions, we required an estimate of the extent to which different tangrams would elicit similar names.
+We recruited $XXX$ adult participants to provide one-word names for $YYY$ tangrams, each presented in isolation.
+This distribution of names was intended to reflect the  "prior" over valid labels that adults might bring into a reference game. 
+We then generated close (and far) pairs to maximize (and minimize) naming similarity using the following algorithm.
+
+First, we computed the naming similarity between all pairs of stimuli, using the same metric reported in the main text.
+For each target tangram $t$, we then found the unique distractors $d_{close} = \arg \min_{t'}s(t, t')$ and $d_{far} = \arg \max_{t'} s(t, t')$ and computed the range $T(t) = |s(t, d_{far}) - s(t, d_{close})|$. 
+We then picked the single target with largest range and added it to our stimulus set, along with its close and far distractors.
+We then removed all three tangrams $\{t, d_{close}, d_{far}\}$ from the overall set, and repeated this procedure until we obtained 10 unique, non-overlapping sets to use in our production study.
+
+\section{Comprehensibility decreases with exchange length}
+
+We analyze this relationship that we didn't have room for in the main text.
+
+```{r exchange-data}
+turk_exchange_data <- d.exchanges.raw %>% 
+  group_by(trial, subid) %>% 
+  summarise(num_exchanges = sum(num_exchanges)) %>% 
+  right_join(tidy_turk_data, by = c("subid" = "gameid"), "trial" = "gametrial")
+
+turk_exchange_data %>%
+  filter(measure == "correct") %>%
+  group_by(age, num_exchanges, person) %>%
+  summarise(value = mean(value)) %>%
+  ggplot(aes(x = num_exchanges, y = value, color = as.factor(age))) +
+  facet_wrap(~ person) +
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE)
+```
+
 \newpage
 
 \section*{References}
