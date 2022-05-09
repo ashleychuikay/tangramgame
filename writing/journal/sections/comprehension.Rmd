@@ -167,67 +167,71 @@ bind_rows(tidy_turk_data, tidy_kid_data)  %>%
     geom_line(position = position_jitter(w=0.05, h=0.05), alpha = 0.1) +
     theme_few()
 ```
+```{r, cache = TRUE}
+group_diff.glmer1 <- bind_rows(tidy_turk_data, tidy_kid_data)  %>%
+  filter(measure == "correct") %>%
+  glmer(as.logical(value) ~ 1 + (1 | gameid),
+       data = .,
+       family = binomial,
+       control = glmerControl(optimizer = 'bobyqa')) 
+
+group_diff.glmer2 <- bind_rows(tidy_turk_data, tidy_kid_data)  %>%
+  filter(measure == "correct") %>%
+  glmer(as.logical(value) ~ comprehender_group + (1 + comprehender_group | gameid),
+       data = .,
+       family = binomial,
+       control = glmerControl(optimizer = 'bobyqa')) 
+
+group_diff.glmer2.out <- tidy(group_diff.glmer2) %>% filter(term == 'comprehender_groupkid')
+group_diff.anova <- anova(group_diff.glmer1, group_diff.glmer2) %>% tidy() %>% filter(term == 'group_diff.glmer2')
+```
 
 To test whether age effects in reference game performance may be attributed to comprehension difficulties, we compared the extent to which a naive group of children and adults were able to determine the referent of the same expressions.
 We focus primarily on accuracy, as response times are not directly comparable between the web interface (for adults) and lab interface (for children).
-We constructed a mixed-effects logistic regression model predicting trial-by-trial accuracy, including a fixed effect of comprehender group (child vs. adult) and random intercepts and slopes for each source description.
-We found no significant difference in overall accuracy across groups, $t=1.6, p = 0.11$, (adult accuracy $=$ `r comp.means$mean_adult`, 95\% CI $=$ [`r comp.means$ci_lower_adult`, `r comp.means$ci_upper_adult`], child accuracy $=$ `r comp.means$mean_kid`, 95\% CI $=$ `r comp.means$ci_lower_kid`, `r comp.means$ci_upper_kid`).^[A Bayesian regression ]
+We constructed a mixed-effects logistic regression model predicting trial-by-trial accuracy, including a fixed effect of comprehender group (child vs. adult) and random intercepts and slopes for each source game^[Because we terminated data collection early, we do not have child comprehension data for all audio clips, preventing us from including random slopes at this finer level of granularity. All behavior within a game is casually intertwined, so we believe this coarser level of grouping is most natural.].
+We found no significant difference in overall accuracy across groups, $t=$`r abs(group_diff.glmer2.out$statistic)`, $p =$ `r group_diff.glmer2$p.value`, (adult accuracy $=$ `r comp.means$mean_adult`, 95\% CI $=$ [`r comp.means$ci_lower_adult`, `r comp.means$ci_upper_adult`], child accuracy $=$ `r comp.means$mean_kid`, 95\% CI $=$ `r comp.means$ci_lower_kid`, `r comp.means$ci_upper_kid`).^[While null hypothesis significance testing is unable to provide positive evidence for the null hypothesis, we ran a Bayesian regression using the `brm` package. We used the Savage-Dickey method to compute a Bayes Factor of $9.5$, indicating moderate support in favor of the null hypothesis $b=0$. We used a weakly informative student-$t$ prior on the coefficient with degrees of freedom $\nu = 5$ and scale $s=2.5$, following @gelman2008weakly, but this result was robust to other choices.]
+Consistent with this finding, there was no support in a nested comparison for a model with an effect of comprehender group over an intercept-only model, $\chi^2($ `r group_diff.anova$df` $) =$ `r group_diff.anova$statistic`, $p = $ `r group_diff.anova$p.value`.
 
-
-```{r}
-group_diff.glmer <- bind_rows(tidy_turk_data, tidy_kid_data)  %>%
-  filter(measure == "correct") %>%
-  glmer(as.logical(value) ~ comprehender_group + (1 | audioid),
-       data = .,
-       family = binomial,
-       control = glmerControl(optimizer = 'bobyqa')) %>%
-  tidy()
-
+```{r brms, eval = FALSE}
 group_diff.brm1 <- bind_rows(tidy_turk_data, tidy_kid_data) %>%
   filter(measure == "correct") %>%
-  brms::brm(value ~ 1 + (1 | audioid),
+  brms::brm(value ~ 1 + (1 | gameid),
        data = .,
-       family = 'bernoulli')
+       cores = 4,
+       family = brms::bernoulli(link = "logit"),)
 
-
+prior <- brms::set_prior("student_t(5, 0, 2.5)", class = "b")
 group_diff.brm2 <- bind_rows(tidy_turk_data, tidy_kid_data) %>%
   filter(measure == "correct") %>%
-  brms::brm(value ~ comprehender_group + (1 | audioid),
+  brms::brm(value ~ comprehender_group + (1 + comprehender_group | gameid),
+            prior=prior,
        data = .,
-       family = 'bernoulli') %>%
-  tidy()
+       cores = 4,
+       sample_prior = 'yes',
+       iter=2500,
+       family = brms::bernoulli(link = "logit")) 
+brms::hypothesis(group_diff.brm2, "comprehender_groupkid = 0")
 
-loo_compare(fit1, fit2, criterion = "waic")
-
-group_diff.brm
-```
-
-
-```{r}
-#kid plots
-kid_subj_data <- tidy_kid_data %>%
-  filter(measure != "rt") %>% #exclude 17
-  group_by(age, person, occurrence, measure, gameid) %>%
-  summarise(value = mean(value))
-
-kid_simple_effects <- kid_subj_data %>%
-  tidyboot_mean(value)
-
-kid_simple_effects %>% 
-  ggplot(aes(x = as.factor(age), y = empirical_stat, color = person)) +
-  facet_grid(measure ~ occurrence, scales = "free") + 
-  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper), 
-                  position = position_dodge(.5)) +
-  theme_few()
+group_diff.brm1 <- brms::add_criterion(group_diff.brm1, "waic")
+group_diff.brm2 <- brms::add_criterion(group_diff.brm2, "waic")
+brms::loo_compare(group_diff.brm1, group_diff.brm2, criterion = "waic")
 ```
 
 ### Speaker effects on comprehension
 
-Next, we consider... Accuracy and RT as a function of age, person, occurrence
+Next, we consider which features of the description may affect downstream comprehension.
+We consider two specific hypotheses.
+First, we predicted that descriptions produced by adults will be easier for *everyone* to comprehend, overall, than descriptions produced by children in the same dyad. 
+Second, we predicted that descriptions produced earlier in the game will be easier to comprehend than descriptions produced later in the game, consistent with prior findings that pacts are not always transparent to eavesdroppers [@schober1989understanding]. 
 
-Models from Pre-reg
+We fit a logistic mixed effects model predicting accuracy as a function of the person who produced the description (parent vs. child), the age of child in the pair (ages 4, 6, 8), and the phase of the game where it was produced (early vs late).
+We also include all of their interactions, and random intercepts for each target and participant ID. 
+Concerning our first hypothesis, we find that parents' descriptions tend to lead to more accurate $b=XX, z = .., p<0.001$.
+Additionally, older kids (and parents of older kids) give better descriptions, . 
+But there is no effect of occurrence--descriptions on the second appearance of each item do not appear to contain less information for guessing the target.
 
-We will fit a logistic mixed effects model predicting informativeness from person (parent/child), age of child in the pair (4, 6, 8), trial (1 vs 2) and all of their interactions.
+Because accuracy was near ceiling, we also consider the measure of response time.
+We find that descriptions produced by parents lead to faster guesses.
 
 ```{r full-acc-lmer}
 full_acc_lmer <- tidy_turk_data %>%
@@ -239,8 +243,6 @@ full_acc_lmer <- tidy_turk_data %>%
   filter(effect == "fixed") %>%
   select(-effect, -group)
 
-full_acc_lmer
-
 #kid model
 
 kid_full_acc_lmer <- tidy_kid_data %>%
@@ -251,8 +253,6 @@ kid_full_acc_lmer <- tidy_kid_data %>%
   tidy() %>%
   filter(effect == "fixed") %>%
   select(-effect, -group)
-
-kid_full_acc_lmer
 
 ```
 
@@ -266,8 +266,6 @@ acc_lmer <- tidy_turk_data %>%
   filter(effect == "fixed") %>%
   select(-effect, -group)
 
-acc_lmer
-
 #kid model
 kid_acc_lmer <- tidy_kid_data %>%
   filter(measure == "correct") %>%
@@ -278,8 +276,6 @@ kid_acc_lmer <- tidy_kid_data %>%
   filter(effect == "fixed") %>%
   select(-effect, -group)
 
-kid_acc_lmer
-
 #two-way
 kid_two_way_lmer <- tidy_kid_data %>%
   filter(measure == "correct") %>%
@@ -289,8 +285,6 @@ kid_two_way_lmer <- tidy_kid_data %>%
   tidy() %>%
   filter(effect == "fixed") %>%
   select(-effect, -group)
-
-kid_two_way_lmer
 
 ```
 
@@ -303,7 +297,6 @@ full_rt_lmer <- tidy_turk_data %>%
   filter(effect == "fixed") %>%
   select(-effect, -group)
 
-full_rt_lmer
 ```
 
 ```{r reduced-rt-lmer}
@@ -315,13 +308,9 @@ rt_lmer <- tidy_turk_data %>%
   filter(effect == "fixed") %>%
   select(-effect, -group)
 
-rt_lmer
 ```
 
 
-So parents' descriptions lead to more accurate and faster guesses. Both older kids and parents of older kids give better descriptions. 
-
-But no effect of occurrence--descriptions on the second appearance of each item do not appear to contain less information for guessing the target.
 
 ```{r exchange-data}
 turk_exchange_data <- d.exchanges.raw %>% 
