@@ -15,7 +15,7 @@ If comprehension is the root of the developmental problem, we might expect that 
 Conversely, if naive children are able to understand the referring expressions produced by parents (and not necessarily those by children), then we may expect the source of the difficulty to be elsewhere.
 
 ```{r load-comprehension-data}
-raw_adult_data <- read_csv(here("data/comprehension/comprehension_adults.csv"),
+raw_adult_data <- read_csv(here("data/experiment2/comprehension_adults.csv"),
                            show_col_types = FALSE) %>%
   select(-age) %>%
   filter(!audioid %in% c("67_08", "67_08_b"))
@@ -32,7 +32,7 @@ passed_check <- check_correct %>%
   clean_names()
 
 # kid data
-stims <- read_csv(here("data/comprehension/random_stims.csv"),
+stims <- read_csv(here("data/experiment2/random_stims.csv"),
                   show_col_types = FALSE) %>%
   select(-c(correct, trial, rightpic, leftpic))
 ```
@@ -41,11 +41,11 @@ stims <- read_csv(here("data/comprehension/random_stims.csv"),
 ```{r tidy-data}
 # Note: our pre-processing pipeline started with raw, de-anonymized data. 
 #       we have preserved this pipeline for reproducibility but only release the pre-processed data.
-database_ids <- read_csv(here("data/comprehension/databaseid.csv"), show_col_types = FALSE) %>%
+database_ids <- read_csv(here("data/experiment2/databaseid.csv"), show_col_types = FALSE) %>%
   rename(gameid = subid) %>%
   select(gameid, age)
 
-# raw_kid_data <- read_csv(here("data/comprehension/comprehension_kids.csv"), show_col_types = FALSE) %>%
+# raw_kid_data <- read_csv(here("data/experiment2/comprehension_kids.csv"), show_col_types = FALSE) %>%
 #   filter(!is.na(id)) %>%
 #   left_join(stims, by = c("id" = "subject", "target")) %>%
 #   rename(audioid = audio,
@@ -63,7 +63,7 @@ database_ids <- read_csv(here("data/comprehension/databaseid.csv"), show_col_typ
 #   filter(rt < 10000) %>%
 #   pivot_longer(cols = c(correct, rt, log_rt), names_to = "measure")
   
-#write_csv(tidy_kid_data, 'data/comprehension/comprehension_kids_tidy.csv')
+#write_csv(tidy_kid_data, 'data/experiment2/comprehension_kids_tidy.csv')
 ```
 
 ```{r import-data}
@@ -85,7 +85,7 @@ tidy_turk_data %>%
     mutate(n = n /3) %>% 
     qplot(n, data = .)
 
-tidy_kid_data <- read_csv(here("data/comprehension/comprehension_kids_tidy.csv"))
+tidy_kid_data <- read_csv(here("data/experiment2/comprehension_kids_tidy.csv"))
 
 adult_stims <- tidy_turk_data %>% 
   unite(audioid, gametrial, gameid) %>% group_by(person) %>% 
