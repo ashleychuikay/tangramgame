@@ -57,8 +57,38 @@ For each target tangram $t$, we then found the unique distractors $d_{close} = \
 We then picked the single target with largest range and added it to our stimulus set, along with its close and far distractors.
 We then removed all three tangrams $\{t, d_{close}, d_{far}\}$ from the overall set, and repeated this procedure until we obtained 10 unique, non-overlapping sets to use in our production study.
 
-\section{Comprehensibility decreases with exchange length}
+\section{Additional comprehensibility analyses}
 
+\subsection{Response times are faster for parent descriptions}
+
+Because accuracy was near ceiling, we also considered the measure of response time.
+We find that descriptions produced by parents lead to faster guesses, but there is still no effect of experiment phase.
+
+```{r full-rt-lmer}
+full_rt_lmer <- tidy_turk_data %>%
+  filter(measure == "log_rt") %>%
+  lmer(value ~ person * age * occurrence + 
+                   (1|target) + (1|subid), data = .) %>%
+  tidy() %>%
+  filter(effect == "fixed") %>%
+  select(-effect, -group)
+
+```
+
+```{r reduced-rt-lmer}
+rt_lmer <- tidy_turk_data %>%
+  filter(measure == "log_rt") %>%
+  lmer(value ~ person + age + occurrence  + 
+                   (1|target) + (1|subid), data = .) %>%
+  tidy() %>%
+  filter(effect == "fixed") %>%
+  select(-effect, -group)
+
+```
+
+\subsection{Comprehensibility decreases with exchange length}
+
+Finally, we consider whether descriptions produced in the context of a long back-and-forth exchange tend to be less comprehensible (see Appendix). 
 We analyze this relationship that we didn't have room for in the main text.
 
 ```{r exchange-data}

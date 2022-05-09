@@ -283,32 +283,5 @@ We also include random intercepts for each target and participant ID; a more com
 Concerning our first hypothesis, we find that parents' descriptions are more accurately comprehended across the board $b=`r acc.lmer.speaker$estimate`, z = `r acc.lmer.speaker$statistic`, p<0.001$.
 Additionally, older kids (and parents of older kids) provided more accurately comprehended descriptions than younger kids, $b=`r acc.lmer.age$estimate`, z= `r acc.lmer.age$statistic`, p<0.001$. 
 Concerning our second hypothesis, however, we found no significant effect of experiment phase, $b=`r acc.lmer.occ$estimate`, z= `r acc.lmer.occ$statistic`, p= `r acc.lmer.occ$p.value`$.
-Descriptions given from the later appearance of each item do not appear to contain less information for guessing the target.
+The later appearance of each item does not appear to contain less information for guessing the target.
 
-### Response times are faster for parent descriptions
-
-Because accuracy was near ceiling, we also consider the measure of response time.
-We find that descriptions produced by parents lead to faster guesses.
-Finally, we consider whether descriptions produced in the context of a long back-and-forth exchange tend to be less comprehensible (see Appendix). 
-
-```{r full-rt-lmer}
-full_rt_lmer <- tidy_turk_data %>%
-  filter(measure == "log_rt") %>%
-  lmer(value ~ person * age * occurrence + 
-                   (1|target) + (1|subid), data = .) %>%
-  tidy() %>%
-  filter(effect == "fixed") %>%
-  select(-effect, -group)
-
-```
-
-```{r reduced-rt-lmer}
-rt_lmer <- tidy_turk_data %>%
-  filter(measure == "log_rt") %>%
-  lmer(value ~ person + age + occurrence  + 
-                   (1|target) + (1|subid), data = .) %>%
-  tidy() %>%
-  filter(effect == "fixed") %>%
-  select(-effect, -group)
-
-```
