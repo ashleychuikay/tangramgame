@@ -1,0 +1,59 @@
+---
+title: "\\LARGE Parents scaffold the formation of conversational pacts with their children (SOM-R)"
+# author: "\\large \\emph{Ashley, Leung, Alexandra Tunkel, and Daniel Yurovsky}"
+author: "\\large \\emph{XX, XX, and XX}"
+header-includes:
+  - \usepackage[section]{placeins}
+  - \usepackage{float}
+  - \floatplacement{figure}{h!} # make every figure with caption = t
+  - \raggedbottom
+output: 
+  pdf_document:
+    latex_engine: xelatex
+    number_sections: true
+documentclass: article
+bibliography: tangramgame-si.bib
+fontsize: 11pt
+geometry: margin=1in
+csl: apa6.csl
+---
+
+```{r load-libraries, message=FALSE, warning=FALSE, include = F}
+library(here)
+library(knitr)
+library(papaja)
+library(kableExtra)
+library(tidyverse)
+library(tidyboot)
+library(lme4)
+library(lmerTest)
+library(broom)
+library(broom.mixed)
+library(effectsize)
+library(glue)
+library(ggthemes)
+
+opts_chunk$set(message = FALSE, warning = FALSE, error = FALSE, cache = TRUE, 
+               tidy = FALSE, echo = FALSE)
+
+theme_set(theme_few(base_size = 12))
+
+options(digits=3)
+```
+
+\renewcommand\thesection{S\arabic{section}}
+\renewcommand{\thetable}{S\arabic{table}}  
+\renewcommand{\thefigure}{S\arabic{figure}}
+
+\section{Norming Experiment}
+
+\newpage
+
+\section*{References}
+
+\begingroup
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
+\noindent
+<div id = "refs"></div>
+\endgroup

@@ -25,3 +25,7 @@ original_images/*
 desktop.ini
 
 *figs/
+
+**/*.fff
+**/*.tex
+**/*.aux
