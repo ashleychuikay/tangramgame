@@ -10,17 +10,27 @@ This experiment allows us to investigate the reasons behind children's apparent 
 
 ```{r anonymize-e2-data, eval = FALSE}
 #anonymize
-read_csv(here("data/production/dataFromMongo.csv"))%>%
+read_csv(here("data/experiment3/dataFromMongo.csv"))%>%
   filter(trial_type == "survey-text") %>%
   filter(iterationName == "pilot2") %>%
   mutate(wID = as.numeric(as.factor(wID))) %>%
-  write_csv(here('./data/production/anonymizedDataFromMongo.csv'))
+  write_csv(here('./data/experiment3/anonymizedDataFromMongo.csv'))
+```
+
+```{r pilot-data, eval = FALSE, include = FALSE}
+## NOTE: I think ashley manually cleaned this data but we're missing four participants from above
+d.prod.clean <- read_csv(here("data/experiment3/prenorming/pilot_data_clean.csv"),
+                         show_col_types = FALSE) %>%
+  select(-`...1`)
+  #filter(utt_length > 1) #%>%
+  #mutate(clean_utt = lemmatize_words(clean_utt))
+  
 ```
 
 ```{r e2-data}
 NUM_TRIALS <- 48
 
-d.prod.adult <- read_csv(here("data/production/anonymizedDataFromMongo.csv"),
+d.prod.adult <- read_csv(here("data/experiment3/anonymizedDataFromMongo.csv"),
                        show_col_types = FALSE) %>%
   mutate(age_group = 'adult')
   
@@ -30,7 +40,7 @@ complete_games.adult <- d.prod.adult %>%
   filter(n >= NUM_TRIALS) %>%
   pull(wID)
 
-d.prod.kid <- list.files(here("data/production/kid/"), "*.csv",
+d.prod.kid <- list.files(here("data/experiment3/kid/"), "*.csv",
                           full.names = TRUE) %>%
   map_dfr(read_csv, show_col_types = FALSE) %>%
   mutate(age_group = 'kid') %>%
@@ -50,20 +60,16 @@ d.prod <- d.prod.adult %>%
          clean_utt = lemmatize_strings(utterance),
          clean_utt = str_remove_all(clean_utt, pattern = ' '))
 
-write.csv(d.prod, here("data/production/pilot_data_lemmatized.csv"))
-
-
-## NOTE: I think ashley manually cleaned this data but we're missing four participants frmo above
-d.prod.clean <- read_csv(here("data/production/pilot_data_clean.csv"),
-                         show_col_types = FALSE) 
-  #filter(utt_length > 1) #%>%
-  #mutate(clean_utt = lemmatize_words(clean_utt))
-  
+write_csv(d.prod, here("data/experiment3/production_data_lemmatized.csv"))
 ```
 
+```{r read_lemmatized_data}
+d.prod.clean <- read_csv(
+  here("data/experiment3/production_data_lemmatized.csv"),
+  show_col_types = FALSE)
+```
 
-
-```{r}
+```{r e2-stim-details}
 n_stims <- d.prod.clean %>%
   distinct(target_type, competitor_type, target, foil) 
 
@@ -81,7 +87,8 @@ novel_stims <- n_stims  %>%
 ```
 
 ```{r e2-child-data}
-n_kid_stims <- kid_production_data %>%
+n_kid_stims <- d.prod.clean %>%
+  filter(!is.na(age)) %>%
   distinct(target_type, competitor_type, target, foil) 
 
 kid_fam_stims <- n_kid_stims %>%
@@ -89,7 +96,6 @@ kid_fam_stims <- n_kid_stims %>%
   distinct(target, foil) %>%
   unlist() %>%
   unique()
-  
 
 kid_novel_stims <- n_kid_stims  %>%
   filter(target_type == "familiar") %>%
@@ -108,7 +114,7 @@ We also recruited XX children to participate in the study. DEMOGRAPHICS XX. The 
 
 Stimuli for the game were `r length(fam_stims)` pictures of familiar objects and `r length(novel_stims)` pictures of tangram constructions. Familiar objects were drawn from the set used by @degen2020. Tangrams were drawn from a publicly royalty free set available on XX. Target familiar objects belonged to eight different basic-level categories: bears, birds, cars, candy, dogs, fish, shirts, and tables.
 
-For both familiar objects and novel tangrams, trials were divided into three types: Isolation trials in which a single target object was presented, Far trials in which a target was paired with a competitor of the same type but with low semantic overlap, and Close trials in which the target waws paired with a competitor with high semantic overlap. For familiar objects, close trials involved two objects in the same basic-level semantic category (e.g. German Shepherd and Pug), and far trials involved two objects in different basic-level categories (e.g. German Shepherd and Cow). For novel tangrams, Close and Far competitors were determined on the basis of their degree of labeling overlap with target in a pilot experiment. In this pilot experiment, we asked participants to label a number of tangrams in isolation. We used naming agreement--the proportion of responses that were the same for two tangrams--to estimate their semantic similarity [see @zettersten2020]. Details of the novel tangram selection procedure are described in the Supporting Information (XX ACTUALLY DO THIS).
+For both familiar objects and novel tangrams, trials were divided into three types: Isolation trials in which a single target object was presented, Far trials in which a target was paired with a competitor of the same type but with low semantic overlap, and Close trials in which the target waws paired with a competitor with high semantic overlap. For familiar objects, close trials involved two objects in the same basic-level semantic category (e.g. German Shepherd and Pug), and far trials involved two objects in different basic-level categories (e.g. German Shepherd and Cow). For novel tangrams, Close and Far competitors were determined on the basis of their degree of labeling overlap with target in a pilot experiment. In this pilot experiment, we asked participants to label a number of tangrams in isolation. We used naming agreement--the proportion of responses that were the same for two tangrams--to estimate their semantic similarity [see @zettersten2020]. Details of the novel tangram selection procedure are described in the Supporting Information (\textcolor{red}{actually do this}).
 
 Adults provided labels for a total of eight familiar objects and eight novel tangrams. Each object appeared three times: once in Isolation, once in a Close context, and once in a Far context. All trials of a single type were blocked (e.g. Isolation familiar objects), and the six blocks were presented in random order across participants. 
 
@@ -120,15 +126,15 @@ We examined log response times.
 
 ```{r e2-rts}
 # overall RT distribution
-
-d.prod.adult %>%
+d.prod.clean %>%
+  filter(is.na(age)) %>%
   mutate(logged_rt = log(rt)) %>%
   gather(measure, value, logged_rt, rt) %>%
   ggplot(aes(x = value)) +
     geom_histogram() +
     facet_wrap(~ measure, scales='free')
 
-d.prod %>%
+d.prod.clean %>%
   mutate(logged_rt = log(rt)) %>%
   gather(measure, value, logged_rt, rt) %>%
   ggplot(aes(x = value)) +
@@ -136,13 +142,13 @@ d.prod %>%
     facet_wrap(~ measure, scales='free')
 ```
   
-```{r}
+```{r eval = FALSE}
 ggplot(d.prod, aes(x = target_type, y = log(rt), color = competitor_type)) +
   geom_boxplot() +
   theme(legend.position = 'top')
 ```
 
-```{r}
+```{r, eval = FALSE}
 d.prod %>%
   lm(log(rt) ~ target_type * competitor_type, 
      data = .) %>%
@@ -151,7 +157,7 @@ d.prod %>%
 
 ## Variability in labels 
 
-```{r}
+```{r eval = FALSE}
 dodge = position_dodge(0.9)
 d.prod %>%
   group_by(target_type, competitor_type) %>%
@@ -171,7 +177,7 @@ We considered several measures of codability/overlap:
 * entropy (we all know and love)
 * codeability (what proportion of people provided the most common label, if there were 40 labels and 20 were 'bird', this would be 50%)
 
-```{r}
+```{r eval = FALSE}
 d.prod %>%
   group_by(target_type, competitor_type, utterance, target) %>%
   tally() %>%
@@ -217,7 +223,7 @@ d.prod.old %>%
 ```
 
 
-```{r regression model comparing competitor types}
+```{r regression-model-comparing-competitor-types, eval = FALSE}
 
 prod.model <- d.prod %>%
   group_by(target_type, competitor_type, utterance, target) %>%
@@ -238,7 +244,7 @@ prod.model %>%
 
 ```
 
-```{r comparing-distributions}
+```{r comparing-distributions, eval = FALSE}
 kl_drop <- function(df, x1, x2) {
   x1 <- enquo(x1)
   x2 <- enquo(x2)
@@ -271,7 +277,7 @@ ggplot(kls, aes(x = comparison, y = kl)) +
 
 ```
 
-```{r scatterplots}
+```{r scatterplots, eval = FALSE}
 
 #Look at codeability, etc., as a function of our norming data 
 norming_overlap <- read_csv(here("data/norming/jsPsychStims.csv")) %>%
@@ -284,7 +290,6 @@ ggplot(norming_overlap, aes(x = overlap_diff, y = kl)) +
   facet_wrap(~comparison)
 
 ```
-
 
 # Measuring similarity within participant
 
@@ -333,7 +338,7 @@ read_csv(here('data/norming/dataFromMongo.csv')) %>%
   write_csv(here('./data/norming/anonymizedDataFromMongo.csv'))
 ```
 
-```{r load-norming-data}
+```{r load-norming-data, eval = FALSE}
 # take the first 31 rows of each wID. 
 # gets the first game of people who did it twice -- Mongo returns objectIDs in order of insertion date
 d.raw.labels <- read_csv(here("data/norming/anonymizedDataFromMongo.csv")) 
@@ -367,7 +372,7 @@ d <- d.raw.labels %>%
 
 How unbalanced is our sample across targets?
 
-```{r}
+```{r eval = FALSE}
 d %>%
   group_by(target) %>%
   tally() %>%
@@ -395,7 +400,7 @@ d %>%
 
 Find most similar sets by JS/KL divergence
 
-```{r get-pair-kl}
+```{r get-pair-kl, eval = FALSE}
 get_pair_data <- function(df, tangram1, tangram2) {
   df %>%
     filter(target == tangram1) %>%
@@ -429,7 +434,7 @@ pairs <- d %>%
 
 # Try a simpler, non-KL measure of overlap
 
-```{r overlap-helpers}
+```{r overlap-helpers, eval = FALSE}
 check_overlap <- function(df, x1, x2) {
   x1 <- enquo(x1)
   x2 <- enquo(x2)
@@ -594,7 +599,7 @@ matches <- left_join(dissimilar, similar, by = "target_id") %>%
 # adversarial context design
 
 check trials
-```{r check-trials}
+```{r check-trials, eval = FALSE}
 
 check_trial_data <- kid_production_data %>%
   filter(trialtype == "check")
@@ -631,7 +636,7 @@ ggplot(type_check_trial_data, aes(x = age, y = correct, color = check_type)) +
 ```
 
 
-```{r}
+```{r eval = FALSE}
 type_check_trial_data %>%
   group_by(age, check_type) %>%
   tidyboot_mean(correct, nboot = 100) %>%
@@ -645,7 +650,7 @@ type_check_trial_data %>%
 
 ```
 
-```{r plot-check-data}
+```{r plot-check-data, eval = FALSE}
 ggplot(subj_check_trial_data, aes(x = age, y = correct)) + 
   geom_jitter() + 
   geom_hline(aes(yintercept = .5), linetype = "dashed")
@@ -655,7 +660,7 @@ subj_check_trial_data %>%
   tidyboot_mean(correct)
 ```
 
-```{r compare-lenghts}
+```{r compare-lenghts, eval = FALSE}
 booted_lengths <- kid_production_data %>%
   filter(trialtype == "paired") %>%
   mutate(length = str_count(str_trim(utterance), " ") + 1) %>%
