@@ -20,7 +20,7 @@ exchanges_data <- read_csv(here("data/experiment1/exchanges.csv"),
 
 ```{r ipads, fig.env = "figure*", fig.pos = "!ht", out.width = "450px", fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "(A) Tangram figures used as referential targets, (B) director and matcher displays, (C) trial sequence."}
 # Note: this is moved up here to get the fig to appear on the right page... i know it's annoying.
-knitr::include_graphics("figs/design.pdf")
+knitr::include_graphics("diagrams/design.pdf")
 ```
 
 ```{r acc-exchange-setup, cache = T}
@@ -47,12 +47,14 @@ result.acc.means <- d.accuracy.raw %>%
 lmer.accuracy <- d.accuracy.raw %>%
   filter(age != "adult") %>%
   mutate(age = as.numeric(age)) %>%
-  glmer(correct ~ age + rep_num + (rep_num | subid) + (1 | target), 
-                            family = 'binomial', data = .) %>%
+  glmer(correct ~ age + director + rep_num + (rep_num | subid) + (1 | target), 
+                            family = 'binomial', 
+         control = glmerControl(optimizer = "bobyqa"), data = .) %>%
   tidy()
 
-age_effect_acc = lmer.accuracy %>% filter(term == 'age')
-rep_effect_acc = lmer.accuracy %>% filter(term == 'rep_num')
+age_effect_acc <- lmer.accuracy %>% filter(term == 'age')
+rep_effect_acc <- lmer.accuracy %>% filter(term == 'rep_num')
+director_effect_acc <- lmer.accuracy %>% filter(term == 'directorchild')
 
 
 d.exchanges.raw <- exchanges_data %>%
@@ -169,11 +171,9 @@ We characterized developmental differences using three measures of communicative
 
 ### Performance accuracy
 
-We began by analyzing task performance across age groups. Because pairs of adults were consistently at ceiling throughout the task, we focused on the performance of parent-child pairs. We constructed a mixed-effects logistic regression predicting whether the matcher successfully chose the correct referent on each trial. The model included (continuous) fixed effects of age and repetition block, random intercepts for each tangram and pair of participants, and random effects of repetition block for each pair of participants^[In principle, we were also interested in whether there were differences in accuracy when the child vs. parent was matcher, but our sample is likely underpowered for such a finer-grained analysis within games.].
+We began by analyzing task performance across age groups. Because pairs of adults were consistently at ceiling throughout the task, we focused on the performance of parent-child pairs. We constructed a mixed-effects logistic regression predicting whether the matcher successfully chose the correct referent on each trial. The model included fixed effects whether the parent or child was the director, (numeric) age, and repetition block. It also included random intercepts for each tangram and pair of participants, and random effects of repetition block and director for each pair of participants.
 
-Initial accuracy was well above chance for all age groups, indicating that even young children can succeed in this referential task with their parents. We also found a significant main effect of age ($\beta$ = `r age_effect_acc$estimate`, $t$ = `r age_effect_acc$statistic`; $p=$ `r papaja::printp(age_effect_acc$p.value)`):  Pairs with younger children performed significantly worse than pairs with older children. Critically, however, accuracy improved significantly over the four repetition blocks for all groups ($\beta$ = `r rep_effect_acc$estimate`, $t$ = `r rep_effect_acc$statistic`, $p$ `r papaja::printp(rep_effect_acc$p.value)`; Fig. \ref{fig:acc-exchanges}A). Such improvement for 4-year-olds contrasts with previous results showing no improvement in accuracy with pairs of kindergarteners [age 5, @krauss1969]. 
-
-> **_TODO:_**  Include analyses breaking down errors by which role kids were playing. I think we found that errors were more likely to happen when kids were *directors* than when kids were *matchers*, which set up our later predictions for the comprehension/production experiments? (i.e. that even young kids seemed to do okay interpreting their parents' instructions, but that even after dialogue exchanges, parents weren't always able to understand the kids' instructions.) 
+Initial accuracy was well above chance for all age groups, indicating that even young children can succeed in this referential task with their parents. We also found a significant main effect of age ($\beta$ = `r age_effect_acc$estimate`, $t$ = `r age_effect_acc$statistic`; $p=$ `r papaja::printp(age_effect_acc$p.value)`):  Pairs with younger children performed significantly worse than pairs with older children. Critically, however, accuracy improved significantly over the four repetition blocks for all groups ($\beta$ = `r rep_effect_acc$estimate`, $t$ = `r rep_effect_acc$statistic`, $p$ `r papaja::printp(rep_effect_acc$p.value)`; Fig. \ref{fig:acc-exchanges}A). Such improvement for 4-year-olds contrasts with previous results showing no improvement in accuracy with pairs of kindergarteners [age 5, @krauss1969]. Accuracy was lower, however, when children were the directors ($\beta$ = `r director_effect_acc$estimate`, $t$ = `r director_effect_acc$statistic`; $p=$ `r papaja::printp(director_effect_acc$p.value)`). This suggests that errors were driven more by the children's difficulty in producing referring expressions rather than by their difficulty in understanding them.
 
 ### Interactive dialogue exchanges
 
@@ -266,8 +266,7 @@ lmer.reduction.controlled <-  d.reduction.centered %>%
 
 lmer.reduction.adults <- d.reduction.raw %>%  
   filter(age == 'adult') %>%
-  mutate(age = as.numeric(age) - 6,  
-         rep_num = as.numeric(rep_num) - 2.5) %>%
+  mutate(rep_num = as.numeric(rep_num) - 2.5) %>%
   lmer(log(normalized_num_words) ~ rep_num + (rep_num | subid) + (1 | target), 
        data = ., 
        control = lmerControl('bobyqa')) %>%
