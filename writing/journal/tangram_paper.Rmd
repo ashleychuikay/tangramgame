@@ -11,7 +11,7 @@ author:
   - name          : "Robert D. Hawkins"
     affiliation   : "2"
   - name          : "Daniel Yurovsky"
-    affiliation   : "1,3"
+    affiliation   : "3"
 
 affiliation:
   - id            : "1"
