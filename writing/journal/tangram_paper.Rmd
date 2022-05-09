@@ -11,7 +11,7 @@ author:
   - name          : "Robert D. Hawkins"
     affiliation   : "2"
   - name          : "Daniel Yurovsky"
-    affiliation   : "1,3"
+    affiliation   : "3"
 
 affiliation:
   - id            : "1"
@@ -19,7 +19,7 @@ affiliation:
   - id            : "2"
     institution   : "Princeton Neuroscience Institute"
   - id            : "3"
-    institution   : "Carnagie Mellon University"
+    institution   : "Carnegie Mellon University"
 
 abstract: |
    Adults readily form pacts, or temporary agreements about referent names, over the course of conversation. Young children fail to do so with peers, but recent evidence suggests that explicit feedback from adults may improve their performance. Do parents naturally provide such structure in their conversations with children? Using a director-matcher paradigm, we first show that parents and children (ages 4, 6, 8) converge on increasingly accurate and efficient conversational pacts. Further, parents of younger children provide more interactive feedback. Finally, we analyze asymmetries in parents' and children's contributions, finding that pacts tend to originate with the parent, but are simplified by younger children. Together, these results support the idea that parents sensitively adapt their language to their children's developmental level to scaffold successful communication.
