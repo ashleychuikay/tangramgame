@@ -8,7 +8,7 @@ This experiment allows us to investigate the reasons behind children's apparent 
 
 ## Method
 
-```{r anonymize-e2-data, eval = FALSE}
+```{r e3-anonymize-data, eval = FALSE}
 #anonymize
 read_csv(here("data/experiment3/dataFromMongo.csv"))%>%
   filter(trial_type == "survey-text") %>%
@@ -17,7 +17,7 @@ read_csv(here("data/experiment3/dataFromMongo.csv"))%>%
   write_csv(here('./data/experiment3/anonymizedDataFromMongo.csv'))
 ```
 
-```{r pilot-data, eval = FALSE, include = FALSE}
+```{r e3-pilot-data, eval = FALSE, include = FALSE}
 ## NOTE: I think ashley manually cleaned this data but we're missing four participants from above
 d.prod.clean <- read_csv(here("data/experiment3/prenorming/pilot_data_clean.csv"),
                          show_col_types = FALSE) %>%
@@ -27,7 +27,7 @@ d.prod.clean <- read_csv(here("data/experiment3/prenorming/pilot_data_clean.csv"
   
 ```
 
-```{r e2-data}
+```{r e3-read-adult-data}
 NUM_TRIALS <- 48
 
 d.prod.adult <- read_csv(here("data/experiment3/anonymizedDataFromMongo.csv"),
@@ -39,7 +39,9 @@ complete_games.adult <- d.prod.adult %>%
   tally() %>%
   filter(n >= NUM_TRIALS) %>%
   pull(wID)
+```
 
+```{r e3-combine-data, eval = FALSE}
 d.prod.kid <- list.files(here("data/experiment3/kid/"), "*.csv",
                           full.names = TRUE) %>%
   map_dfr(read_csv, show_col_types = FALSE) %>%
@@ -63,13 +65,13 @@ d.prod <- d.prod.adult %>%
 write_csv(d.prod, here("data/experiment3/production_data_lemmatized.csv"))
 ```
 
-```{r read_lemmatized_data}
+```{r e3-read-lemmatized_data}
 d.prod.clean <- read_csv(
   here("data/experiment3/production_data_lemmatized.csv"),
   show_col_types = FALSE)
 ```
 
-```{r e2-stim-details}
+```{r e3-stim-details}
 n_stims <- d.prod.clean %>%
   distinct(target_type, competitor_type, target, foil) 
 
@@ -86,39 +88,23 @@ novel_stims <- n_stims  %>%
   unique()
 ```
 
-```{r e2-child-data}
-n_kid_stims <- d.prod.clean %>%
-  filter(!is.na(age)) %>%
-  distinct(target_type, competitor_type, target, foil) 
-
-kid_fam_stims <- n_kid_stims %>%
-  filter(target_type == "familiar") %>%
-  distinct(target, foil) %>%
-  unlist() %>%
-  unique()
-
-kid_novel_stims <- n_kid_stims  %>%
-  filter(target_type == "familiar") %>%
-  distinct(target, foil) %>%
-  unlist() %>%
-  unique()
-
-```
 ### Participants
 
-We recruited `r length(complete_games.adult)` adult participants from Mechanical Turk. All participants gave informed consent prior to the start of the study and were compensated XX dollars. 
+We recruited `r length(complete_games.adult)` adult participants from Amazon Mechanical Turk. All participants gave informed consent prior to the start of the study and were compensated 60¢. 
 
-We also recruited XX children to participate in the study. DEMOGRAPHICS XX. The study was conducted online over Zoom.
+We also recruited \textcolor{red}{XX children} to participate in the study. \textcolor{red}{DEMOGRAPHICS XX}. The study was conducted online over Zoom.
 
 ### Stimuli and Design
 
-Stimuli for the game were `r length(fam_stims)` pictures of familiar objects and `r length(novel_stims)` pictures of tangram constructions. Familiar objects were drawn from the set used by @degen2020. Tangrams were drawn from a publicly royalty free set available on XX. Target familiar objects belonged to eight different basic-level categories: bears, birds, cars, candy, dogs, fish, shirts, and tables.
+Stimuli for the game were `r length(fam_stims)` pictures of familiar objects and `r length(novel_stims)` pictures of tangram constructions. Familiar objects were drawn from the set used by @degen2020. Tangrams were drawn from a publicly royalty free set available on \textcolor{red}{XX tangrams site}. Target familiar objects belonged to eight different basic-level categories: bears, birds, cars, candy, dogs, fish, shirts, and tables.
 
-For both familiar objects and novel tangrams, trials were divided into three types: Isolation trials in which a single target object was presented, Far trials in which a target was paired with a competitor of the same type but with low semantic overlap, and Close trials in which the target waws paired with a competitor with high semantic overlap. For familiar objects, close trials involved two objects in the same basic-level semantic category (e.g. German Shepherd and Pug), and far trials involved two objects in different basic-level categories (e.g. German Shepherd and Cow). For novel tangrams, Close and Far competitors were determined on the basis of their degree of labeling overlap with target in a pilot experiment. In this pilot experiment, we asked participants to label a number of tangrams in isolation. We used naming agreement--the proportion of responses that were the same for two tangrams--to estimate their semantic similarity [see @zettersten2020]. Details of the novel tangram selection procedure are described in the Supporting Information (\textcolor{red}{actually do this}).
+For both familiar objects and novel tangrams, trials were divided into three types: isolation trials in which a single target object was presented, far trials in which a target was paired with a competitor of the same type but with low semantic overlap, and close trials in which the target was paired with a competitor with high semantic overlap. For familiar objects, close trials involved two objects in the same basic-level semantic category (e.g. German Shepherd and Pug), and far trials involved two objects in different basic-level categories (e.g. German Shepherd and Cow). For novel tangrams, close and far competitors were determined on the basis of their degree of labeling overlap with target in a norming experiment. In this norming experiment, we asked participants to label a number of tangrams in isolation. We used naming agreement--the proportion of responses that were the same for two tangrams--to estimate their semantic similarity [see @zettersten2020]. Details of the novel tangram selection procedure are described in the Supporting Information (\textcolor{red}{actually do this}).
 
-Adults provided labels for a total of eight familiar objects and eight novel tangrams. Each object appeared three times: once in Isolation, once in a Close context, and once in a Far context. All trials of a single type were blocked (e.g. Isolation familiar objects), and the six blocks were presented in random order across participants. 
+Adults provided labels for a total of eight familiar objects and eight novel tangrams. Each object appeared three times: once in isolation, once in a close context, and once in a far context. All trials of a single type were blocked (e.g. isolation familiar objects), and the six blocks were presented in random order across participants. 
 
-Children provided labels for the same eight familiar and novel objects. To maintain children's attention for the duration of the experiment, they gave responses only in the Close and Far conditions and not in the Isolation condition. Children also participated in an additional Check condition in which they were told that they would hear a label produced by another child and would indicate whether it unambiguously identified the target object. The goal of the Check condition was to aid in interpretation of potentially ambiguous utterances that children were expected to provide in the Close condition (e.g. saying "bear" to distinguish between a brown bear and a polar bear). In this condition, three of the trials were Far trials in which an unambiguously incorrect label was provided to the child (e.g. "table" to distinguish between a pug and a rabbit), three of the trials were Close trials in which an unambiguously correct label was provided (e.g. "polar bear" to distinguish between a polar bear and a grizzly bear), and three were Close trials in which an ambiguous label was provided (e.g. "dog" to distinguish between a husky and a dalmation). Children's productions in all conditions were transcribed from video recordings of their participation.
+Children provided labels for the same eight familiar and novel objects. To maintain children's attention for the duration of the experiment, they gave responses only in the close and far conditions and not in the isolation condition. Children also participated in an additional check condition designed to measure their comprehension of incorrect and ambiguous label. In this condition, children were told that they would hear a label produced by another child, and that they should indicate whether this label unambiguously identified the target object. The
+
+and would indicate whether it unambiguously identified the target object. The goal of the check condition was to aid in interpretation of potentially ambiguous utterances that children were expected to provide in the Close condition (e.g. saying "bear" to distinguish between a brown bear and a polar bear). In this condition, three of the trials were Far trials in which an unambiguously incorrect label was provided to the child (e.g. "table" to distinguish between a pug and a rabbit), three of the trials were Close trials in which an unambiguously correct label was provided (e.g. "polar bear" to distinguish between a polar bear and a grizzly bear), and three were Close trials in which an ambiguous label was provided (e.g. "dog" to distinguish between a husky and a dalmation). Children's productions in all conditions were transcribed from video recordings of their participation.
 
 ## Response times reflect familiarity and context
 
