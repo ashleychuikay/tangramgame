@@ -119,6 +119,109 @@ d %>%
 
 ```
 
+
+Find most similar sets by JS/KL divergence
+
+```{r get-pair-kl, eval = FALSE}
+get_pair_data <- function(df, tangram1, tangram2) {
+  df %>%
+    filter(target == tangram1) %>%
+    select(lemmatized_utt, n) %>%
+    rename(target_n = n) %>%
+    left_join(df %>%
+                filter(target == tangram2) %>%
+                select(lemmatized_utt, n),
+              by = "lemmatized_utt") %>%
+    rename(comparison_n = n)
+}
+
+# TODO: take all pairwise comparisons
+completed_data <- d %>%
+  count(target, lemmatized_utt) %>%
+  complete(target, lemmatized_utt, 
+           fill = list(n = 0)) 
+
+pairs <- d %>% 
+  distinct(target) %>%
+  pull() %>%
+  combn(2) %>%
+  t() %>%
+  as_tibble(.name_repair = "unique") %>%
+  rename(tangram1 = `...1`, tangram2 = `...2`) %>%
+  mutate(target_id = tangram1,
+         comparison_id = tangram2) %>%
+  group_by(target_id, comparison_id) %>%
+  nest() 
+```
+
+```{r, eval = FALSE}
+pairs %>%
+  arrange(kl) 
+
+
+```
+
+```{r scatterplots, eval = FALSE}
+#Look at codeability, etc., as a function of our norming data 
+norming_overlap <- read_csv(here("data/norming/jsPsychStims.csv")) %>%
+  select(target, overlap_diff) %>%
+  right_join(kls, by = "target") %>%
+  filter(target_type == "tangram")
+
+ggplot(norming_overlap, aes(x = overlap_diff, y = kl)) +
+  geom_point() +
+  facet_wrap(~comparison)
+```
+
+```{r overall overlap, eval = FALSE}
+# highest and lowest overlap pairs?
+dissimilar <- overall %>%
+  filter(!(target_id %in% c("R1.jpg", "O1.jpg"))) %>%
+  filter(!(comparison_id %in% c("R1.jpg", "O1.jpg"))) %>%
+  arrange(overlap) %>%
+  filter(overlap < median(overlap)) %>%
+  filter(!duplicated(target_id)) %>%
+  mutate(dissimilar = comparison_id,
+         dvalue = overlap) %>%
+  select(-c(comparison_id, overlap, n))
+
+similar <- overall %>%
+  filter(!(target_id %in% c("R1.jpg", "O1.jpg"))) %>%
+  filter(!(comparison_id %in% c("R1.jpg", "O1.jpg"))) %>%
+  filter(overlap > median(overlap)) %>%
+  arrange(desc(overlap)) %>%
+  filter(!duplicated(target_id)) %>%
+  mutate(similar = comparison_id,
+         svalue = overlap) %>%
+  select(-c(comparison_id, overlap, n))
+
+#TODO: Tangrams that have high and low similarity matches
+
+matches <- left_join(dissimilar, similar, by = "target_id") %>%
+  arrange(dvalue, desc(svalue)) %>%
+  write.csv(here("data/norming/high_low_matches.csv"))
+  
+#matches <- overall %>%
+#  filter(!(target_id %in% c("R1.jpg", "O1.jpg"))) %>%
+#  filter(!(comparison_id %in% c("R1.jpg", "O1.jpg"))) %>%
+#  filter(target_id %in% c(dissimilar$target_id, dissimilar$comparison_id) |
+#        comparison_id %in% c(dissimilar$target_id, dissimilar$comparison_id)) %>%
+#  arrange(desc(overlap))
+
+# function to find targets with high and low similarity matches
+
+#df = NULL
+
+#match_pairs <- function(data, comparison){
+#  for (i in 1:data.length) {
+#    ifelse (data$target_id %in% c(comparison$target_id, comparison$comparison_id) |
+#        comparison_id %in% c(comparison$target_id, comparison$comparison_id), 
+#        bind_rows(data[i,], df), return)
+#  }
+#}
+```
+
+
 To construct the "close" and "far" conditions, we required an estimate of the extent to which different tangrams would elicit similar names.
 We recruited $XXX$ adult participants to provide one-word names for $YYY$ tangrams, each presented in isolation.
 This distribution of names was intended to reflect the  "prior" over valid labels that adults might bring into a reference game. 
@@ -221,6 +324,41 @@ turk_exchange_data %>%
   geom_point() + 
   geom_smooth(method = "lm", se = FALSE)
 ```
+
+\section{Other measures of variability and overlap}
+
+```{r comparing-distributions, eval = FALSE}
+# kl_drop <- function(df, x1, x2) {
+#   x1 <- enquo(x1)
+#   x2 <- enquo(x2)
+#   # 
+#   df %>%
+#     filter(!!x1 != 0 | !!x2 != 0) %>%
+#     summarise(kl = KL.shrink(!!x1, !!x2)) %>%
+#     pull(kl)
+# }
+# 
+# kls <- d.prod %>%
+#   count(target_type, competitor_type, target, clean_utt) %>%
+#   complete(nesting(target_type, target), competitor_type, clean_utt, 
+#            fill = list(n = 0)) %>%
+#   pivot_wider(names_from = competitor_type, values_from = n) %>%
+#   group_by(target_type, target) %>%
+#   nest() %>%
+#   mutate(close_far = map(data, ~kl_drop(.x,close, far)),
+#          isolated_far = map(data, ~kl_drop(.x,isolated, far)),
+#          isolated_close = map(data, ~kl_drop(.x, close, isolated))) %>%
+#   unnest(cols = c(close_far, isolated_far, isolated_close)) %>%
+#   select(-data) %>%
+#   pivot_longer(cols = c(close_far, isolated_far, isolated_close), 
+#                names_to = "comparison", values_to = "kl")
+# 
+# 
+# ggplot(kls, aes(x = comparison, y = kl)) + 
+#   facet_wrap(~ target_type) + 
+#   geom_boxplot()
+```
+
 
 \newpage
 
