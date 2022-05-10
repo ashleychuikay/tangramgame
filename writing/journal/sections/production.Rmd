@@ -142,7 +142,7 @@ ggplot(d.prod.clean%>%filter(age_group=="adult"), aes(x = target_type, y = log(r
   theme(legend.position = 'top')
 ```
 
-```{r, eval = FALSE}
+```{r}
 rt_model <- d.prod.clean %>% 
   filter(age_group=="adult") %>%
   lm(log(rt) ~ target_type * competitor_type, 
@@ -152,7 +152,7 @@ rt_model <- d.prod.clean %>%
 
 We examined log response times in adults' productions. Children's response times were not analyzed because they responded verbally, and an experimenter entered their responses for them. As such, we do not have accurate measurements of children's actual response times. In the following analysis, we predict response times from target and competitor types and their interactions.
 
-Because objects in close contexts are more similar to one another, we expect longer response times on these trials due to more effort in uniquely identifying the referent. In our sample, adults' response times were longer on close context trials than far and isolated context trials [`r rt_model$`]. Due to the novelty of tangram images, we also expect longer response times on novel trials than on familiar trials. Indeed, we find that adults's response times were longer when describing tangram images than familiar images. In our experiment, response times were measured after participants finished typing their responses and advanced to the next trial, so longer response times may reflect greater effort in generating a description, as well as longer descriptions (and thus longer typing time). However, because all participants were instructed to give brief (two-word) descriptions, it is unlikely that description length contributes to all of the variance in response time differences.
+Because objects in close contexts are more similar to one another, we expect longer response times on these trials due to more effort in uniquely identifying the referent. In our sample, adults' response times were longer on close context trials than far and isolated context trials [`r rt_model$estimate[1]`]. Due to the novelty of tangram images, we also expect longer response times on novel trials than on familiar trials. Indeed, we find that adults's response times were longer when describing tangram images than familiar images. In our experiment, response times were measured after participants finished typing their responses and advanced to the next trial, so longer response times may reflect greater effort in generating a description, as well as longer descriptions (and thus longer typing time). However, because all participants were instructed to give brief (two-word) descriptions, it is unlikely that description length contributes to all of the variance in response time differences.
 
 ### Variability in labels 
 
