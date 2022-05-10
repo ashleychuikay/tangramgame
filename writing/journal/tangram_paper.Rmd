@@ -74,6 +74,10 @@ library(textstem)
 library(entropy)
 library(janitor)
 
+# load in helper functions
+box::use(./sections/helpers)
+box::reload(helpers)
+
 theme_set(theme_few(base_size = 10) + theme(legend.position = "none"))
 
 knitr::opts_chunk$set(fig.pos = '!tb', echo = FALSE, cache = TRUE, 
