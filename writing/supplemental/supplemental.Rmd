@@ -25,6 +25,7 @@ library(papaja)
 library(kableExtra)
 library(tidyverse)
 library(tidyboot)
+library(janitor)
 library(lme4)
 library(lmerTest)
 library(broom)
@@ -47,6 +48,77 @@ options(digits=3)
 
 \section{Norming Experiment}
 
+```{r anonymize-norming-data, eval = FALSE}
+# anonymize raw csv
+# read_csv(here('data/norming/dataFromMongo.csv')) %>%
+#   filter(iterationName %in% c('full_sample', 'full_sample2')) %>%
+#   filter(trial_type == 'survey-text') %>%
+#   mutate(wID = as.numeric(as.factor(wID))) %>%
+#   write_csv(here('./data/norming/anonymizedDataFromMongo.csv'))
+
+# Our current hypothesis is that we're not seeing big context effects for adults in the pilot because even the 'close' contexts aren't close along the actual representational dimensions people are using to label things. 
+# So if their labeling prior in isolation is to say it's 'sad', that's still highly informative in the close context because the distractor doesn't look sad at all and there's no pressure being put on the prior 
+# (kids likely have very different priors, e.g. 'guy' or 'person' with high probability, so these same contexts probably would put pressure on them). 
+# To do this in adults, we need to elicit priors in isolation for more tangrams (e.g. all 40) and then design better 'close' contexts where we put together tangrams where adults have very similar priors. 
+```
+
+```{r load-norming-data, eval = FALSE}
+# take the first 31 rows of each wID. 
+# gets the first game of people who did it twice -- Mongo returns objectIDs in order of insertion date
+d.raw.labels <- read_csv(here("data/norming/anonymizedDataFromMongo.csv")) 
+
+initialAssignmentIDs <- d.raw.labels %>%
+  group_by(wID) %>%
+  summarize(firstAssignmentID = first(aID)) %>%
+  pull(firstAssignmentID)
+
+complete_games.norming <- d.raw.labels %>%
+  filter(aID %in% initialAssignmentIDs) %>%
+  group_by(wID) %>%
+  tally() %>%
+  filter(n == 31) %>%
+  pull(wID)
+
+passed_catch <- d.raw.labels %>%
+  filter(target_type == 'catch') %>%
+  mutate(utterance = tolower(utterance)) %>%
+  filter(utterance == 'strawberry') %>%
+  pull(wID)
+
+d <- d.raw.labels %>%
+  filter(wID %in% complete_games.norming) %>%
+  filter(wID %in% passed_catch) %>%
+  filter(target_type != 'catch') %>%
+  mutate(clean_utt = tolower(utterance),
+         lemmatized_utt = lemmatize_words(clean_utt),
+         lemmatized_utt = str_replace_all(lemmatized_utt, regex("\\W+"), ""))
+```
+
+```{r eval = FALSE}
+# How unbalanced is our sample across targets?
+d %>%
+  group_by(target) %>%
+  tally() %>%
+  ggplot(aes(x = n)) +
+    geom_histogram(bins = 5)
+```
+
+```{r eval = FALSE}
+d %>%
+  group_by(wID) %>%
+  arrange(trial_index) %>%
+  mutate(rep = (lemmatized_utt == lag(lemmatized_utt, 1) &
+                lemmatized_utt == lag(lemmatized_utt, 2))) %>%
+  filter(rep) %>%
+  arrange(wID) 
+  # group_by(wID) %>%
+  # summarize(meanRT = mean(rt)) %>%
+  filter(rt < 2000)
+  ggplot(aes(x = meanRT)) +
+    geom_histogram(bins = 20)
+
+```
+
 To construct the "close" and "far" conditions, we required an estimate of the extent to which different tangrams would elicit similar names.
 We recruited $XXX$ adult participants to provide one-word names for $YYY$ tangrams, each presented in isolation.
 This distribution of names was intended to reflect the  "prior" over valid labels that adults might bring into a reference game. 
@@ -65,14 +137,37 @@ Because accuracy was near ceiling, we also considered the measure of response ti
 We find that descriptions produced by parents lead to faster guesses, but there is still no effect of experiment phase.
 
 ```{r full-rt-lmer}
-full_rt_lmer <- tidy_turk_data %>%
-  filter(measure == "log_rt") %>%
-  lmer(value ~ person * age * occurrence + 
-                   (1|target) + (1|subid), data = .) %>%
-  tidy() %>%
-  filter(effect == "fixed") %>%
-  select(-effect, -group)
+database_ids <- read_csv(here("data/experiment2/databaseid.csv"), show_col_types = FALSE) %>%
+  rename(gameid = subid) %>%
+  select(gameid, age)
 
+raw_adult_data <- read_csv(here("data/experiment2/comprehension_adults.csv"),
+                           show_col_types = FALSE) %>%
+  select(-age) %>%
+  filter(!audioid %in% c("67_08", "67_08_b"))
+
+check_correct <- raw_adult_data %>%
+  filter(occurrence == "check") %>%
+  mutate(check_correct = correct) %>%
+  select(subid, check_correct)
+
+passed_check <- check_correct %>%
+  group_by(check_correct) %>%
+  count() %>%
+  pivot_wider(names_from = check_correct, values_from = n) %>%
+  clean_names()
+
+tidy_turk_data <- raw_adult_data %>%
+  left_join(check_correct, by = c("subid")) %>%
+  filter(check_correct, occurrence != "check") %>%
+  separate(audioid, into = c("gameid", "gametrial"), sep = "_", remove = F) %>%
+  mutate(gameid = as.numeric(gameid),
+         gametrial = as.numeric(gametrial)) %>%
+  left_join(database_ids, by = ("gameid")) %>%
+  mutate(log_rt = log(reactiontime)) %>%
+  pivot_longer(cols = c(correct, reactiontime, log_rt), names_to = "measure") %>%
+  mutate(comprehender_group = 'adult',
+         occurrence = as.numeric(occurrence))
 ```
 
 ```{r reduced-rt-lmer}
@@ -84,6 +179,13 @@ rt_lmer <- tidy_turk_data %>%
   filter(effect == "fixed") %>%
   select(-effect, -group)
 
+full_rt_lmer <- tidy_turk_data %>%
+  filter(measure == "log_rt") %>%
+  lmer(value ~ person * age * occurrence + 
+                   (1|target) + (1|subid), data = .) %>%
+  tidy() %>%
+  filter(effect == "fixed") %>%
+  select(-effect, -group)
 ```
 
 \subsection{Comprehensibility decreases with exchange length}
@@ -92,6 +194,19 @@ Finally, we consider whether descriptions produced in the context of a long back
 We analyze this relationship that we didn't have room for in the main text.
 
 ```{r exchange-data}
+exchanges_data <- read_csv(here("data/experiment1/exchanges.csv"),
+                           show_col_types = FALSE) 
+
+d.exchanges.raw <- exchanges_data %>%
+  mutate(age = as.character(age),
+         age = if_else(is.na(age), 'adult', age),
+         director = case_when(person == "parent" & role == "matcher" ~ "child",
+                              person == "child" & role == "director" ~ "child",
+                              T ~ "adult")) %>%
+  group_by(director, person, subid, trial, age, target, rep_num) %>%
+  summarize(num_exchanges = n()) %>% 
+  ungroup()
+
 turk_exchange_data <- d.exchanges.raw %>% 
   group_by(trial, subid) %>% 
   summarise(num_exchanges = sum(num_exchanges)) %>% 
