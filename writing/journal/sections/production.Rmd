@@ -1,29 +1,27 @@
 # Experiment 3: Production experiment
 
-In Experiment 2, we found that even young children produced sufficiently informative descriptions of novel tangrams. 
-While children's descriptions were slightly less informative (as indexed by slower reaction times and lower accuracy), they were nonetheless sufficient for naive adult and child listeners to identify the correct tangram.
-These findings starkly contrast previous research showing that children are poor producers (and identifiers) of informative descriptions [e.g., @anderson1994]. 
-One possible reason for our results is that children, when interacting with their parents, received adequate scaffolding that allowed them to produce informative expressions. That is, parent-child pairs' success in our interactive game could be due to the supportive context of parent scaffolding.
+In Experiment 2, we found that naive children and adults were equally able to comprehend referential expressions from our reference game. We also found that  children's descriptions were slightly less informative (as indexed by slower reaction times and lower accuracy). That is, children's utterances from our reference game were less comprehensible by naive listeners, regardless of listener age. These results suggest that children may have some difficulty with production, though their referential expressions were still sufficiently informative for naive listeners to identify the intended referent. Our results introduce nuance to previous research showing that children are poor producers (and identifiers) of informative descriptions [e.g., @anderson1994]. Children may be poorer producers than adults, but their expressions are nonetheless effective.
+One possible reason for our results is that children, when interacting with their parents, received adequate scaffolding that allowed them to produce informative expressions. That is, parent-child pairs' success in our interactive game could be due, in part, to the supportive context of parent scaffolding.
 
-In Experiment 3, we remove the supportive context to ask whether children, as compared to adults, produce referential expressions that are underinformative. We asked adults and children to give short descriptions of familiar and novel objects. Across trials, we varied the context in which target objects appeared. In "close" contexts, the foil object was highly similar to the target, whereas in "far" contexts the foil was dissimilar. In the contexts, a successful referring experession only needs to be a good description of the target. In contrast, in close contexts, a successful referring expression needs to both describe the target well and not describe the foil. For example, a Pug can successfully be called a "dog" if the foil is a table, but not if it is a German Shepherd. 
-
+In Experiment 3, we remove the supportive context to ask whether children, as compared to adults, produce referential expressions that are underinformative. We asked adults and children to give short descriptions of familiar and novel objects. Across trials, we varied the context in which target objects appeared. In "close" contexts, the foil object was highly similar to the target, whereas in "far" contexts the foil was dissimilar. In the contexts, a successful referring experession only needs to be a good description of the target. In contrast, in close contexts, a successful referring expression needs to both describe the target well and not describe the foil. For example, a Pug can successfully be called a "dog" if the foil is a table, but not if it is a German Shepherd.
 This experiment allows us to investigate the reasons behind children's apparent failure to coordinate with peers in referential settings. One possibility is that children struggle to produce uniquely identifying expressions, particularly for novel objects.
 
 ## Methods
 
 ```{r e3-anonymize-data, eval = FALSE}
-# anonymize
-read_csv(here("data/experiment3/dataFromMongo.csv"))%>%
-  filter(trial_type == "survey-text") %>%
-  filter(iterationName == "pilot2") %>%
-  mutate(wID = as.numeric(as.factor(wID))) %>%
-  write_csv(here('./data/experiment3/anonymizedDataFromMongo.csv'))
+# this block pre-processes the raw, un-anonymized data from adults
+# we keep it here for reproducibility but only release the preprocessed data
+# read_csv(here("data/experiment3/dataFromMongo.csv"))%>%
+#   filter(trial_type == "survey-text") %>%
+#   filter(iterationName == "pilot2") %>%
+#   mutate(wID = as.numeric(as.factor(wID))) %>%
+#   write_csv(here('./data/experiment3/anonymizedDataFromMongo.csv'))
 ```
 
 ```{r e3-read-adult-data}
 NUM_TRIALS <- 48
-d.prod.adult <- read_csv(here("data/experiment3/anonymizedDataFromMongo.csv"),
-                       show_col_types = FALSE) %>%
+d.prod.adult <- here("data/experiment3/anonymizedDataFromMongo.csv") %>%
+  read_csv(show_col_types = FALSE) %>%
   mutate(age_group = 'adult')
   
 complete_games.adult <- d.prod.adult %>%
@@ -34,7 +32,7 @@ complete_games.adult <- d.prod.adult %>%
 ```
 
 ```{r e3-combine-data, eval = FALSE}
-# this block pre-processes the raw, un-anonymized data
+# this block pre-processes the raw, un-anonymized data from kids
 # we keep it here for reproducibility but only release the preprocessed data
 
 # d.prod.kid <- list.files(here("data/experiment3/kid/"), "*.csv",
@@ -194,196 +192,9 @@ Similar results were obtained using 'softer' measures like edit distance (the nu
 
 ### Familiar objects elicit less variable names
 
-```{r overlap-helpers, eval = FALSE}
-ps <- d.prod.clean %>%
-  distinct(wID)
-
-first_half <- d.prod.clean %>%
-  filter(wID %in% (slice(ps, 1:(n()/2)) %>% pull(wID))) %>%
-  count(target, clean_utt) %>%
-  complete(target, clean_utt, 
-           fill = list(n = 0)) %>%
-  get_average_overlap()
-
-second_half <- d %>%
-  filter(wID %in% (slice(ps, ((n()/2)+1):(n())) %>% pull(wID))) %>%
-  count(target, lemmatized_utt) %>%
-  complete(target, lemmatized_utt, 
-           fill = list(n = 0)) %>%
-  get_average_overlap()
-
-# correlation b/w split data
-first_half %>%
-  rename(first_half = overlap) %>%
-  left_join(second_half, by = c("target_id", "comparison_id", "n")) %>%
-  summarise(cor = cor(first_half, overlap, method = "spearman")) %>%
-  summarise(cor = mean(cor, na.rm = T))
-
-overall <- d %>%
-  #filter(!(target %in% c("R1.jpg", "O1.jpg"))) %>%
-  #mutate(target = as.factor(target)) %>%
-  count(target, lemmatized_utt) %>%
-  complete(target, lemmatized_utt, 
-           fill = list(n = 0)) %>%
-  get_average_overlap()
-```
-
-```{r plot-overlap, eval = FALSE} 
-ggplot(symmetric_overlap, aes(x = target_id, y = comparison_id, fill = log1p(overlap))) + 
-  geom_tile() +
-  theme(legend.position = 'right')
-```
-
-```{r pilot-items, eval = FALSE}
-pilot_items <- d.prod.clean %>% 
-  filter(target_type == "tangram", competitor_type != "isolated") %>%
-  distinct(target, foil, competitor_type) %>%
-  rename(target_id = target, comparison_id = foil) %>%
-  left_join(symmetric_overlap, by = c("target_id", "comparison_id"))
-
-pilot_items %>%
-  group_by(competitor_type) %>%
-  tidyboot_mean(overlap)
-```
-
-```{r, eval = FALSE}
-pilot_items %>%
-  ggplot(aes(x = competitor_type, y = overlap)) +
-    geom_jitter(width = .1, height = .1) +
-    geom_boxplot(alpha = .5)
-```
-
-We test this hypothesis by comparing the 'spread' of the distribution of labels given to the same object across familiar and novel object classes. 
-
-
-### Response times reflect familiarity and context
-
-```{r e2-rts, eval=FALSE}
-# overall RT distribution
-d.prod.clean %>%
-  filter(is.na(age)) %>%
-  mutate(logged_rt = log(rt)) %>%
-  gather(measure, value, logged_rt, rt) %>%
-  ggplot(aes(x = value)) +
-    geom_histogram() +
-    facet_wrap(~ measure, scales='free')
-
-d.prod.clean %>%
-  mutate(logged_rt = log(rt)) %>%
-  gather(measure, value, logged_rt, rt) %>%
-  ggplot(aes(x = value)) +
-    geom_histogram() +
-    facet_wrap(~ measure, scales='free')
-```
-  
-```{r compare-lenghts, eval = FALSE}
-booted_lengths <- kid_production_data %>%
-  filter(trialtype == "paired") %>%
-  mutate(length = str_count(str_trim(utterance), " ") + 1) %>%
-  group_by(age, target_type, competitor_type, id) %>%
-  summarise(length = mean(length)) %>%
-  tidyboot_mean(length)
-
-booted_lengths %>%
-  ggplot(aes(x = age, y = empirical_stat, color = competitor_type)) + 
-  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper),
-                  position = position_dodge(.5)) + 
-  facet_wrap(~ target_type) + 
-  theme(legend.position = "bottom")
-```
 
 ```{r eval = FALSE}
-d.prod.clean %>%
-  filter(age_group=="adult")
-  ggplot(aes(x = target_type, y = log(rt), color = competitor_type)) +
-    geom_boxplot() +
-    theme(legend.position = 'top')
-```
-
-```{r, eval = FALSE}
-rt_model <- d.prod.clean %>% 
-  filter(age_group=="adult") %>%
-  lm(log(rt) ~ target_type * competitor_type, 
-     data = .) %>%
-  tidy()
-```
-
-We examined log response times in adults' productions. Children's response times were not analyzed because they responded verbally, and an experimenter entered their responses for them. As such, we do not have accurate measurements of children's actual response times. In the following analysis, we predict response times from target and competitor types and their interactions.
-
-Because objects in close contexts are more similar to one another, we expect longer response times on these trials due to more effort in uniquely identifying the referent. In our sample, adults' response times were longer on close context trials than far and isolated context trials. Due to the novelty of tangram images, we also expect longer response times on novel trials than on familiar trials. Indeed, we find that adults's response times were longer when describing tangram images than familiar images. In our experiment, response times were measured after participants finished typing their responses and advanced to the next trial, so longer response times may reflect greater effort in generating a description, as well as longer descriptions (and thus longer typing time). However, because all participants were instructed to give brief (two-word) descriptions, it is unlikely that description length contributes to all of the variance in response time differences.
-
-### Attention checks
-
-\textcolor{red}{[rdh: where should we report the checks? in some sense it's a simple sanity check so we could lead with it? but it's also only relevant for the developmental sample, which suggests we should put it at the end here (as a 'validation' move, like 'cool results, but maybe kids just didn't understand to task? to address this concern, we analyze our attention checks more carefully; and oh look, our results are robust to removing kids who did poorly.')]}
-
-```{r eval = FALSE}
-dodge = position_dodge(0.9)
-d.prod %>%
-  group_by(target_type, competitor_type) %>%
-  tidyboot_mean(utt_length) %>%
-  ggplot(aes(x = target_type, y = empirical_stat, fill = competitor_type)) +
-    geom_bar(stat='identity', position=dodge) +
-    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0, position=dodge) +
-    labs(x = "target type",
-         y = "utterance length") +
-    theme(legend.position = 'top')
-```
-
-We considered several measures of codability/overlap:
-
-* total number of unique labels (when people overlap a lot, this is smaller because we collect the same number of labels for each target; warning, this could be misleading if we're dropping trials due to high rts and some conditions have more dropped)
-* proportion of unique labels to total labels (fixes this problem, but still doesn't account for the distribution of overlap, e.g. if one gets hit 10 times and others get hit 1 vs. everything gets hit 2 times.)
-* entropy (we all know and love)
-* codeability (what proportion of people provided the most common label, if there were 40 labels and 20 were 'bird', this would be 50%)
-
-```{r eval = FALSE}
-d.prod %>%
-  group_by(target_type, competitor_type, utterance, target) %>%
-  tally() %>%
-  arrange(target) %>%
-  group_by(target_type, competitor_type) %>%
-  mutate(total_labels = sum(n)) %>%
-  summarize(unique_labels = length(n), 
-            normalized_unique_labels = mean(unique_labels) /  mean(total_labels),
-            entropy = entropy(n, method="SG"),
-            normalized_entropy = mean(entropy) / log(length(n)),
-            codeability = max(n) / sum(n)) %>%
-  gather(measure, value, unique_labels:codeability) %>%
-  group_by(target_type, competitor_type, measure) %>%
-  tidyboot_mean(value) %>%
-  ggplot(aes(x = target_type, y = empirical_stat, fill = competitor_type)) +
-    geom_bar(stat = 'identity', position=dodge) +
-    facet_grid(measure ~. , scales='free') +
-    theme(legend.position = "top")
-
-ggsave('variability_measures_clean.pdf', width = 10, height = 10, unit = 'in')
-
-#compare with old data
-d.prod.old <- read_csv(here("data/production/pilot_data_clean.csv"))
-
-d.prod.old %>% 
-  group_by(target_type, competitor_type, utterance, target) %>%
-  tally() %>%
-  arrange(target) %>%
-  group_by(target_type, competitor_type) %>%
-  mutate(total_labels = sum(n)) %>%
-  summarize(unique_labels = length(n), 
-            normalized_unique_labels = mean(unique_labels) / mean(total_labels),
-            entropy = entropy(n, method="SG"),
-            normalized_entropy = mean(entropy) / log(length(n)),
-            codeability = max(n) / sum(n)) %>%
-  gather(measure, value, unique_labels:codeability) %>%
-  group_by(target_type, competitor_type, measure) %>%
-  tidyboot_mean(value) %>%
-  ggplot(aes(x = target_type, y = empirical_stat, fill = competitor_type)) +
-    geom_bar(stat = 'identity', position=dodge) +
-    facet_grid(measure ~. , scales='free')
-
-```
-
-
-```{r regression-model-comparing-competitor-types, eval = FALSE}
-prod.model <- d.prod %>%
+var.measures <- d.prod %>%
   group_by(target_type, competitor_type, utterance, target) %>%
   tally() %>%
   arrange(target) %>%
@@ -393,26 +204,152 @@ prod.model <- d.prod %>%
             normalized_unique_labels = mean(unique_labels) / mean(total_labels),
             entropy = entropy(n, method="SG"),
             normalized_entropy = mean(entropy) / log(length(n)),
-            codeability = max(n) / sum(n))
+            codeability = max(n) / sum(n)) %>%
+  gather(measure, value, unique_labels:codeability)
 
-prod.model %>%
+var.measures %>%
+  group_by(target_type, competitor_type, measure) %>%
+  tidyboot_mean(value) %>%
+  ggplot(aes(x = target_type, y = empirical_stat, fill = competitor_type)) +
+    geom_bar(stat = 'identity', position=dodge) +
+    facet_grid(measure ~. , scales='free') +
+    theme(legend.position = "top")
+
+ggsave('variability_measures_clean.pdf', width = 10, height = 10, unit = 'in')
+
+```
+
+
+```{r regression-model-comparing-competitor-types, eval = FALSE}
+var.measures %>%
   lmer(codeability ~ target_type*competitor_type + (1|target), data =.) %>%
   tidy() %>%
   filter(effect == "fixed")
 ```
 
-
-```{r scatterplots, eval = FALSE}
-#Look at codeability, etc., as a function of our norming data 
-norming_overlap <- read_csv(here("data/norming/jsPsychStims.csv")) %>%
-  select(target, overlap_diff) %>%
-  right_join(kls, by = "target") %>%
-  filter(target_type == "tangram")
-
-ggplot(norming_overlap, aes(x = overlap_diff, y = kl)) +
-  geom_point() +
-  facet_wrap(~comparison)
+```{r overlap-helpers, eval = FALSE}
+# ps <- d.prod.clean %>%
+#   distinct(wID)
+# 
+# first_half <- d.prod.clean %>%
+#   filter(wID %in% (slice(ps, 1:(n()/2)) %>% pull(wID))) %>%
+#   count(target, clean_utt) %>%
+#   complete(target, clean_utt, 
+#            fill = list(n = 0)) %>%
+#   get_average_overlap()
+# 
+# second_half <- d %>%
+#   filter(wID %in% (slice(ps, ((n()/2)+1):(n())) %>% pull(wID))) %>%
+#   count(target, lemmatized_utt) %>%
+#   complete(target, lemmatized_utt, 
+#            fill = list(n = 0)) %>%
+#   get_average_overlap()
+# 
+# # correlation b/w split data
+# first_half %>%
+#   rename(first_half = overlap) %>%
+#   left_join(second_half, by = c("target_id", "comparison_id", "n")) %>%
+#   summarise(cor = cor(first_half, overlap, method = "spearman")) %>%
+#   summarise(cor = mean(cor, na.rm = T))
+# 
+# overall <- d %>%
+#   #filter(!(target %in% c("R1.jpg", "O1.jpg"))) %>%
+#   #mutate(target = as.factor(target)) %>%
+#   count(target, lemmatized_utt) %>%
+#   complete(target, lemmatized_utt, 
+#            fill = list(n = 0)) %>%
+#   get_average_overlap()
 ```
+
+```{r plot-overlap, eval = FALSE} 
+# ggplot(symmetric_overlap, aes(x = target_id, y = comparison_id, fill = log1p(overlap))) + 
+#   geom_tile() +
+  # theme(legend.position = 'right')
+```
+
+```{r pilot-items, eval = FALSE}
+# pilot_items <- d.prod.clean %>% 
+#   filter(target_type == "tangram", competitor_type != "isolated") %>%
+#   distinct(target, foil, competitor_type) %>%
+#   rename(target_id = target, comparison_id = foil) %>%
+#   left_join(symmetric_overlap, by = c("target_id", "comparison_id"))
+# 
+# pilot_items %>%
+#   group_by(competitor_type) %>%
+#   tidyboot_mean(overlap)
+```
+
+```{r, eval = FALSE}
+# pilot_items %>%
+#   ggplot(aes(x = competitor_type, y = overlap)) +
+#     geom_jitter(width = .1, height = .1) +
+#     geom_boxplot(alpha = .5)
+```
+
+We test this hypothesis by comparing the 'spread' of the distribution of labels given to the same object across familiar and novel object classes. 
+
+We considered several measures of codability/overlap:
+
+* total number of unique labels (when people overlap a lot, this is smaller because we collect the same number of labels for each target; warning, this could be misleading if we're dropping trials due to high rts and some conditions have more dropped)
+* proportion of unique labels to total labels (fixes this problem, but still doesn't account for the distribution of overlap, e.g. if one gets hit 10 times and others get hit 1 vs. everything gets hit 2 times.)
+* entropy (we all know and love)
+* codeability (what proportion of people provided the most common label, if there were 40 labels and 20 were 'bird', this would be 50%)
+
+### Response times reflect familiarity and context
+
+```{r e2-rts, eval=FALSE}
+# overall RT distribution
+d.prod.clean %>%
+  mutate(logged_rt = log(rt)) %>%
+  filter(rt < 30000) %>%
+  gather(measure, value, logged_rt, rt) %>%
+  ggplot(aes(x = value)) +
+    geom_histogram() +
+    facet_wrap(age_group ~ measure, scales='free')
+```
+  
+```{r compare-lenghts, eval = FALSE}
+booted_lengths <- d.prod.clean %>%
+  group_by(age_group, target_type, competitor_type, id) %>%
+  summarise(length = mean(utt_length)) %>%
+  group_by(age_group, competitor_type, target_type) %>%
+  tidyboot_mean(length)
+
+booted_lengths %>%
+  filter(competitor_type != 'check') %>%
+  ggplot(aes(x = target_type, y = empirical_stat, color = competitor_type)) + 
+  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper),
+                  position = position_dodge(.5)) + 
+  facet_wrap(~ age_group) + 
+  labs(y = 'utterance length (# characters)', x='') +
+  theme(legend.position = "top")
+```
+
+```{r eval = FALSE}
+d.prod.clean %>%
+  filter(competitor_type != 'check') %>%
+  ggplot(aes(x = target_type, y = log(rt), color = competitor_type)) +
+    geom_boxplot() +
+    facet_wrap(~ age_group) +
+    theme(legend.position = 'top')
+```
+
+```{r}
+rt_model <- d.prod.clean %>% 
+  filter(age_group=="adult") %>%
+  lm(log(rt) ~ target_type * competitor_type, 
+     data = .) %>%
+  tidy()
+```
+
+\textcolor{red}{[rdh: do we want to mention the utterance length effect? kids produced much longer utterances for tangrams, which seems like an effect of its own]}
+We examined log response times in adults' productions. Children's response times were not analyzed because they responded verbally, and an experimenter entered their responses for them. As such, we do not have accurate measurements of children's actual response times. In the following analysis, we predict response times from target and competitor types and their interactions.
+
+Because objects in close contexts are more similar to one another, we expect longer response times on these trials due to more effort in uniquely identifying the referent. In our sample, adults' response times were longer on close context trials than far and isolated context trials [`r rt_model$estimate[1]`]. Due to the novelty of tangram images, we also expect longer response times on novel trials than on familiar trials. Indeed, we find that adults's response times were longer when describing tangram images than familiar images. In our experiment, response times were recorded between the onset of the trial and the point at which participants finished typing their responses, so longer response times may reflect greater effort in generating a description, as well as longer descriptions (and thus longer typing time). However, because all participants were instructed to give brief (two-word) descriptions, it is unlikely that description length contributes to all of the variance in response time differences.
+
+### Attention checks
+
+\textcolor{red}{[rdh: where should we report these checks? in some sense it's a simple sanity check so we could lead with it? but it's also only relevant for the developmental sample, which suggests we should put it at the end here (as a 'validation' move, like 'cool results, but maybe kids just didn't understand to task? to address this concern, we analyze our attention checks more carefully; and oh look, our results are robust to removing kids who did poorly.')]}
 
 ### Comprehension check trials
 
