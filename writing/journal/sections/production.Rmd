@@ -1,6 +1,6 @@
 # Experiment 3: Production experiment
 
-In Experiment 2, we found that even young children produced sufficiently informative descriptions of novel tangrams. _[rdh: I'm not sure this is how we want to start this section; the main result was that children do *not* produce sufficiently informative descriptions (i.e. that they *comprehend* adult utterances at the same high rate as adult comprehenders, and *comprehend* childrens' utterances at the same low rate as adult comprehenders, so there's clearly a difference in *production*.) I get the point being made here (i.e. that children's descriptions are still above *chance*) but it's a bit subtle compared to that big main effect.]_}
+In Experiment 2, we found that even young children produced sufficiently informative descriptions of novel tangrams. 
 While children's descriptions were slightly less informative (as indexed by slower reaction times and lower accuracy), they were nonetheless sufficient for naive adult and child listeners to identify the correct tangram.
 These findings starkly contrast previous research showing that children are poor producers (and identifiers) of informative descriptions [e.g., @anderson1994]. 
 One possible reason for our results is that children, when interacting with their parents, received adequate scaffolding that allowed them to produce informative expressions. That is, parent-child pairs' success in our interactive game could be due to the supportive context of parent scaffolding.
@@ -20,19 +20,8 @@ read_csv(here("data/experiment3/dataFromMongo.csv"))%>%
   write_csv(here('./data/experiment3/anonymizedDataFromMongo.csv'))
 ```
 
-```{r e3-pilot-data, eval = FALSE, include = FALSE}
-## NOTE: I think ashley manually cleaned this data but we're missing four participants from above
-d.prod.clean <- read_csv(here("data/experiment3/prenorming/pilot_data_clean.csv"),
-                         show_col_types = FALSE) %>%
-  select(-`...1`)
-  #filter(utt_length > 1) #%>%
-  #mutate(clean_utt = lemmatize_words(clean_utt))
-  
-```
-
 ```{r e3-read-adult-data}
 NUM_TRIALS <- 48
-
 d.prod.adult <- read_csv(here("data/experiment3/anonymizedDataFromMongo.csv"),
                        show_col_types = FALSE) %>%
   mutate(age_group = 'adult')
@@ -45,27 +34,30 @@ complete_games.adult <- d.prod.adult %>%
 ```
 
 ```{r e3-combine-data, eval = FALSE}
-d.prod.kid <- list.files(here("data/experiment3/kid/"), "*.csv",
-                          full.names = TRUE) %>%
-  map_dfr(read_csv, show_col_types = FALSE) %>%
-  mutate(age_group = 'kid') %>%
-  rename(wID = id) %>%
-  select(-trial_type, -internal_node_id, -trialtype, -test_part, -responses)
+# this block pre-processes the raw, un-anonymized data
+# we keep it here for reproducibility but only release the preprocessed data
 
-d.prod <- d.prod.adult %>%
-  filter(wID %in% complete_games.adult) %>%
-  group_by(wID) %>%
-  slice(1:NUM_TRIALS) %>%
-  filter(rt > 1000) %>%
-  bind_rows(d.prod.kid) %>%
-  unite(id, age_group, wID, remove = F) %>%
-  mutate(utterance = str_to_lower(utterance),
-         utterance = str_trim(utterance),
-         utt_length = str_length(utterance),
-         clean_utt = lemmatize_strings(utterance),
-         clean_utt = str_remove_all(clean_utt, pattern = ' '))
-
-write_csv(d.prod, here("data/experiment3/production_data_lemmatized.csv"))
+# d.prod.kid <- list.files(here("data/experiment3/kid/"), "*.csv",
+#                           full.names = TRUE) %>%
+#   map_dfr(read_csv, show_col_types = FALSE) %>%
+#   mutate(age_group = 'kid') %>%
+#   rename(wID = id) %>%
+#   select(-trial_type, -internal_node_id, -trialtype, -test_part, -responses)
+# 
+# d.prod <- d.prod.adult %>%
+#   filter(wID %in% complete_games.adult) %>%
+#   group_by(wID) %>%
+#   slice(1:NUM_TRIALS) %>%
+#   filter(rt > 1000) %>%
+#   bind_rows(d.prod.kid) %>%
+#   unite(id, age_group, wID, remove = F) %>%
+#   mutate(utterance = str_to_lower(utterance),
+#          utterance = str_trim(utterance),
+#          utt_length = str_length(utterance),
+#          clean_utt = lemmatize_strings(utterance),
+#          clean_utt = str_remove_all(clean_utt, pattern = ' '))
+# 
+# write_csv(d.prod, here("data/experiment3/production_data_lemmatized.csv"))
 ```
 
 ```{r e3-read-lemmatized_data}
@@ -116,13 +108,157 @@ Children also participated in an additional check condition designed to measure 
 
 After giving informed consent, adults read a introduction screen informing them that they would be doing an experiment in which they saw one or pictures on the screen at a time. One of these objects would be in a blue box, and they should describe this object as best as they could by typing one or two words into a text box. At the start of each block, they would be told whether they would see one picture (isolation), or two pictures (close and far), and reminded that they should type in a description that would help another participant identify the target in the blue border. Adults then completed all blocks in random order.
 
-After parents gave consent and children assented to participate, children were told that they would see pictures and be asked to describe them. Children then completed several warm-up trials to introduce them to the game. On the first trial, they saw a picture of a red apple. On the next trial, they saw a pear with a blue border around it and the same apple and were asked to describe the object in the blue box. Then, the experimenter indicated that they would close their eyes on the next trial so that they wouldn't see what children saw. On this trial, children saw a white mug with a blue border around it and a white plate. While the experimenter's eyes were closed, the child was encouraged to describe the object in the blue box so that the experimenter could identify it. Once children provided a description, the blue border disappeared, and the experimenter opened their eyes. The experimenter then identified the object based on children's descriptions, and revealed the blue box again to verify whether they selected the correct target. The same procedure was repeated for three more trials with the following image pairs: A red purple ball and a plant; A white rose and a red rose; A round wooden table and a rectangular wooden table. The latter two trials contained object pairs where both objects shared a basic level category label (i.e., "flower" and "table"). These two trials served to signal to children that referential ambiguity is possible. If children did not uniquely identify the target, the experimenter would indicate that the child's expression was ambiguous, and the experimenter would not select the correct target. While these trials provide feedback to the children, the experimenter did not offer alternate descriptions or examples of unambiguous expressions. After these warm-up trials, children were told that they would continue to play this labeling game and that their responses would be told to another person who could see the objects but not which one was in the blue border. In contrast to adults, children always began with a block of familiar objects in either the close or far condition. They always completed the manipulation check block last.
+After parents gave consent and children assented to participate, children were told that they would see pictures and be asked to describe them. Children then completed several warm-up trials to introduce them to the game. On the first trial, they saw a picture of a red apple. On the next trial, they saw a pear with a blue border around it and the same apple and were asked to describe the object in the blue box. Then, the experimenter indicated that they would close their eyes on the next trial so that they wouldn't see what children saw. On this trial, children saw a white mug with a blue border around it and a white plate. While the experimenter's eyes were closed, the child was encouraged to describe the object in the blue box so that the experimenter could identify it. Once children provided a description, the blue border disappeared, and the experimenter opened their eyes. The experimenter then identified the object based on children's descriptions, and revealed the blue box again to verify whether they selected the correct target. 
+
+The same procedure was repeated for three more trials with the following image pairs: A red purple ball and a plant; A white rose and a red rose; A round wooden table and a rectangular wooden table. The latter two trials contained object pairs where both objects shared a basic level category label (i.e., "flower" and "table"). These two trials served to indicate to children that referential ambiguity is possible. If children did not uniquely identify the target, the experimenter would indicate that the child's expression was ambiguous, and the experimenter would not select the correct target. While these trials provided feedback about ambiguity to the children, the experimenter did not suggest alternate descriptions or examples of unambiguous expressions. After these warm-up trials, children were told that they would continue to play this labeling game and that their responses would be told to another person who could see the objects but not which one was in the blue border. In contrast to adults, children always began with a block of familiar objects in either the close or far condition. They always completed the manipulation check block last.
+
+### Preprocessing 
+
+We cleaned the text input using a uniform rubric across the combined data set.
+First, we manually corrected typos and removed stop words (e.g. determiners like 'a', 'the').
+Second, we lemmatized all entries to remove spurious differences between tenses and plurals of the same root form. \textcolor{red}{[rdh: should we also do some kind of regularization of word order? like make sure 'man is kneeling' and 'kneeling man' are mapped to the same thing? otherwise even if we remove 'is' and remove white space, we'll have 'kneelman' and 'mankneel' as different tokens.]}
+Third, we removed spaces and collapsed multiple words together into a single token (e.g. 'German Shepherd' was tokenized to 'germanshepherd'). \textcolor{red}{[rdh: was there anything else we want to say about how the experimenter typed in the kid data? what was the rubric in case of long rambling utterances? did you say part of it back to the kid and ask them to confirm or something?]}
 
 ## Results
 
+We evaluate two core hypotheses.
+First, could children be failing to take into account the referential context when deciding what to say, leading to more ambiguous or underinformative referring expressions?
+Second, could children simply have weaker expectations over possible acceptable labels for novel objects, making retrieval challenging?
+These mechanisms are not mutually exclusive --- and, indeed are the two fundamental components of recent production models [e.g. @murthy2021shades, @hawkins2022partners]. 
+
+### Adult descriptions are more sensitive to referential context
+
+```{r context-sensitivity, out.height = "300px", fig.align = "center", set.cap.width=T, fig.cap = "\\label{fig:e3_contextsensitivity} Results for Exp.~3."}
+
+# we can just look at the item-by-item / speaker-by-speaker level 
+# where there's a context effect...
+indiv.measures <- d.prod.clean %>%
+  filter(competitor_type != 'check') %>%
+  group_by(age_group, id, target_type, competitor_type, target, clean_utt) %>%
+  tally() %>%
+  group_by(age_group, id, target) %>%
+  pivot_wider(names_from = competitor_type, values_from = c('clean_utt')) %>%
+  unnest() %>%
+  filter(!is.na(close), !is.na(far)) %>%
+  mutate(close_far.distance = helpers$normalized_lv(close, far),
+         close_isolated.distance = helpers$normalized_lv(close, isolated),
+         far_isolated.distance = helpers$normalized_lv(far, isolated),
+         far_close_overlap = far == close,
+         far_isolated_overlap = far == isolated,
+         close_isolated_overlap = close == isolated) 
+
+contextsensitivity.means <- indiv.measures %>%
+  group_by(age_group, target_type) %>%
+  tidyboot_mean(far_close_overlap, na.rm = T) 
+
+dodge = position_dodge(0.9)
+contextsensitivity.means %>%
+  ggplot(aes(x = age_group, y = empirical_stat, fill = target_type)) +
+    geom_bar(stat = 'identity', position = dodge) +
+    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0, position = dodge) +
+    labs(y = '% overlap (exact matches)', x = '') +
+    theme(aspect.ratio = 1)
+```
+
+```{r contextsensitivitylmer}
+indiv.measures.lmer <- indiv.measures %>%
+  glmer(far_close_overlap ~ age_group * target_type + (1 | target) + (1 + target_type | id),
+        family = 'binomial',
+        data = .) %>%
+  tidy() %>%
+  filter(effect == 'fixed') %>%
+  select(-group, -effect)
+
+indiv.measures.softmeasure <- indiv.measures %>%
+  lmer(close_far.distance ~ age_group * target_type + (1 | target) + (1 + target_type | id),
+        data = .) %>%
+  tidy() %>%
+  filter(effect == 'fixed') %>%
+  select(-group, -effect)
+
+indiv.measures.inter <- indiv.measures.lmer %>% filter(term == 'age_groupkid:target_typetangram')
+soft.inter <- indiv.measures.softmeasure %>% filter(term == 'age_groupkid:target_typetangram')
+```
+
+To test our first hypothesis, we examine extent to which the same participant produces different utterances across the *far* vs. *close* contexts.
+We begin by considering a simple 'exact match' criterion, coding an item as 1 if the participant used the same label for that item in both contexts and 0 if they used different labels. 
+This criterion is relatively conservative in the sense that it will miss a number of near- or partial-matches, so it can be viewed as a lower-bound on similarity. 
+We predict overlap using a mixed-effects logistic regression model.
+We include fixed effects for age cohort (child vs. adult) and target condition (familiar vs. novel objects), as well as their interaction.
+We include random intercepts for both participants and items, and a random slope of target condition at the participant level, which was the most complex structure that converged.
+We found a significant interaction, $b=`r indiv.measures.inter$estimate`, z = `r indiv.measures.inter$statistic`, p < 0.001$ (see Fig.~\ref{fig:e3_contextsensitivity}). 
+
+Although adults displayed similar rates of context-sensitivity for familiar and novel objects (familiar: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'adult', target_type == 'familiar'))$empirical_stat`, novel: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'adult', target_type == 'tangram'))$empirical_stat`), children were nearly twice as likely to provide the exact same label across contexts for a familiar object (familiar: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'kid', target_type == 'tangram'))$empirical_stat`; novel: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'kid', target_type == 'familiar'))$empirical_stat`).
+In other words, children showed some degree internal variance in how they referred to novel tangrams but likely produced the single most salient, accessible label for familiar objects.
+Similar results were obtained using 'softer' measures like edit distance (the number of edits required to turn one string into the other), $b=`r soft.inter$estimate`, z = `r soft.inter$statistic`, p = `r soft.inter$p.value`$. 
+
+### Familiar objects elicit less variable names
+
+```{r overlap-helpers, eval = FALSE}
+ps <- d.prod.clean %>%
+  distinct(wID)
+
+first_half <- d.prod.clean %>%
+  filter(wID %in% (slice(ps, 1:(n()/2)) %>% pull(wID))) %>%
+  count(target, clean_utt) %>%
+  complete(target, clean_utt, 
+           fill = list(n = 0)) %>%
+  get_average_overlap()
+
+second_half <- d %>%
+  filter(wID %in% (slice(ps, ((n()/2)+1):(n())) %>% pull(wID))) %>%
+  count(target, lemmatized_utt) %>%
+  complete(target, lemmatized_utt, 
+           fill = list(n = 0)) %>%
+  get_average_overlap()
+
+# correlation b/w split data
+first_half %>%
+  rename(first_half = overlap) %>%
+  left_join(second_half, by = c("target_id", "comparison_id", "n")) %>%
+  summarise(cor = cor(first_half, overlap, method = "spearman")) %>%
+  summarise(cor = mean(cor, na.rm = T))
+
+overall <- d %>%
+  #filter(!(target %in% c("R1.jpg", "O1.jpg"))) %>%
+  #mutate(target = as.factor(target)) %>%
+  count(target, lemmatized_utt) %>%
+  complete(target, lemmatized_utt, 
+           fill = list(n = 0)) %>%
+  get_average_overlap()
+```
+
+```{r plot-overlap, eval = FALSE} 
+ggplot(symmetric_overlap, aes(x = target_id, y = comparison_id, fill = log1p(overlap))) + 
+  geom_tile() +
+  theme(legend.position = 'right')
+```
+
+```{r pilot-items, eval = FALSE}
+pilot_items <- d.prod.clean %>% 
+  filter(target_type == "tangram", competitor_type != "isolated") %>%
+  distinct(target, foil, competitor_type) %>%
+  rename(target_id = target, comparison_id = foil) %>%
+  left_join(symmetric_overlap, by = c("target_id", "comparison_id"))
+
+pilot_items %>%
+  group_by(competitor_type) %>%
+  tidyboot_mean(overlap)
+```
+
+```{r, eval = FALSE}
+pilot_items %>%
+  ggplot(aes(x = competitor_type, y = overlap)) +
+    geom_jitter(width = .1, height = .1) +
+    geom_boxplot(alpha = .5)
+```
+
+We test this hypothesis by comparing the 'spread' of the distribution of labels given to the same object across familiar and novel object classes. 
+
+
 ### Response times reflect familiarity and context
 
-```{r e2-rts}
+```{r e2-rts, eval=FALSE}
 # overall RT distribution
 d.prod.clean %>%
   filter(is.na(age)) %>%
@@ -148,20 +284,20 @@ booted_lengths <- kid_production_data %>%
   summarise(length = mean(length)) %>%
   tidyboot_mean(length)
 
-
-ggplot(booted_lengths, aes(x = age, y = empirical_stat, 
-                           color = competitor_type)) + 
-         facet_wrap(~ target_type) + 
-  geom_pointrange(aes(ymin = ci_lower, 
-                      ymax = ci_upper),
+booted_lengths %>%
+  ggplot(aes(x = age, y = empirical_stat, color = competitor_type)) + 
+  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper),
                   position = position_dodge(.5)) + 
+  facet_wrap(~ target_type) + 
   theme(legend.position = "bottom")
 ```
 
 ```{r eval = FALSE}
-ggplot(d.prod.clean%>%filter(age_group=="adult"), aes(x = target_type, y = log(rt), color = competitor_type)) +
-  geom_boxplot() +
-  theme(legend.position = 'top')
+d.prod.clean %>%
+  filter(age_group=="adult")
+  ggplot(aes(x = target_type, y = log(rt), color = competitor_type)) +
+    geom_boxplot() +
+    theme(legend.position = 'top')
 ```
 
 ```{r, eval = FALSE}
@@ -174,9 +310,11 @@ rt_model <- d.prod.clean %>%
 
 We examined log response times in adults' productions. Children's response times were not analyzed because they responded verbally, and an experimenter entered their responses for them. As such, we do not have accurate measurements of children's actual response times. In the following analysis, we predict response times from target and competitor types and their interactions.
 
-Because objects in close contexts are more similar to one another, we expect longer response times on these trials due to more effort in uniquely identifying the referent. In our sample, adults' response times were longer on close context trials than far and isolated context trials [`r rt_model$`]. Due to the novelty of tangram images, we also expect longer response times on novel trials than on familiar trials. Indeed, we find that adults's response times were longer when describing tangram images than familiar images. In our experiment, response times were measured after participants finished typing their responses and advanced to the next trial, so longer response times may reflect greater effort in generating a description, as well as longer descriptions (and thus longer typing time). However, because all participants were instructed to give brief (two-word) descriptions, it is unlikely that description length contributes to all of the variance in response time differences.
+Because objects in close contexts are more similar to one another, we expect longer response times on these trials due to more effort in uniquely identifying the referent. In our sample, adults' response times were longer on close context trials than far and isolated context trials. Due to the novelty of tangram images, we also expect longer response times on novel trials than on familiar trials. Indeed, we find that adults's response times were longer when describing tangram images than familiar images. In our experiment, response times were measured after participants finished typing their responses and advanced to the next trial, so longer response times may reflect greater effort in generating a description, as well as longer descriptions (and thus longer typing time). However, because all participants were instructed to give brief (two-word) descriptions, it is unlikely that description length contributes to all of the variance in response time differences.
 
-### Variability in labels 
+### Attention checks
+
+\textcolor{red}{[rdh: where should we report the checks? in some sense it's a simple sanity check so we could lead with it? but it's also only relevant for the developmental sample, which suggests we should put it at the end here (as a 'validation' move, like 'cool results, but maybe kids just didn't understand to task? to address this concern, we analyze our attention checks more carefully; and oh look, our results are robust to removing kids who did poorly.')]}
 
 ```{r eval = FALSE}
 dodge = position_dodge(0.9)
@@ -245,7 +383,6 @@ d.prod.old %>%
 
 
 ```{r regression-model-comparing-competitor-types, eval = FALSE}
-
 prod.model <- d.prod %>%
   group_by(target_type, competitor_type, utterance, target) %>%
   tally() %>%
@@ -262,44 +399,10 @@ prod.model %>%
   lmer(codeability ~ target_type*competitor_type + (1|target), data =.) %>%
   tidy() %>%
   filter(effect == "fixed")
-
 ```
 
-```{r comparing-distributions, eval = FALSE}
-kl_drop <- function(df, x1, x2) {
-  x1 <- enquo(x1)
-  x2 <- enquo(x2)
-  # 
-  df %>%
-    filter(!!x1 != 0 | !!x2 != 0) %>%
-    summarise(kl = KL.shrink(!!x1, !!x2)) %>%
-    pull(kl)
-}
-
-kls <- d.prod %>%
-  count(target_type, competitor_type, target, clean_utt) %>%
-  complete(nesting(target_type, target), competitor_type, clean_utt, 
-           fill = list(n = 0)) %>%
-  pivot_wider(names_from = competitor_type, values_from = n) %>%
-  group_by(target_type, target) %>%
-  nest() %>%
-  mutate(close_far = map(data, ~kl_drop(.x,close, far)),
-         isolated_far = map(data, ~kl_drop(.x,isolated, far)),
-         isolated_close = map(data, ~kl_drop(.x, close, isolated))) %>%
-  unnest(cols = c(close_far, isolated_far, isolated_close)) %>%
-  select(-data) %>%
-  pivot_longer(cols = c(close_far, isolated_far, isolated_close), 
-               names_to = "comparison", values_to = "kl")
-
-
-ggplot(kls, aes(x = comparison, y = kl)) + 
-  facet_wrap(~ target_type) + 
-  geom_boxplot()
-
-```
 
 ```{r scatterplots, eval = FALSE}
-
 #Look at codeability, etc., as a function of our norming data 
 norming_overlap <- read_csv(here("data/norming/jsPsychStims.csv")) %>%
   select(target, overlap_diff) %>%
@@ -309,240 +412,6 @@ norming_overlap <- read_csv(here("data/norming/jsPsychStims.csv")) %>%
 ggplot(norming_overlap, aes(x = overlap_diff, y = kl)) +
   geom_point() +
   facet_wrap(~comparison)
-
-```
-
-### Measuring similarity within participant
-
-* within-participant version: For a particular participant, measure whether they use the same word across competition_type conditions for same targets. 
-
-```{r, eval = FALSE}
-normalized_lv <- function(s1, s2) {
-  lv_dist = stringdist::stringdist(s1, s2, method = 'lv')
-  s1_len <- str_length(s1)
-  s2_len <- str_length(s2)
-  maxlength = pmax(s1_len, s2_len)
-  return(lv_dist / maxlength)
-}
-
-indiv_measures <- d.prod %>%
-  pivot_longer(cols = c(utterance, clean_utt), 
-               names_to = "type", values_to = "utterance") %>%
-  select(wID, target, target_type, competitor_type, type, utterance) %>%
-  group_by(wID, target_type, target, type) %>%
-  spread(competitor_type, utterance) %>%
-  filter(!is.na(close), !is.na(far), !is.na(isolated)) %>%
-  mutate(close_far.distance = normalized_lv(close, far),
-         close_isolated.distance = normalized_lv(close, isolated),
-         far_isolated.distance = normalized_lv(far, isolated),
-         close_far.match = close == far,
-         close_isolated.match = close == isolated,
-         far_isolated.match = far == isolated) %>%
-  gather(pair, distance, close_far.distance:far_isolated.match) %>%
-  group_by(target_type, pair, type) %>%
-  tidyboot_mean(distance) %>%
-  separate(pair, sep = '\\.', into = c('pair', 'measure')) %>%
-  arrange(measure)
-```
-
-
-
-Find most similar sets by JS/KL divergence
-
-```{r get-pair-kl, eval = FALSE}
-get_pair_data <- function(df, tangram1, tangram2) {
-  df %>%
-    filter(target == tangram1) %>%
-    select(lemmatized_utt, n) %>%
-    rename(target_n = n) %>%
-    left_join(df %>%
-                filter(target == tangram2) %>%
-                select(lemmatized_utt, n),
-              by = "lemmatized_utt") %>%
-    rename(comparison_n = n)
-}
-
-# TODO: take all pairwise comparisons
-completed_data <- d %>%
-  count(target, lemmatized_utt) %>%
-  complete(target, lemmatized_utt, 
-           fill = list(n = 0)) 
-
-pairs <- d %>% 
-  distinct(target) %>%
-  pull() %>%
-  combn(2) %>%
-  t() %>%
-  as_tibble(.name_repair = "unique") %>%
-  rename(tangram1 = `...1`, tangram2 = `...2`) %>%
-  mutate(target_id = tangram1,
-         comparison_id = tangram2) %>%
-  group_by(target_id, comparison_id) %>%
-  nest() 
-```
-
-### Try a simpler, non-KL measure of overlap
-
-```{r overlap-helpers, eval = FALSE}
-check_overlap <- function(df, x1, x2) {
-  x1 <- enquo(x1)
-  x2 <- enquo(x2)
-  df %>%
-    filter(!!x1 > 0) %>%
-    mutate(prop = !!x1 / sum(!!x1)) %>%
-    filter(!!x2 > 0) %>%
-    summarise(overlap = sum(prop))
-}
-  
-flip_target_competitior <- function(df, x1, x2) {
-  x1 <- enquo(x1)
-  x2 <- enquo(x2)
-  
-  df %>%
-    mutate(tmp = !!x1, 
-           !!x1 := !!x2, 
-          !!x2 := tmp) %>%
-    select(-tmp)
-}
-```
-
-```{r simulate-overlap, eval = FALSE}
-get_average_overlap <- function(input_data) {
-  flipped_pairs <- pairs %>%
-    #flip_target_competitior(.,target_id, comparison_id) %>%
-    mutate(data = map(data, ~flip_target_competitior(.x, tangram1, tangram2)))
-  
-  symmetric_overlap <- pairs %>%
-    bind_rows(flipped_pairs) %>%
-    ungroup() %>%
-    # slice_head(n = 1) %>%
-    mutate(overlap = map(data, ~ {
-      get_pair_data(input_data, .x$tangram1, .x$tangram2) %>%
-      check_overlap(., target_n, comparison_n)
-    })) %>%
-    select(-data) %>%
-    unnest(cols = overlap)
-  
-  symmetric_overlap %>%
-    group_by(target_id, comparison_id) %>%
-    summarise(overlap = mean(overlap), n= n())
-}
-
-ps <- d %>%
-  distinct(wID)
-
-first_half <- d %>%
-  filter(wID %in% (slice(ps, 1:(n()/2)) %>% pull(wID))) %>%
-  count(target, lemmatized_utt) %>%
-  complete(target, lemmatized_utt, 
-           fill = list(n = 0)) %>%
-  get_average_overlap()
-
-second_half <- d %>%
-  filter(wID %in% (slice(ps, ((n()/2)+1):(n())) %>% pull(wID))) %>%
-  count(target, lemmatized_utt) %>%
-  complete(target, lemmatized_utt, 
-           fill = list(n = 0)) %>%
-  get_average_overlap()
-
-# correlation b/w split data
-first_half %>%
-  rename(first_half = overlap) %>%
-  left_join(second_half, by = c("target_id", "comparison_id", "n")) %>%
-  summarise(cor = cor(first_half, overlap, method = "spearman")) %>%
-  summarise(cor = mean(cor, na.rm = T))
-
-overall <- d %>%
-  #filter(!(target %in% c("R1.jpg", "O1.jpg"))) %>%
-  #mutate(target = as.factor(target)) %>%
-  count(target, lemmatized_utt) %>%
-  complete(target, lemmatized_utt, 
-           fill = list(n = 0)) %>%
-  get_average_overlap()
-```
-
-look at all pairwise comparisons...
-
-```{r plot-overlap, eval = FALSE} 
-ggplot(symmetric_overlap, aes(x = target_id, y = comparison_id, fill = log1p(overlap))) + 
-  geom_tile() +
-  theme(legend.position = 'right')
-```
-
-```{r pilot-items, eval = FALSE}
-pilot_items <- d.prod.clean %>% 
-  filter(target_type == "tangram", competitor_type != "isolated") %>%
-  distinct(target, foil, competitor_type) %>%
-  rename(target_id = target, comparison_id = foil) %>%
-  left_join(symmetric_overlap, by = c("target_id", "comparison_id"))
-
-pilot_items %>%
-  group_by(competitor_type) %>%
-  tidyboot_mean(overlap)
-```
-
-```{r, eval = FALSE}
-pilot_items %>%
-  ggplot(aes(x = competitor_type, y = overlap)) +
-    geom_jitter(width = .1, height = .1) +
-    geom_boxplot(alpha = .5)
-```
-
-```{r, eval = FALSE}
-pairs %>%
-  arrange(kl) 
-```
-
-highest and lowest overlap pairs
-```{r overall overlap, eval = FALSE}
-
-dissimilar <- overall %>%
-  filter(!(target_id %in% c("R1.jpg", "O1.jpg"))) %>%
-  filter(!(comparison_id %in% c("R1.jpg", "O1.jpg"))) %>%
-  arrange(overlap) %>%
-  filter(overlap < median(overlap)) %>%
-  filter(!duplicated(target_id)) %>%
-  mutate(dissimilar = comparison_id,
-         dvalue = overlap) %>%
-  select(-c(comparison_id, overlap, n))
-
-similar <- overall %>%
-  filter(!(target_id %in% c("R1.jpg", "O1.jpg"))) %>%
-  filter(!(comparison_id %in% c("R1.jpg", "O1.jpg"))) %>%
-  filter(overlap > median(overlap)) %>%
-  arrange(desc(overlap)) %>%
-  filter(!duplicated(target_id)) %>%
-  mutate(similar = comparison_id,
-         svalue = overlap) %>%
-  select(-c(comparison_id, overlap, n))
-
-#TODO: Tangrams that have high and low similarity matches
-
-matches <- left_join(dissimilar, similar, by = "target_id") %>%
-  arrange(dvalue, desc(svalue)) %>%
-  write.csv(here("data/norming/high_low_matches.csv"))
-  
-#matches <- overall %>%
-#  filter(!(target_id %in% c("R1.jpg", "O1.jpg"))) %>%
-#  filter(!(comparison_id %in% c("R1.jpg", "O1.jpg"))) %>%
-#  filter(target_id %in% c(dissimilar$target_id, dissimilar$comparison_id) |
-#        comparison_id %in% c(dissimilar$target_id, dissimilar$comparison_id)) %>%
-#  arrange(desc(overlap))
-
-# function to find targets with high and low similarity matches
-
-#df = NULL
-
-#match_pairs <- function(data, comparison){
-#  for (i in 1:data.length) {
-#    ifelse (data$target_id %in% c(comparison$target_id, comparison$comparison_id) |
-#        comparison_id %in% c(comparison$target_id, comparison$comparison_id), 
-#        bind_rows(data[i,], df), return)
-#  }
-#}
-
-
-
 ```
 
 ### Comprehension check trials
