@@ -61,7 +61,9 @@ complete_games.adult <- d.prod.adult %>%
 ```{r e3-read-lemmatized_data}
 d.prod.clean <- read_csv(
   here("data/experiment3/production_data_lemmatized.csv"),
-  show_col_types = FALSE)
+  guess_max = 5000,
+  show_col_types = FALSE)%>%
+  mutate(button_pressed = as.numeric(button_pressed))
 ```
 
 ```{r e3-stim-details}
@@ -351,16 +353,13 @@ Because objects in close contexts are more similar to one another, we expect lon
 
 \textcolor{red}{[rdh: where should we report these checks? in some sense it's a simple sanity check so we could lead with it? but it's also only relevant for the developmental sample, which suggests we should put it at the end here (as a 'validation' move, like 'cool results, but maybe kids just didn't understand to task? to address this concern, we analyze our attention checks more carefully; and oh look, our results are robust to removing kids who did poorly.')]}
 
-To assess that children understand the goal of the task, and to aid in our interpretation of any potentially ambiguous responses that children give in earlier trials, we included a check condition for children. We report children's responses on the three types of check trials here.
-
-For all check trials, children were asked to respond "Yes" or "No" as to whether a provided label uniquely identifies one picture out of two. If children are sensitive to informativity of referential expressions, they should respond "Yes" to Close trials with unambiguous labels (e.g., "red flower" to distinguish between a rose and a lily), "No" to Far trials where the provided labels were unambiguous but incorrect (e.g., "table" to distinguish between a pug and a rabbit), and "No" to Close trials with ambiguous expressions (e.g., "dog" to distinguish between a husky and a dalmatian). 
 
 ### Comprehension check trials
 
 ```{r check-trials, eval = FALSE}
 
-check_trial_data <- kid_production_data %>%
-  filter(trialtype == "check")
+check_trial_data <- d.prod.clean %>%
+  filter(competitor_type == "check")
 
 ground_truth_responses <- check_trial_data %>%
   distinct(utterance) %>%
@@ -418,3 +417,8 @@ subj_check_trial_data %>%
   tidyboot_mean(correct)
 ```
 
+To assess that children understand the goal of the task, and to aid in our interpretation of any potentially ambiguous responses that children give in earlier trials, we included a check condition for children. We report children's responses on the three types of check trials here.
+
+For all check trials, children were asked to respond "Yes" or "No" as to whether a provided label uniquely identifies one picture out of two. If children are sensitive to informativity of referential expressions, they should respond "Yes" to Close trials with unambiguous labels (e.g., "red flower" to distinguish between a rose and a lily), "No" to Far trials where the provided labels were unambiguous but incorrect (e.g., "table" to distinguish between a pug and a rabbit), and "No" to Close trials with ambiguous expressions (e.g., "dog" to distinguish between a husky and a dalmatian).
+
+We found that children responded as expected to the unambiguous trials. That is, they responded "No" to the incorrect trial ($m=$ `r type_check_trial_data %>% filter(check_type = "wrong") %>% tidyboot_mean(correct)`), and "Yes" to the unambiguous trial ($m=$ `r type_check_trial_data %>% filter(check_type = "unambiguous") %>% tidyboot_mean(correct)`). These findings suggest that children, regardless of age, understood that that goal of the task was to describe a target picture (and not, for instance, to simply say anything).
