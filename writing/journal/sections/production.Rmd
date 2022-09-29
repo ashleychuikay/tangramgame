@@ -138,7 +138,7 @@ indiv.measures <- d.prod.clean %>%
   tally() %>%
   group_by(age_group, id, target) %>%
   pivot_wider(names_from = competitor_type, values_from = c('clean_utt')) %>%
-  unnest() %>%
+  unnest(cols = c(close, far, isolated)) %>%
   filter(!is.na(close), !is.na(far)) %>%
   mutate(close_far.distance = helpers$normalized_lv(close, far),
          close_isolated.distance = helpers$normalized_lv(close, isolated),
@@ -152,12 +152,13 @@ contextsensitivity.means <- indiv.measures %>%
   tidyboot_mean(far_close_overlap, na.rm = T) 
 
 dodge = position_dodge(0.9)
+
 contextsensitivity.means %>%
   ggplot(aes(x = age_group, y = empirical_stat, fill = target_type)) +
     geom_bar(stat = 'identity', position = dodge) +
     geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0, position = dodge) +
     labs(y = '% overlap (exact matches)', x = '') +
-    theme(aspect.ratio = 1)
+    theme(aspect.ratio = 1, legend.position = "right")
 ```
 
 ```{r contextsensitivitylmer}
@@ -422,3 +423,41 @@ To assess that children understand the goal of the task, and to aid in our inter
 For all check trials, children were asked to respond "Yes" or "No" as to whether a provided label uniquely identifies one picture out of two. If children are sensitive to informativity of referential expressions, they should respond "Yes" to Close trials with unambiguous labels (e.g., "red flower" to distinguish between a rose and a lily), "No" to Far trials where the provided labels were unambiguous but incorrect (e.g., "table" to distinguish between a pug and a rabbit), and "No" to Close trials with ambiguous expressions (e.g., "dog" to distinguish between a husky and a dalmatian).
 
 We found that children responded as expected to the unambiguous trials. That is, they responded "No" to the incorrect trial ($m=$ `r type_check_trial_data %>% filter(check_type = "wrong") %>% tidyboot_mean(correct)`), and "Yes" to the unambiguous trial ($m=$ `r type_check_trial_data %>% filter(check_type = "unambiguous") %>% tidyboot_mean(correct)`). These findings suggest that children, regardless of age, understood that that goal of the task was to describe a target picture (and not, for instance, to simply say anything).
+
+###Responses by manipulation check performance
+```{r}
+kid_data <- indiv.measures %>%
+  filter(age_group=="kid") 
+
+#predicting context sensitivity by manipulation check performance
+
+kid_model_data <- kid_data %>%
+  group_by(id, target_type) %>%
+  tidyboot_mean(close_far.distance) %>%
+  left_join(subj_check_trial_data, by = "id")
+
+kid_model <- kid_model_data %>%
+  lm(empirical_stat ~ target_type*correct, data = .) %>%
+  tidy() 
+
+ggplot(kid_model_data, aes(x = correct, y = empirical_stat)) +
+         geom_jitter() +
+         geom_smooth(method = "lm") +
+         facet_wrap(~target_type)
+
+#predicting context sensitivity by age
+
+kid_age_data <- kid_data %>%
+  left_join(subj_check_trial_data, by = "id") %>%
+  group_by(age, target_type) %>%
+  tidyboot_mean(close_far.distance)
+
+kid_age_model <- kid_age_data %>%
+  lm(empirical_stat ~ age*target_type, data = .) %>%
+  tidy()
+
+ggplot(kid_age_data, aes(x = age, y = empirical_stat)) +
+  geom_jitter() +
+  geom_smooth(method = "lm") +
+  facet_wrap(~target_type)
+```
