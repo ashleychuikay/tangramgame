@@ -64,6 +64,9 @@ d.prod.clean <- read_csv(
   guess_max = 5000,
   show_col_types = FALSE)%>%
   mutate(button_pressed = as.numeric(button_pressed))
+
+# manually cleaned data
+
 ```
 
 ```{r e3-stim-details}
@@ -147,6 +150,8 @@ indiv.measures <- d.prod.clean %>%
          far_isolated_overlap = far == isolated,
          close_isolated_overlap = close == isolated) 
 
+#measure context sensitivity by exact matches across conditions
+
 contextsensitivity.means <- indiv.measures %>%
   group_by(age_group, target_type) %>%
   tidyboot_mean(far_close_overlap, na.rm = T) 
@@ -158,6 +163,19 @@ contextsensitivity.means %>%
     geom_bar(stat = 'identity', position = dodge) +
     geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0, position = dodge) +
     labs(y = '% overlap (exact matches)', x = '') +
+    theme(aspect.ratio = 1, legend.position = "right")
+
+#measure context sensitivity using LV distance
+
+contextsensitivity.distance <- indiv.measures %>%
+  group_by(age_group, target_type) %>%
+  tidyboot_mean(close_far.distance, na.rm = T)
+
+contextsensitivity.distance %>%
+  ggplot(aes(x = age_group, y = empirical_stat, fill = target_type)) +
+    geom_bar(stat = 'identity', position = dodge) +
+    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0, position = dodge) +
+    labs(y = 'Levenshtein distance between close and far conditions', x = '') +
     theme(aspect.ratio = 1, legend.position = "right")
 ```
 
@@ -179,6 +197,7 @@ indiv.measures.softmeasure <- indiv.measures %>%
 
 indiv.measures.inter <- indiv.measures.lmer %>% filter(term == 'age_groupkid:target_typetangram')
 soft.inter <- indiv.measures.softmeasure %>% filter(term == 'age_groupkid:target_typetangram')
+
 ```
 
 To test our first hypothesis, we examine extent to which the same participant produces different utterances across the *far* vs. *close* contexts.
@@ -303,15 +322,33 @@ We considered several measures of codability/overlap:
 ```{r e2-rts, eval=FALSE}
 # overall RT distribution
 d.prod.clean %>%
+  filter(competitor_type != "check") %>%
   mutate(logged_rt = log(rt)) %>%
   filter(rt < 30000) %>%
   gather(measure, value, logged_rt, rt) %>%
   ggplot(aes(x = value)) +
     geom_histogram() +
     facet_wrap(age_group ~ measure, scales='free')
+
+# RT by target type
+d.prod.clean %>%
+  filter(competitor_type != "check") %>%
+  mutate(logged_rt = log(rt)) %>%
+  ggplot(aes(x = logged_rt, fill = target_type)) +
+    geom_density(alpha = .5) +
+    facet_wrap(~age_group) +
+    theme(legend.position = "right")
+
+# model of logged RTs
+rt_model <- d.prod.clean %>%
+  filter(competitor_type != "check") %>%
+  mutate(logged_rt = log(rt)) %>%
+  lmer(logged_rt ~ age_group*target_type + (1|id) + (1|target), data = .) %>%
+  tidy() %>%
+  filter(effect == "fixed")
 ```
   
-```{r compare-lenghts, eval = FALSE}
+```{r compare-lengths, eval = FALSE}
 booted_lengths <- d.prod.clean %>%
   group_by(age_group, target_type, competitor_type, id) %>%
   summarise(length = mean(utt_length)) %>%
@@ -364,7 +401,7 @@ check_trial_data <- d.prod.clean %>%
 
 ground_truth_responses <- check_trial_data %>%
   distinct(utterance) %>%
-  mutate(unambiguous = utterance %in% c("polar bear", "red flower", "M&Ms"),
+  mutate(unambiguous = utterance %in% c("polar bear", "red flower", "m&ms"),
          wrong = utterance %in% c("cup", "table", "bear"),
          ambiguous = utterance %in% c("dog", "bird", "shirt"))
 
@@ -429,7 +466,7 @@ We found that children responded as expected to the unambiguous trials. That is,
 kid_data <- indiv.measures %>%
   filter(age_group=="kid") 
 
-#predicting context sensitivity by manipulation check performance
+#predicting context sensitivity by overall manipulation check performance
 
 kid_model_data <- kid_data %>%
   group_by(id, target_type) %>%
@@ -442,6 +479,25 @@ kid_model <- kid_model_data %>%
 
 ggplot(kid_model_data, aes(x = correct, y = empirical_stat)) +
          geom_jitter() +
+         geom_smooth(method = "lm") +
+         facet_wrap(~target_type)
+
+#only ambiguous manipulation check trials
+
+ambiguous_check_data <- type_check_trial_data %>%
+  filter(check_type == "ambiguous")
+
+kid_ambiguous_model_data <- kid_data %>%
+  group_by(id, target_type) %>%
+  tidyboot_mean(close_far.distance) %>%
+  left_join(ambiguous_check_data, by = "id")
+
+kid_ambiguous_model <- kid_ambiguous_model_data %>%
+  lm(empirical_stat ~ target_type*correct, data = .) %>%
+  tidy()
+
+ggplot(kid_ambiguous_model_data, aes(x = correct, y = empirical_stat)) +
+         geom_point() +
          geom_smooth(method = "lm") +
          facet_wrap(~target_type)
 
