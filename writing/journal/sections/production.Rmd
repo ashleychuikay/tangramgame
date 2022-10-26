@@ -67,6 +67,12 @@ d.prod.clean <- read_csv(
 
 # manually cleaned data
 
+d.prod.clean.manual <- read_csv(
+  here("data/experiment3/production_data_lemmatized_cleaned.csv"),
+  guess_max = 5000,
+  show_col_types = FALSE)%>%
+  mutate(button_pressed = as.numeric(button_pressed))
+
 ```
 
 ```{r e3-stim-details}
@@ -150,11 +156,30 @@ indiv.measures <- d.prod.clean %>%
          far_isolated_overlap = far == isolated,
          close_isolated_overlap = close == isolated) 
 
+indiv.measures.clean <- d.prod.clean.manual %>%
+  filter(competitor_type != 'check') %>%
+  group_by(age_group, id, target_type, competitor_type, target, clean_utt) %>%
+  tally() %>%
+  group_by(age_group, id, target) %>%
+  pivot_wider(names_from = competitor_type, values_from = c('clean_utt')) %>%
+  unnest(cols = c(close, far, isolated)) %>%
+  filter(!is.na(close), !is.na(far)) %>%
+  mutate(close_far.distance = helpers$normalized_lv(close, far),
+         close_isolated.distance = helpers$normalized_lv(close, isolated),
+         far_isolated.distance = helpers$normalized_lv(far, isolated),
+         far_close_overlap = far == close,
+         far_isolated_overlap = far == isolated,
+         close_isolated_overlap = close == isolated) 
+
 #measure context sensitivity by exact matches across conditions
 
 contextsensitivity.means <- indiv.measures %>%
   group_by(age_group, target_type) %>%
   tidyboot_mean(far_close_overlap, na.rm = T) 
+
+contextsensitivity.means.manual <- indiv.measures.clean %>%
+  group_by(age_group, target_type) %>%
+  tidyboot_mean(far_close_overlap, na.rm = T)
 
 dodge = position_dodge(0.9)
 
@@ -162,7 +187,16 @@ contextsensitivity.means %>%
   ggplot(aes(x = age_group, y = empirical_stat, fill = target_type)) +
     geom_bar(stat = 'identity', position = dodge) +
     geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0, position = dodge) +
-    labs(y = '% overlap (exact matches)', x = '') +
+    labs(title = 'Proportion of exact matches across conditions',
+         y = '% overlap (exact matches)', x = '') +
+    theme(aspect.ratio = 1, legend.position = "right")
+
+contextsensitivity.means.manual %>%
+  ggplot(aes(x = age_group, y = empirical_stat, fill = target_type)) +
+    geom_bar(stat = 'identity', position = dodge) +
+    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0, position = dodge) +
+    labs(title = 'Proportion of exact matches across conditions (cleaned data)',
+         y = '% overlap (exact matches)', x = '') +
     theme(aspect.ratio = 1, legend.position = "right")
 
 #measure context sensitivity using LV distance
@@ -171,11 +205,24 @@ contextsensitivity.distance <- indiv.measures %>%
   group_by(age_group, target_type) %>%
   tidyboot_mean(close_far.distance, na.rm = T)
 
+contextsensitivity.distance.manual <- indiv.measures.clean %>%
+  group_by(age_group, target_type) %>%
+  tidyboot_mean(close_far.distance, na.rm = T)
+
 contextsensitivity.distance %>%
   ggplot(aes(x = age_group, y = empirical_stat, fill = target_type)) +
     geom_bar(stat = 'identity', position = dodge) +
     geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0, position = dodge) +
-    labs(y = 'Levenshtein distance between close and far conditions', x = '') +
+    labs(title = 'Levensthein distance between conditions', 
+         y = 'Levenshtein   distance between close and far conditions', x = '') +
+    theme(aspect.ratio = 1, legend.position = "right")
+
+contextsensitivity.distance.manual %>%
+  ggplot(aes(x = age_group, y = empirical_stat, fill = target_type)) +
+    geom_bar(stat = 'identity', position = dodge) +
+    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0, position = dodge) +
+    labs(title = 'Levensthein distance between conditions (cleaned data)',
+         y = 'Levenshtein distance between close and far conditions', x = '') +
     theme(aspect.ratio = 1, legend.position = "right")
 ```
 
