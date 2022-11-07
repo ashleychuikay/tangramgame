@@ -263,11 +263,12 @@ Similar results were obtained using 'softer' measures like edit distance (the nu
 
 
 ```{r eval = FALSE}
-var.measures <- d.prod %>%
-  group_by(target_type, competitor_type, utterance, target) %>%
+var.measures <- d.prod.clean.manual %>%
+  filter(competitor_type != "check") %>%
+  group_by(age_group, target_type, competitor_type, clean_utt, target) %>%
   tally() %>%
   arrange(target) %>%
-  group_by(target_type, competitor_type, target) %>%
+  group_by(age_group, target_type, competitor_type, target) %>%
   mutate(total_labels = sum(n)) %>%
   summarize(unique_labels = length(n), 
             normalized_unique_labels = mean(unique_labels) / mean(total_labels),
@@ -276,15 +277,26 @@ var.measures <- d.prod %>%
             codeability = max(n) / sum(n)) %>%
   gather(measure, value, unique_labels:codeability)
 
-var.measures %>%
-  group_by(target_type, competitor_type, measure) %>%
-  tidyboot_mean(value) %>%
-  ggplot(aes(x = target_type, y = empirical_stat, fill = competitor_type)) +
+var.plot <- var.measures %>%
+  group_by(age_group, target_type, competitor_type, measure) %>%
+  filter(measure != c("unique_labels", "entropy")) %>%
+  tidyboot_mean(value)
+
+var.plot %>% ggplot(aes(x = target_type, y = empirical_stat, fill = competitor_type)) +
     geom_bar(stat = 'identity', position=dodge) +
-    facet_grid(measure ~. , scales='free') +
+    facet_grid(measure ~ age_group , scales='free') +
     theme(legend.position = "top")
 
-ggsave('variability_measures_clean.pdf', width = 10, height = 10, unit = 'in')
+ggsave('variability_measures.pdf', width = 10, height = 10, unit = 'in')
+
+var.plot %>% ggplot(aes(x = age_group, y = empirical_stat, fill = competitor_type)) +
+    geom_bar(stat = 'identity', position=dodge) +
+    facet_grid(measure ~ target_type , scales='free') +
+    theme(legend.position = "top")
+
+ggsave('variability_measures_age.pdf', width = 10, height = 10, unit = 'in')
+
+## plot faceted by competitor type
 
 ```
 
