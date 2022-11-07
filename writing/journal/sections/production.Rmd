@@ -1,10 +1,19 @@
 # Experiment 3: Production experiment
 
-In Experiment 2, we found that naive children and adults were equally able to comprehend referential expressions from our reference game. We also found that  children's descriptions were slightly less informative (as indexed by slower reaction times and lower accuracy). That is, children's utterances from our reference game were less comprehensible by naive listeners, regardless of listener age. These results suggest that children may have some difficulty with production, though their referential expressions were still sufficiently informative for naive listeners to identify the intended referent. Our results introduce nuance to previous research showing that children are poor producers (and identifiers) of informative descriptions [e.g., @anderson1994]. Children may be poorer producers than adults, but their expressions are nonetheless effective.
-One possible reason for our results is that children, when interacting with their parents, received adequate scaffolding that allowed them to produce informative expressions. That is, parent-child pairs' success in our interactive game could be due, in part, to the supportive context of parent scaffolding.
+In Experiment 2, we found that naive children and adults were able to comprehend referential expressions equally well.
+Contrary to the classical view that young children are rigidly fixating on a single way of conceptualizing the tangram, even young children seem remarkably flexible in their ability to accommodate different descriptions.
+That is, to the extent that children contributed to poorer group performance in Experiment 1, their contribution is not well-explained by the *comprehension hypothesis*.
+At the same time, however, we found some evidence consistent with the *production hypothesis*: messages originally produced by children were somewhat less comprehensible for listeners of any age (as indexed by slower reaction times and lower accuracy).
 
-In Experiment 3, we remove the supportive context to ask whether children, as compared to adults, produce referential expressions that are underinformative. We asked adults and children to give short descriptions of familiar and novel objects. Across trials, we varied the context in which target objects appeared. In "close" contexts, the foil object was highly similar to the target, whereas in "far" contexts the foil was dissimilar. In the contexts, a successful referring experession only needs to be a good description of the target. In contrast, in close contexts, a successful referring expression needs to both describe the target well and not describe the foil. For example, a Pug can successfully be called a "dog" if the foil is a table, but not if it is a German Shepherd.
-This experiment allows us to investigate the reasons behind children's apparent failure to coordinate with peers in referential settings. One possibility is that children struggle to produce uniquely identifying expressions, particularly for novel objects.
+While this source effect is intriguing, it is difficult to disentangle the original messages from the interactive parent-child context in which they were produced. 
+For example, it is possible that children were receiving interactive scaffolding that prompted them toward more comprehensible expressions. 
+Or, conversely, it is possible that children were relying on their parents to take on more of the division of labor of interpretation [@hawkins2021division] and were thus producing expressions that are *less* comprehensible to naive audience than they were actually capable of.
+In Experiment 3, we remove the interactive context to more directly assess children's ability to produce referential expressions for novel tangram objects in different contexts. 
+We used a 2x2 design aiming to tease apart two related explanations for poor production performance.
+First, to assess the extent to which production difficulties stem from *pragmatic reasoning* (i.e. the ability to recognize that an accessible label is not sufficiently informative in context), we manipulate the whether the distractor in context is more or less similar to the target. 
+Second, to assess the extent to which production difficulties stem from impoverished *lexical priors* (i.e. the ability to access candidate labels for a given referent), we manipulate whether the target objects are familiar photographs or novel tangram shapes. 
+To the extent that children fail to produce context-sensitive utterances even for familiar objects with accessible labels, we may expect that pragmatic reasoning is the primary bottleneck on performance.
+To the extent to which these difficulties are limited to novel objects, we may expect that lexical priors play a larger role.
 
 ## Methods
 
@@ -33,7 +42,7 @@ complete_games.adult <- d.prod.adult %>%
 
 ```{r e3-combine-data, eval = FALSE}
 # this block pre-processes the raw, un-anonymized data from kids
-# we keep it here for reproducibility but only release the preprocessed data
+# we keep it here for reproducibility but only release the preprocessed data for privacy
 
 # d.prod.kid <- list.files(here("data/experiment3/kid/"), "*.csv",
 #                           full.names = TRUE) %>%
@@ -59,14 +68,13 @@ complete_games.adult <- d.prod.adult %>%
 ```
 
 ```{r e3-read-lemmatized_data}
-d.prod.clean <- read_csv(
-  here("data/experiment3/production_data_lemmatized.csv"),
-  guess_max = 5000,
-  show_col_types = FALSE)%>%
-  mutate(button_pressed = as.numeric(button_pressed))
+# d.prod.clean <- read_csv(
+#   here("data/experiment3/production_data_lemmatized.csv"),
+#   guess_max = 5000,
+#   show_col_types = FALSE)%>%
+#   mutate(button_pressed = as.numeric(button_pressed))
 
 # manually cleaned data
-
 d.prod.clean.manual <- read_csv(
   here("data/experiment3/production_data_lemmatized_cleaned.csv"),
   guess_max = 5000,
@@ -76,7 +84,7 @@ d.prod.clean.manual <- read_csv(
 ```
 
 ```{r e3-stim-details}
-n_stims <- d.prod.clean %>%
+n_stims <- d.prod.clean.manual %>%
   distinct(target_type, competitor_type, target, foil) 
 
 fam_stims <- n_stims %>%
@@ -95,12 +103,13 @@ novel_stims <- n_stims  %>%
 ### Participants
 
 We recruited `r length(complete_games.adult)` adult participants from Amazon Mechanical Turk. All participants gave informed consent prior to the start of the study and were compensated 60¢. 
-
-We also recruited \textcolor{red}{XX children} to participate in the study. \textcolor{red}{DEMOGRAPHICS XX}. The study was conducted online over Zoom.
+We also recruited \textcolor{red}{XX children} to participate in the study. \textcolor{red}{DEMOGRAPHICS/ages}. The study was conducted online over Zoom.
 
 ### Stimuli and Design
 
-Stimuli for the game were `r length(fam_stims)` pictures of familiar objects and `r length(novel_stims)` pictures of tangram constructions. Familiar objects were drawn from the set used by @degen2020. Tangrams were drawn from a publicly royalty free set available on \textcolor{red}{XX tangrams site}. Target familiar objects belonged to eight different basic-level categories: bears, birds, cars, candy, dogs, fish, shirts, and tables.
+We used `r length(fam_stims)` pictures of familiar objects and `r length(novel_stims)` pictures of tangrams. 
+Familiar objects were drawn from the set used by @degen2020 using eight different basic-level categories that we expected to be familiar to children: bears, birds, cars, candy, dogs, fish, shirts, and tables.
+Tangrams were drawn from a publicly royalty free set available on \textcolor{red}{XX tangrams site}.
 
 ```{r e3-design, out.height = "450px", fig.align = "center", set.cap.width=T, fig.cap = "Objects in Experiment 3 could appear in isolation (A), in a far context (B), or in a close context (C)."}
 knitr::include_graphics(here("writing/journal/diagrams/e3_diagram.pdf"))
@@ -119,7 +128,7 @@ After giving informed consent, adults read a introduction screen informing them 
 
 After parents gave consent and children assented to participate, children were told that they would see pictures and be asked to describe them. Children then completed several warm-up trials to introduce them to the game. On the first trial, they saw a picture of a red apple. On the next trial, they saw a pear with a blue border around it and the same apple and were asked to describe the object in the blue box. Then, the experimenter indicated that they would close their eyes on the next trial so that they wouldn't see what children saw. On this trial, children saw a white mug with a blue border around it and a white plate. While the experimenter's eyes were closed, the child was encouraged to describe the object in the blue box so that the experimenter could identify it. Once children provided a description, the blue border disappeared, and the experimenter opened their eyes. The experimenter then identified the object based on children's descriptions, and revealed the blue box again to verify whether they selected the correct target. 
 
-The same procedure was repeated for three more trials with the following image pairs: A red purple ball and a plant; A white rose and a red rose; A round wooden table and a rectangular wooden table. The latter two trials contained object pairs where both objects shared a basic level category label (i.e., "flower" and "table"). These two trials served to indicate to children that referential ambiguity is possible. If children did not uniquely identify the target, the experimenter would indicate that the child's expression was ambiguous, and the experimenter would not select the correct target. While these trials provided feedback about ambiguity to the children, the experimenter did not suggest alternate descriptions or examples of unambiguous expressions. After these warm-up trials, children were told that they would continue to play this labeling game and that their responses would be told to another person who could see the objects but not which one was in the blue border. In contrast to adults, children always began with a block of familiar objects in either the close or far condition. They always completed the manipulation check block last.
+The same procedure was repeated for three more trials with the following image pairs: a red purple ball and a plant; a white rose and a red rose; a round wooden table and a rectangular wooden table. The latter two trials contained object pairs where both objects shared a basic level category label (i.e., "flower" and "table"). These two trials served to subtly indicate to children that referential ambiguity is possible. If children did not uniquely identify the target (e.g. just saying "flower"), the experimenter would indicate that the child's expression was ambiguous, and the experimenter would not select the correct target. While these trials provided feedback about ambiguity to the children, the experimenter did not suggest alternate descriptions or examples of unambiguous expressions. After these warm-up trials, children were told that they would continue to play the labeling game and that their responses would be shown to another person who did not know which one was in the blue border. In contrast to adults, children always began with a block of familiar objects in either the close or far condition. They always completed the manipulation check block last.
 
 ### Preprocessing 
 
@@ -130,7 +139,78 @@ Third, we removed spaces and collapsed multiple words together into a single tok
 
 ## Results
 
-We evaluate two core hypotheses.
+
+### Response times reflect familiarity and context
+
+```{r e2-rts, eval=FALSE}
+# overall RT distribution
+d.prod.clean.manual %>%
+  filter(competitor_type != "check") %>%
+  mutate(logged_rt = log(rt)) %>%
+  filter(rt < 30000) %>%
+  gather(measure, value, logged_rt, rt) %>%
+  ggplot(aes(x = value)) +
+    geom_histogram() +
+    facet_wrap(age_group ~ measure, scales='free')
+
+# RT by target type
+d.prod.clean.manual %>%
+  filter(competitor_type != "check") %>%
+  mutate(logged_rt = log(rt)) %>%
+  ggplot(aes(x = logged_rt, fill = target_type)) +
+    geom_density(alpha = .5) +
+    facet_wrap(~age_group) +
+    theme(legend.position = "right")
+
+# model of logged RTs
+rt_model <- d.prod.clean.manual %>%
+  filter(competitor_type != "check") %>%
+  mutate(logged_rt = log(rt)) %>%
+  lmer(logged_rt ~ age_group*target_type + (1|id) + (1|target), data = .) %>%
+  tidy() %>%
+  filter(effect == "fixed")
+```
+  
+```{r compare-lengths, eval = FALSE}
+booted_lengths <- d.prod.clean.manual %>%
+  group_by(age_group, target_type, competitor_type, id) %>%
+  summarise(length = mean(utt_length)) %>%
+  group_by(age_group, competitor_type, target_type) %>%
+  tidyboot_mean(length)
+
+booted_lengths %>%
+  filter(competitor_type != 'check') %>%
+  ggplot(aes(x = target_type, y = empirical_stat, color = competitor_type)) + 
+  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper),
+                  position = position_dodge(.5)) + 
+  facet_wrap(~ age_group) + 
+  labs(y = 'utterance length (# characters)', x='') +
+  theme(legend.position = "top")
+```
+
+```{r eval = FALSE}
+d.prod.clean.manual %>%
+  filter(competitor_type != 'check') %>%
+  ggplot(aes(x = target_type, y = log(rt), color = competitor_type)) +
+    geom_boxplot() +
+    facet_wrap(~ age_group) +
+    theme(legend.position = 'top')
+```
+
+```{r}
+rt_model <- d.prod.clean.manual %>% 
+  filter(age_group=="adult") %>%
+  lm(log(rt) ~ target_type * competitor_type, 
+     data = .) %>%
+  tidy()
+```
+
+\textcolor{red}{[rdh: do we want to mention the utterance length effect? kids produced much longer utterances for tangrams, which seems like an effect of its own]}
+We examined log response times in adults' productions. Children's response times were not analyzed because they responded verbally, and an experimenter entered their responses for them. As such, we do not have accurate measurements of children's actual response times. In the following analysis, we predict response times from target and competitor types and their interactions.
+
+Because objects in close contexts are more similar to one another, we expect longer response times on these trials due to more effort in uniquely identifying the referent. In our sample, adults' response times were longer on close context trials than far and isolated context trials [`r rt_model$estimate[1]`]. Due to the novelty of tangram images, we also expect longer response times on novel trials than on familiar trials. Indeed, we find that adults's response times were longer when describing tangram images than familiar images. In our experiment, response times were recorded between the onset of the trial and the point at which participants finished typing their responses, so longer response times may reflect greater effort in generating a description, as well as longer descriptions (and thus longer typing time). However, because all participants were instructed to give brief (two-word) descriptions, it is unlikely that description length contributes to all of the variance in response time differences.
+
+Next, we move to our two core hypotheses.
 First, could children be failing to take into account the referential context when deciding what to say, leading to more ambiguous or underinformative referring expressions?
 Second, could children simply have weaker expectations over possible acceptable labels for novel objects, making retrieval challenging?
 These mechanisms are not mutually exclusive --- and, indeed are the two fundamental components of recent production models [e.g. @murthy2021shades, @hawkins2022partners]. 
@@ -141,7 +221,7 @@ These mechanisms are not mutually exclusive --- and, indeed are the two fundamen
 
 # we can just look at the item-by-item / speaker-by-speaker level 
 # where there's a context effect...
-indiv.measures <- d.prod.clean %>%
+indiv.measures <- d.prod.clean.manual %>%
   filter(competitor_type != 'check') %>%
   group_by(age_group, id, target_type, competitor_type, target, clean_utt) %>%
   tally() %>%
@@ -261,7 +341,6 @@ Similar results were obtained using 'softer' measures like edit distance (the nu
 
 ### Familiar objects elicit less variable names
 
-
 ```{r eval = FALSE}
 var.measures <- d.prod %>%
   group_by(target_type, competitor_type, utterance, target) %>%
@@ -364,76 +443,6 @@ We considered several measures of codability/overlap:
 * entropy (we all know and love)
 * codeability (what proportion of people provided the most common label, if there were 40 labels and 20 were 'bird', this would be 50%)
 
-### Response times reflect familiarity and context
-
-```{r e2-rts, eval=FALSE}
-# overall RT distribution
-d.prod.clean %>%
-  filter(competitor_type != "check") %>%
-  mutate(logged_rt = log(rt)) %>%
-  filter(rt < 30000) %>%
-  gather(measure, value, logged_rt, rt) %>%
-  ggplot(aes(x = value)) +
-    geom_histogram() +
-    facet_wrap(age_group ~ measure, scales='free')
-
-# RT by target type
-d.prod.clean %>%
-  filter(competitor_type != "check") %>%
-  mutate(logged_rt = log(rt)) %>%
-  ggplot(aes(x = logged_rt, fill = target_type)) +
-    geom_density(alpha = .5) +
-    facet_wrap(~age_group) +
-    theme(legend.position = "right")
-
-# model of logged RTs
-rt_model <- d.prod.clean %>%
-  filter(competitor_type != "check") %>%
-  mutate(logged_rt = log(rt)) %>%
-  lmer(logged_rt ~ age_group*target_type + (1|id) + (1|target), data = .) %>%
-  tidy() %>%
-  filter(effect == "fixed")
-```
-  
-```{r compare-lengths, eval = FALSE}
-booted_lengths <- d.prod.clean %>%
-  group_by(age_group, target_type, competitor_type, id) %>%
-  summarise(length = mean(utt_length)) %>%
-  group_by(age_group, competitor_type, target_type) %>%
-  tidyboot_mean(length)
-
-booted_lengths %>%
-  filter(competitor_type != 'check') %>%
-  ggplot(aes(x = target_type, y = empirical_stat, color = competitor_type)) + 
-  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper),
-                  position = position_dodge(.5)) + 
-  facet_wrap(~ age_group) + 
-  labs(y = 'utterance length (# characters)', x='') +
-  theme(legend.position = "top")
-```
-
-```{r eval = FALSE}
-d.prod.clean %>%
-  filter(competitor_type != 'check') %>%
-  ggplot(aes(x = target_type, y = log(rt), color = competitor_type)) +
-    geom_boxplot() +
-    facet_wrap(~ age_group) +
-    theme(legend.position = 'top')
-```
-
-```{r}
-rt_model <- d.prod.clean %>% 
-  filter(age_group=="adult") %>%
-  lm(log(rt) ~ target_type * competitor_type, 
-     data = .) %>%
-  tidy()
-```
-
-\textcolor{red}{[rdh: do we want to mention the utterance length effect? kids produced much longer utterances for tangrams, which seems like an effect of its own]}
-We examined log response times in adults' productions. Children's response times were not analyzed because they responded verbally, and an experimenter entered their responses for them. As such, we do not have accurate measurements of children's actual response times. In the following analysis, we predict response times from target and competitor types and their interactions.
-
-Because objects in close contexts are more similar to one another, we expect longer response times on these trials due to more effort in uniquely identifying the referent. In our sample, adults' response times were longer on close context trials than far and isolated context trials [`r rt_model$estimate[1]`]. Due to the novelty of tangram images, we also expect longer response times on novel trials than on familiar trials. Indeed, we find that adults's response times were longer when describing tangram images than familiar images. In our experiment, response times were recorded between the onset of the trial and the point at which participants finished typing their responses, so longer response times may reflect greater effort in generating a description, as well as longer descriptions (and thus longer typing time). However, because all participants were instructed to give brief (two-word) descriptions, it is unlikely that description length contributes to all of the variance in response time differences.
-
 ### Attention checks
 
 \textcolor{red}{[rdh: where should we report these checks? in some sense it's a simple sanity check so we could lead with it? but it's also only relevant for the developmental sample, which suggests we should put it at the end here (as a 'validation' move, like 'cool results, but maybe kids just didn't understand to task? to address this concern, we analyze our attention checks more carefully; and oh look, our results are robust to removing kids who did poorly.')]}
@@ -443,7 +452,7 @@ Because objects in close contexts are more similar to one another, we expect lon
 
 ```{r check-trials, eval = FALSE}
 
-check_trial_data <- d.prod.clean %>%
+check_trial_data <- d.prod.clean.manual %>%
   filter(competitor_type == "check")
 
 ground_truth_responses <- check_trial_data %>%
@@ -509,12 +518,12 @@ For all check trials, children were asked to respond "Yes" or "No" as to whether
 We found that children responded as expected to the unambiguous trials. That is, they responded "No" to the incorrect trial ($m=$ `r type_check_trial_data %>% filter(check_type = "wrong") %>% tidyboot_mean(correct)`), and "Yes" to the unambiguous trial ($m=$ `r type_check_trial_data %>% filter(check_type = "unambiguous") %>% tidyboot_mean(correct)`). These findings suggest that children, regardless of age, understood that that goal of the task was to describe a target picture (and not, for instance, to simply say anything).
 
 ###Responses by manipulation check performance
+
 ```{r}
 kid_data <- indiv.measures %>%
   filter(age_group=="kid") 
 
 #predicting context sensitivity by overall manipulation check performance
-
 kid_model_data <- kid_data %>%
   group_by(id, target_type) %>%
   tidyboot_mean(close_far.distance) %>%
