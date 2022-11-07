@@ -139,83 +139,13 @@ Third, we removed spaces and collapsed multiple words together into a single tok
 
 ## Results
 
-
-### Response times reflect familiarity and context
-
-```{r e2-rts, eval=FALSE}
-# overall RT distribution
-d.prod.clean.manual %>%
-  filter(competitor_type != "check") %>%
-  mutate(logged_rt = log(rt)) %>%
-  filter(rt < 30000) %>%
-  gather(measure, value, logged_rt, rt) %>%
-  ggplot(aes(x = value)) +
-    geom_histogram() +
-    facet_wrap(age_group ~ measure, scales='free')
-
-# RT by target type
-d.prod.clean.manual %>%
-  filter(competitor_type != "check") %>%
-  mutate(logged_rt = log(rt)) %>%
-  ggplot(aes(x = logged_rt, fill = target_type)) +
-    geom_density(alpha = .5) +
-    facet_wrap(~age_group) +
-    theme(legend.position = "right")
-
-# model of logged RTs
-rt_model <- d.prod.clean.manual %>%
-  filter(competitor_type != "check") %>%
-  mutate(logged_rt = log(rt)) %>%
-  lmer(logged_rt ~ age_group*target_type + (1|id) + (1|target), data = .) %>%
-  tidy() %>%
-  filter(effect == "fixed")
-```
-  
-```{r compare-lengths, eval = FALSE}
-booted_lengths <- d.prod.clean.manual %>%
-  group_by(age_group, target_type, competitor_type, id) %>%
-  summarise(length = mean(utt_length)) %>%
-  group_by(age_group, competitor_type, target_type) %>%
-  tidyboot_mean(length)
-
-booted_lengths %>%
-  filter(competitor_type != 'check') %>%
-  ggplot(aes(x = target_type, y = empirical_stat, color = competitor_type)) + 
-  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper),
-                  position = position_dodge(.5)) + 
-  facet_wrap(~ age_group) + 
-  labs(y = 'utterance length (# characters)', x='') +
-  theme(legend.position = "top")
-```
-
-```{r eval = FALSE}
-d.prod.clean.manual %>%
-  filter(competitor_type != 'check') %>%
-  ggplot(aes(x = target_type, y = log(rt), color = competitor_type)) +
-    geom_boxplot() +
-    facet_wrap(~ age_group) +
-    theme(legend.position = 'top')
-```
-
-```{r}
-rt_model <- d.prod.clean.manual %>% 
-  filter(age_group=="adult") %>%
-  lm(log(rt) ~ target_type * competitor_type, 
-     data = .) %>%
-  tidy()
-```
-
-\textcolor{red}{[rdh: do we want to mention the utterance length effect? kids produced much longer utterances for tangrams, which seems like an effect of its own]}
-We examined log response times in adults' productions. Children's response times were not analyzed because they responded verbally, and an experimenter entered their responses for them. As such, we do not have accurate measurements of children's actual response times. In the following analysis, we predict response times from target and competitor types and their interactions.
-
-Because objects in close contexts are more similar to one another, we expect longer response times on these trials due to more effort in uniquely identifying the referent. In our sample, adults' response times were longer on close context trials than far and isolated context trials [`r rt_model$estimate[1]`]. Due to the novelty of tangram images, we also expect longer response times on novel trials than on familiar trials. Indeed, we find that adults's response times were longer when describing tangram images than familiar images. In our experiment, response times were recorded between the onset of the trial and the point at which participants finished typing their responses, so longer response times may reflect greater effort in generating a description, as well as longer descriptions (and thus longer typing time). However, because all participants were instructed to give brief (two-word) descriptions, it is unlikely that description length contributes to all of the variance in response time differences.
-
-Next, we move to our two core hypotheses.
+We focus on evaluating two primary hypotheses.
 First, could children be failing to take into account the referential context when deciding what to say, leading to more ambiguous or underinformative referring expressions?
 Second, could children simply have weaker expectations over possible acceptable labels for novel objects, making retrieval challenging?
-These mechanisms are not mutually exclusive --- and, indeed are the two fundamental components of recent production models [e.g. @murthy2021shades, @hawkins2022partners]. 
+These hypotheses are not mutually exclusive.
+Indeed, the corresponding mechanisms -- *pragmatic reasoning* and *lexical priors* -- are both implicated in recent production models [e.g. @murthy2021shades, @hawkins2022partners]. 
 
-### Adult descriptions are more sensitive to referential context
+### Children are differentially sensitive to referential context
 
 ```{r context-sensitivity, out.height = "300px", fig.align = "center", set.cap.width=T, fig.cap = "\\label{fig:e3_contextsensitivity} Results for Exp.~3."}
 
@@ -236,33 +166,12 @@ indiv.measures <- d.prod.clean.manual %>%
          far_isolated_overlap = far == isolated,
          close_isolated_overlap = close == isolated) 
 
-indiv.measures.clean <- d.prod.clean.manual %>%
-  filter(competitor_type != 'check') %>%
-  group_by(age_group, id, target_type, competitor_type, target, clean_utt) %>%
-  tally() %>%
-  group_by(age_group, id, target) %>%
-  pivot_wider(names_from = competitor_type, values_from = c('clean_utt')) %>%
-  unnest(cols = c(close, far, isolated)) %>%
-  filter(!is.na(close), !is.na(far)) %>%
-  mutate(close_far.distance = helpers$normalized_lv(close, far),
-         close_isolated.distance = helpers$normalized_lv(close, isolated),
-         far_isolated.distance = helpers$normalized_lv(far, isolated),
-         far_close_overlap = far == close,
-         far_isolated_overlap = far == isolated,
-         close_isolated_overlap = close == isolated) 
-
 #measure context sensitivity by exact matches across conditions
-
 contextsensitivity.means <- indiv.measures %>%
   group_by(age_group, target_type) %>%
   tidyboot_mean(far_close_overlap, na.rm = T) 
 
-contextsensitivity.means.manual <- indiv.measures.clean %>%
-  group_by(age_group, target_type) %>%
-  tidyboot_mean(far_close_overlap, na.rm = T)
-
 dodge = position_dodge(0.9)
-
 contextsensitivity.means %>%
   ggplot(aes(x = age_group, y = empirical_stat, fill = target_type)) +
     geom_bar(stat = 'identity', position = dodge) +
@@ -270,45 +179,12 @@ contextsensitivity.means %>%
     labs(title = 'Proportion of exact matches across conditions',
          y = '% overlap (exact matches)', x = '') +
     theme(aspect.ratio = 1, legend.position = "right")
-
-contextsensitivity.means.manual %>%
-  ggplot(aes(x = age_group, y = empirical_stat, fill = target_type)) +
-    geom_bar(stat = 'identity', position = dodge) +
-    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0, position = dodge) +
-    labs(title = 'Proportion of exact matches across conditions (cleaned data)',
-         y = '% overlap (exact matches)', x = '') +
-    theme(aspect.ratio = 1, legend.position = "right")
-
-#measure context sensitivity using LV distance
-
-contextsensitivity.distance <- indiv.measures %>%
-  group_by(age_group, target_type) %>%
-  tidyboot_mean(close_far.distance, na.rm = T)
-
-contextsensitivity.distance.manual <- indiv.measures.clean %>%
-  group_by(age_group, target_type) %>%
-  tidyboot_mean(close_far.distance, na.rm = T)
-
-contextsensitivity.distance %>%
-  ggplot(aes(x = age_group, y = empirical_stat, fill = target_type)) +
-    geom_bar(stat = 'identity', position = dodge) +
-    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0, position = dodge) +
-    labs(title = 'Levensthein distance between conditions', 
-         y = 'Levenshtein   distance between close and far conditions', x = '') +
-    theme(aspect.ratio = 1, legend.position = "right")
-
-contextsensitivity.distance.manual %>%
-  ggplot(aes(x = age_group, y = empirical_stat, fill = target_type)) +
-    geom_bar(stat = 'identity', position = dodge) +
-    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0, position = dodge) +
-    labs(title = 'Levensthein distance between conditions (cleaned data)',
-         y = 'Levenshtein distance between close and far conditions', x = '') +
-    theme(aspect.ratio = 1, legend.position = "right")
 ```
 
 ```{r contextsensitivitylmer}
 indiv.measures.lmer <- indiv.measures %>%
-  glmer(far_close_overlap ~ age_group * target_type + (1 | target) + (1 + target_type | id),
+  mutate(utt_length = (str_length(close) + str_length(far)) / 2) %>%
+  glmer(far_close_overlap ~ age_group * target_type + utt_length + (1 | target) + (1 + target_type | id),
         family = 'binomial',
         data = .) %>%
   tidy() %>%
@@ -316,6 +192,7 @@ indiv.measures.lmer <- indiv.measures %>%
   select(-group, -effect)
 
 indiv.measures.softmeasure <- indiv.measures %>%
+  mutate(utt_length = (str_length(close) + str_length(far)) / 2) %>%
   lmer(close_far.distance ~ age_group * target_type + (1 | target) + (1 + target_type | id),
         data = .) %>%
   tidy() %>%
@@ -329,15 +206,16 @@ soft.inter <- indiv.measures.softmeasure %>% filter(term == 'age_groupkid:target
 
 To test our first hypothesis, we examine extent to which the same participant produces different utterances across the *far* vs. *close* contexts.
 We begin by considering a simple 'exact match' criterion, coding an item as 1 if the participant used the same label for that item in both contexts and 0 if they used different labels. 
-This criterion is relatively conservative in the sense that it will miss a number of near- or partial-matches, so it can be viewed as a lower-bound on similarity. 
-We predict overlap using a mixed-effects logistic regression model.
-We include fixed effects for age cohort (child vs. adult) and target condition (familiar vs. novel objects), as well as their interaction.
-We include random intercepts for both participants and items, and a random slope of target condition at the participant level, which was the most complex structure that converged.
-We found a significant interaction, $b=`r indiv.measures.inter$estimate`, z = `r indiv.measures.inter$statistic`, p < 0.001$ (see Fig.~\ref{fig:e3_contextsensitivity}). 
+This criterion is conservative in the sense that it will miss a number of near- or partial-matches, giving a lower-bound for overlap.
+We model the binary variable of context overlap using a mixed-effects logistic regression.
+We include fixed effects for age cohort (child vs. adult) and target type (familiar vs. novel), as well as their interaction.
+To control for the fact that longer utterances strings are less likely to exactly match by chance, we also include a term for the average length of the close and far labels for that speaker and item. 
+We include the most complex random effects structure that converged, which included random intercepts for both participants and items, and a random slope of target condition at the participant level.
 
+We found a significant interaction between age group and target type, $b=`r indiv.measures.inter$estimate`, z = `r indiv.measures.inter$statistic`, p < 0.001$ (see Fig.~\ref{fig:e3_contextsensitivity}). 
 Although adults displayed similar rates of context-sensitivity for familiar and novel objects (familiar: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'adult', target_type == 'familiar'))$empirical_stat`, novel: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'adult', target_type == 'tangram'))$empirical_stat`), children were nearly twice as likely to provide the exact same label across contexts for a familiar object (familiar: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'kid', target_type == 'tangram'))$empirical_stat`; novel: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'kid', target_type == 'familiar'))$empirical_stat`).
 In other words, children showed some degree internal variance in how they referred to novel tangrams but likely produced the single most salient, accessible label for familiar objects.
-Similar results were obtained using 'softer' measures like edit distance (the number of edits required to turn one string into the other), $b=`r soft.inter$estimate`, z = `r soft.inter$statistic`, p = `r soft.inter$p.value`$. 
+Similar results were obtained using 'softer' measures like edit distance, the number of edits required to turn one string into the other, $b=`r soft.inter$estimate`, z = `r soft.inter$statistic`, p = `r soft.inter$p.value`$ (see Fig.~\ref{fig:Levensthein_appendix}). 
 
 ### Familiar objects elicit less variable names
 
@@ -374,9 +252,6 @@ var.plot %>% ggplot(aes(x = age_group, y = empirical_stat, fill = competitor_typ
     theme(legend.position = "top")
 
 ggsave('variability_measures_age.pdf', width = 10, height = 10, unit = 'in')
-
-## plot faceted by competitor type
-
 ```
 
 
