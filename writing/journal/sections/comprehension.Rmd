@@ -1,18 +1,15 @@
 # Experiment 2: Comprehension
 
-Our first experiment found that young children are able to coordinate on pacts with their parents.
-Even four-year-olds readily adopted the labels introduced by their parents and interactively refined their descriptions in response to spontaneous parent-initiated repair.
-So why do younger children struggle so much with their peers?
-One possibility is that the difficulty lies primarily in the process of *comprehension*. 
-Children might be poor listeners.
-They may be unable to understand or accommodate their partner's description if it does not align with their own way of conceptualizing the tangram, preventing uptake of a pact. In this case, parent-child dyad's communicative success in our reference game may be due to parents' ability to align to their children's points of view, such that children can accurately select the intended referent based on their parent's descriptions.
-Another possibility is that the root of the difficulty primarily lies in *production*.
-In other words, children may have difficulty *generating* sufficiently descriptive referring expressions on their own, given their limited vocabulary and other processing constraints, but are able to recognize a good description when they hear it, and adopt that description going forward.
+Our first experiment found that young children are able to coordinate on referential pacts with their parents. Even four-year-old children readily adopted the labels introduced by their parents and interactively refined their descriptions in response to spontaneous parent-initiated repair. Overall, four- to eight-year-old children and their parents exhibited patterns similar to adult pairs in terms of reduction in length of referring expressions and turns.
 
-In Experiment 2, we tested the first of these two hypotheses using a comprehension task. 
-We provided naive children and adults with the descriptions produced by participants in Experiment 1 and asked how well they were able to interpret them.
-If comprehension is the root of the developmental problem, we might expect that naive children would be equally unable to interpret all referring expressions (regardless of whether they were originally produced by adults or children) while naive adults would have no difficulty.
-Conversely, if naive children are able to understand the referring expressions produced by parents (and not necessarily those by children), then we may expect the source of the difficulty to be elsewhere.
+An important question remains: why do younger children struggle so much with their peers? A large body of prior work shows that children fail to coordinate with peers on referential pacts, but few studies have probed the underlying reasons for children's difficulties.
+
+One possibility is that the difficulty lies primarily in the process of *comprehension*. That is, children might be poor listeners. They may be unable to understand or accommodate their partner's description when it does not align with their own way of conceptualizing a tangram, preventing uptake of a pact. In this case, parent-child dyads' communicative success in our reference game may be due to parents' ability to align to their children's points of view, such that children can accurately select the intended referent based on their parent's descriptions.
+
+Another possibility is that the root of the difficulty primarily lies in *production*. In other words, children may have difficulty *generating* sufficiently descriptive referring expressions on their own, given their limited vocabulary and other processing constraints, but are able to recognize a good description when they hear it, and adopt that description going forward. Further, children may have difficulty recognizing that their expressions are not informative enough for their conversational partner.
+
+In Experiment 2, we tested the first of these two hypotheses using a comprehension task. We provided naive children and adults with the descriptions produced by participants in Experiment 1 and asked how well they were able to interpret them.
+If comprehension is the root of the developmental problem, we might expect that naive children would be equally unable to interpret all referring expressions (regardless of whether they were originally produced by adults or children) while naive adults would have no difficulty. Conversely, if naive children are able to understand the referring expressions produced by parents (though not necessarily those by children), then we may expect the source of the difficulty to be elsewhere.
 
 ```{r load-original-games}
 # Load meta-data (e.g. age) for the stimuli
@@ -106,31 +103,27 @@ kid_stims <- get_stims(tidy_kid_data)
 
 ### Participants
 
-We recruited `r passed_check$false + passed_check$true` adults from Amazon Mechanical Turk.
-Data from `r passed_check$false` participants were dropped due to failure to complete the study, leaving a final sample of `r passed_check$true` adults. 
-Additionally, we planned to recruited a sample of 200 children from a school and a museum in the local community.
-However, because of the COVID-19 pandemic, we were forced to terminate data collection early with only `r length(unique(tidy_kid_data$id))` children (ages `r min(tidy_kid_data$age)`-`r max(tidy_kid_data$age)`).
+We recruited `r passed_check$false + passed_check$true` adults from Amazon Mechanical Turk. Data from `r passed_check$false` participants were dropped due to failure to complete the study, leaving a final sample of `r passed_check$true` adults. 
+Additionally, we planned to recruited a sample of 200 children (ages 4 to 8) from a school and a museum in the local community. However, because of the COVID-19 pandemic, we were forced to terminate data collection early with only `r length(unique(tidy_kid_data$id))` children (ages `r min(tidy_kid_data$age)`-`r max(tidy_kid_data$age)`).
 
 ### Stimuli
 
-To conceal the identity of the original speaker, the first author and four research assistants produced new audio recordings by reading the Exp.~1 game transcripts in a uniform vocal style. 
+To conceal the identity of the original speaker, the first author and four research assistants produced new audio recordings by reading the Exp.~1 game transcripts in a uniform vocal style. All recordings were done by female native English speakers.
 To examine the extent to which pacts became more opaque over time, we used utterances from the first and fourth (final) round of the reference game.
 We removed disfluencies and isolated the speaker's original referring expression on each trial (i.e., we excluded additional information provided in response to the listener's questions or prompting).
 This process produced `r adult_stims$parent + adult_stims$child` unique audio stimuli, two for each item of each game from Exp.~1. 
-These stimuli were broken into 118 unique 'item sets' containing 10 recordings each, such that each tangram appeared as the target once in each set. 
+These stimuli were broken into 118 unique 'item sets' containing 10 recordings each, such that each tangram appeared as the target once in each set. On each trial, the target tangram appeared alongside its foil from the corresponding trial in Exp.~1.  
 The stimuli sets were designed such that all participants encountered 5 utterances generated by a parent and 5 by a child, and 5 utterances from the first round and 5 from the final round. 
 
 ### Procedure
 
-Participants were placed in the role of the listener and presented a sequence of 10 audio recordings --- a single referring expression for each target tangram, in a randomized order, paired with their foils from the corresponding trial in Exp.~1.
-At the beginning of each trial, the recording was played and participants were asked to click the intended referent.
-To reduce possible learning effects, participants did not receive any feedback after their response.
+Participants were placed in the role of the listener and presented a sequence of 10 audio recordings --- a single referring expression for each target tangram, in a randomized order. Participants were instructed to click the intended referent based on the audio they hear.
+On each trial, two tangram images were displayed side by side (left and right order randomized). At the beginning of each trial, the audio recording played once. To reduce possible learning effects, participants did not receive any feedback after their response.
 Before participants began the experiment, we ensured their audio was working. 
 We did not allow participants to proceed past the consent page without clicking a 'play' button that asked them to "type the number 86 into the box."
 Additionally, to detect participants who were not following instructions, we included an attention check which simply asked people to click 'the one on the left'.
 Child participants provided verbal consent prior to the start of the experiment, and parents provided written consent. Children's version of the experiment did not include the initial 'play' button and attention check. While children completed the task independently, an experimenter was nearby to ensure that the audio was working.
-We measured accuracy and response time, measured as the time interval between the completion of the audio recording and the response.
-Participants were not allowed to respond prior to the completion of the audio recording.
+We measured accuracy and response time, measured as the time interval between the completion of the audio recording and the response. Participants were not allowed to respond prior to the completion of the audio recording.
 
 ### Design 
 
