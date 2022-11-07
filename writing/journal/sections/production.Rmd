@@ -342,11 +342,12 @@ Similar results were obtained using 'softer' measures like edit distance (the nu
 ### Familiar objects elicit less variable names
 
 ```{r eval = FALSE}
-var.measures <- d.prod %>%
-  group_by(target_type, competitor_type, utterance, target) %>%
+var.measures <- d.prod.clean.manual %>%
+  filter(competitor_type != "check") %>%
+  group_by(age_group, target_type, competitor_type, clean_utt, target) %>%
   tally() %>%
   arrange(target) %>%
-  group_by(target_type, competitor_type, target) %>%
+  group_by(age_group, target_type, competitor_type, target) %>%
   mutate(total_labels = sum(n)) %>%
   summarize(unique_labels = length(n), 
             normalized_unique_labels = mean(unique_labels) / mean(total_labels),
@@ -355,15 +356,26 @@ var.measures <- d.prod %>%
             codeability = max(n) / sum(n)) %>%
   gather(measure, value, unique_labels:codeability)
 
-var.measures %>%
-  group_by(target_type, competitor_type, measure) %>%
-  tidyboot_mean(value) %>%
-  ggplot(aes(x = target_type, y = empirical_stat, fill = competitor_type)) +
+var.plot <- var.measures %>%
+  group_by(age_group, target_type, competitor_type, measure) %>%
+  filter(measure != c("unique_labels", "entropy")) %>%
+  tidyboot_mean(value)
+
+var.plot %>% ggplot(aes(x = target_type, y = empirical_stat, fill = competitor_type)) +
     geom_bar(stat = 'identity', position=dodge) +
-    facet_grid(measure ~. , scales='free') +
+    facet_grid(measure ~ age_group , scales='free') +
     theme(legend.position = "top")
 
-ggsave('variability_measures_clean.pdf', width = 10, height = 10, unit = 'in')
+ggsave('variability_measures.pdf', width = 10, height = 10, unit = 'in')
+
+var.plot %>% ggplot(aes(x = age_group, y = empirical_stat, fill = competitor_type)) +
+    geom_bar(stat = 'identity', position=dodge) +
+    facet_grid(measure ~ target_type , scales='free') +
+    theme(legend.position = "top")
+
+ggsave('variability_measures_age.pdf', width = 10, height = 10, unit = 'in')
+
+## plot faceted by competitor type
 
 ```
 
@@ -443,12 +455,13 @@ We considered several measures of codability/overlap:
 * entropy (we all know and love)
 * codeability (what proportion of people provided the most common label, if there were 40 labels and 20 were 'bird', this would be 50%)
 
-### Attention checks
+### Children's understanding of referential ambiguity predicts production
 
-\textcolor{red}{[rdh: where should we report these checks? in some sense it's a simple sanity check so we could lead with it? but it's also only relevant for the developmental sample, which suggests we should put it at the end here (as a 'validation' move, like 'cool results, but maybe kids just didn't understand to task? to address this concern, we analyze our attention checks more carefully; and oh look, our results are robust to removing kids who did poorly.')]}
+Children are generally less sensitive to referential context than adults, but what contributes to these differences? Given that children are more likely to produce the same label across contexts for familiar objects, it is unlikely that vocabulary knowledge accounts for most of the difference between children and adults. One factor that may influence children's performance is the recognition of referential ambiguity. That is, children who understand that ambiguous referring expressions are not sufficiently informative for a partner should show more context sensitivity in our production task.
 
+To assess that children understand the goal of the task, and to aid in our interpretation of any potentially ambiguous responses that children give in earlier trials, we included a manipulation check condition for children. We first report children's responses to all three check trial types. Then, we turn to analyze how age and responses to ambiguous check trials (e.g., "dog" to distinguish between a husky and a dalmatian) predicts children's context sensitivity.
 
-### Comprehension check trials
+### Overall performance on comprehension check trials
 
 ```{r check-trials, eval = FALSE}
 
@@ -483,6 +496,15 @@ ggplot(type_check_trial_data, aes(x = age, y = correct, color = check_type)) +
   geom_hline(aes(yintercept = .5), linetype = "dashed") +
   geom_smooth(method = 'lm', formula = y ~ poly(x, 2), se = F) +
   geom_jitter(width = 0.05, height = 0.05)
+
+age_model_data <- type_check_trial_data %>%
+  ungroup() %>%
+  group_by(check_type, age) %>%
+  summarise(correct = mean(correct))
+
+age_model <- age_model_data %>%
+  lm(correct ~ age + check_type, data = .) %>%
+  tidy()
   
 ```
 
@@ -511,16 +533,12 @@ subj_check_trial_data %>%
   tidyboot_mean(correct)
 ```
 
-To assess that children understand the goal of the task, and to aid in our interpretation of any potentially ambiguous responses that children give in earlier trials, we included a check condition for children. We report children's responses on the three types of check trials here.
-
 For all check trials, children were asked to respond "Yes" or "No" as to whether a provided label uniquely identifies one picture out of two. If children are sensitive to informativity of referential expressions, they should respond "Yes" to Close trials with unambiguous labels (e.g., "red flower" to distinguish between a rose and a lily), "No" to Far trials where the provided labels were unambiguous but incorrect (e.g., "table" to distinguish between a pug and a rabbit), and "No" to Close trials with ambiguous expressions (e.g., "dog" to distinguish between a husky and a dalmatian).
 
-We found that children responded as expected to the unambiguous trials. That is, they responded "No" to the incorrect trial ($m=$ `r type_check_trial_data %>% filter(check_type = "wrong") %>% tidyboot_mean(correct)`), and "Yes" to the unambiguous trial ($m=$ `r type_check_trial_data %>% filter(check_type = "unambiguous") %>% tidyboot_mean(correct)`). These findings suggest that children, regardless of age, understood that that goal of the task was to describe a target picture (and not, for instance, to simply say anything).
-
-###Responses by manipulation check performance
+We found that children responded as expected to the unambiguous trials. That is, they responded "No" to the incorrect trial ($m=$ `r type_check_trial_data %>% filter(check_type == "wrong") %>% tidyboot_mean(correct)`), and "Yes" to the unambiguous trial ($m=$ `r type_check_trial_data %>% filter(check_type == "unambiguous") %>% tidyboot_mean(correct)`). These findings suggest that children, regardless of age, understood that that goal of the task was to describe a target picture (and not, for instance, to simply say anything). We also found an overall effect of age, where children's accuracy on the check trials increased with age ($p=$ `r age_model$p_value[2]`). Further, we found an effect of trial type, such that children were more likely to be correct on unambiguous ($p=$ `r age_model$p_value[3]`) and incorrect trials ($p=$ `r age_model$p_value[4]`) than on ambiguous trials.
 
 ```{r}
-kid_data <- indiv.measures %>%
+kid_data <- indiv.measures.clean %>%
   filter(age_group=="kid") 
 
 #predicting context sensitivity by overall manipulation check performance
@@ -573,3 +591,5 @@ ggplot(kid_age_data, aes(x = age, y = empirical_stat)) +
   geom_smooth(method = "lm") +
   facet_wrap(~target_type)
 ```
+
+To assess whether recognition of referential ambiguity correlated with performance on the production task, we focused on children's performance on the ambiguous check trials.
