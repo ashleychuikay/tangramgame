@@ -150,3 +150,56 @@ This research was funded by James S. McDonnell Foundation Scholar Award in Under
 
 <div id = "refs"></div>
 \endgroup
+
+# Appendix
+
+## Adult response times reflect familiarity and context
+
+```{r appendix-rts, out.height = "450px", fig.align = "center", set.cap.width=T, fig.cap = "\\label{fig:rt_appendix} Response times for different conditions in Experiment 3."}
+d.prod.rt <- read_csv(
+    here("data/experiment3/production_data_lemmatized_cleaned.csv"),
+    guess_max = 5000,
+    show_col_types = FALSE
+  ) %>%
+  mutate(button_pressed = as.numeric(button_pressed)) %>%
+  filter(age_group == 'adult') %>%
+  filter(competitor_type %in% c("close", "far")) %>%
+  mutate(logged_rt = log(rt))
+
+# RT by target type
+d.prod.rt %>%
+  group_by(age_group, target_type, competitor_type, id) %>%
+  summarise(logged_rt = mean(logged_rt)) %>%
+  ggplot(aes(y = logged_rt, x = rev(competitor_type), color = target_type, fill = target_type)) +
+    geom_boxplot(alpha = .4, outlier.shape = NA, width =0.5) +
+    geom_jitter(alpha = .2, position = position_jitterdodge(jitter.width = .1, dodge.width = .5)) +
+    labs(x = "", y = '(log) response time', fill = 'target', color = 'target') +
+    theme(legend.position = "right", aspect.ratio = 2)
+```
+
+```{r}
+# model of logged RTs
+rt_model <- d.prod.rt %>%
+  lmer(logged_rt ~ competitor_type * target_type + utt_length + (1 + competitor_type * target_type |id) + (1 + competitor_type |target), 
+       data = .) %>%
+  tidy() %>%
+  filter(effect == "fixed")
+```
+  
+
+A further window into referring expression generation is provided by the response time data collected in Experiment 3. 
+Response times were recorded between the onset of the trial and the point at which participants finished typing their responses, so longer response times may reflect greater effort in generating a description, all else equal.
+We unfortunately do not have accurate measurements of verbal responses for children (an experimenter typed in their responses after some variable delay.)
+However, we may nonetheless gain some insight from comparing adults' response times across conditions. 
+First, we hypothesized that response times in the "close" contexts would be longer on average than the "far" context, as the closer distractor may rule out more accessible labels and require more effortful search for a referring expression that uniquely identifies the referent. 
+Second, we hypothesized that response times for "novel" tangram targets would be longer than "familiar" targets, as the distribution of potential labels is less concentrated on a single, accessible name. 
+
+We tested these hypotheses with a mixed-effects model predicting (logged) response time as a function of context (close vs. far) and familiarity (novel vs. familiar), controlling for utterance length (coded as continuous).
+We included the full random effect structure for each participant, as well as intercepts and effect of context for each target:
+
+\texttt{logged_rt ~ competitor_type * target_type + utt_length + (1 + competitor_type * target_type |id) + (1 + competitor_type |target}
+
+First, we observed a large effect of utterance length, $b=`r (rt_model %>% filter(term == 'utt_length'))$estimate`, t = `r (rt_model %>% filter(term == 'utt_length'))$statistic`, p < 0.001$, which is unsurprising as longer descriptions generally take longer to type. 
+After controlling for utterance length, however, we found that adults' response times were longer on close context trials than far, $b=`r (rt_model %>% filter(term == 'competitor_typefar'))$estimate`, t = `r (rt_model %>% filter(term == 'competitor_typefar'))$statistic`, p = 0.002$. 
+In addition, we find that adults' response times were longer when describing tangram images than familiar images  $b=`r (rt_model %>% filter(term == 'target_typetangram'))$estimate`, t = `r (rt_model %>% filter(term == 'target_typetangram'))$statistic`, p < 0.001$. 
+We did not find strong evidence for an interaction, $b=`r (rt_model %>% filter(term == 'competitor_typefar:target_typetangram'))$estimate`, t = `r (rt_model %>% filter(term == 'competitor_typefar:target_typetangram'))$statistic`, p = 0.12$; see Figure \ref{fig:rt_appendix}.
