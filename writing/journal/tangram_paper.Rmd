@@ -73,6 +73,7 @@ library(tidytext)
 library(textstem)
 library(entropy)
 library(janitor)
+library(stringdist)
 
 # load in helper functions
 box::use(./sections/helpers)
@@ -203,3 +204,18 @@ First, we observed a large effect of utterance length, $b=`r (rt_model %>% filte
 After controlling for utterance length, however, we found that adults' response times were longer on close context trials than far, $b=`r (rt_model %>% filter(term == 'competitor_typefar'))$estimate`, t = `r (rt_model %>% filter(term == 'competitor_typefar'))$statistic`, p = 0.002$. 
 In addition, we find that adults' response times were longer when describing tangram images than familiar images  $b=`r (rt_model %>% filter(term == 'target_typetangram'))$estimate`, t = `r (rt_model %>% filter(term == 'target_typetangram'))$statistic`, p < 0.001$. 
 We did not find strong evidence for an interaction, $b=`r (rt_model %>% filter(term == 'competitor_typefar:target_typetangram'))$estimate`, t = `r (rt_model %>% filter(term == 'competitor_typefar:target_typetangram'))$statistic`, p = 0.12$; see Figure \ref{fig:rt_appendix}.
+
+
+```{r appendix-Levensthein, out.height = "450px", fig.align = "center", set.cap.width=T, fig.cap = "\\label{fig:Levensthein_appendix} Measuring context overlap using continuous Levensthein distance (rather than exact match probability)."}
+contextsensitivity.distance <- indiv.measures %>%
+  group_by(age_group, target_type) %>%
+  tidyboot_mean(close_far.distance, na.rm = T)
+
+contextsensitivity.distance %>%
+  ggplot(aes(x = age_group, y = empirical_stat, fill = target_type)) +
+    geom_bar(stat = 'identity', position = dodge) +
+    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0, position = dodge) +
+    labs(title = 'Levensthein distance between conditions', 
+         y = 'Levenshtein distance between close and far conditions', x = '') +
+    theme(aspect.ratio = 1, legend.position = "right")
+```
