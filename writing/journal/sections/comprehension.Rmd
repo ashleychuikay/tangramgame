@@ -153,10 +153,12 @@ comp.means <- bind_rows(tidy_turk_data, tidy_kid_data)  %>%
   select(-n, -empirical_stat) %>% 
   pivot_wider(names_from = comprehender_group, values_from = c(ci_lower, mean, ci_upper))
 
-bind_rows(tidy_turk_data, tidy_kid_data)  %>%
+means_plot <- bind_rows(tidy_turk_data, tidy_kid_data)  %>%
   filter(measure == "correct") %>%
   group_by(audioid, comprehender_group) %>%
-  summarise(value = mean(value)) %>%
+  summarise(value = mean(value))
+
+means_plot %>%
   ggplot(aes(x = as.factor(comprehender_group), y = value, group = audioid)) +
     geom_line(position = position_jitter(w=0.05, h=0.05), alpha = 0.1) +
     theme_few()
@@ -188,7 +190,7 @@ comprehender_effect <- tidy(group_diff.glmer2) %>%
 
 To test whether age effects in reference game performance may be attributed to comprehension difficulties, we compared the extent to which a naive group of children and adults were able to determine the referent of the same expressions.
 We focus primarily on accuracy, as response times are not directly comparable between the web interface (for adults) and lab interface (for children; see Supplemental).
-We constructed a mixed-effects logistic regression model predicting trial-by-trial accuracy, including a fixed effect of comprehender group (child vs. adult) and random intercepts and slopes for each source game^[Because we terminated data collection early, we do not have child comprehension data for all audio clips, preventing us from including random slopes at this finer level of granularity. All behavior within a game is casually intertwined, so we believe this coarser level of grouping is most natural.].
+We constructed a mixed-effects logistic regression model predicting trial-by-trial accuracy, including a fixed effect of comprehender group (child vs. adult) and random intercepts and slopes for each source game^[Because we terminated data collection early, we do not have child comprehension data for all audio clips, preventing us from including random slopes at this finer level of granularity. All behavior within a game is causally intertwined, so we believe this coarser level of grouping is most natural.].
 We found no significant difference in overall accuracy across groups, (adult accuracy $=$ `r comp.means$mean_adult`, 95\% CI $=$ [`r comp.means$ci_lower_adult`, `r comp.means$ci_upper_adult`], child accuracy $=$ `r comp.means$mean_kid`, 95\% CI $=$ [ `r comp.means$ci_lower_kid`, `r comp.means$ci_upper_kid`], $t=$ `r abs(comprehender_effect$statistic)`, $p =$ `r comprehender_effect$p.value`, see Fig.$~\ref{fig:e2_result}$).
 Consistent with this finding, there was no support in a nested comparison for a model with an effect of comprehender group over an intercept-only model, $\chi^2(`r group_diff.anova$df`) =$ `r group_diff.anova$statistic`, $p=$ `r group_diff.anova$p.value`.^[While null hypothesis significance testing is unable to provide positive evidence for the null hypothesis, we ran a Bayesian regression using the `brm` package. We used the Savage-Dickey method to compute a Bayes Factor of $9.5$, indicating moderate support in favor of the null hypothesis $b=0$. We used a weakly informative student-$t$ prior on the coefficient with degrees of freedom $\nu = 5$ and scale $s=2.5$, following @gelman2008weakly, but this result was robust to other choices.]
 
@@ -271,17 +273,14 @@ acc.lmer.occ <- additive_acc.lmer %>% filter(term == 'occurrence')
 ```
 
 Next, we consider which features of the description may affect downstream comprehension.
-We consider two specific hypotheses.
-First, we predicted that descriptions produced by adults will be easier for *everyone* to comprehend, overall, than descriptions produced by children in the same dyad. 
-Second, we predicted that descriptions produced earlier in the game will be easier to comprehend than descriptions produced later in the game, consistent with prior findings that pacts are not always transparent to eavesdroppers [@schober1989understanding]. 
-Because we found no overall differences in comprehension group in the previous section, here we collapse across both adult and kid comprehenders.
+We consider two specific hypotheses: First, we predicted that descriptions produced by adults will be easier for *everyone* to comprehend, overall, than descriptions produced by children in the same dyad. Second, we predicted that descriptions produced earlier in the game will be easier to comprehend than descriptions produced later in the game, consistent with prior findings that pacts are not always transparent to eavesdroppers [@schober1989understanding]. 
+Because we found no overall differences in comprehension group in the previous section, here we collapse across both adult and child participants.
 
-To test these predictions, we fit a logistic mixed effects model predicting accuracy as a function of the person who produced the description (parent vs. child), the age of child in the pair (ages 4, 6, 8), and the phase of the game where it was produced (early vs late).
+To test our predictions, we fit a logistic mixed effects model predicting accuracy as a function of the person who produced the description (parent vs. child), the age of child in the pair (ages 4, 6, 8), and the phase of the game where it was produced (early vs late).
 We also include random intercepts for each target and participant ID; a more complex model adding interactions was not justified, $\chi^2(`r acc.lmer.anova$df`)=`r acc.lmer.anova$statistic`, p=`r acc.lmer.anova$p.value`$. 
 Concerning our first hypothesis, we find that parents' descriptions are more accurately comprehended across the board $b=`r acc.lmer.speaker$estimate`, z = `r acc.lmer.speaker$statistic`, p<0.001$.
 Additionally, older kids (and parents of older kids) provided more accurately comprehended descriptions than younger kids, $b=`r acc.lmer.age$estimate`, z= `r acc.lmer.age$statistic`, p<0.001$. 
-Concerning our second hypothesis, however, we found no significant effect of experiment phase, $b=`r acc.lmer.occ$estimate`, z= `r acc.lmer.occ$statistic`, p= `r acc.lmer.occ$p.value`$.
-The later appearance of each item does not appear to contain less information for guessing the target.
+Concerning our second hypothesis, however, we found no significant effect of experiment phase, $b=`r acc.lmer.occ$estimate`, z= `r acc.lmer.occ$statistic`, p= `r acc.lmer.occ$p.value`$. In other words, final-round descriptions of tangrams do not appear to contain less information for guessing the target.
 
 ## Discussion
 
