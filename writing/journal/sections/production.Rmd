@@ -12,8 +12,8 @@ In Experiment 3, we remove the interactive context to more directly assess child
 We used a 2x2 design aiming to tease apart two related explanations for poor production performance.
 First, to assess the extent to which production difficulties stem from *pragmatic reasoning* (i.e. the ability to recognize that an accessible label is not sufficiently informative in context), we manipulate the whether the distractor in context is more or less similar to the target. 
 Second, to assess the extent to which production difficulties stem from impoverished *lexical priors* (i.e. the ability to access candidate labels for a given referent), we manipulate whether the target objects are familiar photographs or novel tangram shapes. 
-To the extent that children fail to produce context-sensitive utterances even for familiar objects with accessible labels, we may expect that pragmatic reasoning is the primary bottleneck on performance.
-To the extent to which these difficulties are limited to novel objects, we may expect that lexical priors play a larger role.
+To the extent that children fail to produce context-sensitive utterances for familiar objects with accessible labels, we may expect that pragmatic reasoning is the primary bottleneck on performance.
+To the extent that there is greater variance in the utterances produced by children, we may expect that lexical priors play a larger role.
 
 ## Methods
 
@@ -78,8 +78,10 @@ complete_games.adult <- d.prod.adult %>%
 d.prod.clean.manual <- read_csv(
   here("data/experiment3/production_data_lemmatized_cleaned.csv"),
   guess_max = 5000,
-  show_col_types = FALSE)%>%
-  mutate(button_pressed = as.numeric(button_pressed))
+  show_col_types = FALSE
+  ) %>%
+  filter(!(id %in% c('adult_49', 'kid_40'))) %>% # said I don't know to everything / random
+  mutate(button_pressed = as.numeric(button_pressed)) 
 
 ```
 
@@ -134,7 +136,7 @@ The same procedure was repeated for three more trials with the following image p
 
 We cleaned the text input using a uniform rubric across the combined data set.
 First, we manually corrected typos and removed stop words (e.g. determiners like 'a', 'the').
-Second, we lemmatized all entries to remove spurious differences between tenses and plurals of the same root form. \textcolor{red}{[rdh: should we also do some kind of regularization of word order? like make sure 'man is kneeling' and 'kneeling man' are mapped to the same thing? otherwise even if we remove 'is' and remove white space, we'll have 'kneelman' and 'mankneel' as different tokens.]}
+Second, we lemmatized all entries to remove spurious differences between tenses and plurals of the same root form. \textcolor{red}{[rdh: should we mention the rough rubric used to regularize word order? like how we mapped 'man is kneeling' and 'kneeling man' to the same thing? otherwise we'd have 'kneelman' and 'mankneel' as distinct tokens.]}
 Third, we removed spaces and collapsed multiple words together into a single token (e.g. 'German Shepherd' was tokenized to 'germanshepherd'). \textcolor{red}{[rdh: was there anything else we want to say about how the experimenter typed in the kid data? what was the rubric in case of long rambling utterances? did you say part of it back to the kid and ask them to confirm or something?]}
 
 ## Results
@@ -173,6 +175,7 @@ contextsensitivity.means <- indiv.measures %>%
 
 dodge = position_dodge(0.9)
 contextsensitivity.means %>%
+  mutate()
   ggplot(aes(x = age_group, y = empirical_stat, fill = target_type)) +
     geom_bar(stat = 'identity', position = dodge) +
     geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0, position = dodge) +
@@ -214,55 +217,93 @@ We include the most complex random effects structure that converged, which inclu
 
 We found a significant interaction between age group and target type, $b=`r indiv.measures.inter$estimate`, z = `r indiv.measures.inter$statistic`, p < 0.001$ (see Fig.~\ref{fig:e3_contextsensitivity}). 
 Although adults displayed similar rates of context-sensitivity for familiar and novel objects (familiar: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'adult', target_type == 'familiar'))$empirical_stat`, novel: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'adult', target_type == 'tangram'))$empirical_stat`), children were nearly twice as likely to provide the exact same label across contexts for a familiar object (familiar: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'kid', target_type == 'tangram'))$empirical_stat`; novel: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'kid', target_type == 'familiar'))$empirical_stat`).
-In other words, children showed some degree internal variance in how they referred to novel tangrams but likely produced the single most salient, accessible label for familiar objects.
 Similar results were obtained using 'softer' measures like edit distance, the number of edits required to turn one string into the other, $b=`r soft.inter$estimate`, z = `r soft.inter$statistic`, p = `r soft.inter$p.value`$ (see Fig.~\ref{fig:Levensthein_appendix}). 
+In other words, while adults appropriately modulated their utterances across contexts, children often produced the same canonical label for familiar targets across contexts, even when it was not sufficient to distinguish the target from the distactor. 
 
 ### Familiar objects elicit less variable names
 
 ```{r eval = FALSE}
 var.measures <- d.prod.clean.manual %>%
-  filter(competitor_type != "check") %>%
+  filter(competitor_type == "far") %>%
   group_by(age_group, target_type, competitor_type, clean_utt, target) %>%
   tally() %>%
   arrange(target) %>%
-  group_by(age_group, target_type, competitor_type, target) %>%
+  group_by(age_group, target_type, target) %>%
   mutate(total_labels = sum(n)) %>%
   summarize(unique_labels = length(n), 
             normalized_unique_labels = mean(unique_labels) / mean(total_labels),
             entropy = entropy(n, method="SG"),
             normalized_entropy = mean(entropy) / log(length(n)),
             codeability = max(n) / sum(n)) %>%
-  gather(measure, value, unique_labels:codeability)
+  select(-entropy, -unique_labels) %>%
+  gather(measure, value, normalized_unique_labels:codeability)
 
 var.plot <- var.measures %>%
-  group_by(age_group, target_type, competitor_type, measure) %>%
-  filter(measure != c("unique_labels", "entropy")) %>%
+  group_by(age_group, target_type, measure) %>%
   tidyboot_mean(value)
 
-var.plot %>% ggplot(aes(x = target_type, y = empirical_stat, fill = competitor_type)) +
+var.plot %>% 
+  filter(measure == 'normalized_unique_labels') %>% # 
+  ggplot(aes(x = target_type, y = empirical_stat, fill = age_group)) +
     geom_bar(stat = 'identity', position=dodge) +
-    facet_grid(measure ~ age_group , scales='free') +
+    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0, position = dodge) +
+    facet_grid( ~ . , scales='free') +
+    labs(x = '', y = 'proportion unique labels') +
     theme(legend.position = "top")
 
-ggsave('variability_measures.pdf', width = 10, height = 10, unit = 'in')
+ ggsave('variability_measures.pdf', width = 10, height = 10, unit = 'in')
 
-var.plot %>% ggplot(aes(x = age_group, y = empirical_stat, fill = competitor_type)) +
-    geom_bar(stat = 'identity', position=dodge) +
-    facet_grid(measure ~ target_type , scales='free') +
-    theme(legend.position = "top")
-
-ggsave('variability_measures_age.pdf', width = 10, height = 10, unit = 'in')
 ```
-
 
 ```{r regression-model-comparing-competitor-types, eval = FALSE}
-var.measures %>%
-  lmer(codeability ~ target_type*competitor_type + (1|target), data =.) %>%
+var.out.means <- var.measures %>%
+  filter(measure == 'normalized_unique_labels') %>% 
+  group_by(target_type, age_group) %>%
+  summarize(m = mean(value)) %>%
+  pivot_wider(names_from = c('target_type', 'age_group'), values_from = m)
+
+var.out <- var.measures %>%
+  filter(measure == 'normalized_unique_labels') %>% # 
+  lmer(value ~ target_type * age_group + (1 | target), data =., contrasts = list(age_group = contr.sum(2), target_type = contr.sum(2))) %>%
   tidy() %>%
   filter(effect == "fixed")
+
+var.out.entropy <- var.measures %>%
+  filter(measure == 'normalized_entropy') %>% # 
+  lmer(value ~ target_type * age_group + (1 | target), data =., contrasts = list(age_group = contr.sum(2), target_type = contr.sum(2))) %>%
+  tidy() %>%
+  filter(effect == "fixed")
+
 ```
 
+The previous section suggests that children have difficulty recognizing the referential ambiguity of a canonical label like "dog" in a context where there are multiple dogs.
+In other words, children's production may be constrained by limitations in their *pragmatic reasoning*. 
+But why would insensitivity to pragmatic context be limited to familiar objects?
+One possibility is that children have a less stable prior over possible names for the novel tangram images.
+Their variability across contexts could be driven less by pragmatic reasoning and more by "sampling variation" [@denison2013rational, @bonawitz2014probabilistic].
+
+We test this hypothesis by examining the distribution of labels at the population level. 
+First, we hypothesize that both adults and children will produce a fairly narrow, high-agreement range of labels for familiar objects, yielding highly concentrated distributions.
+Second, we hypothesize that children will use a broader range of different labels for tangrams than adults, yielding a less concentrated distribution with less agreement among different children.
+We considered several measures of concentration, but we focus primarily on the proportion of unique labels to total labels, which is simple and interpretable.^[In principle, the most appropriate metric of spread across labels is the information theoretic quantity of entropy: $H(X) = \sum_i p_i \log p_i$. However, our empirical distributions are highly sparse, with many labels appearing only once. Our estimates of entropy are therefore somewhat sensitive to the choice of statistical estimator (e.g. how much to regularize with pseudo-counts) while being less numerically interpretable. However, we find a similar qualitative effects of interest for reasonable choices, $b=`r (var.out.entropy %>% filter(term == 'target_type1:age_group1'))$estimate`, t(`r (var.out.entropy %>% filter(term == 'target_type1:age_group1'))$df`)= `r (var.out.entropy %>% filter(term == 'target_type1:age_group1'))$statistic`, p = `r (var.out.entropy %>% filter(term == 'target_type1:age_group1'))$p.value`$ using the Schurmann-Grassberger estimator.]
+For example, suppose that from a pool of forty participants, twenty said 'bird', ten said 'dancer', and the other ten said something unique. 
+Then we would have $p_{uniq} = 12/40 = .3$.
+Meanwhile, if all forty participants chose different labels, we would have $p_{uniq} = 40/40 = 1$; and at the other extreme, if all forty participants chose the same label, we would have $p_{uniq} = 1/40 = 0.025$.
+
+Because population agreement metrics necessarily aggregate over individual participants for each target, we construct our mixed-effects regression model at the item level. 
+Given our findings of differential context-sensitivity in the previous section, we limit this analysis to the 'far' condition where the distribution of adult and children labels are more comparable (aggregating across close and far yields qualitatively similar results). 
+We predict agreement as a function of age group (adult vs. child) and target type (familiar vs. tangram), including random intercepts at the target level. 
+First, we observe a main effect of target type, with less agreement on tangram labels for all participants, $b=`r (var.out %>% filter(term == 'target_type1'))$estimate`, t(`r (var.out %>% filter(term == 'target_type1'))$df`)= `r (var.out %>% filter(term == 'target_type1'))$statistic`, p < 0.001$.
+Importantly, however, we also find a significant interaction with age group, $b=`r (var.out %>% filter(term == 'target_type1:age_group1'))$estimate`, t(`r (var.out %>% filter(term == 'target_type1:age_group1'))$df`)= `r (var.out %>% filter(term == 'target_type1:age_group1'))$statistic`, p < 0.001$. 
+The labels produced by different children in our sample agree with one another about as much as adults' agree for familiar targets ($m=`r var.out.means$familiar_kid`$ for children and $m=`r var.out.means$familiar_adult`$ for adults). 
+However, children as a group produce a much more variable set of labels for novel tangrams than adults do ($m=`r var.out.means$tangram_kid`$ for children and $m=`r var.out.means$tangram_adult`$ for adults).
+
+
 ```{r overlap-helpers, eval = FALSE}
+# This analysis asks how much *children* overlapped with *adults*
+# i.e. it's possible that kids agree with other kids and adults agree with other adults,
+# but kids might be drawing from a completely different pool of utterances than adults.
+
 # ps <- d.prod.clean %>%
 #   distinct(wID)
 # 
@@ -296,47 +337,16 @@ var.measures %>%
 #   get_average_overlap()
 ```
 
-```{r plot-overlap, eval = FALSE} 
-# ggplot(symmetric_overlap, aes(x = target_id, y = comparison_id, fill = log1p(overlap))) + 
-#   geom_tile() +
-  # theme(legend.position = 'right')
-```
-
-```{r pilot-items, eval = FALSE}
-# pilot_items <- d.prod.clean %>% 
-#   filter(target_type == "tangram", competitor_type != "isolated") %>%
-#   distinct(target, foil, competitor_type) %>%
-#   rename(target_id = target, comparison_id = foil) %>%
-#   left_join(symmetric_overlap, by = c("target_id", "comparison_id"))
-# 
-# pilot_items %>%
-#   group_by(competitor_type) %>%
-#   tidyboot_mean(overlap)
-```
-
-```{r, eval = FALSE}
-# pilot_items %>%
-#   ggplot(aes(x = competitor_type, y = overlap)) +
-#     geom_jitter(width = .1, height = .1) +
-#     geom_boxplot(alpha = .5)
-```
-
-We test this hypothesis by comparing the 'spread' of the distribution of labels given to the same object across familiar and novel object classes. 
-
-We considered several measures of codability/overlap:
-
-* total number of unique labels (when people overlap a lot, this is smaller because we collect the same number of labels for each target; warning, this could be misleading if we're dropping trials due to high rts and some conditions have more dropped)
-* proportion of unique labels to total labels (fixes this problem, but still doesn't account for the distribution of overlap, e.g. if one gets hit 10 times and others get hit 1 vs. everything gets hit 2 times.)
-* entropy (we all know and love)
-* codeability (what proportion of people provided the most common label, if there were 40 labels and 20 were 'bird', this would be 50%)
-
 ### Children's understanding of referential ambiguity predicts production
 
-Children are generally less sensitive to referential context than adults, but what contributes to these differences? Given that children are more likely to produce the same label across contexts for familiar objects, it is unlikely that vocabulary knowledge accounts for most of the difference between children and adults. One factor that may influence children's performance is the recognition of referential ambiguity. That is, children who understand that ambiguous referring expressions are not sufficiently informative for a partner should show more context sensitivity in our production task.
+Children are generally less sensitive to referential context than adults, but what contributes to these differences? 
+Given that children are more likely to produce the same label across contexts for familiar objects, it is unlikely that vocabulary knowledge accounts for most of the difference between children and adults. 
+One factor that may influence children's performance is the recognition of referential ambiguity. 
+That is, children who understand that ambiguous referring expressions are not sufficiently informative for a partner should show more context sensitivity in our production task.
 
-To assess that children understand the goal of the task, and to aid in our interpretation of any potentially ambiguous responses that children give in earlier trials, we included a manipulation check condition for children. We first report children's responses to all three check trial types. Then, we turn to analyze how age and responses to ambiguous check trials (e.g., "dog" to distinguish between a husky and a dalmatian) predicts children's context sensitivity.
-
-### Overall performance on comprehension check trials
+To assess that children understand the goal of the task, and to aid in our interpretation of any potentially ambiguous responses that children give in earlier trials, we included a manipulation check condition for children. 
+We first report children's responses to all three check trial types. 
+Then, we turn to analyze how age and responses to ambiguous check trials (e.g., "dog" to distinguish between a husky and a dalmatian) predicts children's context sensitivity on the production task.
 
 ```{r check-trials, eval = FALSE}
 
