@@ -1,16 +1,15 @@
 # Experiment 3: Production experiment
 
-In Experiment 2, we found that naive children and adults were able to comprehend referential expressions equally well.
+In Experiment 2, we found that naive children and adults were able to comprehend referential expressions equally well. 
 Contrary to the classical view that young children are rigidly fixating on a single way of conceptualizing the tangram, even young children seem remarkably flexible in their ability to accommodate different descriptions.
-That is, to the extent that children contributed to poorer group performance in Experiment 1, their contribution is not well-explained by the *comprehension hypothesis*.
-At the same time, however, we found some evidence consistent with the *production hypothesis*: messages originally produced by children were somewhat less comprehensible for listeners of any age (as indexed by slower reaction times and lower accuracy).
+That is, to the extent that children contributed to poorer group performance in Experiment 1, their contribution is not well-explained by the *comprehension hypothesis*. At the same time, however, we found some evidence consistent with the *production hypothesis*: messages originally produced by children were somewhat less comprehensible for listeners of any age (as indexed by slower reaction times and lower accuracy).
 
 While this source effect is intriguing, it is difficult to disentangle the original messages from the interactive parent-child context in which they were produced. 
 For example, it is possible that children were receiving interactive scaffolding that prompted them toward more comprehensible expressions. 
 Or, conversely, it is possible that children were relying on their parents to take on more of the division of labor of interpretation [@hawkins2021division] and were thus producing expressions that are *less* comprehensible to naive audience than they were actually capable of.
 In Experiment 3, we remove the interactive context to more directly assess children's ability to produce referential expressions for novel tangram objects in different contexts. 
 We used a 2x2 design aiming to tease apart two related explanations for poor production performance.
-First, to assess the extent to which production difficulties stem from *pragmatic reasoning* (i.e. the ability to recognize that an accessible label is not sufficiently informative in context), we manipulate the whether the distractor in context is more or less similar to the target. 
+First, to assess the extent to which production difficulties stem from *pragmatic reasoning* (i.e. the ability to recognize that an accessible label is not sufficiently informative in context), we manipulate whether the distractor in context is more or less similar to the target. 
 Second, to assess the extent to which production difficulties stem from impoverished *lexical priors* (i.e. the ability to access candidate labels for a given referent), we manipulate whether the target objects are familiar photographs or novel tangram shapes. 
 To the extent that children fail to produce context-sensitive utterances for familiar objects with accessible labels, we may expect that pragmatic reasoning is the primary bottleneck on performance.
 To the extent that there is greater variance in the utterances produced by children, we may expect that lexical priors play a larger role.
@@ -75,13 +74,30 @@ complete_games.adult <- d.prod.adult %>%
 #   mutate(button_pressed = as.numeric(button_pressed))
 
 # manually cleaned data
+
+missing_data <- read_csv(
+  here("data/experiment3/missing_production_data_cleaned.csv"),
+  show_col_types = FALSE
+  ) %>%
+  mutate(button_pressed = as.numeric(button_pressed))
+
 d.prod.clean.manual <- read_csv(
   here("data/experiment3/production_data_lemmatized_cleaned.csv"),
   guess_max = 5000,
   show_col_types = FALSE
   ) %>%
   filter(!(id %in% c('adult_49', 'kid_40'))) %>% # said I don't know to everything / random
-  mutate(button_pressed = as.numeric(button_pressed)) 
+  mutate(button_pressed = as.numeric(button_pressed)) %>%
+  bind_rows(missing_data)
+
+# kid descriptives
+n_kids <- d.prod.clean.manual %>%
+  filter(age_group == "kid") %>%
+  {unique(.$id)}
+
+kid_age <- d.prod.clean.manual %>%
+  filter(age_group == "kid") %>%
+  filter(!duplicated(id))
 
 ```
 
@@ -105,28 +121,28 @@ novel_stims <- n_stims  %>%
 ### Participants
 
 We recruited `r length(complete_games.adult)` adult participants from Amazon Mechanical Turk. All participants gave informed consent prior to the start of the study and were compensated 60¢. 
-We also recruited \textcolor{red}{XX children} to participate in the study. \textcolor{red}{DEMOGRAPHICS/ages}. The study was conducted online over Zoom.
+We also recruited `r length(n_kids)` children aged 4 to 8 years old ($M=$ `r mean(kid_age$age)`) to participate in the study. The study was conducted online over Zoom. Parents provided informed written and verbal consent, and children provided verbal consent. Families were compensated $5 for their participation.
 
 ### Stimuli and Design
 
 We used `r length(fam_stims)` pictures of familiar objects and `r length(novel_stims)` pictures of tangrams. 
-Familiar objects were drawn from the set used by @degen2020 using eight different basic-level categories that we expected to be familiar to children: bears, birds, cars, candy, dogs, fish, shirts, and tables.
-Tangrams were drawn from a publicly royalty free set available on \textcolor{red}{XX tangrams site}.
+Familiar objects were drawn from an image set used by @degen2020. We used eight different basic-level categories that we expected to be familiar to children: bears, birds, cars, candy, dogs, fish, shirts, and tables.
+Tangrams were drawn from a publicly royalty free set available on https://www.1001freedownloads.com/.
 
 ```{r e3-design, out.height = "450px", fig.align = "center", set.cap.width=T, fig.cap = "Objects in Experiment 3 could appear in isolation (A), in a far context (B), or in a close context (C)."}
 knitr::include_graphics(here("writing/journal/diagrams/e3_diagram.pdf"))
 ```
 
-For both familiar objects and novel tangrams, trials were divided into three types: isolation trials in which a single target object was presented (Fig. \ref{fig:e3-design}A), far trials in which a target was paired with a competitor of the same type but with low semantic overlap (Fig. \ref{fig:e3-design}B), and close trials in which the target was paired with a competitor with high semantic overlap (Fig. \ref{fig:e3-design}C). For familiar objects, close trials involved two objects in the same basic-level semantic category (e.g. Pug and German Shepherd), and far trials involved two objects in different basic-level categories (e.g. Pug and Rabbit). For novel tangrams, close and far competitors were determined on the basis of their degree of labeling overlap with target in a norming experiment. In this norming experiment, we asked participants to label a number of tangrams in isolation. We used naming agreement--the proportion of responses that were the same for two tangrams--to estimate their semantic similarity [see @zettersten2020]. Details of the novel tangram selection procedure are described in the Supporting Information.
+For both familiar objects and novel tangrams, trials were divided into three types: isolation trials in which a single target object was presented (Fig. \ref{fig:e3-design}A), far trials in which a target was paired with a competitor of the same type but with low semantic overlap (Fig. \ref{fig:e3-design}B), and close trials in which the target was paired with a competitor with high semantic overlap (Fig. \ref{fig:e3-design}C). For familiar objects, close trials involved two objects in the same basic-level semantic category (e.g., Pug and German Shepherd), and far trials involved two objects in different basic-level categories (e.g., Pug and Rabbit). For novel tangrams, close and far competitors were determined on the basis of their degree of labeling overlap with target in a norming experiment. In this norming experiment, we asked participants to label a number of tangrams in isolation. We used naming agreement--the proportion of responses that were the same for two tangrams--to estimate their semantic similarity [see @zettersten2020]. Details of the novel tangram selection procedure are described in the Supplemental Information.
 
 Adults provided labels for a total of eight familiar objects and eight novel tangrams. Each object appeared three times: once in isolation, once in a close context, and once in a far context. All trials of a single type were blocked (e.g. isolation familiar objects), and the six blocks were presented in random order across participants. 
-Children provided labels for the same eight familiar and novel objects. To maintain children's attention for the duration of the experiment, they gave responses only in the close and far conditions and not in the isolation condition. Children's productions in all conditions were typed into a text box in real time during their participation.
+Children provided labels for the same eight familiar and novel objects. To maintain children's attention for the duration of the experiment, they gave responses only in the close and far conditions and not in the isolation condition. Children's productions in all conditions were typed into a text box in real time by an experimenter during their participation.
 
-Children also participated in an additional check condition designed to measure their understanding of ambiguity in comprehension. The check condition's purpose was to aid in interpretation of potentially ambiguous utterances that children were expected to provide in the Close condition (e.g. saying "bear" to distinguish between a brown bear and a polar bear). In this condition, children were told that they would hear a label produced by another child, and that they should indicate whether this label unambiguously identified the target object. Three of the trials were far trials in which an unambiguously incorrect label was provided to the child (e.g. "table" to distinguish between a pug and a rabbit), three of the trials were close trials in which an unambiguously correct label was provided (e.g. "polar bear" to distinguish between a polar bear and a grizzly bear), and three were close trials in which an ambiguous label was provided (e.g. "dog" to distinguish between a husky and a dalmatian). For the check condition, children responded verbally ("Yes" or "No") and an experimenter selected the corresponding button on the screen.
+Children also participated in an additional manipulation check condition designed to measure their understanding of ambiguity in comprehension. The check condition's purpose was to aid in interpretation of potentially ambiguous utterances that children were expected to provide in the Close condition (e.g. saying "bear" to distinguish between a brown bear and a polar bear). In this condition, children were told that they would hear a label produced by another child, and that they should indicate whether this label unambiguously identified the target object. Three of the trials were far trials in which an unambiguously incorrect label was provided to the child (e.g. "table" to distinguish between a pug and a rabbit), three of the trials were close trials in which an unambiguously correct label was provided (e.g. "polar bear" to distinguish between a polar bear and a grizzly bear), and three were close trials in which an ambiguous label was provided (e.g. "dog" to distinguish between a husky and a dalmatian). For the check condition, children responded verbally ("Yes" or "No") and an experimenter selected the corresponding button on the screen.
 
 ### Procedure
 
-After giving informed consent, adults read a introduction screen informing them that they would be doing an experiment in which they saw one or pictures on the screen at a time. One of these objects would be in a blue box, and they should describe this object as best as they could by typing one or two words into a text box. At the start of each block, they would be told whether they would see one picture (isolation), or two pictures (close and far), and reminded that they should type in a description that would help another participant identify the target in the blue border. Adults then completed all blocks in random order.
+After giving informed consent, adults read an introduction screen informing them that they would be doing an experiment in which they saw one or two pictures on the screen at a time. One of these objects would be in a blue box, and they should describe this object as best as they could by typing one or two words into a text box. At the start of each block, they would be told whether they would see one picture (isolation), or two pictures (close and far), and reminded that they should type in a description that would help another participant identify the target with a blue border. Adults then completed all blocks in random order.
 
 After parents gave consent and children assented to participate, children were told that they would see pictures and be asked to describe them. Children then completed several warm-up trials to introduce them to the game. On the first trial, they saw a picture of a red apple. On the next trial, they saw a pear with a blue border around it and the same apple and were asked to describe the object in the blue box. Then, the experimenter indicated that they would close their eyes on the next trial so that they wouldn't see what children saw. On this trial, children saw a white mug with a blue border around it and a white plate. While the experimenter's eyes were closed, the child was encouraged to describe the object in the blue box so that the experimenter could identify it. Once children provided a description, the blue border disappeared, and the experimenter opened their eyes. The experimenter then identified the object based on children's descriptions, and revealed the blue box again to verify whether they selected the correct target. 
 
@@ -136,16 +152,15 @@ The same procedure was repeated for three more trials with the following image p
 
 We cleaned the text input using a uniform rubric across the combined data set.
 First, we manually corrected typos and removed stop words (e.g. determiners like 'a', 'the').
-Second, we lemmatized all entries to remove spurious differences between tenses and plurals of the same root form. \textcolor{red}{[rdh: should we mention the rough rubric used to regularize word order? like how we mapped 'man is kneeling' and 'kneeling man' to the same thing? otherwise we'd have 'kneelman' and 'mankneel' as distinct tokens.]}
-Third, we removed spaces and collapsed multiple words together into a single token (e.g. 'German Shepherd' was tokenized to 'germanshepherd'). \textcolor{red}{[rdh: was there anything else we want to say about how the experimenter typed in the kid data? what was the rubric in case of long rambling utterances? did you say part of it back to the kid and ask them to confirm or something?]}
+Second, we lemmatized all entries to remove spurious differences between tenses and plurals of the same root form. The measures we use in analysis consider edit distance, which may be aritifically inflated due to word order (e.g., the edit distance between "running person" and "person running" would be high, despite conceptual and semantic similarity between the descriptions). As such, we manually cleaned the data to remove similar phrases or structures across descriptions (e.g., if a participant repeats "a person who is..." on every trial, we removed that phrase). We use the manually cleaned data for our analyses, but pre-cleaned, lemmatized data can be found on our OSF page (https://osf.io/vkug8/).
+Third, we removed spaces and collapsed multiple words together into a single token (e.g. 'German Shepherd' was tokenized to 'germanshepherd'). While adult participants typed in their own responses, children's responses were entered by an experimenter. When children's descriptions were overly long, experimenters prompted children to simplify them by asking, "Can you say that in one or two words?". Children were only prompted once, regardless of whether they simplified their expression. 
 
 ## Results
 
 We focus on evaluating two primary hypotheses.
 First, could children be failing to take into account the referential context when deciding what to say, leading to more ambiguous or underinformative referring expressions?
 Second, could children simply have weaker expectations over possible acceptable labels for novel objects, making retrieval challenging?
-These hypotheses are not mutually exclusive.
-Indeed, the corresponding mechanisms -- *pragmatic reasoning* and *lexical priors* -- are both implicated in recent production models [e.g. @murthy2021shades, @hawkins2022partners]. 
+These hypotheses are not mutually exclusive. Indeed, the corresponding mechanisms -- *pragmatic reasoning* and *lexical priors* -- are both implicated in recent production models [e.g. @murthy2021shades, @hawkins2022partners]. 
 
 ### Children are differentially sensitive to referential context
 
@@ -207,18 +222,18 @@ soft.inter <- indiv.measures.softmeasure %>% filter(term == 'age_groupkid:target
 
 ```
 
-To test our first hypothesis, we examine extent to which the same participant produces different utterances across the *far* vs. *close* contexts.
+To test our first hypothesis, we examine the extent to which the same participant produces different utterances across the *far* vs. *close* contexts.
 We begin by considering a simple 'exact match' criterion, coding an item as 1 if the participant used the same label for that item in both contexts and 0 if they used different labels. 
 This criterion is conservative in the sense that it will miss a number of near- or partial-matches, giving a lower-bound for overlap.
 We model the binary variable of context overlap using a mixed-effects logistic regression.
 We include fixed effects for age cohort (child vs. adult) and target type (familiar vs. novel), as well as their interaction.
-To control for the fact that longer utterances strings are less likely to exactly match by chance, we also include a term for the average length of the close and far labels for that speaker and item. 
+To control for the fact that longer utterance strings are less likely to exactly match by chance, we also include a term for the average length of the close and far labels for that speaker and item. 
 We include the most complex random effects structure that converged, which included random intercepts for both participants and items, and a random slope of target condition at the participant level.
 
-We found a significant interaction between age group and target type, $b=`r indiv.measures.inter$estimate`, z = `r indiv.measures.inter$statistic`, p < 0.001$ (see Fig.~\ref{fig:e3_contextsensitivity}). 
+We found a significant interaction between age group and target type, $b=$`r indiv.measures.inter$estimate`, z = `r indiv.measures.inter$statistic`, $p <$ 0.001 (see Fig.~\ref{fig:e3_contextsensitivity}). 
 Although adults displayed similar rates of context-sensitivity for familiar and novel objects (familiar: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'adult', target_type == 'familiar'))$empirical_stat`, novel: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'adult', target_type == 'tangram'))$empirical_stat`), children were nearly twice as likely to provide the exact same label across contexts for a familiar object (familiar: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'kid', target_type == 'tangram'))$empirical_stat`; novel: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'kid', target_type == 'familiar'))$empirical_stat`).
-Similar results were obtained using 'softer' measures like edit distance, the number of edits required to turn one string into the other, $b=`r soft.inter$estimate`, z = `r soft.inter$statistic`, p = `r soft.inter$p.value`$ (see Fig.~\ref{fig:Levensthein_appendix}). 
-In other words, while adults appropriately modulated their utterances across contexts, children often produced the same canonical label for familiar targets across contexts, even when it was not sufficient to distinguish the target from the distactor. 
+Similar results were obtained using 'softer' measures like edit distance, which is the number of edits required to turn one string into the other, $b=$`r soft.inter$estimate`, $z =$ `r soft.inter$statistic`, $p =$ `r soft.inter$p.value` (see Fig.~\ref{fig:Levensthein_appendix}). 
+In other words, while adults appropriately modulated their utterances across contexts, children often produced the same description for familiar targets across contexts, even when it was not sufficient to distinguish the target from the distactor. 
 
 ### Familiar objects elicit less variable names
 
