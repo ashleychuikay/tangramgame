@@ -26,7 +26,7 @@ To the extent that there is greater overall variance in the utterances produced 
 #   write_csv(here('./data/experiment3/anonymizedDataFromMongo.csv'))
 ```
 
-```{r e3-read-adult-data}
+```{r e3-read-adult-data, eval = FALSE}
 NUM_TRIALS <- 48
 d.prod.adult <- here("data/experiment3/anonymizedDataFromMongo.csv") %>%
   read_csv(show_col_types = FALSE) %>%
@@ -76,16 +76,12 @@ complete_games.adult <- d.prod.adult %>%
 # manually cleaned data
 
 missing_data <- read_csv(
-  here("data/experiment3/missing_production_data_cleaned.csv"),
-  show_col_types = FALSE
-  ) %>%
+  here("data/experiment3/missing_production_data_cleaned.csv")) %>%
   mutate(button_pressed = as.numeric(button_pressed))
 
 d.prod.clean.manual <- read_csv(
   here("data/experiment3/production_data_lemmatized_cleaned.csv"),
-  guess_max = 5000,
-  show_col_types = FALSE
-  ) %>%
+  guess_max = 5000) %>%
   filter(!(id %in% c('adult_49', 'kid_40'))) %>% # said I don't know to everything / random
   mutate(button_pressed = as.numeric(button_pressed)) %>%
   bind_rows(missing_data)
@@ -172,7 +168,7 @@ Indeed, the corresponding mechanisms -- *pragmatic reasoning* and *lexical prior
 
 ### Children are differentially sensitive to referential context
 
-```{r context-sensitivity, out.height = "300px", fig.align = "center", set.cap.width=T, fig.cap = "\\label{fig:e3_contextsensitivity} Results for Exp.~3."}
+```{r context-sensitivity, out.height = "300px", fig.align = "center", set.cap.width=T, fig.cap = "\\label{fig:e3_contextsensitivity} Proportion of descriptions of targets that were exact matches across the close and far contexts (error bars are 95% CIs). Children were twice as likely to give the same description for familiar objects than tangrams across contexts, while adults equally modulated their descriptions for both target types."}
 
 # we can just look at the item-by-item / speaker-by-speaker level 
 # where there's a context effect...
@@ -197,13 +193,13 @@ contextsensitivity.means <- indiv.measures %>%
   tidyboot_mean(far_close_overlap, na.rm = T) 
 
 dodge = position_dodge(0.9)
+
 contextsensitivity.means %>%
-  mutate()
   ggplot(aes(x = age_group, y = empirical_stat, fill = target_type)) +
     geom_bar(stat = 'identity', position = dodge) +
-    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0, position = dodge) +
-    labs(title = 'Proportion of exact matches across conditions',
-         y = '% overlap (exact matches)', x = '') +
+    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0, 
+                  position = dodge) +
+    labs(y = '% overlap (exact matches)', x = 'Participant age group') +
     theme(aspect.ratio = 1, legend.position = "right")
 ```
 
@@ -308,7 +304,7 @@ Their variability across contexts could be driven less by pragmatic reasoning an
 We test this hypothesis by examining the distribution of labels at the population level. 
 First, we hypothesize that both adults and children will produce a fairly narrow, high-agreement range of labels for familiar objects, yielding highly concentrated distributions.
 Second, we hypothesize that children will use a broader range of different labels for tangrams than adults, yielding a less concentrated distribution with less agreement among different children.
-We considered several measures of concentration, but we focus primarily on the proportion of unique labels to total labels, which is simple and interpretable.^[In principle, the most appropriate metric of spread across labels would be the information theoretic quantity of entropy: $H(X) = \sum_i p_i \log p_i$. However, our empirical distributions are highly sparse, with many labels appearing only once. Our estimates of entropy are therefore somewhat sensitive to the choice of statistical estimator (e.g. how much to regularize with pseudo-counts) while being less numerically interpretable. However, we find a similar qualitative effects of interest for reasonable choices, $b=`r (var.out.entropy %>% filter(term == 'target_type1:age_group1'))$estimate`, t(`r (var.out.entropy %>% filter(term == 'target_type1:age_group1'))$df`)= `r (var.out.entropy %>% filter(term == 'target_type1:age_group1'))$statistic`, p = `r (var.out.entropy %>% filter(term == 'target_type1:age_group1'))$p.value`$ using the Schurmann-Grassberger estimator. Alternative metrics include "modal agreement" [@brodeur2010bank, @brodeur2014bank], the proportion of participants that produce the most common label, and Simpson's diversity index [@simpson1949measurement,@majid2014odors, @majid2018differential], which can be interpreted as the probability that two independently sampled labels will match.]
+We considered several measures of concentration, but we focus primarily on the proportion of unique labels to total labels, which is simple and interpretable.^[In principle, the most appropriate metric of spread across labels would be the information theoretic quantity of entropy: $H(X) = \sum_i p_i \log p_i$. However, our empirical distributions are highly sparse, with many labels appearing only once. Our estimates of entropy are therefore somewhat sensitive to the choice of statistical estimator (e.g. how much to regularize with pseudo-counts) while being less numerically interpretable. However, we find a similar qualitative effects of interest for reasonable choices, $b=$`r (var.out.entropy %>% filter(term == 'target_type1:age_group1'))$estimate`, $t$(`r (var.out.entropy %>% filter(term == 'target_type1:age_group1'))$df`)$=$ `r (var.out.entropy %>% filter(term == 'target_type1:age_group1'))$statistic`, $p =$ `r (var.out.entropy %>% filter(term == 'target_type1:age_group1'))$p.value` using the Schurmann-Grassberger estimator. Alternative metrics include "modal agreement" [@brodeur2010bank, @brodeur2014bank], the proportion of participants that produce the most common label, and Simpson's diversity index [@simpson1949measurement,@majid2014odors, @majid2018differential], which can be interpreted as the probability that two independently sampled labels will match.]
 For example, suppose that from a pool of forty participants, twenty said 'bird', ten said 'dancer', and the other ten said something unique. 
 Then we would have $p_{uniq} = 12/40 = .3$.
 Meanwhile, if all forty participants chose different labels, we would have $p_{uniq} = 40/40 = 1$; and at the other extreme, if all forty participants chose the same label, we would have $p_{uniq} = 1/40 = 0.025$.
@@ -444,7 +440,7 @@ subj_check_trial_data %>%
 
 For all check trials, children were asked to respond "Yes" or "No" as to whether a provided label uniquely identifies one picture out of two. If children are sensitive to informativity of referential expressions, they should respond "Yes" to Close trials with unambiguous labels (e.g., "red flower" to distinguish between a rose and a lily), "No" to Far trials where the provided labels were unambiguous but incorrect (e.g., "table" to distinguish between a pug and a rabbit), and "No" to Close trials with ambiguous expressions (e.g., "dog" to distinguish between a husky and a dalmatian).
 
-We found that children responded as expected to the unambiguous trials. That is, they responded "No" to the incorrect trial ($m=$ `r check_means$mean[3]`), and "Yes" to the unambiguous trial ($m=$ `r check_means$mean[2]`). These findings suggest that children, regardless of age, understood that that goal of the task was to describe a target picture (and not, for instance, to simply say anything). We also found an overall effect of age, where children's accuracy on the check trials increased with age ($p=$ `r age_model$p_value[2]`). Further, we found an effect of trial type, such that children were more likely to be correct on unambiguous ($p=$ `r age_model$p_value[3]`) and incorrect trials ($p=$ `r age_model$p_value[4]`) than on ambiguous trials ($m =$ `r check_means$mean[1]`).
+We found that children responded as expected to the unambiguous trials. That is, they responded "No" to the incorrect trial ($m=$ `r check_means%>%filter(check_type == "incorrect")$mean`), and "Yes" to the unambiguous trial ($m=$ `r check_means%>%filter(check_type == "unambiguous")$mean`). These findings suggest that children, regardless of age, understood that that goal of the task was to describe a target picture (and not, for instance, to simply say anything). We also found an overall effect of age, where children's accuracy on the check trials increased with age ($b=$ `r age_model%>%filter(term == "age")$estimate`, $t$(`r age_model%>%filter(term == "age")$df)`$=$ `r age_model%>%filter(term == "age")$statistic`, $p=$ `r age_model%>%filter(term == "age")$p.value`). Further, we found an effect of trial type, such that children were more likely to be correct on unambiguous ($b=$ `r age_model%>%filter(term == "check_typeunambiguous")$estimate`, $t$(`r age_model%>%filter(term == "check_typeunambiguous")$df`)$=$ `r age_model%>%filter(term == "check_typeunambiguous")$statistic`, $p=$ `r age_model%>%filter(term == "check_typeunambiguous")$p.value`) and incorrect trials ($b=$ `r age_model%>%filter(term == "check_typewrong")$estimate`, $t$(`r age_model%>%filter(term == "check_typewrong")$df`)$=$ `r age_model%>%filter(term == "check_typewrong")$statistic`, $p=$ `r age_model%>%filter(term == "check_typewrong")$p.value`) than on ambiguous trials ($m =$ `r check_means%>%filter(check_type == "ambiguous")$mean`).
 
 ```{r}
 kid_data <- indiv.measures %>%
@@ -475,15 +471,13 @@ kid_ambiguous_model_data <- kid_data %>%
   tidyboot_mean(close_far.distance) %>%
   left_join(ambiguous_check_data, by = "id")
 
+kid_ambiguous_model_data$target_type <- relevel(factor(kid_ambiguous_model_data$target_type), ref = "tangram")
+
 kid_ambiguous_model <- kid_ambiguous_model_data %>%
-  lmer(empirical_stat ~ target_type*correct + (1|id) + (1|age), data = .) %>%
+  lmer(empirical_stat ~ target_type*correct + 
+         (1|id) + (1|age), data = .) %>%
   tidy() %>%
   filter(effect == "fixed")
-
-ggplot(kid_ambiguous_model_data, aes(x = correct, y = empirical_stat)) +
-         geom_point() +
-         geom_smooth(method = "lm") +
-         facet_wrap(~target_type)
 
 kid_age_model <- kid_ambiguous_model_data %>%
   lmer(empirical_stat ~ age*target_type + (1|id), data = .) %>%
@@ -507,6 +501,14 @@ ggplot(kid_age_data, aes(x = age, y = empirical_stat)) +
   facet_wrap(~target_type)
 ```
 
+```{r e3-check, out.height = "300px", fig.align = "center", set.cap.width=T, fig.cap = "\\label{fig:e3_check} Children's performance on ambiguous manipulation trials predicted their context sensitivity for familiar objects, but not for tangrams."}
+
+ggplot(kid_ambiguous_model_data, aes(x = correct, y = empirical_stat)) +
+         geom_point() +
+         geom_smooth(method = "lm") +
+         facet_wrap(~target_type)
+
+```
 To assess whether recognition of referential ambiguity correlated with performance on the production task, we focused specifically on children's performance on the ambiguous check trials. On these trials, children acted as the listener, and determined whether a give description was sufficient for distinguishing a target from its distractor. We predict that children who perform better on these ambiguous trials would also produce more informative descriptions during our task.
 
-We fit a mixed-effects model predicting children's context sensitivity, as measured by 'exact match' overlap, from their performance on the ambiguous trials and target type (familiar vs. tangram), with random effects of participant and age. We find a significant interaction between accuracy on the ambiguous trials and target type, such that children who are more accurate on the ambiguous check trials are more likely to modulate their descriptions based on context for familiar items ($b=$ `r kid_ambiguous_model%>%filter(term == "correct")$estimate`,$t$(`r kid_ambiguous_model%>%filter(term == "correct")$df`)$=$`r kid_ambiguous_model%>%filter(term == "correct")$statistic`, $p=$`r kid_ambiguous_model%>%filter(term == "correct")$p.value`). In other words, children who are more sensitive to referential ambiguity show less exact matches of their descriptions of familiar items between close and far contexts. However, we do not find the same effect on tangram trials. 
+We fit a mixed-effects model predicting children's context sensitivity, as measured by 'exact match' overlap, from their performance on the ambiguous trials and target type (familiar vs. tangram), with random effects of participant and age. We find a significant interaction between accuracy on the ambiguous trials and target type, such that children who are more accurate on the ambiguous check trials are more likely to modulate their descriptions based on context for familiar items ($b=$ `r kid_ambiguous_model%>%filter(term == "target_typefamiliar:correct")$estimate`,$t$(`r kid_ambiguous_model%>%filter(term == "target_typefamiliar:correct")$df`)$=$`r kid_ambiguous_model%>%filter(term == "target_typefamiliar:correct")$statistic`, $p=$`r kid_ambiguous_model%>%filter(term == "target_typefamiliar:correct")$p.value`). In other words, children who are more sensitive to referential ambiguity show less exact matches of their descriptions of familiar items between close and far contexts (Fig.\ref{fig:e3_check}). 
