@@ -228,6 +228,7 @@ bind_rows(tidy_turk_data, tidy_kid_data) %>%
   ggplot(aes(x = factor(age), y = empirical_stat, color = speaker)) +
     geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper, width = 0)) +
     labs(x = 'Age of child in Exp. 1  pair', y = 'Comprehension accuracy') +
+    scale_color_manual(values = c("#08519c","#fe9929")) +
     ylim(0.5, 1) +
     facet_wrap(~ comprehender_group) +
     theme(legend.position = 'right', aspect.ratio = 1)
