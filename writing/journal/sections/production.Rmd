@@ -397,12 +397,6 @@ type_check_trial_data <- joined_check_trial_data %>%
   group_by(check_type, age, id) %>%
   summarise(correct = mean(correct))
 
-ggplot(type_check_trial_data, aes(x = age, y = correct, color = check_type)) +
-  facet_wrap(~ check_type) +
-  geom_hline(aes(yintercept = .5), linetype = "dashed") +
-  geom_smooth(method = 'lm', formula = y ~ poly(x, 2), se = F) +
-  geom_jitter(width = 0.05, height = 0.05)
-
 age_model <- type_check_trial_data %>%
   lmer(correct ~ age*check_type + (1|id), data = .) %>%
   tidy() %>%
@@ -417,6 +411,14 @@ check_means <- type_check_trial_data %>%
 
 
 ```{r eval = FALSE}
+# check trial descriptive plot
+
+ggplot(type_check_trial_data, aes(x = age, y = correct, color = check_type)) +
+  facet_wrap(~ check_type) +
+  geom_hline(aes(yintercept = .5), linetype = "dashed") +
+  geom_smooth(method = 'lm', formula = y ~ poly(x, 2), se = F) +
+  geom_jitter(width = 0.05, height = 0.05)
+
 type_check_trial_data %>%
   group_by(age, check_type) %>%
   tidyboot_mean(correct, nboot = 100) %>%
@@ -458,11 +460,6 @@ kid_model <- kid_model_data %>%
   lm(empirical_stat ~ target_type*correct, data = .) %>%
   tidy() 
 
-ggplot(kid_model_data, aes(x = correct, y = empirical_stat)) +
-         geom_jitter() +
-         geom_smooth(method = "lm") +
-         facet_wrap(~target_type)
-
 #only ambiguous manipulation check trials
 
 ambiguous_check_data <- type_check_trial_data %>%
@@ -497,10 +494,23 @@ kid_age_model <- kid_age_data %>%
   lm(empirical_stat ~ age*target_type, data = .) %>%
   tidy()
 
+```
+
+```{r eval= FALSE}
+#unused plots predicting context sensitivity
+
+#all check trials
+ggplot(kid_model_data, aes(x = correct, y = empirical_stat)) +
+         geom_jitter() +
+         geom_smooth(method = "lm") +
+         facet_wrap(~target_type)
+
+#age
 ggplot(kid_age_data, aes(x = age, y = empirical_stat)) +
   geom_jitter() +
   geom_smooth(method = "lm") +
   facet_wrap(~target_type)
+
 ```
 
 ```{r e3-check, fig.pos = "t", fig.align = "center", fig.width = 10, fig.cap = "\\label{fig:e3_check} Children's performance on ambiguous manipulation trials predicted their context sensitivity for familiar objects, but not for tangrams."}
