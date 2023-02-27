@@ -167,7 +167,7 @@ Indeed, the corresponding mechanisms -- *pragmatic reasoning* and *lexical prior
 
 ### Children are differentially sensitive to referential context
 
-```{r context-sensitivity, fig.pos = "t", fig.align = "center", fig.width = 10, fig.cap = "\\label{fig:e3_contextsensitivity} Proportion of descriptions of targets that were exact matches across the close and far contexts (error bars are 95\\% CIs). Children were twice as likely to give the same description for familiar objects than tangrams across contexts, while adults equally modulated their descriptions for both target types."}
+```{r context-sensitivity}
 
 # we can just look at the item-by-item / speaker-by-speaker level 
 # where there's a context effect...
@@ -191,16 +191,6 @@ contextsensitivity.means <- indiv.measures %>%
   group_by(age_group, target_type) %>%
   tidyboot_mean(far_close_overlap, na.rm = T) 
 
-dodge = position_dodge(0.9)
-
-contextsensitivity.means %>%
-  ggplot(aes(x = target_type, y = empirical_stat, fill = age_group)) +
-    geom_bar(stat = 'identity', position = dodge) +
-    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0, 
-                  position = dodge) +
-    scale_fill_manual(values = c(ADULTS, CHILDREN)) +
-    labs(y = 'Proportion of exact matches in descriptions', x = "", fill = "Age group") +
-    theme(aspect.ratio = 1, legend.position = "right")
 ```
 
 ```{r contextsensitivitylmer}
@@ -227,22 +217,8 @@ soft.inter <- indiv.measures.softmeasure %>% filter(term == 'age_groupkid:target
 
 ```
 
-To test our first hypothesis, we examine the extent to which the same participant produces different utterances across the *far* vs. *close* contexts.
-We begin by considering a simple 'exact match' criterion, coding an item as 1 if the participant used the same label for that item in both contexts and 0 if they used different labels. 
-This criterion is conservative in the sense that it will miss a number of near- or partial-matches, giving a lower-bound for overlap.
-We model the binary variable of context overlap using a mixed-effects logistic regression.
-We include fixed effects for age cohort (child vs. adult) and target type (familiar vs. novel), as well as their interaction.
-To control for the fact that longer utterance strings are less likely to exactly match by chance, we also include a term for the average length of the close and far labels for that speaker and item. 
-The most complex random effects structure that converged only included random intercepts at the participant level.
+```{r variability-measures}
 
-We found a significant interaction between age group and target type, $b=`r indiv.measures.inter$estimate`, z = `r indiv.measures.inter$statistic`, p < 0.001$ (see Figure  \ref{fig:e3_contextsensitivity}). 
-Although adults displayed similar rates of context-sensitivity for familiar and novel objects (familiar: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'adult', target_type == 'familiar'))$empirical_stat`, novel: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'adult', target_type == 'tangram'))$empirical_stat`), children were nearly twice as likely to provide the exact same label across contexts for a familiar object (familiar: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'kid', target_type == 'tangram'))$empirical_stat`; novel: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'kid', target_type == 'familiar'))$empirical_stat`).
-Similar results were obtained using 'softer' measures like edit distance, which is the number of edits required to turn one string into the other, $b= `r soft.inter$estimate`, z = `r soft.inter$statistic`, p < 0.001$ (see Supplemental Figure \ref{fig:Levensthein_appendix}). 
-In other words, while adults appropriately modulated their utterances across contexts, children often produced the same description for familiar targets across contexts, even when it was not sufficient to distinguish the target from the distactor. 
-
-### Familiar objects elicit less variable names
-
-```{r fig.align='center', fig.cap="\\label{fig:e3_variability} Proportion of descriptions that were unique labels (error bars are 95\\% CIs). Across adult and child participants, descriptions of familiar images were more likely to overlap."}
 var.measures <- d.prod.clean.manual %>%
   filter(competitor_type == "far") %>%
   group_by(age_group, target_type, competitor_type, clean_utt, target) %>%
@@ -262,19 +238,54 @@ var.plot <- var.measures %>%
   group_by(age_group, target_type, measure) %>%
   tidyboot_mean(value)
 
-var.plot %>% 
+#ggsave('variability_measures.pdf', width = 10, height = 10, unit = 'in')
+
+```
+
+```{r production-plots, fig.pos = "t", fig.align = "center", fig.width = 10, fig.cap = "\\label{fig:e3_contextsensitivity} (A) Proportion of descriptions of targets that were exact matches across the close and far contexts. Children were twice as likely to give the same description for familiar objects than tangrams across contexts, while adults equally modulated their descriptions for both target types. (B) Proportion of descriptions that were unique labels. Across adult and child participants, descriptions of familiar images were more likely to overlap. Error bars are 95\\% CIs."}
+
+dodge = position_dodge(0.9)
+
+#context sensitivity plot
+plt.context <- contextsensitivity.means %>%
+  ggplot(aes(x = target_type, y = empirical_stat, fill = age_group)) +
+    geom_bar(stat = 'identity', position = dodge) +
+    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0, 
+                  position = dodge) +
+    scale_fill_manual(values = c(ADULTS, CHILDREN)) +
+    labs(tag = "A", y = 'Proportion of exact matches in descriptions', x = "") +
+    theme(aspect.ratio = 1, legend.position = "none")
+
+#naming variability plot
+plt.variability <- var.plot %>% 
   filter(measure == 'normalized_unique_labels') %>% # 
   ggplot(aes(x = target_type, y = empirical_stat, fill = age_group)) +
     geom_bar(stat = 'identity', position=dodge) +
     geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0, position = dodge) +
     scale_fill_manual(values = c(ADULTS, CHILDREN)) +
     facet_grid( ~ . , scales='free') +
-    labs(x = '', y = 'Proportion unique labels', fill = 'Age group') +
+    labs(tag = "B", x = '', y = 'Proportion unique labels', fill = 'Age group') +
     theme(aspect.ratio = 1, legend.position = "right")
 
-#ggsave('variability_measures.pdf', width = 10, height = 10, unit = 'in')
+library(patchwork)
+plt.context + plt.variability
 
 ```
+
+To test our first hypothesis, we examine the extent to which the same participant produces different utterances across the *far* vs. *close* contexts.
+We begin by considering a simple 'exact match' criterion, coding an item as 1 if the participant used the same label for that item in both contexts and 0 if they used different labels. 
+This criterion is conservative in the sense that it will miss a number of near- or partial-matches, giving a lower-bound for overlap.
+We model the binary variable of context overlap using a mixed-effects logistic regression.
+We include fixed effects for age cohort (child vs. adult) and target type (familiar vs. novel), as well as their interaction.
+To control for the fact that longer utterance strings are less likely to exactly match by chance, we also include a term for the average length of the close and far labels for that speaker and item. 
+The most complex random effects structure that converged only included random intercepts at the participant level.
+
+We found a significant interaction between age group and target type, $b=`r indiv.measures.inter$estimate`, z = `r indiv.measures.inter$statistic`, p < 0.001$ (see Figure  \ref{fig:e3_contextsensitivity}). 
+Although adults displayed similar rates of context-sensitivity for familiar and novel objects (familiar: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'adult', target_type == 'familiar'))$empirical_stat`, novel: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'adult', target_type == 'tangram'))$empirical_stat`), children were nearly twice as likely to provide the exact same label across contexts for a familiar object (familiar: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'kid', target_type == 'tangram'))$empirical_stat`; novel: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'kid', target_type == 'familiar'))$empirical_stat`).
+Similar results were obtained using 'softer' measures like edit distance, which is the number of edits required to turn one string into the other, $b= `r soft.inter$estimate`, z = `r soft.inter$statistic`, p < 0.001$ (see Supplemental Figure \ref{fig:Levensthein_appendix}). 
+In other words, while adults appropriately modulated their utterances across contexts, children often produced the same description for familiar targets across contexts, even when it was not sufficient to distinguish the target from the distactor. 
+
+### Familiar objects elicit less variable names
 
 ```{r regression-model-comparing-competitor-types}
 var.out.means <- var.measures %>%
