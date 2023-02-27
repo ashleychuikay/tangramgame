@@ -16,6 +16,11 @@ To the extent that there is greater overall variance in the utterances produced 
 
 ## Methods
 
+```{r plot-colors}
+CHILDREN <- "#08519c"
+ADULTS <- "#fe9929"
+```
+
 ```{r e3-anonymize-data, eval = FALSE}
 # this block pre-processes the raw, un-anonymized data from adults
 # we keep it here for reproducibility but only release the preprocessed data
@@ -189,11 +194,12 @@ contextsensitivity.means <- indiv.measures %>%
 dodge = position_dodge(0.9)
 
 contextsensitivity.means %>%
-  ggplot(aes(x = age_group, y = empirical_stat, fill = target_type)) +
+  ggplot(aes(x = target_type, y = empirical_stat, fill = age_group)) +
     geom_bar(stat = 'identity', position = dodge) +
     geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0, 
                   position = dodge) +
-    labs(y = '% overlap (exact matches)', x = 'Participant age group') +
+    scale_fill_manual(values = c(ADULTS, CHILDREN)) +
+    labs(y = 'Proportion of exact matches in descriptions', fill = "Age group") +
     theme(aspect.ratio = 1, legend.position = "right")
 ```
 
@@ -236,7 +242,7 @@ In other words, while adults appropriately modulated their utterances across con
 
 ### Familiar objects elicit less variable names
 
-```{r}
+```{r fig.align='center', fig.cap="\\label{fig:e3_variability} Proportion of descriptions that were unique labels (error bars are 95\\% CIs). Across adult and child participants, descriptions of familiar images were more likely to overlap."}
 var.measures <- d.prod.clean.manual %>%
   filter(competitor_type == "far") %>%
   group_by(age_group, target_type, competitor_type, clean_utt, target) %>%
@@ -261,11 +267,12 @@ var.plot %>%
   ggplot(aes(x = target_type, y = empirical_stat, fill = age_group)) +
     geom_bar(stat = 'identity', position=dodge) +
     geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0, position = dodge) +
+    scale_fill_manual(values = c(ADULTS, CHILDREN)) +
     facet_grid( ~ . , scales='free') +
     labs(x = '', y = 'proportion unique labels') +
     theme(legend.position = "top")
 
- ggsave('variability_measures.pdf', width = 10, height = 10, unit = 'in')
+#ggsave('variability_measures.pdf', width = 10, height = 10, unit = 'in')
 
 ```
 
