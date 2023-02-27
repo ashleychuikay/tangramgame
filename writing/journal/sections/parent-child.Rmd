@@ -93,7 +93,7 @@ age_effect_exchanges = lmer.exchanges %>% filter(term == 'age')
 rep_effect_exchanges = lmer.exchanges %>% filter(term == 'rep_num')
 ```
 
-```{r acc-exchanges, fig.pos = "t", set.cap.width=T, num.cols.cap=2, fig.width = 10, fig.align = "center", fig.cap = "(A) Accuracy improves over time for all groups. (B) Number of dialogue exchanges is higher for younger children. Error bars are 95\\% CIs. The drop in accuracy for 8-year-olds is likely an artifact of a small set of children losing interest in the task."}
+```{r acc-exchanges, eval = TRUE, cache= FALSE, fig.out="1000px", fig.pos = "t", fig.align = "center", fig.cap = "(A) Accuracy improves over time for all groups. (B) Number of dialogue exchanges is higher for younger children. Error bars are 95\\% CIs. The drop in accuracy for 8-year-olds is likely an artifact of a small set of children losing interest in the task."}
 
 # render plot
 plt.results.acc <- result.acc.means %>%   
@@ -102,14 +102,14 @@ plt.results.acc <- result.acc.means %>%
   geom_line(position = position_dodge(.25)) +
   geom_errorbar(aes(ymin = ci_lower * 100, ymax = ci_upper * 100),
                 width = 0.05, position = position_dodge(.25)) +
-  facet_grid(. ~ age) + 
+  facet_grid(. ~ age) +
   ylab("% accuracy") +
   xlab("repetition #") +
   ylim(70, 100) +
-  scale_x_continuous(limits = c(.5, 4.25), breaks = 1:4) + 
+  scale_x_continuous(limits = c(-0.25, 4.25), breaks = 1:4) +
   theme(aspect.ratio = 1 / 1.3, legend.position = "none") +
   scale_color_manual(values = c(rev(COLLAPSED_SCALE), ADULTS)) +
-  labs(tag = 'A') + 
+  labs(tag = 'A') +
   geom_dl(method = list(dl.trans(x = x - .2), "first.qp", cex=.8))
 
 
@@ -120,16 +120,17 @@ plt.results.exchanges <- d.exchanges.mean %>%
   geom_line(position = position_dodge(.25)) +
   geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0,
                 position = position_dodge(.25)) +
-  ylab("# exchanges per round") +
+  ylab("# exchanges") +
   facet_grid(. ~ age) + 
   xlab("repetition #") +
   theme(aspect.ratio = 1 / 1.3 , legend.position = "none") +
   scale_color_manual(values = c(rev(COLLAPSED_SCALE), ADULTS)) +
   labs(tag = 'B') +
-  scale_x_continuous(limits = c(.75, 4.5), breaks = 1:4) + 
-  geom_dl(method = list(dl.trans(x = x + .2), "last.qp", cex=.8)) 
+  scale_x_continuous(limits = c(-0.25, 4.25), breaks = 1:4) +
+  geom_dl(method = list(dl.trans(x = x - .2), "first.qp", cex=.8))
 
-gridExtra::grid.arrange(plt.results.acc, plt.results.exchanges, ncol = 1)
+library(patchwork)
+plt.results.acc / plt.results.exchanges
 ```
 
 ## Method

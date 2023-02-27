@@ -65,8 +65,6 @@ library(egg)
 library(xtable)
 library(knitr)
 library(papaja)
-library(entropy)
-library(ggthemes)
 library(lme4)
 library(lmerTest)
 library(directlabels)
@@ -76,7 +74,7 @@ library(scales)
 library(tidyboot)
 library(broom)
 library(broom.mixed)
-library(cowplot)
+library(patchwork)
 library(kableExtra)
 library(english)
 library(ggthemes)
@@ -96,10 +94,9 @@ box::reload(helpers)
 
 theme_set(theme_few(base_size = 10) + theme(legend.position = "none"))
 
-knitr::opts_chunk$set(fig.pos = '!tb', echo = FALSE, cache = TRUE, 
+knitr::opts_chunk$set(echo = FALSE, cache = TRUE, 
                       warning = FALSE, message = FALSE, 
-                      sanitize = TRUE, fig.path='figs/', fig.width = 3,
-                      fig.height = 3, fig.pos = "t!")
+                      sanitize = TRUE, fig.path='figs/', fig.pos = "t!")
 set.seed(42)
 options(digits=3, dplyr.summarise.inform = FALSE)
 ```
@@ -220,7 +217,7 @@ Second, we hypothesized that response times for "novel" tangram targets would be
 We tested these hypotheses with a mixed-effects model predicting (logged) response time as a function of context (close vs. far) and familiarity (novel vs. familiar), controlling for utterance length (coded as continuous).
 We included the full random effect structure for each participant, as well as intercepts and effect of context for each target:
 
-`\texttt{logged_rt ~ competitor_type * target_type + utt_length + (1 + competitor_type * target_type |id) + (1 + competitor_type |target}`
+`\texttt{logged_rt ~ competitor_type * target_type + utt_length + (1 + competitor_type * target_type |id) + (1 + competitor_type |target)}`
 
 First, we observed a large effect of utterance length, $b=`r (rt_model %>% filter(term == 'utt_length'))$estimate`, t = `r (rt_model %>% filter(term == 'utt_length'))$statistic`, p < 0.001$, which is unsurprising as longer descriptions generally take longer to type. 
 After controlling for utterance length, however, we found that adults' response times were longer on close context trials than far, $b=`r (rt_model %>% filter(term == 'competitor_typefar'))$estimate`, t = `r (rt_model %>% filter(term == 'competitor_typefar'))$statistic`, p = 0.002$. 
