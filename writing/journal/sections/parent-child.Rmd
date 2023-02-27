@@ -468,7 +468,6 @@ person_age_rep_interaction_origin_pvalue <- ifelse(person_age_rep_interaction_or
 ```
 
 ```{r origins,  fig.env = "figure*", fig.pos = "tb", fig.width=6, fig.height=3.5, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "(A) Probability of words used on final round first occuring with child or parent. (B) Complexity of language used by different age groups estimated from words' average age of acquisition. Error bars are 95\\% CI."}
-
 origins.plt1 <- mean_matches %>%
   #tally() %>%
   ggplot(aes(x = as.numeric(as.factor(age)), y = empirical_stat, 
@@ -506,7 +505,8 @@ origins.plt2 <- ggplot(mean_aoas, aes(x = rep_num, y = empirical_stat,
   scale_color_manual(values = c( ADULTS, CHILD_SCALE[2], PARENTS)) +
   geom_text(aes(label = plot_age), data = aoa_labels)
 
-cowplot::plot_grid(origins.plt1, origins.plt2, axis = 'b', ncol = 2, rel_widths = c(0.52, 0.48))
+gridExtra::grid.arrange(origins.plt1, origins.plt2, ncol = 2)
+#cowplot::plot_grid(origins.plt1, origins.plt2, axis = 'b', ncol = 2, rel_widths = c(0.52, 0.48))
 ```
 
 Pairs of age-matched children are notoriously poor at repeated referential communication, failing to coordinate on mutually comprehensible referential expressions [@krauss1977]. Our results demonstrate that children and their parents can solve this coordination problem, converging on increasingly accurate and efficient pacts like pairs of adults. What allows children to coordinate with their parents but not with their peers? 

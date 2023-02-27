@@ -26,7 +26,7 @@ To the extent that there is greater overall variance in the utterances produced 
 #   write_csv(here('./data/experiment3/anonymizedDataFromMongo.csv'))
 ```
 
-```{r e3-read-adult-data, eval = FALSE}
+```{r e3-read-adult-data}
 NUM_TRIALS <- 48
 d.prod.adult <- here("data/experiment3/anonymizedDataFromMongo.csv") %>%
   read_csv(show_col_types = FALSE) %>%
@@ -67,24 +67,18 @@ complete_games.adult <- d.prod.adult %>%
 ```
 
 ```{r e3-read-lemmatized_data}
-# d.prod.clean <- read_csv(
-#   here("data/experiment3/production_data_lemmatized.csv"),
-#   guess_max = 5000,
-#   show_col_types = FALSE)%>%
-#   mutate(button_pressed = as.numeric(button_pressed))
-
 # manually cleaned data
 
-missing_data <- read_csv(
-  here("data/experiment3/missing_production_data_cleaned.csv")) %>%
-  mutate(button_pressed = as.numeric(button_pressed))
+# missing_data <- read_csv(
+#   here("data/experiment3/missing_production_data_cleaned.csv")) %>%
+#   mutate(button_pressed = as.numeric(button_pressed))
 
 d.prod.clean.manual <- read_csv(
   here("data/experiment3/production_data_lemmatized_cleaned.csv"),
   guess_max = 5000) %>%
   filter(!(id %in% c('adult_49', 'kid_40'))) %>% # said I don't know to everything / random
-  mutate(button_pressed = as.numeric(button_pressed)) %>%
-  bind_rows(missing_data)
+  mutate(button_pressed = as.numeric(button_pressed)) #%>%
+  #bind_rows(missing_data)
 
 # kid descriptives
 n_kids <- d.prod.clean.manual %>%
@@ -242,7 +236,7 @@ In other words, while adults appropriately modulated their utterances across con
 
 ### Familiar objects elicit less variable names
 
-```{r eval = FALSE}
+```{r}
 var.measures <- d.prod.clean.manual %>%
   filter(competitor_type == "far") %>%
   group_by(age_group, target_type, competitor_type, clean_utt, target) %>%
@@ -275,7 +269,7 @@ var.plot %>%
 
 ```
 
-```{r regression-model-comparing-competitor-types, eval = FALSE}
+```{r regression-model-comparing-competitor-types}
 var.out.means <- var.measures %>%
   filter(measure == 'normalized_unique_labels') %>% 
   group_by(target_type, age_group) %>%
@@ -368,7 +362,7 @@ To assess that children understand the goal of the task, and to aid in our inter
 We first report children's responses to all three check trial types. 
 Then, we turn to analyze how age and responses to ambiguous check trials (e.g., "dog" to distinguish between a husky and a dalmatian) predicts children's context sensitivity on the production task.
 
-```{r check-trials, eval = FALSE}
+```{r check-trials}
 
 check_trial_data <- d.prod.clean.manual %>%
   filter(competitor_type == "check")
@@ -441,7 +435,7 @@ subj_check_trial_data %>%
 
 For all check trials, children were asked to respond "Yes" or "No" as to whether a provided label uniquely identifies one picture out of two. If children are sensitive to informativity of referential expressions, they should respond "Yes" to Close trials with unambiguous labels (e.g., "red flower" to distinguish between a rose and a lily), "No" to Far trials where the provided labels were unambiguous but incorrect (e.g., "table" to distinguish between a pug and a rabbit), and "No" to Close trials with ambiguous expressions (e.g., "dog" to distinguish between a husky and a dalmatian).
 
-We found that children responded as expected to the unambiguous trials. That is, they responded "No" to the incorrect trial ($m=$ `r check_means%>%filter(check_type == "incorrect")$mean`), and "Yes" to the unambiguous trial ($m=$ `r check_means%>%filter(check_type == "unambiguous")$mean`). These findings suggest that children, regardless of age, understood that that goal of the task was to describe a target picture (and not, for instance, to simply say anything). We also found an overall effect of age, where children's accuracy on the check trials increased with age ($b=$ `r age_model%>%filter(term == "age")$estimate`, $t$(`r age_model%>%filter(term == "age")$df)`$=$ `r age_model%>%filter(term == "age")$statistic`, $p=$ `r age_model%>%filter(term == "age")$p.value`). Further, we found an effect of trial type, such that children were more likely to be correct on unambiguous ($b=$ `r age_model%>%filter(term == "check_typeunambiguous")$estimate`, $t$(`r age_model%>%filter(term == "check_typeunambiguous")$df`)$=$ `r age_model%>%filter(term == "check_typeunambiguous")$statistic`, $p=$ `r age_model%>%filter(term == "check_typeunambiguous")$p.value`) and incorrect trials ($b=$ `r age_model%>%filter(term == "check_typewrong")$estimate`, $t$(`r age_model%>%filter(term == "check_typewrong")$df`)$=$ `r age_model%>%filter(term == "check_typewrong")$statistic`, $p=$ `r age_model%>%filter(term == "check_typewrong")$p.value`) than on ambiguous trials ($m =$ `r check_means%>%filter(check_type == "ambiguous")$mean`).
+We found that children responded as expected to the unambiguous trials. That is, they responded "No" to the incorrect trial ($m=$ `r check_means%>%filter(check_type == "wrong")%>% pull(mean)`), and "Yes" to the unambiguous trial ($m=$ `r check_means%>%filter(check_type == "unambiguous")%>%pull(mean)`). These findings suggest that children, regardless of age, understood that that goal of the task was to describe a target picture (and not, for instance, to simply say anything). We also found an overall effect of age, where children's accuracy on the check trials increased with age ($b=$ `r age_model%>%filter(term == "age")%>%pull(estimate)`, $t$(`r age_model%>%filter(term == "age")%>%pull(df)`)$=$ `r age_model%>%filter(term == "age")%>%pull(statistic)`, $p=$ `r age_model%>%filter(term == "age")%>%pull(p.value)`). Further, we found an effect of trial type, such that children were more likely to be correct on unambiguous ($b=$ `r age_model%>%filter(term == "check_typeunambiguous")%>%pull(estimate)`, $t$(`r age_model%>%filter(term == "check_typeunambiguous")%>%pull(df)`)$=$ `r age_model%>%filter(term == "check_typeunambiguous")%>%pull(statistic)`, $p=$ `r age_model%>%filter(term == "check_typeunambiguous")%>%pull(p.value)`) and incorrect trials ($b=$ `r age_model%>%filter(term == "check_typewrong")%>%pull(estimate)`, $t$(`r age_model%>%filter(term == "check_typewrong")%>%pull(df)`)$=$ `r age_model%>%filter(term == "check_typewrong")%>%pull(statistic)`, $p=$ `r age_model%>%filter(term == "check_typewrong")%>%pull(p.value)`) than on ambiguous trials ($m =$ `r check_means%>%filter(check_type == "ambiguous")%>%pull(mean)`).
 
 ```{r}
 kid_data <- indiv.measures %>%
@@ -512,7 +506,7 @@ ggplot(kid_ambiguous_model_data, aes(x = correct, y = empirical_stat)) +
 ```
 To assess whether recognition of referential ambiguity correlated with performance on the production task, we focused specifically on children's performance on the ambiguous check trials. On these trials, children acted as the listener, and determined whether a give description was sufficient for distinguishing a target from its distractor. We predict that children who perform better on these ambiguous trials would also produce more informative descriptions during our task.
 
-We fit a mixed-effects model predicting children's context sensitivity, as measured by 'exact match' overlap, from their performance on the ambiguous trials and target type (familiar vs. tangram), with random effects of participant and age. We found a significant interaction between accuracy on the ambiguous trials and target type, such that children who were more accurate on the ambiguous check trials were more likely to modulate their descriptions based on context for familiar items ($b=$ `r kid_ambiguous_model%>%filter(term == "target_typefamiliar:correct")$estimate`,$t$(`r kid_ambiguous_model%>%filter(term == "target_typefamiliar:correct")$df`)$=$`r kid_ambiguous_model%>%filter(term == "target_typefamiliar:correct")$statistic`, $p=$`r kid_ambiguous_model%>%filter(term == "target_typefamiliar:correct")$p.value`). In other words, children who were more sensitive to referential ambiguity were less likely to produce the same descriptions for familiar items across close and far contexts (Fig.\ref{fig:e3_check}). 
+We fit a mixed-effects model predicting children's context sensitivity, as measured by 'exact match' overlap, from their performance on the ambiguous trials and target type (familiar vs. tangram), with random effects of participant and age. We found a significant interaction between accuracy on the ambiguous trials and target type, such that children who were more accurate on the ambiguous check trials were more likely to modulate their descriptions based on context for familiar items ($b=$ `r kid_ambiguous_model%>%filter(term == "target_typefamiliar:correct")%>%pull(estimate)`,$t$(`r kid_ambiguous_model%>%filter(term == "target_typefamiliar:correct")%>%pull(df)`)$=$`r kid_ambiguous_model%>%filter(term == "target_typefamiliar:correct")%>%pull(statistic)`, $p=$`r kid_ambiguous_model%>%filter(term == "target_typefamiliar:correct")%>%pull(p.value)`). In other words, children who were more sensitive to referential ambiguity were less likely to produce the same descriptions for familiar items across close and far contexts (Fig.\ref{fig:e3_check}). 
 
 ## Discussion
 
