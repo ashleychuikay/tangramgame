@@ -1,11 +1,9 @@
 # Experiment 2: Comprehension
 
 Our first experiment found that young children are able to coordinate on referential pacts with their parents. Even four-year-old children readily adopted the labels introduced by their parents and interactively refined their descriptions in response to spontaneous parent-initiated repair. Overall, four- to eight-year-old children and their parents exhibited patterns similar to adult pairs in terms of reduction in length of referring expressions and turns.
-
-An important question remains: why do younger children struggle so much with their peers? A large body of prior work shows that children fail to coordinate with peers on referential pacts, but few studies have probed the underlying reasons for children's difficulties.
+Yet an important question remains: why do younger children struggle so much with their peers? A large body of prior work shows that children fail to coordinate with peers on referential pacts, but few studies have probed the underlying reasons for children's difficulties.
 
 One possibility is that the difficulty lies primarily in the process of *comprehension*. That is, children might be poor listeners. They may be unable to understand or accommodate their partner's description when it does not align with their own way of conceptualizing a tangram, preventing uptake of a pact. In this case, parent-child dyads' communicative success in our reference game may be due to parents' ability to align to their children's points of view, such that children can accurately select the intended referent based on their parent's descriptions.
-
 Another possibility is that the root of the difficulty primarily lies in *production*. In other words, children may have difficulty *generating* sufficiently descriptive referring expressions on their own, given their limited vocabulary and other processing constraints, but are able to recognize a good description when they hear it, and adopt that description going forward. Further, children may have difficulty recognizing that their expressions are not informative enough for their conversational partner.
 
 In Experiment 2, we tested the first of these two hypotheses using a comprehension task. We provided naive children and adults with the descriptions produced by participants in Experiment 1 and asked how well they were able to interpret them.
@@ -221,7 +219,7 @@ brms::loo_compare(group_diff.brm1, group_diff.brm2, criterion = "waic")
 
 ### Which descriptions are easier to comprehend?
 
-```{r e2-result, out.height = "300px", fig.align = "center", set.cap.width=T, fig.cap = "\\label{fig:e2_result} Results for Exp.~2 (with 95% confidence intervals). Both naive adults (left) and children (right) were able to more accurately interpret referring expressions produced by parents (blue) than children (red). No overall difference was observed across the two comprehender groups."}
+```{r e2-result, fig.pos = "t", fig.align = "center", fig.width = 10, fig.cap = "\\label{fig:e2_result} Results for Exp. 2 (with 95\\% confidence intervals). Both naive adults (left) and children (right) were able to more accurately interpret referring expressions produced by parents (blue) than children (red). No overall difference was observed across the two comprehender groups."}
 bind_rows(tidy_turk_data, tidy_kid_data) %>%
   filter(measure == "correct") %>%
   group_by(age, person, comprehender_group) %>%

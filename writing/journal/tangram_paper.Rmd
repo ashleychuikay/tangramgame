@@ -6,8 +6,8 @@ author:
   - name          : "Ashley Leung"
     affiliation   : "1"
     corresponding : yes    # Define only one corresponding author
-    address       : "XXXXX"
-    email         : "XXXXX"
+    address       : "University of Chicago"
+    email         : "ashleyleung@uchicago.edu"
   - name          : "Daniel Yurovsky"
     affiliation   : "2"
   - name          : "Robert D. Hawkins"
@@ -15,11 +15,11 @@ author:
 
 affiliation:
   - id            : "1"
-    institution   : "University of Chicago"
+    institution   : "Department of Psychology\\comma\\hspace{.25em} University of Chicago"
   - id            : "2"
-    institution   : "Carnegie Mellon University"
+    institution   : "Department of Psychology\\comma\\hspace{.25em} Carnegie Mellon University"
   - id            : "3"
-    institution   : "Princeton Neuroscience Institute"
+    institution   : "Princeton Neuroscience Institute\\comma\\hspace{.25em} Princeton University"
 
 abstract: |
    Adults readily form pacts, or temporary agreements about referent names, over the course of conversation. Young children fail to do so with peers, but recent evidence suggests that explicit feedback from adults may improve their performance. Do parents naturally provide such structure in their conversations with children? Using a director-matcher paradigm, we first show that parents and children (ages 4, 6, 8) converge on increasingly accurate and efficient conversational pacts. Further, parents of younger children provide more interactive feedback. Finally, we analyze asymmetries in parents' and children's contributions, finding that pacts tend to originate with the parent, but are simplified by younger children. Together, these results support the idea that parents sensitively adapt their language to their children's developmental level to scaffold successful communication.
@@ -28,7 +28,7 @@ authornote: |
   All data and code for these analyses are available at https://osf.io/3f8hy/?view_only=9a196db0444c4867bc899cc70a7a1e9c. Videos of experiment sessions are available on Databrary.
 
 keywords          : "parent-child interaction; language development; communication"
-wordcount         : "1385"
+wordcount         : "10675"
 references        : "42"
 
 bibliography      : ["tangram.bib"]
@@ -40,10 +40,22 @@ footnotelist      : no
 linenumbers       : yes
 mask              : no
 draft             : no
-documentclass     : "apa6"
+documentclass     : "apa7"
 classoption       : "man"
-output:
-  pdf_document: default
+header-includes   : |
+    \let\comma,
+    \makeatletter
+    \renewcommand{\paragraph}{\@startsection{paragraph}{4}{\parindent}%
+      {0\baselineskip \@plus 0.2ex \@minus 0.2ex}%
+      {-1em}%
+      {\normalfont\normalsize\bfseries\typesectitle}}
+  
+    \renewcommand{\subparagraph}[1]{\@startsection{subparagraph}{5}{1em}%
+      {0\baselineskip \@plus 0.2ex \@minus 0.2ex}%
+      {-\z@\relax}%
+      {\normalfont\normalsize\bfseries\itshape\hspace{\parindent}{#1}\textit{\addperi}}{\relax}}
+    \makeatother
+output            : papaja::apa6_pdf
 ---
 
 ```{r load-packages, include = FALSE}
@@ -92,9 +104,9 @@ set.seed(42)
 options(digits=3, dplyr.summarise.inform = FALSE)
 ```
 
-Human language is marked by incredible productivity [@hockett1960]. While we often think of words as having fixed meanings, and referents as having fixed labels, these are both substantial simplifications [@elman2009,@wojcik2022map]. The same word can have different meanings in different contexts, and can take on new meanings over time. The same object can be a dog, a pug, an animal, or Max. Children don't just learn the sounds, words, and structures of their native language---they learn how to *use language to communicate*.
+Human language is marked by incredible productivity [@hockett1960]. While we often think of words as having fixed meanings, and referents as having fixed labels, these are both substantial simplifications [@elman2009; @wojcik2022map]. The same word can have different meanings in different contexts, and can take on new meanings over time. The same object can be a dog, a pug, an animal, or Max. Children don't just learn the sounds, words, and structures of their native language---they learn how to *use language to communicate*.
 
-Effective communication relies on common ground, or shared knowledge, between conversational partners. To communicate successfully, interlocutors must understand each other and *know* that they understand each other [@bruner1985]. Conversations are thus a cooperative process; even simple referential expressions are constructed collaboratively through negotiation. When the meaning of an utterance is unclear, or when an intended referent does not have a singular conventional label, interlocutors will engage in negotiation, arriving at a *conversational pact* about how to think and talk about the intended referent [@clark1986, @haber-etal-2019-photobook, @hawkins2019]. 
+Effective communication relies on common ground, or shared knowledge, between conversational partners. To communicate successfully, interlocutors must understand each other and *know* that they understand each other [@bruner1985]. Conversations are thus a cooperative process; even simple referential expressions are constructed collaboratively through negotiation. When the meaning of an utterance is unclear, or when an intended referent does not have a singular conventional label, interlocutors will engage in negotiation, arriving at a *conversational pact* about how to think and talk about the intended referent [@clark1986; @haber-etal-2019-photobook; @hawkins2019]. 
 
 Conversational pacts are temporary agreements for referent names, and adults fluently form, revise, and track the formation of pacts. For instance, Brennan and Clark [-@brennan1996] showed that adults will use the appropriate level of specificity for a referent (e.g. "loafer" rather than "shoe" when another shoe is present), carry this forward into a new context with the same conversational partner even when the initial competitor is removed, then revert to "shoe" when a new partner is introduced. Conversational pacts are thus *partner-specific*, further suggesting that pacts are formed for the purpose of in-the-moment communicative success between conversational partners.
 
@@ -104,16 +116,16 @@ Problems in pact formation could stem from three potential sources of difficulty
 
 ## Comprehension
 
-Children's difficulty in forming conventional pacts could stem from issues in comprehension. In order to identify the target of an utterance, children need to be able to determine whether the information in it is a good description of each potential referent. Prior work shows that young children struggle to recognize which referential expressions are more informative [@beal1982], even when making judgments about their own expressions [@asher1976, @robinson1977]. Children may thus struggle to identify the relevant and informative components of a complex utterance like "the shoe with the brown laces": they may think that any referent that matches on "shoe" is good enough and guess [@speer1984two]. 
+Children's difficulty in forming conventional pacts could stem from issues in comprehension. In order to identify the target of an utterance, children need to be able to determine whether the information in it is a good description of each potential referent. Prior work shows that young children struggle to recognize which referential expressions are more informative [@beal1982], even when making judgments about their own expressions [@asher1976; @robinson1977]. Children may thus struggle to identify the relevant and informative components of a complex utterance like "the shoe with the brown laces": they may think that any referent that matches on "shoe" is good enough and guess [@speer1984two]. 
 
 ## Production 
 
 Alternatively, the primary source of difficulty might be the production of effective referential expressions. For novel objects, such as those studied by @krauss1977, identifying the right features to refer to could be challenging for children without the scaffolding provided by a prior history of talking about the target object. For familiar objects, conventional labels provide a good default. However, conventional labels can be insufficient in more challenging contexts, such as when a shoe should be called a "loafer" because of the presence of other shoes [@brennan1996]. Indeed, evidence suggests that young children do not reliably produce sufficiently informative referring expressions.
-The problem of successfully referring to novel referents may thus derive from one or both of these problems: children may generate referential expressions that are overly idiosyncratic, or insufficiently informative for their conversational partner to correctly identify the intended referent [@beal1983young, @beal1988children]. 
+The problem of successfully referring to novel referents may thus derive from one or both of these problems: children may generate referential expressions that are overly idiosyncratic, or insufficiently informative for their conversational partner to correctly identify the intended referent [@beal1983young; @beal1988children]. 
 
 ## Interaction
 
-Finally, children may struggle to communicate to their partners that they have not understood each other. Adults readily use back-channels and affirmations to signal that they have understood a potentially ambiguous utterance, and will ask clarifying questions when they feel they have been unable to [@clark1986]. However, young children may have trouble seeking clarification or providing feedback to their conversational partners when necessary [@anderson1994, @beal1987repairing]. As a consequence, children may not form the necessary common ground to communicate successfully with one another, as they may simply assume common understanding without mutual confirmation. 
+Finally, children may struggle to communicate to their partners that they have not understood each other. Adults readily use back-channels and affirmations to signal that they have understood a potentially ambiguous utterance, and will ask clarifying questions when they feel they have been unable to [@clark1986]. However, young children may have trouble seeking clarification or providing feedback to their conversational partners when necessary [@anderson1994; @beal1987repairing]. As a consequence, children may not form the necessary common ground to communicate successfully with one another, as they may simply assume common understanding without mutual confirmation. 
 
 In a set of three studies, we measure the development of children's capacities with these three critical components of referential pact formation: comprehension, production, and negotiation. In Study 1, we simplified and adapted the classic paradigm developed by @clark1986 to measure conversational pact formation in parent-child dyads. While young children may struggle to communicate successfully with each other, they spend many hours in conversation with parents and other caregivers. We studied these interactions to determine what kinds of conversational support parents provide their children over development in order to identify the aspects that are most challenging for young children in naturalistic settings. We found that even 4-year-old children and their parents can successfully communicate about novel objects, but that children's role in these conversations changed over development. For the youngest children, parents both provide significant scaffolding in negotiation and are the source of most of the informative features that constitute successful referential pacts. By the time children are 8-years-old, however, they take on a roughly equal share of referential pact construction. 
 
@@ -208,13 +220,12 @@ Second, we hypothesized that response times for "novel" tangram targets would be
 We tested these hypotheses with a mixed-effects model predicting (logged) response time as a function of context (close vs. far) and familiarity (novel vs. familiar), controlling for utterance length (coded as continuous).
 We included the full random effect structure for each participant, as well as intercepts and effect of context for each target:
 
-\texttt{logged_rt ~ competitor_type * target_type + utt_length + (1 + competitor_type * target_type |id) + (1 + competitor_type |target}
+`\texttt{logged_rt ~ competitor_type * target_type + utt_length + (1 + competitor_type * target_type |id) + (1 + competitor_type |target}`
 
 First, we observed a large effect of utterance length, $b=`r (rt_model %>% filter(term == 'utt_length'))$estimate`, t = `r (rt_model %>% filter(term == 'utt_length'))$statistic`, p < 0.001$, which is unsurprising as longer descriptions generally take longer to type. 
 After controlling for utterance length, however, we found that adults' response times were longer on close context trials than far, $b=`r (rt_model %>% filter(term == 'competitor_typefar'))$estimate`, t = `r (rt_model %>% filter(term == 'competitor_typefar'))$statistic`, p = 0.002$. 
 In addition, we find that adults' response times were longer when describing tangram images than familiar images  $b=`r (rt_model %>% filter(term == 'target_typetangram'))$estimate`, t = `r (rt_model %>% filter(term == 'target_typetangram'))$statistic`, p < 0.001$. 
 We did not find strong evidence for an interaction, $b=`r (rt_model %>% filter(term == 'competitor_typefar:target_typetangram'))$estimate`, t = `r (rt_model %>% filter(term == 'competitor_typefar:target_typetangram'))$statistic`, p = 0.12$; see Figure \ref{fig:rt_appendix}.
-
 
 ```{r appendix-Levensthein, out.height = "450px", fig.align = "center", set.cap.width=T, fig.cap = "\\label{fig:Levensthein_appendix} Measuring context overlap using continuous Levensthein distance (rather than exact match probability)."}
 contextsensitivity.distance <- indiv.measures %>%

@@ -119,7 +119,7 @@ We used `r length(fam_stims)` pictures of familiar objects and `r length(novel_s
 Familiar objects were drawn from an image set used by @degen2020. We used eight different basic-level categories that we expected to be familiar to children: bears, birds, cars, candy, dogs, fish, shirts, and tables.
 Tangrams were drawn from a publicly royalty free set available on https://www.1001freedownloads.com/.
 
-```{r e3-design, out.height = "450px", fig.align = "center", set.cap.width=T, fig.cap = "Objects in Experiment 3 could appear in isolation (A), in a far context (B), or in a close context (C)."}
+```{r e3-design, out.width = "0.6\\textwidth", fig.align = "center", set.cap.width=T, fig.cap = "Objects in Experiment 3 could appear in isolation (A), in a far context (B), or in a close context (C)."}
 knitr::include_graphics(here("writing/journal/diagrams/e3_diagram.pdf"))
 ```
 
@@ -129,7 +129,7 @@ Adults provided labels for a total of eight familiar objects and eight novel tan
 
 Children provided labels for the same eight familiar and novel objects. To maintain children's attention for the duration of the experiment, they gave responses only in the close and far conditions and not in the isolation condition. Children's productions in all conditions were typed into a text box in real time by an experimenter during their participation.
 
-Children also participated in an additional task designed to measure their understanding of ambiguity in *comprehension* [@markman1977realizing, @beal1990development], as failures to judge the informativity of others' expressions may be implicated in failures to produce appropriately informative utterances of one's own in the close condition (e.g. saying "bear" when both the target and distractor are bears).
+Children also participated in an additional task designed to measure their understanding of ambiguity in *comprehension* [@markman1977realizing; @beal1990development], as failures to judge the informativity of others' expressions may be implicated in failures to produce appropriately informative utterances of one's own in the close condition (e.g. saying "bear" when both the target and distractor are bears).
 
 In this condition, children were told that they would hear a label produced by another child, and that they should indicate whether this label adequately identified the target object.
 
@@ -156,13 +156,13 @@ Third, we removed spaces and collapsed multiple words together into a single tok
 
 We focus on evaluating two primary hypotheses.
 First, could children be failing to take into account the referential context when deciding what to say, leading to more ambiguous or underinformative referring expressions?
-Second, could children simply have more uncertainty over possible acceptable labels for novel objects, making retrieval challenging [@lachman1974language, @cycowicz1997picture]?
+Second, could children simply have more uncertainty over possible acceptable labels for novel objects, making retrieval challenging [@lachman1974language; @cycowicz1997picture]?
 These hypotheses are not mutually exclusive. 
 Indeed, the corresponding mechanisms -- *pragmatic reasoning* and *lexical priors* -- are both implicated in recent production models [e.g. @murthy2021shades, @hawkins2022partners]. 
 
 ### Children are differentially sensitive to referential context
 
-```{r context-sensitivity, out.height = "300px", fig.align = "center", set.cap.width=T, fig.cap = "\\label{fig:e3_contextsensitivity} Proportion of descriptions of targets that were exact matches across the close and far contexts (error bars are 95% CIs). Children were twice as likely to give the same description for familiar objects than tangrams across contexts, while adults equally modulated their descriptions for both target types."}
+```{r context-sensitivity, fig.pos = "t", fig.align = "center", fig.width = 10, fig.cap = "\\label{fig:e3_contextsensitivity} Proportion of descriptions of targets that were exact matches across the close and far contexts (error bars are 95\\% CIs). Children were twice as likely to give the same description for familiar objects than tangrams across contexts, while adults equally modulated their descriptions for both target types."}
 
 # we can just look at the item-by-item / speaker-by-speaker level 
 # where there's a context effect...
@@ -293,13 +293,13 @@ var.out.entropy <- var.measures %>%
 The previous section suggests that children have difficulty recognizing the referential ambiguity of a canonical label like "dog" in a context where there are multiple dogs.
 In other words, children's production may be constrained by limitations in their *pragmatic reasoning*. 
 But why would insensitivity to pragmatic context be limited to familiar objects?
-One possibility is that children have a less stable prior over possible names for the novel tangram images due to lower 'codability' or 'nameability' [@hupet1991effects, @zettersten2020].
-Their variability across contexts could be driven less by pragmatic reasoning and more by "sampling variation" [@denison2013rational, @bonawitz2014probabilistic].
+One possibility is that children have a less stable prior over possible names for the novel tangram images due to lower 'codability' or 'nameability' [@hupet1991effects; @zettersten2020].
+Their variability across contexts could be driven less by pragmatic reasoning and more by "sampling variation" [@denison2013rational; @bonawitz2014probabilistic].
 
 We test this hypothesis by examining the distribution of labels at the population level. 
 First, we hypothesize that both adults and children will produce a fairly narrow, high-agreement range of labels for familiar objects, yielding highly concentrated distributions.
 Second, we hypothesize that children will use a broader range of different labels for tangrams than adults, yielding a less concentrated distribution with less agreement among different children.
-We considered several measures of concentration, but we focus primarily on the proportion of unique labels to total labels, which is simple and interpretable.^[In principle, the most appropriate metric of spread across labels would be the information theoretic quantity of entropy: $H(X) = \sum_i p_i \log p_i$. However, our empirical distributions are highly sparse, with many labels appearing only once. Our estimates of entropy are therefore somewhat sensitive to the choice of statistical estimator (e.g. how much to regularize with pseudo-counts) while being less numerically interpretable. However, we find a similar qualitative effects of interest for reasonable choices, $b=$`r (var.out.entropy %>% filter(term == 'target_type1:age_group1'))$estimate`, $t$(`r (var.out.entropy %>% filter(term == 'target_type1:age_group1'))$df`)$=$ `r (var.out.entropy %>% filter(term == 'target_type1:age_group1'))$statistic`, $p =$ `r (var.out.entropy %>% filter(term == 'target_type1:age_group1'))$p.value` using the Schurmann-Grassberger estimator. Alternative metrics include "modal agreement" [@brodeur2010bank, @brodeur2014bank], the proportion of participants that produce the most common label, and Simpson's diversity index [@simpson1949measurement,@majid2014odors, @majid2018differential], which can be interpreted as the probability that two independently sampled labels will match.]
+We considered several measures of concentration, but we focus primarily on the proportion of unique labels to total labels, which is simple and interpretable.^[In principle, the most appropriate metric of spread across labels would be the information theoretic quantity of entropy: $H(X) = \sum_i p_i \log p_i$. However, our empirical distributions are highly sparse, with many labels appearing only once. Our estimates of entropy are therefore somewhat sensitive to the choice of statistical estimator (e.g. how much to regularize with pseudo-counts) while being less numerically interpretable. However, we find a similar qualitative effects of interest for reasonable choices, $b=$`r (var.out.entropy %>% filter(term == 'target_type1:age_group1'))$estimate`, $t$(`r (var.out.entropy %>% filter(term == 'target_type1:age_group1'))$df`)$=$ `r (var.out.entropy %>% filter(term == 'target_type1:age_group1'))$statistic`, $p =$ `r (var.out.entropy %>% filter(term == 'target_type1:age_group1'))$p.value` using the Schurmann-Grassberger estimator. Alternative metrics include "modal agreement" [@brodeur2010bank; @brodeur2014bank], the proportion of participants that produce the most common label, and Simpson's diversity index [@simpson1949measurement; @majid2014odors; @majid2018differential], which can be interpreted as the probability that two independently sampled labels will match.]
 For example, suppose that from a pool of forty participants, twenty said 'bird', ten said 'dancer', and the other ten said something unique. 
 Then we would have $p_{uniq} = 12/40 = .3$.
 Meanwhile, if all forty participants chose different labels, we would have $p_{uniq} = 40/40 = 1$; and at the other extreme, if all forty participants chose the same label, we would have $p_{uniq} = 1/40 = 0.025$.
@@ -496,7 +496,7 @@ ggplot(kid_age_data, aes(x = age, y = empirical_stat)) +
   facet_wrap(~target_type)
 ```
 
-```{r e3-check, out.height = "300px", fig.align = "center", set.cap.width=T, fig.cap = "\\label{fig:e3_check} Children's performance on ambiguous manipulation trials predicted their context sensitivity for familiar objects, but not for tangrams."}
+```{r e3-check, fig.pos = "t", fig.align = "center", fig.width = 10, fig.cap = "\\label{fig:e3_check} Children's performance on ambiguous manipulation trials predicted their context sensitivity for familiar objects, but not for tangrams."}
 
 ggplot(kid_ambiguous_model_data, aes(x = correct, y = empirical_stat)) +
          geom_point() +
