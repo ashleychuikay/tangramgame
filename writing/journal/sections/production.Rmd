@@ -199,7 +199,7 @@ contextsensitivity.means %>%
     geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0, 
                   position = dodge) +
     scale_fill_manual(values = c(ADULTS, CHILDREN)) +
-    labs(y = 'Proportion of exact matches in descriptions', fill = "Age group") +
+    labs(y = 'Proportion of exact matches in descriptions', x = "", fill = "Age group") +
     theme(aspect.ratio = 1, legend.position = "right")
 ```
 
@@ -269,8 +269,8 @@ var.plot %>%
     geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0, position = dodge) +
     scale_fill_manual(values = c(ADULTS, CHILDREN)) +
     facet_grid( ~ . , scales='free') +
-    labs(x = '', y = 'proportion unique labels') +
-    theme(legend.position = "top")
+    labs(x = '', y = 'Proportion unique labels', fill = 'Age group') +
+    theme(aspect.ratio = 1, legend.position = "right")
 
 #ggsave('variability_measures.pdf', width = 10, height = 10, unit = 'in')
 
@@ -513,11 +513,12 @@ ggplot(kid_age_data, aes(x = age, y = empirical_stat)) +
 
 ```
 
-```{r e3-check, fig.pos = "t", fig.align = "center", fig.width = 10, fig.cap = "\\label{fig:e3_check} Children's performance on ambiguous manipulation trials predicted their context sensitivity for familiar objects, but not for tangrams."}
+```{r e3-check, fig.pos = "t", fig.align = "center", fig.width = 10, fig.cap = "\\label{fig:e3_check} Children's performance on ambiguous manipulation check trials predicted their context sensitivity (measured by exact matches in descriptions between close and far contexts) for familiar objects, but not for tangrams. Note that there were only three ambiguous manipulation check trials, thus there only four possible accuracy rates"}
 
 ggplot(kid_ambiguous_model_data, aes(x = correct, y = empirical_stat)) +
-         geom_point() +
-         geom_smooth(method = "lm") +
+         geom_point(color = CHILDREN) +
+         geom_smooth(method = "lm", color = CHILDREN) +
+         labs(x = "Accuracy on ambiguous manipulation check trials", y = "Context sensitivity")
          facet_wrap(~target_type)
 
 ```
