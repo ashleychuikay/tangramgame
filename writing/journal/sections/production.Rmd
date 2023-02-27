@@ -73,12 +73,16 @@ complete_games.adult <- d.prod.adult %>%
 #   here("data/experiment3/missing_production_data_cleaned.csv")) %>%
 #   mutate(button_pressed = as.numeric(button_pressed))
 
-d.prod.clean.manual <- read_csv(
-  here("data/experiment3/production_data_lemmatized_cleaned.csv"),
-  guess_max = 5000) %>%
-  filter(!(id %in% c('adult_49', 'kid_40'))) %>% # said I don't know to everything / random
-  mutate(button_pressed = as.numeric(button_pressed)) #%>%
-  #bind_rows(missing_data)
+# d.prod.clean.merge <- read_csv(
+#   here("data/experiment3/production_data_lemmatized_cleaned.csv"),
+#   guess_max = 5000) %>%
+#   filter(!(id %in% c('adult_49', 'kid_40'))) %>% # said I don't know to everything / random
+#   mutate(button_pressed = as.numeric(button_pressed)) %>%
+#   bind_rows(missing_data)
+
+# write_csv(d.prod.clean.merge, here("data/experiment3/production_data_cleaned.csv"))
+
+d.prod.clean.manual <- read_csv(here("data/experiment3/production_data_cleaned.csv"))
 
 # kid descriptives
 n_kids <- d.prod.clean.manual %>%
