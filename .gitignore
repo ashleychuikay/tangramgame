@@ -1,4 +1,7 @@
 *-1.pdf
+*-1.png
+tangram_paper.pdf
+*.html
 node_modules/
 *.zip
 credentials.py
