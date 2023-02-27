@@ -529,7 +529,7 @@ ggplot(kid_age_data, aes(x = age, y = empirical_stat)) +
 ggplot(kid_ambiguous_model_data, aes(x = correct, y = empirical_stat)) +
          geom_point(color = CHILDREN) +
          geom_smooth(method = "lm", color = CHILDREN) +
-         labs(x = "Accuracy on ambiguous manipulation check trials", y = "Context sensitivity")
+         labs(x = "Accuracy on ambiguous manipulation check trials", y = "Context sensitivity") +
          facet_wrap(~target_type)
 
 ```
