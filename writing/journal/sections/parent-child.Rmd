@@ -1,13 +1,16 @@
-# Experiment 1: Referential communication
+# Experiment 1: Forming pacts in an interactive communication game
 
+In our first experiment, we explore whether children may be able to coordinate on conversational pacts with adult partners, even as numerous studies have revealed difficulties with peers.
+Adults may provide children with a model of informative referential expressions, and actively seek clarification when children's utterances are ambiguous [@clark2018conversation; @nikolaus2022communicative]. 
+It is clear from existing studies that children are receptive to *explicit* coaching from experimenters. 
+For example, @deutsch1982 showed that repeated clarification questions eventually elicited unambiguous descriptions from 6- and 9-year-olds and, to a lesser extent, from 3-year-olds. 
+A more recent training study by @matthews2007 replicated this finding in 2- to 4-year-olds, and further showed transfer to a different communication task. 
+But it is unclear whether, or how, adults spontaneously provide such feedback in the course of natural adult-child conversations, and whether such processes actually enable the formation of pacts (rather than generically increasing informativeness).
 
-While numerous studies have found that children struggle to negotiate and construct conversational pacts with peers, young children can and do participate in conversation. What might support children's communicative abilities from a young age? One important factor is that children do not only interact with peers. From a young age, children constantly engage with adults, often their caregivers, in communicative and referential settings. Adults may provide children with a model of informative referential expressions, and can also seek clarification when children's utterances are unclear [@clark2018conversation; @nikolaus2022communicative]. 
-
-While children struggle as directors, their performance can improve significantly when an adult offers explicit guidance on whether their referential expressions are ambiguous or otherwise insufficiently informative. For example, @deutsch1982 showed that clarification questions could be used by adults to eventually elicit unambiguous descriptions from 6- and 9-year-olds and, to a lesser extent, from 3-year-olds. A recent training study by @matthews2007 replicated this finding in 2- to 4-year-olds, and further showed transfer to a different communication task. While these studies show how adult input may help children produce informative referential expressions, it remains unclear whether, or how, adults provide such feedback in the course of natural adult-child conversations.
-
-Children engage in conversation with their caregivers from their second year of life and reciprocal social interaction even before that [@bruner1985]. Further, children's language development is predicted most strongly not by the amount of language they hear, but rather by the amount of conversational turns they engage in [@romeo2018]. Given that young children struggle with informativity and perspective-taking, how do conversations with caregivers succeed? One possibility is that parents naturally adopt some of the strategies used by experimenters in training studies of conversational pact formation: Pointing out when references are ambiguous, clarifying when children have produced insufficient information, and/or helping children to conceptualize their referential targets in better ways. Indeed, parents' contingent responses to children's incorrect or incomplete utterances have been implicated in language learning more broadly [@chouinard2003]. 
-
-Parents spend a tremendous amount of time with children, and often have quite accurate models of their children's lexical and conceptual knowledge [@fenson1994]. Prior work has shown that parents leverage their knowledge of their children's vocabularies to calibrate the informativeness of their referential expressions [@leung2021]. Do they also leverage this knowledge to scaffold the formation of conversational pacts with children? In this study, we asked parents and their 4-, 6-, and 8-year-old children, as well as pairs of adults, to play an adapted version of Krauss and Glucksberg's [-@krauss1969] director-matcher game. We analyzed their interactions to ask (1) whether parents' contributions support the formation of conversational pacts, (2) what strategies parents use to support pact formation, and (3) whether the nature of these pacts changes over development as children acquire more language.
+One possibility is that caregivers naturally adopt some of the interactive strategies developed by experimenters in these training studies: pointing out when references are insufficiently informative, asking for clarification about targeted features, and helping children to re-conceptualize referential targets to align with their developing vocabulary. 
+Indeed, children's language development is predicted most strongly not by the raw amount of language they hear, but rather by the amount of conversational turns they engage in [@romeo2018], and parents' contingent responses to children's incorrect or incomplete utterances have been implicated in language learning more broadly [@chouinard2003]. 
+Parents spend a tremendous amount of time with their children, and often have quite accurate models of their children's lexical and conceptual knowledge [@fenson1994]. 
+Given that parents leverage specialized knowledge of their children's vocabularies to calibrate referential expressions [@leung2021], do they also leverage such knowledge to scaffold the formation of conversational pacts? In this study, we asked parents and their 4-, 6-, and 8-year-old children, as well as control pairs of adults, to play an adapted version of Krauss and Glucksberg's [-@krauss1969] director-matcher game. We examined (1) whether parents' contributions enable conversational pacts to form at all, (2) what strategies parents use to scaffold pact formation if so, and (3) whether the nature of these pacts changes over development as children become more adult-like users of language.
 
 
 ```{r color-constants}
@@ -28,7 +31,7 @@ exchanges_data <- read_csv(here("data/experiment1/exchanges.csv"),
 ```
 
 
-```{r ipads, fig.pos = "t", fig.width = 8, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "(A) Tangram figures used as referential targets, (B) director and matcher displays, (C) trial sequence."}
+```{r ipads, fig.pos = "t", fig.width = 8, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "(A) We divided a set of ambiguous tangram figures into two sets of referential targets. (B) A parent (orange) and child (blue) played a reference game where these figures were presented as stimuli. On each trial, the director (here, the parent) was asked to refer to the target figure (privately highlighted in a box) so that the matcher (here, the child) could guess it. (C) Each tangram appeared as the target once per black, and each dyad played the game for four blocks, alternating roles on each trial."}
 # Note: this is moved up here to get the fig to appear on the right page... i know it's annoying.
 knitr::include_graphics("diagrams/design.pdf")
 ```
@@ -93,7 +96,7 @@ age_effect_exchanges = lmer.exchanges %>% filter(term == 'age')
 rep_effect_exchanges = lmer.exchanges %>% filter(term == 'rep_num')
 ```
 
-```{r acc-exchanges, eval = TRUE, cache= FALSE, fig.out="1000px", fig.pos = "t", fig.align = "center", fig.cap = "(A) Accuracy improves over time for all groups. (B) Number of dialogue exchanges is higher for younger children. Error bars are 95\\% CIs. The drop in accuracy for 8-year-olds is likely an artifact of a small set of children losing interest in the task."}
+```{r acc-exchanges, eval = TRUE, cache= FALSE, fig.out="1000px", fig.pos = "t", fig.align = "center", fig.cap = "(A) Accuracy and (B) number of dialogue exchanges per trial, broken out by whether the child (dark grey) or the adult (light grey) was the director. Error bars are 95\\% CIs. The drop in accuracy for 8-year-olds is likely an artifact of a small set of children losing interest in the task."}
 
 # render plot
 plt.results.acc <- result.acc.means %>%   
