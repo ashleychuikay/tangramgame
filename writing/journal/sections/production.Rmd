@@ -138,7 +138,7 @@ Children provided labels for the same eight familiar and novel objects. To maint
 Children also participated in an additional task designed to measure individual differences understanding ambiguity in *comprehension* [@markman1977realizing; @beal1990development], as failures to judge the informativity of others' expressions may be implicated in failures to produce appropriately informative utterances of one's own in the close condition (e.g. saying "bear" when both the target and distractor are bears).
 In this condition, children were told that they would hear a label produced by another child, and that they should indicate whether this label adequately identified the target object.
 Three of the trials were far trials in which an unambiguously incorrect label was provided to the child (e.g. "table" to distinguish between a pug and a rabbit), three of the trials were close trials in which an unambiguously correct label was provided (e.g. "polar bear" to distinguish between a polar bear and a grizzly bear), and three were close trials in which an ambiguous label was provided (e.g. "dog" to distinguish between a husky and a dalmatian).
-Children responded verbally ("yes" it is adequate or "no") and an experimenter selected the corresponding button on the screen.
+Children responded verbally ("yes" it is adequate or "no" it is not) and an experimenter selected the corresponding button on the screen.
 
 ### Procedure
 
@@ -157,11 +157,11 @@ Third, we removed spaces and collapsed multiple words together into a single tok
 
 ## Results
 
-We focus on evaluating two primary hypotheses.
+We focus on two primary hypotheses.
 First, could children be failing to take into account the referential context when deciding what to say, leading to more ambiguous or underinformative referring expressions?
 Second, could children simply have more uncertainty over possible acceptable labels for novel objects, making retrieval challenging [@lachman1974language; @cycowicz1997picture]?
 These hypotheses are not mutually exclusive. 
-Indeed, the corresponding mechanisms -- *pragmatic reasoning* and *lexical priors* -- are both implicated in recent production models [e.g. @murthy2021shades, @hawkins2022partners]. 
+Indeed, the corresponding mechanisms -- *pragmatic reasoning* and *lexical priors* -- are both implicated in recent production models [e.g. @murthy2021shades; @hawkins2022partners]. 
 
 ### Children are differentially sensitive to referential context
 
@@ -251,12 +251,13 @@ plt.context <- contextsensitivity.means %>%
     geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0, 
                   position = dodge) +
     scale_fill_manual(values = c(ADULTS, CHILDREN)) +
-    labs(tag = "A", y = 'Proportion of exact matches in descriptions', x = "") +
+    labs(tag = "A", y = 'Proportion of exact matches', x = "") +
     theme(aspect.ratio = 1, legend.position = "none", text = element_text(size = 16))
 
 #naming variability plot
 plt.variability <- var.plot %>% 
-  filter(measure == 'normalized_unique_labels') %>% # 
+  filter(measure == 'normalized_unique_labels') %>% 
+  mutate(age_group = ifelse(age_group == 'kid', 'child', 'adult')) %>%
   ggplot(aes(x = target_type, y = empirical_stat, fill = age_group)) +
     geom_bar(stat = 'identity', position=dodge) +
     geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0, position = dodge) +
@@ -277,9 +278,9 @@ We include fixed effects for age cohort (child vs. adult) and target type (famil
 To control for the fact that longer utterance strings are less likely to exactly match by chance, we also include a term for the average length of the close and far labels for that speaker and item. 
 The most complex random effects structure that converged only included random intercepts at the participant level.
 
-We found a significant interaction between age group and target type, $b=`r indiv.measures.inter$estimate`, z = `r indiv.measures.inter$statistic`, p < 0.001$ (see Figure  \ref{fig:e3_contextsensitivity}). 
+We found a significant interaction between age group and target type, $b=`r indiv.measures.inter$estimate`$, $z = `r indiv.measures.inter$statistic`$, $p `r papaja::printp(indiv.measures.inter$p.value, add_equals = TRUE)`$ (see Figure  \ref{fig:e3_contextsensitivity}A). 
 Although adults displayed similar rates of context-sensitivity for familiar and novel objects (familiar: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'adult', target_type == 'familiar'))$empirical_stat`, novel: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'adult', target_type == 'tangram'))$empirical_stat`), children were nearly twice as likely to provide the exact same label across contexts for a familiar object (familiar: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'kid', target_type == 'tangram'))$empirical_stat`; novel: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'kid', target_type == 'familiar'))$empirical_stat`).
-Similar results were obtained using 'softer' measures like edit distance, which is the number of edits required to turn one string into the other, $b= `r soft.inter$estimate`, z = `r soft.inter$statistic`, p < 0.001$ (see Supplemental Figure \ref{fig:Levensthein_appendix}). 
+Similar results were obtained using 'softer' measures like edit distance, which is the number of edits required to turn one string into the other, $b= `r soft.inter$estimate`, z = `r soft.inter$statistic`, p `r papaja::printp(soft.inter$p.value, add_equals = TRUE)`$ (see Supplemental Figure \ref{fig:Levensthein_appendix}). 
 In other words, while adults appropriately modulated their utterances across contexts, children often produced the same description for familiar targets across contexts, even when it was not sufficient to distinguish the target from the distactor. 
 
 ### Familiar objects elicit less variable names
@@ -322,8 +323,8 @@ Meanwhile, if all forty participants chose different labels, we would have $p_{u
 Because population agreement metrics necessarily aggregate over individual participants for each target, we construct our mixed-effects regression model at the item level. 
 Given our findings of differential context-sensitivity in the previous section, we limit this analysis to the 'far' condition where the distribution of adult and children labels are more comparable (aggregating across close and far yields qualitatively similar results). 
 We predict agreement as a function of age group (adult vs. child) and target type (familiar vs. tangram), including random intercepts at the target level. 
-First, we observe a main effect of target type, with less agreement on tangram labels for all participants, $b = `r (var.out %>% filter(term == 'target_type1'))$estimate`$, $t(`r (var.out %>% filter(term == 'target_type1'))$df`) = `r (var.out %>% filter(term == 'target_type1'))$statistic`$, $p < 0.001$. This is in line with our hypothesis that agreement would be higher for familiar objects with commonly-known canonical labels.
-Importantly, however, we also find a significant interaction with age group, $b = `r (var.out %>% filter(term == 'target_type1:age_group1'))$estimate`$, $t(`r (var.out %>% filter(term == 'target_type1:age_group1'))$df`) = `r (var.out %>% filter(term == 'target_type1:age_group1'))$statistic`$, $p < 0.001$. 
+First, we observe a main effect of target type, with less agreement on tangram labels for all participants, $b = `r (var.out %>% filter(term == 'target_type1'))$estimate`$, $t(`r (var.out %>% filter(term == 'target_type1'))$df`) = `r (var.out %>% filter(term == 'target_type1'))$statistic`$, $p `r (var.out %>% filter(term == 'target_type1'))$p.value %>% papaja::printp()`$. This is in line with our hypothesis that agreement would be higher for familiar objects with commonly-known canonical labels.
+Importantly, however, we also find a significant interaction with age group, $b = `r (var.out %>% filter(term == 'target_type1:age_group1'))$estimate`$, $t(`r (var.out %>% filter(term == 'target_type1:age_group1'))$df`) = `r (var.out %>% filter(term == 'target_type1:age_group1'))$statistic`$, $p `r (var.out %>% filter(term == 'target_type1:age_group1'))$p.value %>% papaja::printp()`$. 
 The labels produced by different children in our sample agree with one another about as much as adults' agree for familiar targets ($m = `r var.out.means$familiar_kid`$ for children and $m = `r var.out.means$familiar_adult`$ for adults). 
 However, children as a group produce a much more variable set of labels for novel tangrams than adults do ($m = `r var.out.means$tangram_kid`$ for children and $m = `r var.out.means$tangram_adult`$ for adults).
 
@@ -372,7 +373,6 @@ Children are generally less sensitive to referential context than adults, but wh
 Given that children are more likely to produce the same label across contexts for familiar objects, it is unlikely that vocabulary knowledge accounts for most of the difference between children and adults. 
 One factor that may influence children's performance is the recognition of referential ambiguity. 
 That is, children who understand that ambiguous referring expressions are not sufficiently informative for a partner should show more context sensitivity in our production task.
-
 To assess that children understand the goal of the task, and to aid in our interpretation of any potentially ambiguous responses that children give in earlier trials, we included a manipulation check condition for children. 
 We first report children's responses to all three check trial types. 
 Then, we turn to analyze how age and responses to ambiguous check trials (e.g., "dog" to distinguish between a husky and a dalmatian) predicts children's context sensitivity on the production task.
@@ -450,9 +450,14 @@ subj_check_trial_data %>%
   tidyboot_mean(correct)
 ```
 
-For all check trials, children were asked to respond "Yes" or "No" as to whether a provided label uniquely identifies one picture out of two. If children are sensitive to informativity of referential expressions, they should respond "Yes" to Close trials with unambiguous labels (e.g., "red flower" to distinguish between a rose and a lily), "No" to Far trials where the provided labels were unambiguous but incorrect (e.g., "table" to distinguish between a pug and a rabbit), and "No" to Close trials with ambiguous expressions (e.g., "dog" to distinguish between a husky and a dalmatian).
-
-We found that children responded as expected to the unambiguous trials. That is, they responded "No" to the incorrect trial ($m=$ `r check_means%>%filter(check_type == "wrong")%>% pull(mean)`), and "Yes" to the unambiguous trial ($m=$ `r check_means%>%filter(check_type == "unambiguous")%>%pull(mean)`). These findings suggest that children, regardless of age, understood that that goal of the task was to describe a target picture (and not, for instance, to simply say anything). We also found an overall effect of age, where children's accuracy on the check trials increased with age ($b= `r age_model%>%filter(term == "age")%>%pull(estimate)`$, $t(`r age_model%>%filter(term == "age")%>%pull(df)`) = `r age_model%>%filter(term == "age")%>%pull(statistic)`$, $p < 0.001$). Further, we found an effect of trial type, such that children were more likely to be correct on unambiguous ($b= `r age_model%>%filter(term == "check_typeunambiguous")%>%pull(estimate)`$, $t(`r age_model%>%filter(term == "check_typeunambiguous")%>%pull(df)`) = `r age_model%>%filter(term == "check_typeunambiguous")%>%pull(statistic)`$, $p<0.001$) and incorrect trials ($b= `r age_model%>%filter(term == "check_typewrong")%>%pull(estimate)`$, $t(`r age_model%>%filter(term == "check_typewrong")%>%pull(df)`) = `r age_model%>%filter(term == "check_typewrong")%>%pull(statistic)`$, $p<0.001$) than on ambiguous trials ($m =$ `r check_means%>%filter(check_type == "ambiguous")%>%pull(mean)`).
+For all check trials, children were asked to respond yes or no as to whether a provided label uniquely identifies one picture out of two. 
+If children are sensitive to informativity of referential expressions, they should respond yes to close trials with *unambiguous* and correct labels (e.g., "red flower" which distinguishes a rose from a lily), no to far trials where the provided labels were unambiguous and *incorrect* (e.g., "table" which fails to distinguish between a pug and a rabbit), and also no to close trials with *ambiguous* expressions (e.g., "dog", which fails to distinguish between a husky and a dalmatian).
+First, we found an overall effect of age, where children's accuracy on the check trials increased in older cohorts, $b= `r age_model%>%filter(term == "age")%>%pull(estimate)`$, $t(`r age_model%>%filter(term == "age")%>%pull(df)`) = `r age_model%>%filter(term == "age")%>%pull(statistic)`$, $p `r age_model%>%filter(term == "age")%>%pull(p.value)%>%papaja::printp()`$. 
+Second, we found that children typically responded as expected to the unambiguous trials. 
+That is, they typically responded no to the incorrect trial (`r check_means%>%filter(check_type == "wrong")%>% pull(mean) * 100`\% correct), and yes to the unambiguous trial (`r check_means%>%filter(check_type == "unambiguous")%>%pull(mean) * 100`\% correct). 
+Ambiguous trials were more challenging. 
+Across all ages, children made more errors on ambiguous trials (`r check_means%>%filter(check_type == "ambiguous")%>%pull(mean) * 100`\% correct) relative to incorrect trials, $b= `r age_model%>%filter(term == "check_typewrong")%>%pull(estimate)`$, $t(`r age_model%>%filter(term == "check_typewrong")%>%pull(df)`) = `r age_model%>%filter(term == "check_typewrong")%>%pull(statistic)`$, $p `r papaja::printp(age_model%>%filter(term == "check_typewrong")%>%pull(p.value), add_equals = TRUE)`$) and unambiguous trials, $b= `r age_model%>%filter(term == "check_typeunambiguous")%>%pull(estimate)`$, $t(`r age_model%>%filter(term == "check_typeunambiguous")%>%pull(df)`) = `r age_model%>%filter(term == "check_typeunambiguous")%>%pull(statistic)`$, $p `r papaja::printp(age_model%>%filter(term == "check_typeunambiguous")%>%pull(p.value), add_equals = TRUE)`$.
+These findings suggest that children, regardless of age, understood that that goal of the task was to describe a target picture (and not, for instance, to simply say anything). 
 
 ```{r}
 kid_data <- indiv.measures %>%
@@ -521,25 +526,37 @@ ggplot(kid_age_data, aes(x = age, y = empirical_stat)) +
 
 ```
 
-```{r e3-check, fig.pos = "t", fig.align = "center", fig.width = 10, fig.cap = "\\label{fig:e3_check} Children's performance on ambiguous manipulation check trials predicted their context sensitivity (measured by exact matches in descriptions between close and far contexts) for familiar objects, but not for tangrams. Note that there were only three ambiguous manipulation check trials, thus there only four possible accuracy rates"}
+```{r e3-check, fig.pos = "t", fig.align = "center", fig.width = 10, fig.cap = "\\label{fig:e3_check} Children's performance on ambiguous manipulation check trials predicted their context sensitivity (measured by exact matches in descriptions between close and far contexts) for familiar objects, but not for tangrams. Note that there were only three ambiguous manipulation check trials, thus only four possible accuracy rates"}
 
 ggplot(kid_ambiguous_model_data, aes(x = correct, y = empirical_stat)) +
          geom_point(color = CHILDREN) +
          geom_smooth(method = "lm", color = CHILDREN) +
-         labs(x = "Accuracy on ambiguous manipulation check trials", y = "Context sensitivity") +
-         facet_wrap(~target_type)
+         labs(x = "accuracy on ambiguous trials", y = "context sensitivity") +
+         facet_wrap(~target_type) +
+     theme(aspect.ratio = 1, text = element_text(size = 16))
 
 ```
-To assess whether recognition of referential ambiguity correlated with performance on the production task, we focused specifically on children's performance on the ambiguous check trials. On these trials, children acted as the listener, and determined whether a give description was sufficient for distinguishing a target from its distractor. We predict that children who perform better on these ambiguous trials would also produce more informative descriptions during our task.
 
-We fit a mixed-effects model predicting children's context sensitivity, as measured by 'exact match' overlap, from their performance on the ambiguous trials and target type (familiar vs. tangram), with random effects of participant and age. We found a significant interaction between accuracy on the ambiguous trials and target type, such that children who were more accurate on the ambiguous check trials were more likely to modulate their descriptions based on context for familiar items ($b = `r kid_ambiguous_model%>%filter(term == "target_typefamiliar:correct")%>%pull(estimate)`,~t(`r kid_ambiguous_model%>%filter(term == "target_typefamiliar:correct")%>%pull(df)`) = `r kid_ambiguous_model%>%filter(term == "target_typefamiliar:correct")%>%pull(statistic)`, p = `r kid_ambiguous_model%>%filter(term == "target_typefamiliar:correct")%>%pull(p.value)`$). In other words, children who were more sensitive to referential ambiguity were less likely to produce the same descriptions for familiar items across close and far contexts (Figure \ref{fig:e3_check}). 
+To assess whether recognition of referential ambiguity correlated with performance on the production task, we focused specifically on children's performance on the ambiguous check trials. On these trials, children were asked whether a given description was sufficient for distinguishing a target from its distractor. 
+We predicted that children who could recognize ambiguity on these trials would also be more likely to produce informative descriptions.
+We fit a mixed-effects model predicting children's context sensitivity, as measured by 'exact match' overlap, from their performance on the ambiguous trials and target type (familiar vs. tangram), with random effects of participant and age. We found a significant interaction between accuracy on the ambiguous trials and target type, such that children who were more accurate on the ambiguous check trials were more likely to modulate their descriptions based on context for familiar items, $b = `r kid_ambiguous_model%>%filter(term == "target_typefamiliar:correct")%>%pull(estimate)`,~t(`r kid_ambiguous_model%>%filter(term == "target_typefamiliar:correct")%>%pull(df)`) = `r kid_ambiguous_model%>%filter(term == "target_typefamiliar:correct")%>%pull(statistic)`, p `r kid_ambiguous_model%>%filter(term == "target_typefamiliar:correct")%>%pull(p.value) %>% papaja::printp(add_equals = TRUE)`$. 
+In other words, children who were more sensitive to referential ambiguity were less likely to produce the same descriptions for familiar items across close and far contexts (Figure \ref{fig:e3_check}). 
 
 ## Discussion
 
-In Experiment 3, we asked whether difficulty in *production* may explain children's struggle to form referential pacts with peers. Comparing adult and child responses on our production task revealed that children were not sensitive to referential contexts, providing descriptions that did not always distinguish the intended referent from its distractor (e.g., saying "table" when there was a dining table and a picnic table). Importantly, this effect was found in trials containing familiar items that children should have labels for, so our results were not due to simple vocabulary constraints. 
+In Experiment 3, we asked whether difficulty in *production* may explain why young children struggle to form referential pacts with peers. 
+Comparing adult and child responses on our production task revealed that children were not as sensitive to referential context, providing descriptions that did not always distinguish the intended referent from its distractor (e.g., saying "table" when there were both a dining table and a picnic table). 
+Importantly, this effect was found on trials containing familiar items that children are likely to have accessible labels for, so these results were unlikely to be explained by simple vocabulary constraints. 
 
-Why might children struggle to modulate their descriptions for familiar objects? One possibility is that the basic level category label of a familiar object (e.g., "table") is too salient, and children have difficulty suppressing this label in favor or a more informative description. While we cannot infer whether children were considering alternative descriptions during our task, we did find that children, compared to adults, produced less variable descriptions for familiar objects. Further studies probing the alternatives that children consider, or test the salience of various object labels, could shed light onto the potential mechanisms underly children's ability to modulate descriptions based on context.
+Why might children struggle to modulate their descriptions for familiar objects? 
+One possibility is that the basic level category label of a familiar object (e.g., "table") is too salient, and children have difficulty suppressing this label in favor of a more informative description.
+While we cannot infer whether children were considering alternative descriptions during our task, we did find that children, compared to adults, produced less variable descriptions for familiar objects, concentrating on the same canonical labels. 
+Further studies probing the alternatives that children consider, or testing the salience of various object labels, could provide a stronger test of this possibility.
 
-Another account for why children struggle to modify their descriptions is that they are not sensitive to referential ambiguity. Indeed, prior work shows that children may not know which expressions are more informative [e.g., @beal1982; @robinson1977]. Our experiment provides evidence for a direct link between *recognizing* referential ambiguity and *producing* informative expressions based on context. Children who recognized that ambiguous expressions are not helpful for reference were more likely to show context sensitivity in their own descriptions of familiar objects.
-
-Results from our production task revealed that children's difficulty in forming conceptual pacts with peers may arise from their struggle to recognize referential ambiguity which, in turn, can lead to under-informative expressions. Children's success in Experiment 1 may thus lie in the supportive context that parents provided. Specifically, behaviors such as prompting or asking clarification questions could provide children with feedback that their expressions are not sufficient for distinguishing a target from its distractor. 
+Another possibility is that children are not sensitive to referential ambiguity. 
+Indeed, prior work shows that children may not know which expressions are more informative [e.g., @beal1982; @robinson1977]. 
+Our experiment provides further evidence for a direct link between *recognizing* referential ambiguity and *generating* appropriately informative expressions based on context. 
+Children who were able to recognize that a given ambiguous expressions would be not helpful were more likely to show context sensitivity in their own ability to generate descriptions for familiar objects.
+This second possibility suggests pairs of children may fail to establish pacts simply because their under-informative referring expressions are not able to secure an initial referential basis to build on.  
+The success we observed in Experiment 1 may be attributed to the supportive context that parents provided. 
+Interactive behaviors such as requesting more specific information or following up with specific questions could provide children with feedback that their expressions are not working, and suggest stronger possibilities.
