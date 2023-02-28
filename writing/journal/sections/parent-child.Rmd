@@ -140,7 +140,7 @@ plt.results.acc / plt.results.exchanges
 
 ### Participants
 
-Children (ages 4, 6, and 8) and their parents were recruited from a database of families in the local community to achieve a planned sample of 60 parent-child pairs (20 per age group). A total of 75 children and their parents participated. Data from 12 pairs were dropped due to failure to complete the study, leaving a final sample of 63 pairs. For comparison, adult participants were also recruited from a Psychology Department subject pool to achieve a planned control sample of 20 adult-adult pairs. At the time of analysis, only 15 of these pairs had their sessions transcribed.
+Children (ages 4, 6, and 8) and their parents were recruited from a database of families in the local community to achieve a planned sample of 60 parent-child pairs (20 per age group). A total of 75 children and their parents participated. Data from 12 pairs were dropped due to failure to complete the study, leaving a final sample of 63 pairs. For comparison, adult participants were also recruited from a Psychology Department subject pool to achieve a planned control sample of 20 adult-adult pairs.
 
 ### Stimuli 
 
