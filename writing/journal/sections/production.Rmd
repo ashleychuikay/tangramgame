@@ -375,7 +375,7 @@ One factor that may influence children's performance is the recognition of refer
 That is, children who understand that ambiguous referring expressions are not sufficiently informative for a partner should show more context sensitivity in our production task.
 To assess that children understand the goal of the task, and to aid in our interpretation of any potentially ambiguous responses that children give in earlier trials, we included a manipulation check condition for children. 
 We first report children's responses to all three check trial types. 
-Then, we turn to analyze how age and responses to ambiguous check trials (e.g., "dog" to distinguish between a husky and a dalmatian) predicts children's context sensitivity on the production task.
+Then, we turn to analyze how responses to ambiguous check trials (e.g., "dog" to distinguish between a husky and a dalmatian) predicts children's context sensitivity on the production task.
 
 ```{r check-trials}
 

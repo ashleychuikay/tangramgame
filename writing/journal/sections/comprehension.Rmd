@@ -221,7 +221,7 @@ brms::loo_compare(group_diff.brm1, group_diff.brm2, criterion = "waic")
 
 ### Which descriptions are easier to comprehend?
 
-```{r e2-result, fig.pos = "t", fig.align = "center", fig.width = 8, fig.cap = "\\label{fig:e2_result} Results for Experiment 2. Both naive adults (left) and children (right) were able to more accurately interpret referring expressions originally produced by parents (blue) than children (orange) in Experiment 1. No overall difference was observed across the two comprehender groups. Error bars are 95\\% confidence intervals."}
+```{r e2-result, fig.pos = "t", fig.align = "center", fig.width = 8, fig.cap = "\\label{fig:e2_result} Results for Experiment 2. Both naive adults (left) and children (right) were able to more accurately interpret referring expressions originally produced by parents (orange) than children (blue) in Experiment 1. No overall difference was observed across the two comprehender groups. Error bars are 95\\% confidence intervals."}
 bind_rows(tidy_turk_data, tidy_kid_data) %>%
   filter(measure == "correct") %>%
   group_by(age, person, comprehender_group) %>%
