@@ -1,13 +1,15 @@
 # Experiment 3: Production experiment
 
 In Experiment 2, we found that naive children and adults were able to comprehend referential expressions equally well. 
-Contrary to the classical view that young children are rigidly fixating on a single way of conceptualizing the tangram, even young children seem remarkably flexible in their ability to accommodate different descriptions.
-That is, to the extent that children contributed to poorer group performance in Experiment 1, their contribution is not well-explained by the *comprehension hypothesis*. At the same time, however, we found some evidence consistent with the *production hypothesis*: messages originally produced by children were somewhat less comprehensible for listeners of any age (as indexed by slower reaction times and lower accuracy).
+Contrary to a classical view that young children are rigidly fixating on a single way of conceptualizing the tangram, even young children seemed relatively flexible in their ability to accommodate different descriptions.
+That is, to the extent that children contributed to poorer group performance in Experiment 1, their contribution is not well-explained by the *comprehension hypothesis*. 
+At the same time, however, we found some evidence consistent with the *production hypothesis*: messages originally produced by children were somewhat less comprehensible for listeners of any age (as indexed by slower reaction times and lower accuracy).
 
 While this source effect is intriguing, it is difficult to disentangle the original messages from the interactive parent-child context in which they were produced. 
 For example, it is possible that children were receiving interactive scaffolding that prompted them toward more comprehensible expressions. 
 Or, conversely, it is possible that children were relying on their parents to take on more of the division of labor of interpretation [@hawkins2021division] and were thus producing expressions that are *less* comprehensible to naive audience than they were actually capable of.
 In Experiment 3, we remove the interactive context to more directly assess children's ability to produce referential expressions for novel tangram objects in different contexts. 
+
 We used a 2x2 design aiming to tease apart two related explanations for poor production performance.
 First, to assess the extent to which production difficulties stem from *pragmatic reasoning* (i.e. the ability to recognize that an accessible label is not sufficiently informative in context), we manipulate whether the distractor in context is more or less similar to the target. 
 Second, to assess the extent to which production difficulties stem from impoverished *lexical priors* (i.e. the ability to access candidate labels for a given referent), we manipulate whether the target objects are familiar photographs or novel tangram shapes [see @horton2002speakers]. 
@@ -73,10 +75,6 @@ complete_games.adult <- d.prod.adult %>%
 
 ```{r e3-read-lemmatized_data}
 # manually cleaned data
-
-# missing_data <- read_csv(
-#   here("data/experiment3/missing_production_data_cleaned.csv")) %>%
-#   mutate(button_pressed = as.numeric(button_pressed))
 
 # d.prod.clean.merge <- read_csv(
 #   here("data/experiment3/production_data_lemmatized_cleaned.csv"),
@@ -242,7 +240,7 @@ var.plot <- var.measures %>%
 
 ```
 
-```{r production-plots, fig.pos = "t", fig.align = "center", fig.width = 10, fig.cap = "\\label{fig:e3_contextsensitivity} (A) Proportion of descriptions of targets that were exact matches across the close and far contexts. Children were twice as likely to give the same description for familiar objects than tangrams across contexts, while adults equally modulated their descriptions for both target types. (B) Proportion of descriptions that were unique labels. Across adult and child participants, descriptions of familiar images were more likely to overlap. Error bars are 95\\% CIs."}
+```{r production-plots, fig.pos = "t", fig.align = "center", fig.width = 10, fig.cap = "\\label{fig:e3_contextsensitivity} (A) Context-sensitivity for children and adults. Children were twice as likely to give the same description for familiar objects than tangrams across contexts, while adults equally modulated their descriptions for both target types. (B) Nameability for children and adults. Children produced more variable labels for tangrams than adults. Error bars are 95\\% CIs."}
 
 dodge = position_dodge(0.9)
 
@@ -254,7 +252,7 @@ plt.context <- contextsensitivity.means %>%
                   position = dodge) +
     scale_fill_manual(values = c(ADULTS, CHILDREN)) +
     labs(tag = "A", y = 'Proportion of exact matches in descriptions', x = "") +
-    theme(aspect.ratio = 1, legend.position = "none")
+    theme(aspect.ratio = 1, legend.position = "none", text = element_text(size = 16))
 
 #naming variability plot
 plt.variability <- var.plot %>% 
@@ -265,11 +263,10 @@ plt.variability <- var.plot %>%
     scale_fill_manual(values = c(ADULTS, CHILDREN)) +
     facet_grid( ~ . , scales='free') +
     labs(tag = "B", x = '', y = 'Proportion unique labels', fill = 'Age group') +
-    theme(aspect.ratio = 1, legend.position = "right")
+    theme(aspect.ratio = 1, legend.position = "right", text = element_text(size = 16))
 
 library(patchwork)
 plt.context + plt.variability
-
 ```
 
 To test our first hypothesis, we examine the extent to which the same participant produces different utterances across the *far* vs. *close* contexts.
