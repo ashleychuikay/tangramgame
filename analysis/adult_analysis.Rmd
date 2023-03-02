@@ -31,7 +31,7 @@ theme_set(theme_classic(base_size = 18))
 
 ```{r read_data}
 
-gametrials <- read_csv(here("data/ug_tangramgameresults.csv")) %>%
+gametrials <- read_csv(here("data/ug_tangramgameresults.csv"), show_col_types = FALSE) %>%
   mutate(type = if_else(nchar(leftpic) > 2, "practice", "test")) %>%
   mutate(trial = as.numeric(trial)+1) %>%
   mutate(subid = as.numeric(subid))
@@ -42,7 +42,7 @@ transcripts <- list.files(here("data/ugcoded"), "*.csv", full.names = T)
 
 read_transcript <- function(file) {
   
-  transcript <- read_csv(file) %>%
+  transcript <- read_csv(file, show_col_types = FALSE) %>%
     remove_empty("cols") %>%
     mutate(subid = parse_number(basename(file))) %>%
     #mutate(row = 1:n()) %>%

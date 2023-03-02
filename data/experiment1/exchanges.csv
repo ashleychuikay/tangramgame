@@ -606,7 +606,7 @@ subid,type,trial,target,person,utterance,selection,correct,utt_number,rep_num,ex
 9,test,39,B1,child,It looks like someone had a sad day,none,TRUE,1,4,adult-child,6,2,director
 9,test,40,H1,parent,Uh it looks like someone with a pointy hat on offering you something,none,TRUE,1,4,adult-child,6,2,director
 9,test,40,H1,child,I was ready to press the jet,none,TRUE,3,4,adult-child,6,2,matcher
-10,test,1,E1,parent,Uh press one who looks like they're jumping in the air like this (arms up),none,TRUE,1,1,adult-child,8,2,director
+10,test,1,E1,parent,Uh press one who looks like they're jumping in the air like this,none,TRUE,1,1,adult-child,8,2,director
 10,test,2,H1,child,Um a person who looks like they're sitting down,none,TRUE,1,1,adult-child,8,2,director
 10,test,3,D1,parent,Person who looks like they're laying down with long legs sticking up in the air,none,TRUE,1,1,adult-child,8,2,director
 10,test,4,C1,child,Person who looks like they're um uh about to do a push-up,none,TRUE,1,1,adult-child,8,2,director
@@ -623,10 +623,10 @@ subid,type,trial,target,person,utterance,selection,correct,utt_number,rep_num,ex
 10,test,12,H1,parent,Person who looks like they're holding a bowl close to them,none,TRUE,1,2,adult-child,8,2,director
 10,test,13,E1,child,Person who looks like they're jumping,none,TRUE,1,2,adult-child,8,2,director
 10,test,14,F1,parent,Person who is like looks like they're sort of,none,TRUE,1,2,adult-child,8,4,director
-10,test,14,F1,child,like this? (gestures),none,TRUE,2,2,adult-child,8,4,matcher
+10,test,14,F1,child,like this?,none,TRUE,2,2,adult-child,8,4,matcher
 10,test,14,F1,child,yeah,none,TRUE,3,2,adult-child,8,4,matcher
 10,test,14,F1,parent,doing a dab,none,TRUE,5,2,adult-child,8,4,director
-10,test,14,F1,child,this (gestures),none,TRUE,6,2,adult-child,8,4,matcher
+10,test,14,F1,child,this,none,TRUE,6,2,adult-child,8,4,matcher
 10,test,15,D1,child,Person who looks like they're a mom doing yoga,none,TRUE,1,2,adult-child,8,4,director
 10,test,15,D1,parent,Oh are they laying down on their tummy?,none,TRUE,2,2,adult-child,8,4,matcher
 10,test,15,D1,child,yeah,none,TRUE,3,2,adult-child,8,4,director
@@ -1197,7 +1197,7 @@ subid,type,trial,target,person,utterance,selection,correct,utt_number,rep_num,ex
 20,test,10,F1,parent,can you give me more? descriptive?,none,TRUE,2,1,adult-child,8,6,matcher
 20,test,10,F1,child,it looks like someone doing the splits! it has two little triangles for feet.,none,TRUE,3,1,adult-child,8,6,director
 20,test,10,F1,parent,and what do they do with their arms?,none,TRUE,4,1,adult-child,8,6,matcher
-20,test,10,F1,child,they're going like this (gestures arms outward),none,TRUE,5,1,adult-child,8,6,director
+20,test,10,F1,child,they're going like this,none,TRUE,5,1,adult-child,8,6,director
 20,test,11,B1,child,someone walking somberly,none,TRUE,1,2,adult-child,8,3,director
 20,test,11,B1,parent,someone walking somberly?,none,TRUE,2,2,adult-child,8,3,matcher
 20,test,11,B1,parent,sorrowfully,none,TRUE,4,2,adult-child,8,3,matcher
@@ -1856,13 +1856,13 @@ subid,type,trial,target,person,utterance,selection,correct,utt_number,rep_num,ex
 32,test,10,F1,child,yeah,none,TRUE,5,1,adult-child,6,6,director
 32,test,11,C1,child,can you choose the man that's bending down,none,FALSE,1,2,adult-child,6,2,director
 32,test,12,F1,parent,"um... don't choose the man that's walking, choose the other man",none,TRUE,1,2,adult-child,6,2,director
-32,test,13,G1,child,"don't choose the man that's doing this *gesture*, choose that girl",none,TRUE,1,2,adult-child,6,2,director
+32,test,13,G1,child,"don't choose the man that's doing this, choose that girl",none,TRUE,1,2,adult-child,6,2,director
 32,test,14,A1,parent,choose the girl that looks like she has one foot down and one foot up,none,TRUE,1,2,adult-child,6,2,director
 32,test,15,H1,child,choose that girl that has the cup in her hand,none,TRUE,1,2,adult-child,6,6,director
 32,test,15,H1,parent,the cup in her hand?,none,TRUE,2,2,adult-child,6,6,matcher
 32,test,15,H1,child,"yeah, that girl",none,TRUE,3,2,adult-child,6,6,director
 32,test,15,H1,parent,does she have one foot up and one foot down?,none,TRUE,4,2,adult-child,6,6,matcher
-32,test,15,H1,child,"no, this one *attempts to show ipad*",none,TRUE,5,2,adult-child,6,6,director
+32,test,15,H1,child,"no, this one",none,TRUE,5,2,adult-child,6,6,director
 32,test,16,D1,parent,"choose the person, yyy, that looks like it's laying down flat",none,TRUE,1,2,adult-child,6,2,director
 32,test,17,E1,child,choose that man that's up on the sky,none,TRUE,1,2,adult-child,6,4,director
 32,test,17,E1,parent,does it look like he's jumping?,none,TRUE,2,2,adult-child,6,4,matcher
@@ -1870,7 +1870,7 @@ subid,type,trial,target,person,utterance,selection,correct,utt_number,rep_num,ex
 32,test,18,K1,parent,choose the person that looks like it's bending over and has its hand out,none,TRUE,1,2,adult-child,6,2,director
 32,test,19,I1,child,look at that person with that cup in their hand that serves the food,none,TRUE,1,2,adult-child,6,2,director
 32,test,20,B1,parent,choose the person that looks like it's walking by itself,none,TRUE,1,2,adult-child,6,2,director
-32,test,21,C1,parent,choose the person that looks like it's ... don't choose the man that looks like it's... choose the persont hat looks like it's jumping. it's the person that looks like it's bending over.,none,TRUE,1,3,adult-child,6,4,director
+32,test,21,C1,parent,choose the person that looks like it's ... don't choose the man that looks like it's... choose the person that looks like it's jumping. it's the person that looks like it's bending over.,none,TRUE,1,3,adult-child,6,4,director
 32,test,21,C1,child,this one?,none,TRUE,2,3,adult-child,6,4,matcher
 32,test,21,C1,parent,"the one that's bending over, yyy",none,TRUE,3,3,adult-child,6,4,director
 32,test,22,D1,child,choose the boy that's flat,none,TRUE,1,3,adult-child,6,2,director
@@ -1887,7 +1887,7 @@ subid,type,trial,target,person,utterance,selection,correct,utt_number,rep_num,ex
 32,test,28,K1,parent,which one?,none,TRUE,2,3,adult-child,6,6,matcher
 32,test,28,K1,child,choose the one that's like one up hand and one,none,TRUE,3,3,adult-child,6,6,director
 32,test,28,K1,parent,is it laying down?,none,TRUE,4,3,adult-child,6,6,matcher
-32,test,28,K1,child,"mmm mm *""no"" sound*",none,TRUE,5,3,adult-child,6,6,director
+32,test,28,K1,child,mmm mm,none,TRUE,5,3,adult-child,6,6,director
 32,test,29,I1,parent,"choose the waiter, yyy",none,TRUE,1,3,adult-child,6,4,director
 32,test,29,I1,child,the waiter that what,none,TRUE,2,3,adult-child,6,4,matcher
 32,test,29,I1,parent,the waiter that has the plate in it's hand,none,TRUE,3,3,adult-child,6,4,director
@@ -3195,12 +3195,12 @@ subid,type,trial,target,person,utterance,selection,correct,utt_number,rep_num,ex
 54,test,6,B1,child,can you pick that one?,none,TRUE,3,1,adult-child,4,5,director
 54,test,6,B1,parent,i'll pick that one,none,TRUE,4,1,adult-child,4,5,matcher
 54,test,7,I1,parent,"alright, so on my screen i see one who looks like a person who's jumping and another that looks like",none,TRUE,1,1,adult-child,4,6,director
-54,test,7,I1,child,it doesn't look like this one is jumping because it's going like (gestures with hand out),none,TRUE,2,1,adult-child,4,6,matcher
+54,test,7,I1,child,it doesn't look like this one is jumping because it's going like,none,TRUE,2,1,adult-child,4,6,matcher
 54,test,7,I1,parent,it's going... oh it's holding something?,none,TRUE,3,1,adult-child,4,6,director
 54,test,7,I1,child,yeah. it's holding a triangle.,none,TRUE,4,1,adult-child,4,6,matcher
 54,test,7,I1,parent,"ok, so that's my blue box. so you can pick the one who's holding a triangle",none,TRUE,5,1,adult-child,4,6,director
 54,test,8,E1,parent,"ok, which blue box do you have?",none,TRUE,1,1,adult-child,4,9,matcher
-54,test,8,E1,child,i have two triangles on there and those things and i have a big triangle right there that doesn't ahve that line and i have a square on top that looks like this that these are legs and this is a head and he's going (spreads arms and legs),none,TRUE,2,1,adult-child,4,9,director
+54,test,8,E1,child,i have two triangles on there and those things and i have a big triangle right there that doesn't have that line and i have a square on top that looks like this that these are legs and this is a head and he's going,none,TRUE,2,1,adult-child,4,9,director
 54,test,8,E1,parent,like he's jumping?,none,TRUE,3,1,adult-child,4,9,matcher
 54,test,8,E1,child,"yeah, just like that",none,TRUE,4,1,adult-child,4,9,director
 54,test,8,E1,parent,"so it's not the person walking, it's the person who looks like they're jumping",none,TRUE,5,1,adult-child,4,9,matcher
@@ -3246,7 +3246,7 @@ subid,type,trial,target,person,utterance,selection,correct,utt_number,rep_num,ex
 54,test,14,B1,parent,"ok, so for me this is the person who's walking, can you pick the one who looks like they're walking?",none,TRUE,1,2,adult-child,4,2,director
 54,test,15,C1,child,now mine just looks like yours that you got,none,TRUE,1,2,adult-child,4,6,director
 54,test,15,C1,parent,the walking?,none,TRUE,2,2,adult-child,4,6,matcher
-54,test,15,C1,child,"no, the one going like this (bends over)",none,TRUE,3,2,adult-child,4,6,director
+54,test,15,C1,child,"no, the one going like this",none,TRUE,3,2,adult-child,4,6,director
 54,test,15,C1,parent,"ok, alright, they're kneeling",none,TRUE,4,2,adult-child,4,6,matcher
 54,test,15,C1,child,yeah,none,TRUE,5,2,adult-child,4,6,director
 54,test,16,D1,parent,"ok, this is for me, pick the one who's not jumping but the one who's uh, fell down and lost their head. the jet.",none,TRUE,1,2,adult-child,4,6,director
@@ -6012,3 +6012,47 @@ subid,type,trial,target,person,utterance,selection,correct,utt_number,rep_num,ex
 119,test,38,C1,right,it's the person kneeling all the way down,none,TRUE,1,4,adult-adult,NA,2,director
 119,test,39,D1,left,it's the person in the airplane,none,TRUE,1,4,adult-adult,NA,2,director
 119,test,40,F1,right,it's not the person offering something,none,TRUE,1,4,adult-adult,NA,2,director
+120,test,1,I1,left,umm okay in the blue square it's like geometric shapes but it looks like a man who''s like holding some sort of a bowl,none,TRUE,1,1,adult-adult,NA,2,director
+120,test,2,B1,right,in the blue square... so it's the geometric shapes... but it's the man that looks like he's walking forward,none,TRUE,1,1,adult-adult,NA,2,director
+120,test,3,A1,left,umm looks like someone like dancing or figure-skating like with leg back,none,TRUE,1,1,adult-adult,NA,3,director
+120,test,3,A1,right,mmhmm,none,TRUE,2,1,adult-adult,NA,3,matcher
+120,test,4,C1,right,umm in the blue square it's kind of like a guy or someone crouching on the floor versus standing up,none,TRUE,1,1,adult-adult,NA,2,director
+120,test,5,E1,left,looks like someone jumping for joy,none,TRUE,1,1,adult-adult,NA,2,director
+120,test,6,D1,right,"umm looks someone someone someone just like on the landsc- like horizontally,landscape. kinda looks like a plane",none,TRUE,1,1,adult-adult,NA,3,director
+120,test,6,D1,right,hmmm,none,TRUE,2,1,adult-adult,NA,3,director
+120,test,7,G1,left,umm this looks like someone kneeling not with their arms on the ground but kind of like sitting up just kneeling,none,TRUE,1,1,adult-adult,NA,2,director
+120,test,8,H1,right,"umm this is someone sort of like kneeling vertically, not hands on the floor",none,TRUE,1,1,adult-adult,NA,2,director
+120,test,9,K1,left,umm this is somebody who's standing up but has their arms extended. it looks like they're like offering something to someone kind of,none,TRUE,1,1,adult-adult,NA,2,director
+120,test,10,F1,right,umm this is a person who looks like their arms are facing upwards like,none,TRUE,1,1,adult-adult,NA,2,director
+120,test,11,K1,right,umm in this blue square there's a person that's kind of standing with their arms outwards as if they're offering something to someone,none,TRUE,1,2,adult-adult,NA,2,director
+120,test,12,C1,left,umm this looks like someone kneeling down to pray,none,TRUE,1,2,adult-adult,NA,2,director
+120,test,13,G1,right,umm this looks like someone kneeling but not with their hands down,none,TRUE,1,2,adult-adult,NA,2,director
+120,test,14,D1,left,this looks like somebody zzz sliding on the ground,none,TRUE,1,2,adult-adult,NA,2,director
+120,test,15,E1,right,this looks like someone jumping for joy,none,TRUE,1,2,adult-adult,NA,2,director
+120,test,16,H1,left,"this looks like somebody who is not... who's kneeling, without putting their arms on the ground arms extended",none,TRUE,1,2,adult-adult,NA,2,director
+120,test,17,I1,right,this looks  like a waiter serving a platter of food,none,TRUE,1,2,adult-adult,NA,2,director
+120,test,18,F1,left,this looks like somebody dancing like jumping in splits with their arms up,none,TRUE,1,2,adult-adult,NA,2,director
+120,test,19,A1,right,umm this looks like someone ice-skating with one foot on the ground and one up,none,TRUE,1,2,adult-adult,NA,2,director
+120,test,20,B1,left,"umm this is somebody walking forward, head down toward the ground",none,TRUE,1,2,adult-adult,NA,2,director
+120,test,21,E1,left,umm this looks like somebody jumping up in the air,none,TRUE,1,3,adult-adult,NA,2,director
+120,test,22,H1,right,uh this looks like someone kneeling,none,TRUE,1,3,adult-adult,NA,2,director
+120,test,23,K1,left,"uhh this looks like somebody who has  their arms extended... like holding something out, maybe. standing up",none,TRUE,1,3,adult-adult,NA,2,director
+120,test,24,F1,right,this looks like someone jumping for joy,none,TRUE,1,3,adult-adult,NA,2,director
+120,test,25,G1,left,"this looks like somebody kneeling on the ground but like head and arms up. not fully on the ground. Like, just their legs on the ground",none,TRUE,1,3,adult-adult,NA,3,director
+120,test,25,G1,right,mm hmm,none,TRUE,2,3,adult-adult,NA,3,matcher
+120,test,26,C1,right,"this looks like someone kneeling, crouching, praying",none,TRUE,1,3,adult-adult,NA,2,director
+120,test,27,A1,left,umm this looks like the figure skater with one ar- one leg up one leg on the ground,none,TRUE,1,3,adult-adult,NA,2,director
+120,test,28,B1,right,uh this looks like someone just walking with their head down,none,TRUE,1,3,adult-adult,NA,2,director
+120,test,29,I1,left,this looks like the waiter,none,TRUE,1,3,adult-adult,NA,2,director
+120,test,29,I1,left,offering something zzz,none,TRUE,3,3,adult-adult,NA,2,director
+120,test,30,D1,left,the airplane guy is like sliding penguin,none,TRUE,1,3,adult-adult,NA,2,matcher
+120,test,31,I1,right,uhh this looks like the waiter,none,TRUE,1,4,adult-adult,NA,2,director
+120,test,32,B1,left,"this is the guy walking, head down",none,TRUE,1,4,adult-adult,NA,2,matcher
+120,test,33,K1,right,uh this is the waiter that offered some things zzz,none,TRUE,1,4,adult-adult,NA,2,director
+120,test,34,C1,left,umm kneeling down to pray,none,TRUE,1,4,adult-adult,NA,2,director
+120,test,35,A1,right,ice-skater ice-skating,none,TRUE,1,4,adult-adult,NA,2,matcher
+120,test,36,D1,left,penguin,none,TRUE,1,4,adult-adult,NA,2,director
+120,test,37,E1,right,jumping for joy,none,TRUE,1,4,adult-adult,NA,2,director
+120,test,38,F1,left,umm jumping into splits,none,TRUE,1,4,adult-adult,NA,2,director
+120,test,39,G1,right,umm kneeling down,none,TRUE,1,4,adult-adult,NA,2,director
+120,test,40,H1,left,"umm standing up one arm extended.. um one arm is like how he's standing. He's not really walking or jumping, both feet are on the ground",none,TRUE,1,4,adult-adult,NA,2,director

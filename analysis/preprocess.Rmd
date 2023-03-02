@@ -8,12 +8,12 @@ library(tidyverse)
 
 ```{r}
 # get all files with participant data (this excludes meta.csv for now)
-raw_csv_names <- c(dir(path = 'data/deidentified/', pattern = "*[0-9].csv", full.names = T),
-                   dir(path = 'data/deidentified/adult/', pattern = "*[0-9].csv", full.names = T))
-meta <- read_csv('data/deidentified/meta.csv')
+raw_csv_names <- c(dir(path = 'data/experiment1/', pattern = "*[0-9].csv", full.names = T),
+                   dir(path = 'data/experiment1/adult/', pattern = "*[0-9].csv", full.names = T))
+meta <- read_csv('data/experiment1/meta.csv', show_col_types = FALSE)
 
 raw_data <- raw_csv_names %>%      # read all csvs and combine into single data frame
-  map(read_csv) %>%             
+  map(read_csv, show_col_types = FALSE) %>%             
   reduce(rbind) %>%                
   filter(type != 'practice') %>%   # remove practice trials
   filter(subid != 17) %>%          # we decided to remove this kid who systematically described the opposite tangram
@@ -69,14 +69,13 @@ combined_data <- exchanges %>% # combine with info about who had which role on e
            person == "left" & role == "matcher" ~ "right"
          ))
 
-write_csv(combined_clean, here("data/deidentified/combined_clean.csv"))
 ```
 
 Write out combined data to import into python for nlp
 
 ```{r}
-write_csv(exchanges, 'data/deidentified/exchanges.csv')
-write_csv(combined_data, 'data/deidentified/combined.csv')
+write_csv(exchanges, 'data/experiment1/exchanges.csv')
+write_csv(combined_data, 'data/experiment1/combined.csv')
 ```
 
 
