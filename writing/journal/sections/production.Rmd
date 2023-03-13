@@ -118,7 +118,7 @@ novel_stims <- n_stims  %>%
 ### Participants
 
 We recruited `r length(complete_games.adult)` adult participants from Amazon Mechanical Turk. All participants gave informed consent prior to the start of the study and were compensated 60¢. 
-We also recruited `r length(n_kids)` children aged 4 to 8 years old ($M=$ `r mean(kid_age$age)`) to participate in the study. The study was conducted online over Zoom. Parents provided informed written and verbal consent, and children provided verbal consent. Families were compensated $5 for their participation.
+We also recruited `r length(n_kids)` children aged 4 to 8 years old ($M=$ `r mean(kid_age$age)`) to participate in the study. Data on race and ethnicity were not collected, but participants were recruited from a database of families that generally reflect the racial/ethnic makeup of the Chicagoland area. The study was conducted online over Zoom. Parents provided informed written and verbal consent, and children provided verbal consent. Families were compensated $5 for their participation.
 
 ### Stimuli and Design
 
@@ -544,8 +544,7 @@ In other words, children who were more sensitive to referential ambiguity were l
 
 ## Discussion
 
-In Experiment 3, we asked whether difficulty in *production* may explain why young children struggle to form referential pacts with peers. 
-Comparing adult and child responses on our production task revealed that children were not as sensitive to referential context, providing descriptions that did not always distinguish the intended referent from its distractor (e.g., saying "table" when there were both a dining table and a picnic table). 
+In Experiment 3, we asked whether difficulty in *production* may explain why young children struggle to form referential pacts with peers. Comparing adult and child responses on our production task revealed that children were not as sensitive to referential context, providing descriptions that did not always distinguish the intended referent from its distractor (e.g., saying "table" when there were both a dining table and a picnic table). 
 Importantly, this effect was found on trials containing familiar items that children are likely to have accessible labels for, so these results were unlikely to be explained by simple vocabulary constraints. 
 
 Why might children struggle to modulate their descriptions for familiar objects? 
@@ -553,10 +552,8 @@ One possibility is that the basic level category label of a familiar object (e.g
 While we cannot infer whether children were considering alternative descriptions during our task, we did find that children, compared to adults, produced less variable descriptions for familiar objects, concentrating on the same canonical labels. 
 Further studies probing the alternatives that children consider, or testing the salience of various object labels, could provide a stronger test of this possibility.
 
-Another possibility is that children are not sensitive to referential ambiguity. 
-Indeed, prior work shows that children may not know which expressions are more informative [e.g., @beal1982; @robinson1977]. 
-Our experiment provides further evidence for a direct link between *recognizing* referential ambiguity and *generating* appropriately informative expressions based on context. 
-Children who were able to recognize that a given ambiguous expressions would be not helpful were more likely to show context sensitivity in their own ability to generate descriptions for familiar objects.
-This second possibility suggests pairs of children may fail to establish pacts simply because their under-informative referring expressions are not able to secure an initial referential basis to build on.  
-The success we observed in Experiment 1 may be attributed to the supportive context that parents provided. 
-Interactive behaviors such as requesting more specific information or following up with specific questions could provide children with feedback that their expressions are not working, and suggest stronger possibilities.
+Another possibility is that children are not sensitive to referential ambiguity. Indeed, prior work shows that children may not know which expressions are more informative [e.g., @beal1982; @robinson1977]. Our experiment provides further evidence for a direct link between *recognizing* referential ambiguity and *generating* appropriately informative expressions based on context. 
+Children who were able to recognize that a given ambiguous expressions would be not helpful were more likely to show context sensitivity in their own ability to generate descriptions for familiar objects. By the same token, failure to recognize that a description is ambiguous would likely lead to communicative breakdown---young children may not know to ask for clarification when necessary.
+  
+If children do no reliably produce (or identify) helpful descriptions, how did they succeed in Experiment 1? The success we observed in parent-child pairs may be attributed to the supportive context that parents provided. 
+Interactive behaviors such as requesting more specific information or following up with specific questions could provide children with feedback that their expressions are not working, and suggest stronger possibilities. Communicating with parents, who have specific knowledge about their children, as well as abundant experience interacting with their children, may be especially helpful for facilitating young children's referential abilities. Further research comparing parents to other adults (who have less specific knowledge about a particular child) will provide insight into whether parents play a unique role above and beyond adults in general.
