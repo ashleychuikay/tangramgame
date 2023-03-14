@@ -28,7 +28,7 @@ abstract: |
    In Experiment 1, we show that children (ages 4, 6, 8) are, in fact, able to coordinate on increasingly accurate and efficient pacts with parents in a director-matcher task. 
    We analyze the interactional features that account for their success, finding that parents spontaneously initiate more clarification exchanges with younger children who, in turn, are more likely to adapt to labels introduced by the parent. 
    We then examine whether such interactional scaffolding is constructed around childrens' difficulties with comprehension (Experiment 2) or production (Experiment 3).
-   Contrary to classical views attributing childrens' coordination failures to lexical rigidity or perspective-taking, these result support the idea that children readily form pacts when scaffolding from parents helps overcome production difficulties.
+   Contrary to classical views attributing childrens' coordination failures to lexical rigidity or perspective-taking, these result support the idea that children readily form pacts when scaffolding from parents helps overcome their production difficulties.
   
 authornote: |
   All data and code for these analyses are available at https://osf.io/3f8hy/?view_only=9a196db0444c4867bc899cc70a7a1e9c. Videos of experiment sessions are available on Databrary.
