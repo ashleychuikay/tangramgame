@@ -219,83 +219,15 @@ group_diff.brm2 <- brms::add_criterion(group_diff.brm2, "waic")
 brms::loo_compare(group_diff.brm1, group_diff.brm2, criterion = "waic")
 ```
 
-### Which descriptions are easier to comprehend?
-
-```{r e2-result, fig.pos = "t", fig.align = "center", fig.width = 8, fig.cap = "\\label{fig:e2_result} Results for Experiment 2. Both naive adults (left) and children (right) were able to more accurately interpret referring expressions originally produced by parents (orange) than children (blue) in Experiment 1. No overall difference was observed across the two comprehender groups. Error bars are 95\\% confidence intervals."}
-bind_rows(tidy_turk_data, tidy_kid_data) %>%
-  filter(measure == "correct") %>%
-  group_by(age, person, comprehender_group) %>%
-  tidyboot_mean(value, nboot = 100) %>%
-  rename(director = person) %>%
-  mutate(comprehender_group = ifelse(comprehender_group == 'kid', 'child', 'adult'),
-         comprehender_group = paste0('naive ', comprehender_group, ' as comprehender')) %>%
-  ggplot(aes(x = factor(age), y = empirical_stat, label = director, color = interaction(age, director))) +
-    geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
-    labs(x = 'exp. 1 child age', y = 'comprehension accuracy') +
-    scale_color_manual(values = c("#9ecae1", "#4292c6", "#08519c", "#fe9929", "#fe9929", "#fe9929")) +
-    scale_x_discrete(expand = expansion(add = c(.6, 1.2))) +
-    geom_dl(method = list(dl.trans(x = x + .2), "last.qp", cex=.8, hjust = 0)) +
-    ggplot2::annotate(geom = "text", x = 3.05, hjust = 0, y = .95, label = "Produced by") +
-    ylim(0.5, 1) +
-    facet_wrap(~ comprehender_group) +
-    theme(legend.position = 'none', aspect.ratio = 1, text = element_text(size = 16))
-```
-
-```{r full-acc-lmer}
-additive_acc.lmer <- bind_rows(tidy_turk_data, tidy_kid_data) %>%
-  filter(measure == "correct") %>%
-  glmer(value ~ person + scale(age) + occurrence + (1 | target) + (1 | subid),
-         family = "binomial", data = ., contrasts = list(person = contr.sum(n = 2, contrasts = T))) 
-
-two_way_acc.lmer <- bind_rows(tidy_turk_data, tidy_kid_data)  %>%
-  mutate(occurrence = factor(occurrence)) %>%
-  filter(measure == "correct") %>%
-  glmer(value ~ person + scale(age) * occurrence + (1 | target) + (1 | subid),
-         family = "binomial", data = ., 
-        contrasts = list(person = contr.sum(n = 2),
-                         occurrence = contr.sum(n = 2))) 
-
-three_way_acc.lmer <- bind_rows(tidy_turk_data, tidy_kid_data)  %>%
-  mutate(occurrence = factor(occurrence)) %>%
-  filter(measure == "correct") %>%
-  glmer(value ~ person * scale(age) * occurrence + (1 | target) + (1 | subid),
-         family = "binomial", data = ., 
-        contrasts = list(person = contr.sum(n = 2),
-                         occurrence = contr.sum(n = 2)),
-        control = glmerControl(optimizer = 'bobyqa')) 
-
-acc.lmer.anova <- anova(additive_acc.lmer,three_way_acc.lmer) %>% 
-  tidy() %>% 
-  filter(term == 'three_way_acc.lmer')
-
-additive_acc.lmer <- additive_acc.lmer %>%
-  tidy() %>%
-  filter(effect == "fixed") %>%
-  select(-effect, -group)
-
-acc.lmer.speaker <- additive_acc.lmer %>% filter(term == 'person1')
-acc.lmer.age <- additive_acc.lmer %>% filter(term == 'scale(age)')
-acc.lmer.occ <- additive_acc.lmer %>% filter(term == 'occurrence')
-```
-
-Next, we examine which features of the descriptions may affect downstream comprehension.
-We consider two specific hypotheses. 
-First, we predicted that descriptions produced by adults will be easier for *everyone* to comprehend, overall, than descriptions produced by children in the same dyad. 
-Second, we predicted that descriptions produced earlier in the game will be easier to comprehend than descriptions produced later in the game, consistent with prior findings that pacts are not always transparent to eavesdroppers [@schober1989understanding]. 
-Because we found no overall differences in comprehension group in the previous section, we collapse across both adult and child comprehenders for the following analyses.
-
-To test these predictions, we fit a logistic mixed effects model predicting accuracy as a function of the person who produced the description (parent vs. child), the age of child in the pair (ages 4, 6, 8), and the phase of the game where it was produced (early vs late).
-We also include random intercepts for each target and participant ID; a more complex model adding interactions was not justified, $\chi^2(`r acc.lmer.anova$df`) = `r acc.lmer.anova$statistic`, p=`r acc.lmer.anova$p.value`$. 
-How does age of speaker influence comprehension of descriptions? We first find that parents' descriptions are more accurately comprehended across the board $b=`r acc.lmer.speaker$estimate`, z = `r acc.lmer.speaker$statistic`, p `r papaja::printp(acc.lmer.speaker$p.value)`$. This is in line with our predictions, suggesting that parents in Experiment 1 provided more informative descriptions of the tangrams than did children. Additionally, we find that older children (and parents of older children) provided more accurately comprehended descriptions than younger children, $b=`r acc.lmer.age$estimate`, z= `r acc.lmer.age$statistic`, p `r papaja::printp(acc.lmer.age$p.value)`$ (Figure \ref{fig:e2_result}).
-Concerning our second hypothesis, however, we found no significant effect of experiment phase, $b=`r acc.lmer.occ$estimate`, z= `r acc.lmer.occ$statistic`, p= `r acc.lmer.occ$p.value`$. In other words, final-round descriptions of tangrams do not appear to contain meaningfully less information for guessing the target.
-
 ## Discussion
 
-In Experiment 2, we asked whether children's struggles to form conceptual pacts with others are due to comprehension-side difficulties. Surprisingly, however, we found no difference between naive adults and children's ability to comprehend referential expressions generated by participants in Experiment 1.
-Although children may not necessarily be worse at comprehending utterances, our data did reveal that referential expressions originally *generated* by younger children were less accurately comprehended by naive adults and children alike. That is, both adults and children were less likely to find the intended referent after hearing a description originally produced by a 4-year-old child.
+In Experiment 2, we asked whether children's struggles to form conceptual pacts with others can be explained by comprehension-side difficulties. 
+Surprisingly, we found no difference between naive adults and children's ability to comprehend referential expressions generated by participants in Experiment 1.
+Although children may not necessarily be worse at comprehending utterances, our data did reveal that referential expressions originally *generated* by younger children were less accurately comprehended by naive adults and children alike (see Appendix B). 
+That is, both adults and children were less likely to find the intended referent after hearing a description originally produced by a 4-year-old child.
 
-If children's referential expressions are difficult for naive listeners to comprehend, and late-stage utterances were no more or less comprehensible that early-stage ones, then what contributed to communicative success among parent-child dyads in Experiment 1? 
-One likely explanation for parents' higher accuracy in the interactive game is that they were able to actively seek clarification from children in order to select the correct referent when children's utterances were ambiguous. 
+If children's referential expressions are so difficult for naive adult and child listeners to comprehend, then what contributed to the success we observed in Experiment 1?
+One likely explanation for dyads' higher accuracy is that parents were able to interactively seek clarification when their child's utterances were ambiguous. 
 In our comprehension task, audio recordings comprised only of initial expressions for each round --- any further exchanges and clarification were removed. 
-This mechanism is also consistent with our observation that parents are more likely to ask questions when their young children were directors. From these findings, we might infer that 4-year-old children's success in our interactive task (Experiment 1) relied on some degree to their parents' ability to overcome any idiosyncratic or ambiguous descriptions generated by young children. 
-Taken together, then, our findings suggest that children's difficulty forming pacts may lie outside their comprehension processes and point toward possible developmental changes in children's ability to produce sufficiently informative descriptions.
+This discourse-level mechanism is also consistent with our earlier observation that parents are more likely to ask questions when their (younger) children were directors (see Appendix A). 
+Our findings so far, then, suggest that children's difficulty forming pacts may lie outside their comprehension processes and point toward possible developmental changes in children's ability to *produce* sufficiently informative descriptions by themselves.
