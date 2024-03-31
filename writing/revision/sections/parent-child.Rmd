@@ -5,7 +5,7 @@ For example, @deutsch1982 showed that repeated clarification questions eventuall
 A more recent training study by @matthews2007 replicated this finding in 2- to 4-year-olds, and further showed transfer to a different communication task. 
 But it is unclear whether, or how, adults spontaneously provide such input over the course of unmediated adult-child conversations, and whether such processes actually enable the formation of conversational pacts (rather than generically increasing informativeness).
 
-One possibility is that caregivers naturally adopt some of the interactive strategies developed by experimenters in these training studies: pointing out when references are insufficiently informative, asking for clarification about targeted features, and helping children to re-conceptualize referential targets within the expressiveness of their developing vocabulary [@clark2018conversation; @nikolaus2022communicative]. 
+One possibility is that caregivers naturally adopt some of the interactive strategies developed by experimenters in these training studies: pointing out when references are insufficiently informative, asking for clarification about targeted features, and helping children to re-conceptualize referential targets within the expressiveness of their developing vocabulary [@clark2018conversation; @nikolaus2022communicative].
 In our first study, we asked parents and their 4-, 6-, and 8-year-old children, as well as control pairs of adults, to play an adapted version of Krauss and Glucksberg's [-@krauss1969] director-matcher game. 
 We examined (1) whether parents' contributions enable conversational pacts to form at all, (2) what strategies parents use to scaffold pact formation if so, and (3) whether the nature of these pacts changes over development as children become more adult-like users of language.
 
@@ -28,13 +28,11 @@ exchanges_data <- read_csv(here("data/experiment1/exchanges.csv"),
 ```
 
 
-```{r ipads, fig.pos = "t", fig.width = 8, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "(A) We divided a set of ambiguous tangram figures into two sets of referential targets. (B) A parent (orange) and child (blue) played a reference game where these figures were presented as stimuli. On each trial, the director (here, the parent) was asked to refer to the target figure (privately highlighted in a box) so that the matcher (here, the child) could guess it. (C) Each tangram appeared as the target once per block, and each dyad played the game for four blocks, alternating roles on each trial."}
-# Note: this is moved up here to get the fig to appear on the right page... i know it's annoying.
+```{r ipads, fig.pos = "t", fig.width = 8, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "(A) Parents (orange) and children (blue) played a repeated reference game with a set of 10 tangram images. To measure the respective contributions of parents and children to the pacts that were eventually established, we ensured that half of the images were described first by the parent, and half of the images were described first by the child. (B) Two of these figures were presented as the context on each trial. One was the target and the other was the foil. The director (here, the parent) was asked to refer to the target (privately highlighted in a box) so that the matcher (here, the child) could distinguish it from the foil. (C) Each tangram appeared as the target once per block, and each dyad played the game for four blocks. Parents and children alternated roles on each trial."}
 knitr::include_graphics("diagrams/design.pdf")
 ```
 
 ```{r acc-exchange-setup, cache = T}
-# Note: this is moved up here to get the fig to appear on the right page... i know it's annoying.
 d.accuracy.raw <- combined_data %>%
   ungroup() %>%
   mutate(age = as.character(age),
@@ -150,12 +148,12 @@ Twelve solid black images of tangrams were normed for pairwise similarity by an 
 
 ### Design and procedure
 
-Pairs of participants were brought into the lab to play a cooperative director-matcher game. They were seated in front of iPads at opposite ends of a table, with a divider preventing them from seeing the other's screen. Participants were told that they would take turns playing *director* and *matcher* roles. The director's task was to describe the *target* image, privately indicated by a blue border, and the matcher's task was to select one of the images on their screen based on the director's description (Figure \ref{fig:ipads}B). Before beginning the experiment, participants played six practice trials with images of common fruits and vegetables. 
+Pairs of participants were brought into the lab to play a cooperative director-matcher game. They were seated in front of iPads at opposite ends of a table, with a divider preventing them from seeing the other's screen. Participants were told that they would take turns playing *director* and *matcher* roles. On each trial, a context of two tangrams were shown on their screens. One of these tangrams was the target, and the other was the foil. The director's task was to describe the *target* image, privately indicated by a blue border, and the matcher's task was to select one of the two images on their screen based on the director's description (Figure \ref{fig:ipads}B). Before beginning the experiment, participants played six practice trials with images of common fruits and vegetables. 
 
 The experiment consisted of four repetition blocks of ten trials each (Figure \ref{fig:ipads}C). Each tangram was the target once per block. We constructed the trial sequence to ensure that participants both alternated roles from trial to trial and alternated roles for each *target* from block to block. For each participant pair, we randomly divided the tangrams into two sets of five: the adult was assigned one set to describe on the first block, and the child was assigned the other set. These sets were interleaved on the first block, such that players alternated roles. On each subsequent block, these sets were swapped such that each tangram was described by each participant exactly twice over the course of the experiment. 
 
-On each trial, the target tangram appeared with a foil selected from the set of nine other tangrams.
-Targets appeared with different foils on different repetition blocks. To ensure that the game would not be too difficult for young children, tangrams most similar to the target (based on similarity norms) did not appear as foils. To discourage participants from using spatial language (e.g. "left side"), the target and foil were shown in randomized order across the two iPads. When the matcher selected an image, it became colorful and a pleasant sound played. Importantly, neither the matcher nor director received explicit feedback about accuracy: the same sound played whether the selection was correct or not.
+On each trial, the target tangram appeared with exactly one foil selected from the set of nine other tangrams.
+Targets appeared with a different foil on different repetition blocks. To ensure that the game would not be too difficult for young children, tangrams most similar to the target (based on similarity norms) did not appear in the same context. To discourage participants from using spatial language (e.g. "left side"), the target and foil were shown in randomized order across the two iPads. When the matcher selected an image, it became colorful and a pleasant sound played. Importantly, neither the matcher nor director received explicit feedback about accuracy: the same sound played whether the selection was correct or not.
 
 ### Pre-processing
 

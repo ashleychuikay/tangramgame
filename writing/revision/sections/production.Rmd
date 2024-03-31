@@ -109,7 +109,7 @@ fam_stims <- n_stims %>%
   unique()
 
 novel_stims <- n_stims  %>%
-  filter(target_type == "familiar") %>%
+  filter(target_type == "tangram") %>%
   distinct(target, foil) %>%
   unlist() %>%
   unique()
@@ -124,38 +124,40 @@ Data on race and ethnicity were not collected, but participants were recruited f
 ### Stimuli and Design
 
 We used `r length(fam_stims)` pictures of familiar objects and `r length(novel_stims)` pictures of tangrams. 
-Familiar objects were drawn from an image set used by @degen2020. We used eight different basic-level categories that we expected to be familiar to children: bears, birds, cars, candy, dogs, fish, shirts, and tables.
-Tangrams were drawn from a public royalty-free set available on https://www.1001freedownloads.com/.
+Familiar objects were drawn from an image set used by @degen2020. 
+We drew from eight different basic-level categories that we expected to be familiar to children: bears, birds, cars, candy, dogs, fish, shirts, and tables.
+Meanwhile, tangrams were drawn from a public royalty-free set available on https://www.1001freedownloads.com/.
+Each participant provided labels for a total of eight familiar targets and eight tangram targets. 
+The rest of the images were used as foils when constructing contexts. 
 
 ```{r e3-design, out.width = "0.6\\textwidth", fig.align = "center", set.cap.width=T, fig.cap = "Objects in Experiment 3 could appear in isolation (A), in a far context (B), or in a close context (C)."}
 knitr::include_graphics(here("writing/journal/diagrams/e3_diagram.pdf"))
 ```
 
-For both familiar objects and novel objects, trials were divided into three types: isolation trials in which a single target object was presented (Figure \ref{fig:e3-design}A), far trials in which a target was paired with a competitor of the same type but with low semantic overlap (Figure \ref{fig:e3-design}B), and close trials in which the target was paired with a competitor with high semantic overlap (Figure \ref{fig:e3-design}C). 
-For familiar objects, close trials involved two objects in the same basic-level semantic category (e.g., Pug and German Shepherd), and far trials involved two objects in different basic-level categories (e.g., Pug and Rabbit). 
-For novel tangrams, close and far competitors were determined through an independent norming experiment where adult participants produced labels for a number of tangrams in isolation. 
-We used naming agreement--the proportion of responses that overlapped for a pair of tangrams--to estimate their semantic similarity [see @zettersten2020], and constructed close and far contexts to maximize or minimize similarity, respectively. 
-
-Participants provided labels for a total of eight familiar objects and eight novel tangrams. 
-Each object appeared three times for adults: once in isolation, once in a close context, and once in a far context. 
-All trials of a single type were presented in a single block (e.g. six trials in a row of 'familiar' objects in 'close' contexts), and the six blocks were presented in random order across participants.
-To maintain children's attention for the duration of the experiment, we used a truncated design: they gave responses only for the close and far conditions, not the isolation condition. 
-Children's productions in all conditions were typed into a text box in real time by an experimenter during their participation.
+We used a $2 \times 2$ factorial design, manipulating both the novelty of the stimuli (familiar images vs. tangram images) and the similarity of the distractor to the target in the context (close contexts vs. far contexts). 
+For *far* contexts, the target and competitor had low semantic overlap (i.e., far away in semantic space; Figure \ref{fig:e3-design}B).
+For *close* contexts, the target and competitor had high semantic overlap (i.e. close in semantic space; Figure \ref{fig:e3-design}C). 
+For familiar images, we operationalized semantic overlap in terms of the basic-level category: close trials involved two objects in the same basic-level semantic category (e.g., Pug and German Shepherd), and far trials used different basic-level categories (e.g., Pug and Rabbit). 
+For tangram images, close and far competitors were determined through an independent norming study where adult participants produced labels for a number of tangrams in isolation, and we constructed close or far contexts that (respectively) maximized or minimized naming agreement, the proportion of responses that overlapped for a pair of tangrams [see @zettersten2020].]
 
 ### Procedure
 
-**Adults**. Adults were instructed to describe the object in the blue box by typing one or two words into a text box. 
+**Adults**. 
+Adults were instructed to describe the object in the blue box by typing one or two words into a text box. 
+In addition to the *close* and *far* conditions, adults also provided labels for each object in a third *isolation* condition (Figure \ref{fig:e3-design}A).
+Trials appeared in contiguous blocks of the same type (e.g. eight trials in a row of 'familiar' objects in 'close' contexts), and the order of the six blocks was fully randomized across participants, for a total of 48 trials.
 At the start of each block, they were told whether they would see one picture (isolation condition), or two pictures (close and far conditions), and reminded that they should type in a description that would help another participant identify the target with a blue border. 
-Blocks were presented in random order.
 
 **Children**. After parents gave consent and children assented to participate, children completed several warm-up trials to introduce them to the game.
-Children were then told that they would continue to play the labeling game and that their responses would be shown to another person who did not know which object was in the blue border. 
-To ease children into the task, we always began with a block of familiar objects in either the close or far condition. 
-At the end of the experiment, we additional included a manipulation check block to gauge individual differences in sensitivity to referential ambiguity (see Appendix C for further procedural details)
+Children were then told that they would continue to play a labeling game and that their responses would be shown to another person who did not know which object was in the blue border. 
+To ease children into the task, we always began with a block of familiar objects in either the close or far condition, but otherwise the four blocks were randomized, for a total of 32 trials. 
+They gave responses only for the close and far conditions; there was no isolation condition. 
+Children's productions in all conditions were typed into a text box in real time by an experimenter during their participation.
+At the end of the experiment, we additionally included a manipulation check block to gauge individual differences in sensitivity to referential ambiguity (see Appendix C for further procedural details). 
 
 ### Pre-processing 
 
-We cleaned the text input using a uniform rubric across the combined data set.
+We cleaned the text input by applying the following procedure across the combined data set.
 First, we manually corrected typos and removed stop words (e.g. determiners like 'a', 'the').
 Second, we lemmatized all entries to remove spurious differences between tenses and plurals of the same root form. The measures we use in analysis consider edit distance, which may be aritifically inflated due to word order (e.g., the edit distance between "running person" and "person running" would be high, despite conceptual and semantic similarity between the descriptions). As such, we manually cleaned the data to remove similar phrases or structures across descriptions (e.g., if a participant repeats "a person who is..." on every trial, we removed that phrase). We use the manually cleaned data for our analyses, but pre-cleaned, lemmatized data can be found on our [OSF page](https://osf.io/vkug8/?view_only=b68061f8daae48cdace5c3dc53969405).
 Third, we removed spaces and collapsed multiple words together into a single token (e.g. 'German Shepherd' was tokenized to 'germanshepherd'). While adult participants typed in their own responses, children's responses were entered by an experimenter. When children's descriptions were overly long, experimenters prompted children to simplify them by asking, "Can you say that in one or two words?". Children were only prompted once, regardless of whether they simplified their expression. 
@@ -321,8 +323,8 @@ We test this hypothesis by examining the distribution of labels at the populatio
 First, we hypothesize that both adults and children will produce a fairly narrow, high-agreement range of labels for familiar objects, yielding highly concentrated distributions.
 Second, we hypothesize that children will use a broader range of different labels for tangrams than adults, yielding a less concentrated distribution with less agreement among different children.
 We considered several measures of concentration, but we focus primarily on the proportion of unique labels to total labels, which is simple and interpretable.^[In principle, the most appropriate metric of spread across labels would be the information theoretic quantity of entropy: $H(X) = \sum_i p_i \log p_i$. However, our empirical distributions are highly sparse, with many labels appearing only once. Our estimates of entropy are therefore somewhat sensitive to the choice of statistical estimator (e.g. how much to regularize with pseudo-counts) while being less numerically interpretable. However, we find a similar qualitative effects of interest for reasonable choices, $b=$ `r (var.out.entropy %>% filter(term == 'target_type1:age_group1'))$estimate`, $t$(`r (var.out.entropy %>% filter(term == 'target_type1:age_group1'))$df`)$=$ `r (var.out.entropy %>% filter(term == 'target_type1:age_group1'))$statistic`, $p =$ `r (var.out.entropy %>% filter(term == 'target_type1:age_group1'))$p.value` using the Schurmann-Grassberger estimator. Alternative metrics include "modal agreement" [@brodeur2010bank; @brodeur2014bank], the proportion of participants that produce the most common label, and Simpson's diversity index [@simpson1949measurement; @majid2014odors; @majid2018differential], which can be interpreted as the probability that two independently sampled labels will match.]
-For example, suppose that from a pool of forty participants, twenty said 'bird', ten said 'dancer', and the other ten said something unique. 
-Then we would have $p_{uniq} = 12/40 = .3$.
+For example, suppose that from a pool of forty participants, twenty said 'bird', ten said 'dancer', and the remaining ten chose other labels that were all distinct from one another. 
+Then we would have twelve unique labels overall, and $p_{uniq} = 12/40 = 0.3$ .
 Meanwhile, if all forty participants chose different labels, we would have $p_{uniq} = 40/40 = 1$; and at the other extreme, if all forty participants chose the same label, we would have $p_{uniq} = 1/40 = 0.025$.
 
 Because population agreement metrics necessarily aggregate over individual participants for each target, we construct our mixed-effects regression model at the item level. 
