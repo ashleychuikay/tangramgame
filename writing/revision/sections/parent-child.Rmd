@@ -28,7 +28,7 @@ exchanges_data <- read_csv(here("data/experiment1/exchanges.csv"),
 ```
 
 
-```{r ipads, fig.pos = "t", fig.width = 8, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "(A) We divided a set of ambiguous tangram figures into two sets of referential targets. (B) A parent (orange) and child (blue) played a reference game where these figures were presented as stimuli. On each trial, the director (here, the parent) was asked to refer to the target figure (privately highlighted in a box) so that the matcher (here, the child) could guess it. (C) Each tangram appeared as the target once per black, and each dyad played the game for four blocks, alternating roles on each trial."}
+```{r ipads, fig.pos = "t", fig.width = 8, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "(A) We divided a set of ambiguous tangram figures into two sets of referential targets. (B) A parent (orange) and child (blue) played a reference game where these figures were presented as stimuli. On each trial, the director (here, the parent) was asked to refer to the target figure (privately highlighted in a box) so that the matcher (here, the child) could guess it. (C) Each tangram appeared as the target once per block, and each dyad played the game for four blocks, alternating roles on each trial."}
 # Note: this is moved up here to get the fig to appear on the right page... i know it's annoying.
 knitr::include_graphics("diagrams/design.pdf")
 ```
@@ -93,7 +93,7 @@ age_effect_exchanges = lmer.exchanges %>% filter(term == 'age')
 rep_effect_exchanges = lmer.exchanges %>% filter(term == 'rep_num')
 ```
 
-```{r acc-exchanges, eval = TRUE, cache= FALSE, fig.width=8, fig.pos = "t", fig.align = "center", fig.cap = "(A) Accuracy and (B) number of dialogue exchanges per trial, broken out by whether the child (dark grey) or the adult (light grey) was the director. Error bars are 95\\% CIs. The drop in accuracy for 8-year-olds is likely an artifact of a small set of children losing interest in the task."}
+```{r acc-exchanges, eval = TRUE, cache= FALSE, fig.width=8, fig.pos = "t", fig.align = "center", fig.cap = "(A) Accuracy and (B) number of dialogue exchanges per trial, broken down by whether the child (dark grey) or the adult (light grey) was the director. Error bars are 95\\% CIs."}
 
 # render plot
 plt.results.acc <- result.acc.means %>%   
