@@ -131,7 +131,7 @@ Each participant provided labels for a total of eight familiar targets and eight
 The rest of the images were used as foils when constructing contexts. 
 
 ```{r e3-design, out.width = "0.6\\textwidth", fig.align = "center", set.cap.width=T, fig.cap = "Objects in Experiment 3 could appear in isolation (A), in a far context (B), or in a close context (C)."}
-knitr::include_graphics(here("writing/journal/diagrams/e3_diagram.pdf"))
+knitr::include_graphics(here("writing/revision/diagrams/e3_diagram.pdf"))
 ```
 
 We used a $2 \times 2$ factorial design, manipulating both the novelty of the stimuli (familiar images vs. tangram images) and the similarity of the distractor to the target in the context (close contexts vs. far contexts). 

@@ -138,7 +138,7 @@ We measured accuracy and response time, measured as the time interval between th
 ### Design 
 
 We used a $2 \times 2$ factorial design manipulating the age of the producer (parent vs. child) and comprehender (adult vs. child). 
-The age of the producer was a within-subjects manipulation while the age of the comprehender was an across-subjects manipulate: each comprehender was exposed to utterances originally produced by both adults and children.
+The age of the producer was a within-subjects manipulation while the age of the comprehender was an across-subjects manipulation: each comprehender was exposed to utterances originally produced by both adults and children.
 We predicted that if children struggle to form conceptual pacts primarily due to *comprehension* difficulties, then adult comprehenders should be highly accurate across the board (regardless of whether the referring expression was originally produced by an adult or child), while child comprehenders should uniformly struggle.
 
 ```{r rt-skew, fig.show='hide'}
