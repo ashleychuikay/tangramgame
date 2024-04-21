@@ -132,7 +132,7 @@ For example, @koymen2014 explicitly prompted 4- to 6-year-old participants to as
 Similar effects of experimenter feedback were noted as far back as @krauss1977 ("Children in the first, third, and fifth grades did improve, with the help of comments from the experimenter pointing out the mistakes they had been making.")
 Developmental changes were also observed in these more recent studies, indicating that the underlying mechanisms may be graded and continue to develop into middle childhood. 
 For example, @koymen2014 found that 6-year-olds were more sensitive to referential pacts than 4-year-olds, who were only reliably sensitive when the pacts were proper nouns, even in the presence of extensive prompting. 
-Meanwhile, while @branigan2016 found that while 8- to 10-year-old participants were able to coordinate on pacts given explicit feedback about their accuracy, their error rates were much higher in absolute terms than adults.
+Meanwhile, while @branigan2016 found that while 8- to 10-year-old participants were able to coordinate on pacts given explicit feedback about their accuracy, their error rates were still higher in absolute terms than adults.
 Thus, relatively targeted experimenter intervention may be required for children to successfully construct conversational pacts with their peers; the ability to reliably initiate the requisite speech acts on their own may not develop until later.
 We consider three possible points where peer communication among children may go awry in the absence of adult intervention:
 
@@ -142,15 +142,13 @@ We consider three possible points where peer communication among children may go
 
 **Discourse-level interaction:** Finally, the difficulty may lie beyond the level of single utterances, implicating the interactive discourse processes that link together production and comprehension. For example, children may experience no more or less difficulty in production or comprehension than adults, but struggle to notice and actively signal to their partners that they have not understood each other. Adults readily use back-channels and other vocal affirmations to signal that they have understood a potentially ambiguous utterance, and will ask clarifying questions when they feel they have been unable to understand [@clark1986; @schegloff_2007]. However, young children may have trouble proactively initiating these speech acts when necessary, and errors may persist preventing pacts from getting off the ground [@anderson1994; @beal1987repairing]. 
 
-In a series of three studies, we investigate the contributions of these three sources for referential pact formation among US children. 
+In a series of three studies, we investigate the contributions of these sources for referential pact formation among US children. 
 In everyday conversation, children do not have access to explicit mediation from experimenters.
-It is possible, however, that *parents* may spontaneously play a similar role in scaffolding referental pacts with their children.
+It is possible, however, that *parents* may spontaneously scaffold referental pacts with their children in a similar way.
 Children frequently engage in conversation with their parents, who are not only more linguistically capable than their peers, but also have fine-grained representations about their children's knowledge and conversational abilities [@leung2021]. 
 Parental scaffolding may not only help facilitate effective communication in the local context, but also serve to model dialogue skills that children may gradually begin to adopt more globally.
 Our investigation thus begins by asking whether parents may be spontaneously doing something to support the formation of conversational pacts when talking with their children that children are not able to do with one another. 
 
-<!-- In Study 1, we adapted the classic tangram director-matcher paradigm developed by @clark1986 to examine conversational pact formation among parent-child dyads.  -->
-<!-- We found that even 4-year-old children and their parents can successfully coordinate on pacts, but for these youngest children, parents adaptively provide multiple sources of support and scaffolding.  -->
 <!-- The rest of the paper aims to disentangle the contributions of children's comprehension and production skills. -->
 <!-- In Study 2, we isolated the role of comprehension processes by asking naive adults and children to identify the target reference given the utterances originally produced in our parent-child interactions. -->
 <!-- In Study 3, we isolated the role of production by asking children and adults to describe familiar and novel objects in contexts with different pragmatic demands.  -->
@@ -275,12 +273,122 @@ questionMarkBooted %>%
 ```
 
 Lengthier parent-child exchanges may reflect efforts by parents to provide and elicit additional clarification or confirmation, or may simply reflect attentional difficulties. 
-As a rough estimate of the content of parents' responses when their child was the director, we counted the number of question marks in the transcript.
-Because questions were not always annotated with a question mark, this represents a lower bound on the true estimate of questions. 
+As a rough estimate of the content of parents' responses when their child was the director, we counted the number of question marks in the transcripts of parents' responses.
+Because questions were not always annotated with a question mark, this analysis represents a lower bound on the true estimate of questions. 
 We found `r questionMarkProportions$age4 * 100`% of responses to 4-year-olds contained question marks, compared to lower rates of `r questionMarkProportions$age6 * 100`% and `r questionMarkProportions$age8 * 100`% in 6- and 8-year-olds, respectively ($\chi^2(2)=$ `r chisq.out$statistic`, $p$ `r papaja::printp(chisq.out$p.value)`).
-It is possible that these proportions reflect an artifact of the transcriptions, but the same RAs transcribed sessions across multiple age groups, applying a consistent strategy, and the population of parents should be roughly comparable across children's age groups.
+It is possible that these proportions reflect an artifact of the transcriptions, but the same RAs transcribed sessions across multiple age groups, applying a consistent strategy.
+We expect the population of parents to be roughly comparable across children's age groups, hence there is no *a priori* reason one group would be transcribed differently than others.
 
-## Appendix B: Descriptions produced by children are less comprehensible than those produced by adults
+## Appendix B: How do pacts differ across ages?
+
+
+```{r aoa-computation, cache = TRUE}
+tokens <- combined_data %>%
+  filter(role == "director") %>%
+  group_by(age, person, subid, target, rep_num) %>%
+  summarise(words = str_to_lower(utterance)) %>%
+  ungroup() %>%
+  unnest_tokens(word, words) %>%
+  ungroup() %>%
+  mutate(word = str_to_lower(word))
+
+aoas <- tokens %>%
+  left_join(kuperman_aoas, by = "word") %>%
+  filter(!word %in% tm::stopwords()) %>%
+  group_by(age, person, target, rep_num, subid) %>%
+  summarise(aoa = mean(aoa, na.rm = T)) %>%
+  group_by(age, person, target, subid) %>%
+  ungroup() %>%
+  mutate(person = case_when(person == "left" ~ "adult",
+                            person == "right" ~ "adult",
+                            T ~ person))
+
+mean_aoas <- aoas %>%
+  mutate(age = if_else(is.na(age), "adult", as.character(age))) %>%
+  group_by(age, person, rep_num, subid) %>%
+  summarise(aoa = mean(aoa, na.rm = T)) %>%
+  tidyboot_mean(aoa, na.rm = T) %>%
+   mutate(plot_person = case_when(person == "adult" ~ "adult",
+                                 person == "parent" ~ "parent",
+                                 T ~ "child"))
+
+lmer.aoas <- aoas %>%
+  filter(!is.na(age)) %>%
+  mutate(age = as.numeric(age) - 6, rep_num = rep_num - 2.5) %>%
+  lmer(aoa ~ person * age * rep_num + (rep_num * person  | subid) +
+         (1 | target), data = ., control = lmerControl(optimizer = "bobyqa")) %>%
+  tidy() %>%
+  filter(effect == "fixed")
+```
+
+```{r aoa-effects}
+age_effect_origin = lmer.aoas %>% filter(term == 'age')
+age_effect_origin_pvalue <- round(age_effect_origin$p.value, 3)
+age_effect_origin_pvalue <- ifelse(age_effect_origin_pvalue < 0.001, 
+                               '< 0.001', paste0(c('=', age_effect_origin_pvalue),
+                                                 collapse = ' '))
+
+rep_effect_origin = lmer.aoas %>% filter(term == 'rep_num')
+rep_effect_origin_pvalue <- round(rep_effect_origin$p.value, 3)
+rep_effect_origin_pvalue <- ifelse(rep_effect_origin_pvalue < 0.001, 
+                               '< 0.001', paste0(c('=', rep_effect_origin_pvalue),
+                                                 collapse = ' '))
+
+person_effect_origin = lmer.aoas %>% filter(term == 'personparent')
+person_effect_origin_pvalue <- round(person_effect_origin$p.value, 3)
+person_effect_origin_pvalue <- ifelse(person_effect_origin_pvalue < 0.001, 
+                               '< 0.001', paste0(c('=', person_effect_origin_pvalue), collapse = ' '))
+
+person_age_interaction_origin = lmer.aoas %>% filter(term == 'personparent:age')
+person_age_interaction_origin_pvalue <- round(person_age_interaction_origin$p.value, 3)
+person_age_interaction_origin_pvalue <- ifelse(person_age_interaction_origin_pvalue < 0.001, 
+                               '< 0.001', 
+                               paste0(c('=',
+                                        person_age_interaction_origin_pvalue), 
+                                      collapse = ' '))
+
+person_rep_interaction_origin = lmer.aoas %>% filter(term == 'personparent:rep_num')
+person_rep_interaction_origin_pvalue <- round(person_rep_interaction_origin$p.value, 3)
+person_rep_interaction_origin_pvalue <- ifelse(person_rep_interaction_origin_pvalue < 0.001, 
+                                                  '< 0.001', paste0(c('= ', person_rep_interaction_origin_pvalue), collapse = ' '))
+
+age_rep_interaction_origin = lmer.aoas %>% filter(term == 'age:rep_num')
+age_rep_interaction_origin_pvalue = round(age_rep_interaction_origin$p.value, 3)
+age_rep_interaction_origin_pvalue <- ifelse(age_rep_interaction_origin_pvalue < 0.001, 
+                                                  '< 0.001', paste0(c('= ', age_rep_interaction_origin_pvalue), collapse = ' '))
+
+person_age_rep_interaction_origin = lmer.aoas %>% filter(term == 'personparent:age:rep_num')
+person_age_rep_interaction_origin_pvalue = round(person_age_rep_interaction_origin$p.value, 3)
+person_age_rep_interaction_origin_pvalue <- ifelse(person_age_rep_interaction_origin_pvalue < 0.001, 
+                                                  '< 0.001', paste0(c('= ', person_age_rep_interaction_origin_pvalue), collapse = ' '))
+```
+
+```{r aoa-appendix, fig.pos = "t", fig.width=6, fig.height=3.5, fig.align = "center", fig.cap = "\\label{fig:aoa_appendix}Complexity of language used by different age groups estimated from words' average age of acquisition. Error bars are 95\\% CI."}
+aoa_labels = tibble(rep_num = c(2, 1.6, 2), 
+                          empirical_stat = c(4.5, 4, 4.1), 
+                          plot_person = c("parent", "child", "adult"),
+                          plot_age = c("parent", "child", "adult"),
+                          age = c("4", "4", "adult"))
+
+ggplot(mean_aoas, aes(x = rep_num, y = empirical_stat,
+                                      color = plot_person)) +
+  facet_grid(~ age) +
+  geom_linerange(aes(ymin = ci_lower, ymax = ci_upper),
+                 position = position_dodge(.25)) + 
+  geom_line(position = position_dodge(.25)) + 
+  theme(aspect.ratio = 1, legend.position = "none") +
+  labs(x = "rep #", y = "AoA (average)") +
+  scale_color_manual(values = c( ADULTS, CHILD_SCALE[2], PARENTS)) +
+  geom_text(aes(label = plot_age), data = aoa_labels)
+```
+
+Given that the labels used by younger children tend to originate with their parents, it is tempting to conclude that adaptation for these pairs is entirely one-sided. However, the resulting pacts may have nonetheless been shaped by children. In particular, we suggest that even though young children may not be able to *supply* good initial labels, they may serve as "simplifiers" or "filters" that constrain the complexity of the resulting pact, since it must pass through their comprehension and production system [@hudson-kam2005].
+We tested this hypothesis by asking about the linguistic complexity of the pacts developed in each age group. To estimate the complexity of individual words, we used self-reported age of acquisition (AoA) estimates [@kuperman2012]. Our assumption, based on Kuperman et al.'s work, is that more complex words are harder to acquire, and thus have later ages of acquisition (AoA). To estimate the complexity of referential expressions as a whole, we simply averaged the AoAs of all the words they contained^[We first removed any words in a list of `r length(tm::stopwords())` stop words like "at" and "me" from the \texttt{tm} package [@feinerer2008]]. In all age groups, parents produced more linguistically complex referential expressions than children, but as children get older, both their expressions and their parents' become more linguistically complex over repetitions of the same tangram (like adults) (Figure \ref{fig:aoa_appendix}). 
+
+We confirmed this observation with a mixed-effects model including all possible interactions of age, person (child vs. parent), and repetition number, and maximal random effect structure as before. We found significant main effects of age ($\beta=$ `r age_effect_origin$estimate`, $t =$ `r age_effect_origin$statistic`, $p$`r age_effect_origin_pvalue`), and person ($\beta=$ `r person_effect_origin$estimate`, $t=$ `r person_effect_origin$statistic`, $p$ `r person_effect_origin_pvalue`), but not repetition ($\beta=$ `r rep_effect_origin$estimate`, $t =$ `r rep_effect_origin$statistic`, $p$ `r rep_effect_origin_pvalue`). All else being equal, pairs with older children produced more complex utterances, and parents produced more complex utterances than children. Further, we found a significant interaction between age and repetition number, suggesting that later repetitions became more complex for dyads with older children ($\beta=$ `r age_rep_interaction_origin$estimate`, $t=$ `r age_rep_interaction_origin$statistic`, $p$ `r  age_rep_interaction_origin_pvalue`). This interaction may be driven by reduction processes, as more distinctive words tend to persist as common words are dropped [@hawkins2019]. No other effects were significant, indicating that parents' utterances remained a constant level of complexity above children's even as children's utterances became more complex. These results suggest that pact formation depends not only on parental input, but on children as well---pacts may originate from parents, but children control their complexity.
+
+
+## Appendix C: Descriptions produced by children are less comprehensible than those produced by adults
 
 ```{r full-acc-lmer}
 additive_acc.lmer <- bind_rows(tidy_turk_data, tidy_kid_data) %>%
@@ -330,7 +438,7 @@ We also include random intercepts for each target and participant ID; a more com
 How does age of speaker influence comprehension of descriptions? We first find that parents' descriptions are more accurately comprehended across the board $b=`r acc.lmer.speaker$estimate`, z = `r acc.lmer.speaker$statistic`, p `r papaja::printp(acc.lmer.speaker$p.value)`$. This is in line with our predictions, suggesting that parents in Experiment 1 provided more informative descriptions of the tangrams than did children. Additionally, we find that older children (and parents of older children) provided more accurately comprehended descriptions than younger children, $b=`r acc.lmer.age$estimate`, z= `r acc.lmer.age$statistic`, p `r papaja::printp(acc.lmer.age$p.value)`$ (Figure \ref{fig:e2_result}).
 Concerning our second hypothesis, however, we found no significant effect of experiment phase, $b=`r acc.lmer.occ$estimate`, z= `r acc.lmer.occ$statistic`, p= `r acc.lmer.occ$p.value`$. In other words, final-round descriptions of tangrams do not appear to contain meaningfully less information for guessing the target.
 
-## Appendix C: Additional details of Experiment 3 procedure
+## Appendix D: Additional details of Experiment 3 procedure
 
 On the first trial, they saw a picture of a red apple. On the next trial, they saw a pear with a blue border around it and the same apple and were asked to describe the object in the blue box. Then, the experimenter indicated that they would close their eyes on the next trial so that they wouldn't see what children saw. On this trial, children saw a white mug with a blue border around it and a white plate. While the experimenter's eyes were closed, the child was encouraged to describe the object in the blue box so that the experimenter could identify it. Once children provided a description, the blue border disappeared, and the experimenter opened their eyes. The experimenter then identified the object based on children's descriptions, and revealed the blue box again to verify whether they selected the correct target. 
 
@@ -341,7 +449,7 @@ In this condition, children were told that they would hear a label previously pr
 Three of the trials were far trials in which an unambiguously incorrect label was provided to the child (e.g. "table" to distinguish between a pug and a rabbit), three of the trials were close trials in which an unambiguously correct label was provided (e.g. "polar bear" to distinguish between a polar bear and a grizzly bear), and three were close trials in which an ambiguous label was provided (e.g. "dog" to distinguish between a husky and a dalmatian).
 Children responded verbally ("yes" it is adequate or "no" it is not) and an experimenter selected the corresponding button on the screen.
 
-## Appendix D: Adult response times reflect familiarity and context in Experiment 3
+## Appendix E: Adult response times reflect familiarity and context in Experiment 3
 
 ```{r appendix-rts, out.height = "450px", fig.align = "center", set.cap.width=T, fig.cap = "\\label{fig:rt_appendix} Response times for different conditions in Experiment 3."}
 d.prod.rt <- read_csv(
@@ -383,10 +491,6 @@ rt_model <- d.prod.rt %>%
   tidy() %>%
   filter(effect == "fixed")
 ```
-  
-```{r}
-
-```
 
 A further window into referring expression generation is provided by the response time data collected in Experiment 3. 
 Response times were recorded between the onset of the trial and the point at which participants finished typing their responses, so longer response times may reflect greater effort in generating a description, all else equal.
@@ -409,7 +513,7 @@ After controlling for utterance length, we found that adults' response times wer
 We also found that adults' response times were longer for close trials than far trials, $b=`r (rt_model %>% filter(term == 'competitor_typefar'))$estimate`, t = `r (rt_model %>% filter(term == 'competitor_typefar'))$statistic`, p = 0.003$, contrary to our hypothesis. 
 We also found evidence for a weak interaction, $b=`r (rt_model %>% filter(term == 'competitor_typefar:target_typetangram'))$estimate`, t = `r (rt_model %>% filter(term == 'competitor_typefar:target_typetangram'))$statistic`, p = 0.05$; see Figure \ref{fig:rt_appendix}.
 
-## Appendix E: Children's understanding of referential ambiguity predicts production in Experiment 3
+## Appendix F: Children's understanding of referential ambiguity predicts production in Experiment 3
 
 We found that children are generally less sensitive to referential context than adults, but it is not clear what contributes to these differences.
 Given that children are more likely to produce the same label across contexts even for familiar objects, it is unlikely that vocabulary knowledge accounts for most of the difference between children and adults. 

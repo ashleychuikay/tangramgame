@@ -153,7 +153,7 @@ Children were then told that they would continue to play a labeling game and tha
 To ease children into the task, we always began with a block of familiar objects in either the close or far condition, but otherwise the four blocks were randomized, for a total of 32 trials. 
 They gave responses only for the close and far conditions; there was no isolation condition. 
 Children's productions in all conditions were typed into a text box in real time by an experimenter during their participation.
-At the end of the experiment, we additionally included a manipulation check block to gauge individual differences in sensitivity to referential ambiguity (see Appendix C for further procedural details). 
+At the end of the experiment, we additionally included a manipulation check block to gauge individual differences in sensitivity to referential ambiguity (see Appendix D for further procedural details). 
 
 ### Pre-processing 
 
@@ -288,7 +288,7 @@ The most complex random effects structure that converged only included random in
 We found a significant interaction between age group and target type, $b=`r indiv.measures.inter$estimate`$, $z = `r indiv.measures.inter$statistic`$, $p `r papaja::printp(indiv.measures.inter$p.value, add_equals = TRUE)`$ (see Figure  \ref{fig:e3_contextsensitivity}A). 
 Although adults displayed similar rates of context-sensitivity for familiar and novel objects (familiar: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'adult', target_type == 'familiar'))$empirical_stat`, novel: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'adult', target_type == 'tangram'))$empirical_stat`), children were nearly twice as likely to provide the exact same label across contexts for a familiar object (familiar: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'kid', target_type == 'tangram'))$empirical_stat`; novel: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'kid', target_type == 'familiar'))$empirical_stat`).
 Similar results were obtained using 'softer' measures like edit distance, which is the number of edits required to turn one string into the other, $b= `r soft.inter$estimate`, z = `r soft.inter$statistic`, p `r papaja::printp(soft.inter$p.value, add_equals = TRUE)`$ (see Supplemental Figure \ref{fig:Levensthein_appendix}). 
-In other words, while adults appropriately modulated their utterances across contexts, children often produced the same description for familiar targets across contexts (see Appendix D for a corroborating response time analysis.)
+In other words, while adults appropriately modulated their utterances across contexts, children often produced the same description for familiar targets across contexts (see Appendix E for a corroborating response time analysis.)
 
 ### Familiar objects elicit less variable names
 
@@ -374,7 +374,7 @@ However, children as a group produce a much more variable set of labels for nove
 #   get_average_overlap()
 ```
 
-## Discussion
+## Summary and discussion
 
 In Experiment 3, we asked whether difficulty in *production* may explain why young children struggle to form referential pacts with peers. 
 Comparing adult and child responses in our production task revealed that children were not as sensitive to referential context, providing descriptions that did not always distinguish the intended referent from its distractor (e.g., saying "table" when both a dining table and a picnic table were present). 
@@ -385,7 +385,7 @@ One possibility is that the basic level category label of a familiar object (e.g
 <!-- While we cannot infer whether children were considering alternative descriptions during our task, we did find that children, compared to adults, produced less variable descriptions for familiar objects, concentrating on the same canonical labels. -->
 Further studies probing the alternatives that children consider, or testing the salience of various object labels, could provide a stronger test of this possibility.
 Another possibility is that younger children are simply less sensitive to referential ambiguity [e.g., @beal1982; @robinson1977].
-In Appendix E, we present preliminary evidence from a manipulation check linking the ability to *recognize* referential ambiguity and the ability to *generate* appropriately informative expressions based on context.
+In Appendix F, we present preliminary evidence from a manipulation check linking the ability to *recognize* referential ambiguity and the ability to *generate* appropriately informative expressions based on context.
 Children who were able to recognize that an ambiguous expression would be unhelpful were more likely to show context sensitivity in their own ability to generate descriptions for familiar objects. 
 However, it remains unclear how either these individual differences across children are reflected in different *parental* strategies.
 Parents have extensive, well-calibrated knowledge about their children's developing communication abilities, and further research should compare parents against other adults with less specific knowledge about a particular child.
