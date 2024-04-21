@@ -3,9 +3,9 @@
 It is clear from existing studies that children are receptive to explicit scaffolding from experimenters [@koymen2014]. 
 For example, @deutsch1982 showed that repeated clarification questions eventually elicited unambiguous descriptions from 6- and 9-year-olds and, to a lesser extent, from 3-year-olds. 
 A more recent training study by @matthews2007 replicated this finding in 2- to 4-year-olds, and further showed transfer to a different communication task. 
-But it is unclear whether, or how, adults spontaneously provide such input over the course of unmediated adult-child conversations, and whether such processes actually enable the formation of conversational pacts (rather than generically increasing informativeness).
+But it is unclear whether, or how, adults spontaneously provide such input over the course of unmediated parent-child conversations, and whether such processes actually enable the formation of conversational pacts (rather than generically increasing informativeness).
 
-One possibility is that caregivers naturally adopt some of the interactive strategies developed by experimenters in these training studies: pointing out when references are insufficiently informative, asking for clarification about targeted features, and helping children to re-conceptualize referential targets within the expressiveness of their developing vocabulary [@clark2018conversation; @nikolaus2022communicative].
+One possibility is that parents naturally adopt some of the interactive strategies developed by experimenters in these training studies: pointing out when references are insufficiently informative, asking for clarification about targeted features, and helping children to re-conceptualize referential targets within the expressiveness of their developing vocabulary [@clark2018conversation; @nikolaus2022communicative].
 In our first study, we asked parents and their 4-, 6-, and 8-year-old children, as well as control pairs of adults, to play an adapted version of Krauss and Glucksberg's [-@krauss1969] director-matcher game. 
 We examined (1) whether parents' contributions enable conversational pacts to form at all, (2) what strategies parents use to scaffold pact formation if so, and (3) whether the nature of these pacts changes over development as children become more adult-like users of language.
 
@@ -93,39 +93,51 @@ rep_effect_exchanges = lmer.exchanges %>% filter(term == 'rep_num')
 
 ```{r acc-exchanges, eval = TRUE, cache= FALSE, fig.width=8, fig.pos = "t", fig.align = "center", fig.cap = "(A) Accuracy and (B) number of dialogue exchanges per trial, broken down by whether the child (dark grey) or the adult (light grey) was the director. Error bars are 95\\% CIs."}
 
+acc_labels = tibble(rep_num = c(2.75, 2.75, 2.75), 
+                    empirical_stat = c(.85, .8, .95), 
+                    director = c("parent", "child", "adult"), 
+                    lab = c('parent director', 'child director', 'adult director'), 
+                    age = c("6", "6", "adult"))
 # render plot
-plt.results.acc <- result.acc.means %>%   
+plt.results.acc <- result.acc.means %>% 
+  mutate(director = ifelse(director == 'adult' & age != 'adult', 'parent', director)) %>%
   ggplot(aes(x = rep_num, y = empirical_stat * 100,  
-             group = director, color = director, label = director)) +
+             group = director, color = director)) +
   geom_line(position = position_dodge(.25)) +
   geom_errorbar(aes(ymin = ci_lower * 100, ymax = ci_upper * 100),
                 width = 0.05, position = position_dodge(.25)) +
+  geom_text(aes(label = lab), data = acc_labels)+
   facet_grid(. ~ age) +
   ylab("% accuracy") +
   xlab("repetition #") +
   ylim(70, 100) +
-  scale_x_continuous(limits = c(-0.25, 4.25), breaks = 1:4) +
-  theme(aspect.ratio = 1 / 1.3, legend.position = "none") +
-  scale_color_manual(values = c(rev(COLLAPSED_SCALE), ADULTS)) +
-  labs(tag = 'A') +
-  geom_dl(method = list(dl.trans(x = x - .2), "first.qp", cex=.8))
+  theme(aspect.ratio = 1, legend.position = "none") +
+  scale_color_manual(values = c(ADULTS, CHILD_SCALE[2], PARENTS)) +
+  labs(tag = 'A')
+  # geom_dl(method = list(dl.trans(x = x - .2), "first.qp", cex=.8))
 
+exchange_labels = tibble(rep_num = c(2.75, 2.75, 2.75), 
+                    empirical_stat = c(2, 1.75, 1.5), 
+                    director = c("parent", "child", "adult"), 
+                    lab = c('parent director', 'child director', 'adult director'), 
+                    age = c("6", "6", "adult"))
 
 # Bootstrap error bars and render plot
 plt.results.exchanges <- d.exchanges.mean %>%
+  mutate(director = ifelse(director == 'adult' & age != 'adult', 'parent', director)) %>%
   ggplot(aes(x = rep_num, y = empirical_stat, color = director, 
-             group = director, label = director)) +
+             group = director)) +
   geom_line(position = position_dodge(.25)) +
   geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0,
                 position = position_dodge(.25)) +
+  geom_text(aes(label = lab), data = exchange_labels)+
   ylab("# exchanges") +
   facet_grid(. ~ age) + 
   xlab("repetition #") +
-  theme(aspect.ratio = 1 / 1.3 , legend.position = "none") +
-  scale_color_manual(values = c(rev(COLLAPSED_SCALE), ADULTS)) +
-  labs(tag = 'B') +
-  scale_x_continuous(limits = c(-0.25, 4.25), breaks = 1:4) +
-  geom_dl(method = list(dl.trans(x = x - .2), "first.qp", cex=.8))
+  theme(aspect.ratio = 1 , legend.position = "none") +
+  scale_color_manual(values = c(ADULTS, CHILD_SCALE[2], PARENTS)) +
+  labs(tag = 'B') #+
+  #scale_x_continuous(limits = c(-0.25, 4.25), breaks = 1:4)
 
 library(patchwork)
 plt.results.acc / plt.results.exchanges
@@ -187,73 +199,15 @@ We characterized developmental differences using three measures of communicative
 
 We began by analyzing task performance across age groups. Because pairs of adults were consistently at ceiling throughout the task, we focused on the performance of parent-child pairs. We constructed a mixed-effects logistic regression predicting whether the matcher successfully chose the correct referent on each trial. The model included fixed effects whether the parent or child was the director, (numeric) age, and repetition block. It also included random intercepts for each tangram and pair of participants, and random effects of repetition block and director for each pair of participants.
 
-Initial accuracy was well above chance for all age groups, indicating that even young children can succeed in this referential task with their parents. We also found a significant main effect of age ($\beta$ = `r age_effect_acc$estimate`, $t$ = `r age_effect_acc$statistic`; $p=$ `r papaja::printp(age_effect_acc$p.value)`):  Pairs with younger children performed significantly worse than pairs with older children. Critically, however, accuracy improved significantly over the four repetition blocks for all groups ($\beta$ = `r rep_effect_acc$estimate`, $t$ = `r rep_effect_acc$statistic`, $p$ `r papaja::printp(rep_effect_acc$p.value, add_equals = TRUE)`; Figure \ref{fig:acc-exchanges}A). Such improvement for 4-year-olds contrasts with previous results showing no improvement in accuracy with pairs of kindergarteners [age 5, @krauss1969]. Intruigingly, accuracy was lower when children were the directors ($\beta$ = `r director_effect_acc$estimate`, $t$ = `r director_effect_acc$statistic`; $p=$ `r papaja::printp(director_effect_acc$p.value)`), suggesting a potential asymmetry in performance across roles.
+Initial accuracy was well above chance for all age groups, indicating that even young children can succeed in this referential task with their parents. We also found a significant main effect of age ($\beta$ = `r age_effect_acc$estimate`, $t$ = `r age_effect_acc$statistic`; $p=$ `r papaja::printp(age_effect_acc$p.value)`): Pairs with younger children performed significantly worse than pairs with older children. Critically, however, accuracy improved significantly over the four repetition blocks for all groups ($\beta$ = `r rep_effect_acc$estimate`, $t$ = `r rep_effect_acc$statistic`, $p$ `r papaja::printp(rep_effect_acc$p.value, add_equals = TRUE)`; Figure \ref{fig:acc-exchanges}A). 
+<!-- Such improvement for 4-year-olds contrasts with previous results showing no improvement in accuracy with pairs of kindergarteners [age 5, @krauss1969].  -->
+Intriguingly, accuracy was also slightly lower when children were the directors ($\beta$ = `r director_effect_acc$estimate`, $t$ = `r director_effect_acc$statistic`; $p=$ `r papaja::printp(director_effect_acc$p.value)`), suggesting a potential asymmetry in performance across roles.
 
 ### Interactive dialogue exchanges
 
-```{r question-marks}
-questionMarks <- exchanges_data %>% 
-  filter(person == 'parent', role == 'matcher') %>% 
-  mutate(containQ = str_detect(utterance, "\\?")) %>% 
-  rowwise() %>%
-  mutate(age = paste0(c('age', age), collapse = "")) %>%
-  group_by(age, containQ) %>% 
-  tally() %>% 
-  group_by(age) %>%
-  mutate(proportion = n / sum(n)) %>%
-  ungroup()
-
-questionMarkProportions <- questionMarks %>%
-  filter(containQ) %>%
-  select(age, proportion) %>%
-  pivot_wider(names_from = age, values_from = proportion)
-
-chisq.out <- questionMarks %>% 
-  select(age, containQ,n) %>%
-  spread(containQ,n) %>% 
-  select(-age) %>%
-  chisq.test() %>%
-  tidy()
-```
-
-
-```{r question-count, fig.show='hide'}
-questionMarkCount <- exchanges_data %>% 
-  filter(role == "matcher") %>%
-  mutate(containQ = str_detect(utterance, "\\?")) %>% 
-  rowwise() %>%
-  mutate(age = paste0(c('age', age), collapse = "")) %>%
-  group_by(person, age, rep_num, target, subid, containQ) %>% 
-  tally() %>% 
-  group_by(age, person, subid, rep_num, target) %>%
-  ungroup() %>%
-  pivot_wider(names_from = containQ, values_from = n) %>%
-  mutate(`FALSE` = if_else(is.na(`FALSE`), 0, as.numeric(`FALSE`)),
-         `TRUE` = if_else(is.na(`TRUE`), 0, as.numeric(`TRUE`))) %>%
-  pivot_longer(cols = c(`FALSE`, `TRUE`), names_to = "has_question", 
-               values_to = "n") %>%
-  group_by(person, age, rep_num, subid, target) %>%
-  mutate(prop = n / sum(n)) %>%
-  mutate(has_question = as.logical(has_question)) %>%
-  filter(has_question) %>%
-  group_by(person, age, rep_num, subid) %>%
-  summarise(prop = mean(prop), n = mean(n))
-
-questionMarkBooted <- questionMarkCount %>%
-  group_by(age, person, rep_num) %>%
-  tidyboot_mean(n) 
-
-
-questionMarkBooted %>%
-  ggplot(aes(x = rep_num, y = empirical_stat, color = person)) + 
-  facet_grid(. ~ age) + 
-  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper)) + 
-  geom_line()
-```
-
 If the ability of children of different ages to successfully establish reference depends on interactive scaffolding provided by their parents, we would expect additional dialogue exchanges for younger children. 
 We quantified dialogue exchanges by counting the total number of distinct turns of continuous speech on each trial and constructed a mixed-effects model predicting the (continuous) number of exchanges with the same effect structure reported in the previous section. 
-Consistent with previous work [@clark1986], and replicated in our adult control condition, we found a significant main effect of repetition: Fewer dialogue turns were required on later trials ($\beta$ = `r rep_effect_exchanges$estimate`, $t$ = `r rep_effect_exchanges$statistic`; $p$ `r papaja::printp(rep_effect_exchanges$p.value)`). In line with our predictions, we also found a significant main effect of age ($\beta$ = `r age_effect_exchanges$estimate`, $t$ = `r age_effect_exchanges$statistic`; $p$ `r papaja::printp(age_effect_exchanges$p.value)`). Pairs with 4-year-old children took roughly one additional turn at each point in the experiment than pairs with older children, who more closely resembled pairs of adults (Figure \ref{fig:acc-exchanges}B). 
+Consistent with previous work [@clark1986], and replicated in our adult-adult control condition, we found a significant main effect of repetition: Fewer dialogue turns were required on later trials ($\beta$ = `r rep_effect_exchanges$estimate`, $t$ = `r rep_effect_exchanges$statistic`; $p$ `r papaja::printp(rep_effect_exchanges$p.value)`). In line with our predictions, we also found a significant main effect of age ($\beta$ = `r age_effect_exchanges$estimate`, $t$ = `r age_effect_exchanges$statistic`; $p$ `r papaja::printp(age_effect_exchanges$p.value)`). Pairs with 4-year-old children took roughly one additional turn at each point in the experiment than pairs with older children, who more closely resembled pairs of adults (Figure \ref{fig:acc-exchanges}B). 
 The increased levels of interactivity between parents and younger children provides an interesting contrast with previous studies showing decreased interactivity between peer dyads of younger children [@anderson1994, see Appendix A for a preliminary analysis of the content of these exchanges].
 
 ### Reduction in length of referential expression

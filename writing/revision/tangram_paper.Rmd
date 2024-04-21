@@ -113,37 +113,32 @@ options(digits=3, dplyr.summarise.inform = FALSE)
 Children don't just learn the sounds, words, and structures of their native language---they learn how to *use language to communicate* [@hockett1960; @clark2009first]. 
 A core aspect of communication is our sensitivity to *common ground*. 
 We produce and interpret language for each other in light of our shared history, and expect others to do the same [@bruner1985; @Clark96_UsingLanguage; @brown2009partner; @brown2015people]. 
-For example, the same entity can be referred to as *Max* with family members, but *our dog* or *our pug* would be more appropriate with strangers who cannot be expected to know the name [@brown1958shall]. 
-When the meaning of an utterance is unclear, or when an intended referent does not have a conventional label, interlocutors will engage in negotiation, collaboratively arriving at a shared *conversational pact* about how to think and talk about the intended referent [@clark1986; @haber-etal-2019-photobook; @hawkins2019]. 
+For example, the same entity can be referred to as *Max* with family members, but *our dog* or *our pug* would be more appropriate with strangers who cannot be expected to know his name [@brown1958shall]. 
+When the meaning of an utterance is unclear, or when an intended referent does not have a conventional label, interlocutors will engage in negotiation, collaboratively arriving at a shared conversational *pact* about how to think and talk about the intended referent [@clark1986; @haber-etal-2019-photobook; @hawkins2019]. 
 These pacts are temporary agreements about referent names, and adults fluently form, revise, and track them over time with different partners. 
-For instance, Brennan and Clark [-@brennan1996] showed that adults will use the contextually appropriate level of specificity for a referent (e.g. "loafer" rather than "shoe" when another shoe is present), carry it forward into a new context with the same conversational partner (even when the initial competitor is removed), then revert to "shoe" when a new partner is introduced. 
+For instance, Brennan and Clark [-@brennan1996] showed that adults will use the contextually appropriate level of specificity for a referent (e.g. "loafer" rather than "shoe" when another shoe is present), carry it forward into a new context with the same conversational partner (even when the initial competitor is removed), then revert to the simpler "shoe" when a new partner is introduced. 
 
-While adults readily form conversational pacts with one another, studies examining *peer interactions* between children have yielded more mixed results [see @stephens2014referential for a review]. 
-In a classic set of studies, Krauss and Glucksberg [-@krauss1977] asked pairs of age-matched children to play a director-matcher game that required them to refer to novel objects [see also @glucksberg1966; @glucksberg1967; @krauss1969]. 
+While adults readily form pacts with one another, studies examining *peer interactions* between children have yielded more mixed results [see @stephens2014referential for a review]. 
+In a classic set of studies, Krauss and Glucksberg [-@krauss1977] asked pairs of age-matched children to play a director-matcher game that required them to refer to novel objects by themselves [see also @glucksberg1966; @glucksberg1967; @krauss1969]. 
 Across repeated interactions with the same novel objects, 5- and 6-year-old children showed very little evidence of pact formation. 
 The matcher's accuracy in selecting the correct referent remained low, and the director did not increase the efficiency of their referential expressions as adults do. 
-These classic results are perhaps surprising from a contemporary perspective, given that children engage in relatively fluent conversation at this age and are able to track at least some aspects of common ground with adult experimenters [@vasil2023new], including visual perspective [@nadig2002evidence; @nilsen2009relations; @khu2020preschoolers] and referential precedence [@matthews2010; @ostashchenko2019referential; @yoon2021s; @akhtar1996role; @graham2014]. 
-However, as @koymen2014 noted, "establishing referential pacts with adult experimenters who provide scripted utterances might undermine the spontaneity and the mutual agreement on a referential term, since children are simply presented with referential terms and are not actively creating referential pacts themselves" (p. 2335).
+These classic results are perhaps surprising from a contemporary perspective, given that children engage in relatively fluent conversation at this age and are able to track at least some aspects of common ground when engaging in scripted interactions with an adult experimenter as a partner [@vasil2023new], including visual perspective [@nadig2002evidence; @nilsen2009relations; @khu2020preschoolers] and referential precedence [@matthews2010; @ostashchenko2019referential; @yoon2021s; @akhtar1996role; @graham2014]. 
+However, as @koymen2014 note, "establishing referential pacts with adult experimenters who provide scripted utterances might undermine the spontaneity and the mutual agreement on a referential term, since children are simply presented with referential terms and are not actively creating referential pacts themselves" (p. 2335).
+Even more surprising, then, are recent studies of spontaneous interactions between pairs of children as young as 4 years old, who *are* in some cases able to get pacts off the ground by themselves [@koymen2014; @branigan2016], most notably in non-verbal gesturing paradigms [@bohn2019young; @lister2021cross].
 
-Even more surprising, then, is that recent studies revisiting the peer-interaction paradigm have found that pairs of children as young as 4 years old *are* in some cases able to get pacts off the ground with one another [@koymen2014; @branigan2016].
-What accounts for this mixed pattern of results, and why do children apparently succeed in some studies and fail in others?
+Why do pairs of children apparently succeed in some studies and fail in others?
 One key factor may be the presence or absence of targeted input or feedback from adult experimenters. 
 For example, @koymen2014 explicitly prompted 4- to 6-year-old participants to ask clarification questions when their partner was underinformative (asking "do you know what he/she means?" and saying "You can ask him/her" when they said no), mediated negotiation over pacts ("I say we give a name to this boy/girl. Do you have any idea?") and provided immediate feedback when they failed to use the pact ("And who are they?").
-Similar effects of experimenter feedback was noted as far back as @krauss1977 ("Children in the first, third, and fifth grades did improve, with the help of comments from the experimenter pointing out the mistakes they had been making.")
+Similar effects of experimenter feedback were noted as far back as @krauss1977 ("Children in the first, third, and fifth grades did improve, with the help of comments from the experimenter pointing out the mistakes they had been making.")
 Developmental changes were also observed in these more recent studies, indicating that the underlying mechanisms may be graded and continue to develop into middle childhood. 
 For example, @koymen2014 found that 6-year-olds were more sensitive to referential pacts than 4-year-olds, who were only reliably sensitive when the pacts were proper nouns, even in the presence of extensive prompting. 
-Meanwhile, @branigan2016 found that while 8- to 10-year-old participants were able to coordinate on pacts given explicit feedback on their accuracy, their error rates were much higher in absolute terms than adults.
+Meanwhile, while @branigan2016 found that while 8- to 10-year-old participants were able to coordinate on pacts given explicit feedback about their accuracy, their error rates were much higher in absolute terms than adults.
 Thus, relatively targeted experimenter intervention may be required for children to successfully construct conversational pacts with their peers; the ability to reliably initiate the requisite speech acts on their own may not develop until later.
+We consider three possible points where peer communication among children may go awry in the absence of adult intervention:
 
-We consider three possible ways that peer communication among children may go awry in the absence of adult intervention, corresponding to three basic problems a referential utterance must solve.
-First, there is the *absolute* problem of lexical fitness: the utterance must be recognized by the comprehender as a good enough literal description of the target object to identify it as applicable. 
-Second, there is the *relative* problem of informativity: it must be recognized as a poorer description for other potential referents (distractors) in the context than it is for the referential target. 
-Third, establishing reference requires work beyond the single-utterance level: it is not enough to produce applicable and informative descriptions, interlocutors must be able to monitor whether or not they actually understand one another to resolve misunderstandings.
-Thus, developmental scaffolding in pact formation could intervene at three potential points of difficulty: 
+**Utterance-level comprehension:** In order to identify the target of a referential utterance, children must determine whether the information contained in it is a good description of each potential referent. There is extensive evidence that by 4 years old, children can track partner-specific perspectives during comprehension; for example, @nadig2002evidence found that children use information from previous interactions to look towards the correct target image as their partner's speech unfolds [see also, @bleijlevens2023pragmatics; @akhtar1996role; @bohn2021children]. However, it is possible that in contexts with more complex referring expressions for novel objects (like the tangrams we use) children may struggle to identify the target of an utterance, even if it is perfectly informative. For example, given a complex referring expression like "the shoe with the brown laces," they may only attend to a sub-expression like "shoe" and lose the modifying phase [@speer1984two].
 
-**Utterance-level comprehension:** In order to identify the target of a referential utterance, children must determine whether the information contained in it is a good description of each potential referent. There is extensive evidence that by 4 years old, children can track partner-specific perspectives during comprehension; for example, @nadig2002evidence found that children begin to look towards the correct target image as their partner's speech unfolds based on previous interactions. However, most existing studies use familiar objects; it is possible that for novel objects (like tangrams) children may struggle to identify the relevant components of a complex utterance, even if it is sufficiently informative. For example, given a referring expression like "the shoe with the brown laces," they may only attend to a sub-expression like "shoe" [@speer1984two]. 
-
-**Utterance-level production:** Alternatively, the primary source of communicative difficulty may lie on the production side. Children may generate referential expressions that are either overly idiosyncratic or insufficiently informative for their conversational partner to correctly identify the intended referent [@rabagliati2017children; @beal1983young; @beal1988children]. For familiar objects, conventional labels may provide a good-enough default [@goldberg2022good; @koranda2022good], but the same labels can be insufficient in more challenging contexts. Insufficient informativity is also consistent with evidence suggesting that young children may struggle to determine which referential expressions are more or less informative in context [@beal1982; @whitehurst1978development], even for idiosyncratic expressions they themselves produced at an earlier time [@asher1976; @robinson1977].
+**Utterance-level production:** Alternatively, the primary source of communicative difficulty may lie on the production side. Children may generate referential expressions that are either overly idiosyncratic or insufficiently informative for their conversational partner to correctly identify the intended referent [@rabagliati2017children; @beal1983young; @beal1988children]. For familiar objects, conventional labels may provide a good-enough default [@goldberg2022good; @koranda2022good], but the same labels can be insufficient in more challenging contexts. Although children as young as 4 are able to produce children may struggle to determine which referential expressions are more or less informative in context [@beal1982; @whitehurst1978development], even for idiosyncratic expressions they themselves produced at an earlier time [@asher1976; @robinson1977].
 
 **Discourse-level interaction:** Finally, the difficulty may lie beyond the level of single utterances, implicating the interactive discourse processes that link together production and comprehension. For example, children may experience no more or less difficulty in production or comprehension than adults, but struggle to notice and actively signal to their partners that they have not understood each other. Adults readily use back-channels and other vocal affirmations to signal that they have understood a potentially ambiguous utterance, and will ask clarifying questions when they feel they have been unable to understand [@clark1986; @schegloff_2007]. However, young children may have trouble proactively initiating these speech acts when necessary, and errors may persist preventing pacts from getting off the ground [@anderson1994; @beal1987repairing]. 
 
@@ -152,15 +147,15 @@ In everyday conversation, children do not have access to explicit mediation from
 It is possible, however, that *parents* may spontaneously play a similar role in scaffolding referental pacts with their children.
 Children frequently engage in conversation with their parents, who are not only more linguistically capable than their peers, but also have fine-grained representations about their children's knowledge and conversational abilities [@leung2021]. 
 Parental scaffolding may not only help facilitate effective communication in the local context, but also serve to model dialogue skills that children may gradually begin to adopt more globally.
-Our investigation thus begins with the observation that parents may be spontaneously doing something to support the formation of conversational pacts when talking with their children that children are not able to do with one another. 
+Our investigation thus begins by asking whether parents may be spontaneously doing something to support the formation of conversational pacts when talking with their children that children are not able to do with one another. 
 
-In Study 1, we adapted the classic tangram director-matcher paradigm developed by @clark1986 to examine conversational pact formation among parent-child dyads. 
-We found that even 4-year-old children and their parents can successfully coordinate on pacts, but for these youngest children, parents adaptively provide multiple sources of support and scaffolding. 
-The rest of the paper aims to disentangle the contributions of children's comprehension and production skills.
-In Study 2, we isolated the role of comprehension processes by asking naive adults and children to identify the target reference given the utterances originally produced in our parent-child interactions.
-In Study 3, we isolated the role of production by asking children and adults to describe familiar and novel objects in contexts with different pragmatic demands. 
-Overall, we found that comprehension is relatively constant across development, but younger children produce both more lexically idiosyncratic and less context-sensitive labels.
-These findings suggest that impaired production may prevent pacts from taking root in pairs of young children, but when adults are able to provide enough interactional scaffolding, even very young children are able to adapt and establish common ground. 
+<!-- In Study 1, we adapted the classic tangram director-matcher paradigm developed by @clark1986 to examine conversational pact formation among parent-child dyads.  -->
+<!-- We found that even 4-year-old children and their parents can successfully coordinate on pacts, but for these youngest children, parents adaptively provide multiple sources of support and scaffolding.  -->
+<!-- The rest of the paper aims to disentangle the contributions of children's comprehension and production skills. -->
+<!-- In Study 2, we isolated the role of comprehension processes by asking naive adults and children to identify the target reference given the utterances originally produced in our parent-child interactions. -->
+<!-- In Study 3, we isolated the role of production by asking children and adults to describe familiar and novel objects in contexts with different pragmatic demands.  -->
+<!-- Overall, we found that comprehension is relatively constant across development, but younger children produce both more lexically idiosyncratic and less context-sensitive labels. -->
+<!-- These findings suggest that impaired production may prevent pacts from taking root in pairs of young children, but when adults are able to provide enough interactional scaffolding, even very young children are able to adapt and establish common ground.  -->
 
 ```{r child = "sections/parent-child.Rmd"}
 ```
@@ -176,13 +171,13 @@ These findings suggest that impaired production may prevent pacts from taking ro
 Successful communication crucially depends on the ability to establish common ground and coordinate on conversational pacts with partners. 
 A long literature of developmental work dating back to Krauss and Glucksberg [-@krauss1977] has revealed surprising failures to interactively form adult-like pacts even among children who are sensitive to partner-specific perspective and referential precedent in interactions with adult experimenters [@nadig2002evidence; @nilsen2009relations; @khu2020preschoolers; @matthews2010; @ostashchenko2019referential; @yoon2021s; @akhtar1996role; @graham2014]. 
 Here, we turned to parent-child interactions for insight, asking whether parents may be adopting some of the strategies used by experimenters to elicit pacts in recent studies [e.g. @koymen2014]. 
-We found that the obstacles to pact formation are, to some extent, resolved through spontaneous parental scaffolding: parents of younger children engaged in more conversational turns, asked more clarification questions, produced longer referential expressions, and adopted less complex labels. 
+We found that the obstacles to pact formation are, to some extent, resolved through spontaneous parental scaffolding: parents of younger children engaged in more conversational turns, asked more clarification questions, produced longer referential expressions, and adopted less complex labels.
 We then conducted two additional studies to disentangle the contribution of comprehension and production processes, determining that children's *production* is likely to present the root problem that parental scaffolding is adapted to overcome.
 
 Our studies contribute to the debate over *why* young children may struggle to form referential pacts with peers in some cases and not in others, especially given extensive evidence that they are capable of tracking pacts introduced by adult experimenters [@matthews2010; @graham2014]. 
 One classic family of explanations implicates theory of mind development: children may fail to take their partner's perspective into account and stubbornly produce idiosyncratic descriptions that are not meaningful to anyone else [@krauss1977]. 
 Another family of explanations implicates sensitivity to informativeness given the demands of production: children may be focused on generating an appropriate standalone label for the target while neglecting to consider whether it might also apply to distractors [@speer1984two].
-Our study introduces a third possibility. 
+Our study emphasizes a third possibility. 
 Young children may be unable to produce a good-enough label for an unfamiliar object on their own, due to weak lexical priors for what to call unfamiliar objects, and unable to initiate clarification.
 Once presented with a good-enough label, and prompted to confirm that they understand it, however, they are flexible enough to readily adopt and use it themselves on future trials.
 
@@ -220,9 +215,70 @@ The everyday process of parents and children trying to understand one another ma
 
 ## Appendix A: Exchanges with younger children contained more questions
 
-Lengthier parent-child exchanges may reflect efforts by parents to provide and elicit additional clarification or confirmation, or may simply reflect attentional difficulties. As a rough estimate of the content of parents' responses when their child was the director, we counted the number of question marks in the transcript.
+```{r question-marks}
+questionMarks <- exchanges_data %>% 
+  filter(person == 'parent', role == 'matcher') %>% 
+  mutate(containQ = str_detect(utterance, "\\?")) %>% 
+  rowwise() %>%
+  mutate(age = paste0(c('age', age), collapse = "")) %>%
+  group_by(age, containQ) %>% 
+  tally() %>% 
+  group_by(age) %>%
+  mutate(proportion = n / sum(n)) %>%
+  ungroup()
+
+questionMarkProportions <- questionMarks %>%
+  filter(containQ) %>%
+  select(age, proportion) %>%
+  pivot_wider(names_from = age, values_from = proportion)
+
+chisq.out <- questionMarks %>% 
+  select(age, containQ,n) %>%
+  spread(containQ,n) %>% 
+  select(-age) %>%
+  chisq.test() %>%
+  tidy()
+```
+
+
+```{r question-count, fig.show='hide'}
+questionMarkCount <- exchanges_data %>% 
+  filter(role == "matcher") %>%
+  mutate(containQ = str_detect(utterance, "\\?")) %>% 
+  rowwise() %>%
+  mutate(age = paste0(c('age', age), collapse = "")) %>%
+  group_by(person, age, rep_num, target, subid, containQ) %>% 
+  tally() %>% 
+  group_by(age, person, subid, rep_num, target) %>%
+  ungroup() %>%
+  pivot_wider(names_from = containQ, values_from = n) %>%
+  mutate(`FALSE` = if_else(is.na(`FALSE`), 0, as.numeric(`FALSE`)),
+         `TRUE` = if_else(is.na(`TRUE`), 0, as.numeric(`TRUE`))) %>%
+  pivot_longer(cols = c(`FALSE`, `TRUE`), names_to = "has_question", 
+               values_to = "n") %>%
+  group_by(person, age, rep_num, subid, target) %>%
+  mutate(prop = n / sum(n)) %>%
+  mutate(has_question = as.logical(has_question)) %>%
+  filter(has_question) %>%
+  group_by(person, age, rep_num, subid) %>%
+  summarise(prop = mean(prop), n = mean(n))
+
+questionMarkBooted <- questionMarkCount %>%
+  group_by(age, person, rep_num) %>%
+  tidyboot_mean(n) 
+
+questionMarkBooted %>%
+  ggplot(aes(x = rep_num, y = empirical_stat, color = person)) + 
+  facet_grid(. ~ age) + 
+  geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper)) + 
+  geom_line()
+```
+
+Lengthier parent-child exchanges may reflect efforts by parents to provide and elicit additional clarification or confirmation, or may simply reflect attentional difficulties. 
+As a rough estimate of the content of parents' responses when their child was the director, we counted the number of question marks in the transcript.
 Because questions were not always annotated with a question mark, this represents a lower bound on the true estimate of questions. 
 We found `r questionMarkProportions$age4 * 100`% of responses to 4-year-olds contained question marks, compared to lower rates of `r questionMarkProportions$age6 * 100`% and `r questionMarkProportions$age8 * 100`% in 6- and 8-year-olds, respectively ($\chi^2(2)=$ `r chisq.out$statistic`, $p$ `r papaja::printp(chisq.out$p.value)`).
+It is possible that these proportions reflect an artifact of the transcriptions, but the same RAs transcribed sessions across multiple age groups, applying a consistent strategy, and the population of parents should be roughly comparable across children's age groups.
 
 ## Appendix B: Descriptions produced by children are less comprehensible than those produced by adults
 
@@ -302,22 +358,35 @@ d.prod.rt <- read_csv(
 d.prod.rt %>%
   group_by(age_group, target_type, competitor_type, id) %>%
   summarise(logged_rt = mean(logged_rt)) %>%
-  ggplot(aes(y = logged_rt, x = rev(competitor_type), color = target_type, fill = target_type)) +
+  ggplot(aes(y = logged_rt, x = competitor_type, color = target_type, fill = target_type)) +
     geom_boxplot(alpha = .4, outlier.shape = NA, width =0.5) +
     geom_jitter(alpha = .2, position = position_jitterdodge(jitter.width = .1, dodge.width = .5)) +
     labs(x = "", y = '(log) response time', fill = 'target', color = 'target') +
     theme(legend.position = "right", aspect.ratio = 2)
+
+# utterance length by target type
+# d.prod.rt %>%
+#   group_by(age_group, target_type, competitor_type, id) %>%
+#   summarise(logged_length = mean(log(utt_length))) %>%
+#   ggplot(aes(y = logged_length, x = competitor_type, color = target_type, fill = target_type)) +
+#     geom_boxplot(alpha = .4, outlier.shape = NA, width =0.5) +
+#     geom_jitter(alpha = .2, position = position_jitterdodge(jitter.width = .1, dodge.width = .5)) +
+#     labs(x = "", y = '(log) utterance length', fill = 'target', color = 'target') +
+#     theme(legend.position = "right", aspect.ratio = 2)
 ```
 
 ```{r}
 # model of logged RTs
 rt_model <- d.prod.rt %>%
-  lmer(logged_rt ~ competitor_type * target_type + utt_length + (1 + competitor_type * target_type |id) + (1 + competitor_type |target), 
+  lmer(logged_rt ~ competitor_type * target_type + log(utt_length) + (1 + competitor_type * target_type + log(utt_length) |id) + (1 + competitor_type + log(utt_length) |target), 
        data = .) %>%
   tidy() %>%
   filter(effect == "fixed")
 ```
   
+```{r}
+
+```
 
 A further window into referring expression generation is provided by the response time data collected in Experiment 3. 
 Response times were recorded between the onset of the trial and the point at which participants finished typing their responses, so longer response times may reflect greater effort in generating a description, all else equal.
@@ -326,15 +395,19 @@ However, we may nonetheless gain some insight from comparing adults' response ti
 First, we hypothesized that response times in the "close" contexts would be longer on average than the "far" context, as the closer distractor may rule out more accessible labels and require more effortful search for a referring expression that uniquely identifies the referent. 
 Second, we hypothesized that response times for "novel" tangram targets would be longer than "familiar" targets, as the distribution of potential labels is less concentrated on a single, accessible name. 
 
-We tested these hypotheses with a mixed-effects model predicting (logged) response time as a function of context (close vs. far) and familiarity (novel vs. familiar), controlling for utterance length (coded as continuous).
+We tested these hypotheses with a mixed-effects model predicting (logged) response time as a function of context (close vs. far) and familiarity (novel vs. familiar), controlling for utterance length (logged number of characters).
 We included the full random effect structure for each participant, as well as intercepts and effect of context for each target:
 
-`\texttt{logged_rt ~ competitor_type * target_type + utt_length + (1 + competitor_type * target_type |id) + (1 + competitor_type |target)}`
+```
+logged_rt ~ competitor_type * target_type + utt_length + 
+            (1 + competitor_type * target_type + utt_length | pid) + 
+            (1 + competitor_type + utt_length | target)
+```
 
 First, we observed a large effect of utterance length, $b=`r (rt_model %>% filter(term == 'utt_length'))$estimate`, t = `r (rt_model %>% filter(term == 'utt_length'))$statistic`, p < 0.001$, which is unsurprising as longer descriptions generally take longer to type. 
-After controlling for utterance length, however, we found that adults' response times were longer on close context trials than far, $b=`r (rt_model %>% filter(term == 'competitor_typefar'))$estimate`, t = `r (rt_model %>% filter(term == 'competitor_typefar'))$statistic`, p = 0.002$. 
-In addition, we find that adults' response times were longer when describing tangram images than familiar images  $b=`r (rt_model %>% filter(term == 'target_typetangram'))$estimate`, t = `r (rt_model %>% filter(term == 'target_typetangram'))$statistic`, p < 0.001$. 
-We did not find strong evidence for an interaction, $b=`r (rt_model %>% filter(term == 'competitor_typefar:target_typetangram'))$estimate`, t = `r (rt_model %>% filter(term == 'competitor_typefar:target_typetangram'))$statistic`, p = 0.12$; see Figure \ref{fig:rt_appendix}.
+After controlling for utterance length, we found that adults' response times were relatively longer when describing tangram images than familiar images  $b=`r (rt_model %>% filter(term == 'target_typetangram'))$estimate`, t = `r (rt_model %>% filter(term == 'target_typetangram'))$statistic`, p < 0.001$. 
+We also found that adults' response times were longer for close trials than far trials, $b=`r (rt_model %>% filter(term == 'competitor_typefar'))$estimate`, t = `r (rt_model %>% filter(term == 'competitor_typefar'))$statistic`, p = 0.003$, contrary to our hypothesis. 
+We also found evidence for a weak interaction, $b=`r (rt_model %>% filter(term == 'competitor_typefar:target_typetangram'))$estimate`, t = `r (rt_model %>% filter(term == 'competitor_typefar:target_typetangram'))$statistic`, p = 0.05$; see Figure \ref{fig:rt_appendix}.
 
 ## Appendix E: Children's understanding of referential ambiguity predicts production in Experiment 3
 

@@ -165,8 +165,8 @@ Third, we removed spaces and collapsed multiple words together into a single tok
 ## Results
 
 We focus on two primary hypotheses.
-First, could children be failing to take into account the referential context when deciding what to say, leading to more ambiguous or underinformative referring expressions?
-Second, could children simply have more uncertainty over possible acceptable labels for novel objects, making retrieval challenging [@lachman1974language; @cycowicz1997picture]?
+First, could children be failing to take into account the referential context when deciding what to say, leading to more ambiguous or underinformative referring expressions than adults?
+Second, could children have more uncertainty over possible acceptable labels for novel objects, leading to higher variation than adults [@lachman1974language; @cycowicz1997picture]?
 These hypotheses are not mutually exclusive. 
 Indeed, the corresponding mechanisms -- *pragmatic reasoning* and *lexical priors* -- are both implicated in recent production models [e.g. @murthy2021shades; @hawkins2022partners]. 
 
@@ -288,7 +288,7 @@ The most complex random effects structure that converged only included random in
 We found a significant interaction between age group and target type, $b=`r indiv.measures.inter$estimate`$, $z = `r indiv.measures.inter$statistic`$, $p `r papaja::printp(indiv.measures.inter$p.value, add_equals = TRUE)`$ (see Figure  \ref{fig:e3_contextsensitivity}A). 
 Although adults displayed similar rates of context-sensitivity for familiar and novel objects (familiar: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'adult', target_type == 'familiar'))$empirical_stat`, novel: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'adult', target_type == 'tangram'))$empirical_stat`), children were nearly twice as likely to provide the exact same label across contexts for a familiar object (familiar: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'kid', target_type == 'tangram'))$empirical_stat`; novel: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'kid', target_type == 'familiar'))$empirical_stat`).
 Similar results were obtained using 'softer' measures like edit distance, which is the number of edits required to turn one string into the other, $b= `r soft.inter$estimate`, z = `r soft.inter$statistic`, p `r papaja::printp(soft.inter$p.value, add_equals = TRUE)`$ (see Supplemental Figure \ref{fig:Levensthein_appendix}). 
-In other words, while adults appropriately modulated their utterances across contexts, children often produced the same description for familiar targets across contexts, even when it was not sufficient to distinguish the target from the distactor (see Appendix D for a corroborating response time analysis.)
+In other words, while adults appropriately modulated their utterances across contexts, children often produced the same description for familiar targets across contexts (see Appendix D for a corroborating response time analysis.)
 
 ### Familiar objects elicit less variable names
 
