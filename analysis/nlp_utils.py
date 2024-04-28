@@ -6,6 +6,86 @@ import json
 import numpy as np
 import pandas as pd
 
+STOP_WORDS = set(
+    """
+a about above across after afterwards again against all almost alone along
+already also although always am among amongst amount an and another any anyhow
+anyone anything anyway anywhere are around as at
+
+back be became because become becomes becoming been before beforehand behind
+being below beside besides between beyond both bottom but by blue box
+
+call can cannot ca could choose
+
+did do does doing done down due during
+
+each eight either eleven else elsewhere empty enough even ever every
+everyone everything everywhere except
+
+few fifteen fifty first five for former formerly forty four from front full
+further
+
+get give go guy
+
+had has have he hence her here hereafter hereby herein hereupon hers herself
+him himself his how however hundred
+
+i if in indeed into is it its itself
+
+keep
+
+last latter latterly least less look like
+
+just
+
+made make many may me meanwhile might mine more moreover most mostly move much
+must my myself
+
+name namely neither never nevertheless next nine no nobody none noone nor not
+nothing now nowhere
+
+of off often on once one only onto or other others otherwise our ours ourselves
+out over own
+
+part per perhaps please put person pick
+
+quite
+
+rather re really regarding
+
+same say see seem seemed seeming seems serious several she should show side
+since six sixty so some somehow someone something sometime sometimes somewhere
+still such
+
+take ten than that the their them themselves then thence there thereafter
+thereby therefore therein thereupon these they third this those though three
+through throughout thru thus to together too top toward towards twelve twenty
+two tap
+
+under until up unless upon us used using
+
+various very very via was we well were what whatever when whence whenever where
+whereafter whereas whereby wherein whereupon wherever whether which while
+whither who whoever whole whom whose why will with within without would
+
+xxx
+
+yet you your yours yourself yourselves yyy
+
+zzz
+""".split()
+)
+
+contractions = ["n't", "'d", "'ll", "'m", "'re", "'s", "'ve"]
+STOP_WORDS.update(contractions)
+
+for apostrophe in ["‘", "’"]:
+    for stopword in contractions:
+        STOP_WORDS.add(stopword.replace("'", apostrophe))
+
+def stop(t) :
+    return t.is_stop or t.lemma_ in ['person', 'look', 'like', 'tap', 'choose', 'zzz', 'xxx', 'yyy', 'pick', 'guy', 'blue', 'box']
+
 def keep_token(t):
     return (t.is_alpha and 
             not (t.is_space or t.is_punct))
@@ -21,31 +101,6 @@ def memoize(d, gameid, counts) :
     else :
         return counts
 
-#returns a table with the all words above 0 PMI and their counts for a given tangram
-#calculate the probability for words given tangram A ------ p(x|y)
-def makeMyPMI(df, tangram, roundNum, gameid, totals):
-
-    # count words w/in tangram
-    tangramCounts = getWordCounts(df, gameid, roundNum, tangram)
-
-    #total number of words 
-    tangramNumWords = (1 if sum(tangramCounts.values()) == 0 
-                       else sum(tangramCounts.values()))
-
-    #dataframe to compare 
-    indicatorDF = pd.merge(pd.DataFrame(list(tangramCounts.items()), columns=['word', 'count']),
-                           pd.DataFrame(list(totals["counts"].items()), columns=['word', 'totalCount']),
-                           on='word', how = 'inner')
-
-    #calculate PMI without log first. Having trouble with float issues. 
-    indicatorDF['roughPMI'] = ((indicatorDF['count']/tangramNumWords)
-                                / (indicatorDF['totalCount']/totals["numWords"]))
-    indicatorDF['logPMI'] = [math.log10(num) for num in indicatorDF['roughPMI']]
-    
-    #remove column rough PMI
-    indicatorDF = indicatorDF.drop('roughPMI', 1)
-    
-    return indicatorDF
 
 import random
 
