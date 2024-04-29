@@ -1,19 +1,19 @@
 # Experiment 2: Comprehension
 
-Our first experiment found that young children are able to effectively coordinate on referential pacts with their parents. 
-Yet these findings alone do not resolve the puzzle of how, exactly, such scaffolding helps. 
-What are the underlying reasons for children's difficulties, such that parental scaffolding is able to help overcome them?
-One possibility is that the difficulty lies primarily in the process of *comprehension*. 
-Young children may be unable to understand or accommodate their partner's initial descriptions of a novel tangram when it does not align with their own way of conceptualizing that tangram, preventing uptake of a pact. 
-In this case, parent-child dyads' communicative success in our reference game may be due to *parents*' ability to align to their children's idiosyncratic point of view. 
-A second possibility is that the root of the difficulty primarily lies in *production*. 
-In other words, children may have difficulty *generating* sufficiently descriptive referring expressions on their own, given their limited vocabulary and other processing constraints, but are able to recognize a good description when they hear it, and adopt that description going forward. 
-Further, children may have difficulty recognizing that their expressions are not informative enough for their conversational partner.
+If parental scaffolding is able to overcome the communicative challenges faced by young children, then what, exactly, could those challenges be?
+Children as young as 3 years old are able to effectively track and maintain existing pacts [@matthews2010; @graham2014], hence we suggest that the difficulties, in practice, may lie in the *initial establishment* of pacts. 
+One possible difficulty is that children's poor comprehension abilities may prevent pacts from getting off the ground.
+That is, young children may be unable to understand or accommodate their partner's initial description of a novel tangram when it does not align with their own way of conceptualizing that tangram, preventing its uptake as a pact. 
+In this case, parent-child dyads' communicative success in our reference game may be due to parents' ability to align to their children's idiosyncratic point of view and adapt their referring expressions accordingly. 
+A second possible difficulty may stem from children's production-side abilities. 
+In other words, children may have difficulty generating sufficiently descriptive referring expressions on their own, given their limited vocabulary and other processing constraints, but are able to recognize a good description when they hear it, and adopt that description as a pact going forward. 
 
 In Experiment 2, we explicitly tested the first of these two hypotheses. 
-We provided naive children and adults with the descriptions produced by participants in Experiment 1 and evaluated how well they were able to interpret them.
-If comprehension is the root of the difficulty, we might expect that naive children as comprehenders would be equally unable to interpret all referring expressions (regardless of whether they were originally produced by adults or children) while naive adults as comprehenders would have no difficulty. 
-Conversely, if naive children are able to understand the referring expressions produced by adults as well as other adults are (though not necessarily those by children), then we may expect the source of the difficulty to lie elsewhere.
+Although there is already a large body of work demonstrating that children are able to accurately interpret referring expressions by the age of four [@nadig2002evidence; @nilsen2009relations; @brandt2016german; @morisseau20133; @davies2021three], our task in Experiment 1 may have posed additional challenges. 
+The images may have been more abstract or unfamiliar, and the referring expressions may have been more complex than prior comprehension studies.  
+Here we validate what is known from the existing literature on early referring expression comprehension by providing the exact descriptions produced by participants in Experiment 1 to naive groups of children and adults, in the exact same referential contexts. 
+If comprehension is the root of children's difficulty, we might expect that naive children as comprehenders would be equally unable to interpret all referring expressions (regardless of whether they were originally produced by adults or children) while naive adults as comprehenders would have no difficulty. 
+Conversely, if naive children are able to understand the referring expressions produced by adults as well as other adults are, then we may expect the source of the difficulty to lie elsewhere.
 
 ```{r load-original-games}
 # Load meta-data (e.g. age) for the stimuli
@@ -115,12 +115,12 @@ Our partner classrooms have not yet allowed the resumption of data collection at
 
 ### Stimuli
 
-To conceal the identity of the original speaker, the first author and four research assistants produced new audio recordings by reading the Experiment 1 game transcripts in a uniform vocal style. All recordings were done by female native English speakers.
-To examine the extent to which pacts became more opaque over time, we used utterances from the first and fourth (final) round of the reference game.
+To conceal the identity of the original speaker, the first author and four research assistants produced new audio recordings by reading the Experiment 1 transcripts in a uniform vocal style. All recordings were by female native English speakers.
+We drew utterances from the first and fourth (final) round of the reference game.
 We removed disfluencies and isolated the speaker's original referring expression on each trial (i.e., we excluded additional information provided in response to the listener's questions or prompting).
 This process produced `r adult_stims$parent + adult_stims$child` unique audio stimuli, two for each item of each game from Experiment 1. 
 These stimuli were broken into 118 unique 'item sets' containing 10 recordings each, such that each tangram appeared as the target once in each set. Our randomization was set up such that a unique item set would be shown to each participant, and then repeated once all 118 sets were used. Due to forced termination of data collection, only `r length(unique(tidy_kid_data$id))` sets were used for child participants. Across adult participants, all 118 sets were shown at least once. On each trial, the target tangram appeared alongside its foil from the corresponding trial in Experiment 1.
-The stimuli sets were designed such that all participants encountered 5 utterances originally generated by a parent and 5 by a child, and 5 utterances from the first round and 5 from the final round. 
+The stimuli sets were counterbalanced such that each participant encountered exactly 5 utterances originally generated by a parent and 5 by a child, and 5 utterances from the first round and 5 from the final round. 
 
 ### Procedure
 
@@ -130,7 +130,7 @@ Before participants began the experiment, we ensured their audio was working.
 We did not allow participants to proceed past the consent page without clicking a 'play' button that asked them to "type the number 86 into the box."
 Additionally, to detect participants who were not following instructions, we included an attention check which simply asked people to click 'the one on the left'.
 Child participants provided verbal consent prior to the start of the experiment, and parents provided written consent. The children's version of the experiment did not include the initial 'play' button and attention check. While children completed the task independently on an iPad, an experimenter was nearby to ensure that the audio was working.
-We measured accuracy and response time, measured as the time interval between the completion of the audio recording and the response. Participants were not allowed to respond prior to the completion of the audio recording.
+We measured response time as time elapsed between the completion of the audio recording and the response. Participants were not allowed to respond prior to the completion of the audio recording.
 
 ### Design 
 
@@ -159,18 +159,7 @@ comp.means <- bind_rows(tidy_turk_data, tidy_kid_data)  %>%
   tidyboot_mean(value) %>%
   select(-n, -empirical_stat) %>% 
   pivot_wider(names_from = comprehender_group, values_from = c(ci_lower, mean, ci_upper))
-
-means_plot <- bind_rows(tidy_turk_data, tidy_kid_data)  %>%
-  filter(measure == "correct") %>%
-  group_by(audioid, comprehender_group) %>%
-  summarise(value = mean(value))
-
-means_plot %>%
-  ggplot(aes(x = as.factor(comprehender_group), y = value, group = audioid)) +
-    geom_line(position = position_jitter(w=0.05, h=0.05), alpha = 0.1) +
-    theme_few()
 ```
-
 
 ```{r}
 group_diff.glmer1 <- bind_rows(tidy_turk_data, tidy_kid_data)  %>%
@@ -215,10 +204,10 @@ bind_rows(tidy_turk_data, tidy_kid_data) %>%
     theme(legend.position = 'none', aspect.ratio = 1, text = element_text(size = 16))
 ```
 
-To test whether age effects in reference game performance may be attributed to comprehension difficulties, we compared the extent to which a naive group of children and adults were able to determine the referent of the same expressions.
-We focus primarily on accuracy, as response times are not directly comparable between the web interface (for adults) and lab interface (for children).
-We constructed a mixed-effects logistic regression model predicting trial-by-trial accuracy, including a fixed effect of comprehender group (child vs. adult) and random intercepts and slopes for each source game^[Because we terminated data collection early, we do not have child comprehension data for all audio clips, preventing us from including random slopes at this finer level of granularity. All behavior within a game is causally intertwined, so we believe this coarser level of grouping is most natural.].
-We found no significant difference in overall accuracy across groups, (adult accuracy $=$ `r comp.means$mean_adult`, 95\% CI $=$ [`r comp.means$ci_lower_adult`, `r comp.means$ci_upper_adult`], child accuracy $=$ `r comp.means$mean_kid`, 95\% CI $=$ [ `r comp.means$ci_lower_kid`, `r comp.means$ci_upper_kid`], $t=$ `r abs(comprehender_effect$statistic)`, $p =$ `r comprehender_effect$p.value`, see Figure \ref{fig:e2_result}).
+To test whether reference game performance may be attributed to comprehension difficulties, we compared how naive groups of children and adults were able to determine the referent of the same expressions seen by listeners in Experiment 1 (see Appendix C for a more comprehensive analysis).
+We focus on accuracy, as response times are not directly comparable between the web interface (for adults) and lab interface (for children).
+We constructed a mixed-effects logistic regression model predicting trial-by-trial accuracy, including a fixed effect of comprehender group (child vs. adult) and random intercepts and slopes for each source game^[Because we do not have child comprehension data for every audio clip, we could not estimate random slopes at this finer level of granularity. All behavior within a game is non-independent, so we believe this coarser level of grouping at source games is natural. However, see Table \ref{tab:comprehension2} for a Bayesian approach to estimating these effects on the subset of recordings where both comprehender groups were available.].
+We found no significant difference in overall accuracy across child and adult comprehenders, (adult accuracy $=$ `r comp.means$mean_adult`, 95\% CI $=$ [`r comp.means$ci_lower_adult`, `r comp.means$ci_upper_adult`], child accuracy $=$ `r comp.means$mean_kid`, 95\% CI $=$ [ `r comp.means$ci_lower_kid`, `r comp.means$ci_upper_kid`], $t=$ `r abs(comprehender_effect$statistic)`, $p =$ `r comprehender_effect$p.value`, see Figure \ref{fig:e2_result}).
 Consistent with this finding, there was no support in a nested comparison for a model with an effect of comprehender group over an intercept-only model, $\chi^2$(`r group_diff.anova$df`) $=$ `r group_diff.anova$statistic`, $p=$ `r group_diff.anova$p.value`.^[Because null hypothesis significance testing is unable to provide positive evidence for the null hypothesis, we also ran a Bayesian regression using the `brm` package. We used the Savage-Dickey method and found a Bayes Factor of $9.5$, indicating moderate support in favor of the null hypothesis $b=0$. We used a weakly informative student-$t$ prior on the coefficient with degrees of freedom $\nu = 5$ and scale $s=2.5$, following @gelman2008weakly, but this result was robust to other choices.]
 
 ```{r brms, eval = FALSE}
@@ -248,13 +237,8 @@ brms::loo_compare(group_diff.brm1, group_diff.brm2, criterion = "waic")
 
 ## Summary and discussion
 
-In Experiment 2, we asked whether children's struggles to form conceptual pacts with others can be explained by comprehension-side difficulties. 
-Surprisingly, we found no difference between naive adults and children's ability to comprehend referential expressions generated by participants in Experiment 1.
-Although children may not necessarily be worse at comprehending utterances, our data did reveal that referential expressions originally *generated* by younger children were less accurately comprehended by naive adults and children alike (see Appendix C). 
+In Experiment 2, we asked whether children may struggle to initially establish pacts due to comprehension-side difficulties; if parents’ initial referring expressions are too complex or the images are too ambiguous, children may be unable to determine the referent and thus unable to get a pact off the ground. 
+Surprisingly, we found no difference between naive adults and children's ability to comprehend referential expressions from Experiment 1.
+Although children may not necessarily be worse at comprehending utterances, our data did suggest that referential expressions originally *generated* by younger children were harder to comprehend by naive adults and children alike (see Appendix C). 
 That is, both adults and children were less likely to find the intended referent after hearing a description originally produced by a 4-year-old child.
-
-If children's referential expressions are so difficult for naive adult and child listeners to comprehend, then what contributed to the success we observed in Experiment 1?
-One likely explanation for dyads' higher accuracy is that parents were able to interactively seek clarification when their child's utterances were ambiguous. 
-In our comprehension task, audio recordings comprised only of initial expressions for each round --- any further exchanges and clarification were removed. 
-This discourse-level mechanism is also consistent with the qualitative observation that parents are more likely to ask questions with 4-year-olds than with older age groups (see Appendix A). 
-Our findings so far, then, suggest that children's difficulty forming pacts may lie outside their comprehension processes and point toward possible developmental changes in children's ability to *produce* sufficiently informative descriptions by themselves.
+Our findings so far, then, suggest that children's difficulty establishing pacts may lie outside their comprehension processes, and point toward possible developmental changes in children's ability to *produce* sufficiently informative descriptions by themselves.
