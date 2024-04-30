@@ -115,8 +115,8 @@ novel_stims <- n_stims  %>%
 
 ### Participants
 
-We recruited `r length(complete_games.adult)` adult participants from Amazon Mechanical Turk. All participants gave informed consent prior to the start of the study and were compensated 60¢. 
-We also recruited `r length(n_kids)` children aged 4 to 8 years old ($M=$ `r mean(kid_age$age)`) to participate in the study. 
+We recruited `r length(complete_games.adult)` adult participants from Amazon Mechanical Turk. All participants gave informed consent prior to the start of the study and were compensated 60¢. Detailed demographics were not collected, but we constrained our recruitment to only participants in the US.
+We also recruited `r length(n_kids)` children aged 4 to 8 years old ($M=$ `r mean(kid_age$age)`) to participate in the study. Our sample consisted of 4 four-year-olds, 17 five-year-olds, 10 six-year-olds, 12 seven-year-olds, and 17 eight-year-olds. 
 Data on race and ethnicity were not collected, but participants were recruited from a database of families that reflect the overall racial/ethnic makeup of the Chicago area. The study was conducted online over Zoom. Parents provided informed written and verbal consent, and children provided verbal consent. Families were compensated $5 for their participation.
 
 ### Stimuli and Design
