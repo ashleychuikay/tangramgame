@@ -315,13 +315,7 @@ var.out.entropy <- var.measures %>%
 
 ```
 
-The previous section suggests that children have difficulty recognizing the referential ambiguity of a canonical label like "dog" in a context where there are multiple dogs.
-In other words, children's production may be constrained by limitations in their *pragmatic reasoning*. 
-But why would insensitivity to pragmatic context be limited to familiar objects?
-One possibility is that children have a less stable prior over possible names for the novel tangram images due to lower 'codability' or 'nameability' [@hupet1991effects; @zettersten2020].
-Variability across contexts could be driven less by pragmatic reasoning and more by sampling under uncertainty: they may be producing utterances as samples from a more spread-out lexical distribution [@denison2013rational; @bonawitz2014probabilistic].
-
-We test this hypothesis by examining the distribution of labels at the population level. 
+We test the second hypothesis by examining the distribution of labels at the population level. 
 First, we hypothesize that both adults and children will produce a fairly narrow, high-agreement range of labels for familiar objects, yielding highly concentrated distributions.
 Second, we hypothesize that children will use a broader range of different labels for tangrams than adults, yielding a less concentrated distribution with less agreement among different children.
 We considered several measures of concentration, but we focus primarily on the proportion of unique labels to total labels, which is simple and interpretable.^[In principle, the most appropriate metric of spread across labels would be the information theoretic quantity of entropy: $H(X) = \sum_i p_i \log p_i$. However, our empirical distributions are highly sparse, with many labels appearing only once. Our estimates of entropy are therefore somewhat sensitive to the choice of statistical estimator (e.g. how much to regularize with pseudo-counts) while being less numerically interpretable. However, we find a similar qualitative effects of interest for reasonable choices, $b=$ `r (var.out.entropy %>% filter(term == 'target_type1:age_group1'))$estimate`, $t$(`r (var.out.entropy %>% filter(term == 'target_type1:age_group1'))$df`)$=$ `r (var.out.entropy %>% filter(term == 'target_type1:age_group1'))$statistic`, $p =$ `r (var.out.entropy %>% filter(term == 'target_type1:age_group1'))$p.value` using the Schurmann-Grassberger estimator. Alternative metrics include "modal agreement" [@brodeur2010bank; @brodeur2014bank], the proportion of participants that produce the most common label, and Simpson's diversity index [@simpson1949measurement; @majid2014odors; @majid2018differential], which can be interpreted as the probability that two independently sampled labels will match.]
@@ -378,9 +372,16 @@ However, children as a group produce a much more variable set of labels for nove
 
 ## Summary and discussion
 
-In Experiment 3, we asked whether difficulty in *production* may explain why young children struggle to form referential pacts with peers. 
+In Experiment 3, we asked whether difficulty in *production* may explain why young children may struggle to establish referential pacts with peers while succeeding with parents. 
 Comparing adult and child responses in our production task revealed that children were not as sensitive to referential context, providing descriptions that did not always distinguish the intended referent from its foil (e.g., saying "table" when both a dining table and a picnic table were present). 
-Importantly, this effect was found even on trials containing familiar items that children are likely to have accessible labels for, so these results were unlikely to be explained by simple vocabulary constraints. 
+Importantly, this effect was found on trials containing familiar items that children are likely to have accessible labels for, so these results were unlikely to be explained by simple vocabulary constraints. 
+In other words, children's ability to produce context-sensitive utterances may be constrained by limitations in their *pragmatic reasoning*. 
+
+At the same time, we found that children produce a more variable set of labels for tangram shapes than adults.
+One possible explanation is that children have a less stable prior over possible names for the tangram shapes due to lower 'codability' or 'nameability', there is no single existing convention [@hupet1991effects; @zettersten2020].
+That is, variability could be driven less by pragmatic reasoning and more by sampling under uncertainty: they may be producing utterances from a more spread-out or idiosyncratic lexical prior [@denison2013rational; @bonawitz2014probabilistic].
+Another possibility is that children have less strong priors over how to categorize or conceptually interpret these abstract shapes, upstream of labeling.
+Further work is required to distinguish whether this variability exists in conceptual representations of abstract depictions, at the level of lexical-semantic conventions, or for these tangrams in particular. 
 
 Why might children struggle to modulate their descriptions for familiar objects?
 One possibility is that the basic level category label of a familiar object (e.g., "table") is too salient, and children have difficulty suppressing this label in favor of a more informative description.
