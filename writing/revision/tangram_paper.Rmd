@@ -722,23 +722,23 @@ bind_rows(tidy_turk_data, tidy_kid_data)  %>%
   kable(
     format = "latex",
     booktabs = TRUE,
-    caption = "\\label{tab:comprehension} Output of full comprehension model: \\texttt{accuracy \\~ comprehender\\_group + age + person + occurrence + (1 + comprehender\\_group + person | gameid)}"
+    caption = "\\label{tab:comprehension} Output of full comprehension model: \\texttt{accuracy $\\sim$ comprehender\\_group + age + person + occurrence + (1 + comprehender\\_group + person | gameid)}"
   )
 ```
 
-```{r appendix-full-comprehension-model2}
+```{r appendix-full-comprehension-model2, warning = FALSE, message = FALSE}
 repeated_subset <- bind_rows(tidy_turk_data, tidy_kid_data)  %>%
     filter(measure == "correct") %>%
     group_by(comprehender_group, audioid) %>%
     summarize(n = n()) %>% group_by(audioid) %>% summarize(nn = n()) %>% filter(nn > 1) %>% pull(audioid)
 
-brms_out <- bind_rows(tidy_turk_data, tidy_kid_data)  %>%
+output <- capture.output(brms_out <- bind_rows(tidy_turk_data, tidy_kid_data)  %>%
   filter(measure == "correct") %>%
   mutate(age = age - 6, occurrence = occurrence - 1.5) %>%
   filter(audioid %in% repeated_subset) %>%
   brms::brm(value ~ comprehender_group + (1 + comprehender_group | audioid),
        data = .,
-       family = 'bernoulli') 
+       family = 'bernoulli'))
 
 brms_out %>%
   tidy() %>%
@@ -747,6 +747,6 @@ brms_out %>%
   kable(
     format = "latex",
     booktabs = TRUE,
-    caption = "\\label{tab:comprehension2} Output of Bayesian model with stimulus-level random effects: \\texttt{accuracy \\~ comprehender\\_group + (1 + comprehender\\_group | audioid)}"
+    caption = "\\label{tab:comprehension2} Output of Bayesian model with stimulus-level random effects: \\texttt{accuracy $\\sim$ comprehender\\_group + (1 + comprehender\\_group | audioid)}"
   )
 ```
