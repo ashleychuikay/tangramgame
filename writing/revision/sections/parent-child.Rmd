@@ -397,5 +397,9 @@ Additionally, we found a weak but significant interaction between director and a
 In Experiment 1, we adapted the classic tangram director-matcher paradigm developed by @clark1986 to examine conversational pact formation among parent-child dyads. 
 We found that even 4-year-old children and their parents can successfully coordinate on pacts, but for these youngest children, parents adaptively provide multiple sources of support and scaffolding. 
 Even 4-year-old children readily adopted labels introduced by their parents and interactively refined their descriptions in response to spontaneous parent-initiated scaffolding.
-Overall, 4- to 8-year-old children and their parents exhibited patterns similar to adult pairs in terms of reduction in length of referring expressions and turns.
+Overall, 4- to 8-year-old children and their parents exhibited patterns similar to adult pairs in terms of reduction in length of referring expressions and exchange turns.
 
+Importantly, we observed successful pact formation even in the absence of explicit task feedback: the same sounds played whether or not the matcher's selection was correct. 
+We expect that adding explicit (serial) feedback would help facilitate pact formation [@fishbein1971effects]. 
+It is also possible that the neutral sound was mistakenly interpreted by participants as positive feedback, leading to confusion.
+However, the fact that parent-child pairs were so successful under these conditions, as accuracy continued to improve, suggests that children and parents were largely able to rely on self-intiated communicative feedback to form pacts. 
