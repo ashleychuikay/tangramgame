@@ -182,9 +182,9 @@ Young children may be unable to produce a good-enough label for an unfamiliar ob
 Once presented with a good-enough label, and prompted to confirm that they understand it, however, they are flexible enough to readily adopt and use it themselves on future trials.
 
 One important limitation of our study is the reliance on the existing empirical literature documenting successes and failures of pact formation in child-child peer communication, rather than more directly replicating these phenomena ourselves in the same paradigm we used to study parent-child communication.
-It is possible that our paradigm differs in important ways from those used in prior work and pairs of children would, in fact, succeed at forming conversational pacts without experimenter intervention in our variant. 
-For example, our task used contexts containing only two tangram images per trial, whereas classic studies used contexts of six or more. 
-This choice could have reduced the cognitive load in our variant, allowing child-child pairs to perform as well as our parent-child pairs.
+Our paradigm differs in important ways from those used in prior work and it is possible that pairs of children would, hypothetically, succeed at forming conversational pacts without experimenter intervention in our variant. 
+For example, our task used contexts containing only two tangram images per trial, whereas classic studies used contexts of six or twelve. 
+This choice could have reduced the cognitive load in our variant.
 At the same time, there are several reasons to believe that pairs of children would still struggle in our variant, including the production failures we independently observed in Experiment 3 and the observation than younger children relied more heavily on parent-generated descriptions in Experiment 1. 
 Further experiments are necessary to replicate classic child-child phenomena under our paradigm, or replicate our parent-child phenomena under classic paradigms.
 

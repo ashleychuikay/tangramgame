@@ -1,13 +1,14 @@
 # Experiment 3: Production experiment
 
 In Experiment 2, we found that naive children and adults were able to comprehend referential expressions equally well. 
-That is, to the extent that children contributed to poorer group performance in Experiment 1, their contribution is not well-explained by the *comprehension hypothesis*. 
-At the same time, however, we found some evidence consistent with the *production hypothesis*: messages originally produced by children were somewhat less comprehensible for listeners of any age (as indexed by slower reaction times and lower accuracy).
-While this source effect is intriguing, it is difficult to disentangle the original messages from the interactive parent-child context in which they were produced. 
+That is, to the extent that children contributed to poorer group performance in Experiment 1, their contribution is not well-explained by the comprehension hypothesis. 
+At the same time, however, we found some evidence consistent with the production hypothesis: messages originally produced by children were less comprehensible for listeners of any age.
+While this source effect is intriguing, it was difficult to disentangle the original messages from the interactive parent-child context in which they were produced. 
 For example, it is possible that children were receiving interactive scaffolding that prompted them toward more comprehensible expressions [@grigoroglou2019interactive]. 
-Or, conversely, it is possible that children were relying on their parents to take on more of the division of labor of interpretation [@hawkins2021division] and were thus producing expressions that are *less* comprehensible to a naive audience than they were actually capable of.
+Or, conversely, it is possible that children were relying on their parents to take on more of the division of labor of interpretation [@hawkins2021division] and were thus producing expressions that are less comprehensible to a naive audience than they were actually capable of.
 
 In Experiment 3, we remove the interactive context to more directly assess children's ability to produce referential expressions for novel tangram objects in different contexts. 
+To be clear, this study does not aim to address the ability of children to track partner-specific pacts, which is already well-established; it examines the conditions that may prevent a pact from being established in the first place, which require grounding in a successful referential act.
 We used a 2x2 design aiming to tease apart two related explanations for poor production performance.
 First, to assess the extent to which production difficulties stem from *pragmatic reasoning* (i.e. the ability to recognize that an accessible label is not sufficiently informative in context), we manipulate whether the foil is more or less similar to the target. 
 Second, to assess the extent to which production difficulties stem from impoverished *lexical priors* (i.e. the ability to access candidate labels for a given referent), we manipulate whether the target objects are familiar photographs or novel tangram shapes [see @horton2002speakers]. 
@@ -318,7 +319,7 @@ The previous section suggests that children have difficulty recognizing the refe
 In other words, children's production may be constrained by limitations in their *pragmatic reasoning*. 
 But why would insensitivity to pragmatic context be limited to familiar objects?
 One possibility is that children have a less stable prior over possible names for the novel tangram images due to lower 'codability' or 'nameability' [@hupet1991effects; @zettersten2020].
-Their variability across contexts could be driven less by pragmatic reasoning and more by "sampling variation" [@denison2013rational; @bonawitz2014probabilistic].
+Variability across contexts could be driven less by pragmatic reasoning and more by sampling under uncertainty: they may be producing utterances as samples from a more spread-out lexical distribution [@denison2013rational; @bonawitz2014probabilistic].
 
 We test this hypothesis by examining the distribution of labels at the population level. 
 First, we hypothesize that both adults and children will produce a fairly narrow, high-agreement range of labels for familiar objects, yielding highly concentrated distributions.
