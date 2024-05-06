@@ -115,8 +115,8 @@ novel_stims <- n_stims  %>%
 
 ### Participants
 
-We recruited `r length(complete_games.adult)` adult participants from Amazon Mechanical Turk. All participants gave informed consent prior to the start of the study and were compensated 60¢. 
-We also recruited `r length(n_kids)` children aged 4 to 8 years old ($M=$ `r mean(kid_age$age)`) to participate in the study. 
+We recruited `r length(complete_games.adult)` adult participants from Amazon Mechanical Turk. All participants gave informed consent prior to the start of the study and were compensated 60¢. Detailed demographics were not collected, but we constrained our recruitment to only participants in the US.
+We also recruited `r length(n_kids)` children aged 4 to 8 years old ($M=$ `r mean(kid_age$age)`) to participate in the study. Our sample consisted of 4 four-year-olds, 17 five-year-olds, 10 six-year-olds, 12 seven-year-olds, and 17 eight-year-olds. Families received \$5 electronic gift cards for their participation.
 Data on race and ethnicity were not collected, but participants were recruited from a database of families that reflect the overall racial/ethnic makeup of the Chicago area. The study was conducted online over Zoom. Parents provided informed written and verbal consent, and children provided verbal consent. Families were compensated $5 for their participation.
 
 ### Stimuli and Design
@@ -157,7 +157,7 @@ At the end of the experiment, we additionally included a manipulation check bloc
 
 We cleaned the text input by applying the following procedure across the combined data set.
 First, we manually corrected typos and removed stop words (e.g. determiners like 'a', 'the').
-Second, we lemmatized all entries to remove spurious differences between tenses and plurals of the same root form. The measures we use in analysis consider edit distance, which may be aritifically inflated due to word order (e.g., the edit distance between "running person" and "person running" would be high, despite conceptual and semantic similarity between the descriptions). As such, we manually cleaned the data to remove similar phrases or structures across descriptions (e.g., if a participant repeats "a person who is..." on every trial, we removed that phrase). We use the manually cleaned data for our analyses, but pre-cleaned, lemmatized data can be found on our [OSF page](https://osf.io/vkug8/?view_only=b68061f8daae48cdace5c3dc53969405).
+Second, we lemmatized all entries to remove spurious differences between tenses and plurals of the same root form. The measures we use in analysis consider edit distance, which may be artificially inflated due to word order (e.g., the edit distance between "running person" and "person running" would be high, despite conceptual and semantic similarity between the descriptions). Similarly, participants who repeat parts of their sentence structures across trials would lead to a lower edit distance. As such, we manually cleaned the data to remove similar phrases or structures across descriptions (e.g., if a participant repeats "a person who is..." on every trial, we removed that phrase). We use the manually cleaned data for our analyses, but pre-cleaned, lemmatized data can be found on our [OSF page](https://osf.io/vkug8/?view_only=b68061f8daae48cdace5c3dc53969405).
 Third, we removed spaces and collapsed multiple words together into a single token (e.g. 'German Shepherd' was tokenized to 'germanshepherd'). While adult participants typed in their own responses, children's responses were entered by an experimenter. When children's descriptions were overly long, experimenters prompted children to simplify them by asking, "Can you say that in one or two words?". Children were only prompted once, regardless of whether they simplified their expression. 
 
 ## Results
