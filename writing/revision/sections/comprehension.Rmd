@@ -107,7 +107,7 @@ kid_stims <- get_stims(tidy_kid_data)
 
 ### Participants
 
-We recruited `r passed_check$false + passed_check$true` adults from Amazon Mechanical Turk. Participants were compensated 60¢ for a short task. Data from `r passed_check$false` participants were dropped due to failure to pass an attention check, leaving a final sample of `r passed_check$true` adults. 
+We recruited `r passed_check$false + passed_check$true` adults from Amazon Mechanical Turk. Participants were compensated 30¢ for a short task. Data from `r passed_check$false` participants were dropped due to failure to pass an attention check, leaving a final sample of `r passed_check$true` adults. 
 Additionally, we planned to recruited a sample of 200 children (ages 4 to 8) from a school and a museum in the Chicago area, with the relatively large sample size based on the classroom sizes of the local school. 
 However, due to the COVID-19 pandemic, we were forced to terminate data collection early with only `r length(unique(tidy_kid_data$id))` children (ages `r min(tidy_kid_data$age)`-`r max(tidy_kid_data$age)`). 
 Children received a sticker for their participation.
