@@ -168,7 +168,7 @@ Targets appeared with a different foil on different repetition blocks. To ensure
 
 ### Pre-processing
 
-Sessions were videotaped and subsequently transcribed using Datavyu [-@datavyu-team2014], an open source coding program. Each video was transcribed and checked by two different coders. Utterances were manually coded as part of a trial or unrelated to the game (e.g. "sit down please"), and unrelated utterances were removed before analysis.
+Sessions were videotaped and subsequently transcribed using Datavyu [-@datavyu-team2014], an open source coding program. Each video was transcribed by one coder and checked by a different coder. Checking involved watching the video alongside the transcript and correcting any typos or errors in transcription. Utterances were manually coded as part of a trial or unrelated to the game (e.g. "sit down please"), and unrelated utterances were removed before analysis.
 
 ```{r reduction-setup, cache = TRUE}
 d.reduction.raw <- exchanges_data %>%
