@@ -17,7 +17,7 @@ author:
 
 affiliation:
   - id            : "1"
-    institution   : "Department of Psychology\\comma\\hspace{.25em} University of Chicago"
+    institution   : "Department of Psychology\\comma\\hspace{.25em} Harvard University"
   - id            : "2"
     institution   : "Department of Psychology\\comma\\hspace{.25em} Carnegie Mellon University"
   - id            : "3"
@@ -726,7 +726,7 @@ lmer.exchanges %>%
   kable(
     format = "latex",
     booktabs = TRUE,
-    caption = "\\label{tab:exchanges} Output of full Exp. 1 exchanges model: \\texttt{exchanges $\\sim$ comprehender\\_group + age + person + occurrence + (1 + comprehender\\_group + person | gameid)}"
+    caption = "\\label{tab:exchanges} Output of full Exp. 1 exchanges model: \\texttt{exchanges $\\sim$ age + occurrence + (1 + occurence | subid) + (1 + occurrence | target)}"
   )
 ```
 
@@ -793,5 +793,14 @@ brms_out %>%
     format = "latex",
     booktabs = TRUE,
     caption = "\\label{tab:comprehension2} Output of Bayesian model with stimulus-level random effects: \\texttt{accuracy $\\sim$ comprehender\\_group + (1 + comprehender\\_group | audioid)}"
+  )
+```
+
+```{r appendix-full-production-model}
+indiv.measures.lmer %>%
+  kable(
+    format = "latex",
+    booktabs = TRUE,
+    caption = "\\label{tab:production}Output of full context sensitivity model: \\\texttt{}"
   )
 ```
