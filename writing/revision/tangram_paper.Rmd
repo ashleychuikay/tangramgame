@@ -213,65 +213,6 @@ The everyday process of parents and children trying to understand one another ma
 
 \beginsupplement
 
-## Appendix: Full statistical models
-
-```{r full-accuracy-model}
-d.accuracy.raw <- combined_data %>%
-  ungroup() %>%
-  mutate(age = as.character(age),
-         age = if_else(is.na(age), 'adult', age)) %>%
-  mutate(director = case_when(person == "parent" & role == "matcher" ~ "child",
-                              person == "child" & role == "director" ~ "child",
-                              T ~ "adult"),
-         person = if_else(person %in% c('left', 'right', 'parent'), 
-                         'adult', person)) %>%
-  group_by(subid, director, trial, age, target, rep_num) %>%
-  summarize(correct = mean(correct)) %>% # make sure each trial is only counted once
-  ungroup()
-
-# Bootstrap error bars 
-result.acc.means <- d.accuracy.raw %>%
-  group_by(director, age, rep_num) %>%
-  tidyboot_mean(correct)
-
-lmer.accuracy <- d.accuracy.raw %>%
-  filter(age != "adult") %>%
-  mutate(age = as.numeric(age)) %>%
-  glmer(correct ~ age + director + rep_num + (rep_num | subid) + (1 | target), 
-                            family = 'binomial', 
-         control = glmerControl(optimizer = "bobyqa"), data = .) %>%
-  tidy()
-
-age_effect_acc <- lmer.accuracy %>% filter(term == 'age')
-rep_effect_acc <- lmer.accuracy %>% filter(term == 'rep_num')
-director_effect_acc <- lmer.accuracy %>% filter(term == 'directorchild')
-
-d.exchanges.raw <- exchanges_data %>%
-  mutate(age = as.character(age),
-         age = if_else(is.na(age), 'adult', age),
-         director = case_when(person == "parent" & role == "matcher" ~ "child",
-                              person == "child" & role == "director" ~ "child",
-                              T ~ "adult")) %>%
-  group_by(director, person, subid, trial, age, target, rep_num) %>%
-  summarize(num_exchanges = n()) %>% 
-  ungroup()
-
-d.exchanges.mean <- d.exchanges.raw %>%
-  group_by(director, age, rep_num) %>%
-  tidyboot_mean(num_exchanges)
-
-# Bootstrap error bars and plot
-lmer.exchanges <- d.exchanges.raw %>% 
-  filter(age != 'adult') %>%
-  mutate(age = as.numeric(age)) %>%
-  glmer(num_exchanges ~ age + rep_num +  (1 + rep_num | subid) + (1 + rep_num | target), 
-       control = glmerControl(optimizer = "bobyqa"), data = ., family = 'poisson') %>%
-  tidy()
-
-age_effect_exchanges = lmer.exchanges %>% filter(term == 'age')
-rep_effect_exchanges = lmer.exchanges %>% filter(term == 'rep_num')
-```
-
 ## Appendix A: Exchanges with younger children contained more questions
 
 ```{r question-marks}
@@ -764,6 +705,51 @@ contextsensitivity.distance %>%
     labs(title = 'Levensthein distance between conditions', 
          y = 'Levenshtein distance between close and far conditions', x = '') +
     theme(aspect.ratio = 1, legend.position = "right")
+```
+
+
+```{r appendix-full-accuracy-model}
+lmer.accuracy %>%
+  filter(effect == 'fixed') %>%
+  select(-effect, -group) %>%
+  kable(
+    format = "latex",
+    booktabs = TRUE,
+    caption = "\\label{tab:accuracy} Output of full Exp. 1 accuracy model: \\texttt{accuracy $\\sim$ comprehender\\_group + age + person + occurrence + (1 + comprehender\\_group + person | gameid)}"
+  )
+```
+
+```{r full-exchanges-model}
+lmer.exchanges %>%
+  filter(effect == 'fixed') %>%
+  select(-effect, -group) %>%
+  kable(
+    format = "latex",
+    booktabs = TRUE,
+    caption = "\\label{tab:exchanges} Output of full Exp. 1 exchanges model: \\texttt{exchanges $\\sim$ comprehender\\_group + age + person + occurrence + (1 + comprehender\\_group + person | gameid)}"
+  )
+```
+
+```{r full-reduction-model}
+lmer.reduction.controlled %>%
+  filter(effect == 'fixed') %>%
+  select(-effect, -group) %>%
+  kable(
+    format = "latex",
+    booktabs = TRUE,
+    caption = "\\label{tab:reduction} Output of full Exp. 1 reduction model: \\texttt{exchanges $\\sim$ comprehender\\_group + age + person + occurrence + (1 + comprehender\\_group + person | gameid)}"
+  )
+```
+
+```{r full-match-model}
+match.model %>%
+  filter(effect == 'fixed') %>%
+  select(-effect, -group) %>%
+  kable(
+    format = "latex",
+    booktabs = TRUE,
+    caption = "\\label{tab:match} Output of full Exp. 1 pact origin model: \\texttt{exchanges $\\sim$ comprehender\\_group + age + person + occurrence + (1 + comprehender\\_group + person | gameid)}"
+  )
 ```
 
 ```{r appendix-full-comprehension-model}
