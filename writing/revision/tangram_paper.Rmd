@@ -715,7 +715,7 @@ lmer.accuracy %>%
   kable(
     format = "latex",
     booktabs = TRUE,
-    caption = "\\label{tab:accuracy} Output of full Exp. 1 accuracy model: \\texttt{accuracy $\\sim$
+    caption = "\\label{tab:accuracy}Output of full Exp. 1 accuracy model: \\texttt{accuracy $\\sim$
     age + director + rep_num + (rep_num | subid) + (1 | target)}"
   )
 ```
@@ -727,7 +727,7 @@ lmer.exchanges %>%
   kable(
     format = "latex",
     booktabs = TRUE,
-    caption = "\\label{tab:exchanges} Output of full Exp. 1 exchanges model: \\texttt{exchanges $\\sim$ age +
+    caption = "\\label{tab:exchanges}Output of full Exp. 1 exchanges model: \\texttt{exchanges $\\sim$ age +
     rep_num +  (1 + rep_num | subid) + (1 + rep_num | target)}"
   )
 ```
@@ -739,7 +739,7 @@ lmer.reduction.controlled %>%
   kable(
     format = "latex",
     booktabs = TRUE,
-    caption = "\\label{tab:reduction} Output of full Exp. 1 reduction model: \\texttt{number of words $\\sim$
+    caption = "\\label{tab:reduction}Output of full Exp. 1 reduction model: \\texttt{number of words $\\sim$
     person * age * rep_num + (1 + person * rep_num | subid) + (1 + rep_num | target))}"
   )
 ```
@@ -751,7 +751,7 @@ match.model %>%
   kable(
     format = "latex",
     booktabs = TRUE,
-    caption = "\\label{tab:match} Output of full Exp. 1 pact origin model: \\texttt{words introduced by partner
+    caption = "\\label{tab:match}Output of full Exp. 1 pact origin model: \\texttt{words introduced by partner
     $\\sim$ age * director + (1 | target) +  (1 | subid)}"
   )
 ```
@@ -771,7 +771,7 @@ bind_rows(tidy_turk_data, tidy_kid_data)  %>%
   kable(
     format = "latex",
     booktabs = TRUE,
-    caption = "\\label{tab:comprehension} Output of full comprehension model: \\texttt{accuracy $\\sim$ comprehender\\_group + age + person + occurrence + (1 + comprehender\\_group + person | gameid)}"
+    caption = "\\label{tab:comprehension}Output of full Exp. 2 comprehension model: \\texttt{accuracy $\\sim$ comprehender\\_group + age + person + occurrence + (1 + comprehender\\_group + person | gameid)}"
   )
 ```
 
@@ -796,16 +796,48 @@ brms_out %>%
   kable(
     format = "latex",
     booktabs = TRUE,
-    caption = "\\label{tab:comprehension2} Output of Bayesian model with stimulus-level random effects: \\texttt{accuracy $\\sim$ comprehender\\_group + (1 + comprehender\\_group | audioid)}"
+    caption = "\\label{tab:comprehension2}Output of Exp. 2 Bayesian model with stimulus-level random effects: \\texttt{accuracy $\\sim$ comprehender\\_group + (1 + comprehender\\_group | audioid)}"
   )
 ```
 
-```{r appendix-full-production-model}
+```{r appendix-full-production-model, warning = FALSE, message = FALSE}
 indiv.measures.lmer %>%
   kable(
     format = "latex",
     booktabs = TRUE,
-    caption = "\\label{tab:production}Output of full context sensitivity model: \\\texttt{overlap $\\sim$
+    caption = "\\label{tab:production}Output of full Exp. 3 context sensitivity model: \\\texttt{overlap $\\sim$
     age\\_group * target\\_type + scale(utt\\_length) + (1 | id)}"
+  )
+```
+
+```{r appendix-full-production-model2, warning = FALSE, message= FALSE}
+indiv.measures.softmeasure %>%
+  kable(
+    format = "latex",
+    booktabs = TRUE,
+    caption = "\\label{tab:production2}Output of Exp.3 context sensitivity model using edit distance:
+    \\\texttt{distance $\\sim$ age\\_group * target\\_type + (1 | target) + (1 + target\\_type | id)}"
+  )
+```
+
+```{r appendix-full-production-model3, warning = FALSE, message= FALSE}
+var.out %>%
+  select(-group, -effect) %>%
+  kable(
+    format = "latex",
+    booktabs = TRUE,
+    caption = "\\label{tab:production3}Output of Exp.3 model for unique labels:
+    \\\texttt{unique labels $\\sim$ target\\_type * age\\_group + (1 | target)}"
+  )
+```
+
+```{r appendix-full-production-model4, warning = FALSE, message= FALSE}
+var.out.entropy %>%
+  select(-group, -effect) %>%
+  kable(
+    format = "latex",
+    booktabs = TRUE,
+    caption = "\\label{tab:production4}Output of Exp.3 entropy model:
+    \\\texttt{entropy $\\sim$ target\\_type * age\\_group + (1 | target)}"
   )
 ```
