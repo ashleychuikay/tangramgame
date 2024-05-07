@@ -715,7 +715,8 @@ lmer.accuracy %>%
   kable(
     format = "latex",
     booktabs = TRUE,
-    caption = "\\label{tab:accuracy} Output of full Exp. 1 accuracy model: \\texttt{accuracy $\\sim$ comprehender\\_group + age + person + occurrence + (1 + comprehender\\_group + person | gameid)}"
+    caption = "\\label{tab:accuracy} Output of full Exp. 1 accuracy model: \\texttt{accuracy $\\sim$
+    age + director + rep_num + (rep_num | subid) + (1 | target)}"
   )
 ```
 
@@ -726,7 +727,8 @@ lmer.exchanges %>%
   kable(
     format = "latex",
     booktabs = TRUE,
-    caption = "\\label{tab:exchanges} Output of full Exp. 1 exchanges model: \\texttt{exchanges $\\sim$ age + occurrence + (1 + occurence | subid) + (1 + occurrence | target)}"
+    caption = "\\label{tab:exchanges} Output of full Exp. 1 exchanges model: \\texttt{exchanges $\\sim$ age +
+    rep_num +  (1 + rep_num | subid) + (1 + rep_num | target)}"
   )
 ```
 
@@ -737,7 +739,8 @@ lmer.reduction.controlled %>%
   kable(
     format = "latex",
     booktabs = TRUE,
-    caption = "\\label{tab:reduction} Output of full Exp. 1 reduction model: \\texttt{exchanges $\\sim$ comprehender\\_group + age + person + occurrence + (1 + comprehender\\_group + person | gameid)}"
+    caption = "\\label{tab:reduction} Output of full Exp. 1 reduction model: \\texttt{number of words $\\sim$
+    person * age * rep_num + (1 + person * rep_num | subid) + (1 + rep_num | target))}"
   )
 ```
 
@@ -748,7 +751,8 @@ match.model %>%
   kable(
     format = "latex",
     booktabs = TRUE,
-    caption = "\\label{tab:match} Output of full Exp. 1 pact origin model: \\texttt{exchanges $\\sim$ comprehender\\_group + age + person + occurrence + (1 + comprehender\\_group + person | gameid)}"
+    caption = "\\label{tab:match} Output of full Exp. 1 pact origin model: \\texttt{words introduced by partner
+    $\\sim$ age * director + (1 | target) +  (1 | subid)}"
   )
 ```
 
@@ -801,6 +805,7 @@ indiv.measures.lmer %>%
   kable(
     format = "latex",
     booktabs = TRUE,
-    caption = "\\label{tab:production}Output of full context sensitivity model: \\\texttt{}"
+    caption = "\\label{tab:production}Output of full context sensitivity model: \\\texttt{overlap $\\sim$
+    age\\_group * target\\_type + scale(utt\\_length) + (1 | id)}"
   )
 ```
