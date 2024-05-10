@@ -85,6 +85,7 @@ complete_games.adult <- d.prod.adult %>%
 # write_csv(d.prod.clean.merge, here("data/experiment3/production_data_cleaned.csv"))
 
 d.prod.clean.manual <- read_csv(here("data/experiment3/production_data_cleaned.csv"))
+d.prod.clean.annotated <- read_csv(here("data/experiment3/production_data_cleaned_annotated.csv"))
 
 # kid descriptives
 n_kids <- d.prod.clean.manual %>%
@@ -201,6 +202,14 @@ indiv.measures <- d.prod.clean.manual %>%
 contextsensitivity.means <- indiv.measures %>%
   group_by(age_group, target_type) %>%
   tidyboot_mean(far_close_overlap, na.rm = T) 
+
+#annotated context sensitivity
+contextsensitivity.annotated <- d.prod.clean.annotated %>%
+  filter(age_group == "kid") %>%
+  filter(target_type == "familiar") %>%
+  filter(competitor_type != "check") %>%
+  group_by(age, competitor_type) %>%
+  tidyboot_mean(informativity, na.rm = T)
 
 ```
 
