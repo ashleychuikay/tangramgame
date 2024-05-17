@@ -3,7 +3,7 @@
 It is clear from existing studies that children are receptive to explicit scaffolding from experimenters [@koymen2014]. 
 For example, @deutsch1982 showed that repeated clarification questions eventually elicited unambiguous descriptions from 6- and 9-year-olds and, to a lesser extent, from 3-year-olds. 
 A more recent training study by @matthews2007 replicated this finding in 2- to 4-year-olds, and further showed transfer to a different communication task. 
-But it is unclear whether, or how, adults spontaneously provide such input over the course of unmediated parent-child conversations, and whether such processes actually enable the formation of conversational pacts (rather than generically increasing informativeness).
+But it is unclear whether, or how, adults spontaneously provide such input over the course of unmediated parent-child conversations, and whether such input actually enables the formation of conversational pacts (rather than generically increasing informativeness).
 
 One possibility is that parents naturally adopt some of the interactive strategies developed by experimenters in these training studies: pointing out when references are insufficiently informative, asking for clarification about targeted features, and helping children to re-conceptualize referential targets within the expressiveness of their developing vocabulary [@clark2018conversation; @nikolaus2022communicative].
 In our first experiment, we asked parents and their 4-, 6-, and 8-year-old children, as well as control pairs of adults, to play an adapted version of Krauss and Glucksberg's [-@krauss1969] director-matcher game. 
@@ -399,10 +399,10 @@ Additionally, we found a weak but significant interaction between director and a
 
 In Experiment 1, we adapted the classic tangram director-matcher paradigm developed by @clark1986 to examine conversational pact formation among parent-child dyads. 
 We found that even 4-year-old children and their parents can successfully coordinate on pacts, but for these youngest children, parents adaptively provide multiple sources of support and scaffolding. 
-Even 4-year-old children readily adopted labels introduced by their parents and interactively refined their descriptions in response to spontaneous parent-initiated scaffolding.
+Even 4-year-old children readily adopted labels introduced by their parents and interactively refined their descriptions in response to spontaneous parent-initiated scaffolding (see Appendix B for further analysis of how children may constrain pacts).
 Overall, 4- to 8-year-old children and their parents exhibited patterns similar to adult pairs in terms of reduction in length of referring expressions and exchange turns.
 
 Importantly, we observed successful pact formation even in the absence of explicit task feedback: the same sounds played whether or not the matcher's selection was correct. 
 We expect that adding explicit (serial) feedback would help facilitate pact formation [@fishbein1971effects]. 
 It is also possible that the neutral sound was mistakenly interpreted by participants as positive feedback, leading to confusion.
-However, the fact that parent-child pairs were so successful under these conditions, as accuracy continued to improve, suggests that children and parents were largely able to rely on self-intiated communicative feedback to form pacts. 
+However, the fact that parent-child pairs were so successful under these conditions, as accuracy continued to improve, suggests that children and parents were largely able to rely on self-initiated communicative feedback to form pacts. 

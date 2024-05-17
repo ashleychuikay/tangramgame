@@ -9,8 +9,8 @@ A second possible difficulty may stem from children's production-side abilities.
 In other words, children may have difficulty generating sufficiently descriptive referring expressions on their own, given their limited vocabulary and other processing constraints, but are able to recognize a good description when they hear it, and adopt that description as a pact going forward. 
 
 In Experiment 2, we explicitly tested the first of these two hypotheses. 
-Although there is already a large body of work demonstrating that children are able to accurately interpret referring expressions by the age of four [@nadig2002evidence; @nilsen2009relations; @brandt2016german; @morisseau20133; @davies2021three], our task in Experiment 1 may have posed additional challenges. 
-The images may have been more abstract or unfamiliar, and the referring expressions may have been more complex than prior comprehension studies.  
+Although there is already a large body of work demonstrating that children are able to accurately interpret referring expressions by the age of four [@nadig2002evidence; @nilsen2009relations; @brandt2016german; @morisseau20133; @davies2021three], our task in Experiment 1 may have posed additional challenges.
+The images may have been more abstract or unfamiliar, and the referring expressions may have been more complex than prior comprehension studies.
 Here we validate what is known from the existing literature on early referring expression comprehension by providing the exact descriptions produced by participants in Experiment 1 to naive groups of children and adults, in the exact same referential contexts. 
 If comprehension is the root of children's difficulty, we might expect that naive children as comprehenders would be equally unable to interpret all referring expressions (regardless of whether they were originally produced by adults or children) while naive adults as comprehenders would have no difficulty. 
 Conversely, if naive children are able to understand the referring expressions produced by adults as well as other adults are, then we may expect the source of the difficulty to lie elsewhere.
@@ -109,9 +109,9 @@ kid_stims <- get_stims(tidy_kid_data)
 
 We recruited `r passed_check$false + passed_check$true` adults from Amazon Mechanical Turk. Participants were compensated 30¢ for a short task. Data from `r passed_check$false` participants were dropped due to failure to pass an attention check, leaving a final sample of `r passed_check$true` adults. 
 Additionally, we planned to recruited a sample of 200 children (ages 4 to 8) from a school and a museum in the Chicago area, with the relatively large sample size based on the classroom sizes of the local school. 
-However, due to the COVID-19 pandemic, we were forced to terminate data collection early with only `r length(unique(tidy_kid_data$id))` children (ages `r min(tidy_kid_data$age)`-`r max(tidy_kid_data$age)`). 
+However, due to the COVID-19 pandemic, we were forced to terminate data collection early with only `r length(unique(tidy_kid_data$id))` children skewed toward the older end of the age range (16 children between four and six, 34 children age seven, and 29 children age eight).
 Children received a sticker for their participation.
-We were not able to obtain demographic information for these participants. 
+We were not able to obtain further demographic information for these participants. 
 Our partner classrooms have not yet allowed the resumption of data collection at time of submission, so we decided to move forward with our existing smaller-than-planned sample.
 
 ### Stimuli
@@ -138,16 +138,6 @@ We measured response time as time elapsed between the completion of the audio re
 We used a $2 \times 2$ factorial design manipulating the age of the producer (parent vs. child) and comprehender (adult vs. child). 
 The age of the producer was a within-subjects manipulation while the age of the comprehender was an across-subjects manipulation: each comprehender was exposed to utterances originally produced by both adults and children.
 We predicted that if children struggle to form conceptual pacts primarily due to *comprehension* difficulties, then adult comprehenders should be highly accurate across the board (regardless of whether the referring expression was originally produced by an adult or child), while child comprehenders should uniformly struggle.
-
-```{r rt-skew, fig.show='hide'}
-# We examine RT distributions
-bind_rows(tidy_turk_data, tidy_kid_data) %>% 
-  filter(measure != "correct") %>%
-  ggplot(aes(x = value)) +
-  facet_wrap(comprehender_group ~ measure, scales = "free") + 
-  geom_histogram()
-```
-
 
 ## Results
 
@@ -183,6 +173,15 @@ group_diff.anova <- anova(group_diff.glmer1, group_diff.glmer2) %>%
 
 comprehender_effect <- tidy(group_diff.glmer2) %>% 
   filter(term == 'comprehender_groupkid')
+
+age_effect.glmer <- tidy_kid_data %>%
+  filter(measure == "correct") %>%
+  filter(p_age >= 4) %>%
+  filter(p_age <= 8) %>%
+  glmer(as.logical(value) ~ p_age + (1 | id),
+       data = .,
+       family = binomial,
+       control = glmerControl(optimizer = 'bobyqa')) 
 ```
 
 ```{r e2-result, fig.pos = "t", fig.align = "center", fig.width = 8, fig.cap = "\\label{fig:e2_result} Results for Experiment 2. Both naive adults (left) and children (right) were able to more accurately interpret referring expressions originally produced by parents (orange) than children (blue) in Experiment 1. No overall difference was observed across the two comprehender groups. Error bars are 95\\% confidence intervals."}
@@ -205,7 +204,7 @@ bind_rows(tidy_turk_data, tidy_kid_data) %>%
     theme(legend.position = 'none', aspect.ratio = 1, text = element_text(size = 16))
 ```
 
-To test whether reference game performance may be attributed to comprehension difficulties, we compared how naive groups of children and adults were able to determine the referent of the same expressions seen by listeners in Experiment 1 (see Appendix C for a more comprehensive analysis).
+To test whether reference game performance may be attributed to comprehension difficulties, we compared how naive groups of children and adults were able to determine the referent of the same expressions seen by listeners in Experiment 1 (see Appendix C for more comprehensive analyses).
 We focus on accuracy, as response times are not directly comparable between the web interface (for adults) and lab interface (for children).
 We constructed a mixed-effects logistic regression model predicting trial-by-trial accuracy, including a fixed effect of comprehender group (child vs. adult) and random intercepts and slopes for each source game^[Because we do not have child comprehension data for every audio clip, we could not estimate random slopes at this finer level of granularity. All behavior within a game is non-independent, so we believe this coarser level of grouping at source games is natural. However, see Table \ref{tab:comprehension2} for a Bayesian approach to estimating these effects on the subset of recordings where both comprehender groups were available.].
 We found no significant difference in overall accuracy across child and adult comprehenders, (adult accuracy $=$ `r comp.means$mean_adult`, 95\% CI $=$ [`r comp.means$ci_lower_adult`, `r comp.means$ci_upper_adult`], child accuracy $=$ `r comp.means$mean_kid`, 95\% CI $=$ [ `r comp.means$ci_lower_kid`, `r comp.means$ci_upper_kid`], $t=$ `r abs(comprehender_effect$statistic)`, $p =$ `r comprehender_effect$p.value`, see Figure \ref{fig:e2_result}).
@@ -238,8 +237,10 @@ brms::loo_compare(group_diff.brm1, group_diff.brm2, criterion = "waic")
 
 ## Summary and discussion
 
-In Experiment 2, we asked whether children may struggle to initially establish pacts due to comprehension-side difficulties; if parents’ initial referring expressions are too complex or the images are too ambiguous, children may be unable to determine the referent and thus unable to get a pact off the ground. 
+In Experiment 2, we asked whether children may struggle to initially establish pacts due to comprehension-side difficulties. 
+If parents’ initial referring expressions are too complex or the images are too ambiguous, children may be unable to determine the referent and thus unable to get a pact off the ground. 
 Surprisingly, we found no difference between naive adults and children's ability to comprehend referential expressions from Experiment 1.
-Although children may not necessarily be worse at comprehending utterances, our data did suggest that referential expressions originally *generated* by younger children were harder to comprehend by naive adults and children alike (see Appendix C). 
+It is possible that this negative effect is attributable to our incomplete sample, which was biased toward older children, and that a more balanced sample with younger comprehenders would reveal reliable differences (see Figure \ref{fig:comprehension_age_appendix}).
+At the same time, although children may not be substantially worse at comprehending utterances, our data did suggest that referential expressions originally *generated* by younger children were harder to comprehend by naive adults and children alike (see Appendix C). 
 That is, both adults and children were less likely to find the intended referent after hearing a description originally produced by a 4-year-old child.
 Our findings so far, then, suggest that children's difficulty establishing pacts may lie outside their comprehension processes, and point toward possible developmental changes in children's ability to *produce* sufficiently informative descriptions by themselves.

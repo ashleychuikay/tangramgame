@@ -202,15 +202,6 @@ indiv.measures <- d.prod.clean.manual %>%
 contextsensitivity.means <- indiv.measures %>%
   group_by(age_group, target_type) %>%
   tidyboot_mean(far_close_overlap, na.rm = T) 
-
-#annotated context sensitivity
-contextsensitivity.annotated <- d.prod.clean.annotated %>%
-  filter(age_group == "kid") %>%
-  filter(target_type == "familiar") %>%
-  filter(competitor_type != "check") %>%
-  group_by(age, competitor_type) %>%
-  tidyboot_mean(informativity, na.rm = T)
-
 ```
 
 ```{r contextsensitivitylmer}
@@ -303,7 +294,7 @@ The most complex random effects structure that converged only included random in
 We found a significant interaction between age group and target type, $b=`r indiv.measures.inter$estimate`$, $z = `r indiv.measures.inter$statistic`$, $p `r papaja::printp(indiv.measures.inter$p.value, add_equals = TRUE)`$ (see Figure  \ref{fig:e3_contextsensitivity}A). 
 Although adults displayed similar rates of context-sensitivity for familiar and novel objects (familiar: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'adult', target_type == 'familiar'))$empirical_stat`, novel: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'adult', target_type == 'tangram'))$empirical_stat`), children were nearly twice as likely to provide the exact same label across contexts for a familiar object (novel: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'kid', target_type == 'tangram'))$empirical_stat`; familiar: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'kid', target_type == 'familiar'))$empirical_stat`).
 Similar results were obtained using 'softer' measures like edit distance, which is the number of edits required to turn one string into the other, $b= `r soft.inter$estimate`, z = `r soft.inter$statistic`, p `r papaja::printp(soft.inter$p.value, add_equals = TRUE)`$ (see Supplemental Figure \ref{fig:Levensthein_appendix}). 
-In other words, while adults appropriately modulated their utterances across contexts, children often produced the same description for familiar targets across contexts (see Appendix E for a corroborating response time analysis.)
+In other words, while adults appropriately modulated their utterances across contexts, children often produced the same description for familiar targets across contexts (see Appendix E for a corroborating response time analysis and Appendix F for evidence these context-insensitive descriptions were in fact underinformative in close contexts.)
 
 ### Familiar objects elicit less variable names
 
@@ -402,7 +393,7 @@ One possibility is that the basic level category label of a familiar object (e.g
 <!-- While we cannot infer whether children were considering alternative descriptions during our task, we did find that children, compared to adults, produced less variable descriptions for familiar objects, concentrating on the same canonical labels. -->
 Further studies probing the alternatives that children consider, or testing the salience of various object labels, could provide a stronger test of this possibility.
 Another possibility is that younger children are simply less sensitive to referential ambiguity [e.g., @beal1982; @robinson1977].
-In Appendix F, we present preliminary evidence from a manipulation check linking the ability to *recognize* referential ambiguity and the ability to *generate* appropriately informative expressions based on context.
+In Appendix G, we present preliminary evidence from a manipulation check linking the ability to *recognize* referential ambiguity and the ability to *generate* appropriately informative expressions based on context.
 Children who were able to recognize that an ambiguous expression would be unhelpful were more likely to show context sensitivity in their own ability to generate descriptions for familiar objects. 
 However, it remains unclear how either these individual differences across children are reflected in different *parental* strategies.
 Parents have extensive, well-calibrated knowledge about their children's developing communication abilities, and further research should compare parents against other adults with less specific knowledge about a particular child.

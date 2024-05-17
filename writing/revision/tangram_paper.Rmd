@@ -10,8 +10,8 @@ author:
   - name          : "Robert D. Hawkins"
     affiliation   : "3"
     corresponding : yes 
-    address       : "Princeton University"
-    email         : "rdhawkins@princeton.edu"
+    address       : "University of Wisconsin-Madison"
+    email         : "rdhawkins@wisc.edu"
 
     
 
@@ -21,7 +21,7 @@ affiliation:
   - id            : "2"
     institution   : "Department of Psychology\\comma\\hspace{.25em} Carnegie Mellon University"
   - id            : "3"
-    institution   : "Princeton Neuroscience Institute\\comma\\hspace{.25em} Princeton University"
+    institution   : "Department of Psychology\\comma\\hspace{.25em} University of Wisconsin-Madison"
 
 abstract: |
    Adults readily coordinate on temporary *pacts* about how to refer to things in conversation. Young children are also capable of forming pacts with peers given appropriate experimenter intervention. Here, we investigate whether parents may *spontaneously* provide a similar kind of scaffolding with US children in a director-matcher task ($N=201$, 49\% female; ages 4, 6, 8). In Experiment 1, we show that parents initiate more clarification exchanges with younger children who, in turn, are more likely to adopt labels introduced by the parent. We then examine whether the benefit of such scaffolding acts primarily on childrens' difficulties with comprehension (Experiment 2) or production (Experiment 3). Our findings suggest that parents primarily scaffold pacts by easing children's production difficulties, modeling cooperative communication.
@@ -181,7 +181,7 @@ Our study emphasizes a third possibility.
 Young children may be unable to produce a good-enough label for an unfamiliar object on their own, due to weak lexical priors for what to call unfamiliar objects, and unable to initiate clarification.
 Once presented with a good-enough label, and prompted to confirm that they understand it, however, they are flexible enough to readily adopt and use it themselves on future trials.
 
-One important limitation of our study is the reliance on the existing empirical literature documenting successes and failures of pact formation in child-child peer communication, rather than more directly replicating these phenomena ourselves in the same paradigm we used to study parent-child communication.
+<!-- One important limitation of our study is the reliance on the existing empirical literature documenting successes and failures of pact formation in child-child peer communication, rather than more directly replicating these phenomena ourselves in the same paradigm we used to study parent-child communication. -->
 Our paradigm differs in important ways from those used in prior work and it is possible that pairs of children would, hypothetically, succeed at forming conversational pacts without experimenter intervention in our variant. 
 For example, our task used contexts containing only two tangram images per trial, whereas classic studies used contexts of six or twelve. 
 This choice could have reduced the cognitive load in our variant.
@@ -432,7 +432,7 @@ acc.lmer.age <- additive_acc.lmer %>% filter(term == 'scale(age)')
 acc.lmer.occ <- additive_acc.lmer %>% filter(term == 'occurrence')
 ```
 
-Next, we examine which features of the descriptions may affect downstream comprehension.
+Here, we examine which features of the descriptions may affect downstream comprehension.
 We consider two specific hypotheses. 
 First, we predicted that descriptions produced by adults will be easier for *everyone* to comprehend, overall, than descriptions produced by children in the same dyad. 
 Second, we predicted that descriptions produced earlier in the game will be easier to comprehend than descriptions produced later in the game, consistent with prior findings that pacts are not always transparent to eavesdroppers [@schober1989understanding]. 
@@ -442,6 +442,33 @@ To test these predictions, we fit a logistic mixed effects model predicting accu
 We also include random intercepts for each target and participant ID; a more complex model adding interactions was not justified, $\chi^2(`r acc.lmer.anova$df`) = `r acc.lmer.anova$statistic`, p=`r acc.lmer.anova$p.value`$. 
 How does age of speaker influence comprehension of descriptions? We first find that parents' descriptions are more accurately comprehended across the board $b=`r acc.lmer.speaker$estimate`, z = `r acc.lmer.speaker$statistic`, p `r papaja::printp(acc.lmer.speaker$p.value)`$. This is in line with our predictions, suggesting that parents in Experiment 1 provided more informative descriptions of the tangrams than did children. Additionally, we find that older children (and parents of older children) provided more accurately comprehended descriptions than younger children, $b=`r acc.lmer.age$estimate`, z= `r acc.lmer.age$statistic`, p `r papaja::printp(acc.lmer.age$p.value)`$ (Figure \ref{fig:e2_result}).
 Concerning our second hypothesis, however, we found no significant effect of experiment phase, $b=`r acc.lmer.occ$estimate`, z= `r acc.lmer.occ$statistic`, p= `r acc.lmer.occ$p.value`$. In other words, final-round descriptions of tangrams do not appear to contain meaningfully less information for guessing the target.
+
+```{r appendix-comprehension, out.height = "450px", fig.align = "center", set.cap.width=T, fig.cap = "\\label{fig:comprehension_age_appendix} Accuracy of comprehender by age. Dashed line represents adult comprehension"}
+
+comp.means.age <- bind_rows(tidy_turk_data, tidy_kid_data)  %>%
+  filter(measure == "correct") %>%
+  mutate(p_age = ifelse(comprehender_group == 'adult', 'adult', p_age)) %>%
+  filter(p_age %in% c(4,5,6,7,8,'adult')) %>%
+  group_by(p_age) %>%
+  tidyboot_mean(value) %>%
+  select(-n) 
+
+comp.means.age %>%
+  filter(p_age != 'adult') %>%
+  ggplot(aes(x = p_age, y = empirical_stat)) +
+    geom_point() +
+    geom_line() +
+    geom_hline(aes(yintercept = empirical_stat), data = comp.means.age %>% filter(p_age == 'adult'), linetype = 'dashed') +
+    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
+    labs(y = 'comprehension accuracy', x = 'age') +
+    ylim(0,1) +
+    theme_few()
+```
+
+Finally, we consider whether there was an effect of comprehender age on accuracy.
+We constructed a logistic mixed-effects model with a fixed effect for comprehender age (numeric) and random intercepts for each participant. 
+We observed a numerically small but significant effect of age on comprehension accuracy, $b=0.29, z = 3.12, p = 0.002$, which appears to be primarily driven by the small group of four-year-olds with poorer accuracy (mean accuracy of 62%, CI: [47%, 77%], compared to approximately 87\% for older children).
+Thus, while comprehension accuracy in our overall sample of children is not significantly different from adult comprehension, it is possible that this is a result of older children being overrepresented in our sample, and a larger sample of . 
 
 ## Appendix D: Additional details of Experiment 3 procedure
 
@@ -518,7 +545,49 @@ After controlling for utterance length, we found that adults' response times wer
 We also found that adults' response times were longer for close trials than far trials, $b=`r (rt_model %>% filter(term == 'competitor_typefar'))$estimate`, t = `r (rt_model %>% filter(term == 'competitor_typefar'))$statistic`, p = 0.003$, contrary to our hypothesis. 
 We also found evidence for a weak interaction, $b=`r (rt_model %>% filter(term == 'competitor_typefar:target_typetangram'))$estimate`, t = `r (rt_model %>% filter(term == 'competitor_typefar:target_typetangram'))$statistic`, p = 0.05$; see Figure \ref{fig:rt_appendix}.
 
-## Appendix F: Children's understanding of referential ambiguity predicts production in Experiment 3
+## Appendix F: Specificity of referring expressions for familiar objects
+
+```{r appendix-specificity, out.height = "450px", fig.align = "center", set.cap.width=T, fig.cap = "\\label{fig:specificity_appendix} Proportion of descriptions which are appropriately informative by age."}
+#annotated context sensitivity
+contextsensitivity.annotated <- d.prod.clean.annotated %>%
+  filter(age_group == "kid") %>%
+  filter(target_type == "familiar") %>%
+  filter(competitor_type != "check") %>%
+  mutate(informativity = ifelse(informativity > 1, 1, informativity)) %>%
+  group_by(age, competitor_type) %>%
+  tidyboot_mean(informativity, na.rm = T) 
+
+contextsensitivity.annotated.model <- d.prod.clean.annotated %>%
+  filter(age_group == "kid") %>%
+  filter(target_type == "familiar") %>%
+  filter(competitor_type != "check") %>%
+  filter(competitor_type == 'close') %>%
+  mutate(informativity = ifelse(informativity > 1, 1, informativity)) %>%
+  glmer(informativity ~ scale(age) + (1 | id) + (1 + scale(age) | target),
+        family = 'binomial',
+        data = .) 
+
+contextsensitivity.annotated %>%
+  ggplot(aes(x = age, y = empirical_stat, color = competitor_type)) +
+    geom_point() +
+    geom_line() +
+    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
+    labs(y = 'informativity', x = 'age') +
+    theme_few()
+```
+
+Our analysis in Experiment 3 established that younger children were less likely to produce distinct referring expressions across close and far contexts.
+However, this analysis leaves open the possibility that they were producing the same *overinformative* utterance, e.g. calling the target a 'pug' in both contexts even when 'dog' would have been sufficient in the far context.
+To confirm that the decreased context-specificity displayed by children actually reflects pragmatic underspecificity, we hand-annotated each utterance in the familiar condition for their degree of informativity. 
+That is, we gave a 0 to underinformative utterances which are true of both objects in context (e.g. saying ‘dog’ in a close context with two dogs) and we gave a 1 to appropriately informative utterances which are true of only the target (e.g. saying ‘pug’ in a close context where the distractor is not a pug). 
+
+We found that children indeed frequently produced less specific utterances than required, with only 68\% of 'close' trials being appropriately informative, relative to 99\% of 'far' trials.
+These findings suggest that children's descriptions are not only context-insensitive, they are less informative than pragmatically required for the 'close' context.
+Intriguingly, we also found a strong age effect (Figure \ref{fig:specificity_appendix}). 
+Only 16\% of 4-year-olds produced appropriately informative utterances in the 'close' condition, compared to 93\% of 8-year-olds, $b = 1.97, z = 4.39, p < 0.001$ in a logistic mixed effects regression model with random intercepts for participant ID and target ID. 
+Thus, children produce increasingly informative utterances over time. 
+
+## Appendix G: Children's understanding of referential ambiguity predicts production in Experiment 3
 
 We found that children are generally less sensitive to referential context than adults, but it is not clear what contributes to these differences.
 Given that children are more likely to produce the same label across contexts even for familiar objects, it is unlikely that vocabulary knowledge accounts for most of the difference between children and adults. 
@@ -717,7 +786,7 @@ lmer.accuracy %>%
     format = "latex",
     booktabs = TRUE,
     caption = "\\label{tab:accuracy}Output of full Exp. 1 accuracy model: \\texttt{accuracy $\\sim$
-    age + director + rep_num + (rep_num | subid) + (1 | target)}"
+    age + director + rep\\_num + (rep\\_num | subid) + (1 | target)}"
   )
 ```
 
@@ -729,7 +798,7 @@ lmer.exchanges %>%
     format = "latex",
     booktabs = TRUE,
     caption = "\\label{tab:exchanges}Output of full Exp. 1 exchanges model: \\texttt{exchanges $\\sim$ age +
-    rep_num +  (1 + rep_num | subid) + (1 + rep_num | target)}"
+    rep\\_num +  (1 + rep\\_num | subid) + (1 + rep\\_num | target)}"
   )
 ```
 
@@ -740,8 +809,8 @@ lmer.reduction.controlled %>%
   kable(
     format = "latex",
     booktabs = TRUE,
-    caption = "\\label{tab:reduction}Output of full Exp. 1 reduction model: \\texttt{number of words $\\sim$
-    person * age * rep_num + (1 + person * rep_num | subid) + (1 + rep_num | target))}"
+    caption = "\\label{tab:reduction}Output of full Exp. 1 reduction model: \\texttt{num\\_words $\\sim$
+    person * age * rep\\_num + (1 + person * rep\\_num | subid) + (1 + rep\\_num | target))}"
   )
 ```
 
@@ -752,7 +821,7 @@ match.model %>%
   kable(
     format = "latex",
     booktabs = TRUE,
-    caption = "\\label{tab:match}Output of full Exp. 1 pact origin model: \\texttt{words introduced by partner
+    caption = "\\label{tab:match}Output of full Exp. 1 pact origin model: \\texttt{introduced
     $\\sim$ age * director + (1 | target) +  (1 | subid)}"
   )
 ```
@@ -806,7 +875,7 @@ indiv.measures.lmer %>%
   kable(
     format = "latex",
     booktabs = TRUE,
-    caption = "\\label{tab:production}Output of full Exp. 3 context sensitivity model: \\\texttt{overlap $\\sim$
+    caption = "\\label{tab:production}Output of full Exp. 3 context sensitivity model: \\texttt{overlap $\\sim$
     age\\_group * target\\_type + scale(utt\\_length) + (1 | id)}"
   )
 ```
@@ -817,7 +886,7 @@ indiv.measures.softmeasure %>%
     format = "latex",
     booktabs = TRUE,
     caption = "\\label{tab:production2}Output of Exp.3 context sensitivity model using edit distance:
-    \\\texttt{distance $\\sim$ age\\_group * target\\_type + (1 | target) + (1 + target\\_type | id)}"
+    \\texttt{distance $\\sim$ age\\_group * target\\_type + (1 | target) + (1 + target\\_type | id)}"
   )
 ```
 
@@ -828,7 +897,7 @@ var.out %>%
     format = "latex",
     booktabs = TRUE,
     caption = "\\label{tab:production3}Output of Exp.3 model for unique labels:
-    \\\texttt{unique labels $\\sim$ target\\_type * age\\_group + (1 | target)}"
+    \\texttt{unique labels $\\sim$ target\\_type * age\\_group + (1 | target)}"
   )
 ```
 
@@ -839,6 +908,6 @@ var.out.entropy %>%
     format = "latex",
     booktabs = TRUE,
     caption = "\\label{tab:production4}Output of Exp.3 entropy model:
-    \\\texttt{entropy $\\sim$ target\\_type * age\\_group + (1 | target)}"
+    \\texttt{entropy $\\sim$ target\\_type * age\\_group + (1 | target)}"
   )
 ```
