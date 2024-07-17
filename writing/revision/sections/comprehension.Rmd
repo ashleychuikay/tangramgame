@@ -13,7 +13,7 @@ Although there is already a large body of work demonstrating that children are a
 The images may have been more abstract or unfamiliar, and the referring expressions may have been more complex than prior comprehension studies.
 Here we validate what is known from the existing literature on early referring expression comprehension by providing the exact descriptions produced by participants in Experiment 1 to naive groups of children and adults, in the exact same referential contexts. 
 If comprehension is the root of children's difficulty, we might expect that naive children as comprehenders would be equally unable to interpret all referring expressions (regardless of whether they were originally produced by adults or children) while naive adults as comprehenders would have no difficulty. 
-Conversely, if naive children are able to understand the referring expressions produced by adults as well as other adults are, then we may expect the source of the difficulty to lie elsewhere.
+Conversely, if naive children are able to understand the referring expressions produced by adults as well as adults are, then we may expect the source of the difficulty to lie elsewhere.
 
 ```{r load-original-games}
 # Load meta-data (e.g. age) for the stimuli
@@ -243,4 +243,4 @@ Surprisingly, we found no difference between naive adults and children's ability
 It is possible that this negative effect is attributable to our incomplete sample, which was biased toward older children, and that a more balanced sample with younger comprehenders would reveal reliable differences (see Figure \ref{fig:comprehension_age_appendix}).
 At the same time, although children may not be substantially worse at comprehending utterances, our data did suggest that referential expressions originally *generated* by younger children were harder to comprehend by naive adults and children alike (see Appendix C). 
 That is, both adults and children were less likely to find the intended referent after hearing a description originally produced by a 4-year-old child.
-Our findings so far, then, suggest that children's difficulty establishing pacts may lie outside their comprehension processes, and point toward possible developmental changes in children's ability to *produce* sufficiently informative descriptions by themselves.
+Our findings so far, then, suggest that children's difficulty establishing pacts may primarily lie outside comprehension processes, and point toward possible developmental changes in children's ability to *produce* sufficiently informative descriptions by themselves.

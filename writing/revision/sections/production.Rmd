@@ -176,6 +176,7 @@ First, could children be failing to take into account the referential context wh
 Second, could children have more uncertainty over possible acceptable labels for novel objects, leading to higher variation than adults [@lachman1974language; @cycowicz1997picture]?
 These hypotheses are not mutually exclusive. 
 Indeed, the corresponding mechanisms -- *pragmatic reasoning* and *lexical priors* -- are both implicated in recent production models [e.g. @murthy2021shades; @hawkins2022partners]. 
+The first analysis was preregistered as confirmatory while the second was preregistered as exploratory.
 
 ### Children are differentially sensitive to referential context
 
