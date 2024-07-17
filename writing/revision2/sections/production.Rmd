@@ -1,0 +1,398 @@
+# Experiment 3: Production experiment
+
+In Experiment 2, we found that naive children and adults were able to comprehend referential expressions equally well. 
+That is, to the extent that children contributed to poorer group performance in Experiment 1, their contribution is not well-explained by the comprehension hypothesis. 
+At the same time, however, we found some evidence consistent with the production hypothesis: messages originally produced by children were less comprehensible for listeners of any age.
+While this source effect is intriguing, it was difficult to disentangle the original messages from the interactive parent-child context in which they were produced. 
+For example, it is possible that children were receiving interactive scaffolding that prompted them toward more comprehensible expressions [@grigoroglou2019interactive]. 
+Or, conversely, it is possible that children were relying on their parents to take on more of the division of labor of interpretation [@hawkins2021division] and were thus producing expressions that are less comprehensible to a naive audience than they were actually capable of.
+
+In Experiment 3, we remove the interactive context to more directly assess children's ability to produce referential expressions for novel tangram objects in different contexts. 
+To be clear, this study does not aim to address the ability of children to track partner-specific pacts, which is already well-established; it examines the conditions that may prevent a pact from being established in the first place, which require grounding in a successful referential act.
+We used a 2x2 design aiming to tease apart two related explanations for poor production performance.
+First, to assess the extent to which production difficulties stem from *pragmatic reasoning* (i.e. the ability to recognize that an accessible label is not sufficiently informative in context), we manipulate whether the foil is more or less similar to the target. 
+Second, to assess the extent to which production difficulties stem from impoverished *lexical priors* (i.e. the ability to access candidate labels for a given referent), we manipulate whether the target objects are familiar photographs or novel tangram shapes [see @horton2002speakers]. 
+To the extent that children fail to produce context-sensitive utterances for familiar objects with accessible labels, we may expect that pragmatic reasoning is a bottleneck on performance.
+To the extent that there is more variability in the utterances produced by children than by adults, we may expect that their lexical priors play a larger role.
+
+## Methods
+
+```{r plot-colors}
+CHILDREN <- "#08519c"
+ADULTS <- "#fe9929"
+```
+
+```{r e3-anonymize-data, eval = FALSE}
+# this block pre-processes the raw, un-anonymized data from adults
+# we keep it here for reproducibility but only release the preprocessed data
+# read_csv(here("data/experiment3/dataFromMongo.csv"))%>%
+#   filter(trial_type == "survey-text") %>%
+#   filter(iterationName == "pilot2") %>%
+#   mutate(wID = as.numeric(as.factor(wID))) %>%
+#   write_csv(here('./data/experiment3/anonymizedDataFromMongo.csv'))
+```
+
+```{r e3-read-adult-data}
+NUM_TRIALS <- 48
+d.prod.adult <- here("data/experiment3/anonymizedDataFromMongo.csv") %>%
+  read_csv(show_col_types = FALSE) %>%
+  mutate(age_group = 'adult')
+  
+complete_games.adult <- d.prod.adult %>%
+  group_by(wID) %>%
+  tally() %>%
+  filter(n >= NUM_TRIALS) %>%
+  pull(wID)
+```
+
+```{r e3-combine-data, eval = FALSE}
+# this block pre-processes the raw, un-anonymized data from kids
+# we keep it here for reproducibility but only release the preprocessed data for privacy
+
+# d.prod.kid <- list.files(here("data/experiment3/kid/"), "*.csv",
+#                           full.names = TRUE) %>%
+#   map_dfr(read_csv, show_col_types = FALSE) %>%
+#   mutate(age_group = 'kid') %>%
+#   rename(wID = id) %>%
+#   select(-trial_type, -internal_node_id, -trialtype, -test_part, -responses)
+# 
+# d.prod <- d.prod.adult %>%
+#   filter(wID %in% complete_games.adult) %>%
+#   group_by(wID) %>%
+#   slice(1:NUM_TRIALS) %>%
+#   filter(rt > 1000) %>%
+#   bind_rows(d.prod.kid) %>%
+#   unite(id, age_group, wID, remove = F) %>%
+#   mutate(utterance = str_to_lower(utterance),
+#          utterance = str_trim(utterance),
+#          utt_length = str_length(utterance),
+#          clean_utt = lemmatize_strings(utterance),
+#          clean_utt = str_remove_all(clean_utt, pattern = ' '))
+# 
+# write_csv(d.prod, here("data/experiment3/production_data_lemmatized.csv"))
+```
+
+```{r e3-read-lemmatized_data}
+# manually cleaned data
+
+# d.prod.clean.merge <- read_csv(
+#   here("data/experiment3/production_data_lemmatized_cleaned.csv"),
+#   guess_max = 5000) %>%
+#   filter(!(id %in% c('adult_49', 'kid_40'))) %>% # said I don't know to everything / random
+#   mutate(button_pressed = as.numeric(button_pressed)) %>%
+#   bind_rows(missing_data)
+
+# write_csv(d.prod.clean.merge, here("data/experiment3/production_data_cleaned.csv"))
+
+d.prod.clean.manual <- read_csv(here("data/experiment3/production_data_cleaned.csv"))
+d.prod.clean.annotated <- read_csv(here("data/experiment3/production_data_cleaned_annotated.csv"))
+
+# kid descriptives
+n_kids <- d.prod.clean.manual %>%
+  filter(age_group == "kid") %>%
+  {unique(.$id)}
+
+kid_age <- d.prod.clean.manual %>%
+  filter(age_group == "kid") %>%
+  filter(!duplicated(id))
+
+```
+
+```{r e3-stim-details}
+n_stims <- d.prod.clean.manual %>%
+  distinct(target_type, competitor_type, target, foil) 
+
+fam_stims <- n_stims %>%
+  filter(target_type == "familiar") %>%
+  distinct(target, foil) %>%
+  unlist() %>%
+  unique()
+
+novel_stims <- n_stims  %>%
+  filter(target_type == "tangram") %>%
+  distinct(target, foil) %>%
+  unlist() %>%
+  unique()
+```
+
+### Participants
+
+We recruited `r length(complete_games.adult)` adult participants from Amazon Mechanical Turk. All participants gave informed consent prior to the start of the study and were compensated 60¢. 
+Detailed demographics were not collected, but we constrained our recruitment to only participants in the US.
+We also recruited `r length(n_kids)` children aged 4 to 8 years old ($M=$ `r mean(kid_age$age)`) to participate in the study.
+Our sample consisted of 4 four-year-olds, 17 five-year-olds, 10 six-year-olds, 12 seven-year-olds, and 17 eight-year-olds. 
+Families received \$5 electronic gift cards for their participation.
+Data on race and ethnicity were not collected, but participants were recruited from a database of families that reflect the overall racial/ethnic makeup of the Chicago area. The study was conducted online over Zoom. Parents provided informed written and verbal consent, and children provided verbal consent. 
+
+### Stimuli and Design
+
+We used `r length(fam_stims)` pictures of familiar objects and `r length(novel_stims)` pictures of tangrams. 
+Familiar objects were drawn from an image set used by @degen2020. 
+We drew from eight different basic-level categories that we expected to be familiar to children: bears, birds, cars, candy, dogs, fish, shirts, and tables.
+Meanwhile, tangrams were drawn from a public royalty-free set available on https://www.1001freedownloads.com/.
+Each participant provided labels for a total of eight familiar targets and eight tangram targets. 
+The rest of the images were used as foils when constructing contexts. 
+
+```{r e3-design, out.width = "0.6\\textwidth", fig.align = "center", set.cap.width=T, fig.cap = "Objects in Experiment 3 were either familiar images (left) or tangram images (right) and could appear in in a far context (top), or in a close context (bottom)."}
+knitr::include_graphics(here("writing/revision/diagrams/e3_diagram.pdf"))
+```
+
+We used a $2 \times 2$ factorial design, manipulating both the novelty of the stimuli (familiar images vs. tangram images) and the similarity of the foil to the target in the context (close contexts vs. far contexts). 
+For *far* contexts, the target and competitor had low semantic overlap (i.e., far away in semantic space; Figure \ref{fig:e3-design}, top row).
+For *close* contexts, the target and competitor had high semantic overlap (i.e. close in semantic space; Figure \ref{fig:e3-design}, bottom row). 
+For familiar images, we operationalized semantic overlap in terms of the basic-level category: close trials involved two objects in the same basic-level semantic category (e.g., Pug and German Shepherd), and far trials used different basic-level categories (e.g., Pug and Rabbit). 
+For tangram images, close and far competitors were determined through an independent norming study where adult participants produced labels for a number of tangrams in isolation, and we constructed close or far contexts that (respectively) maximized or minimized naming agreement, the proportion of responses that overlapped for a pair of tangrams [see @zettersten2020].]
+
+### Procedure
+
+**Adults**. 
+Adults were instructed to describe the object in the blue box by typing one or two words into a text box. 
+In addition to the *close* and *far* conditions, adults also provided labels for each object in a third *isolation* condition (Figure \ref{fig:e3-design}A).
+Trials appeared in contiguous blocks of the same type (e.g. eight trials in a row of 'familiar' objects in 'close' contexts), and the order of the six blocks was fully randomized across participants, for a total of 48 trials.
+At the start of each block, they were told whether they would see one picture (isolation condition), or two pictures (close and far conditions), and reminded that they should type in a description that would help another participant identify the target with a blue border. 
+
+**Children**. After parents gave consent and children assented to participate, children completed several warm-up trials to introduce them to the game.
+Children were then told that they would continue to play a labeling game and that their responses would be shown to another person who did not know which object was in the blue border. 
+To ease children into the task, we always began with a block of familiar objects in either the close or far condition, but otherwise the four blocks were randomized, for a total of 32 trials. 
+They gave responses only for the close and far conditions; there was no isolation condition. 
+Children's productions in all conditions were typed into a text box in real time by an experimenter during their participation.
+At the end of the experiment, we additionally included a manipulation check block to gauge individual differences in sensitivity to referential ambiguity (see Appendix D for further procedural details). 
+
+### Pre-processing 
+
+We cleaned the text input by applying the following procedure across the combined data set.
+First, we corrected typos and removed stop words (e.g. determiners like 'a', 'the').
+Second, we lemmatized all entries to remove spurious differences between tenses and plurals of the same root form, which may lead to spurious inflation of edit distances. 
+Third, we manually removed phrases or frames that repeated across descriptions (e.g., if a participant said "a person who is..." on every trial, we removed that phrase), which may lead to spurious variability in descriptions across participants. 
+We also manually standardized the word order such that, e.g., "person running" would be transformed to "running person".
+Fourth, we removed spaces and collapsed multiple words together into a single token (e.g. 'German Shepherd' was tokenized to 'germanshepherd').
+We use the fully cleaned data for our analyses, but the rawer lemmatized data can be found on our [OSF page](https://osf.io/vkug8/?view_only=b68061f8daae48cdace5c3dc53969405). 
+ While adult participants typed in their own responses, children's responses were entered by an experimenter. When children's descriptions were overly long, experimenters prompted children to simplify them by asking, "Can you say that in one or two words?". Children were only prompted once, regardless of whether they simplified their expression. 
+
+## Results
+
+We focus on two primary hypotheses.
+First, could children be failing to take into account the referential context when deciding what to say, leading to more ambiguous or underinformative referring expressions than adults?
+Second, could children have more uncertainty over possible acceptable labels for novel objects, leading to higher variation than adults [@lachman1974language; @cycowicz1997picture]?
+These hypotheses are not mutually exclusive. 
+Indeed, the corresponding mechanisms -- *pragmatic reasoning* and *lexical priors* -- are both implicated in recent production models [e.g. @murthy2021shades; @hawkins2022partners]. 
+The first analysis was preregistered as confirmatory while the second was preregistered as exploratory.
+
+### Children are differentially sensitive to referential context
+
+```{r context-sensitivity}
+
+# we can just look at the item-by-item / speaker-by-speaker level 
+# where there's a context effect...
+indiv.measures <- d.prod.clean.manual %>%
+  filter(competitor_type != 'check') %>%
+  group_by(age_group, id, target_type, competitor_type, target, clean_utt) %>%
+  tally() %>%
+  group_by(age_group, id, target) %>%
+  pivot_wider(names_from = competitor_type, values_from = c('clean_utt')) %>%
+  unnest(cols = c(close, far, isolated)) %>%
+  filter(!is.na(close), !is.na(far)) %>%
+  mutate(close_far.distance = helpers$normalized_lv(close, far),
+         close_isolated.distance = helpers$normalized_lv(close, isolated),
+         far_isolated.distance = helpers$normalized_lv(far, isolated),
+         far_close_overlap = far == close,
+         far_isolated_overlap = far == isolated,
+         close_isolated_overlap = close == isolated) 
+
+#measure context sensitivity by exact matches across conditions
+contextsensitivity.means <- indiv.measures %>%
+  group_by(age_group, target_type) %>%
+  tidyboot_mean(far_close_overlap, na.rm = T) 
+```
+
+```{r contextsensitivitylmer}
+indiv.measures.lmer <- indiv.measures %>%
+  ungroup() %>%
+  mutate(utt_length = (str_length(close) + str_length(far)) / 2) %>%
+  glmer(far_close_overlap ~ age_group * target_type + scale(utt_length) + (1 | id),
+        family = 'binomial',
+        data = .) %>%
+  tidy() %>%
+  filter(effect == 'fixed') %>%
+  select(-group, -effect)
+
+indiv.measures.softmeasure <- indiv.measures %>%
+  mutate(utt_length = (str_length(close) + str_length(far)) / 2) %>%
+  lmer(close_far.distance ~ age_group * target_type + (1 | target) + (1 + target_type | id),
+        data = .) %>%
+  tidy() %>%
+  filter(effect == 'fixed') %>%
+  select(-group, -effect)
+
+indiv.measures.inter <- indiv.measures.lmer %>% filter(term == 'age_groupkid:target_typetangram')
+soft.inter <- indiv.measures.softmeasure %>% filter(term == 'age_groupkid:target_typetangram')
+
+```
+
+```{r variability-measures}
+
+var.measures <- d.prod.clean.manual %>%
+  filter(competitor_type == "far") %>%
+  group_by(age_group, target_type, competitor_type, clean_utt, target) %>%
+  tally() %>%
+  arrange(target) %>%
+  group_by(age_group, target_type, target) %>%
+  mutate(total_labels = sum(n)) %>%
+  summarize(unique_labels = length(n), 
+            normalized_unique_labels = mean(unique_labels) / mean(total_labels),
+            entropy = entropy(n, method="SG"),
+            normalized_entropy = mean(entropy) / log(length(n)),
+            codeability = max(n) / sum(n)) %>%
+  select(-entropy, -unique_labels) %>%
+  gather(measure, value, normalized_unique_labels:codeability)
+
+var.plot <- var.measures %>%
+  group_by(age_group, target_type, measure) %>%
+  tidyboot_mean(value)
+
+#ggsave('variability_measures.pdf', width = 10, height = 10, unit = 'in')
+
+```
+
+```{r production-plots, fig.pos = "t", fig.align = "center", fig.width = 10, fig.cap = "\\label{fig:e3_contextsensitivity} (A) Context-sensitivity for children and adults. Children were twice as likely to give the same description for familiar objects than tangrams across contexts, while adults equally modulated their descriptions for both target types. (B) Nameability for children and adults. Children produced more variable labels for tangrams than adults. Error bars are 95\\% CIs."}
+
+dodge = position_dodge(0.9)
+
+#context sensitivity plot
+plt.context <- contextsensitivity.means %>%
+  ggplot(aes(x = target_type, y = empirical_stat, fill = age_group)) +
+    geom_bar(stat = 'identity', position = dodge) +
+    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0, 
+                  position = dodge) +
+    scale_fill_manual(values = c(ADULTS, CHILDREN)) +
+    labs(tag = "A", y = 'Proportion of exact matches', x = "") +
+    theme(aspect.ratio = 1, legend.position = "none", text = element_text(size = 16))
+
+#naming variability plot
+plt.variability <- var.plot %>% 
+  filter(measure == 'normalized_unique_labels') %>% 
+  mutate(age_group = ifelse(age_group == 'kid', 'child', 'adult')) %>%
+  ggplot(aes(x = target_type, y = empirical_stat, fill = age_group)) +
+    geom_bar(stat = 'identity', position=dodge) +
+    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0, position = dodge) +
+    scale_fill_manual(values = c(ADULTS, CHILDREN)) +
+    facet_grid( ~ . , scales='free') +
+    labs(tag = "B", x = '', y = 'Proportion unique labels', fill = 'Age group') +
+    theme(aspect.ratio = 1, legend.position = "right", text = element_text(size = 16))
+
+library(patchwork)
+plt.context + plt.variability
+```
+
+To test our first hypothesis, we examined the extent to which the same participant produced different utterances across the *far* vs. *close* contexts.
+We began by considering a simple 'exact match' criterion, coding an item as 1 if the participant used the same label for that item in both contexts and 0 if they used different labels. 
+This criterion is conservative in the sense that it will miss a number of near- or partial-matches, giving a lower-bound for overlap.
+We modeled the binary variable of context overlap using a mixed-effects logistic regression.
+We included fixed effects for age cohort (child vs. adult) and target type (familiar vs. novel), as well as their interaction.
+To control for the fact that longer utterance strings are less likely to exactly match by chance, we also included a term for the average length of the close and far labels for that speaker and item. 
+The most complex random effects structure that converged only included random intercepts at the participant level.
+
+We found a significant interaction between age group and target type, $b=`r indiv.measures.inter$estimate`$, $z = `r indiv.measures.inter$statistic`$, $p `r papaja::printp(indiv.measures.inter$p.value, add_equals = TRUE)`$ (see Figure  \ref{fig:e3_contextsensitivity}A). 
+Although adults displayed similar rates of context-sensitivity for familiar and novel objects (familiar: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'adult', target_type == 'familiar'))$empirical_stat`, novel: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'adult', target_type == 'tangram'))$empirical_stat`), children were nearly twice as likely to provide the exact same label across contexts for a familiar object (novel: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'kid', target_type == 'tangram'))$empirical_stat`; familiar: $m=$ `r (contextsensitivity.means %>% filter(age_group == 'kid', target_type == 'familiar'))$empirical_stat`).
+Similar results were obtained using 'softer' measures like edit distance, which is the number of edits required to turn one string into the other, $b= `r soft.inter$estimate`, z = `r soft.inter$statistic`, p `r papaja::printp(soft.inter$p.value, add_equals = TRUE)`$ (see Supplemental Figure \ref{fig:Levensthein_appendix}). 
+In other words, while adults appropriately modulated their utterances across contexts, children often produced the same description for familiar targets across contexts (see Appendix E for evidence that these context-insensitive descriptions were in fact underinformative in close contexts.)
+
+### Familiar objects elicit less variable names
+
+```{r regression-model-comparing-competitor-types}
+var.out.means <- var.measures %>%
+  filter(measure == 'normalized_unique_labels') %>% 
+  group_by(target_type, age_group) %>%
+  summarize(m = mean(value)) %>%
+  pivot_wider(names_from = c('target_type', 'age_group'), values_from = m)
+
+var.out <- var.measures %>%
+  filter(measure == 'normalized_unique_labels') %>% # 
+  lmer(value ~ target_type * age_group + (1 | target), data =., contrasts = list(age_group = contr.sum(2), target_type = contr.sum(2))) %>%
+  tidy() %>%
+  filter(effect == "fixed")
+
+var.out.entropy <- var.measures %>%
+  filter(measure == 'normalized_entropy') %>% # 
+  lmer(value ~ target_type * age_group + (1 | target), data =., contrasts = list(age_group = contr.sum(2), target_type = contr.sum(2))) %>%
+  tidy() %>%
+  filter(effect == "fixed")
+
+```
+
+We tested the second hypothesis by examining the distribution of labels at the population level. 
+First, we hypothesized that both adults and children will produce a fairly narrow, high-agreement range of labels for familiar objects, yielding highly concentrated distributions.
+Second, we hypothesized that children will use a broader range of different labels for tangrams than adults, yielding a less concentrated distribution with less agreement among different children.
+We considered several measures of concentration, but we focused primarily on the proportion of unique labels to total labels, which is simple and interpretable.^[In principle, an appropriate metric of spread across labels would be the information theoretic quantity of entropy: $H(X) = \sum_i p_i \log p_i$. However, our empirical distributions are highly sparse, with many labels appearing only once. Estimates of entropy are therefore somewhat sensitive to the choice of statistical estimator (i.e. how much to regularize with pseudo-counts) while being less numerically interpretable. Alternative metrics include "modal agreement" [@brodeur2010bank; @brodeur2014bank], the proportion of participants that produce the most common label, and Simpson's diversity index [@simpson1949measurement; @majid2014odors; @majid2018differential], which can be interpreted as the probability that two independently sampled labels will match.]
+For example, suppose that from a pool of forty participants, twenty said 'bird', ten said 'dancer', and the remaining ten chose other labels that were all distinct from one another. 
+Then we would have twelve unique labels overall, and $p_{uniq} = 12/40 = 0.3$ .
+Meanwhile, if all forty participants chose different labels, we would have $p_{uniq} = 40/40 = 1$; and at the other extreme, if all forty participants chose the same label, we would have $p_{uniq} = 1/40 = 0.025$.
+
+Because population agreement metrics necessarily aggregate over individual participants for each target, we constructed our mixed-effects regression model at the item level. 
+Given our findings of differential context-sensitivity in the previous section, we limited this analysis to the 'far' condition where the distribution of adult and children labels are more comparable (aggregating across close and far yields qualitatively similar results). 
+We predicted agreement as a function of age group (adult vs. child) and target type (familiar vs. tangram), including random intercepts at the target level. 
+First, we observed a main effect of target type, with less agreement on tangram labels than familiar object labels, $b = `r (var.out %>% filter(term == 'target_type1'))$estimate`$, $t(`r (var.out %>% filter(term == 'target_type1'))$df`) = `r (var.out %>% filter(term == 'target_type1'))$statistic`$, $p `r (var.out %>% filter(term == 'target_type1'))$p.value %>% papaja::printp()`$. This is in line with our hypothesis that agreement would be higher for familiar objects with commonly-known canonical labels.
+Importantly, however, we also found a significant interaction with age group, $b = `r (var.out %>% filter(term == 'target_type1:age_group1'))$estimate`$, $t(`r (var.out %>% filter(term == 'target_type1:age_group1'))$df`) = `r (var.out %>% filter(term == 'target_type1:age_group1'))$statistic`$, $p `r (var.out %>% filter(term == 'target_type1:age_group1'))$p.value %>% papaja::printp()`$. 
+The labels produced by different children in our sample were about as variable as adults' for familiar targets ($m = `r var.out.means$familiar_kid`$ for children and $m = `r var.out.means$familiar_adult`$ for adults). 
+However, children as a group produced a more variable set of labels for novel tangrams than adults did ($m = `r var.out.means$tangram_kid`$ for children and $m = `r var.out.means$tangram_adult`$ for adults).
+
+
+```{r overlap-helpers, eval = FALSE}
+# This analysis asks how much *children* overlapped with *adults*
+# i.e. it's possible that kids agree with other kids and adults agree with other adults,
+# but kids might be drawing from a completely different pool of utterances than adults.
+
+# ps <- d.prod.clean %>%
+#   distinct(wID)
+# 
+# first_half <- d.prod.clean %>%
+#   filter(wID %in% (slice(ps, 1:(n()/2)) %>% pull(wID))) %>%
+#   count(target, clean_utt) %>%
+#   complete(target, clean_utt, 
+#            fill = list(n = 0)) %>%
+#   get_average_overlap()
+# 
+# second_half <- d %>%
+#   filter(wID %in% (slice(ps, ((n()/2)+1):(n())) %>% pull(wID))) %>%
+#   count(target, lemmatized_utt) %>%
+#   complete(target, lemmatized_utt, 
+#            fill = list(n = 0)) %>%
+#   get_average_overlap()
+# 
+# # correlation b/w split data
+# first_half %>%
+#   rename(first_half = overlap) %>%
+#   left_join(second_half, by = c("target_id", "comparison_id", "n")) %>%
+#   summarise(cor = cor(first_half, overlap, method = "spearman")) %>%
+#   summarise(cor = mean(cor, na.rm = T))
+# 
+# overall <- d %>%
+#   #filter(!(target %in% c("R1.jpg", "O1.jpg"))) %>%
+#   #mutate(target = as.factor(target)) %>%
+#   count(target, lemmatized_utt) %>%
+#   complete(target, lemmatized_utt, 
+#            fill = list(n = 0)) %>%
+#   get_average_overlap()
+```
+
+## Summary and discussion
+
+In Experiment 3, we asked whether difficulty in *production* may explain why young children may struggle to establish referential pacts with peers while succeeding with parents. 
+Comparing adult and child responses in our production task revealed that children were not as sensitive to referential context, providing descriptions that did not always distinguish the intended referent from its foil (e.g., saying "table" when both a dining table and a picnic table were present). 
+Importantly, this effect was found on trials containing familiar items that children are likely to have accessible labels for, so these results were unlikely to be explained by simple vocabulary constraints. 
+In other words, children's ability to produce context-sensitive utterances may be constrained by limitations in their *pragmatic reasoning*. 
+
+At the same time, we found that children produce a more variable set of labels for tangram shapes than adults.
+One possible explanation is that children have a less stable prior over possible names for the tangram shapes due to lower 'codability' or 'nameability', there is no single existing convention [@hupet1991effects; @zettersten2020].
+That is, variability could be driven less by pragmatic reasoning and more by sampling under uncertainty: they may be producing utterances from a more spread-out or idiosyncratic lexical prior [@denison2013rational; @bonawitz2014probabilistic].
+Another possibility is that children have less strong priors over how to categorize or conceptually interpret these abstract shapes, upstream of labeling, leading to more creative and less “streamlined” interpretations than adults. 
+Further work is required to distinguish whether this variability exists in conceptual representations of abstract depictions, at the level of lexical-semantic conventions, or for these tangrams in particular. 
+
+Why might children struggle to modulate their descriptions for familiar objects?
+One possibility is that the basic level category label of a familiar object (e.g., "table") is too salient, and children have difficulty suppressing this label in favor of a more informative description.
+Further studies probing the alternatives that children consider, or testing the salience of various object labels, could provide a stronger test of this possibility.
+Another possibility is that younger children are simply less sensitive to referential ambiguity [e.g., @beal1982; @robinson1977].
+In Appendix F, we present preliminary evidence from a manipulation check linking the ability to *recognize* referential ambiguity and the ability to *generate* appropriately informative expressions based on context.
+Children who were able to recognize that an ambiguous expression would be unhelpful were more likely to show context sensitivity in their own ability to generate descriptions for familiar objects. 
+However, it remains unclear how either of these individual differences across children are reflected in different *parental* strategies.
+Parents have extensive, well-calibrated knowledge about their children's developing communication abilities, and further research should compare parents against other adults with less specific knowledge about a particular child.

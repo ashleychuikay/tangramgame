@@ -1,0 +1,416 @@
+# Experiment 1: Forming pacts in an interactive communication game
+
+It is clear from existing studies that children are receptive to explicit scaffolding from experimenters [@koymen2014]. 
+For example, @deutsch1982 showed that repeated clarification questions eventually elicited unambiguous descriptions from 6- and 9-year-olds and, to a lesser extent, from 3-year-olds. 
+A more recent training study by @matthews2007 replicated this finding in 2- to 4-year-olds, and further showed transfer to a different communication task. 
+But it is unclear whether, or how, adults spontaneously provide such input over the course of unmediated parent-child conversations, and whether such input actually enables the formation of conversational pacts (rather than generically increasing informativeness).
+
+One possibility is that parents naturally adopt some of the interactive strategies developed by experimenters in these training studies: pointing out when references are insufficiently informative, asking for clarification about targeted features, and helping children to re-conceptualize referential targets within the expressiveness of their developing vocabulary [@clark2018conversation; @nikolaus2022communicative].
+In our first experiment, we asked parents and their 4-, 6-, and 8-year-old children, as well as control pairs of adults, to play an adapted version of Krauss and Glucksberg's [-@krauss1969] director-matcher game. 
+We examined (1) whether parents' contributions enable conversational pacts to form at all, (2) what strategies parents use to scaffold pact formation if so, and (3) whether the nature of these pacts changes over development as children become more adult-like users of language.
+
+
+```{r color-constants}
+CHILD_SCALE <- c("#9ecae1", "#4292c6", "#08519c")
+COLLAPSED_SCALE <-c('#525252', '#737373','#969696')
+ADULTS <- "black"
+PARENTS <- "#fe9929"
+
+```
+
+```{r load-data}
+kuperman_aoas <- read_csv(here("data/corpus_data/kuperman_aoas.csv"),
+                          show_col_types = FALSE)
+combined_data <- read_csv(here("data/experiment1/combined.csv"),
+                          show_col_type = FALSE) 
+exchanges_data <- read_csv(here("data/experiment1/exchanges.csv"),
+                           show_col_types = FALSE) 
+```
+
+
+```{r ipads, fig.pos = "t", fig.width = 8, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "(A) Parents (orange) and children (blue) played a repeated reference game with a set of 10 tangram images. To measure the respective contributions of parents and children to the pacts that were eventually established, we ensured that half of the images were described first by the parent, and half of the images were described first by the child. (B) Two of these figures were presented as the context on each trial. One was the target and the other was the foil. The director (here, the parent) was asked to refer to the target (privately highlighted in a box) so that the matcher (here, the child) could distinguish it from the foil. (C) Each tangram appeared as the target once per block, and each dyad played the game for four blocks. Parents and children alternated roles on each trial."}
+knitr::include_graphics("diagrams/design.pdf")
+```
+
+```{r acc-exchange-setup, cache = T}
+d.accuracy.raw <- combined_data %>%
+  ungroup() %>%
+  mutate(age = as.character(age),
+         age = if_else(is.na(age), 'adult', age)) %>%
+  mutate(director = case_when(person == "parent" & role == "matcher" ~ "child",
+                              person == "child" & role == "director" ~ "child",
+                              T ~ "adult"),
+         person = if_else(person %in% c('left', 'right', 'parent'), 
+                         'adult', person)) %>%
+  group_by(subid, director, trial, age, target, rep_num) %>%
+  summarize(correct = mean(correct)) %>% # make sure each trial is only counted once
+  ungroup()
+
+# Bootstrap error bars 
+result.acc.means <- d.accuracy.raw %>%
+  group_by(director, age, rep_num) %>%
+  tidyboot_mean(correct)
+
+lmer.accuracy <- d.accuracy.raw %>%
+  filter(age != "adult") %>%
+  mutate(age = as.numeric(age)) %>%
+  glmer(correct ~ age + director + rep_num + (rep_num | subid) + (1 | target), 
+                            family = 'binomial', 
+         control = glmerControl(optimizer = "bobyqa"), data = .) %>%
+  tidy()
+
+age_effect_acc <- lmer.accuracy %>% filter(term == 'age')
+rep_effect_acc <- lmer.accuracy %>% filter(term == 'rep_num')
+director_effect_acc <- lmer.accuracy %>% filter(term == 'directorchild')
+
+d.exchanges.raw <- exchanges_data %>%
+  mutate(age = as.character(age),
+         age = if_else(is.na(age), 'adult', age),
+         director = case_when(person == "parent" & role == "matcher" ~ "child",
+                              person == "child" & role == "director" ~ "child",
+                              T ~ "adult")) %>%
+  group_by(director, person, subid, trial, age, target, rep_num) %>%
+  summarize(num_exchanges = n()) %>% 
+  ungroup()
+
+d.exchanges.mean <- d.exchanges.raw %>%
+  group_by(director, age, rep_num) %>%
+  tidyboot_mean(num_exchanges)
+
+# Bootstrap error bars and plot
+lmer.exchanges <- d.exchanges.raw %>% 
+  filter(age != 'adult') %>%
+  mutate(age = as.numeric(age)) %>%
+  glmer(num_exchanges ~ age + rep_num +  (1 + rep_num | subid) + (1 + rep_num | target), 
+       control = glmerControl(optimizer = "bobyqa"), data = ., family = 'poisson') %>%
+  tidy()
+
+age_effect_exchanges = lmer.exchanges %>% filter(term == 'age')
+rep_effect_exchanges = lmer.exchanges %>% filter(term == 'rep_num')
+```
+
+```{r acc-exchanges, eval = TRUE, cache= FALSE, fig.width=8, fig.pos = "t", fig.align = "center", fig.cap = "(A) Accuracy and (B) number of dialogue exchanges per trial, broken down by whether the child (blue) or the adult (orange) was the director. Error bars are 95\\% CIs."}
+
+acc_labels = tibble(rep_num = c(2.75, 2.75, 2.75), 
+                    empirical_stat = c(.85, .8, .95), 
+                    director = c("parent", "child", "adult"), 
+                    lab = c('parent director', 'child director', 'adult director'), 
+                    age = c("6", "6", "adult"))
+# render plot
+plt.results.acc <- result.acc.means %>% 
+  mutate(director = ifelse(director == 'adult' & age != 'adult', 'parent', director)) %>%
+  ggplot(aes(x = rep_num, y = empirical_stat * 100,  
+             group = director, color = director)) +
+  geom_line(position = position_dodge(.25)) +
+  geom_errorbar(aes(ymin = ci_lower * 100, ymax = ci_upper * 100),
+                width = 0.05, position = position_dodge(.25)) +
+  geom_text(aes(label = lab), data = acc_labels)+
+  facet_grid(. ~ age) +
+  ylab("% accuracy") +
+  xlab("repetition #") +
+  ylim(70, 100) +
+  theme(aspect.ratio = 1, legend.position = "none") +
+  scale_color_manual(values = c(ADULTS, CHILD_SCALE[2], PARENTS)) +
+  labs(tag = 'A')
+  # geom_dl(method = list(dl.trans(x = x - .2), "first.qp", cex=.8))
+
+exchange_labels = tibble(rep_num = c(2.75, 2.75, 2.75), 
+                    empirical_stat = c(2, 1.75, 1.5), 
+                    director = c("parent", "child", "adult"), 
+                    lab = c('parent director', 'child director', 'adult director'), 
+                    age = c("6", "6", "adult"))
+
+# Bootstrap error bars and render plot
+plt.results.exchanges <- d.exchanges.mean %>%
+  mutate(director = ifelse(director == 'adult' & age != 'adult', 'parent', director)) %>%
+  ggplot(aes(x = rep_num, y = empirical_stat, color = director, 
+             group = director)) +
+  geom_line(position = position_dodge(.25)) +
+  geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0,
+                position = position_dodge(.25)) +
+  geom_text(aes(label = lab), data = exchange_labels)+
+  ylab("# exchanges") +
+  facet_grid(. ~ age) + 
+  xlab("repetition #") +
+  theme(aspect.ratio = 1 , legend.position = "none") +
+  scale_color_manual(values = c(ADULTS, CHILD_SCALE[2], PARENTS)) +
+  labs(tag = 'B') #+
+  #scale_x_continuous(limits = c(-0.25, 4.25), breaks = 1:4)
+
+library(patchwork)
+plt.results.acc / plt.results.exchanges
+```
+
+## Method
+
+### Participants
+
+Children (ages 4, 6, and 8) and their parents were recruited from a database of families in the local community to achieve a planned sample of 60 parent-child pairs (20 per age group). This sample size was chosen based on logistical feasibility of in-person recruitment, and is comparable to other recent studies of parent-child interaction [e.g. @leung2021]. 
+A total of 75 children and their parents participated. 
+Data from 12 pairs were dropped due to failure to complete the study, leaving a final sample of 63 pairs. There were 24 four-year-olds, 20 six-year-olds, and 19 eight-year-olds, along with their parents, in our sample.
+Of the included pairs, 31 of these children were female (49\%) and 32 were male (51\%).
+Of the 60 participants who responded to our demographic questionnaire about race, 33 children were white (52\%), 14 were Black or African American (22\%), 2 were Asian (3\%) and 11 were multiracial (17\%). 
+For a comparison group, a convenience sample of adult participants were also recruited from a Psychology Department subject pool to achieve a planned control group size of 20 adult-adult pairs.
+
+### Stimuli 
+
+Twelve solid black images of tangrams were normed for pairwise similarity by an independent group of 60 participants on Amazon Mechanical Turk. Each of these participants made 22 pairwise similarity judgments on a scale from 1-100. Based on these similarity ratings ($M$ = 42.3, $SD$ = 26.1), the ten tangrams with the highest overall dissimilarity were selected for use as stimuli (Figure \ref{fig:ipads}A).
+To ensure that the game would not be too difficult, we designed contexts such that the foil was never too similar to the target. To do so, we rank-ordered all tangram pairs from least to most similar and chose foils to minimize similarity while ensuring that each image appeared as a foil 4 times. 
+
+### Design and procedure
+
+Pairs of participants were brought into the lab to play a cooperative director-matcher game. Adult participants and parents provided written consent and children provided verbal consent prior to beginning the game. Parent-child pairs were compensated \$10 and a small toy or book for their time. Adult participants received \$5 each or course credit for their participation. They were seated in front of iPads at opposite ends of a table, with a divider preventing them from seeing the other's screen. This divider did not fully occlude participants; This divider did not fully occlude participants; they could still see their partner's face, although they were explicitly instructed to use words only and we did not observe participants relying heavily on gestural or facial cues in practice. 
+
+Participants were told that they would take turns playing *director* and *matcher* roles. On each trial, exactly two tangrams appeared on their screens. One of these tangrams was the target, and the other was the foil. Pairs were told that the director's task was to describe the *target* image, privately indicated by a blue border, and the matcher's task was to select one of the two images on their screen based on the director's description (Figure \ref{fig:ipads}B). Participants were aware that both screens showed the same two images, but possibly in different locations (left or right is randomized) on the screen. Before beginning the experiment, participants played six practice trials with images of common fruits and vegetables. There were no time limits for trials, and participants were not given specific instructions on what they can or cannot say. To prevent matchers from selecting a target too early, touches were disabled for 1500ms on each trial. 
+
+The experiment consisted of four repetition blocks of ten trials each (Figure \ref{fig:ipads}C). Each tangram was the target once per block. We constructed the trial sequence to ensure that participants both alternated roles from trial to trial and alternated roles for each *target* from block to block. For each participant pair, we randomly divided the tangrams into two sets of five: the adult was assigned one set to describe on the first block, and the child was assigned the other set. These sets were interleaved on the first block, such that players alternated roles. On each subsequent block, these sets were swapped such that each tangram was described by each participant exactly twice over the course of the experiment. 
+
+On each trial, the target tangram appeared with exactly one foil selected from the set of nine other tangrams.
+Targets appeared with a different foil on different repetition blocks. To ensure that the game would not be too difficult for young children, tangrams most similar to the target (based on similarity norms) did not appear in the same context. To discourage participants from using spatial language (e.g. "left side"), the target and foil were shown in randomized order across the two iPads. When the matcher selected an image, it became colorful and a pleasant sound played. Importantly, neither the matcher nor director received explicit feedback about accuracy: the same sound played whether the selection was correct or not.
+
+### Pre-processing
+
+Sessions were videotaped and subsequently transcribed using Datavyu [-@datavyu-team2014], an open source coding program. 
+Each video was transcribed by one researcher and checked by a different researcher. 
+Checking involved watching the video alongside the transcript and correcting any typos or errors in transcription. 
+Utterances were manually coded as part of a given trial or unrelated to the game (e.g. "sit down please"), and unrelated utterances were removed before analysis.
+For the purposes of analyzing turn-turning, a conversational turn was defined by a clear end to speech by the speaker. 
+Some conversational turns do not constitute full sentences, in cases where the partner interrupts. 
+Transcribers were instructed that backchannels (e.g. yes, mmhm, I see) should not count as interruptions, unless it led the speaker to stop talking. 
+If the speaker continues speaking without pause, then the utterance is transcribed as a single conversational turn.
+
+```{r reduction-setup, cache = TRUE}
+d.reduction.raw <- exchanges_data %>%
+  mutate(age = ifelse(is.na(age), 'adult', age),
+         num_words =  str_count(utterance, " ") +1) %>%
+  filter(role == 'director') %>%
+  mutate(person = ifelse(person %in% c('left', 'right', 'parent'), 'adult', person)) %>%
+  group_by(age, rep_num, person, target, subid, trial) %>%
+  summarize(num_exchanges = n(),
+            num_words = sum(num_words)) %>%
+  ungroup() 
+
+d.reduction.means <- d.reduction.raw %>% 
+  group_by(age, rep_num, person) %>%
+  tidyboot_mean(num_words) %>%
+  mutate(plot_person = case_when(age == "adult" ~ "adult",
+                                 person == "adult" ~ "parent",
+                                 T ~ "child"))
+```
+
+## Results
+
+We characterized developmental differences using three measures of communicative behavior. First, we examined accuracy to evaluate whether children were able to succeed at the reference game in collaboration with their parents. Second, we examined conversational turn-taking behavior to evaluate how interactive dialogue may contribute to success. Third, we examined the number of words produced by each partner on each turn to evaluate the efficiency of pacts.
+
+### Performance accuracy
+
+We began by analyzing task performance across age groups. Because pairs of adults were consistently at ceiling throughout the task, we focused on the performance of parent-child pairs. We constructed a mixed-effects logistic regression predicting whether the matcher successfully chose the correct referent on each trial. The model included fixed effects whether the parent or child was the director, (numeric) age, and repetition block. It also included random intercepts for each tangram and pair of participants, and random effects of repetition block and director for each pair of participants (see Table \ref{tab:accuracy}).
+
+Initial accuracy was well above chance for all age groups, the lowest being 83\% correct (confidence interval: [76\%, 90\%]) for 4-year-old directors, indicating that even young children can succeed in this referential task with their parents. We also found a significant main effect of age ($\beta$ = `r age_effect_acc$estimate`, $t$ = `r age_effect_acc$statistic`; $p=$ `r papaja::printp(age_effect_acc$p.value)`): Pairs with younger children performed significantly worse than pairs with older children. Critically, however, accuracy improved significantly over the four repetition blocks for all groups ($\beta$ = `r rep_effect_acc$estimate`, $t$ = `r rep_effect_acc$statistic`, $p$ `r papaja::printp(rep_effect_acc$p.value, add_equals = TRUE)`; Figure \ref{fig:acc-exchanges}A). 
+Intriguingly, accuracy was also slightly lower when children were the directors ($\beta$ = `r director_effect_acc$estimate`, $t$ = `r director_effect_acc$statistic`; $p=$ `r papaja::printp(director_effect_acc$p.value)`), suggesting a potential asymmetry in performance across roles.
+
+### Interactive dialogue exchanges
+
+If the ability of children of different ages to successfully establish reference depends on interactive scaffolding provided by their parents, we would expect additional dialogue exchanges for younger children. 
+We quantified dialogue exchanges by counting the total number of distinct turns of continuous speech on each trial and constructed a (Poisson) mixed-effects model predicting the (continuous) number of exchanges with the same effect structure reported in the previous section (see Table \ref{tab:exchanges}).
+Consistent with previous work [@clark1986], and replicated in our adult-adult control condition, we found a significant main effect of repetition: Fewer dialogue turns were required on later trials ($\beta$ = `r rep_effect_exchanges$estimate`, $t$ = `r rep_effect_exchanges$statistic`; $p=$ `r papaja::printp(rep_effect_exchanges$p.value)`). In line with our predictions, we also found a significant main effect of age ($\beta$ = `r age_effect_exchanges$estimate`, $t$ = `r age_effect_exchanges$statistic`; $p$ `r papaja::printp(age_effect_exchanges$p.value)`). Pairs with 4-year-old children took roughly one additional turn at each point in the experiment than pairs with older children, who more closely resembled pairs of adults (Figure \ref{fig:acc-exchanges}B). 
+The increased levels of interactivity between parents and young children provides an interesting contrast with previous studies showing lower interactivity between peer dyads of young children interacting without parental scaffolding [@anderson1994, see Appendix A for a preliminary analysis of the content of these exchanges].
+
+### Reduction in length of referential expression
+
+```{r exchange-reduction}
+word_exchange_cor = round(cor(d.reduction.raw$num_exchanges, d.reduction.raw$num_words),2)
+
+d.reduction.centered <- d.reduction.raw %>% 
+  filter(age != 'adult') %>% 
+  group_by(subid, person) %>%
+  rowwise() %>%
+  mutate(age = as.numeric(age) - 6,  
+         rep_num = as.numeric(rep_num) - 2.5)
+
+lmer.reduction.controlled <- d.reduction.centered %>% 
+  glmer(num_words ~ person * age * rep_num + 
+                    (1 + person * rep_num | subid) +
+                    (1 + rep_num | target), 
+       data = ., 
+       family = 'poisson', 
+       contrasts = list(person = contr.sum), 
+       control = glmerControl('bobyqa')) %>%
+  tidy() %>%
+  filter(effect == 'fixed')
+
+lmer.reduction.adults <- d.reduction.raw %>%  
+  filter(age == 'adult') %>%
+  mutate(rep_num = as.numeric(rep_num) - 2.5) %>%
+  lmer(log(num_words) ~ rep_num + (rep_num | subid) + (1 | target), 
+       data = ., 
+       control = lmerControl('bobyqa')) %>%
+  tidy() %>%
+  filter(effect == 'fixed')
+
+adult_age_effect <- lmer.reduction.adults %>% filter(term == 'rep_num')
+```
+
+```{r effects}
+age_effect_reduction = lmer.reduction.controlled %>% filter(term == 'age')
+age_effect_reduction_pvalue <- round(age_effect_reduction$p.value, 3)
+age_effect_reduction_pvalue <- ifelse(age_effect_reduction_pvalue < 0.001, 
+                               '< 0.001', paste0(c('=', age_effect_reduction_pvalue), collapse = ' '))
+
+rep_effect_reduction = lmer.reduction.controlled %>% filter(term == 'rep_num')
+rep_effect_reduction_pvalue <- round(rep_effect_reduction$p.value, 3)
+rep_effect_reduction_pvalue <- ifelse(rep_effect_reduction_pvalue < 0.001, 
+                               '< 0.001', paste0(c('=', rep_effect_reduction_pvalue), collapse = ' '))
+
+person_effect_reduction = lmer.reduction.controlled %>% filter(term == 'person1')
+person_effect_reduction_pvalue <- round(person_effect_reduction$p.value, 3)
+person_effect_reduction_pvalue <- ifelse(person_effect_reduction_pvalue < 0.001, 
+                               '< 0.001', paste0(c('=', person_effect_reduction_pvalue), collapse = ' '))
+
+person_age_interaction_reduction = lmer.reduction.controlled %>% filter(term == 'person1:age')
+person_age_interaction_reduction_pvalue <- round(person_age_interaction_reduction$p.value, 3)
+person_age_interaction_reduction_pvalue <- ifelse(person_age_interaction_reduction_pvalue < 0.001, 
+                               '< 0.001', paste0(c('=', person_age_interaction_reduction_pvalue), collapse = ' '))
+
+person_rep_interaction_reduction = lmer.reduction.controlled %>% filter(term == 'person1:rep_num')
+person_rep_interaction_reduction_pvalue <- round(person_rep_interaction_reduction$p.value, 3)
+person_rep_interaction_reduction_pvalue <- ifelse(person_rep_interaction_reduction_pvalue < 0.001, 
+                                                  '< 0.001', paste0(c('= ', person_rep_interaction_reduction_pvalue), collapse = ' '))
+
+age_rep_interaction_reduction = lmer.reduction.controlled %>% filter(term == 'age:rep_num')
+age_rep_interaction_reduction_pvalue = round(age_rep_interaction_reduction$p.value, 3)
+age_rep_interaction_reduction_pvalue <- ifelse(age_rep_interaction_reduction_pvalue < 0.001, 
+                                                  '< 0.001', paste0(c('= ', age_rep_interaction_reduction_pvalue), collapse = ' '))
+
+person_age_rep_interaction_reduction = lmer.reduction.controlled %>% filter(term == 'person1:age:rep_num')
+person_age_rep_interaction_reduction_pvalue = round(person_age_rep_interaction_reduction$p.value, 3)
+person_age_rep_interaction_reduction_pvalue <- ifelse(person_age_rep_interaction_reduction_pvalue < 0.001, 
+                                                  '< 0.001', paste0(c('= ', person_age_rep_interaction_reduction_pvalue), collapse = ' '))
+```
+
+```{r reduction, cache=T, fig.pos = "t", fig.width=7, fig.height=3, fig.align = "center", set.cap.width=T, num.cols.cap=2, fig.cap = "Total number of words in referential expressions produced by children and parents over the course of interaction."}
+
+reduction_labels = tibble(rep_num = c(3.5, 3.5, 2), 
+                          empirical_stat = c(20, 8.5, 13.5), 
+                          person = c("parent", "child", "adult"), 
+                          plot_person = c("parent", "child", "adult"),
+                          age = c("4", "4", "adult"))
+
+d.reduction.means %>%
+  ggplot(aes(x = rep_num, y = empirical_stat, 
+             group = person, color = plot_person, label = plot_person)) +
+  geom_line(position = position_dodge(.25)) +
+  facet_grid(. ~ age) + 
+  geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0,
+                position = position_dodge(.25)) +
+  geom_text(data = reduction_labels)+
+  theme_few() +
+  theme(aspect.ratio = 1, legend.position = "none") +
+  ylab("# words per exchange") +
+  xlab("repetition #") +
+  scale_color_manual(values = c(ADULTS, CHILD_SCALE[2], PARENTS))
+
+```
+
+A key signature of successful communication among adults is an increase in efficiency over repeated reference [@clark1986]. As pairs form conceptual pacts, they are able to communicate the same meaning using fewer words. Our control sample of adults replicated this classic effect ($\beta=$ `r adult_age_effect$estimate`, $t=$ `r adult_age_effect$statistic`, $p$ `r papaja::printp(adult_age_effect$p.value)`). Here, we asked whether parents and children of different ages spontaneously reduce their referential expressions in the same way. We define efficiency as the sum total of all words produced by the *director* on a given trial, up until a selection is made by the matcher. Note that the total number of words produced on a trial is correlated with the number of dialogue exchanges examined above ($r=$ `r word_exchange_cor`). 
+
+Using a mixed-effects model with a Poisson linking function to account for count data, we predicted the number of words used by the director on each trial, including fixed effects of age, repetition block, and director identity (parent vs. child) as well as all of their interactions. We also included random intercepts and slopes for repetition block at the tangram-level and maximal random structure at the dyad-level [i.e. intercept, slopes for repetition block and director identity, and their interaction, @BarrLevyScheepersTily13_KeepItMaximal, see Table \ref{tab:reduction}].
+All variables were centered to allow interpretation of lower-order terms as effects at the average level of the other terms. We found significant main effects of repetition block ($\beta=$ `r rep_effect_reduction$estimate`, $t=$ `r rep_effect_reduction$statistic`, $p$ `r rep_effect_reduction_pvalue`), director identity ($\beta=$ `r person_effect_reduction$estimate`, $t=$ `r person_effect_reduction$statistic`, $p$ `r person_effect_reduction_pvalue`), and age ($\beta=$ `r age_effect_reduction$estimate`, $t=$ `r age_effect_reduction$statistic`, $p$ `r age_effect_reduction_pvalue`). All else being equal, directors used fewer words over subsequent repetitions, children used fewer words than their parents, and pairs with older children used fewer words than pairs with younger children. However, these main effects were clarified by several pairwise interactions.
+First, while parents on average used more words as director than their children did, we found a significant interaction with the child's age ($\beta =$ `r person_age_interaction_reduction$estimate`, $t =$ `r person_age_interaction_reduction$statistic`, $p$ `r  person_age_interaction_reduction_pvalue`). This gap between parent and child utterance length was largest at age 4 but nearly disappeared by age 8. Second, we found that parents reduced their utterance length over time more strongly than children did, holding age group constant ($\beta =$ `r person_rep_interaction_reduction$estimate`, $t=$ `r person_rep_interaction_reduction$statistic`, $p$ `r person_rep_interaction_reduction_pvalue`). Third, we found a main effect of the age group, with older children supporting stronger reduction overall, ($\beta=$ `r age_rep_interaction_reduction$estimate`, $t=$ `r age_rep_interaction_reduction$statistic`, $p$ `r age_rep_interaction_reduction_pvalue`). 
+<!-- An intriguing final question is whether the *rate of reduction* changes over the course of development: are 4-year-olds able to become more efficient as common ground is built in the same way 8-year-olds do? Because parents of different age groups display roughly similar slopes of reduction, this question is addressed by a 3-way interaction between age group, repetition block, and director identity. We found that this interaction was not significant ($\beta=$ `r person_age_rep_interaction_reduction$estimate`, $t=$ `r person_age_rep_interaction_reduction$statistic`, $p$ `r person_age_rep_interaction_reduction_pvalue`), although our sample was likely underpowered to detect this higher-order interaction.  -->
+
+```{r matches}
+matches <- read_csv(here("data/experiment1/word_matches.csv"),
+                    show_col_types = FALSE) %>% 
+  filter(later_rep == 4) %>%
+  spread(earlier_rep, match) %>%
+  mutate(first_appearance = case_when(`1` ~ '1', 
+                                      `2` ~ '2', 
+                                      `3` ~ '3', 
+                                      TRUE ~ 'never'),
+         total = length(first_appearance),
+         director = final_round_person,
+         matcher = case_when(final_round_person == 'left' ~ 'right',
+                             final_round_person == 'right' ~ 'left',
+                             final_round_person == 'parent' ~ 'child',
+                             final_round_person == 'child' ~ 'parent')) %>%
+  filter(first_appearance != 'never') %>%
+  mutate(introduced_by = ifelse(first_appearance %in% c('2'), 
+                                director, matcher),
+         #introduced_by_parent = introduced_by == 'parent',
+         introduced_on_first_round = first_appearance %in% c('1'),
+         introduced_by_self = introduced_by == director,
+         introduced_by_other = introduced_by != director,
+          director = ifelse(director %in% c('left', 'right'), 
+                            'adult', director),
+         age = ifelse(is.na(age), 'adult-adult', age))
+
+mean_matches <- matches %>%
+  group_by(age, director) %>%
+  tidyboot_mean(introduced_by_other)
+```
+
+
+```{r origins, fig.pos = "t", fig.width=6, fig.height=3.5, fig.align = "center", fig.cap = "Probability of words used on final round first occuring with child or parent. Error bars are 95\\% CI."}
+mean_matches %>%
+  #tally() %>%
+  ggplot(aes(x = as.numeric(as.factor(age)), y = empirical_stat, 
+             group = director, color = director, label = director)) +
+    geom_line( position = position_dodge(.25)) +
+    geom_point(position = position_dodge(.25)) +
+    geom_hline(yintercept = .5, linetype = "dashed") +
+    geom_errorbar(aes(ymin = ci_lower, ymax = ci_upper), width = 0,
+                  position = position_dodge(.25)) +
+    theme(legend.position="top") +
+    ylab('% words introduced by partner') +
+    scale_x_continuous(name = "age group", limits = c(.25, 4.25),
+                       breaks = 1:4, labels = c("4", "6", "8", "adult")) +
+    theme(aspect.ratio = 1, legend.position = "none") +
+    guides(color=guide_legend(title="Director")) +
+    scale_color_manual(values = c(ADULTS, CHILD_SCALE[2], PARENTS)) +
+    geom_dl(method = list(dl.trans(x = x - .15), "first.points", cex=.8))
+```
+
+### Who introduces pacts and who adopts them?
+
+Our results so far demonstrate that children are able to converge on increasingly accurate and efficient pacts with their parents. 
+What might allow children to coordinate with their parents but not with their peers [@krauss1977]? 
+A classical explanation is that children are rigid and lack the ability to *adapt* to their partner: they have a strong preference for a particular idiosyncratic description and are not sensitive to the possibility that their partner may not understand it (e.g. "this one looks like mommy's dress"). 
+Under this hypothesis, children fail with other children because they each stubbornly continue to use mutually incomprehensible expressions, and only succeed with their parent as a result of the parent's flexibility.
+Another possibility is that young children may be able to adapt successfully but are simply unable to generate good enough initial candidate labels to get the process off the ground. 
+In this case, pairs of children may fail because neither partner can generate good enough labels to start the pact-formation process, while children and parents succeed because parents seed the first good candidate label. 
+Each of these accounts make different predictions about who is adapting to who: do pacts originate with children, or with adults? 
+
+```{r match-model, cache = TRUE}
+match.model <- matches %>% 
+  filter(experiment == 'adult-child') %>% 
+  mutate(age = as.numeric(age) - 6) %>%
+  glmer(introduced_by_other ~ age * director + (1 | target) +  (1 | subid), 
+        contrasts = list(director = contr.sum),
+        data = .,
+        control=glmerControl('bobyqa'),
+        family = 'binomial') %>%
+  tidy()
+
+speaker_effect <- match.model %>% filter(term == 'director1')
+match.interaction_effect <- match.model %>% filter(term == 'age:director1')
+```
+
+We distinguish these accounts by quantitatively analyzing the natural-language transcripts. 
+For each word in the final description of a tangram, we checked whether it had appeared in an earlier referential expression for that tangram. We noted the first trial where it appeared, and who was director when it was produced^[To match different forms of the same word (e.g. "jumping" vs. "jumped") we first lemmatized each word. We also filtered out stop words ("the", "with"), as well as common words that were not part of the pacts ("person", "box"), and excluded words that appeared for the first time on the final repetition of each target.]. The proportion of words originating with the child and parent is shown in Figure \ref{fig:origins}. We observed an asymmetry: the words used by children on the final repetition were more likely to have originated with their parents than the words used by parents were to originate with their children. In addition, this gap appeared to close with older groups, with parents more likely to adopt words introduced by older children.
+
+We tested this hypothesized interaction using a mixed-effects logistic model predicting whether each word appearing on the final repetition for each tangram was introduced by the current director or by their partner. We included fixed effects of age group and the director identity (parent or child), as well as random intercepts for each pair of participants and each tangram (see Table \ref{tab:match}). 
+We found a significant main effect of director identity, with the words used by children more likely to originate with their partner than the words used by parents, ($\beta=$ `r speaker_effect$estimate`, $t=$ `r speaker_effect$statistic`, `r papaja::printp(speaker_effect$p.value)`).
+Additionally, we found a weak but significant interaction between director and age, indicating that this asymmetry was smaller for older children ($\beta=$ `r match.interaction_effect$estimate`, $t=$ `r match.interaction_effect$statistic`, $p=$ `r papaja::printp(match.interaction_effect$p.value)`). Thus, parents---especially parents of younger children---appear to be the source of the labels that persist in successful conceptual pacts.
+
+## Summary and discussion
+
+In Experiment 1, we adapted the classic tangram director-matcher paradigm developed by @clark1986 to examine conversational pact formation among parent-child dyads. 
+We found that even 4-year-old children and their parents can successfully coordinate on pacts, but for these youngest children, parents adaptively provide multiple sources of support and scaffolding. 
+Even 4-year-old children readily adopted labels introduced by their parents and interactively refined their descriptions in response to spontaneous parent-initiated scaffolding (see Appendix B for further analysis of how children may constrain pacts).
+Overall, 4- to 8-year-old children and their parents exhibited patterns similar to adult pairs in terms of reduction in length of referring expressions and exchange turns.
+
+Importantly, we observed successful pact formation even in the absence of explicit task feedback: the same sounds played whether or not the matcher's selection was correct. 
+We expect that adding explicit (serial) feedback would help facilitate pact formation [@fishbein1971effects]. 
+It is also possible that the neutral sound was mistakenly interpreted by participants as positive feedback, leading to confusion.
+However, the fact that parent-child pairs were so successful under these conditions, as accuracy continued to improve, suggests that children and parents were largely able to rely on self-initiated communicative feedback to form pacts. 

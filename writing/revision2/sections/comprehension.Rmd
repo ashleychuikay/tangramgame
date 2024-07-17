@@ -1,0 +1,247 @@
+# Experiment 2: Comprehension
+
+If parental scaffolding is able to overcome the communicative challenges faced by young children, then what, exactly, could those challenges be?
+Children as young as 3 years old are able to effectively track and maintain existing pacts [@matthews2010; @graham2014], hence we suggest that the difficulties, in practice, may lie in the *initial establishment* of pacts. 
+One possible difficulty is that children's poor comprehension abilities may prevent pacts from getting off the ground.
+That is, young children may be unable to understand or accommodate their partner's initial description of a novel tangram when it does not align with their own way of conceptualizing that tangram, preventing its uptake as a pact. 
+In this case, parent-child dyads' communicative success in our reference game may be due to parents' ability to align to their children's idiosyncratic point of view and adapt their referring expressions accordingly. 
+A second possible difficulty may stem from children's production-side abilities. 
+In other words, children may have difficulty generating sufficiently descriptive referring expressions on their own, given their limited vocabulary and other processing constraints, but are able to recognize a good description when they hear it, and adopt that description as a pact going forward. 
+
+In Experiment 2, we explicitly tested the first of these two hypotheses. 
+Although there is already a large body of work demonstrating that children are able to accurately interpret referring expressions by the age of four [@nadig2002evidence; @nilsen2009relations; @brandt2016german; @morisseau20133; @davies2021three], our task in Experiment 1 may have posed additional challenges.
+The images may have been more abstract or unfamiliar, and the referring expressions may have been more complex than prior comprehension studies.
+Here we validate what is known from the existing literature on early referring expression comprehension by providing the exact descriptions produced by participants in Experiment 1 to naive groups of children and adults, in the exact same referential contexts. 
+If comprehension is the root of children's difficulty, we might expect that naive children as comprehenders would be equally unable to interpret all referring expressions (regardless of whether they were originally produced by adults or children) while naive adults as comprehenders would have no difficulty. 
+Conversely, if naive children are able to understand the referring expressions produced by adults as well as adults are, then we may expect the source of the difficulty to lie elsewhere.
+
+```{r load-original-games}
+# Load meta-data (e.g. age) for the stimuli
+database_ids <- read_csv(here("data/experiment2/databaseid.csv"), show_col_types = FALSE) %>%
+  rename(gameid = subid) %>%
+  select(gameid, age)
+```
+
+```{r load-comprehension-data}
+raw_adult_data <- read_csv(here("data/experiment2/comprehension_adults.csv"),
+                           show_col_types = FALSE) %>%
+  select(-age) %>%
+  filter(!audioid %in% c("67_08", "67_08_b"))
+
+check_correct <- raw_adult_data %>%
+  filter(occurrence == "check") %>%
+  mutate(check_correct = correct) %>%
+  select(subid, check_correct)
+
+passed_check <- check_correct %>%
+  group_by(check_correct) %>%
+  count() %>%
+  pivot_wider(names_from = check_correct, values_from = n) %>%
+  clean_names()
+
+tidy_turk_data <- raw_adult_data %>%
+  left_join(check_correct, by = c("subid")) %>%
+  filter(check_correct, occurrence != "check") %>%
+  separate(audioid, into = c("gameid", "gametrial"), sep = "_", remove = F) %>%
+  mutate(gameid = as.numeric(gameid),
+         gametrial = as.numeric(gametrial)) %>%
+  left_join(database_ids, by = ("gameid")) %>%
+  mutate(log_rt = log(reactiontime)) %>%
+  pivot_longer(cols = c(correct, reactiontime, log_rt), names_to = "measure") %>%
+  mutate(comprehender_group = 'adult',
+         occurrence = as.numeric(occurrence))
+```
+
+
+```{r load-kid-data}
+# Note: We started with raw, de-anonymized data (comprehension_kids.csv). 
+# We have preserved this pipeline for reproducibility but only release 
+# the anonymized data (comprehension_kids_tidy.csv).
+# kid data
+# 
+# raw_kid_stims <- read_csv(here("data/experiment2/random_stims.csv"),
+#                   show_col_types = FALSE) %>%
+#   select(-c(correct, trial, rightpic, leftpic))
+# 
+# raw_kid_data <- read_csv(here("data/experiment2/comprehension_kids.csv"), show_col_types = FALSE) %>%
+#   filter(!is.na(id)) %>%
+#   left_join(raw_kid_stims, by = c("id" = "subject", "target")) %>%
+#   rename(audioid = audio,
+#          trialnum = trial,
+#          p_age = age) %>%
+#   mutate(correct = correct=="Y") %>%
+#   filter(!audioid %in% c("67_08", "67_08_b"))
+# 
+# tidy_kid_data <- raw_kid_data %>%
+#   separate(audioid, into = c("gameid", "gametrial"), sep = "_", remove = F) %>%
+#   mutate(gameid = as.numeric(gameid),
+#          trial = as.numeric(gametrial)) %>%
+#   left_join(database_ids, by = ("gameid")) %>%
+#   mutate(log_rt = log(rt)) %>%
+#   filter(rt < 10000) %>%
+#   pivot_longer(cols = c(correct, rt, log_rt), names_to = "measure")
+#   
+# write_csv(tidy_kid_data, here('data/experiment2/comprehension_kids_tidy.csv'))
+
+tidy_kid_data <- read_csv(here("data/experiment2/comprehension_kids_tidy.csv"), show_col_types = FALSE) %>%
+  select(-subid) %>%
+  mutate(subid = as.character(id),
+         gametrial = as.numeric(gametrial),
+         comprehender_group = 'kid')
+```
+
+```{r import-stims}
+get_stims <- function(data) {
+  data %>%
+    unite(audioid, gametrial, gameid) %>% group_by(person) %>% 
+    summarize(l = length(unique(audioid))) %>% 
+    pivot_wider(names_from = person, values_from = l)
+    return()
+}
+
+adult_stims <- get_stims(tidy_turk_data)
+kid_stims <- get_stims(tidy_kid_data)
+```
+
+## Methods
+
+### Participants
+
+We recruited `r passed_check$false + passed_check$true` adults from Amazon Mechanical Turk. Participants were compensated 30¢ for a short task. Data from `r passed_check$false` participants were dropped due to failure to pass an attention check, leaving a final sample of `r passed_check$true` adults. 
+Additionally, we planned to recruited a sample of 200 children (ages 4 to 8) from a school and a museum in the Chicago area, with the relatively large sample size based on the classroom sizes of the local school. 
+However, due to the COVID-19 pandemic, we were forced to terminate data collection early with only `r length(unique(tidy_kid_data$id))` children skewed toward the older end of the age range (16 children between four and six, 34 children age seven, and 29 children age eight).
+Children received a sticker for their participation.
+We were not able to obtain further demographic information for these participants. 
+Our partner classrooms have not yet allowed the resumption of data collection at time of submission, so we decided to move forward with our existing smaller-than-planned sample.
+
+### Stimuli
+
+To conceal the identity of the original speaker, the first author and four research assistants produced new audio recordings by reading the Experiment 1 transcripts in a uniform vocal style. All recordings were by female native English speakers.
+We drew utterances from the first and fourth (final) round of the reference game.
+We removed disfluencies and isolated the speaker's original referring expression on each trial (i.e., we excluded additional information provided in response to the listener's questions or prompting).
+This process produced `r adult_stims$parent + adult_stims$child` unique audio stimuli, two for each item of each game from Experiment 1. 
+These stimuli were broken into 118 unique 'item sets' containing 10 recordings each, such that each tangram appeared as the target once in each set. Our randomization was set up such that a unique item set would be shown to each participant, and then repeated once all 118 sets were used. Due to forced termination of data collection, only `r length(unique(tidy_kid_data$id))` sets were used for child participants. Across adult participants, all 118 sets were shown at least once. 
+On each trial, the target tangram appeared with the same foil it was paired with on the corresponding trial in Experiment 1.
+The stimuli sets were counterbalanced such that each participant encountered exactly 5 utterances originally generated by a parent and 5 by a child, and 5 utterances from the first round and 5 from the final round. 
+
+### Procedure
+
+Participants were placed in the role of the listener and presented a sequence of 10 audio recordings --- a single referring expression for each target tangram, in a randomized order. Participants were instructed to click the intended referent based on the audio they hear.
+On each trial, two tangram images were displayed side by side (left and right order randomized). At the beginning of each trial, the audio recording played once. To reduce possible learning effects, participants did not receive any feedback after their response.
+Before participants began the experiment, we ensured their audio was working. 
+We did not allow participants to proceed past the consent page without clicking a 'play' button that asked them to "type the number 86 into the box."
+Additionally, to detect participants who were not following instructions, we included an attention check which simply asked people to click 'the one on the left'.
+Child participants provided verbal consent prior to the start of the experiment, and parents provided written consent. The children's version of the experiment did not include the initial 'play' button and attention check. While children completed the task independently on an iPad, an experimenter was nearby to ensure that the audio was working.
+We measured response time as time elapsed between the completion of the audio recording and the response. Participants were not allowed to respond prior to the completion of the audio recording.
+
+### Design 
+
+We used a $2 \times 2$ factorial design manipulating the age of the producer (parent vs. child) and comprehender (adult vs. child). 
+The age of the producer was a within-subjects manipulation while the age of the comprehender was an across-subjects manipulation: each comprehender was exposed to utterances originally produced by both adults and children.
+We predicted that if children struggle to form conceptual pacts primarily due to *comprehension* difficulties, then adult comprehenders should be highly accurate across the board (regardless of whether the referring expression was originally produced by an adult or child), while child comprehenders should uniformly struggle.
+
+## Results
+
+### Children and adults comprehend descriptions at similar levels
+
+```{r descriptive-plots, fig.show='hide', cache=TRUE}
+comp.means <- bind_rows(tidy_turk_data, tidy_kid_data)  %>%
+  filter(measure == "correct") %>%
+  group_by(comprehender_group) %>%
+  tidyboot_mean(value) %>%
+  select(-n, -empirical_stat) %>% 
+  pivot_wider(names_from = comprehender_group, values_from = c(ci_lower, mean, ci_upper))
+```
+
+```{r}
+group_diff.glmer1 <- bind_rows(tidy_turk_data, tidy_kid_data)  %>%
+  filter(measure == "correct") %>%
+  glmer(as.logical(value) ~ 1 + (1 | gameid),
+       data = .,
+       family = binomial,
+       control = glmerControl(optimizer = 'bobyqa')) 
+
+group_diff.glmer2 <- bind_rows(tidy_turk_data, tidy_kid_data)  %>%
+  filter(measure == "correct") %>%
+  glmer(as.logical(value) ~ comprehender_group + (1 + comprehender_group | gameid),
+       data = .,
+       family = binomial,
+       control = glmerControl(optimizer = 'bobyqa')) 
+
+group_diff.anova <- anova(group_diff.glmer1, group_diff.glmer2) %>% 
+  tidy() %>% 
+  filter(term == 'group_diff.glmer2')
+
+comprehender_effect <- tidy(group_diff.glmer2) %>% 
+  filter(term == 'comprehender_groupkid')
+
+age_effect.glmer <- tidy_kid_data %>%
+  filter(measure == "correct") %>%
+  filter(p_age >= 4) %>%
+  filter(p_age <= 8) %>%
+  glmer(as.logical(value) ~ p_age + (1 | id),
+       data = .,
+       family = binomial,
+       control = glmerControl(optimizer = 'bobyqa')) 
+```
+
+```{r e2-result, fig.pos = "t", fig.align = "center", fig.width = 8, fig.cap = "\\label{fig:e2_result} Results for Experiment 2. Both naive adults (left) and children (right) were able to more accurately interpret referring expressions originally produced by parents (orange) than children (blue) in Experiment 1. No overall difference was observed across the two comprehender groups. Error bars are 95\\% confidence intervals."}
+bind_rows(tidy_turk_data, tidy_kid_data) %>%
+  filter(measure == "correct") %>%
+  group_by(age, person, comprehender_group) %>%
+  tidyboot_mean(value, nboot = 100) %>%
+  rename(director = person) %>%
+  mutate(comprehender_group = ifelse(comprehender_group == 'kid', 'child', 'adult'),
+         comprehender_group = paste0('naive ', comprehender_group, ' as comprehender')) %>%
+  ggplot(aes(x = factor(age), y = empirical_stat, label = director, color = interaction(age, director))) +
+    geom_pointrange(aes(ymin = ci_lower, ymax = ci_upper), width = 0) +
+    labs(x = 'exp. 1 child age', y = 'comprehension accuracy') +
+    scale_color_manual(values = c("#9ecae1", "#4292c6", "#08519c", "#fe9929", "#fe9929", "#fe9929")) +
+    scale_x_discrete(expand = expansion(add = c(.6, 1.2))) +
+    geom_dl(method = list(dl.trans(x = x + .2), "last.qp", cex=.8, hjust = 0)) +
+    ggplot2::annotate(geom = "text", x = 3.05, hjust = 0, y = .95, label = "Produced by") +
+    ylim(0.5, 1) +
+    facet_wrap(~ comprehender_group) +
+    theme(legend.position = 'none', aspect.ratio = 1, text = element_text(size = 16))
+```
+
+To test whether reference game performance may be attributed to comprehension difficulties, we compared how naive groups of children and adults were able to determine the referent of the same expressions heard by listeners in Experiment 1 (see Appendix C for more comprehensive analyses).
+We focused on accuracy, as response times are not directly comparable between the web interface (for adults) and lab interface (for children).
+We constructed a mixed-effects logistic regression model predicting trial-by-trial accuracy, including a fixed effect of comprehender group (child vs. adult) and random intercepts and slopes for each source game^[Because we do not have child comprehension data for every audio clip, we could not estimate random slopes at this finer level of granularity. All behavior within a game is non-independent, so we believe this coarser level of grouping at source games is natural. However, see Table \ref{tab:comprehension2} for a Bayesian approach to estimating these effects on the subset of recordings where both comprehender groups were available.].
+We found no significant difference in overall accuracy across child and adult comprehenders, (adult accuracy $=$ `r comp.means$mean_adult`, 95\% CI $=$ [`r comp.means$ci_lower_adult`, `r comp.means$ci_upper_adult`], child accuracy $=$ `r comp.means$mean_kid`, 95\% CI $=$ [ `r comp.means$ci_lower_kid`, `r comp.means$ci_upper_kid`], $t=$ `r abs(comprehender_effect$statistic)`, $p =$ `r comprehender_effect$p.value`, see Figure \ref{fig:e2_result}).
+Consistent with this finding, there was no support in a nested comparison for a model with an effect of comprehender group over an intercept-only model, $\chi^2$(`r group_diff.anova$df`) $=$ `r group_diff.anova$statistic`, $p=$ `r group_diff.anova$p.value`.^[Because null hypothesis significance testing is unable to provide positive evidence for the null hypothesis, we also ran a Bayesian regression using the `brm` package. We used the Savage-Dickey method and found a Bayes Factor of $9.5$, indicating moderate support in favor of the null hypothesis $b=0$. We used a weakly informative student-$t$ prior on the coefficient with degrees of freedom $\nu = 5$ and scale $s=2.5$, following @gelman2008weakly, but this result was robust to other choices.]
+
+```{r brms, eval = FALSE}
+group_diff.brm1 <- bind_rows(tidy_turk_data, tidy_kid_data) %>%
+  filter(measure == "correct") %>%
+  brms::brm(value ~ 1 + (1 | gameid),
+       data = .,
+       cores = 4,
+       family = brms::bernoulli(link = "logit"),)
+
+prior <- brms::set_prior("student_t(5, 0, 2.5)", class = "b")
+group_diff.brm2 <- bind_rows(tidy_turk_data, tidy_kid_data) %>%
+  filter(measure == "correct") %>%
+  brms::brm(value ~ comprehender_group + (1 + comprehender_group | gameid),
+            prior=prior,
+       data = .,
+       cores = 4,
+       sample_prior = 'yes',
+       iter=2500,
+       family = brms::bernoulli(link = "logit")) 
+brms::hypothesis(group_diff.brm2, "comprehender_groupkid = 0")
+
+group_diff.brm1 <- brms::add_criterion(group_diff.brm1, "waic")
+group_diff.brm2 <- brms::add_criterion(group_diff.brm2, "waic")
+brms::loo_compare(group_diff.brm1, group_diff.brm2, criterion = "waic")
+```
+
+## Summary and discussion
+
+In Experiment 2, we asked whether children may struggle to initially establish pacts due to comprehension-side difficulties. 
+If parents’ initial referring expressions are too complex or the images are too ambiguous, children may be unable to determine the referent and thus unable to get a pact off the ground. 
+Surprisingly, we found no difference between the ability of naive adults and children to comprehend referential expressions from Experiment 1.
+It is possible that this negative effect is attributable to our incomplete sample, which was biased toward older children, and that a more balanced sample with younger comprehenders would reveal reliable differences (see Figure \ref{fig:comprehension_age_appendix}).
+At the same time, although children may not be substantially worse at comprehending utterances, our data did suggest that referential expressions originally *generated* by younger children were harder to comprehend by naive adults and children alike (see Appendix C). 
+That is, both adults and children were less likely to find the intended referent after hearing a description originally produced by a 4-year-old child.
+Our findings so far, then, suggest that children's difficulty establishing pacts may primarily lie outside comprehension processes, and point toward possible developmental changes in children's ability to *produce* sufficiently informative descriptions by themselves.
